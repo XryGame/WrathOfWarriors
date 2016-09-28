@@ -1,0 +1,51 @@
+Time:2016/9/26 16:00:00-Trace>>OnEntitySyncQueue execute count:2, success:185/total 187, fail:0 start...
+
+
+Time:2016/9/26 16:00:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\ScriptRuntimeDomain error:System.UnauthorizedAccessException: 对路径“ServiceStack.Redis.DLL”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/26 16:00:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“03zcekaa.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/26 16:00:47-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“03zcekaa.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/26 16:00:48-Trace>>OnEntitySyncQueue execute count:66, success:0/total 66, fail:0 start...
+
+
+Time:2016/9/26 16:00:48-Trace>>OnEntitySyncQueue execute count:15, success:66/total 81, fail:0 start...
+
+
+Time:2016/9/26 16:00:48-Trace>>OnEntitySyncQueue execute count:13, success:81/total 94, fail:0 start...
+
+
+Time:2016/9/26 16:00:52-Trace>>OnEntitySyncQueue execute count:66, success:187/total 253, fail:0 start...
+
+
+Time:2016/9/26 16:02:06-Trace>>Action-1004 Uid:1 access timeout 1044.6733/500ms.
+
+
+Time:2016/9/26 16:02:06-Trace>>OnEntitySyncQueue execute count:1, success:253/total 254, fail:0 start...
+
+
+Time:2016/9/26 16:02:06-Trace>>OnEntitySyncQueue execute count:52, success:254/total 306, fail:0 start...
+
+
+Time:2016/9/26 16:06:11-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“03zcekaa.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/26 16:06:16-Trace>>OnEntitySyncQueue execute count:66, success:306/total 372, fail:0 start...
+
+

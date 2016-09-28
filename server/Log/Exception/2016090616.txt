@@ -1,0 +1,18 @@
+Time:2016/9/6 16:02:18-Trace>>SendToClient action:1059 userId:18 error:System.NotSupportedException: Not found script action1059, please check script path setting.
+   在 ZyGames.Framework.Game.Contract.ActionFactory.FindRoute(String typeExpression, ActionGetter actionGetter, Int32 actionId)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.ProcessActionResponse(IActionDispatcher actionDispatcher, Int32 actionId, ActionGetter actionGetter)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.<SendAction>d__23.MoveNext()
+
+
+Time:2016/9/6 16:02:18-Trace>>SendToClient action:1059 userId:19 error:System.NotSupportedException: Not found script action1059, please check script path setting.
+   在 ZyGames.Framework.Game.Contract.ActionFactory.FindRoute(String typeExpression, ActionGetter actionGetter, Int32 actionId)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.ProcessActionResponse(IActionDispatcher actionDispatcher, Int32 actionId, ActionGetter actionGetter)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.<SendAction>d__23.MoveNext()
+
+
+Time:2016/9/6 16:18:44-Trace>>SendToClient action:1059 userId:22 error:System.NotSupportedException: Not found script action1059, please check script path setting.
+   在 ZyGames.Framework.Game.Contract.ActionFactory.FindRoute(String typeExpression, ActionGetter actionGetter, Int32 actionId)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.ProcessActionResponse(IActionDispatcher actionDispatcher, Int32 actionId, ActionGetter actionGetter)
+   在 ZyGames.Framework.Game.Contract.ActionFactory.<SendAction>d__23.MoveNext()
+
+

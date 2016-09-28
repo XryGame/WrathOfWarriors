@@ -1,0 +1,92 @@
+17:00:14 csharp script compile start...
+17:03:06 csharp script compile start...
+17:03:14 csharp script compile start...
+17:03:25 csharp script compile start...
+17:03:27 csharp script compile start...
+17:03:57 csharp script compile start...
+17:04:24 csharp script compile start...
+17:05:27 csharp script compile start...
+17:05:29 model script compile start...
+Time:2016/9/19 17:05:29-Wait for the update before Model script...
+
+
+Time:2016/9/19 17:05:29-Update before Model script OK.
+
+
+17:05:30 script compiled successfully.
+17:05:30 Start checking table schema, please wait.
+17:05:33 Check table schema successfully.
+Time:2016/9/19 17:05:34-Update Model script success.
+
+
+17:05:34 model script compiled successfully.
+Time:2016/9/19 17:05:34-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 17:05:34-消息：系统加载单服配置所需时间:302.2041ms
+
+
+Time:2016/9/19 17:05:34-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/9/19 17:05:34-消息：系统加载当天用户所需时间:68.2939ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:35:34 Server is starting...
+17:35:41 Server failed to start error:The model script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:38:14 Server is starting...
+17:38:22 script compiled successfully.
+17:38:22 Start checking table schema, please wait.
+17:38:22 Check table schema successfully.
+17:38:22 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/19 17:38:23-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 17:38:23-消息：系统加载单服配置所需时间:512.9809ms
+
+
+Time:2016/9/19 17:38:23-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/9/19 17:38:24-消息：系统加载当天用户所需时间:580.5275ms
+
+
+Time:2016/9/19 17:38:24-The ranking refresh is start...
+
+
+Time:2016/9/19 17:38:24-Trace>>The CombatRanking has be loaded, count:13
+
+
+Time:2016/9/19 17:38:24-Trace>>The LevelRanking has be loaded, count:13
+
+
+Time:2016/9/19 17:38:24-Trace>>The FightValueRanking has be loaded, count:13
+
+
+Time:2016/9/19 17:38:24-The ranking refresh is end.
+
+
+Time:2016/9/19 17:38:24-消息：系统全局运行环境加载所需时间:1160.1485ms
+
+
+17:38:24 Server has started successfully!
+# Server is listening...

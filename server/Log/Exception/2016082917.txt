@@ -1,0 +1,8 @@
+Time:2016/8/29 17:01:38-Trace>>Action3001 error:Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “GameServer.CsScript.Locale.SimplifiedLanguage”未包含“St9203_ChatNotSend”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 GameServer.CsScript.Action.Action3001.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 66
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_d2b27860f2e94c2ead9e37af014e0547%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D3001%26ChatType%3D1%26message%3Dasdasd%26sign%3Df7d036dda1500ce01240996ab3317946
+
+

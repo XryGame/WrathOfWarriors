@@ -1,0 +1,166 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:02:53 Server is starting...
+15:02:53 Server failed to start error:Redis server is using "PC201305131401" game server, it's path:E:\ServerTools\code\newbee\server\server\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:06:46 Server is starting...
+15:06:47 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:08:00 Server is starting...
+15:08:00 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:08:38 Server is starting...
+15:08:38 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:09:13 Server is starting...
+15:09:13 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:09:35 Server is starting...
+15:09:35 Server failed to start error:Redis server is using "PC201305131401" game server, it's path:E:\ServerTools\code\newbee\server\server\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:09:57 Server is starting...
+15:09:59 script compiled successfully.
+15:09:59 Start checking table schema, please wait.
+15:09:59 Check table schema successfully.
+15:09:59 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+15:09:59 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:11:22 Server is starting...
+15:11:23 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:11:34 Server is starting...
+15:11:36 script compiled successfully.
+15:11:36 Start checking table schema, please wait.
+15:11:36 Check table schema successfully.
+15:11:36 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+15:11:36 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:12:40 Server is starting...
+15:12:40 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:18:36 Server is starting...
+15:18:37 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:28:19 Server is starting...
+15:28:19 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\Scut-samples-master\Scut-samples-master\Chat\Server\src\Chat\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:28:58 Server is starting...
+15:28:58 Server failed to start error:Redis server is using "PC201305131401" game server, it's path:E:\ServerTools\code\newbee\server\server\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:55:54 Server is starting...
+15:55:54 Server failed to start error:Redis server is using "PC201305131401" game server, it's path:E:\ServerTools\code\newbee\server\server\

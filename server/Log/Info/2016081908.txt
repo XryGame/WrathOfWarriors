@@ -1,0 +1,56 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+08:45:49 Server is starting...
+08:45:50 Server failed to start error:could not connect to redis Instance at 127.0.0.1:6379
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+08:53:10 Server is starting...
+08:53:17 script compiled successfully.
+08:53:17 Start checking table schema, please wait.
+08:53:17 Check table schema successfully.
+08:53:17 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/19 8:53:18-消息：系统加载单服配置开始...
+
+
+Time:2016/8/19 8:53:19-消息：系统加载单服配置所需时间:1442.1883ms
+
+
+Time:2016/8/19 8:53:19-消息：系统加载当天用户数:21/最大:100
+
+
+Time:2016/8/19 8:53:19-消息：系统加载当天用户所需时间:91.6785ms
+
+
+Time:2016/8/19 8:53:19-The ranking refresh is start...
+
+
+Time:2016/8/19 8:53:19-The ranking refresh is end.
+
+
+Time:2016/8/19 8:53:19-消息：系统全局运行环境加载所需时间:1542.7261ms
+
+
+08:53:19 Server has started successfully!
+# Server is listening...
+08:59:24 model script compile start...
+Time:2016/8/19 8:59:24-Wait for the update before Model script...
+
+
+Time:2016/8/19 8:59:24-Update before Model script OK.
+
+

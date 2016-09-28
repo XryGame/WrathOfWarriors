@@ -1,0 +1,93 @@
+Time:2016/8/19 11:11:16-Trace>>OnEntitySyncQueue execute count:1, success:0/total 1, fail:0 start...
+
+
+Time:2016/8/19 11:11:18-Trace>>OnEntitySyncQueue execute count:50, success:1/total 51, fail:0 start...
+
+
+Time:2016/8/19 11:22:23-Trace>>Action-1002 Uid:0 access timeout 1325.0758/500ms.
+
+
+Time:2016/8/19 11:22:25-Trace>>OnEntitySyncQueue execute count:52, success:51/total 103, fail:0 start...
+
+
+Time:2016/8/19 11:22:25-Trace>>Action-1004 Uid:13 access timeout 1172.067/500ms.
+
+
+Time:2016/8/19 11:22:25-Trace>>OnEntitySyncQueue execute count:2, success:103/total 105, fail:0 start...
+
+
+Time:2016/8/19 11:23:02-Trace>>OnEntitySyncQueue execute count:2, success:105/total 107, fail:0 start...
+
+
+Time:2016/8/19 11:23:03-Trace>>Action-1008 Uid:10 access timeout 1145.0655/500ms.
+
+
+Time:2016/8/19 11:23:03-Trace>>OnEntitySyncQueue execute count:1, success:107/total 108, fail:0 start...
+
+
+Time:2016/8/19 11:27:53-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/19 11:28:29-Trace>>OnEntitySyncQueue execute count:1, success:51/total 52, fail:0 start...
+
+
+Time:2016/8/19 11:28:30-Trace>>OnEntitySyncQueue execute count:1, success:52/total 53, fail:0 start...
+
+
+Time:2016/8/19 11:28:32-Trace>>OnEntitySyncQueue execute count:1, success:53/total 54, fail:0 start...
+
+
+Time:2016/8/19 11:29:00-Trace>>OnEntitySyncQueue execute count:1, success:54/total 55, fail:0 start...
+
+
+Time:2016/8/19 11:29:02-Trace>>OnEntitySyncQueue execute count:1, success:55/total 56, fail:0 start...
+
+
+Time:2016/8/19 11:29:02-Trace>>Action-1005 Uid:1 access timeout 32219.8429/500ms.
+
+
+Time:2016/8/19 11:29:02-Trace>>OnEntitySyncQueue execute count:2, success:56/total 58, fail:0 start...
+
+
+Time:2016/8/19 11:29:02-Trace>>OnEntitySyncQueue execute count:51, success:58/total 109, fail:0 start...
+
+
+Time:2016/8/19 11:46:38-Trace>>Action-1002 Uid:0 access timeout 1126.0644/500ms.
+
+
+Time:2016/8/19 11:46:42-Trace>>Action-1005 Uid:2 access timeout 3749.2144/500ms.
+
+
+Time:2016/8/19 11:46:42-Trace>>OnEntitySyncQueue execute count:3, success:109/total 112, fail:0 start...
+
+
+Time:2016/8/19 11:46:51-Trace>>OnEntitySyncQueue execute count:1, success:112/total 113, fail:0 start...
+
+
+Time:2016/8/19 11:46:51-Trace>>OnEntitySyncQueue execute count:2, success:113/total 115, fail:0 start...
+
+
+Time:2016/8/19 11:46:51-Trace>>OnEntitySyncQueue execute count:1, success:115/total 116, fail:0 start...
+
+
+Time:2016/8/19 11:46:55-Trace>>OnEntitySyncQueue execute count:3, success:116/total 119, fail:0 start...
+
+
+Time:2016/8/19 11:48:00-Trace>>OnEntitySyncQueue execute count:2, success:119/total 122, fail:0 start...
+
+
+Time:2016/8/19 11:48:32-Trace>>OnEntitySyncQueue execute count:2, success:121/total 124, fail:0 start...
+
+
+Time:2016/8/19 11:49:30-Trace>>OnEntitySyncQueue execute count:2, success:123/total 126, fail:0 start...
+
+
+Time:2016/8/19 11:49:58-Trace>>OnEntitySyncQueue execute count:2, success:125/total 128, fail:0 start...
+
+
+Time:2016/8/19 11:51:34-Trace>>OnEntitySyncQueue execute count:2, success:127/total 130, fail:0 start...
+
+
+Time:2016/8/19 11:56:19-Trace>>OnEntitySyncQueue execute count:2, success:129/total 132, fail:0 start...
+
+

@@ -1,0 +1,77 @@
+Time:2016/9/26 16:00:52-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 91
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 78
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/9/26 16:01:34-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action8002.cs, Line:17
+Message:命名空间“GameServer.CsScript.Action”已经包含了“Action8001”的定义
+
+
+Time:2016/9/26 16:01:34-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action8002.cs, Line:17
+Message:命名空间“GameServer.CsScript.Action”已经包含了“Action8001”的定义
+
+
+Time:2016/9/26 16:01:34-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/26 16:01:34-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/26 16:01:59-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“1on1hnat, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\1on1hnat.dll”位置处)。类型 B 源自“f5tgrmu3, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\f5tgrmu3.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\CacheCollection.cs:行号 190
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 275
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 288
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUser(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/9/26 16:02:06-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindCombatRankUser(Int32 userid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 463
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 313
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_2a3266316c164697b2042e957c2bc801%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3Db7f34f4a999703af159b14101031afe8
+
+
+Time:2016/9/26 16:04:58-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“1on1hnat, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\1on1hnat.dll”位置处)。类型 B 源自“f5tgrmu3, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\f5tgrmu3.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\CacheCollection.cs:行号 190
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 275
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 288
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUser(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/9/26 16:06:16-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/9/26 16:06:16-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 91
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 78
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+

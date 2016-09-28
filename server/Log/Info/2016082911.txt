@@ -1,0 +1,83 @@
+11:02:40 Clear expired cache end.
+11:07:36 csharp script compile start...
+11:09:14 csharp script compile start...
+11:09:47 csharp script compile start...
+11:09:58 csharp script compile start...
+11:11:37 csharp script compile start...
+11:12:40 Clear expired cache end.
+11:13:36 csharp script compile start...
+11:14:41 csharp script compile start...
+11:15:33 csharp script compile start...
+11:15:51 model script compile start...
+Time:2016/8/29 11:15:51-Wait for the update before Model script...
+
+
+Time:2016/8/29 11:15:51-Update before Model script OK.
+
+
+11:19:04 model script compile start...
+Time:2016/8/29 11:19:04-Wait for the update before Model script...
+
+
+Time:2016/8/29 11:19:04-Update before Model script OK.
+
+
+11:19:24 model script compile start...
+Time:2016/8/29 11:19:24-Wait for the update before Model script...
+
+
+Time:2016/8/29 11:19:24-Update before Model script OK.
+
+
+11:19:58 csharp script compile start...
+11:20:04 csharp script compile start...
+11:20:46 csharp script compile start...
+11:20:57 csharp script compile start...
+11:22:41 Clear expired cache end.
+11:26:58 csharp script compile start...
+11:27:04 csharp script compile start...
+11:27:04 csharp script compiled successfully.
+11:32:41 Clear expired cache end.
+11:42:41 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:49:18 Server is starting...
+11:49:25 script compiled successfully.
+11:49:25 Start checking table schema, please wait.
+11:49:26 Check table schema successfully.
+11:49:26 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/29 11:49:26-消息：系统加载单服配置开始...
+
+
+Time:2016/8/29 11:49:26-消息：系统加载单服配置所需时间:467.1174ms
+
+
+Time:2016/8/29 11:49:26-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/29 11:49:27-消息：系统加载当天用户所需时间:109.8584ms
+
+
+Time:2016/8/29 11:49:27-The ranking refresh is start...
+
+
+Time:2016/8/29 11:49:27-Trace>>The CombatRanking has be loaded, count:5
+
+
+Time:2016/8/29 11:49:27-The ranking refresh is end.
+
+
+Time:2016/8/29 11:49:27-消息：系统全局运行环境加载所需时间:623.0275ms
+
+
+11:49:27 Server has started successfully!
+# Server is listening...
+11:59:27 Clear expired cache end.

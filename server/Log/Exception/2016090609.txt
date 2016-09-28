@@ -1,0 +1,81 @@
+Time:2016/9/6 9:39:38-Trace>>FindEntityFromRedis GameServer.Script.Model.DataModel.JobTitleDataCache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.JobTitleDataCache error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.StartSubItem(ProtoReader reader)
+   在 ProtoBuf.ProtoReader.ReadTypedObject(Object value, Int32 key, ProtoReader reader, Type type)
+   在 ProtoBuf.ProtoReader.ReadObject(Object value, Int32 key, ProtoReader reader)
+   在 ProtoBuf.Serializers.SubItemSerializer.ProtoBuf.Serializers.IProtoSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.ListDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 231
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 236
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtobufCacheSerializer.cs:行号 51
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.GenerateSqlFrom(SqlDataSender sender, RedisClient client, Byte[][] keys, Byte[][] values) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 924
+
+
+Time:2016/9/6 9:39:40-Trace>>Get redis "GameServer.Script.Model.DataModel.JobTitleDataCache" key:"GameServer.Script.Model.DataModel.JobTitleDataCache" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.JobTitleDataCache error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.StartSubItem(ProtoReader reader)
+   在 ProtoBuf.ProtoReader.ReadTypedObject(Object value, Int32 key, ProtoReader reader, Type type)
+   在 ProtoBuf.ProtoReader.ReadObject(Object value, Int32 key, ProtoReader reader)
+   在 ProtoBuf.Serializers.SubItemSerializer.ProtoBuf.Serializers.IProtoSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.ListDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 231
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 236
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtobufCacheSerializer.cs:行号 51
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__33`1.<TryGetEntity>b__33_4(Byte[] t) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 521
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 0
+
+
+Time:2016/9/6 9:39:40-Trace>>Get redis "GameServer.Script.Model.DataModel.JobTitleDataCache" key:"GameServer.Script.Model.DataModel.JobTitleDataCache" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.JobTitleDataCache error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.StartSubItem(ProtoReader reader)
+   在 ProtoBuf.ProtoReader.ReadTypedObject(Object value, Int32 key, ProtoReader reader, Type type)
+   在 ProtoBuf.ProtoReader.ReadObject(Object value, Int32 key, ProtoReader reader)
+   在 ProtoBuf.Serializers.SubItemSerializer.ProtoBuf.Serializers.IProtoSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.ListDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 231
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtoBufUtils.cs:行号 236
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Serialization\ProtobufCacheSerializer.cs:行号 51
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__33`1.<TryGetEntity>b__33_4(Byte[] t) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 521
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 0
+
+
+Time:2016/9/6 9:40:58-Trace>>FindEntityFromRedis GameServer.Script.Model.DataModel.JobTitleDataCache error:System.Exception: Get "GameServer.Script.Model.DataModel.JobTitleDataCache" entity is null, keycode:Leader,buffer len:-1,state:0
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.GenerateSqlFrom(SqlDataSender sender, RedisClient client, Byte[][] keys, Byte[][] values) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 900
+
+
+Time:2016/9/6 9:58:17-Trace>>Action1403 error:System.FormatException: 输入字符串的格式不正确。
+   在 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.Format(String format, Object arg0)
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1403.cs:行号 75
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_9aced6c022bd400789ca4f0358275d08%7C1%7C1%26Uid%3D15%26St%3Dst%26ActionId%3D1403%26Result%3D1%26sign%3D228968c536716ec65551d35d50d2bf46
+
+

@@ -1,0 +1,59 @@
+Time:2016/9/1 15:01:20-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/9/1 15:01:21-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Com\Rank\RankingFactory.cs:行号 94
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 87
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 74
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Contract\GameBaseHost.cs:行号 107
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/9/1 15:02:39-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/9/1 15:02:40-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Com\Rank\RankingFactory.cs:行号 94
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 87
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 74
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Contract\GameBaseHost.cs:行号 107
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/9/1 15:05:28-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindCombatRankUser(Int32 userid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 282
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 255
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D2%26Sid%3Ds_2456cbfe91a748628c41556c734fc3de%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D1008%26sign%3Ddedcb16bbeb98060741582669c56dab9
+
+
+Time:2016/9/1 15:05:30-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1600.cs, Line:69
+Message:“GameServer.Script.Model.DataModel.GameUser”不包含“CombatRankId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.GameUser”的第一个参数的扩展方法“CombatRankId”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/9/1 15:05:30-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/1 15:05:33-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindCombatRankUser(Int32 userid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 282
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 255
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D4%26Sid%3Ds_2456cbfe91a748628c41556c734fc3de%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D1008%26sign%3D371af39514bb673c3d1ce7d210bfc011
+
+

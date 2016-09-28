@@ -1,0 +1,50 @@
+Time:2016/8/22 17:10:27-Trace>>Action1402 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1402.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1402.cs:行号 133
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D7%26Sid%3Ds_16d5723716774b208fd9ce27b3557169%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1402%26RivalUid%3D1%26sign%3D1cd81f0e12c4074f832de9b60e3122a4
+
+
+Time:2016/8/22 17:11:42-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/22 17:11:42-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/22 17:13:10-Trace>>Action1402 error:System.Exception: The "GameServer.Script.Model.Config.SkillData" has been the other GameServer.Script.Model.DataModel.GameUser object binding cannot be added
+   在 ZyGames.Framework.Event.EntityChangeEvent.CheckSingleBindEvent(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.AddChildrenListener(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.Add(T item)
+   在 GameServer.CsScript.Action.Action1402.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1402.cs:行号 133
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_cb073437020e48abb0deab22a614a626%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1402%26RivalUid%3D1%26sign%3Ddb5fa382a91e2362f3d99b8257674e62
+
+
+Time:2016/8/22 17:14:26-Trace>>Action1402 error:System.Exception: The "GameServer.Script.Model.Config.SkillData" has been the other GameServer.Script.Model.DataModel.GameUser object binding cannot be added
+   在 ZyGames.Framework.Event.EntityChangeEvent.CheckSingleBindEvent(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.AddChildrenListener(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.Add(T item)
+   在 GameServer.CsScript.Action.Action1402.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1402.cs:行号 133
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_cb073437020e48abb0deab22a614a626%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1402%26RivalUid%3D1%26sign%3Dc1879e7db7f08ddfe58c955b955a4ee6
+
+
+Time:2016/8/22 17:15:39-Trace>>Action1402 error:System.Exception: The "GameServer.Script.Model.Config.SkillData" has been the other GameServer.Script.Model.DataModel.GameUser object binding cannot be added
+   在 ZyGames.Framework.Event.EntityChangeEvent.CheckSingleBindEvent(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.AddChildrenListener(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.Add(T item)
+   在 GameServer.CsScript.Action.Action1402.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1402.cs:行号 133
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D6%26Sid%3Ds_cb073437020e48abb0deab22a614a626%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1402%26RivalUid%3D1%26sign%3Dd0cac389ab02bff4d0217ed610cce924
+
+
+Time:2016/8/22 17:18:16-Trace>>Action1402 error:System.Exception: The "GameServer.Script.Model.Config.SkillData" has been the other GameServer.Script.Model.DataModel.GameUser object binding cannot be added
+   在 ZyGames.Framework.Event.EntityChangeEvent.CheckSingleBindEvent(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.AddChildrenListener(Object changeEvent)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.Add(T item)
+   在 GameServer.CsScript.Action.Action1402.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1402.cs:行号 135
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_19a83b652ef7410cac45d9629d781727%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1402%26RivalUid%3D1%26sign%3Dbce8179017a1c5e5b303d1741bbb4ccd
+
+

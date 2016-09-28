@@ -1,0 +1,170 @@
+Time:2016/8/19 10:43:04-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:14
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:15
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:43:04-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:43:04-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:44:30-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:13
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:14
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:44:30-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:44:30-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:45:37-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:13
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:14
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:45:37-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:45:37-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:46:15-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:13
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:46:15-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:46:15-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:49:52-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:13
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:49:52-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:49:52-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:51:34-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:14
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:51:34-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:51:34-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:52:22-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:14
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:15
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:52:22-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:52:22-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 10:54:58-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:11
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:12
+Message:命名空间“GameServer”中不存在类型或命名空间名称“CsScript”(是否缺少程序集引用?)
+
+
+Time:2016/8/19 10:54:58-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/19 10:54:58-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+

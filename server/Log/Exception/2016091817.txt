@@ -1,0 +1,27 @@
+Time:2016/9/18 17:15:50-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/18 17:15:50-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/18 17:16:59-Trace>>GM命令:gm:diamondcommand 1000执行失败
+Exception:System.ArgumentNullException: 值不能为 null。
+参数名: name
+   在 System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.TryParseType(String scriptCode, String typeName, Type& type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 481
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CreateInstance(String scriptCode, String typeName, Object[] args, Object& result) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 452
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Execute(String scriptCode, String typeName, Object[] args) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 111
+   在 ZyGames.Framework.Game.Command.ScriptCommand.ProcessCmd(String[] args)
+   在 ZyGames.Framework.Game.Command.BaseCommand.Run(String userId, String command, String assemblyName)
+
+
+Time:2016/9/18 17:23:15-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/18 17:23:15-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+

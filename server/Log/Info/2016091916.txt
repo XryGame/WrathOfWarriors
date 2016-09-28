@@ -1,0 +1,220 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:03:31 Server is starting...
+16:03:38 script compiled successfully.
+16:03:38 Start checking table schema, please wait.
+16:03:39 Check table schema successfully.
+16:03:39 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/19 16:03:40-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 16:03:41-消息：系统加载单服配置所需时间:1665.3358ms
+
+
+Time:2016/9/19 16:03:41-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/9/19 16:03:41-消息：系统加载当天用户所需时间:36.2756ms
+
+
+Time:2016/9/19 16:03:41-The ranking refresh is start...
+
+
+Time:2016/9/19 16:03:41-Trace>>The CombatRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:03:41-Trace>>The LevelRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:03:41-Trace>>The FightValueRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:03:41-The ranking refresh is end.
+
+
+Time:2016/9/19 16:03:41-消息：系统全局运行环境加载所需时间:1746.1606ms
+
+
+16:03:41 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:04:28 Server is starting...
+16:04:35 script compiled successfully.
+16:04:35 Start checking table schema, please wait.
+16:04:36 Check table schema successfully.
+16:04:36 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/19 16:04:36-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 16:04:38-消息：系统加载单服配置所需时间:1750.8399ms
+
+
+Time:2016/9/19 16:04:38-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/9/19 16:04:38-消息：系统加载当天用户所需时间:29.832ms
+
+
+Time:2016/9/19 16:04:38-The ranking refresh is start...
+
+
+Time:2016/9/19 16:04:38-Trace>>The CombatRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:04:38-Trace>>The LevelRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:04:38-Trace>>The FightValueRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:04:38-The ranking refresh is end.
+
+
+Time:2016/9/19 16:04:38-消息：系统全局运行环境加载所需时间:1826.6771ms
+
+
+16:04:38 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:08:00 Server is starting...
+16:08:07 script compiled successfully.
+16:08:07 Start checking table schema, please wait.
+16:08:08 Check table schema successfully.
+16:08:08 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/19 16:08:08-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 16:08:10-消息：系统加载单服配置所需时间:1613.89ms
+
+
+Time:2016/9/19 16:08:10-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/9/19 16:08:10-消息：系统加载当天用户所需时间:29.8786ms
+
+
+Time:2016/9/19 16:08:10-The ranking refresh is start...
+
+
+Time:2016/9/19 16:08:10-Trace>>The CombatRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:08:10-Trace>>The LevelRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:08:10-Trace>>The FightValueRanking has be loaded, count:12
+
+
+Time:2016/9/19 16:08:10-The ranking refresh is end.
+
+
+Time:2016/9/19 16:08:10-消息：系统全局运行环境加载所需时间:1684.9002ms
+
+
+16:08:10 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:19:01 Server is starting...
+16:19:08 script compiled successfully.
+16:19:08 Start checking table schema, please wait.
+16:19:08 Check table schema successfully.
+16:19:08 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/19 16:19:09-消息：系统加载单服配置开始...
+
+
+Time:2016/9/19 16:19:10-消息：系统加载单服配置所需时间:1385.7012ms
+
+
+Time:2016/9/19 16:19:10-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/9/19 16:19:10-消息：系统加载当天用户所需时间:34.2457ms
+
+
+Time:2016/9/19 16:19:10-The ranking refresh is start...
+
+
+Time:2016/9/19 16:19:10-Trace>>The CombatRanking has be loaded, count:13
+
+
+Time:2016/9/19 16:19:10-Trace>>The LevelRanking has be loaded, count:13
+
+
+Time:2016/9/19 16:19:10-Trace>>The FightValueRanking has be loaded, count:13
+
+
+Time:2016/9/19 16:19:10-The ranking refresh is end.
+
+
+Time:2016/9/19 16:19:10-消息：系统全局运行环境加载所需时间:1456.277ms
+
+
+16:19:10 Server has started successfully!
+# Server is listening...
+16:24:34 csharp script compile start...
+16:24:35 csharp script compiled successfully.
+16:25:20 csharp script compile start...
+16:25:20 csharp script compiled successfully.
+16:28:09 csharp script compile start...
+16:29:01 csharp script compile start...
+16:29:20 Clear expired cache end.
+16:31:44 csharp script compile start...
+16:32:09 csharp script compile start...
+16:32:20 csharp script compile start...
+16:32:43 csharp script compile start...
+16:32:52 csharp script compile start...
+16:33:51 csharp script compile start...
+16:35:24 csharp script compile start...
+16:36:13 csharp script compile start...
+16:36:25 csharp script compile start...
+16:39:20 Clear expired cache end.
+16:46:48 csharp script compile start...
+16:49:21 Clear expired cache end.
+16:49:33 model script compile start...
+Time:2016/9/19 16:49:33-Wait for the update before Model script...
+
+
+Time:2016/9/19 16:49:33-Update before Model script OK.
+
+
+16:53:49 csharp script compile start...
+16:57:18 csharp script compile start...
+16:58:30 csharp script compile start...
+16:59:18 csharp script compile start...
+16:59:21 Clear expired cache end.
+16:59:26 csharp script compile start...

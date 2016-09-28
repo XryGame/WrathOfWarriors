@@ -1,0 +1,7 @@
+Time:2016/8/8 10:30:27-Trace>>Action3002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Com.MyChatService..ctor(TUser user) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\MyChatService.cs:行号 21
+   在 GameServer.CsScript.Action.Action3002.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3002.cs:行号 40
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D13%26Sid%3Ds_9ec2c3bdc2ec4c2c966278a450f378b9%7C1%7C1%26Uid%3D12%26St%3Dst%26ActionId%3D3002%26sign%3D55f8680b255b53f01b2c02a1c8cf260b
+
+

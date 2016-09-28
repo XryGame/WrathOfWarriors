@@ -1,0 +1,14 @@
+Time:2016/9/2 17:01:05-Trace>>Decode password:"050093" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 17:06:28-Trace>>Decode password:"360347" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+

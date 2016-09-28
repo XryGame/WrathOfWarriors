@@ -1,0 +1,118 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:02:13 Server is starting...
+11:02:20 script compiled successfully.
+11:02:20 Start checking table schema, please wait.
+11:02:20 Check table schema successfully.
+11:02:20 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/9 11:02:21-消息：系统加载单服配置开始...
+
+
+Time:2016/8/9 11:02:21-消息：系统加载单服配置所需时间:129.0303ms
+
+
+Time:2016/8/9 11:02:21-消息：系统加载当天用户数:9/最大:100
+
+
+Time:2016/8/9 11:02:21-消息：系统加载当天用户所需时间:51.2115ms
+
+
+Time:2016/8/9 11:02:21-The ranking refresh is start...
+
+
+Time:2016/8/9 11:02:21-The ranking refresh is end.
+
+
+Time:2016/8/9 11:02:21-消息：系统全局运行环境加载所需时间:189.317ms
+
+
+11:02:21 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:03:41 Server is starting...
+11:03:48 script compiled successfully.
+11:03:49 Start checking table schema, please wait.
+11:03:49 Check table schema successfully.
+11:03:49 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/9 11:03:49-消息：系统加载单服配置开始...
+
+
+Time:2016/8/9 11:03:49-消息：系统加载单服配置所需时间:109.7602ms
+
+
+Time:2016/8/9 11:03:49-消息：系统加载当天用户数:9/最大:100
+
+
+Time:2016/8/9 11:03:49-消息：系统加载当天用户所需时间:45.0806ms
+
+
+Time:2016/8/9 11:03:49-The ranking refresh is start...
+
+
+Time:2016/8/9 11:03:49-The ranking refresh is end.
+
+
+Time:2016/8/9 11:03:49-消息：系统全局运行环境加载所需时间:163.4255ms
+
+
+11:03:49 Server has started successfully!
+# Server is listening...
+11:05:36 Server is stopping, please wait.
+11:05:36 Server has stoped successfully!
+11:05:36 Server has canceled!
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:05:53 Server is starting...
+11:06:01 script compiled successfully.
+11:06:01 Start checking table schema, please wait.
+11:06:01 Check table schema successfully.
+11:06:01 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/9 11:06:01-消息：系统加载单服配置开始...
+
+
+Time:2016/8/9 11:06:01-消息：系统加载单服配置所需时间:165.9602ms
+
+
+Time:2016/8/9 11:06:01-消息：系统加载当天用户数:9/最大:100
+
+
+Time:2016/8/9 11:06:01-消息：系统加载当天用户所需时间:62.6546ms
+
+
+Time:2016/8/9 11:06:01-The ranking refresh is start...
+
+
+Time:2016/8/9 11:06:01-The ranking refresh is end.
+
+
+Time:2016/8/9 11:06:01-消息：系统全局运行环境加载所需时间:238.367ms
+
+
+11:06:01 Server has started successfully!
+# Server is listening...
+11:16:20 Clear expired cache end.

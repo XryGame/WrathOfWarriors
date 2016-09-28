@@ -1,0 +1,136 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:07:31 Server is starting...
+17:07:39 script compiled successfully.
+17:07:39 Start checking table schema, please wait.
+17:07:39 Check table schema successfully.
+17:07:39 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/28 17:07:39-消息：系统加载单服配置开始...
+
+
+Time:2016/7/28 17:07:39-消息：系统加载单服配置所需时间:0.6658ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:08:42 Server is starting...
+17:08:49 script compiled successfully.
+17:08:49 Start checking table schema, please wait.
+17:08:50 Check table schema successfully.
+17:08:50 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/28 17:08:50-消息：系统加载单服配置开始...
+
+
+Time:2016/7/28 17:08:50-消息：系统加载单服配置所需时间:0.5622ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:09:35 Server is starting...
+17:09:43 script compiled successfully.
+17:09:43 Start checking table schema, please wait.
+17:09:43 Check table schema successfully.
+17:09:43 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/28 17:09:43-消息：系统加载单服配置开始...
+
+
+Time:2016/7/28 17:09:43-消息：系统加载单服配置所需时间:5.3131ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:10:04 Server is starting...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:10:13 Server is starting...
+17:10:20 script compiled successfully.
+17:10:20 Start checking table schema, please wait.
+17:10:20 Check table schema successfully.
+17:10:20 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/28 17:10:20-消息：系统加载单服配置开始...
+
+
+Time:2016/7/28 17:10:20-消息：系统加载单服配置所需时间:0.8369ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+17:11:28 Server is starting...
+17:11:36 script compiled successfully.
+17:11:36 Start checking table schema, please wait.
+17:11:36 Check table schema successfully.
+17:11:36 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/28 17:11:36-消息：系统加载单服配置开始...
+
+
+Time:2016/7/28 17:11:36-消息：系统加载单服配置所需时间:0.7902ms
+
+
+Time:2016/7/28 17:11:36-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/7/28 17:11:36-消息：系统加载当天用户所需时间:35.6485ms
+
+
+Time:2016/7/28 17:11:36-The ranking refresh is start...
+
+
+Time:2016/7/28 17:11:36-The ranking refresh is end.
+
+
+Time:2016/7/28 17:11:36-消息：系统全局运行环境加载所需时间:54.4422ms
+
+
+17:11:36 Server has started successfully!
+# Server is listening...
+17:21:40 Clear expired cache end.
+17:31:40 Clear expired cache end.
+17:41:41 Clear expired cache end.
+17:51:41 Clear expired cache end.

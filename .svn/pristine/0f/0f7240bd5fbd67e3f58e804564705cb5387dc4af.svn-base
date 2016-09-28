@@ -1,0 +1,52 @@
+﻿using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.DataModel;
+using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Service;
+
+namespace GameServer.CsScript.Action
+{
+
+    /// <summary>
+    /// 1061_通知成就完成
+    /// </summary>
+    public class Action1061 : BaseAction
+    {
+        private object receipt;
+        private int id;
+
+        public Action1061(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1061, actionGetter)
+        {
+
+        }
+
+        protected override string BuildJsonPack()
+        {
+            if (receipt != null)
+            {
+                body = receipt;
+            }
+            else
+            {
+                ErrorCode = ActionIDDefine.Cst_Action1061;
+            }
+            return base.BuildJsonPack();
+        }
+
+        public override bool GetUrlElement()
+        {
+            if (httpGet.GetInt("ID", ref id))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override bool TakeAction()
+        {
+            receipt = id;
+            return true;
+        }
+    }
+}

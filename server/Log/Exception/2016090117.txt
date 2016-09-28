@@ -1,0 +1,58 @@
+Time:2016/9/1 17:20:13-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/1 17:26:56-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.CsScript.Com.PushMessageHelper.SendClassChatToClassMember(Int32 classid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\PushMessageHelper.cs:行号 59
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 113
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D4%26Sid%3Ds_f19faf40f21c4ff2ba2bc0cff5547631%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3Dadsasd%26WhisperUid%3D0%26sign%3D14b03548ea839683b648352c1a4f2ed3
+
+
+Time:2016/9/1 17:27:29-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.CsScript.Com.PushMessageHelper.SendClassChatToClassMember(Int32 classid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\PushMessageHelper.cs:行号 59
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 113
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D5%26Sid%3Ds_aa1a14a122fd42b981530a97b6dfccff%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3Dassad%26WhisperUid%3D0%26sign%3Df8656a894ddc26625756ce8186f919d0
+
+
+Time:2016/9/1 17:28:28-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.CsScript.Com.PushMessageHelper.SendClassChatToClassMember(Int32 classid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\PushMessageHelper.cs:行号 59
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 113
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D5%26Sid%3Ds_591e4d6ea2de4147905ee84df8c34dee%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3Daas%26WhisperUid%3D0%26sign%3D46e97d69821cdbb6a40621b2c175a18b
+
+
+Time:2016/9/1 17:29:21-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.CsScript.Com.PushMessageHelper.SendClassChatToClassMember(Int32 classid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\PushMessageHelper.cs:行号 59
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 113
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Middleware\ZyGames.Framework.Game\Service\BaseStruct.cs:行号 180.
+?d=MsgId%3D9%26Sid%3Ds_591e4d6ea2de4147905ee84df8c34dee%7C1%7C1%26Uid%3D3%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3D11%26WhisperUid%3D0%26sign%3Da9815d0dd9bef5e6059420b19e3a8d70
+
+
+Time:2016/9/1 17:49:25-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/1 17:49:25-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/1 17:51:46-Trace>>Action-3002 Uid:2 locked timeout.
+
+
+Time:2016/9/1 17:53:42-Trace>>OnDataReceived error:System.Threading.SemaphoreFullException: 将指定的计数添加到该信号量中会导致其超过最大计数。
+   在 System.Threading.Semaphore.Release(Int32 releaseCount)
+   在 System.Threading.Semaphore.Release()
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.Closing(SocketAsyncEventArgs ioEventArgs, SByte opCode, String reason) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 650
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 401
+
+
+IP 168.254.0.254:13602 IO_Completed unkown error:System.Threading.SemaphoreFullException: 将指定的计数添加到该信号量中会导致其超过最大计数。
+   在 System.Threading.Semaphore.Release(Int32 releaseCount)
+   在 System.Threading.Semaphore.Release()
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.Closing(SocketAsyncEventArgs ioEventArgs, SByte opCode, String reason) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 650
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 429
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.PostReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 350
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 422
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.IO_Completed(Object sender, SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 266

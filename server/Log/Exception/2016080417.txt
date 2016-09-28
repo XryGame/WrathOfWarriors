@@ -1,0 +1,459 @@
+Time:2016/8/4 17:25:15-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_36" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:15-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_42" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:15-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_37" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:15-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_41" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:16-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_39" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:16-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_40" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:16-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_32" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:16-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_35" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:16-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_34" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_36" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_42" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_37" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_41" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_39" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_40" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_32" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_35" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:25:52-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_34" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_36" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_42" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_37" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_41" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_39" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_40" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_32" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_35" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+
+Time:2016/8/4 17:30:48-Trace>>Get redis "GameServer.Script.Model.DataModel.GameUser" key:"GameServer.Script.Model.DataModel.GameUser_34" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.GameUser error ---> ProtoBuf.ProtoException: Invalid wire-type; this usually means you have over-written a file without truncating or setting the length; see http://stackoverflow.com/q/2152978/23354
+   在 ProtoBuf.ProtoReader.ReadInt32()
+   在 ProtoBuf.Serializers.Int32Serializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TagDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.PropertyDecorator.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Serializers.TypeSerializer.Read(Object value, ProtoReader source)
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetEntity[T](String redisKey, SchemaTable table, List`1& list)
+
+

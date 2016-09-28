@@ -1,0 +1,48 @@
+Time:2016/9/8 9:18:17-Trace>>OnEntitySyncQueue execute count:58, success:0/total 58, fail:0 start...
+
+
+Time:2016/9/8 9:18:17-Trace>>OnEntitySyncQueue execute count:16, success:58/total 74, fail:0 start...
+
+
+Time:2016/9/8 9:24:53-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“tm4253ee.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/8 9:28:44-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“tm4253ee.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/8 9:28:58-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“tm4253ee.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/8 9:29:03-Trace>>OnEntitySyncQueue execute count:51, success:74/total 125, fail:0 start...
+
+
+Time:2016/9/8 9:29:03-Trace>>OnEntitySyncQueue execute count:7, success:125/total 132, fail:0 start...
+
+
+Time:2016/9/8 9:29:37-Trace>>Action-1004 Uid:34 access timeout 1120.0016/500ms.
+
+
+Time:2016/9/8 9:29:37-Trace>>OnEntitySyncQueue execute count:1, success:132/total 133, fail:0 start...
+
+
+Time:2016/9/8 9:29:37-Trace>>OnEntitySyncQueue execute count:52, success:133/total 185, fail:0 start...
+
+
+Time:2016/9/8 9:32:23-Trace>>OnEntitySyncQueue execute count:1, success:185/total 186, fail:0 start...
+
+
+Time:2016/9/8 9:32:54-Trace>>OnEntitySyncQueue execute count:10, success:186/total 196, fail:0 start...
+
+
+Time:2016/9/8 9:33:15-Trace>>OnEntitySyncQueue execute count:1, success:196/total 197, fail:0 start...
+
+

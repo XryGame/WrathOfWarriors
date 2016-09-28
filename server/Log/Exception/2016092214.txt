@@ -1,0 +1,72 @@
+Time:2016/9/22 14:29:01-Trace>>OnInit error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectCode(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(RedisClient client, String[] watchKeys, Func`1 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 249
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__DisplayClass20_0.<ProcessTrans>b__0(RedisClient client) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 232
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 277
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(String[] watchKeys, Func`2 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 234
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Initialize(ICacheSerializer serializer) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 77
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/9/22 14:32:26-Trace>>OnInit error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   在 System.Security.Cryptography.MD5.Create()
+   在 ZyGames.Framework.Common.Security.CryptoHelper.ToMd5Hash(Byte[] bytes) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\CryptoHelper.cs:行号 183
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c.<InitRedisInfo>b__10_0(RedisClient cli) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 99
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(RedisClient client, String[] watchKeys, Func`1 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 249
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__DisplayClass20_0.<ProcessTrans>b__0(RedisClient client) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 232
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 277
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(String[] watchKeys, Func`2 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 234
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Initialize(ICacheSerializer serializer) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 77
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/9/22 14:34:58-Trace>>OnInit error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   在 System.Security.Cryptography.MD5.Create()
+   在 ZyGames.Framework.Common.Security.CryptoHelper.ToMd5Hash(Byte[] bytes) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\CryptoHelper.cs:行号 183
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c.<InitRedisInfo>b__10_0(RedisClient cli) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 99
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(RedisClient client, String[] watchKeys, Func`1 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 249
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__DisplayClass20_0.<ProcessTrans>b__0(RedisClient client) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 232
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 277
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(String[] watchKeys, Func`2 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 234
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Initialize(ICacheSerializer serializer) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 77
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/9/22 14:38:36-Trace>>OnInit error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   在 System.Security.Cryptography.MD5.Create()
+   在 ZyGames.Framework.Common.Security.CryptoHelper.ToMd5Hash(Byte[] bytes) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\CryptoHelper.cs:行号 183
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c.<InitRedisInfo>b__10_0(RedisClient cli) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 99
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(RedisClient client, String[] watchKeys, Func`1 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 249
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__DisplayClass20_0.<ProcessTrans>b__0(RedisClient client) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 232
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 277
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(String[] watchKeys, Func`2 processFunc, Action`1 transFunc, Action`2 errorFunc) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 234
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Initialize(ICacheSerializer serializer) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Redis\RedisConnectionPool.cs:行号 77
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+

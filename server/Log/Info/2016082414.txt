@@ -1,0 +1,96 @@
+14:00:26 Clear expired cache end.
+14:10:26 Clear expired cache end.
+Time:2016/8/24 14:20:27-The ranking refresh is start...
+
+
+14:20:27 Clear expired cache end.
+Time:2016/8/24 14:20:27-Trace>>The CombatRanking has be loaded, count:15
+
+
+Time:2016/8/24 14:20:27-The ranking refresh is end.
+
+
+14:30:27 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+14:41:37 Server is starting...
+14:41:44 script compiled successfully.
+14:41:44 Start checking table schema, please wait.
+14:41:44 Check table schema successfully.
+14:41:45 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/24 14:41:45-消息：系统加载单服配置开始...
+
+
+Time:2016/8/24 14:41:45-消息：系统加载单服配置所需时间:507.6656ms
+
+
+Time:2016/8/24 14:41:45-消息：系统加载当天用户数:15/最大:100
+
+
+Time:2016/8/24 14:41:45-消息：系统加载当天用户所需时间:139.1612ms
+
+
+Time:2016/8/24 14:41:45-The ranking refresh is start...
+
+
+Time:2016/8/24 14:41:46-Trace>>The CombatRanking has be loaded, count:17
+
+
+Time:2016/8/24 14:41:46-The ranking refresh is end.
+
+
+Time:2016/8/24 14:41:46-消息：系统全局运行环境加载所需时间:690.2376ms
+
+
+14:41:46 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+14:43:09 Server is starting...
+14:43:16 script compiled successfully.
+14:43:17 Start checking table schema, please wait.
+14:43:17 Check table schema successfully.
+14:43:17 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/24 14:43:17-消息：系统加载单服配置开始...
+
+
+Time:2016/8/24 14:43:18-消息：系统加载单服配置所需时间:403.9164ms
+
+
+Time:2016/8/24 14:43:18-消息：系统加载当天用户数:15/最大:100
+
+
+Time:2016/8/24 14:43:18-消息：系统加载当天用户所需时间:52.7694ms
+
+
+Time:2016/8/24 14:43:18-The ranking refresh is start...
+
+
+Time:2016/8/24 14:43:18-Trace>>The CombatRanking has be loaded, count:17
+
+
+Time:2016/8/24 14:43:18-The ranking refresh is end.
+
+
+Time:2016/8/24 14:43:18-消息：系统全局运行环境加载所需时间:487.6133ms
+
+
+14:43:18 Server has started successfully!
+# Server is listening...
+14:53:20 Clear expired cache end.

@@ -1,0 +1,15 @@
+Time:2016/8/9 11:02:44-Trace>>EntitySync queue System.InvalidOperationException: Duplicate field-number detected; 25 on: GameServer.Script.Model.DataModel.GameUser
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   在 ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Serialize(Object obj)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClassf.<OnEntitySyncQueue>b__d(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnEntitySyncQueue(Object state)
+
+

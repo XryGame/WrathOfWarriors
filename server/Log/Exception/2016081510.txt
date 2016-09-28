@@ -1,0 +1,222 @@
+Time:2016/8/15 10:10:34-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserStudyTaskData - 副本.cs, Line:14
+Message:命名空间“GameServer.Script.Model.Config”已经包含了“UserStudyTaskData”的定义
+
+
+Time:2016/8/15 10:10:34-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:11:21-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserItemData.cs, Line:14
+Message:命名空间“GameServer.Script.Model.Config”已经包含了“UserStudyTaskData”的定义
+
+
+Time:2016/8/15 10:11:21-Trace>>Script init error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/15 10:11:21-Trace>>OnInit error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/15 10:20:55-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:24:18-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:24:35-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:24:38-Trace>>EntitySync queue key GameServer.Script.Model.DataModel.TUser_10000|2 faild object is null.
+
+
+Time:2016/8/15 10:24:40-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:24:44-Trace>>EntitySync queue key GameServer.Script.Model.DataModel.TUser_10000|2 faild object is null.
+
+
+Time:2016/8/15 10:26:30-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:464
+Message:无法将类型“ZyGames.Framework.Cache.Generic.CacheList<GameServer.Script.Model.Config.UserItemData>”隐式转换为“GameServer.Script.Model.Config.UserExpData”
+
+
+Time:2016/8/15 10:26:30-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:29:39-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserItemData.cs, Line:14
+Message:未能找到类型或命名空间名称“JsonEntity”(是否缺少 using 指令或程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:457
+Message:未能找到类型或命名空间名称“UserItemData”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/8/15 10:29:39-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:29:50-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserItemData.cs, Line:14
+Message:未能找到类型或命名空间名称“JsonEntity”(是否缺少 using 指令或程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:457
+Message:未能找到类型或命名空间名称“UserItemData”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/8/15 10:29:50-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:30:33-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:457
+Message:未能找到类型或命名空间名称“UserItemData”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/8/15 10:30:33-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:30:41-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:457
+Message:未能找到类型或命名空间名称“UserItemData”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/8/15 10:30:41-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:31:12-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:32:53-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:39
+Message:“GameServer.Script.Model.Config.ItemData”是“类型”，但此处被当做“变量”来使用
+
+
+Time:2016/8/15 10:32:53-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:32:59-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:33:07-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:43:55-Trace>>Action1101 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Base.UserHelper.GetCurrentStageBaseExpValue(GameUser& gameUser, SubjectType type) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 54
+   在 GameServer.CsScript.Base.UserHelper.AdditionBaseExpValue(GameUser& gameUser, SubjectID sid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 177
+   在 GameServer.CsScript.Action.Action1101.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1101.cs:行号 97
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_fe864ccdade44295a7c7c7c458902fba%7C1%7C1%26Uid%3D5%26St%3Dst%26ActionId%3D1101%26SubjectType%3D1%26sign%3D30ba8262211708592b76eec27f192e93
+
+
+Time:2016/8/15 10:53:26-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:53:37-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:53:45-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:53:48-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/15 10:54:37-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\ItemData.cs, Line:14
+Message:命名空间“GameServer.Script.Model.Config”已经包含了“ItemData”的定义
+
+
+Time:2016/8/15 10:54:37-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/15 10:55:14-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+

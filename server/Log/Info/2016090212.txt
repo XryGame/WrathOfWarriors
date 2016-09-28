@@ -1,0 +1,21 @@
+12:00:40 Clear expired cache end.
+12:10:40 Clear expired cache end.
+12:20:41 Clear expired cache end.
+12:30:41 Clear expired cache end.
+12:40:41 Clear expired cache end.
+Time:2016/9/2 12:50:42-The ranking refresh is start...
+
+
+12:50:42 Clear expired cache end.
+Time:2016/9/2 12:50:42-Trace>>The CombatRanking has be loaded, count:4
+
+
+Time:2016/9/2 12:50:42-Trace>>The LevelRanking has be loaded, count:4
+
+
+Time:2016/9/2 12:50:42-Trace>>The FightValueRanking has be loaded, count:4
+
+
+Time:2016/9/2 12:50:42-The ranking refresh is end.
+
+

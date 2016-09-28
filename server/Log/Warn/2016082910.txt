@@ -1,0 +1,84 @@
+Time:2016/8/29 10:05:37-Trace>>OnEntitySyncQueue execute count:1, success:166/total 167, fail:0 start...
+
+
+Time:2016/8/29 10:05:45-Trace>>OnEntitySyncQueue execute count:2, success:167/total 169, fail:0 start...
+
+
+Time:2016/8/29 10:14:34-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 10:14:45-Trace>>OnEntitySyncQueue execute count:6, success:51/total 57, fail:0 start...
+
+
+Time:2016/8/29 10:14:45-Trace>>OnEntitySyncQueue execute count:2, success:57/total 59, fail:0 start...
+
+
+Time:2016/8/29 10:17:10-Trace>>OnEntitySyncQueue execute count:2, success:59/total 61, fail:0 start...
+
+
+Time:2016/8/29 10:17:58-Trace>>OnEntitySyncQueue execute count:1, success:61/total 62, fail:0 start...
+
+
+Time:2016/8/29 10:18:19-Trace>>OnEntitySyncQueue execute count:2, success:62/total 64, fail:0 start...
+
+
+Time:2016/8/29 10:22:51-Trace>>OnEntitySyncQueue execute count:1, success:64/total 65, fail:0 start...
+
+
+Time:2016/8/29 10:22:59-Trace>>OnEntitySyncQueue execute count:1, success:65/total 66, fail:0 start...
+
+
+Time:2016/8/29 10:23:28-Trace>>OnEntitySyncQueue execute count:1, success:66/total 67, fail:0 start...
+
+
+Time:2016/8/29 10:23:28-Trace>>OnEntitySyncQueue execute count:2, success:67/total 69, fail:0 start...
+
+
+Time:2016/8/29 10:23:55-Trace>>OnEntitySyncQueue execute count:1, success:69/total 70, fail:0 start...
+
+
+Time:2016/8/29 10:23:57-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“fdfchme1.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 10:48:36-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 10:52:39-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 10:53:59-Trace>>OnEntitySyncQueue execute count:6, success:51/total 57, fail:0 start...
+
+
+Time:2016/8/29 10:53:59-Trace>>OnEntitySyncQueue execute count:2, success:57/total 59, fail:0 start...
+
+
+Time:2016/8/29 10:56:05-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“23qp3c2s.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 10:56:08-Trace>>OnEntitySyncQueue execute count:51, success:59/total 110, fail:0 start...
+
+
+Time:2016/8/29 10:56:16-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“23qp3c2s.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 10:57:10-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“23qp3c2s.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 10:57:34-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“23qp3c2s.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+

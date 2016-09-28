@@ -1,0 +1,28 @@
+Time:2016/8/17 9:13:27-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/17 9:13:27-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/17 9:15:48-Trace>>Action1301 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1301.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1301.cs:行号 141
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_21c057ce6aa44972955e7c4b730b46ab%7C1%7C1%26Uid%3D23%26St%3Dst%26ActionId%3D1301%26OpenType%3D2%26OpenMode%3D1%26sign%3Dbd8939bcad9a71f13d1dcda28ea43e67
+
+
+Time:2016/8/17 9:16:16-Trace>>Action1301 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1301.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1301.cs:行号 141
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_21c057ce6aa44972955e7c4b730b46ab%7C1%7C1%26Uid%3D23%26St%3Dst%26ActionId%3D1301%26OpenType%3D2%26OpenMode%3D1%26sign%3De7e5e7f47fcdbc5ed46e1a6a5a9eb467
+
+
+Time:2016/8/17 9:17:20-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/17 9:17:20-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+

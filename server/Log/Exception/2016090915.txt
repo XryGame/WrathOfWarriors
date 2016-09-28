@@ -1,0 +1,43 @@
+Time:2016/9/9 15:12:12-Trace>>Action1403 error:System.FormatException: 输入字符串的格式不正确。
+   在 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.Format(String format, Object arg0)
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1403.cs:行号 77
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_454fb6b020c74377a797b7f314f1590e%7C1%7C1%26Uid%3D45%26St%3Dst%26ActionId%3D1403%26Result%3D0%26sign%3D3b36146a9fb21a8f41e23a5f9adb0d32
+
+
+Time:2016/9/9 15:12:18-Trace>>Action1403 error:System.FormatException: 输入字符串的格式不正确。
+   在 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.Format(String format, Object arg0)
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1403.cs:行号 77
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D6%26Sid%3Ds_454fb6b020c74377a797b7f314f1590e%7C1%7C1%26Uid%3D45%26St%3Dst%26ActionId%3D1403%26Result%3D0%26sign%3D6317771d2fd01818717157d3234a41e9
+
+
+Time:2016/9/9 15:12:19-Trace>>Action1403 error:System.FormatException: 输入字符串的格式不正确。
+   在 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.Format(String format, Object arg0)
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1403.cs:行号 77
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D7%26Sid%3Ds_454fb6b020c74377a797b7f314f1590e%7C1%7C1%26Uid%3D45%26St%3Dst%26ActionId%3D1403%26Result%3D0%26sign%3De51362e9077829e1cea20dba9c998141
+
+
+Time:2016/9/9 15:23:29-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/9 15:23:29-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/9 15:24:17-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/9 15:24:17-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+

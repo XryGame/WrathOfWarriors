@@ -1,0 +1,462 @@
+Time:2016/8/4 12:28:21-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:29:42-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:29:51-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:06-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:17-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:23-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:34-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:43-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:30:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:32:07-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:32:38-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:32:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:32:48-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:33:13-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:33:22-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:33:30-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:33:39-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:33:41-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:08-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:15-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:24-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:26-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:33-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:40-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:34:42-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:35:03-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:35:11-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:35:39-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:35:47-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:35:53-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:00-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:06-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:10-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:24-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:36-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:49-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:54-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:36:55-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:13-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:17-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:20-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:23-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:26-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:29-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:31-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:34-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:37-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:40-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:43-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:46-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:49-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:37:51-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:38:20-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:38:57-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:39:33-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:39:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:39:52-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:39:57-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:40:08-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:40:12-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:40:33-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:40:38-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:40:46-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:41:05-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:41:21-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:41:25-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:41:33-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:41:57-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:42:05-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:42:34-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:42:38-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:42:43-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:42:56-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:43:24-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:44:07-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:59:50-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/4 12:59:54-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0m0l3ji4.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+

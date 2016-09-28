@@ -1,0 +1,285 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:07:59 Server is starting...
+10:08:06 script compiled successfully.
+10:08:06 Start checking table schema, please wait.
+10:08:07 Check table schema successfully.
+10:08:07 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:08:08-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:08:08-消息：系统加载单服配置所需时间:312.4482ms
+
+
+Time:2016/8/23 10:08:08-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/23 10:08:08-消息：系统加载当天用户所需时间:14.9027ms
+
+
+Time:2016/8/23 10:08:08-The ranking refresh is start...
+
+
+Time:2016/8/23 10:08:08-Trace>>The CombatRanking has be loaded error:MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'RankID' in 'field list'
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlHelper.ExecuteReader(MySqlConnection connection, MySqlTransaction transaction, String commandText, MySqlParameter[] commandParameters, Boolean ExternalConn)
+   在 MySql.Data.MySqlClient.MySqlHelper.ExecuteReader(String connectionString, String commandText, MySqlParameter[] commandParameters)
+   在 GameServer.CsScript.Com.CombatRanking.GetCacheList() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\CombatRanking.cs:行号 112
+   在 ZyGames.Framework.Game.Com.Rank.Ranking`1.InitializeData()
+
+
+Time:2016/8/23 10:08:08-The ranking refresh is end.
+
+
+Time:2016/8/23 10:08:08-消息：系统全局运行环境加载所需时间:501.7901ms
+
+
+10:08:08 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:18:23 Server is starting...
+10:18:31 script compiled successfully.
+10:18:31 Start checking table schema, please wait.
+10:18:31 Check table schema successfully.
+10:18:31 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:18:31-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:18:33-消息：系统加载单服配置所需时间:1422.3077ms
+
+
+Time:2016/8/23 10:18:33-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/23 10:18:33-消息：系统加载当天用户所需时间:6.9854ms
+
+
+Time:2016/8/23 10:18:33-The ranking refresh is start...
+
+
+Time:2016/8/23 10:18:44-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/8/23 10:18:44-The ranking refresh is end.
+
+
+Time:2016/8/23 10:18:44-消息：系统全局运行环境加载所需时间:13304.5854ms
+
+
+10:18:44 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:21:21 Server is starting...
+10:21:29 script compiled successfully.
+10:21:29 Start checking table schema, please wait.
+10:21:29 Check table schema successfully.
+10:21:29 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:21:29-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:21:30-消息：系统加载单服配置所需时间:368.2032ms
+
+
+Time:2016/8/23 10:21:30-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/23 10:21:30-消息：系统加载当天用户所需时间:17.01ms
+
+
+Time:2016/8/23 10:21:30-The ranking refresh is start...
+
+
+Time:2016/8/23 10:21:30-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/8/23 10:21:30-The ranking refresh is end.
+
+
+Time:2016/8/23 10:21:30-消息：系统全局运行环境加载所需时间:408.4857ms
+
+
+10:21:30 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:28:47 Server is starting...
+10:28:55 script compiled successfully.
+10:28:55 Start checking table schema, please wait.
+10:28:55 Check table schema successfully.
+10:28:55 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:28:56-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:28:56-消息：系统加载单服配置所需时间:479.8201ms
+
+
+Time:2016/8/23 10:28:56-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/23 10:28:56-消息：系统加载当天用户所需时间:7.6578ms
+
+
+Time:2016/8/23 10:28:56-The ranking refresh is start...
+
+
+Time:2016/8/23 10:28:56-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/8/23 10:28:56-The ranking refresh is end.
+
+
+Time:2016/8/23 10:28:56-消息：系统全局运行环境加载所需时间:512.3574ms
+
+
+10:28:56 Server has started successfully!
+# Server is listening...
+10:39:00 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:46:10 Server is starting...
+10:46:18 script compiled successfully.
+10:46:18 Start checking table schema, please wait.
+10:46:18 Check table schema successfully.
+10:46:18 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:46:18-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:46:19-消息：系统加载单服配置所需时间:385.6502ms
+
+
+Time:2016/8/23 10:46:19-消息：系统加载当天用户数:3/最大:100
+
+
+Time:2016/8/23 10:46:19-消息：系统加载当天用户所需时间:94.855ms
+
+
+Time:2016/8/23 10:46:19-The ranking refresh is start...
+
+
+Time:2016/8/23 10:46:23-Trace>>The CombatRanking has be loaded error:System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“GameServer.Script.Model.Config.UserCombatData”。
+   在 GameServer.CsScript.Com.CombatRanking.GetCacheList() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\CombatRanking.cs:行号 117
+   在 ZyGames.Framework.Game.Com.Rank.Ranking`1.InitializeData()
+
+
+Time:2016/8/23 10:46:23-The ranking refresh is end.
+
+
+Time:2016/8/23 10:46:31-消息：系统全局运行环境加载所需时间:12257.4552ms
+
+
+10:46:31 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:50:31 Server is starting...
+10:50:38 script compiled successfully.
+10:50:38 Start checking table schema, please wait.
+10:50:39 Check table schema successfully.
+10:50:39 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:50:39-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:50:39-消息：系统加载单服配置所需时间:336.2033ms
+
+
+Time:2016/8/23 10:50:39-消息：系统加载当天用户数:3/最大:100
+
+
+Time:2016/8/23 10:50:39-消息：系统加载当天用户所需时间:69.6295ms
+
+
+Time:2016/8/23 10:50:39-The ranking refresh is start...
+
+
+Time:2016/8/23 10:50:47-Trace>>The CombatRanking has be loaded error:System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“GameServer.Script.Model.Config.UserCombatData”。
+   在 GameServer.CsScript.Com.CombatRanking.GetCacheList() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\CombatRanking.cs:行号 117
+   在 ZyGames.Framework.Game.Com.Rank.Ranking`1.InitializeData()
+
+
+Time:2016/8/23 10:50:47-The ranking refresh is end.
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:54:56 Server is starting...
+10:55:03 script compiled successfully.
+10:55:03 Start checking table schema, please wait.
+10:55:03 Check table schema successfully.
+10:55:03 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 10:55:03-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 10:55:04-消息：系统加载单服配置所需时间:362.7407ms
+
+
+Time:2016/8/23 10:55:04-消息：系统加载当天用户数:3/最大:100
+
+
+Time:2016/8/23 10:55:04-消息：系统加载当天用户所需时间:88.1454ms
+
+
+Time:2016/8/23 10:55:04-The ranking refresh is start...
+
+

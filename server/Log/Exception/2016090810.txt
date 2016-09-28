@@ -1,0 +1,29 @@
+Time:2016/9/8 10:35:41-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 89
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 76
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/9/8 10:36:29-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\ConfigModel\Config_Task.cs, Line:62
+Message:未能找到类型或命名空间名称“TaskAwardType”(是否缺少 using 指令或程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\ConfigModel\Config_Task.cs, Line:64
+Message:未能找到类型或命名空间名称“TaskAwardType”(是否缺少 using 指令或程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\ConfigModel\Config_Task.cs, Line:81
+Message:未能找到类型或命名空间名称“TaskAwardType”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/9/8 10:36:29-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 304
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 276
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 86
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptRuntimeDomain.cs:行号 113
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 160
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 243
+
+

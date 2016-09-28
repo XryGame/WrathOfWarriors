@@ -1,0 +1,173 @@
+﻿using GameServer.CsScript.Com;
+using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.Model.Config;
+using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
+using GameServer.Script.Model.LogModel;
+using System;
+using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
+using ZyGames.Framework.Game.Com.Rank;
+using ZyGames.Framework.Game.Context;
+using ZyGames.Framework.Game.Contract;
+using ZyGames.Framework.Game.Contract.Action;
+using ZyGames.Framework.Game.Lang;
+using ZyGames.Framework.Game.Service;
+using ZyGames.Framework.Net;
+using ZyGames.Framework.RPC.Sockets;
+
+namespace GameServer.CsScript.Action
+{
+
+    /// <summary>
+    /// 1005_创建角色
+    /// </summary>
+    public class Action1005 : RegisterAction
+    {
+        private int looksid;
+        public Action1005(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1005, actionGetter)
+        {
+            IsWebSocket = true;
+            actionGetter.OpCode = OpCode.Text;
+        }
+
+        protected override bool GetActionParam()
+        {
+            if (httpGet.GetInt("LooksId", ref looksid))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        protected override bool CreateUserRole(out IUser user)
+        {
+            user = null;
+            GameUser gameUser = UserHelper.FindUser(UserId);
+            if (gameUser == null)
+            {
+                var roleFunc = new RoleFunc();
+                string msg;
+
+                if (roleFunc.VerifyRange(UserName, out msg) ||
+                    roleFunc.VerifyKeyword(UserName, out msg) ||
+                    roleFunc.IsExistNickName(UserName, out msg))
+                {
+                    ErrorCode = Language.Instance.ErrorCode;
+                    ErrorInfo = msg;
+                    return false;
+                }
+                gameUser = CreateRole();
+                roleFunc.OnCreateAfter(gameUser);
+            }
+            user = new SessionUser(gameUser);
+            UserLoginLog userLoginLog = new UserLoginLog();
+            userLoginLog.UserId = UserId.ToString();
+            userLoginLog.SessionID = Sid;
+            userLoginLog.MobileType = MobileType;
+            userLoginLog.ScreenX = ScreenX;
+            userLoginLog.ScreenY = ScreenY;
+            userLoginLog.RetailId = RetailID;
+            userLoginLog.AddTime = DateTime.Now;
+            userLoginLog.State = LoginStatus.Logined;
+            userLoginLog.DeviceID = DeviceID;
+            userLoginLog.Ip = GetRealIP();
+            userLoginLog.Pid = gameUser.Pid;
+            userLoginLog.UserLv = gameUser.UserLv;
+            var sender = DataSyncManager.GetDataSender();
+            sender.Send(new[] { userLoginLog });
+
+            return true;
+        }
+
+        private GameUser CreateRole()
+        {
+            GameUser user = new GameUser(UserId);
+            user.SessionID = Sid;
+            user.Pid = Pid;
+            user.RetailID = RetailID;
+            user.NickName = UserName;
+            user.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
+            user.UserStage = 1;
+            user.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
+            user.Vit = ConfigEnvSet.GetInt("User.InitVit");
+            user.VipLv = ConfigEnvSet.GetInt("User.VipLv");
+            user.LooksId = looksid;
+            user.UserStatus = UserStatus.Normal;
+            user.LoginDate = DateTime.Now;
+            user.CreateDate = DateTime.Now;
+            //user.ClassData = new UserClassData();
+            //user.StudyTaskData = new UserStudyTaskData();
+            //user.ExerciseTaskData = new UserExerciseTaskData();
+            //user.ExpData = new UserExpData();
+            //user.CombatData = new UserCombatData();
+            user.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
+            user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
+
+            //user.FriendsData = new UserFriendsData();
+            user.RefreshFightValue();
+
+            var cacheSet = new PersonalCacheStruct<GameUser>();
+            cacheSet.Add(user);
+            cacheSet.Update();
+
+            UserHelper.RestoreUserData(UserId);
+
+
+
+            Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            UserRank rankInfo;
+            int rankID = 0;
+            if (ranking.TryGetRankNo(m => m.UserID == user.UserID, out rankID))
+            {
+                rankInfo = ranking.Find(s => s.UserID == user.UserID);
+                //ContextUser.RankID = rankID;
+            }
+            else
+            {
+                rankInfo = new UserRank()
+                {
+                    UserID = user.UserID,
+                    NickName = user.NickName,
+                    UserLv = user.UserLv,
+                    IsOnline = user.IsOnline,
+                    RankId = int.MaxValue,
+                    FightingValue = user.FightingValue,
+                    RankDate = DateTime.Now,
+                };
+                ranking.TryAppend(rankInfo);
+            }
+
+            //增加初始背包、玩家任务表、玩家成就表
+            //var itemCacheSet = new PersonalCacheStruct<UserItemPackage>();
+            //itemCacheSet.Add(new UserItemPackage(UserId));
+            //itemCacheSet.Update();
+            //var taskCacheSet = new PersonalCacheStruct<UserTask>();
+            //taskCacheSet.Add(new UserTask(UserId));
+            //taskCacheSet.Update();
+            //var achieveCacheSet = new PersonalCacheStruct<UserAchieve>();
+            //achieveCacheSet.Add(new UserAchieve(UserId));
+            //achieveCacheSet.Update();
+            //UserDailyRestrain restrain = new UserDailyRestrain(UserId);
+            //restrain.RefreshDate = DateTime.Now.AddDays(-1);
+            //var restrainCacheSet = new PersonalCacheStruct<UserDailyRestrain>();
+            //restrainCacheSet.Add(restrain);
+            //restrainCacheSet.Update();
+            return user;
+        }
+
+        protected override string BuildJsonPack()
+        {
+            ResultData resultData = new ResultData()
+            {
+                MsgId = actionGetter.GetMsgId(),
+                ActionId = actionGetter.GetActionId(),
+                ErrorInfo = "",
+            };
+            return MathUtils.ToJson(resultData);
+        }
+
+    }
+}

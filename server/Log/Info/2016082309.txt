@@ -1,0 +1,235 @@
+09:00:00 script compiled successfully.
+09:00:00 Start checking table schema, please wait.
+09:00:00 Check table schema successfully.
+09:00:00 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 9:00:00-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:00:01-消息：系统加载单服配置所需时间:365.6439ms
+
+
+Time:2016/8/23 9:00:01-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/23 9:00:01-消息：系统加载当天用户所需时间:71.0287ms
+
+
+Time:2016/8/23 9:00:01-The ranking refresh is start...
+
+
+Time:2016/8/23 9:00:01-Trace>>The CombatRanking has be loaded, count:5
+
+
+Time:2016/8/23 9:00:01-The ranking refresh is end.
+
+
+Time:2016/8/23 9:00:01-消息：系统全局运行环境加载所需时间:460.3954ms
+
+
+09:00:01 Server has started successfully!
+# Server is listening...
+09:10:10 Clear expired cache end.
+09:20:11 Clear expired cache end.
+09:30:11 Clear expired cache end.
+09:40:12 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:40:51 Server is starting...
+09:40:59 script compiled successfully.
+09:40:59 Start checking table schema, please wait.
+09:40:59 Check table schema successfully.
+09:41:00 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 9:41:00-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:41:00-消息：系统加载单服配置所需时间:377.6524ms
+
+
+Time:2016/8/23 9:41:00-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:41:00-消息：系统加载当天用户所需时间:95.7659ms
+
+
+Time:2016/8/23 9:41:00-The ranking refresh is start...
+
+
+Time:2016/8/23 9:41:00-Trace>>The CombatRanking has be loaded, count:7
+
+
+Time:2016/8/23 9:41:00-The ranking refresh is end.
+
+
+Time:2016/8/23 9:41:00-消息：系统全局运行环境加载所需时间:510.9949ms
+
+
+09:41:00 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:49:46 Server is starting...
+09:49:53 script compiled successfully.
+09:49:53 Start checking table schema, please wait.
+09:49:53 Check table schema successfully.
+09:49:53 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/23 9:49:53-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:49:54-消息：系统加载单服配置所需时间:459.4366ms
+
+
+Time:2016/8/23 9:49:54-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:49:54-消息：系统加载当天用户所需时间:121.9491ms
+
+
+Time:2016/8/23 9:49:54-The ranking refresh is start...
+
+
+Time:2016/8/23 9:49:54-Trace>>The CombatRanking has be loaded, count:7
+
+
+Time:2016/8/23 9:49:54-The ranking refresh is end.
+
+
+Time:2016/8/23 9:49:54-消息：系统全局运行环境加载所需时间:621.0901ms
+
+
+09:49:54 Server has started successfully!
+# Server is listening...
+09:50:38 model script compile start...
+Time:2016/8/23 9:50:38-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:50:39-Update before Model script OK.
+
+
+09:52:14 model script compile start...
+Time:2016/8/23 9:52:14-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:52:14-Update before Model script OK.
+
+
+09:52:15 script compiled successfully.
+09:52:15 Start checking table schema, please wait.
+09:52:15 Check table schema successfully.
+Time:2016/8/23 9:52:15-Update Model script success.
+
+
+09:52:15 model script compiled successfully.
+Time:2016/8/23 9:52:15-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:52:15-消息：系统加载单服配置所需时间:266.8789ms
+
+
+Time:2016/8/23 9:52:15-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:52:15-消息：系统加载当天用户所需时间:49.4767ms
+
+
+09:52:37 model script compile start...
+Time:2016/8/23 9:52:37-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:52:37-Update before Model script OK.
+
+
+09:52:38 script compiled successfully.
+09:52:38 Start checking table schema, please wait.
+09:52:38 Check table schema successfully.
+Time:2016/8/23 9:52:38-Update Model script success.
+
+
+09:52:38 model script compiled successfully.
+Time:2016/8/23 9:52:38-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:52:39-消息：系统加载单服配置所需时间:302.1104ms
+
+
+Time:2016/8/23 9:52:39-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:52:39-消息：系统加载当天用户所需时间:51.2693ms
+
+
+09:52:44 model script compile start...
+Time:2016/8/23 9:52:44-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:52:44-Update before Model script OK.
+
+
+09:52:45 script compiled successfully.
+09:52:45 Start checking table schema, please wait.
+09:52:45 Check table schema successfully.
+Time:2016/8/23 9:52:45-Update Model script success.
+
+
+09:52:45 model script compiled successfully.
+Time:2016/8/23 9:52:45-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:52:46-消息：系统加载单服配置所需时间:233.8151ms
+
+
+Time:2016/8/23 9:52:46-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:52:46-消息：系统加载当天用户所需时间:49.732ms
+
+
+09:53:19 model script compile start...
+Time:2016/8/23 9:53:19-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:53:19-Update before Model script OK.
+
+
+09:53:28 model script compile start...
+Time:2016/8/23 9:53:28-Wait for the update before Model script...
+
+
+Time:2016/8/23 9:53:28-Update before Model script OK.
+
+
+09:53:28 script compiled successfully.
+09:53:28 Start checking table schema, please wait.
+09:53:29 Check table schema successfully.
+Time:2016/8/23 9:53:29-Update Model script success.
+
+
+09:53:29 model script compiled successfully.
+Time:2016/8/23 9:53:29-消息：系统加载单服配置开始...
+
+
+Time:2016/8/23 9:53:29-消息：系统加载单服配置所需时间:290.4991ms
+
+
+Time:2016/8/23 9:53:29-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/8/23 9:53:29-消息：系统加载当天用户所需时间:68.7409ms
+
+

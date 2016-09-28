@@ -1,0 +1,30 @@
+Time:2016/8/11 14:42:30-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 101
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_43d438e76cd946708f209a0a23e1ca67%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3D5bdc4597f76c6ed2f64a68213777e121
+
+
+Time:2016/8/11 14:44:00-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 101
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_c04f1e3d443949ae83083e6810b492e2%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3D2f03517fea70e8760197885016de90cd
+
+
+Time:2016/8/11 14:45:45-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 101
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_09fd8d3801ab4304b1a0af7ac09492e8%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3Da2ace7f8a993c22ec8a53f706169cf50
+
+
+Time:2016/8/11 14:47:00-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 101
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_0e4aca708990403ab6149a5c435362f8%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3De38a5097b9d8c8cbed420e1c8a4ac6b6
+
+
+Time:2016/8/11 14:50:06-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 102
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_d787efe076af4040b586bf8a4ef9a44d%7C1%7C1%26Uid%3D1%26St%3Dst%26ActionId%3D1008%26sign%3D9d796091338dcc51132b3f03aa37b517
+
+

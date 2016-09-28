@@ -1,0 +1,108 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:33:16 Server is starting...
+11:33:16 Server failed to start error:Redis server is using "169.254.15.3" game server, it's path:E:\ServerTools\code\newbee\server\server\
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:34:57 Server is starting...
+11:35:03 script compiled successfully.
+11:35:04 Start checking table schema, please wait.
+11:35:04 Check table schema successfully.
+11:35:04 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/27 11:35:04-消息：系统加载单服配置开始...
+
+
+Time:2016/7/27 11:35:04-消息：系统加载单服配置所需时间:0.6241ms
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:41:45 Server is starting...
+11:41:51 script compiled successfully.
+11:41:51 Start checking table schema, please wait.
+11:41:52 Check table schema successfully.
+11:41:52 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/27 11:41:52-消息：系统加载单服配置开始...
+
+
+Time:2016/7/27 11:41:52-消息：系统加载单服配置所需时间:0.422ms
+
+
+Time:2016/7/27 11:41:52-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/7/27 11:41:52-消息：系统加载当天用户所需时间:30.2208ms
+
+
+Time:2016/7/27 11:41:52-The ranking refresh is start...
+
+
+Time:2016/7/27 11:41:52-The ranking refresh is end.
+
+
+Time:2016/7/27 11:41:52-消息：系统全局运行环境加载所需时间:37.4292ms
+
+
+11:41:52 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 0   Server: 0
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:52:10 Server is starting...
+11:52:17 script compiled successfully.
+11:52:17 Start checking table schema, please wait.
+11:52:17 Check table schema successfully.
+11:52:17 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/7/27 11:52:17-消息：系统加载单服配置开始...
+
+
+Time:2016/7/27 11:52:17-消息：系统加载单服配置所需时间:0.5566ms
+
+
+Time:2016/7/27 11:52:17-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/7/27 11:52:17-消息：系统加载当天用户所需时间:21.5164ms
+
+
+Time:2016/7/27 11:52:17-The ranking refresh is start...
+
+
+Time:2016/7/27 11:52:17-The ranking refresh is end.
+
+
+Time:2016/7/27 11:52:17-消息：系统全局运行环境加载所需时间:33.6023ms
+
+
+11:52:17 Server has started successfully!
+# Server is listening...

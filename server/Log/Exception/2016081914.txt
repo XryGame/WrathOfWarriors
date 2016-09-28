@@ -1,0 +1,88 @@
+Time:2016/8/19 14:11:23-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D8%26Sid%3Ds_b3b0c3b4cb6143aa86dcb359b33272b1%7C1%7C1%26Uid%3D4%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D5479e52c830bdcadba479f42d3e9b963
+
+
+Time:2016/8/19 14:11:28-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D9%26Sid%3Ds_b3b0c3b4cb6143aa86dcb359b33272b1%7C1%7C1%26Uid%3D4%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Dd88bd0ce211be35d4e9c45383b2c491c
+
+
+Time:2016/8/19 14:11:31-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D10%26Sid%3Ds_b3b0c3b4cb6143aa86dcb359b33272b1%7C1%7C1%26Uid%3D4%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D414930e538c0922959760b4cc6cde94c
+
+
+Time:2016/8/19 14:11:34-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D11%26Sid%3Ds_b3b0c3b4cb6143aa86dcb359b33272b1%7C1%7C1%26Uid%3D4%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Dc6af408098b320611ff26ce4bf747af3
+
+
+Time:2016/8/19 14:11:34-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D12%26Sid%3Ds_b3b0c3b4cb6143aa86dcb359b33272b1%7C1%7C1%26Uid%3D4%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Daee2d50819a1848f607a52af7727b473
+
+
+Time:2016/8/19 14:12:35-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D12%26Sid%3Ds_e7f611839a2847a0b48f2cb21c020938%7C1%7C1%26Uid%3D5%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D853184cf1fafd66741bc1eb9397e2a00
+
+
+Time:2016/8/19 14:52:34-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/19 14:52:35-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 85
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 72
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 45
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/19 14:52:52-Trace>>EntitySync queue key GameServer.Script.Model.DataModel.TUser_10000|6 faild object is null.
+
+
+Time:2016/8/19 14:52:56-Trace>>EntitySync queue key GameServer.Script.Model.DataModel.TUser_10000|6 faild object is null.
+
+
+Time:2016/8/19 14:53:32-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/19 14:53:32-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 85
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 72
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 45
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

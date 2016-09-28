@@ -1,0 +1,567 @@
+10:05:01 Clear expired cache end.
+10:10:33 model script compile start...
+Time:2016/8/15 10:10:33-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:10:33-Update before Model script OK.
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:11:15 Server is starting...
+10:11:21 Server failed to start error:The model script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:11:50 Server is starting...
+10:11:57 script compiled successfully.
+10:11:57 Start checking table schema, please wait.
+10:11:57 Check table schema successfully.
+10:11:57 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/15 10:11:57-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:11:57-消息：系统加载单服配置所需时间:273.6403ms
+
+
+Time:2016/8/15 10:11:57-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/8/15 10:11:58-消息：系统加载当天用户所需时间:115.2288ms
+
+
+Time:2016/8/15 10:11:58-The ranking refresh is start...
+
+
+Time:2016/8/15 10:11:58-The ranking refresh is end.
+
+
+Time:2016/8/15 10:11:58-消息：系统全局运行环境加载所需时间:396.6349ms
+
+
+10:11:58 Server has started successfully!
+# Server is listening...
+10:19:29 model script compile start...
+Time:2016/8/15 10:19:29-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:19:29-Update before Model script OK.
+
+
+10:19:29 script compiled successfully.
+10:19:29 Start checking table schema, please wait.
+10:19:31 Check table schema successfully.
+Time:2016/8/15 10:19:32-Update Model script success.
+
+
+10:19:32 model script compiled successfully.
+Time:2016/8/15 10:19:32-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:19:32-消息：系统加载单服配置所需时间:117.4366ms
+
+
+Time:2016/8/15 10:19:32-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:19:32-消息：系统加载当天用户所需时间:37.9062ms
+
+
+Time:2016/8/15 10:19:32-The ranking refresh is start...
+
+
+Time:2016/8/15 10:19:32-The ranking refresh is end.
+
+
+Time:2016/8/15 10:19:32-消息：系统全局运行环境加载所需时间:160.0256ms
+
+
+10:20:54 model script compile start...
+Time:2016/8/15 10:20:54-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:20:54-Update before Model script OK.
+
+
+10:20:55 script compiled successfully.
+10:20:55 Start checking table schema, please wait.
+10:20:55 Check table schema successfully.
+Time:2016/8/15 10:20:55-Update Model script success.
+
+
+10:20:55 model script compiled successfully.
+Time:2016/8/15 10:20:55-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:20:55-消息：系统加载单服配置所需时间:126.8525ms
+
+
+Time:2016/8/15 10:20:55-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:20:55-消息：系统加载当天用户所需时间:36.0877ms
+
+
+Time:2016/8/15 10:20:55-The ranking refresh is start...
+
+
+Time:2016/8/15 10:20:55-The ranking refresh is end.
+
+
+Time:2016/8/15 10:20:55-消息：系统全局运行环境加载所需时间:166.6275ms
+
+
+10:22:00 Clear expired cache end.
+10:24:17 model script compile start...
+Time:2016/8/15 10:24:17-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:24:17-Update before Model script OK.
+
+
+10:24:18 script compiled successfully.
+10:24:18 Start checking table schema, please wait.
+10:24:18 Check table schema successfully.
+Time:2016/8/15 10:24:18-Update Model script success.
+
+
+10:24:18 model script compiled successfully.
+Time:2016/8/15 10:24:18-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:24:18-消息：系统加载单服配置所需时间:110.1815ms
+
+
+Time:2016/8/15 10:24:18-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:24:18-消息：系统加载当天用户所需时间:41.6811ms
+
+
+Time:2016/8/15 10:24:18-The ranking refresh is start...
+
+
+Time:2016/8/15 10:24:18-The ranking refresh is end.
+
+
+Time:2016/8/15 10:24:18-消息：系统全局运行环境加载所需时间:156.4634ms
+
+
+10:24:34 model script compile start...
+Time:2016/8/15 10:24:34-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:24:34-Update before Model script OK.
+
+
+10:24:35 script compiled successfully.
+10:24:35 Start checking table schema, please wait.
+10:24:35 Check table schema successfully.
+Time:2016/8/15 10:24:35-Update Model script success.
+
+
+10:24:35 model script compiled successfully.
+Time:2016/8/15 10:24:35-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:24:35-消息：系统加载单服配置所需时间:139.2643ms
+
+
+Time:2016/8/15 10:24:35-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:24:35-消息：系统加载当天用户所需时间:37.0801ms
+
+
+Time:2016/8/15 10:24:35-The ranking refresh is start...
+
+
+Time:2016/8/15 10:24:35-The ranking refresh is end.
+
+
+Time:2016/8/15 10:24:35-消息：系统全局运行环境加载所需时间:181.1563ms
+
+
+10:24:40 model script compile start...
+Time:2016/8/15 10:24:40-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:24:40-Update before Model script OK.
+
+
+10:24:40 script compiled successfully.
+10:24:40 Start checking table schema, please wait.
+10:24:40 Check table schema successfully.
+Time:2016/8/15 10:24:40-Update Model script success.
+
+
+10:24:40 model script compiled successfully.
+Time:2016/8/15 10:24:40-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:24:40-消息：系统加载单服配置所需时间:111.6234ms
+
+
+Time:2016/8/15 10:24:40-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:24:40-消息：系统加载当天用户所需时间:37.4695ms
+
+
+Time:2016/8/15 10:24:40-The ranking refresh is start...
+
+
+Time:2016/8/15 10:24:40-The ranking refresh is end.
+
+
+Time:2016/8/15 10:24:40-消息：系统全局运行环境加载所需时间:153.1919ms
+
+
+10:26:29 model script compile start...
+Time:2016/8/15 10:26:29-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:26:29-Update before Model script OK.
+
+
+10:29:38 model script compile start...
+Time:2016/8/15 10:29:38-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:29:38-Update before Model script OK.
+
+
+10:29:50 model script compile start...
+Time:2016/8/15 10:29:50-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:29:50-Update before Model script OK.
+
+
+10:30:33 model script compile start...
+Time:2016/8/15 10:30:33-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:30:33-Update before Model script OK.
+
+
+10:30:40 model script compile start...
+Time:2016/8/15 10:30:40-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:30:40-Update before Model script OK.
+
+
+10:31:08 model script compile start...
+Time:2016/8/15 10:31:08-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:31:08-Update before Model script OK.
+
+
+10:31:09 script compiled successfully.
+10:31:09 Start checking table schema, please wait.
+10:31:12 Check table schema successfully.
+Time:2016/8/15 10:31:12-Update Model script success.
+
+
+10:31:12 model script compiled successfully.
+Time:2016/8/15 10:31:12-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:31:12-消息：系统加载单服配置所需时间:114.3126ms
+
+
+Time:2016/8/15 10:31:12-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:31:12-消息：系统加载当天用户所需时间:43.6392ms
+
+
+Time:2016/8/15 10:31:12-The ranking refresh is start...
+
+
+Time:2016/8/15 10:31:12-The ranking refresh is end.
+
+
+Time:2016/8/15 10:31:12-消息：系统全局运行环境加载所需时间:161.5461ms
+
+
+10:32:00 Clear expired cache end.
+10:32:53 model script compile start...
+Time:2016/8/15 10:32:53-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:32:53-Update before Model script OK.
+
+
+10:32:58 model script compile start...
+Time:2016/8/15 10:32:58-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:32:58-Update before Model script OK.
+
+
+10:32:58 script compiled successfully.
+10:32:58 Start checking table schema, please wait.
+10:32:59 Check table schema successfully.
+Time:2016/8/15 10:32:59-Update Model script success.
+
+
+10:32:59 model script compiled successfully.
+Time:2016/8/15 10:32:59-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:32:59-消息：系统加载单服配置所需时间:128.6787ms
+
+
+Time:2016/8/15 10:32:59-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:32:59-消息：系统加载当天用户所需时间:38.9816ms
+
+
+Time:2016/8/15 10:32:59-The ranking refresh is start...
+
+
+Time:2016/8/15 10:32:59-The ranking refresh is end.
+
+
+Time:2016/8/15 10:32:59-消息：系统全局运行环境加载所需时间:172.3745ms
+
+
+10:33:06 model script compile start...
+Time:2016/8/15 10:33:06-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:33:06-Update before Model script OK.
+
+
+10:33:07 script compiled successfully.
+10:33:07 Start checking table schema, please wait.
+10:33:07 Check table schema successfully.
+Time:2016/8/15 10:33:07-Update Model script success.
+
+
+10:33:07 model script compiled successfully.
+Time:2016/8/15 10:33:07-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:33:07-消息：系统加载单服配置所需时间:102.4416ms
+
+
+Time:2016/8/15 10:33:07-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:33:07-消息：系统加载当天用户所需时间:44.2416ms
+
+
+Time:2016/8/15 10:33:07-The ranking refresh is start...
+
+
+Time:2016/8/15 10:33:07-The ranking refresh is end.
+
+
+Time:2016/8/15 10:33:07-消息：系统全局运行环境加载所需时间:151.524ms
+
+
+10:34:44 csharp script compile start...
+10:34:45 csharp script compiled successfully.
+10:42:01 Clear expired cache end.
+10:52:01 Clear expired cache end.
+10:53:25 model script compile start...
+Time:2016/8/15 10:53:25-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:53:25-Update before Model script OK.
+
+
+10:53:25 script compiled successfully.
+10:53:25 Start checking table schema, please wait.
+10:53:26 Check table schema successfully.
+Time:2016/8/15 10:53:26-Update Model script success.
+
+
+10:53:26 model script compiled successfully.
+Time:2016/8/15 10:53:26-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:53:27-消息：系统加载单服配置所需时间:138.7303ms
+
+
+Time:2016/8/15 10:53:27-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:53:27-消息：系统加载当天用户所需时间:41.7253ms
+
+
+Time:2016/8/15 10:53:27-The ranking refresh is start...
+
+
+Time:2016/8/15 10:53:27-The ranking refresh is end.
+
+
+Time:2016/8/15 10:53:27-消息：系统全局运行环境加载所需时间:185.8574ms
+
+
+10:53:36 model script compile start...
+Time:2016/8/15 10:53:36-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:53:36-Update before Model script OK.
+
+
+10:53:37 script compiled successfully.
+10:53:37 Start checking table schema, please wait.
+10:53:37 Check table schema successfully.
+Time:2016/8/15 10:53:37-Update Model script success.
+
+
+10:53:37 model script compiled successfully.
+Time:2016/8/15 10:53:37-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:53:37-消息：系统加载单服配置所需时间:135.8498ms
+
+
+Time:2016/8/15 10:53:37-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:53:37-消息：系统加载当天用户所需时间:51.7905ms
+
+
+Time:2016/8/15 10:53:37-The ranking refresh is start...
+
+
+Time:2016/8/15 10:53:37-The ranking refresh is end.
+
+
+Time:2016/8/15 10:53:37-消息：系统全局运行环境加载所需时间:194.2548ms
+
+
+10:53:45 model script compile start...
+Time:2016/8/15 10:53:45-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:53:45-Update before Model script OK.
+
+
+10:53:45 script compiled successfully.
+10:53:45 Start checking table schema, please wait.
+10:53:45 Check table schema successfully.
+Time:2016/8/15 10:53:45-Update Model script success.
+
+
+10:53:45 model script compiled successfully.
+Time:2016/8/15 10:53:45-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:53:46-消息：系统加载单服配置所需时间:136.246ms
+
+
+Time:2016/8/15 10:53:46-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:53:46-消息：系统加载当天用户所需时间:47.9864ms
+
+
+Time:2016/8/15 10:53:46-The ranking refresh is start...
+
+
+Time:2016/8/15 10:53:46-The ranking refresh is end.
+
+
+Time:2016/8/15 10:53:46-消息：系统全局运行环境加载所需时间:190.2093ms
+
+
+10:53:47 model script compile start...
+Time:2016/8/15 10:53:47-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:53:47-Update before Model script OK.
+
+
+10:53:48 script compiled successfully.
+10:53:48 Start checking table schema, please wait.
+10:53:48 Check table schema successfully.
+Time:2016/8/15 10:53:48-Update Model script success.
+
+
+10:53:48 model script compiled successfully.
+Time:2016/8/15 10:53:48-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:53:48-消息：系统加载单服配置所需时间:115.1843ms
+
+
+Time:2016/8/15 10:53:48-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:53:48-消息：系统加载当天用户所需时间:42.7513ms
+
+
+Time:2016/8/15 10:53:48-The ranking refresh is start...
+
+
+Time:2016/8/15 10:53:48-The ranking refresh is end.
+
+
+Time:2016/8/15 10:53:48-消息：系统全局运行环境加载所需时间:163.7763ms
+
+
+10:54:37 model script compile start...
+Time:2016/8/15 10:54:37-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:54:37-Update before Model script OK.
+
+
+10:55:13 model script compile start...
+Time:2016/8/15 10:55:13-Wait for the update before Model script...
+
+
+Time:2016/8/15 10:55:13-Update before Model script OK.
+
+
+10:55:14 script compiled successfully.
+10:55:14 Start checking table schema, please wait.
+10:55:14 Check table schema successfully.
+Time:2016/8/15 10:55:14-Update Model script success.
+
+
+10:55:14 model script compiled successfully.
+Time:2016/8/15 10:55:14-消息：系统加载单服配置开始...
+
+
+Time:2016/8/15 10:55:14-消息：系统加载单服配置所需时间:117.2226ms
+
+
+Time:2016/8/15 10:55:14-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016/8/15 10:55:14-消息：系统加载当天用户所需时间:40.1301ms
+
+
+Time:2016/8/15 10:55:14-The ranking refresh is start...
+
+
+Time:2016/8/15 10:55:14-The ranking refresh is end.
+
+
+Time:2016/8/15 10:55:14-消息：系统全局运行环境加载所需时间:164.2969ms
+
+

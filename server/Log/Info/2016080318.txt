@@ -1,0 +1,85 @@
+18:00:01 Clear expired cache end.
+18:10:01 Clear expired cache end.
+18:10:31 Server is stopping, please wait.
+18:10:31 Server has stoped successfully!
+18:10:31 Server has canceled!
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+18:11:08 Server is starting...
+18:11:15 script compiled successfully.
+18:11:15 Start checking table schema, please wait.
+18:11:15 Check table schema successfully.
+18:11:15 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/3 18:11:15-消息：系统加载单服配置开始...
+
+
+Time:2016/8/3 18:11:15-消息：系统加载单服配置所需时间:0.3536ms
+
+
+Time:2016/8/3 18:11:15-消息：系统加载当天用户数:10/最大:100
+
+
+Time:2016/8/3 18:11:15-消息：系统加载当天用户所需时间:125.4531ms
+
+
+Time:2016/8/3 18:11:15-The ranking refresh is start...
+
+
+Time:2016/8/3 18:11:15-The ranking refresh is end.
+
+
+Time:2016/8/3 18:11:15-消息：系统全局运行环境加载所需时间:131.9726ms
+
+
+18:11:15 Server has started successfully!
+# Server is listening...
+18:11:18 Server is stopping, please wait.
+18:11:18 Server has stoped successfully!
+18:11:18 Server has canceled!
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+18:11:34 Server is starting...
+18:11:41 script compiled successfully.
+18:11:41 Start checking table schema, please wait.
+18:11:41 Check table schema successfully.
+18:11:41 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/3 18:11:41-消息：系统加载单服配置开始...
+
+
+Time:2016/8/3 18:11:41-消息：系统加载单服配置所需时间:0.4941ms
+
+
+Time:2016/8/3 18:11:41-消息：系统加载当天用户数:10/最大:100
+
+
+Time:2016/8/3 18:11:41-消息：系统加载当天用户所需时间:134.9297ms
+
+
+Time:2016/8/3 18:11:41-The ranking refresh is start...
+
+
+Time:2016/8/3 18:11:41-The ranking refresh is end.
+
+
+Time:2016/8/3 18:11:41-消息：系统全局运行环境加载所需时间:142.7498ms
+
+
+18:11:41 Server has started successfully!
+# Server is listening...
+18:22:00 Clear expired cache end.

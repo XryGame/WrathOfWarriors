@@ -1,0 +1,686 @@
+Time:2016-08-31 17:11:38:885-Trace>>Try load cache data:GameServer.Script.Model.DataModel.GameUser-4 57ms
+>>received count:1 time:37ms run:37ms
+>>Init cache: time:57ms run:20ms
+
+
+Time:2016-08-31 17:12:08:529-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45199, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:12:08:535-Trace>>Request login server 103ms
+>>GetResponse time:9ms run:9ms
+>>DoSuccess time:13ms run:4ms
+
+
+Time:2016-08-31 17:12:08:726-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45198, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:13:12:825-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45197, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:14:12:842-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45296, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:15:05:177-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45431, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:15:05:187-Trace>>Request login server 41218ms
+>>GetResponse time:13844ms run:13844ms
+>>DoSuccess time:41113ms run:27269ms
+
+
+Time:2016-08-31 17:16:12:874-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45513, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:17:12:912-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45612, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:18:36:060-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45361, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:18:36:081-Trace>>Request login server 27960ms
+>>GetResponse time:2047ms run:2047ms
+>>DoSuccess time:2846ms run:799ms
+
+
+Time:2016-08-31 17:19:33:600-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45772, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:19:33:635-Trace>>Request login server 43592ms
+>>GetResponse time:1866ms run:1866ms
+>>DoSuccess time:19226ms run:17360ms
+
+
+Time:2016-08-31 17:21:35:019-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 45295, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:21:35:025-Trace>>Request login server 73790ms
+>>GetResponse time:0ms run:0ms
+>>DoSuccess time:0ms run:0ms
+
+
+Time:2016-08-31 17:21:35:121-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 46030, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:32:49:410-Trace>>Try load cache data:GameServer.Script.Model.DataModel.GameUser-0 29ms
+>>received count:0 time:27ms run:27ms
+>>Init cache: time:29ms run:2ms
+
+
+Time:2016-08-31 17:33:03:034-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47034, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:33:03:042-Trace>>Request login server 137ms
+>>GetResponse time:11ms run:11ms
+>>DoSuccess time:16ms run:5ms
+
+
+Time:2016-08-31 17:33:03:394-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47030, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:33:52:128-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47058, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:33:52:203-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47131, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:34:52:089-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47059, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:35:52:093-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47132, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:36:52:116-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47273, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:37:52:118-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47348, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:38:52:144-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47033, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:39:24:253-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47031, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:39:24:361-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47535, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:39:52:153-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47107, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:42:10:651-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47775, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:42:10:659-Trace>>Request login server 104ms
+>>GetResponse time:3ms run:3ms
+>>DoSuccess time:7ms run:4ms
+
+
+Time:2016-08-31 17:42:11:303-Trace>>Redis TryGetEntity GameServer.Script.Model.DataModel.ClassDataCache 438ms
+>>init time:0ms run:0ms
+>>redis get time:0ms run:0ms
+>>deserialize time:438ms run:438ms
+
+
+Time:2016-08-31 17:42:24:133-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47813, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:42:27:364-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47818, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:42:28:733-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47822, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:43:02:780-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47774, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:43:15:550-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47773, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:43:36:959-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47823, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:44:15:556-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 47776, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:45:06:473-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48071, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:45:06:481-Trace>>Request login server 149ms
+>>GetResponse time:17ms run:17ms
+>>DoSuccess time:23ms run:6ms
+
+
+Time:2016-08-31 17:45:06:902-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48085, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:45:30:151-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48087, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:45:58:230-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48070, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:45:58:301-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48161, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:46:12:520-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48048, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:47:14:096-Trace>>Try load cache data:GameServer.Script.Model.DataModel.GameUser-2 42ms
+>>received count:1 time:27ms run:27ms
+>>Init cache: time:42ms run:15ms
+
+
+Time:2016-08-31 17:47:24:977-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48254, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:47:24:983-Trace>>Request login server 104ms
+>>GetResponse time:8ms run:8ms
+>>DoSuccess time:12ms run:4ms
+
+
+Time:2016-08-31 17:47:52:923-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48218, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:48:48:707-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48253, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:48:48:717-Trace>>Request login server 175ms
+>>GetResponse time:0ms run:0ms
+>>DoSuccess time:0ms run:0ms
+
+
+Time:2016-08-31 17:49:47:259-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48263, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:49:47:417-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48262, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:50:30:218-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48308, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:50:37:391-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48536, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:51:30:228-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 48460, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.SaveTo(IList`1 sessions)
+
+
+Time:2016-08-31 17:56:32:310-Trace>>Try load cache data:GameServer.Script.Model.DataModel.GameUser-4 51ms
+>>received count:1 time:31ms run:31ms
+>>Init cache: time:51ms run:20ms
+
+
+Time:2016-08-31 17:56:51:712-Trace>>############,sessionRedisKey=__GLOBAL_SESSIONS,sid=2c9fea92e4d64fb18c3de34e159283e9
+
+
+Time:2016-08-31 17:56:52:476-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 49045, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:56:52:483-Trace>>Request login server 5026ms
+>>GetResponse time:8ms run:8ms
+>>DoSuccess time:12ms run:4ms
+
+
+Time:2016-08-31 17:57:25:504-Trace>>############,sessionRedisKey=__GLOBAL_SESSIONS,sid=b438c9f70bf646bda4891f76463ddea6
+
+
+Time:2016-08-31 17:57:26:493-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 49000, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:57:26:504-Trace>>Request login server 3255ms
+>>GetResponse time:0ms run:0ms
+>>DoSuccess time:0ms run:0ms
+
+
+Time:2016-08-31 17:59:11:517-Trace>>############,sessionRedisKey=__GLOBAL_SESSIONS, sid=1d904bf40e0847b0a7fb89decccc51e5, User={"UserId":2,"UserName":"Z129","AccessTime":"2016-08-31 17:56:53","Token":null,"IsLock":false,"IsOnlining":false,"ChatVesion":0,"TempTimeModify":"2016-08-31 17:56:53","ExpiredTime":"0001-01-01 00:00:00"}
+
+
+Time:2016-08-31 17:59:12:265-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 49258, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:59:12:280-Trace>>Request login server 3275ms
+>>GetResponse time:3ms run:3ms
+>>DoSuccess time:7ms run:4ms
+
+
+Time:2016-08-31 17:59:18:808-Trace>>GetRegPassport 118ms
+>>get pid time:1ms run:1ms
+>>new pid time:118ms run:117ms
+
+
+Time:2016-08-31 17:59:21:186-Trace>>############,sessionRedisKey=__GLOBAL_SESSIONS, sid=70452b20ab624ef7b95012525c25cfca, User={"UserId":6,"UserName":"Z130","AccessTime":"2016-08-31 17:59:18","Token":null,"IsLock":false,"IsOnlining":false,"ChatVesion":0,"TempTimeModify":"2016-08-31 17:59:18","ExpiredTime":"0001-01-01 00:00:00"}
+
+
+Time:2016-08-31 17:59:22:360-Trace>>Save session to redis faild,ServiceStack.Redis.RedisResponseException: wrong number of arguments for 'set' command, sPort: 49259, LastCommand: 
+   在 ServiceStack.Redis.RedisNativeClient.CreateResponseError(String error)
+   在 ServiceStack.Redis.RedisNativeClient.ExpectSuccess()
+   在 ServiceStack.Redis.Pipeline.QueuedRedisOperation.ProcessResult()
+   在 ServiceStack.Redis.RedisAllPurposePipeline.Flush()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(RedisClient client, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessPipeline(Action`1 action, RedisPoolSetting setting, Func`2[] pipelineActions)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.SetExpire(String[] keys, String[] values, Int32 expireSecond)
+   在 ZyGames.Framework.Game.Contract.GameSession.Expire(GameSession session, Int32 timeout)
+   在 ZyGames.Framework.Game.Contract.GameSession.OnChangedSave(GameSession session)
+
+
+Time:2016-08-31 17:59:22:368-Trace>>Request login server 3544ms
+>>GetResponse time:3ms run:3ms
+>>DoSuccess time:5ms run:2ms
+
+

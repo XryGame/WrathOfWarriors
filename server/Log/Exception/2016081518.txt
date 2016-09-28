@@ -1,0 +1,8 @@
+Time:2016/8/15 18:03:20-Trace>>Action1101 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Base.UserHelper.GetCurrentStageBaseExpValue(GameUser& gameUser, SubjectType type) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 59
+   在 GameServer.CsScript.Base.UserHelper.AdditionBaseExpValue(GameUser& gameUser, SubjectID sid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 182
+   在 GameServer.CsScript.Action.Action1101.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1101.cs:行号 160
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_570953211cde418e95d58752c4d4b2cd%7C1%7C1%26Uid%3D5%26St%3Dst%26ActionId%3D1101%26SubjectType%3D2%26sign%3D6913ef82aa0af47d50d1f0f1dd82af4e
+
+

@@ -1,0 +1,9 @@
+Time:2016/7/28 17:19:55-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1002%26MobileType%3D1%26GameType%3D0%26RetailID%3D0000%26sign%3D028299cc4512d428469e371acaac6e55] timeout 11552ms
+
+
+Time:2016/7/28 17:21:29-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1002%26MobileType%3D1%26GameType%3D0%26RetailID%3D0000%26ClientAppVersion%3D1.0%26DeviceID%3D6ebd2b0d-962a-4b81-996e-d2d86a442872%26ScreenX%3D0%26ScreenY%3D0%26sign%3De07a1e312b52b5a92d6f299dd0cf064b] timeout 25168ms
+
+
+Time:2016/7/28 17:23:48-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D3%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1002%26MobileType%3D1%26GameType%3D0%26RetailID%3D0000%26ClientAppVersion%3D1.0%26DeviceID%3Dfe1fd18c-7c71-4405-9bbf-43c4d842f892%26ScreenX%3D0%26ScreenY%3D0%26sign%3D85d16db6a54565aded8a5ead28302684] timeout 5272ms
+
+

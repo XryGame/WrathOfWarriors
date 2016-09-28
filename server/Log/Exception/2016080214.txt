@@ -1,0 +1,37 @@
+Time:2016/8/2 14:02:51-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D2%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1005%26UserName%3DMax%26Sex%3D0%26HeadID%3D%26RetailID%3D0000%26Pid%3DZ8%26MobileType%3D1%26ScreenX%3D0%26ScreenY%3D0%26ClientAppVersion%3D1.0%26DeviceID%3Dbd583ca3-99c9-4634-84b2-039547340ec4%26GameID%3D1%26ServerID%3D1%26sign%3D3639936d2cfcd4bf69068bcaa35f2d4d] timeout 6638ms
+
+
+Time:2016/8/2 14:47:35-Trace>>Action1005 error:Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “GameServer.CsScript.Locale.SimplifiedLanguage”未包含“St1005_NickNameOutRange”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 GameServer.CsScript.Com.RoleFunc.VerifyRange(String nickName, String& msg) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\RoleFunc.cs:行号 36
+   在 GameServer.CsScript.Action.Action1005.CreateUserRole(IUser& user) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1005.cs:行号 44
+   在 ZyGames.Framework.Game.Contract.Action.RegisterAction.TakeAction()
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId=2&Sid=s_542ecae68c7640cda0d367ce61514e75|1|1&Uid=6&St=st&ActionId=1005&UserName=Max&Sex=0&HeadID=&RetailID=0000&Pid=Z34&MobileType=1&ScreenX=0&ScreenY=0&ClientAppVersion=1.0&DeviceID=bf5a58fa-28fe-4ec0-b74f-0ce81126bb9c&GameID=1&ServerID=1&sign=7863d5650692bcbd144ebcda00946a8a
+
+
+Time:2016/8/2 14:47:35-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D2%26Sid%3Ds_542ecae68c7640cda0d367ce61514e75%7C1%7C1%26Uid%3D6%26St%3Dst%26ActionId%3D1005%26UserName%3DMax%26Sex%3D0%26HeadID%3D%26RetailID%3D0000%26Pid%3DZ34%26MobileType%3D1%26ScreenX%3D0%26ScreenY%3D0%26ClientAppVersion%3D1.0%26DeviceID%3Dbf5a58fa-28fe-4ec0-b74f-0ce81126bb9c%26GameID%3D1%26ServerID%3D1%26sign%3D7863d5650692bcbd144ebcda00946a8a] timeout 25796ms
+
+
+Time:2016/8/2 14:50:37-Trace>>Action1005 error:Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “GameServer.CsScript.Locale.SimplifiedLanguage”未包含“St1005_NickNameOutRange”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 GameServer.CsScript.Com.RoleFunc.VerifyRange(String nickName, String& msg) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\RoleFunc.cs:行号 36
+   在 GameServer.CsScript.Action.Action1005.CreateUserRole(IUser& user) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1005.cs:行号 44
+   在 ZyGames.Framework.Game.Contract.Action.RegisterAction.TakeAction()
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId=2&Sid=s_ec20f87aaecd4f7b9558df792d04119d|1|1&Uid=6&St=st&ActionId=1005&UserName=Max&Sex=0&HeadID=&RetailID=0000&Pid=Z34&MobileType=1&ScreenX=0&ScreenY=0&ClientAppVersion=1.0&DeviceID=69012260-cf9f-4e6b-8261-58dff0aa7d5b&GameID=1&ServerID=1&sign=92742b58fa615bce2c74580469286b87
+
+
+Time:2016/8/2 14:50:37-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D2%26Sid%3Ds_ec20f87aaecd4f7b9558df792d04119d%7C1%7C1%26Uid%3D6%26St%3Dst%26ActionId%3D1005%26UserName%3DMax%26Sex%3D0%26HeadID%3D%26RetailID%3D0000%26Pid%3DZ34%26MobileType%3D1%26ScreenX%3D0%26ScreenY%3D0%26ClientAppVersion%3D1.0%26DeviceID%3D69012260-cf9f-4e6b-8261-58dff0aa7d5b%26GameID%3D1%26ServerID%3D1%26sign%3D92742b58fa615bce2c74580469286b87] timeout 29796ms
+
+
+Time:2016/8/2 14:53:51-Trace>>Not found DB connection key "" of the TUser entity.
+
+
+Time:2016/8/2 14:54:29-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D2%26Sid%3Ds_2a3857a074a54e43a770bad6859804c9%7C1%7C1%26Uid%3D8%26St%3Dst%26ActionId%3D1005%26UserName%3DMax%26Sex%3D0%26HeadID%3D%26RetailID%3D0000%26Pid%3DZ34%26MobileType%3D1%26ScreenX%3D0%26ScreenY%3D0%26ClientAppVersion%3D1.0%26DeviceID%3D0cf6d1c9-870d-45ea-9c19-20f967f34757%26GameID%3D1%26ServerID%3D1%26sign%3D65f77e77f6ab0a3497cb5a7b543fd498] timeout 5907ms
+
+
+Time:2016/8/2 14:56:42-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D2%26Sid%3Ds_641ce666c6c8407b8692ad494db3afee%7C1%7C1%26Uid%3D8%26St%3Dst%26ActionId%3D1005%26UserName%3Dmmmmmm%26Sex%3D0%26HeadID%3D%26RetailID%3D0000%26Pid%3DZ34%26MobileType%3D1%26ScreenX%3D0%26ScreenY%3D0%26ClientAppVersion%3D1.0%26DeviceID%3De83f633d-8cf7-4c8a-8806-8f38d8946191%26GameID%3D1%26ServerID%3D1%26sign%3Db767f18d95dbf6cadf1a9440eb37a099] timeout 64090ms
+
+

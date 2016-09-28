@@ -1,0 +1,9 @@
+Time:2016/9/9 18:00:00-Trace>>OnEntitySyncQueue execute count:2, success:160/total 162, fail:0 start...
+
+
+Time:2016/9/9 18:03:47-Trace>>OnEntitySyncQueue execute count:1, success:162/total 163, fail:0 start...
+
+
+Time:2016/9/9 18:10:00-Trace>>OnEntitySyncQueue execute count:2, success:163/total 165, fail:0 start...
+
+

@@ -1,0 +1,730 @@
+Time:2016/8/4 14:17:41-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:17:41-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:17:46-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:17:46-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:17:50-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:17:50-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:20:30-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:20:30-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:21:37-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:21:37-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:21:44-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:21:44-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:21:51-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:21:51-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:22:15-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:22:15-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:22:27-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:22:27-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:33:30-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 14:33:30-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:33:43-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“)”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:35
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“=”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“;”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:41
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:44
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:56
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:59
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:71
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:74
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:90
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:93
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:108
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:111
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:127
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:130
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:146
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:149
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:161
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:164
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:176
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:179
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:191
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:194
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:205
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:208
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:221
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:224
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:235
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:238
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:249
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:252
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:264
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:268
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:279
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:282
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:294
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:297
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:309
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:312
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:326
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:333
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:335
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:336
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:349
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:353
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:357
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:364
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:370
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:375
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:380
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:385
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:390
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:396
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:400
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入标识符；“string”是关键字
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:450
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:451
+Message:应输入类型、命名空间定义或文件尾
+
+
+Time:2016/8/4 14:33:43-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:35:09-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“)”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:35
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“=”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“;”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:41
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:44
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:56
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:59
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:71
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:74
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:90
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:93
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:108
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:111
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:127
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:130
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:146
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:149
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:161
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:164
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:176
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:179
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:191
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:194
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:205
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:208
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:221
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:224
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:235
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:238
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:249
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:252
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:264
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:268
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:279
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:282
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:294
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:297
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:309
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:312
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:326
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:333
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:335
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:336
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:349
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:353
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:357
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:364
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:370
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:375
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:380
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:385
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:390
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:396
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:400
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入标识符；“string”是关键字
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:450
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:451
+Message:应输入类型、命名空间定义或文件尾
+
+
+Time:2016/8/4 14:35:09-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:35:59-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“)”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:35
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“=”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“;”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:41
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:44
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:56
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:59
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:71
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:74
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:90
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:93
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:108
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:111
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:127
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:130
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:146
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:149
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:161
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:164
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:176
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:179
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:191
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:194
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:205
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:208
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:221
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:224
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:235
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:238
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:249
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:252
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:264
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:268
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:279
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:282
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:294
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:297
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:309
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:312
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:326
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:333
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:335
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:336
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:349
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:353
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:357
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:364
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:370
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:375
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:380
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:385
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:390
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:396
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:400
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入标识符；“string”是关键字
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:450
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:451
+Message:应输入类型、命名空间定义或文件尾
+
+
+Time:2016/8/4 14:35:59-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:36:00-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:23
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:类、结构或接口成员声明中的标记“)”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:方法必须具有返回类型
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:34
+Message:应输入 ;
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:35
+Message:类、结构或接口成员声明中的标记“:”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“=”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:37
+Message:类、结构或接口成员声明中的标记“;”无效
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:41
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:44
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:56
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:59
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:71
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:74
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:90
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:93
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:108
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:111
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:127
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:130
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:146
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:149
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:161
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:164
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:176
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:179
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:191
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:194
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:205
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:208
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:221
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:224
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:235
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:238
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:249
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:252
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:264
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:268
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:279
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:282
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:294
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:297
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:309
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:312
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:326
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:333
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:335
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:336
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:349
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:353
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:357
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:364
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:370
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:375
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:380
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:385
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:390
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:396
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:400
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:423
+Message:应输入标识符；“string”是关键字
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:450
+Message:应输入 class、delegate、enum、interface 或 struct
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:451
+Message:应输入类型、命名空间定义或文件尾
+
+
+Time:2016/8/4 14:36:00-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 14:45:20-Trace>>RunMain error:System.Net.Sockets.SocketException (0x80004005): 以一种访问权限不允许的方式做了一个访问套接字的尝试。
+   在 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.StartListen()
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.Start(String[] args)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 ZyGames.Framework.Script.ScriptEngines.RunMainProgram(String[] args)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.<RunAsync>d__0.MoveNext()
+
+

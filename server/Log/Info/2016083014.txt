@@ -1,0 +1,68 @@
+14:06:45 Clear expired cache end.
+14:16:45 Clear expired cache end.
+14:26:45 Clear expired cache end.
+14:36:46 Clear expired cache end.
+14:45:37 csharp script compile start...
+14:46:24 csharp script compile start...
+Time:2016/8/30 14:46:46-The ranking refresh is start...
+
+
+14:46:46 Clear expired cache end.
+Time:2016/8/30 14:46:46-Trace>>The CombatRanking has be loaded, count:12
+
+
+Time:2016/8/30 14:46:46-The ranking refresh is end.
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+14:49:56 Server is starting...
+14:50:02 Server failed to start error:The csharp script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+14:58:08 Server is starting...
+14:58:15 script compiled successfully.
+14:58:15 Start checking table schema, please wait.
+14:58:15 Check table schema successfully.
+14:58:15 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/30 14:58:15-消息：系统加载单服配置开始...
+
+
+Time:2016/8/30 14:58:16-消息：系统加载单服配置所需时间:318.4804ms
+
+
+Time:2016/8/30 14:58:16-消息：系统加载当天用户数:11/最大:100
+
+
+Time:2016/8/30 14:58:16-消息：系统加载当天用户所需时间:98.3271ms
+
+
+Time:2016/8/30 14:58:16-The ranking refresh is start...
+
+
+Time:2016/8/30 14:58:16-Trace>>The CombatRanking has be loaded, count:12
+
+
+Time:2016/8/30 14:58:16-The ranking refresh is end.
+
+
+Time:2016/8/30 14:58:16-消息：系统全局运行环境加载所需时间:447.3028ms
+
+
+14:58:16 Server has started successfully!
+# Server is listening...

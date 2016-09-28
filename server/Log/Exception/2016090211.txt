@@ -1,0 +1,322 @@
+Time:2016/9/2 11:06:47-Trace>>1   userId=1,1
+
+
+Time:2016/9/2 11:06:47-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:06:47-Trace>>1   userId=3,1
+
+
+Time:2016/9/2 11:06:47-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:06:57-Trace>>1   userId=1,1
+
+
+Time:2016/9/2 11:06:57-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:06:57-Trace>>1   userId=3,1
+
+
+Time:2016/9/2 11:06:57-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:07:20-Trace>>1   userId=3,1
+
+
+Time:2016/9/2 11:07:20-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:07:20-Trace>>1   userId=1,1
+
+
+Time:2016/9/2 11:07:20-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:07:41-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:07:41-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:07:41-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:07:41-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:08:31-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:23:44-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:23:55-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:23:55-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:26:29-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:26:41-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:26:41-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:27:04-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:27:04-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:27:28-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:27:28-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:27:57-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:27:57-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:28:36-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:28:36-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:28:36-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:30:05-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:30:05-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:34:49-Trace>>1   userId=1,0
+
+
+Time:2016/9/2 11:34:49-Trace>>2   userId=1,0
+
+
+Time:2016/9/2 11:35:48-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:35:48-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:36:30-Trace>>1   userId=3,0
+
+
+Time:2016/9/2 11:36:30-Trace>>2   userId=3,0
+
+
+Time:2016/9/2 11:38:26-Trace>>Decode password:"544457" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:38:28-Trace>>Decode password:"544457" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:38:35-Trace>>Decode password:"544457" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:38:39-Trace>>Decode password:"400590" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:39:10-Trace>>Decode password:"544457" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:39:13-Trace>>Decode password:"544457" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 392
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 274
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Security\DESAlgorithmNew.cs:行号 523
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/9/2 11:50:24-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+

@@ -1,0 +1,315 @@
+Time:2016/8/29 16:06:28-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData.cs, Line:3
+Message:命名空间“GameServer.CsScript.JsonProtocol”已经包含了“JPChatData”的定义
+
+
+Time:2016/8/29 16:06:28-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:07:36-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:07:36-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:08:05-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:08:05-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:08:26-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:08:26-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:10:19-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:10:19-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:11:07-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:11:07-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:11:27-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:11:27-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:11:50-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:11:50-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:12:00-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:12:00-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:13:05-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:13:05-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:13:23-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:13:23-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:13:32-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:13:32-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:14:17-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:14:17-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:14:29-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:14:29-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:14:45-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:14:45-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:14:53-Trace>>CompileCSharp script error:System.IO.FileNotFoundException: 未能找到文件“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”。
+文件名:“E:\ServerTools\code\xuesheng\server\server\Script\CsScript\JsonProtocol\JPChatData - 副本.cs”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, String[] fileNames)
+   在 ZyGames.Framework.Script.ScriptCompiler.Compile(Boolean isFile, String[] sources, String[] refAssemblies, String assemblyName, Boolean isDebug, Boolean isInMemory, String outputPath)
+
+
+Time:2016/8/29 16:14:53-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:15:26-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/29 16:15:26-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/29 16:15:30-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 87
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 74
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:15:48-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state)
+
+
+Time:2016/8/29 16:15:49-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/29 16:15:49-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 87
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 74
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/29 16:16:14-Trace>>DoWatcherChanged error:System.IO.FileLoadException: 未能加载文件或程序集“ZyGames.Framework, Version=6.7.0.313, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。拒绝访问。
+文件名:“ZyGames.Framework, Version=6.7.0.313, Culture=neutral, PublicKeyToken=null” ---> System.IO.FileLoadException: 未能加载文件或程序集“file:///E:/ServerTools/code/xuesheng/server/server/ZyGames.Framework.DLL”或它的某一个依赖项。拒绝访问。
+文件名:“file:///E:/ServerTools/code/xuesheng/server/server/ZyGames.Framework.DLL”
+
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+   在 System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   在 System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   在 System.Reflection.RuntimeAssembly.InternalLoadFrom(String assemblyFile, Evidence securityEvidence, Byte[] hashValue, AssemblyHashAlgorithm hashAlgorithm, Boolean forIntrospection, Boolean suppressSecurityChecks, StackCrawlMark& stackMark)
+   在 System.Reflection.Assembly.LoadFrom(String assemblyFile, Evidence securityEvidence)
+   在 System.Activator.CreateInstanceFromInternal(String assemblyFile, String typeName, Boolean ignoreCase, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, Evidence securityInfo)
+   在 System.AppDomain.CreateInstanceFrom(String assemblyFile, String typeName)
+   在 System.AppDomain.CreateInstanceFromAndUnwrap(String assemblyName, String typeName)
+   在 System.AppDomain.CreateInstanceFromAndUnwrap(String assemblyName, String typeName)
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.InitDomainContext()
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+
+
+Time:2016/8/29 16:17:00-Trace>>Task error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Game.Lang.Language.SetLang(String typeName)
+   在 ZyGames.Framework.Game.Lang.Language.get_Instance()
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.DoAction(ActionGetter actionGetter, BaseGameResponse response)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.<ProcessPackage>d__0.MoveNext()
+
+
+Time:2016/8/29 16:17:10-Trace>>Task error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Game.Lang.Language.SetLang(String typeName)
+   在 ZyGames.Framework.Game.Lang.Language.get_Instance()
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.DoAction(ActionGetter actionGetter, BaseGameResponse response)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.<ProcessPackage>d__0.MoveNext()
+
+

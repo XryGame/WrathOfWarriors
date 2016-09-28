@@ -1,0 +1,51 @@
+Time:2016/8/5 10:48:16-Trace>>OnEntitySyncQueue execute count:2, success:0/total 2, fail:0 start...
+
+
+Time:2016/8/5 10:48:16-Trace>>OnEntitySyncQueue execute count:1, success:2/total 3, fail:0 start...
+
+
+Time:2016/8/5 10:48:16-Trace>>OnEntitySyncQueue execute count:4, success:3/total 7, fail:0 start...
+
+
+Time:2016/8/5 10:48:16-Trace>>OnEntitySyncQueue execute count:1, success:7/total 8, fail:0 start...
+
+
+Time:2016/8/5 10:48:42-Trace>>Action-1008 Uid:3 access timeout 2020.1155/500ms.
+
+
+Time:2016/8/5 10:48:42-Trace>>OnEntitySyncQueue execute count:1, success:8/total 9, fail:0 start...
+
+
+Time:2016/8/5 10:48:46-Trace>>OnEntitySyncQueue execute count:1, success:9/total 10, fail:0 start...
+
+
+Time:2016/8/5 10:48:54-Trace>>Action-1008 Uid:3 access timeout 11759.6726/500ms.
+
+
+Time:2016/8/5 10:48:56-Trace>>Action-1008 Uid:2 access timeout 7441.4257/500ms.
+
+
+Time:2016/8/5 10:49:06-Trace>>OnEntitySyncQueue execute count:1, success:10/total 11, fail:0 start...
+
+
+Time:2016/8/5 10:49:23-Trace>>OnEntitySyncQueue execute count:1, success:11/total 12, fail:0 start...
+
+
+Time:2016/8/5 10:51:14-Trace>>Action-3002 Uid:1 access timeout 14211.8128/500ms.
+
+
+Time:2016/8/5 10:51:56-Trace>>OnEntitySyncQueue execute count:1, success:12/total 13, fail:0 start...
+
+
+Time:2016/8/5 10:52:29-Trace>>OnEntitySyncQueue execute count:1, success:13/total 14, fail:0 start...
+
+
+Time:2016/8/5 10:58:07-Trace>>OnEntitySyncQueue execute count:4, success:0/total 4, fail:0 start...
+
+
+Time:2016/8/5 10:58:20-Trace>>OnEntitySyncQueue execute count:1, success:4/total 5, fail:0 start...
+
+
+Time:2016/8/5 10:58:31-Trace>>Action-3002 Uid:1 access timeout 9249.529/500ms.
+
+

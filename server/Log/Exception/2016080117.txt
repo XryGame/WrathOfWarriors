@@ -1,0 +1,99 @@
+Time:2016/8/1 17:23:47-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:24:33-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26MobileType%3D1%26Pid%3DZ34%26Pwd%3D110899%26DeviceID%3D32ceeb1a-c02b-428b-ae62-e4d828444344%26GameType%3D0%26RetailID%3D0000%26ServerID%3D0%26RetailUser%3DZ34%26ClientAppVersion%3D1.0%26ScreenX%3D0%26ScreenY%3D0%26Code%3D0%26sign%3Da53f9b8c14c64dab6fa1e98d65013c25] timeout 49836ms
+
+
+Time:2016/8/1 17:25:45-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:33:05-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:36:53-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:36:54-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26MobileType%3D1%26Pid%3DZ34%26Pwd%3D110899%26RetailID%3D0000%26GameType%3D0%26ServerID%3D0%26DeviceID%3Ddea19d47-4047-4480-8498-8536a956d6e7%26Sex%3D0%26NickName%3DZ34%26HeadID%3D%26ScreenX%3D0%26ScreenY%3D0%26sign%3D1f00bdcbbbe15d1f603a9b4c21eacbab] timeout 5864ms
+
+
+Time:2016/8/1 17:39:32-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:42:46-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:42:47-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26MobileType%3D1%26Pid%3DZ34%26Pwd%3D110899%26RetailID%3D0000%26GameType%3D0%26ServerID%3D0%26DeviceID%3D4e14ccb3-3524-4a84-8902-33cacd2f7b42%26Sex%3D0%26NickName%3DZ34%26ScreenX%3D0%26ScreenY%3D0%26sign%3D14cdafe7bdabdc42a7d13774317fb550] timeout 119580ms
+
+
+Time:2016/8/1 17:42:48-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:42:48-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:43:12-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:46:34-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:46:34-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26MobileType%3D1%26Pid%3DZ34%26Pwd%3D110899%26RetailID%3D0000%26GameType%3D0%26ServerID%3D0%26DeviceID%3D26799c8a-9dfc-408d-85ae-4084e15d3619%26Sex%3D0%26NickName%3DZ34%26HeadID%3D%26ScreenX%3D0%26ScreenY%3D0%26sign%3Dfa663a10375fa911d50b16cf358d82a0] timeout 119302ms
+
+
+Time:2016/8/1 17:47:12-Trace>>Decode password:"110899" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+
+Time:2016/8/1 17:47:12-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26MobileType%3D1%26Pid%3DZ34%26Pwd%3D110899%26RetailID%3D0000%26GameType%3D0%26ServerID%3D0%26DeviceID%3D9af72f6e-8264-4498-96cf-af03f4aa5c34%26Sex%3D0%26NickName%3DZ34%26HeadID%3D%26ScreenX%3D0%26ScreenY%3D0%26sign%3Dff38e94e24858817c5b4182c676b0c44] timeout 8042ms
+
+
+Time:2016/8/1 17:52:03-Trace>>Decode password:"1" error:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.desRun(Byte[] outb, Int32 outIndex, Byte[] inb, Int32 inIndex, Byte type)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.decode(String key, Char[] data)
+   在 ZyGames.Framework.Common.Security.DESAlgorithmNew.DecodePwd(String pwd, String securityKey)
+   在 ZyGames.Framework.Game.Service.BaseStruct.DecodePassword(String password)
+
+

@@ -1,0 +1,12 @@
+Time:2016/9/19 15:53:14-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 172
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_a3c6ccf0d8d74716b00ead54315bb959%7C1%7C1%26Uid%3D42%26St%3Dst%26ActionId%3D1401%26sign%3D8dc716f815778ab90006f556ba82f5d2
+
+
+Time:2016/9/19 15:54:20-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 172
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_bb99cc83b6a04c5081b6ee210a6038af%7C1%7C1%26Uid%3D42%26St%3Dst%26ActionId%3D1401%26sign%3D7662ff80ab67d6dce4ad4507e2b9c3c8
+
+

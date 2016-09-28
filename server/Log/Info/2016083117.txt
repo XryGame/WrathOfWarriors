@@ -1,0 +1,330 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:11:30 Server is starting...
+17:11:37 Start checking table schema, please wait.
+17:11:38 Check table schema successfully.
+17:11:38 script compiled successfully.
+17:11:38 CacheFactory listen has started...
+17:11:38 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:11:38:508-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:11:38:800-消息：系统加载单服配置所需时间:290.9066ms
+
+
+Time:2016-08-31 17:11:38:819-消息：系统加载当天用户数:11/最大:100
+
+
+Time:2016-08-31 17:11:38:888-消息：系统加载当天用户所需时间:85.9529ms
+
+
+Time:2016-08-31 17:11:38:898-The ranking refresh is start...
+
+
+Time:2016-08-31 17:11:38:922-Trace>>The CombatRanking has be loaded, count:14
+
+
+Time:2016-08-31 17:11:38:927-Trace>>The LevelRanking has be loaded, count:16
+
+
+Time:2016-08-31 17:11:38:935-Trace>>The FightValueRanking has be loaded, count:16
+
+
+Time:2016-08-31 17:11:38:936-The ranking refresh is end.
+
+
+Time:2016-08-31 17:11:38:938-消息：系统全局运行环境加载所需时间:431.8727ms
+
+
+17:11:38 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+17:21:56 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:32:19 Server is starting...
+17:32:40 Start checking table schema, please wait.
+17:32:42 Check table schema successfully.
+17:32:42 script compiled successfully.
+17:32:43 CacheFactory listen has started...
+17:32:43 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:32:43:540-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:32:44:246-消息：系统加载单服配置所需时间:704.6121ms
+
+
+Time:2016-08-31 17:32:44:263-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016-08-31 17:32:44:266-消息：系统加载当天用户所需时间:18.2104ms
+
+
+Time:2016-08-31 17:32:44:375-The ranking refresh is start...
+
+
+Time:2016-08-31 17:32:44:382-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016-08-31 17:32:44:385-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2016-08-31 17:32:44:388-Trace>>The FightValueRanking has be loaded, count:0
+
+
+Time:2016-08-31 17:32:44:389-The ranking refresh is end.
+
+
+Time:2016-08-31 17:32:44:390-消息：系统全局运行环境加载所需时间:884.2259ms
+
+
+17:32:44 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:41:49 Server is starting...
+17:41:57 Start checking table schema, please wait.
+17:41:57 Check table schema successfully.
+17:41:57 script compiled successfully.
+17:41:57 CacheFactory listen has started...
+17:41:58 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:41:58:176-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:41:58:492-消息：系统加载单服配置所需时间:315.0612ms
+
+
+Time:2016-08-31 17:41:59:609-消息：系统加载当天用户数:3/最大:100
+
+
+Time:2016-08-31 17:41:59:628-消息：系统加载当天用户所需时间:1132.3408ms
+
+
+Time:2016-08-31 17:41:59:638-The ranking refresh is start...
+
+
+Time:2016-08-31 17:41:59:698-Trace>>The CombatRanking has be loaded, count:2
+
+
+Time:2016-08-31 17:41:59:704-Trace>>The LevelRanking has be loaded, count:3
+
+
+Time:2016-08-31 17:41:59:707-Trace>>The FightValueRanking has be loaded, count:3
+
+
+Time:2016-08-31 17:41:59:713-The ranking refresh is end.
+
+
+Time:2016-08-31 17:41:59:714-消息：系统全局运行环境加载所需时间:1541.7682ms
+
+
+17:41:59 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:44:53 Server is starting...
+17:45:01 Start checking table schema, please wait.
+17:45:01 Check table schema successfully.
+17:45:01 script compiled successfully.
+17:45:01 CacheFactory listen has started...
+17:45:01 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:45:01:835-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:45:02:261-消息：系统加载单服配置所需时间:424.1959ms
+
+
+Time:2016-08-31 17:45:02:282-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016-08-31 17:45:02:301-消息：系统加载当天用户所需时间:37.5591ms
+
+
+Time:2016-08-31 17:45:02:319-The ranking refresh is start...
+
+
+Time:2016-08-31 17:45:02:458-Trace>>The CombatRanking has be loaded, count:4
+
+
+Time:2016-08-31 17:45:02:468-Trace>>The LevelRanking has be loaded, count:4
+
+
+Time:2016-08-31 17:45:02:491-Trace>>The FightValueRanking has be loaded, count:4
+
+
+Time:2016-08-31 17:45:02:492-The ranking refresh is end.
+
+
+Time:2016-08-31 17:45:02:493-消息：系统全局运行环境加载所需时间:659.2232ms
+
+
+17:45:02 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:47:05 Server is starting...
+17:47:13 Start checking table schema, please wait.
+17:47:13 Check table schema successfully.
+17:47:13 script compiled successfully.
+17:47:13 CacheFactory listen has started...
+17:47:13 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:47:13:783-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:47:14:024-消息：系统加载单服配置所需时间:239.1511ms
+
+
+Time:2016-08-31 17:47:14:045-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016-08-31 17:47:14:106-消息：系统加载当天用户所需时间:75.7545ms
+
+
+Time:2016-08-31 17:47:14:129-The ranking refresh is start...
+
+
+Time:2016-08-31 17:47:14:151-Trace>>The CombatRanking has be loaded, count:2
+
+
+Time:2016-08-31 17:47:14:154-Trace>>The LevelRanking has be loaded, count:4
+
+
+Time:2016-08-31 17:47:14:157-Trace>>The FightValueRanking has be loaded, count:4
+
+
+Time:2016-08-31 17:47:14:158-The ranking refresh is end.
+
+
+Time:2016-08-31 17:47:14:158-消息：系统全局运行环境加载所需时间:376.917ms
+
+
+17:47:14 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:56:23 Server is starting...
+17:56:31 Start checking table schema, please wait.
+17:56:31 Check table schema successfully.
+17:56:31 script compiled successfully.
+17:56:31 CacheFactory listen has started...
+17:56:31 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:56:31:844-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:56:32:229-消息：系统加载单服配置所需时间:383.4991ms
+
+
+Time:2016-08-31 17:56:32:250-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016-08-31 17:56:32:314-消息：系统加载当天用户所需时间:82.6392ms
+
+
+Time:2016-08-31 17:56:32:327-The ranking refresh is start...
+
+
+Time:2016-08-31 17:56:32:351-Trace>>The CombatRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:56:32:358-Trace>>The LevelRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:56:32:362-Trace>>The FightValueRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:56:32:363-The ranking refresh is end.
+
+
+Time:2016-08-31 17:56:32:364-消息：系统全局运行环境加载所需时间:522.9255ms
+
+
+17:56:32 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.10 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:58:51 Server is starting...
+17:58:59 Start checking table schema, please wait.
+17:58:59 Check table schema successfully.
+17:58:59 script compiled successfully.
+17:58:59 CacheFactory listen has started...
+17:58:59 WebSocket service 169.254.15.3:9001 is started.
+Time:2016-08-31 17:58:59:810-消息：系统加载单服配置开始...
+
+
+Time:2016-08-31 17:59:00:127-消息：系统加载单服配置所需时间:315.9055ms
+
+
+Time:2016-08-31 17:59:00:141-消息：系统加载当天用户数:5/最大:100
+
+
+Time:2016-08-31 17:59:00:159-消息：系统加载当天用户所需时间:30.1404ms
+
+
+Time:2016-08-31 17:59:00:172-The ranking refresh is start...
+
+
+Time:2016-08-31 17:59:01:276-Trace>>The CombatRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:59:01:279-Trace>>The LevelRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:59:01:284-Trace>>The FightValueRanking has be loaded, count:5
+
+
+Time:2016-08-31 17:59:01:285-The ranking refresh is end.
+
+
+Time:2016-08-31 17:59:01:286-消息：系统全局运行环境加载所需时间:1478.6014ms
+
+
+17:59:01 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".

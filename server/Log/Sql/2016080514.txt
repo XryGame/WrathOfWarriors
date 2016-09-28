@@ -1,0 +1,24 @@
+Time:2016/8/5 14:37:23-Sql>>Error:MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Timeout in IO operation
+   在 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   在 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   在 MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.Driver.LoadServerProperties(MySqlConnection connection)
+   在 MySql.Data.MySqlClient.Driver.Configure(MySqlConnection connection)
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   在 ZyGames.Framework.Data.SqlStatementManager.DoProcessSqlSyncQueue(String workingKey, Byte[][] bufferBytes)
+Sql>>
+INSERT INTO `GameUser`(`UserID`,`NickName`,`UserLv`,`UserStage`,`GiveAwayDiamond`,`BuyDiamond`,`BaseExp`,`FightExp`,`Vit`,`VipLv`,`UserStatus`,`TaskProgress`,`PlotProgress`,`PlotCompleteDate`,`RetailID`,`Pid`,`CreateDate`,`LoginDate`)VALUES(?UserID,?NickName,?UserLv,?UserStage,?GiveAwayDiamond,?BuyDiamond,?BaseExp,?FightExp,?Vit,?VipLv,?UserStatus,?TaskProgress,?PlotProgress,?PlotCompleteDate,?RetailID,?Pid,?CreateDate,?LoginDate)
+ ON DUPLICATE KEY UPDATE `NickName` = ?NickName,`UserLv` = ?UserLv,`UserStage` = ?UserStage,`GiveAwayDiamond` = ?GiveAwayDiamond,`BuyDiamond` = ?BuyDiamond,`BaseExp` = ?BaseExp,`FightExp` = ?FightExp,`Vit` = ?Vit,`VipLv` = ?VipLv,`UserStatus` = ?UserStatus,`TaskProgress` = ?TaskProgress,`PlotProgress` = ?PlotProgress,`PlotCompleteDate` = ?PlotCompleteDate,`RetailID` = ?RetailID,`Pid` = ?Pid,`CreateDate` = ?CreateDate,`LoginDate` = ?LoginDate
+
+

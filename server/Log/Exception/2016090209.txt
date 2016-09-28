@@ -1,0 +1,26 @@
+Time:2016/9/2 9:08:19-Trace>>Action-3002 Uid:3 locked timeout.
+
+
+Time:2016/9/2 9:09:34-Trace>>OnDataReceived error:System.Threading.SemaphoreFullException: 将指定的计数添加到该信号量中会导致其超过最大计数。
+   在 System.Threading.Semaphore.Release(Int32 releaseCount)
+   在 System.Threading.Semaphore.Release()
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.Closing(SocketAsyncEventArgs ioEventArgs, SByte opCode, String reason) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 650
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 401
+
+
+IP 168.254.0.254:2978 IO_Completed unkown error:System.Threading.SemaphoreFullException: 将指定的计数添加到该信号量中会导致其超过最大计数。
+   在 System.Threading.Semaphore.Release(Int32 releaseCount)
+   在 System.Threading.Semaphore.Release()
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.Closing(SocketAsyncEventArgs ioEventArgs, SByte opCode, String reason) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 650
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 429
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.PostReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 350
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.ProcessReceive(SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 422
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.IO_Completed(Object sender, SocketAsyncEventArgs ioEventArgs) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\RPC\Sockets\SocketListener.cs:行号 266
+Time:2016/9/2 9:18:18-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/2 9:18:18-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+

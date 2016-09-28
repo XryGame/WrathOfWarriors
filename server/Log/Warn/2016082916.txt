@@ -1,0 +1,337 @@
+Time:2016/8/29 16:00:22-Trace>>OnEntitySyncQueue execute count:1, success:131/total 132, fail:0 start...
+
+
+Time:2016/8/29 16:00:24-Trace>>OnEntitySyncQueue execute count:1, success:132/total 133, fail:0 start...
+
+
+Time:2016/8/29 16:00:26-Trace>>Action-3002 Uid:3 access timeout 3270.187/500ms.
+
+
+Time:2016/8/29 16:00:26-Trace>>Action-3001 Uid:3 access timeout 8466.4842/500ms.
+
+
+Time:2016/8/29 16:01:18-Trace>>OnEntitySyncQueue execute count:2, success:133/total 135, fail:0 start...
+
+
+Time:2016/8/29 16:01:38-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:02:22-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:04:15-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:06:20-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:10:05-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:10:06-Trace>>OnEntitySyncQueue execute count:2, success:59/total 61, fail:0 start...
+
+
+Time:2016/8/29 16:10:06-Trace>>OnEntitySyncQueue execute count:52, success:61/total 113, fail:0 start...
+
+
+Time:2016/8/29 16:10:12-Trace>>OnEntitySyncQueue execute count:1, success:113/total 114, fail:0 start...
+
+
+Time:2016/8/29 16:10:15-Trace>>OnEntitySyncQueue execute count:2, success:114/total 116, fail:0 start...
+
+
+Time:2016/8/29 16:10:16-Trace>>OnEntitySyncQueue execute count:2, success:116/total 118, fail:0 start...
+
+
+Time:2016/8/29 16:10:16-Trace>>OnEntitySyncQueue execute count:2, success:118/total 120, fail:0 start...
+
+
+Time:2016/8/29 16:11:09-Trace>>OnEntitySyncQueue execute count:2, success:120/total 122, fail:0 start...
+
+
+Time:2016/8/29 16:11:12-Trace>>OnEntitySyncQueue execute count:1, success:122/total 123, fail:0 start...
+
+
+Time:2016/8/29 16:11:59-Trace>>OnEntitySyncQueue execute count:1, success:123/total 124, fail:0 start...
+
+
+Time:2016/8/29 16:11:59-Trace>>OnEntitySyncQueue execute count:2, success:124/total 126, fail:0 start...
+
+
+Time:2016/8/29 16:12:04-Trace>>OnEntitySyncQueue execute count:3, success:126/total 129, fail:0 start...
+
+
+Time:2016/8/29 16:12:07-Trace>>OnEntitySyncQueue execute count:1, success:129/total 130, fail:0 start...
+
+
+Time:2016/8/29 16:12:22-Trace>>OnEntitySyncQueue execute count:1, success:130/total 131, fail:0 start...
+
+
+Time:2016/8/29 16:12:37-Trace>>OnEntitySyncQueue execute count:1, success:131/total 132, fail:0 start...
+
+
+Time:2016/8/29 16:12:41-Trace>>OnEntitySyncQueue execute count:2, success:132/total 134, fail:0 start...
+
+
+Time:2016/8/29 16:12:41-Trace>>OnEntitySyncQueue execute count:1, success:134/total 135, fail:0 start...
+
+
+Time:2016/8/29 16:12:47-Trace>>OnEntitySyncQueue execute count:3, success:135/total 138, fail:0 start...
+
+
+Time:2016/8/29 16:12:51-Trace>>OnEntitySyncQueue execute count:3, success:138/total 141, fail:0 start...
+
+
+Time:2016/8/29 16:13:01-Trace>>OnEntitySyncQueue execute count:1, success:141/total 142, fail:0 start...
+
+
+Time:2016/8/29 16:13:13-Trace>>OnEntitySyncQueue execute count:1, success:142/total 143, fail:0 start...
+
+
+Time:2016/8/29 16:13:13-Trace>>OnEntitySyncQueue execute count:2, success:143/total 145, fail:0 start...
+
+
+Time:2016/8/29 16:13:13-Trace>>OnEntitySyncQueue execute count:1, success:145/total 146, fail:0 start...
+
+
+Time:2016/8/29 16:13:17-Trace>>OnEntitySyncQueue execute count:3, success:146/total 149, fail:0 start...
+
+
+Time:2016/8/29 16:13:23-Trace>>OnEntitySyncQueue execute count:3, success:149/total 152, fail:0 start...
+
+
+Time:2016/8/29 16:13:26-Trace>>OnEntitySyncQueue execute count:2, success:152/total 154, fail:0 start...
+
+
+Time:2016/8/29 16:15:22-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\ScriptRuntimeDomain error:System.UnauthorizedAccessException: 对路径“ServiceStack.Redis.DLL”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:23-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“10ezwhfk.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:25-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“10ezwhfk.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:27-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:15:30-Trace>>OnEntitySyncQueue execute count:1, success:154/total 155, fail:0 start...
+
+
+Time:2016/8/29 16:15:30-Trace>>OnEntitySyncQueue execute count:50, success:155/total 205, fail:0 start...
+
+
+Time:2016/8/29 16:15:45-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\ScriptRuntimeDomain error:System.UnauthorizedAccessException: 对路径“ServiceStack.Redis.DLL”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:46-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“10ezwhfk.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:47-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“10ezwhfk.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:15:49-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:15:49-Trace>>OnEntitySyncQueue execute count:51, success:205/total 256, fail:0 start...
+
+
+Time:2016/8/29 16:16:10-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\ScriptRuntimeDomain error:System.IO.IOException: 目录不是空的。
+
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:16:12-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“10ezwhfk.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/29 16:16:15-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:17:29-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:17:37-Trace>>OnEntitySyncQueue execute count:1, success:59/total 60, fail:0 start...
+
+
+Time:2016/8/29 16:17:37-Trace>>OnEntitySyncQueue execute count:1, success:60/total 61, fail:0 start...
+
+
+Time:2016/8/29 16:18:34-Trace>>OnEntitySyncQueue execute count:2, success:61/total 63, fail:0 start...
+
+
+Time:2016/8/29 16:18:37-Trace>>OnEntitySyncQueue execute count:2, success:63/total 65, fail:0 start...
+
+
+Time:2016/8/29 16:19:34-Trace>>OnEntitySyncQueue execute count:1, success:65/total 66, fail:0 start...
+
+
+Time:2016/8/29 16:19:34-Trace>>OnEntitySyncQueue execute count:2, success:66/total 68, fail:0 start...
+
+
+Time:2016/8/29 16:19:40-Trace>>OnEntitySyncQueue execute count:1, success:68/total 69, fail:0 start...
+
+
+Time:2016/8/29 16:19:48-Trace>>Action-3001 Uid:3 access timeout 10668.6102/500ms.
+
+
+Time:2016/8/29 16:19:48-Trace>>OnEntitySyncQueue execute count:1, success:69/total 70, fail:0 start...
+
+
+Time:2016/8/29 16:20:43-Trace>>OnEntitySyncQueue execute count:2, success:70/total 72, fail:0 start...
+
+
+Time:2016/8/29 16:20:44-Trace>>OnEntitySyncQueue execute count:2, success:72/total 74, fail:0 start...
+
+
+Time:2016/8/29 16:28:12-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:28:34-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:28:35-Trace>>OnEntitySyncQueue execute count:1, success:59/total 60, fail:0 start...
+
+
+Time:2016/8/29 16:28:35-Trace>>OnEntitySyncQueue execute count:2, success:60/total 62, fail:0 start...
+
+
+Time:2016/8/29 16:28:45-Trace>>OnEntitySyncQueue execute count:3, success:62/total 65, fail:0 start...
+
+
+Time:2016/8/29 16:28:46-Trace>>OnEntitySyncQueue execute count:1, success:65/total 66, fail:0 start...
+
+
+Time:2016/8/29 16:28:46-Trace>>Action-3001 Uid:3 access timeout 3584.205/500ms.
+
+
+Time:2016/8/29 16:28:46-Trace>>OnEntitySyncQueue execute count:53, success:66/total 119, fail:0 start...
+
+
+Time:2016/8/29 16:28:47-Trace>>OnEntitySyncQueue execute count:1, success:119/total 120, fail:0 start...
+
+
+Time:2016/8/29 16:28:47-Trace>>OnEntitySyncQueue execute count:2, success:120/total 122, fail:0 start...
+
+
+Time:2016/8/29 16:28:48-Trace>>OnEntitySyncQueue execute count:1, success:122/total 123, fail:0 start...
+
+
+Time:2016/8/29 16:29:51-Trace>>OnEntitySyncQueue execute count:1, success:123/total 124, fail:0 start...
+
+
+Time:2016/8/29 16:29:53-Trace>>OnEntitySyncQueue execute count:2, success:124/total 126, fail:0 start...
+
+
+Time:2016/8/29 16:30:03-Trace>>OnEntitySyncQueue execute count:1, success:126/total 127, fail:0 start...
+
+
+Time:2016/8/29 16:30:43-Trace>>Action-3002 Uid:3 access timeout 36597.0933/500ms.
+
+
+Time:2016/8/29 16:30:43-Trace>>OnEntitySyncQueue execute count:1, success:127/total 128, fail:0 start...
+
+
+Time:2016/8/29 16:30:45-Trace>>Action-3002 Uid:4 access timeout 2107.1205/500ms.
+
+
+Time:2016/8/29 16:30:45-Trace>>Action-3001 Uid:3 access timeout 44517.5463/500ms.
+
+
+Time:2016/8/29 16:30:46-Trace>>OnEntitySyncQueue execute count:1, success:128/total 129, fail:0 start...
+
+
+Time:2016/8/29 16:31:52-Trace>>OnEntitySyncQueue execute count:2, success:129/total 131, fail:0 start...
+
+
+Time:2016/8/29 16:33:16-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:35:14-Trace>>OnEntitySyncQueue execute count:7, success:51/total 58, fail:0 start...
+
+
+Time:2016/8/29 16:35:14-Trace>>OnEntitySyncQueue execute count:2, success:58/total 60, fail:0 start...
+
+
+Time:2016/8/29 16:38:47-Trace>>OnEntitySyncQueue execute count:1, success:60/total 61, fail:0 start...
+
+
+Time:2016/8/29 16:39:11-Trace>>OnEntitySyncQueue execute count:2, success:61/total 63, fail:0 start...
+
+
+Time:2016/8/29 16:39:20-Trace>>OnEntitySyncQueue execute count:1, success:63/total 64, fail:0 start...
+
+
+Time:2016/8/29 16:39:36-Trace>>Action-3002 Uid:3 access timeout 11733.6711/500ms.
+
+
+Time:2016/8/29 16:39:36-Trace>>Action-3001 Uid:3 access timeout 18711.0702/500ms.
+
+
+Time:2016/8/29 16:39:37-Trace>>OnEntitySyncQueue execute count:1, success:64/total 65, fail:0 start...
+
+
+Time:2016/8/29 16:52:58-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:55:43-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:55:43-Trace>>OnEntitySyncQueue execute count:2, success:59/total 61, fail:0 start...
+
+
+Time:2016/8/29 16:55:49-Trace>>OnEntitySyncQueue execute count:1, success:61/total 62, fail:0 start...
+
+
+Time:2016/8/29 16:56:31-Trace>>OnEntitySyncQueue execute count:1, success:62/total 63, fail:0 start...
+
+
+Time:2016/8/29 16:56:35-Trace>>Action-3002 Uid:3 access timeout 42795.4478/500ms.
+
+
+Time:2016/8/29 16:56:35-Trace>>Action-3001 Uid:3 access timeout 45373.5952/500ms.
+
+
+Time:2016/8/29 16:57:40-Trace>>OnEntitySyncQueue execute count:1, success:63/total 64, fail:0 start...
+
+
+Time:2016/8/29 16:57:40-Trace>>Action-3001 Uid:3 access timeout 4404.2519/500ms.
+
+
+Time:2016/8/29 16:57:40-Trace>>OnEntitySyncQueue execute count:1, success:64/total 65, fail:0 start...
+
+
+Time:2016/8/29 16:58:56-Trace>>OnEntitySyncQueue execute count:51, success:0/total 51, fail:0 start...
+
+
+Time:2016/8/29 16:59:03-Trace>>OnEntitySyncQueue execute count:8, success:51/total 59, fail:0 start...
+
+
+Time:2016/8/29 16:59:04-Trace>>OnEntitySyncQueue execute count:2, success:59/total 61, fail:0 start...
+
+
+Time:2016/8/29 16:59:16-Trace>>OnEntitySyncQueue execute count:1, success:61/total 62, fail:0 start...
+
+

@@ -1,0 +1,129 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:00:10 Server is starting...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:00:20 Server is starting...
+11:00:26 Server failed to start error:The model script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:05:52 Server is starting...
+11:05:58 Server failed to start error:The model script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:06:26 Server is starting...
+11:06:32 Server failed to start error:The model script compile error
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:11:06 Server is starting...
+11:11:13 script compiled successfully.
+11:11:13 Start checking table schema, please wait.
+11:11:14 Check table schema successfully.
+11:11:14 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/19 11:11:14-消息：系统加载单服配置开始...
+
+
+Time:2016/8/19 11:11:16-消息：系统加载单服配置所需时间:1477.2647ms
+
+
+Time:2016/8/19 11:11:16-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/19 11:11:16-消息：系统加载当天用户所需时间:5.6241ms
+
+
+Time:2016/8/19 11:11:20-The ranking refresh is start...
+
+
+Time:2016/8/19 11:11:27-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/8/19 11:11:27-The ranking refresh is end.
+
+
+Time:2016/8/19 11:11:27-消息：系统全局运行环境加载所需时间:13306.2676ms
+
+
+11:11:27 Server has started successfully!
+# Server is listening...
+11:21:20 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:27:44 Server is starting...
+11:27:51 script compiled successfully.
+11:27:52 Start checking table schema, please wait.
+11:27:52 Check table schema successfully.
+11:27:52 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/19 11:27:52-消息：系统加载单服配置开始...
+
+
+Time:2016/8/19 11:27:53-消息：系统加载单服配置所需时间:368.5918ms
+
+
+Time:2016/8/19 11:27:53-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/8/19 11:27:53-消息：系统加载当天用户所需时间:33.3602ms
+
+
+Time:2016/8/19 11:27:53-The ranking refresh is start...
+
+
+Time:2016/8/19 11:27:53-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/8/19 11:27:53-The ranking refresh is end.
+
+
+Time:2016/8/19 11:27:53-消息：系统全局运行环境加载所需时间:428.6007ms
+
+
+11:27:53 Server has started successfully!
+# Server is listening...
+11:38:02 Clear expired cache end.
+11:48:02 Clear expired cache end.
+11:58:03 Clear expired cache end.

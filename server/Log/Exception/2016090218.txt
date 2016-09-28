@@ -1,0 +1,9 @@
+Time:2016/9/2 18:01:59-Trace>>Action1403 error:System.FormatException: 输入字符串的格式不正确。
+   在 System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   在 System.String.Format(String format, Object arg0)
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1403.cs:行号 75
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_c182ffd93c1e40ff9c85b676501189f9%7C1%7C1%26Uid%3D5%26St%3Dst%26ActionId%3D1403%26Result%3D0%26sign%3Da7c7e14475511fe17892dbe367cc4b0b
+
+

@@ -1,0 +1,9 @@
+19:03:03 Clear expired cache end.
+19:13:04 Clear expired cache end.
+Time:2016/8/15 19:23:04-The ranking refresh is start...
+
+
+19:23:04 Clear expired cache end.
+Time:2016/8/15 19:23:04-The ranking refresh is end.
+
+

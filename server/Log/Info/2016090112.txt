@@ -1,0 +1,145 @@
+12:06:45 Clear expired cache end.
+12:16:46 Clear expired cache end.
+12:26:46 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+12:31:56 Server is starting...
+12:32:05 script compiled successfully.
+12:32:06 Start checking table schema, please wait.
+12:32:07 Check table schema successfully.
+12:32:07 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/1 12:32:07-消息：系统加载单服配置开始...
+
+
+Time:2016/9/1 12:32:08-消息：系统加载单服配置所需时间:684.2187ms
+
+
+Time:2016/9/1 12:32:08-消息：系统加载当天用户数:13/最大:100
+
+
+Time:2016/9/1 12:32:08-消息：系统加载当天用户所需时间:379.0106ms
+
+
+Time:2016/9/1 12:32:08-The ranking refresh is start...
+
+
+Time:2016/9/1 12:32:08-Trace>>The CombatRanking has be loaded, count:4
+
+
+Time:2016/9/1 12:32:08-Trace>>The LevelRanking has be loaded, count:13
+
+
+Time:2016/9/1 12:32:08-Trace>>The FightValueRanking has be loaded, count:13
+
+
+Time:2016/9/1 12:32:08-The ranking refresh is end.
+
+
+Time:2016/9/1 12:32:08-消息：系统全局运行环境加载所需时间:1178.0826ms
+
+
+12:32:08 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+12:32:51 Server is starting...
+12:33:00 script compiled successfully.
+12:33:01 Start checking table schema, please wait.
+12:33:01 Check table schema successfully.
+12:33:02 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/1 12:33:02-消息：系统加载单服配置开始...
+
+
+Time:2016/9/1 12:33:02-消息：系统加载单服配置所需时间:331.0944ms
+
+
+Time:2016/9/1 12:33:02-消息：系统加载当天用户数:13/最大:100
+
+
+Time:2016/9/1 12:33:02-消息：系统加载当天用户所需时间:133.3787ms
+
+
+Time:2016/9/1 12:33:02-The ranking refresh is start...
+
+
+Time:2016/9/1 12:33:02-Trace>>The CombatRanking has be loaded, count:4
+
+
+Time:2016/9/1 12:33:02-Trace>>The LevelRanking has be loaded, count:13
+
+
+Time:2016/9/1 12:33:02-Trace>>The FightValueRanking has be loaded, count:13
+
+
+Time:2016/9/1 12:33:02-The ranking refresh is end.
+
+
+Time:2016/9/1 12:33:02-消息：系统全局运行环境加载所需时间:514.0623ms
+
+
+12:33:02 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+12:43:26 Server is starting...
+12:43:34 script compiled successfully.
+12:43:34 Start checking table schema, please wait.
+12:43:35 Check table schema successfully.
+12:43:35 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/1 12:43:35-消息：系统加载单服配置开始...
+
+
+Time:2016/9/1 12:43:36-消息：系统加载单服配置所需时间:441.5248ms
+
+
+Time:2016/9/1 12:43:36-消息：系统加载当天用户数:0/最大:100
+
+
+Time:2016/9/1 12:43:36-消息：系统加载当天用户所需时间:23.2363ms
+
+
+Time:2016/9/1 12:43:36-The ranking refresh is start...
+
+
+Time:2016/9/1 12:43:36-Trace>>The CombatRanking has be loaded, count:0
+
+
+Time:2016/9/1 12:43:36-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2016/9/1 12:43:36-Trace>>The FightValueRanking has be loaded, count:0
+
+
+Time:2016/9/1 12:43:36-The ranking refresh is end.
+
+
+Time:2016/9/1 12:43:36-消息：系统全局运行环境加载所需时间:498.5843ms
+
+
+12:43:36 Server has started successfully!
+# Server is listening...
+12:53:38 Clear expired cache end.

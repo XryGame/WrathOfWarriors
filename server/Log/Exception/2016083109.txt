@@ -1,0 +1,43 @@
+Time:2016/8/31 9:28:58-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 116
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D9%26Sid%3Ds_b684df36645d4ee2a6e33743e6c3ddfe%7C1%7C1%26Uid%3D15%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3D%E5%93%88%E5%93%88%E5%93%88%E5%93%88%26WhisperUid%3D0%26sign%3Db61d3af5249dbaa231e353db2bea9706
+
+
+Time:2016/8/31 9:29:06-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action3001.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 116
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D10%26Sid%3Ds_b684df36645d4ee2a6e33743e6c3ddfe%7C1%7C1%26Uid%3D15%26St%3Dst%26ActionId%3D3001%26ChatType%3D2%26message%3D%E9%BB%98%E9%BB%98%E5%93%A6%26WhisperUid%3D0%26sign%3Dbe3cfe1d90a56a1e3d3ac66cfb77d878
+
+
+Time:2016/8/31 9:32:41-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\CombatRanking - 副本.cs, Line:19
+Message:命名空间“GameServer.CsScript.Com”已经包含了“CombatRanking”的定义
+
+
+Time:2016/8/31 9:32:41-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/31 9:53:21-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\CombatRanking.cs, Line:19
+Message:命名空间“GameServer.CsScript.Com”已经包含了“CombatRanking”的定义
+
+
+Time:2016/8/31 9:53:21-Trace>>Script init error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize().
+
+
+Time:2016/8/31 9:53:21-Trace>>OnInit error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.ScriptEngines.Initialize()
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+

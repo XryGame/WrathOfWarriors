@@ -1,0 +1,88 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:18:09 Server is starting...
+09:18:16 script compiled successfully.
+09:18:16 Start checking table schema, please wait.
+09:18:16 Check table schema successfully.
+09:18:16 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/8 9:18:16-消息：系统加载单服配置开始...
+
+
+Time:2016/9/8 9:18:17-消息：系统加载单服配置所需时间:326.1617ms
+
+
+Time:2016/9/8 9:18:17-消息：系统加载当天用户数:9/最大:100
+
+
+Time:2016/9/8 9:18:17-消息：系统加载当天用户所需时间:30.6982ms
+
+
+Time:2016/9/8 9:18:17-The ranking refresh is start...
+
+
+Time:2016/9/8 9:18:17-Trace>>The CombatRanking has be loaded, count:9
+
+
+Time:2016/9/8 9:18:17-Trace>>The LevelRanking has be loaded, count:9
+
+
+Time:2016/9/8 9:18:17-Trace>>The FightValueRanking has be loaded, count:9
+
+
+Time:2016/9/8 9:18:17-The ranking refresh is end.
+
+
+Time:2016/9/8 9:18:17-消息：系统全局运行环境加载所需时间:386.1366ms
+
+
+09:18:17 Server has started successfully!
+# Server is listening...
+09:24:53 model script compile start...
+Time:2016/9/8 9:24:53-Wait for the update before Model script...
+
+
+Time:2016/9/8 9:24:53-Update before Model script OK.
+
+
+09:28:20 Clear expired cache end.
+09:28:44 model script compile start...
+Time:2016/9/8 9:28:44-Wait for the update before Model script...
+
+
+Time:2016/9/8 9:28:44-Update before Model script OK.
+
+
+09:28:57 model script compile start...
+Time:2016/9/8 9:28:57-Wait for the update before Model script...
+
+
+Time:2016/9/8 9:28:57-Update before Model script OK.
+
+
+09:28:58 script compiled successfully.
+09:28:58 Start checking table schema, please wait.
+09:29:01 Check table schema successfully.
+Time:2016/9/8 9:29:02-Update Model script success.
+
+
+09:29:02 model script compiled successfully.
+Time:2016/9/8 9:29:02-消息：系统加载单服配置开始...
+
+
+Time:2016/9/8 9:29:03-消息：系统加载单服配置所需时间:243.3927ms
+
+
+Time:2016/9/8 9:29:03-消息：系统加载当天用户数:9/最大:100
+
+
+Time:2016/9/8 9:29:03-消息：系统加载当天用户所需时间:48.5872ms
+
+

@@ -1,0 +1,60 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:35:22 Server is starting...
+09:35:23 Server failed to start error:could not connect to redis Instance at 127.0.0.1:6379
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:35:49 Server is starting...
+09:35:57 script compiled successfully.
+09:35:57 Start checking table schema, please wait.
+09:35:57 Check table schema successfully.
+09:35:58 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/7 9:35:58-消息：系统加载单服配置开始...
+
+
+Time:2016/9/7 9:35:58-消息：系统加载单服配置所需时间:380.9237ms
+
+
+Time:2016/9/7 9:35:58-消息：系统加载当天用户数:17/最大:100
+
+
+Time:2016/9/7 9:35:58-消息：系统加载当天用户所需时间:41.6006ms
+
+
+Time:2016/9/7 9:35:58-The ranking refresh is start...
+
+
+Time:2016/9/7 9:35:58-Trace>>The CombatRanking has be loaded, count:25
+
+
+Time:2016/9/7 9:35:58-Trace>>The LevelRanking has be loaded, count:25
+
+
+Time:2016/9/7 9:35:58-Trace>>The FightValueRanking has be loaded, count:25
+
+
+Time:2016/9/7 9:35:58-The ranking refresh is end.
+
+
+Time:2016/9/7 9:35:58-消息：系统全局运行环境加载所需时间:462.206ms
+
+
+09:35:58 Server has started successfully!
+# Server is listening...
+09:46:00 Clear expired cache end.
+09:56:00 Clear expired cache end.

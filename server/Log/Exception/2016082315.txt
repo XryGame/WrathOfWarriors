@@ -1,0 +1,52 @@
+Time:2016/8/23 15:12:57-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\Util.cs, Line:36
+Message:应输入 ;
+
+
+Time:2016/8/23 15:12:57-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/23 15:28:33-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs, Line:164
+Message:“GameServer.CsScript.Base.Util”并不包含“FormatDate”的定义
+
+
+Time:2016/8/23 15:28:33-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/23 15:42:29-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 171
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_cb691423878a4d4fb78caf0b15548834%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1401%26sign%3D182d6433abb3e89c3f42d7ca33ff3297
+
+
+Time:2016/8/23 15:42:42-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 171
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_cb691423878a4d4fb78caf0b15548834%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1401%26sign%3D51e6805a504ed7f428574628ab76feaf
+
+
+Time:2016/8/23 15:44:17-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 171
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_cd8cd0904ea24b4bba69e2cc4f19719b%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1401%26sign%3D1e45a28240c51eb94068679c3902e015
+
+
+Time:2016/8/23 15:54:32-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 171
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_11f1b14b35a14bd6922ff215353f28ff%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1401%26sign%3Dc5a3e4c9779c8963308e99f59bf5f4bb
+
+
+Time:2016/8/23 15:54:43-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 171
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_11f1b14b35a14bd6922ff215353f28ff%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1401%26sign%3D1f5b36fbbedfcf1f6fd18c4ba697a49a
+
+

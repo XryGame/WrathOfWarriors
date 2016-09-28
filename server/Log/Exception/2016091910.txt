@@ -1,0 +1,14 @@
+Time:2016/9/19 10:40:17-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/19 10:40:17-Trace>>OnCheckSqlWaitSyncQueue error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckSqlWaitSyncQueue(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\DataSyncQueueManager.cs:行号 804
+
+
+Time:2016/9/19 10:42:32-Trace>>Action3001 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.GM.DiamondCommand.ProcessCmd(Int32 uid, String command) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\GM\DiamondCommand.cs:行号 18
+   在 GameServer.CsScript.Action.Action3001.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action3001.cs:行号 111.
+?d=MsgId%3D3%26Sid%3Ds_c3050c016a534af2bd73c3f4ed829196%7C1%7C1%26Uid%3D50%26St%3Dst%26ActionId%3D3001%26ChatType%3D1%26message%3Dgm%20diamond%20100%26WhisperUid%3D0%26sign%3Daf3e583a3fca4950fd566edd1b881e9e
+
+

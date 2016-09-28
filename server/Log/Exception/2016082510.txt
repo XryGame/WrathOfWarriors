@@ -1,0 +1,83 @@
+Time:2016/8/25 10:11:46-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D7%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3Dd1586458426f4f43b9ba61b222384c92
+
+
+Time:2016/8/25 10:12:14-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D11%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3D62dc4811e825c1ded8c6952078061f00
+
+
+Time:2016/8/25 10:28:55-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D12%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3Df1872ddc6b900e9529ce589991378c18
+
+
+Time:2016/8/25 10:28:56-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D13%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3D6b7f924492b3bdb1e752a49fa7f2dc59
+
+
+Time:2016/8/25 10:28:56-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D14%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3D31a98afbbcf8d78d66baee61a2c0dda8
+
+
+Time:2016/8/25 10:28:56-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D15%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3D38c8fb80cb79df85d5769a3b0a4e203a
+
+
+Time:2016/8/25 10:31:10-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_9a58e15569b04560bc0baf83ba168fde%7C1%7C1%26Uid%3D13%26St%3Dst%26ActionId%3D1401%26sign%3D9128346ace1635127459ea578488107d
+
+
+Time:2016/8/25 10:32:08-Trace>>Action1401 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action1401.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1401.cs:行号 53
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D18%26Sid%3Ds_de88266e95d94250bc037b5ec31d9211%7C1%7C1%26Uid%3D14%26St%3Dst%26ActionId%3D1401%26sign%3D7703717fca9095d6a1e3626b63c1229c
+
+
+Time:2016/8/25 10:32:11-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“gkqyog3n, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\gkqyog3n.dll”位置处)。类型 B 源自“ayc3bqvc, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\ayc3bqvc.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/8/25 10:32:33-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“gkqyog3n, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\gkqyog3n.dll”位置处)。类型 B 源自“ayc3bqvc, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\ayc3bqvc.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/8/25 10:33:51-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema)
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime)
+
+
+Time:2016/8/25 10:33:51-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 87
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 74
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

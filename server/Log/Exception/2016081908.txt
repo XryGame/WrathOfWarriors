@@ -1,0 +1,37 @@
+Time:2016/8/19 8:45:50-Trace>>OnInit error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectCode(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(RedisClient client, String[] watchKeys, Func`1 processFunc, Action`1 transFunc, Action`2 errorFunc)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.<>c__DisplayClass10.<ProcessTrans>b__e(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Process(Action`1 func)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessTrans(String[] watchKeys, Func`2 processFunc, Action`1 transFunc, Action`2 errorFunc)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.InitRedisInfo()
+   在 ZyGames.Framework.Redis.RedisConnectionPool.Initialize(ICacheSerializer serializer)
+   在 ZyGames.Framework.Game.Runtime.GameEnvironment.Start(EnvironmentSetting setting, CacheSetting cacheSetting)
+   在 ZyGames.Framework.Game.Runtime.RuntimeHost.OnStart()
+
+
+Time:2016/8/19 8:59:24-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserRank.cs, Line:27
+Message:命名空间“ZyGames.Tianjiexing.Model”中不存在类型或命名空间名称“Enum”(是否缺少程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserRank.cs, Line:125
+Message:未能找到类型或命名空间名称“CountryType”(是否缺少 using 指令或程序集引用?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\Config\UserRank.cs, Line:179
+Message:未能找到类型或命名空间名称“SJTRankType”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2016/8/19 8:59:24-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

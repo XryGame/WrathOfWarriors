@@ -1,0 +1,82 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:21:12 Server is starting...
+16:21:19 script compiled successfully.
+16:21:19 Start checking table schema, please wait.
+16:21:20 Check table schema successfully.
+16:21:20 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/17 16:21:20-消息：系统加载单服配置开始...
+
+
+Time:2016/8/17 16:21:20-消息：系统加载单服配置所需时间:362.5713ms
+
+
+Time:2016/8/17 16:21:20-消息：系统加载当天用户数:27/最大:100
+
+
+Time:2016/8/17 16:21:21-消息：系统加载当天用户所需时间:709.3639ms
+
+
+Time:2016/8/17 16:21:21-The ranking refresh is start...
+
+
+Time:2016/8/17 16:21:21-The ranking refresh is end.
+
+
+Time:2016/8/17 16:21:21-消息：系统全局运行环境加载所需时间:1082.46ms
+
+
+16:21:21 Server has started successfully!
+# Server is listening...
+16:22:23 Server is stopping, please wait.
+16:22:23 Server has stoped successfully!
+16:22:23 Server has canceled!
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+16:22:31 Server is starting...
+16:22:39 script compiled successfully.
+16:22:39 Start checking table schema, please wait.
+16:22:39 Check table schema successfully.
+16:22:39 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/17 16:22:40-消息：系统加载单服配置开始...
+
+
+Time:2016/8/17 16:22:40-消息：系统加载单服配置所需时间:472.5377ms
+
+
+Time:2016/8/17 16:22:41-消息：系统加载当天用户数:28/最大:100
+
+
+Time:2016/8/17 16:22:41-消息：系统加载当天用户所需时间:1152.0827ms
+
+
+Time:2016/8/17 16:22:41-The ranking refresh is start...
+
+
+Time:2016/8/17 16:22:41-The ranking refresh is end.
+
+
+Time:2016/8/17 16:22:41-消息：系统全局运行环境加载所需时间:1643.2098ms
+
+
+16:22:41 Server has started successfully!
+# Server is listening...
+16:32:40 Clear expired cache end.
+16:42:40 Clear expired cache end.
+16:52:41 Clear expired cache end.

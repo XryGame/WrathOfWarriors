@@ -1,0 +1,64 @@
+Time:2016/8/4 13:00:11-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 13:00:11-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 13:00:20-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 13:00:20-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 13:00:24-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 13:00:24-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2016/8/4 13:01:47-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:18
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“AsyncDataChangeCallback”的定义
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\UserStudyTask.cs, Line:24
+Message:命名空间“GameServer.Script.Model.DataModel”已经包含了“GameUser”的定义
+
+
+Time:2016/8/4 13:01:47-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

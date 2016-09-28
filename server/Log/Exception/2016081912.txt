@@ -1,0 +1,104 @@
+Time:2016/8/19 12:15:42-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_b1ffa462dcc846bc84411a4225d2696c%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D23464a5033ba34b38137ff7440413dd7
+
+
+Time:2016/8/19 12:16:08-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_b1ffa462dcc846bc84411a4225d2696c%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D70288de054a7f6a648f2ac5620a123c7
+
+
+Time:2016/8/19 12:16:58-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D6%26Sid%3Ds_b1ffa462dcc846bc84411a4225d2696c%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D23300145ef66bc13ad2b6d764fc02d95
+
+
+Time:2016/8/19 12:22:06-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D4%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Dcee49e0d5e6be44492995e29609901a0
+
+
+Time:2016/8/19 12:22:38-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D5%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3De8483f1cc6692534324ec67975a5d75a
+
+
+Time:2016/8/19 12:22:43-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D6%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Df423d9da52ba29ac2e920492e7bcd532
+
+
+Time:2016/8/19 12:22:44-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D7%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D8f935f573d72d86434727a90223ceff8
+
+
+Time:2016/8/19 12:22:44-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D8%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3De2626833abf05c27efa80aaa92d5b302
+
+
+Time:2016/8/19 12:22:45-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D9%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Dfb127e56502bdbb5a44b28ce941cbdaa
+
+
+Time:2016/8/19 12:22:45-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D10%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D9b17aef7745f57938ddc8629efbc7567
+
+
+Time:2016/8/19 12:22:45-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D11%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D9886348f45dced512feef84a5739fb4d
+
+
+Time:2016/8/19 12:22:45-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D12%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3D7c4930c58d71ddc20cf9eb4a2c66ac9c
+
+
+Time:2016/8/19 12:22:46-Trace>>Action1111 error:System.NotImplementedException: 未实现该方法或操作。
+   在 GameServer.Script.Model.DataModel.UserHelper.getSubjectStage(Object userLv) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 85
+   在 GameServer.Script.Model.DataModel.UserHelper.buildBaseExpData(GameUser gameUser, Object& outdata) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 19
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1111.cs:行号 80
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D13%26Sid%3Ds_41573cb09024419199c571a124a5af89%7C1%7C1%26Uid%3D2%26St%3Dst%26ActionId%3D1111%26MonsterId%3D10001%26sign%3Db54c7e17b211ccb699325717b89c070b
+
+

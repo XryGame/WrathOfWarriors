@@ -1,0 +1,48 @@
+﻿
+using System;
+using ProtoBuf;
+using ZyGames.Framework.Model;
+using ZyGames.Framework.Event;
+using GameServer.Script.Model.Enum;
+
+namespace GameServer.Script.Model.Config
+{
+
+    /// <summary>
+    /// 每日任务数据
+    /// </summary>
+    [Serializable, ProtoContract]
+    public class UserDailyQuestData : EntityChangeEvent
+    {
+
+        public UserDailyQuestData()
+            : base(false)
+        {
+        }
+        
+        /// <summary>
+        /// 任务ID
+        /// </summary>
+        [ProtoMember(1)]
+        public TaskType ID { get; set; }
+
+        /// <summary>
+        /// 是否完成
+        /// </summary>
+        [ProtoMember(2)]
+        public bool IsFinish { get; set; }
+
+        /// <summary>
+        /// 刷新计数
+        /// </summary>
+        [ProtoMember(3)]
+        public int RefreshCount { get; set; }
+
+        /// <summary>
+        /// 完成计数
+        /// </summary>
+        [ProtoMember(4)]
+        public int FinishCount { get; set; }
+
+    }
+}

@@ -1,0 +1,6 @@
+Time:2016/9/6 10:15:28-Trace>>Action4010 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Action.Action4010.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action4010.cs:行号 52
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D3%26Sid%3Ds_38bc790d1a9d4160b8e427708173b41a%7C1%7C1%26Uid%3D16%26St%3Dst%26ActionId%3D4010%26sign%3D159e380a0c986d60fee2c117f10df6b2
+
+

@@ -1,0 +1,31 @@
+18:00:37 model script compile start...
+Time:2016/8/23 18:00:37-Wait for the update before Model script...
+
+
+Time:2016/8/23 18:00:37-Update before Model script OK.
+
+
+18:00:48 model script compile start...
+Time:2016/8/23 18:00:48-Wait for the update before Model script...
+
+
+Time:2016/8/23 18:00:48-Update before Model script OK.
+
+
+18:01:18 csharp script compile start...
+18:01:18 csharp script compiled successfully.
+18:07:21 Clear expired cache end.
+18:17:21 Clear expired cache end.
+Time:2016/8/23 18:27:22-The ranking refresh is start...
+
+
+18:27:22 Clear expired cache end.
+Time:2016/8/23 18:27:22-Trace>>The CombatRanking has be loaded, count:14
+
+
+Time:2016/8/23 18:27:22-The ranking refresh is end.
+
+
+18:37:22 Clear expired cache end.
+18:47:22 Clear expired cache end.
+18:57:23 Clear expired cache end.

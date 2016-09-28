@@ -1,0 +1,120 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:00:49 Server is starting...
+11:00:56 script compiled successfully.
+11:00:56 Start checking table schema, please wait.
+11:00:56 Check table schema successfully.
+11:00:56 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/3 11:00:57-消息：系统加载单服配置开始...
+
+
+Time:2016/8/3 11:00:57-消息：系统加载单服配置所需时间:0.3445ms
+
+
+Time:2016/8/3 11:00:57-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/8/3 11:00:57-消息：系统加载当天用户所需时间:130.1439ms
+
+
+Time:2016/8/3 11:00:57-The ranking refresh is start...
+
+
+Time:2016/8/3 11:00:57-The ranking refresh is end.
+
+
+Time:2016/8/3 11:00:57-消息：系统全局运行环境加载所需时间:136.4598ms
+
+
+11:00:57 Server has started successfully!
+# Server is listening...
+11:11:00 Clear expired cache end.
+11:11:14 csharp script compile start...
+11:15:11 csharp script compile start...
+11:16:15 csharp script compile start...
+11:16:19 csharp script compile start...
+11:16:24 csharp script compile start...
+11:16:24 csharp script compiled successfully.
+11:16:30 csharp script compile start...
+11:16:30 csharp script compiled successfully.
+11:18:19 csharp script compile start...
+11:18:22 csharp script compile start...
+11:18:23 csharp script compiled successfully.
+11:18:54 csharp script compile start...
+11:18:54 csharp script compiled successfully.
+11:19:02 csharp script compile start...
+11:19:03 csharp script compiled successfully.
+11:19:35 csharp script compile start...
+11:19:35 csharp script compiled successfully.
+11:21:00 Clear expired cache end.
+11:21:21 csharp script compile start...
+11:21:22 csharp script compiled successfully.
+11:23:37 csharp script compile start...
+11:23:40 csharp script compile start...
+11:23:40 csharp script compiled successfully.
+11:26:23 csharp script compile start...
+11:26:30 csharp script compile start...
+11:26:31 csharp script compiled successfully.
+11:26:34 csharp script compile start...
+11:26:34 csharp script compiled successfully.
+11:27:32 csharp script compile start...
+11:27:32 csharp script compiled successfully.
+11:27:51 csharp script compile start...
+11:27:51 csharp script compiled successfully.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:28:02 Server is starting...
+11:28:09 script compiled successfully.
+11:28:10 Start checking table schema, please wait.
+11:28:10 Check table schema successfully.
+11:28:10 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/8/3 11:28:10-消息：系统加载单服配置开始...
+
+
+Time:2016/8/3 11:28:10-消息：系统加载单服配置所需时间:0.5706ms
+
+
+Time:2016/8/3 11:28:10-消息：系统加载当天用户数:4/最大:100
+
+
+Time:2016/8/3 11:28:10-消息：系统加载当天用户所需时间:211.3746ms
+
+
+Time:2016/8/3 11:28:10-The ranking refresh is start...
+
+
+Time:2016/8/3 11:28:10-The ranking refresh is end.
+
+
+Time:2016/8/3 11:28:10-消息：系统全局运行环境加载所需时间:220.4036ms
+
+
+11:28:10 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+11:49:40 Server is starting...
+11:49:46 Server failed to start error:The csharp script compile error

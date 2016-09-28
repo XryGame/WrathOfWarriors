@@ -1,0 +1,143 @@
+10:07:41 Clear expired cache end.
+10:17:41 Clear expired cache end.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:27:52 Server is starting...
+10:27:59 script compiled successfully.
+10:27:59 Start checking table schema, please wait.
+10:28:00 Check table schema successfully.
+10:28:00 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/6 10:28:00-消息：系统加载单服配置开始...
+
+
+Time:2016/9/6 10:28:01-消息：系统加载单服配置所需时间:1525.9515ms
+
+
+Time:2016/9/6 10:28:01-消息：系统加载当天用户数:6/最大:100
+
+
+Time:2016/9/6 10:28:01-消息：系统加载当天用户所需时间:38.0283ms
+
+
+Time:2016/9/6 10:28:02-The ranking refresh is start...
+
+
+Time:2016/9/6 10:28:02-Trace>>The CombatRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:28:02-Trace>>The LevelRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:28:02-Trace>>The FightValueRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:28:02-The ranking refresh is end.
+
+
+Time:2016/9/6 10:28:02-消息：系统全局运行环境加载所需时间:1613.4487ms
+
+
+10:28:02 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:29:58 Server is starting...
+10:30:06 script compiled successfully.
+10:30:06 Start checking table schema, please wait.
+10:30:06 Check table schema successfully.
+10:30:06 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/6 10:30:06-消息：系统加载单服配置开始...
+
+
+Time:2016/9/6 10:30:07-消息：系统加载单服配置所需时间:402.4983ms
+
+
+Time:2016/9/6 10:30:08-消息：系统加载当天用户数:6/最大:100
+
+
+Time:2016/9/6 10:30:08-消息：系统加载当天用户所需时间:1099.0673ms
+
+
+Time:2016/9/6 10:30:08-The ranking refresh is start...
+
+
+Time:2016/9/6 10:30:08-Trace>>The CombatRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:30:08-Trace>>The LevelRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:30:08-Trace>>The FightValueRanking has be loaded, count:16
+
+
+Time:2016/9/6 10:30:08-The ranking refresh is end.
+
+
+Time:2016/9/6 10:30:08-消息：系统全局运行环境加载所需时间:1543.638ms
+
+
+10:30:08 Server has started successfully!
+# Server is listening...
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+10:57:22 Server is starting...
+10:57:30 script compiled successfully.
+10:57:30 Start checking table schema, please wait.
+10:57:30 Check table schema successfully.
+10:57:30 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/6 10:57:30-消息：系统加载单服配置开始...
+
+
+Time:2016/9/6 10:57:31-消息：系统加载单服配置所需时间:395.591ms
+
+
+Time:2016/9/6 10:57:32-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/9/6 10:57:32-消息：系统加载当天用户所需时间:1115.7988ms
+
+
+Time:2016/9/6 10:57:32-The ranking refresh is start...
+
+
+Time:2016/9/6 10:57:32-Trace>>The CombatRanking has be loaded, count:17
+
+
+Time:2016/9/6 10:57:32-Trace>>The LevelRanking has be loaded, count:17
+
+
+Time:2016/9/6 10:57:32-Trace>>The FightValueRanking has be loaded, count:17
+
+
+Time:2016/9/6 10:57:32-The ranking refresh is end.
+
+
+Time:2016/9/6 10:57:32-消息：系统全局运行环境加载所需时间:1549.5283ms
+
+
+10:57:32 Server has started successfully!
+# Server is listening...

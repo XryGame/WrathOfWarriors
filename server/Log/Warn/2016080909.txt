@@ -1,0 +1,84 @@
+Time:2016/8/9 9:18:43-Trace>>Action-1004 Uid:3 access timeout 1076.0616/500ms.
+
+
+Time:2016/8/9 9:18:44-Trace>>OnEntitySyncQueue execute count:15, success:0/total 15, fail:0 start...
+
+
+Time:2016/8/9 9:18:44-Trace>>OnEntitySyncQueue execute count:1, success:15/total 16, fail:0 start...
+
+
+Time:2016/8/9 9:18:45-Trace>>Action-1008 Uid:3 access timeout 1051.0602/500ms.
+
+
+Time:2016/8/9 9:22:59-Trace>>OnEntitySyncQueue execute count:1, success:16/total 17, fail:0 start...
+
+
+Time:2016/8/9 9:22:59-Trace>>OnEntitySyncQueue execute count:1, success:17/total 18, fail:0 start...
+
+
+Time:2016/8/9 9:23:21-Trace>>OnEntitySyncQueue execute count:2, success:18/total 20, fail:0 start...
+
+
+Time:2016/8/9 9:23:24-Trace>>OnEntitySyncQueue execute count:3, success:20/total 23, fail:0 start...
+
+
+Time:2016/8/9 9:23:30-Trace>>OnEntitySyncQueue execute count:3, success:23/total 26, fail:0 start...
+
+
+Time:2016/8/9 9:28:32-Trace>>OnEntitySyncQueue execute count:2, success:26/total 28, fail:0 start...
+
+
+Time:2016/8/9 9:28:50-Trace>>OnEntitySyncQueue execute count:1, success:28/total 29, fail:0 start...
+
+
+Time:2016/8/9 9:28:51-Trace>>OnEntitySyncQueue execute count:2, success:29/total 31, fail:0 start...
+
+
+Time:2016/8/9 9:28:51-Trace>>OnEntitySyncQueue execute count:1, success:31/total 32, fail:0 start...
+
+
+Time:2016/8/9 9:29:12-Trace>>OnEntitySyncQueue execute count:2, success:32/total 34, fail:0 start...
+
+
+Time:2016/8/9 9:29:29-Trace>>OnEntitySyncQueue execute count:2, success:34/total 36, fail:0 start...
+
+
+Time:2016/8/9 9:30:03-Trace>>OnEntitySyncQueue execute count:2, success:36/total 38, fail:0 start...
+
+
+Time:2016/8/9 9:31:03-Trace>>OnEntitySyncQueue execute count:1, success:38/total 39, fail:0 start...
+
+
+Time:2016/8/9 9:31:03-Trace>>OnEntitySyncQueue execute count:1, success:39/total 40, fail:0 start...
+
+
+Time:2016/8/9 9:32:00-Trace>>OnEntitySyncQueue execute count:1, success:40/total 41, fail:0 start...
+
+
+Time:2016/8/9 9:32:00-Trace>>OnEntitySyncQueue execute count:1, success:41/total 42, fail:0 start...
+
+
+Time:2016/8/9 9:32:42-Trace>>OnEntitySyncQueue execute count:2, success:42/total 44, fail:0 start...
+
+
+Time:2016/8/9 9:36:28-Trace>>OnEntitySyncQueue execute count:2, success:44/total 46, fail:0 start...
+
+
+Time:2016/8/9 9:36:44-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“msbpi4bg.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/9 9:37:22-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“msbpi4bg.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2016/8/9 9:37:48-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“msbpi4bg.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+

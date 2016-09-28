@@ -1,0 +1,27 @@
+Time:2016/9/19 17:00:00-Trace>>OnEntitySyncQueue execute count:2, success:160/total 162, fail:0 start...
+
+
+Time:2016/9/19 17:05:29-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“dzv3kft5.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/9/19 17:05:34-Trace>>OnEntitySyncQueue execute count:66, success:162/total 228, fail:0 start...
+
+
+Time:2016/9/19 17:05:34-Trace>>OnEntitySyncQueue execute count:15, success:228/total 243, fail:0 start...
+
+
+Time:2016/9/19 17:38:23-Trace>>OnEntitySyncQueue execute count:66, success:0/total 66, fail:0 start...
+
+
+Time:2016/9/19 17:38:23-Trace>>OnEntitySyncQueue execute count:9, success:66/total 75, fail:0 start...
+
+
+Time:2016/9/19 17:38:24-Trace>>OnEntitySyncQueue execute count:1, success:75/total 76, fail:0 start...
+
+
+Time:2016/9/19 17:38:24-Trace>>OnEntitySyncQueue execute count:12, success:76/total 88, fail:0 start...
+
+

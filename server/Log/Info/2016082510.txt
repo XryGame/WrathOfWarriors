@@ -1,0 +1,40 @@
+10:03:41 Clear expired cache end.
+10:13:41 Clear expired cache end.
+Time:2016/8/25 10:23:42-The ranking refresh is start...
+
+
+Time:2016/8/25 10:23:42-Trace>>The CombatRanking has be loaded, count:18
+
+
+10:23:42 Clear expired cache end.
+Time:2016/8/25 10:23:42-The ranking refresh is end.
+
+
+10:33:42 Clear expired cache end.
+10:33:49 model script compile start...
+Time:2016/8/25 10:33:49-Wait for the update before Model script...
+
+
+Time:2016/8/25 10:33:49-Update before Model script OK.
+
+
+10:33:50 script compiled successfully.
+10:33:50 Start checking table schema, please wait.
+10:33:51 Check table schema successfully.
+Time:2016/8/25 10:33:51-Update Model script success.
+
+
+10:33:51 model script compiled successfully.
+Time:2016/8/25 10:33:51-消息：系统加载单服配置开始...
+
+
+Time:2016/8/25 10:33:51-消息：系统加载单服配置所需时间:227.5431ms
+
+
+Time:2016/8/25 10:33:51-消息：系统加载当天用户数:10/最大:100
+
+
+Time:2016/8/25 10:33:51-消息：系统加载当天用户所需时间:50.5601ms
+
+
+10:43:42 Clear expired cache end.
