@@ -87,7 +87,7 @@ namespace GameServer.Script.Model.Config
         }
 
         /// <summary>
-        /// 今天在线时间计数(秒)
+        /// 在线时间计数(秒)
         /// </summary>
         private int _TodayOnlineTime;
         [ProtoMember(5)]
@@ -104,7 +104,7 @@ namespace GameServer.Script.Model.Config
         }
 
         /// <summary>
-        /// 可领取在线时间奖励ID
+        /// 在线时间奖励阶段
         /// </summary>
         private int _OnlineAwardId;
         [ProtoMember(6)]

@@ -71,7 +71,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.EventAwardData.IsTodaySign = false;
             gameUser.EventAwardData.IsTodayReceiveFirstWeek = false;
             gameUser.EventAwardData.TodayOnlineTime = 0;
-            gameUser.EventAwardData.OnlineAwardId = 0;
+            gameUser.EventAwardData.OnlineAwardId = 1;
 
         }
         public static void UserOnline(int uid)
@@ -161,6 +161,16 @@ namespace GameServer.Script.Model.DataModel
                 }
                 gameUser.OccupySceneType = SceneType.No;
             }
+
+            // 在线奖励处理
+            DateTime loginDate = gameUser.LoginDate;
+            if (DateTime.Now.Hour >= 5 && gameUser.OfflineDate.Hour < 5)
+            {
+
+            }
+            TimeSpan timeSpan = DateTime.Now.Date - gameUser.OfflineDate.Date;
+            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+            gameUser.EventAwardData.TodayOnlineTime += sec;
 
         }
    
