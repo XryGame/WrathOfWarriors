@@ -34,9 +34,13 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Lock = 0,
         /// <summary>
+        /// 不在线
+        /// </summary>
+        Onfine,
+        /// <summary>
         /// 主界面
         /// </summary>
-        MainUi = 1,
+        MainUi,
         /// <summary>
         /// 战斗中
         /// </summary>

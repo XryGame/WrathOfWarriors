@@ -119,5 +119,22 @@ namespace GameServer.Script.Model.Config
                 _OnlineAwardId = value;
             }
         }
+
+        /// <summary>
+        /// 在线开始计时时间
+        /// </summary>
+        private DateTime _OnlineStartTime;
+        [ProtoMember(7)]
+        public DateTime OnlineStartTime
+        {
+            get
+            {
+                return _OnlineStartTime;
+            }
+            set
+            {
+                _OnlineStartTime = value;
+            }
+        }
     }
 }

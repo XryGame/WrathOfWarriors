@@ -178,6 +178,7 @@
     <Compile Include="Script\CsScript\Action\Action8003.cs" />
     <Compile Include="Script\CsScript\Action\Action9000.cs" />
     <Compile Include="Script\CsScript\Action\Action9010.cs" />
+    <Compile Include="Script\CsScript\Action\Action9020.cs" />
     <Compile Include="Script\CsScript\Action\ActionIDDefine.cs" />
     <Compile Include="Script\CsScript\Action\BaseAction.cs" />
     <Compile Include="Script\CsScript\Base\SystemGlobal.cs" />

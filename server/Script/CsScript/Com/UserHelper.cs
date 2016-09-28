@@ -33,7 +33,7 @@ namespace GameServer.Script.Model.DataModel
             return new PersonalCacheStruct<GameUser>().FindKey(userid.ToString());
         }
 
-        public static void RestoreUserData(int uid)
+        public static void RestoreUserData(int uid, bool islogin = true)
         {
             GameUser gameUser = FindUser(uid);
             if (gameUser == null)
@@ -72,6 +72,11 @@ namespace GameServer.Script.Model.DataModel
             gameUser.EventAwardData.IsTodayReceiveFirstWeek = false;
             gameUser.EventAwardData.TodayOnlineTime = 0;
             gameUser.EventAwardData.OnlineAwardId = 1;
+            if (!islogin)
+            {
+                gameUser.EventAwardData.OnlineStartTime = DateTime.Now;
+            }
+
 
         }
         public static void UserOnline(int uid)
@@ -81,6 +86,16 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
+
+            gameUser.IsOnline = true;
+            gameUser.ChatVesion = 0;
+            gameUser.BroadcastVesion = 0;
+            gameUser.IsRefreshing = true;
+            gameUser.UserStatus = UserStatus.MainUi;
+            gameUser.InviteFightDestUid = 0;
+            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+
+
             // 计算上线时间，刷新数据
             var nowTime = DateTime.Now;
             bool isRefresh = false;
@@ -98,6 +113,8 @@ namespace GameServer.Script.Model.DataModel
             {// 刷新
                 RestoreUserData(uid);
             }
+
+            
         }
         /// <summary>
         /// 用户下线处理
@@ -112,6 +129,7 @@ namespace GameServer.Script.Model.DataModel
             }
             gameUser.IsOnline = false;
             gameUser.OfflineDate = DateTime.Now;
+            gameUser.UserStatus = UserStatus.Onfine;
 
             // 竞技场处理
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
@@ -163,12 +181,12 @@ namespace GameServer.Script.Model.DataModel
             }
 
             // 在线奖励处理
-            DateTime loginDate = gameUser.LoginDate;
-            if (DateTime.Now.Hour >= 5 && gameUser.OfflineDate.Hour < 5)
-            {
-
-            }
-            TimeSpan timeSpan = DateTime.Now.Date - gameUser.OfflineDate.Date;
+            DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
+            //if (DateTime.Now.Hour >= 5 && gameUser.LoginDate.Hour < 5)
+            //{
+            //    startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 5, 0, 0);
+            //}
+            TimeSpan timeSpan = DateTime.Now.Date - startDate;
             int sec = (int)Math.Floor(timeSpan.TotalSeconds);
             gameUser.EventAwardData.TodayOnlineTime += sec;
 
@@ -423,7 +441,7 @@ namespace GameServer.Script.Model.DataModel
             var onlinelist = GameSession.GetOnlineAll();
             foreach (var session in onlinelist)
             {
-                RestoreUserData(session.UserId);
+                RestoreUserData(session.UserId, false);
             }
             ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
         }

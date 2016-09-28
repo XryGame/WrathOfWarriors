@@ -7,20 +7,21 @@ using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 9010_请求领取首周奖励
+    /// 9020_请求领取在线奖励
     /// </summary>
-    public class Action9010 : BaseAction
+    public class Action9020 : BaseAction
     {
         private JPRequestSFOData receipt;
         private Random random = new Random();
-        public Action9010(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action9010, actionGetter)
+        public Action9020(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action9020, actionGetter)
         {
 
         }
@@ -39,27 +40,32 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPRequestSFOData();
             receipt.Result = EventStatus.Good;
-            var list = new ShareCacheStruct<Config_FirstWeek>().FindAll();
-            if (ContextUser.EventAwardData.IsTodayReceiveFirstWeek || ContextUser.EventAwardData.FirstWeekCount >= list.Count)
-            {
-                receipt.Result = EventStatus.Bad;
-                return true;
-            }
 
-            var surface = list.Find(t => (
-                t.ID == ContextUser.EventAwardData.FirstWeekCount + 1
-            ));
+
+            var surface = new ShareCacheStruct<Config_OnlineReward>().FindKey(ContextUser.EventAwardData.OnlineAwardId);
             if (surface == null)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
+           
+            DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
+            TimeSpan timeSpan = DateTime.Now.Date - startDate;
+            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+            int passsec = MathUtils.Addition(ContextUser.EventAwardData.TodayOnlineTime, sec, int.MaxValue);
+            if (passsec < surface.Time)
+            {
+                receipt.Result = EventStatus.Bad;
+                return true;
+            }
 
-            ContextUser.EventAwardData.IsTodayReceiveFirstWeek = true;
-            ContextUser.EventAwardData.FirstWeekCount++;
+
+            ContextUser.EventAwardData.TodayOnlineTime = 0;
+            ContextUser.EventAwardData.OnlineAwardId++;
+            ContextUser.EventAwardData.OnlineStartTime = DateTime.Now;
 
             receipt.AwardNum = surface.AwardNum;
-            
+
             switch (surface.AwardType)
             {
                 case AwardType.Diamond:
@@ -101,9 +107,11 @@ namespace GameServer.CsScript.Action
                     }
                     break;
             }
+
             receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.ItemList = ContextUser.ItemDataList;
             receipt.SkillList = ContextUser.SkillDataList;
+
             return true;
         }
     }
