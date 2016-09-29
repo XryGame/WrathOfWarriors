@@ -74,7 +74,7 @@ namespace GameServer.CsScript.Action
                         int residuemins = 0;
                         if (DateTime.Now > ContextUser.StudyTaskData.StartTime)
                         {
-                            TimeSpan timeSpan = DateTime.Now.Date - ContextUser.StudyTaskData.StartTime.Date;
+                            TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.StudyTaskData.StartTime);
                             passmins = (int)Math.Floor(timeSpan.TotalMinutes);
                         }
                         residuemins = MathUtils.Subtraction(
@@ -106,7 +106,7 @@ namespace GameServer.CsScript.Action
                         int residuemins = 0;
                         if (DateTime.Now > ContextUser.ExerciseTaskData.StartTime)
                         {
-                            TimeSpan timeSpan = DateTime.Now.Date - ContextUser.ExerciseTaskData.StartTime.Date;
+                            TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.ExerciseTaskData.StartTime);
                             passmins = (int)Math.Floor(timeSpan.TotalMinutes);
                         }
                         residuemins = MathUtils.Subtraction(

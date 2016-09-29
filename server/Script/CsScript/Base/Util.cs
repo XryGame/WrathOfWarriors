@@ -44,7 +44,8 @@ namespace GameServer.CsScript.Base
             }
             if (DateTime.Now > sendDate)
             {
-                TimeSpan timeSpan = DateTime.Now.Date - sendDate.Date;
+                TimeSpan timeSpan = DateTime.Now.Subtract(sendDate);
+                //TimeSpan timeSpan = DateTime.Now.Date - sendDate.Date;
                 int day = (int)Math.Floor(timeSpan.TotalDays);
                 if (day == 1)
                 {

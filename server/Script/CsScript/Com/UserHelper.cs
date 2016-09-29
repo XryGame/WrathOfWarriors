@@ -86,22 +86,30 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
-
+            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            gameUser.LoginDate = DateTime.Now;
             gameUser.IsOnline = true;
             gameUser.ChatVesion = 0;
             gameUser.BroadcastVesion = 0;
             gameUser.IsRefreshing = true;
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
-            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            
+            // 在线奖励处理
+            DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
 
+            TimeSpan timeSpan = gameUser.OfflineDate.Subtract(startDate);
+            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+            gameUser.EventAwardData.TodayOnlineTime += sec;
+            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
 
             // 计算上线时间，刷新数据
             var nowTime = DateTime.Now;
             bool isRefresh = false;
             if (gameUser.OfflineDate != DateTime.MinValue)
             {
-                TimeSpan timeSpan = nowTime.Date - gameUser.OfflineDate.Date;
+                //TimeSpan timeSpan = nowTime.Date - gameUser.OfflineDate.Date;
+                timeSpan = DateTime.Now.Subtract(gameUser.OfflineDate);
                 int day = (int)Math.Floor(timeSpan.TotalDays);
                 if (day > 0 || (day == 0 && nowTime.Hour >= 5 && gameUser.OfflineDate.Hour < 5))
                 {
@@ -129,7 +137,7 @@ namespace GameServer.Script.Model.DataModel
             }
             gameUser.IsOnline = false;
             gameUser.OfflineDate = DateTime.Now;
-            gameUser.UserStatus = UserStatus.Onfine;
+            gameUser.UserStatus = UserStatus.MainUi;
 
             // 竞技场处理
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
@@ -180,15 +188,7 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.OccupySceneType = SceneType.No;
             }
 
-            // 在线奖励处理
-            DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
-            //if (DateTime.Now.Hour >= 5 && gameUser.LoginDate.Hour < 5)
-            //{
-            //    startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 5, 0, 0);
-            //}
-            TimeSpan timeSpan = DateTime.Now.Date - startDate;
-            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
-            gameUser.EventAwardData.TodayOnlineTime += sec;
+
 
         }
    

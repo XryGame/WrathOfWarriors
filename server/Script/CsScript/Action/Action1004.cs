@@ -129,17 +129,16 @@ namespace GameServer.CsScript.Action
                 gameUser = cacheSet.FindKey(userId.ToString());
             }
 
-            if (gameUser != null)
-            {
-                //原因：还在加载中时，返回
-                if (gameUser.UserStatus != UserStatus.Onfine)
-                {
-                    ErrorCode = Language.Instance.ErrorCode;
-                    ErrorInfo = Language.Instance.ServerLoading;
-                    return false;
-                }
-
-            }
+            //if (gameUser != null)
+            //{
+            //    //原因：还在加载中时，返回
+            //    if (gameUser.IsRefreshing)
+            //    {
+            //        ErrorCode = Language.Instance.ErrorCode;
+            //        ErrorInfo = Language.Instance.ServerLoading;
+            //        return false;
+            //    }
+            //}
 
             //TUser tUser = new ShareCacheStruct<TUser>().FindKey(userId);
             //if (tUser == null)
@@ -163,12 +162,11 @@ namespace GameServer.CsScript.Action
                 return false;
             }
             gameUser.SessionID = Sid;
-            gameUser.LoginDate = nowTime;
             gameUser.GameId = this.GameType;
             gameUser.ServerId = this.ServerID;
-
+            
             UserHelper.UserOnline(userId);
-
+            
 
             System.Threading.Tasks.Task.Factory.StartNew(() =>
             {

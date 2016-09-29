@@ -72,7 +72,8 @@ namespace GameServer.CsScript.Action
                         int mins = 0;
                         if (DateTime.Now > ContextUser.StudyTaskData.StartTime)
                         {
-                            TimeSpan timeSpan = DateTime.Now.Date - ContextUser.StudyTaskData.StartTime.Date;
+                            
+                            TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.StudyTaskData.StartTime);
                             mins = (int)Math.Floor(timeSpan.TotalMinutes);
                             if (mins >= subjectExp.UnitTime * ContextUser.StudyTaskData.Count)
                             {
@@ -142,7 +143,7 @@ namespace GameServer.CsScript.Action
                         int mins = 0;
                         if (DateTime.Now > ContextUser.ExerciseTaskData.StartTime)
                         {
-                            TimeSpan timeSpan = DateTime.Now.Date - ContextUser.ExerciseTaskData.StartTime.Date;
+                            TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.ExerciseTaskData.StartTime);
                             mins = (int)Math.Floor(timeSpan.TotalMinutes);
                             if (mins >= subjectExp.UnitTime * ContextUser.ExerciseTaskData.Count)
                             {

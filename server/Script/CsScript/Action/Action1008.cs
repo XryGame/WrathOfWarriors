@@ -292,6 +292,8 @@ namespace GameServer.CsScript.Action
             receipt.UnlockSceneMapList = ContextUser.UnlockSceneMapList;
             receipt.SelectedSceneMapId = ContextUser.SelectedSceneMapId;
 
+
+
             receipt.EventAwardData.SignCount = ContextUser.EventAwardData.SignCount;
             receipt.EventAwardData.IsTodaySign = ContextUser.EventAwardData.IsTodaySign;
             receipt.EventAwardData.FirstWeekCount = ContextUser.EventAwardData.FirstWeekCount;

@@ -50,7 +50,7 @@ namespace GameServer.CsScript.Action
             }
            
             DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
-            TimeSpan timeSpan = DateTime.Now.Date - startDate;
+            TimeSpan timeSpan = DateTime.Now.Subtract(startDate);
             int sec = (int)Math.Floor(timeSpan.TotalSeconds);
             int passsec = MathUtils.Addition(ContextUser.EventAwardData.TodayOnlineTime, sec, int.MaxValue);
             if (passsec < surface.Time)
@@ -60,7 +60,7 @@ namespace GameServer.CsScript.Action
             }
 
 
-            ContextUser.EventAwardData.TodayOnlineTime = 0;
+            ContextUser.EventAwardData.TodayOnlineTime = surface.Time;
             ContextUser.EventAwardData.OnlineAwardId++;
             ContextUser.EventAwardData.OnlineStartTime = DateTime.Now;
 
