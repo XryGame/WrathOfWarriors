@@ -86,10 +86,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1051 = 1051;
 
-        /////<summary>
-        /////经验等级改变通知接口
-        /////</summary>
-        //public const short Cst_Action1052 = 1052;
+        ///<summary>
+        ///等级改变通知接口
+        ///</summary>
+        public const short Cst_Action1052 = 1052;
 
         ///<summary>
         ///整点刷新通知接口

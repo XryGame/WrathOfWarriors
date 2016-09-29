@@ -21,7 +21,7 @@ namespace GameServer.Script.Model.DataModel
 
 
 
-    public delegate void AsyncDataChangeCallback(string property, int userID, object oldValue, object value);
+    public delegate void AsyncDataChangeCallback(string property, int userId, object oldValue, object value);
 
     /// <summary>
     /// 
@@ -1549,26 +1549,12 @@ namespace GameServer.Script.Model.DataModel
             ExpData = data;
             RefreshFightValue();
 
-            // 成就
-            AchievementData achdata = AchievementList.Find(t => (t.Type == AchievementType.LevelCount));
-            if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+            if (Callback != null && !IsRefreshing)
             {
-                achdata.Count = UserLv;
-                var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
-                if (achdata.Count >= achconfig.ObjectiveNum)
-                {
-                    achdata.IsFinish = true;
-                    GameSession session = GameSession.Get(UserID);
-                    if (session != null)
-                    {
-                        var parameters = new Parameters();
-                        parameters["ID"] = achdata.ID;
-                        var packet = ActionFactory.GetResponsePackage(1061, session, parameters, OpCode.Text, null);
-                        ActionFactory.SendAction(session, 1061, packet, (rsession, asyncResult) => { }, 0);
-                    }
-
-                }
+                Callback.BeginInvoke("LevelUp", UserID, 0, 0, null, this);
             }
+
+
         }
 
         /// <summary>
@@ -1755,15 +1741,10 @@ namespace GameServer.Script.Model.DataModel
                 if (achdata.Count >= achconfig.ObjectiveNum)
                 {
                     achdata.IsFinish = true;
-                    GameSession session = GameSession.Get(UserID);
-                    if (session != null)
+                    if (Callback != null && !IsRefreshing)
                     {
-                        var parameters = new Parameters();
-                        parameters["ID"] = achdata.ID;
-                        var packet = ActionFactory.GetResponsePackage(1061, session, parameters, OpCode.Text, null);
-                        ActionFactory.SendAction(session, 1061, packet, (rsession, asyncResult) => { }, 0);
+                        Callback.BeginInvoke("SkillLevelAchievement", UserID, 0, achdata.ID, null, this);
                     }
-
                 }
             }
         }

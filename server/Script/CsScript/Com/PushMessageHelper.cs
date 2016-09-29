@@ -164,6 +164,17 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
+        /// 升级通知
+        /// </summary>
+        public static void UserLevelUpNotification(GameSession session, bool ischangeclass)
+        {
+            var parameters = new Parameters();
+            parameters["IsChangeClass"] = ischangeclass;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
         /// 钻石改变通知
         /// </summary>
         /// <param name="session"></param>

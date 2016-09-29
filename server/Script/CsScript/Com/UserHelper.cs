@@ -595,20 +595,71 @@ namespace GameServer.Script.Model.DataModel
         /// <param name="userID"></param>
         /// <param name="value1"></param>
         /// <param name="value2"></param>
-        public static void TriggerUserCallback(string property, int userID, object oldValue, object value)
+        public static void TriggerUserCallback(string property, int userId, object oldValue, object value)
         {
             int useNum = MathUtils.Subtraction(value.ToInt(), oldValue.ToInt(), 0);
             int consumeNum = MathUtils.Subtraction(oldValue.ToInt(), value.ToInt(), 0);
             if (property == "DiamondChange")
             {
-                GameSession session = GameSession.Get(userID);
-                PushMessageHelper.UserDiamondChangedNotification(session);
+                GameSession session = GameSession.Get(userId);
+                if (session != null)
+                    PushMessageHelper.UserDiamondChangedNotification(session);
             }
-            if (property == "FightValueChange")
+            else if (property == "FightValueChange")
             {
-                GameSession session = GameSession.Get(userID);
-                PushMessageHelper.UserFightValueChangedNotification(session);
+                GameSession session = GameSession.Get(userId);
+                if (session != null)
+                    PushMessageHelper.UserFightValueChangedNotification(session);
+            }
+            else if (property == "SkillLevelAchievement")
+            {
+                GameSession session = GameSession.Get(userId);
+                if (session != null)
+                    PushMessageHelper.AchievementFinishNotification(session, value.ToInt());
+            }
+            else if (property == "LevelUp")
+            {
+                GameUser user = FindUser(userId);
+                // 成就
+                AchievementData achdata = user.AchievementList.Find(t => (t.Type == AchievementType.LevelCount));
+                if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+                {
+                    achdata.Count = user.UserLv;
+                    var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
+                    if (achdata.Count >= achconfig.ObjectiveNum)
+                    {
+                        achdata.IsFinish = true;
+                        GameSession session = GameSession.Get(userId);
+                        if (session != null)
+                            PushMessageHelper.AchievementFinishNotification(session, achdata.ID);
+                    }
+                }
+
+                // 将用户从原有班级中剔除
+                bool ischangeclass = false;
+                if (user.UserLv % 2 == 0 && user.ClassData.ClassID != 0)
+                {
+                    ischangeclass = true;
+                    user.ClassData.ClassID = 0;
+                    ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
+                    if (oldclass != null)
+                    {
+                        if (oldclass.MemberList.Find(t => (t ==userId)) != 0)
+                        {
+                            oldclass.MemberList.Remove(userId);
+                            if (oldclass.Monitor == userId)
+                            {
+                                oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
+                                PushMessageHelper.ClassMonitorChangeNotification(user.ClassData.ClassID);
+                            }
+                        }
+                    }
+                }
+                GameSession usession = GameSession.Get(userId);
+                if (usession != null)
+                    PushMessageHelper.UserLevelUpNotification(usession, ischangeclass);
             }
         }
+
     }
 }

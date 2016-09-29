@@ -1,0 +1,76 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+15:27:17 Server is starting...
+15:27:24 script compiled successfully.
+15:27:24 Start checking table schema, please wait.
+15:27:24 Check table schema successfully.
+15:27:24 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/9/29 15:27:25-消息：系统加载单服配置开始...
+
+
+Time:2016/9/29 15:27:25-消息：系统加载单服配置所需时间:589.1818ms
+
+
+Time:2016/9/29 15:27:25-消息：系统加载当天用户数:25/最大:100
+
+
+Time:2016/9/29 15:27:25-消息：系统加载当天用户所需时间:121.8672ms
+
+
+Time:2016/9/29 15:27:25-The ranking refresh is start...
+
+
+Time:2016/9/29 15:27:25-Trace>>The CombatRanking has be loaded, count:46
+
+
+Time:2016/9/29 15:27:25-Trace>>The LevelRanking has be loaded, count:46
+
+
+Time:2016/9/29 15:27:25-Trace>>The FightValueRanking has be loaded, count:46
+
+
+Time:2016/9/29 15:27:25-The ranking refresh is end.
+
+
+Time:2016/9/29 15:27:26-消息：系统全局运行环境加载所需时间:888.0342ms
+
+
+15:27:26 Server has started successfully!
+# Server is listening...
+15:28:07 csharp script compile start...
+15:28:25 csharp script compile start...
+15:28:26 csharp script compiled successfully.
+15:34:27 csharp script compile start...
+15:34:27 csharp script compiled successfully.
+15:34:46 csharp script compile start...
+15:36:08 csharp script compile start...
+15:36:11 csharp script compile start...
+15:36:20 csharp script compile start...
+15:37:05 csharp script compile start...
+15:37:05 csharp script compiled successfully.
+15:37:40 Clear expired cache end.
+15:37:44 csharp script compile start...
+15:37:45 csharp script compiled successfully.
+15:38:00 csharp script compile start...
+15:38:09 csharp script compile start...
+15:38:10 csharp script compiled successfully.
+15:38:20 csharp script compile start...
+15:38:21 csharp script compiled successfully.
+15:38:22 csharp script compile start...
+15:38:23 csharp script compiled successfully.
+15:39:00 csharp script compile start...
+15:39:01 csharp script compiled successfully.
+15:40:18 csharp script compile start...
+15:40:19 csharp script compile start...
+15:41:43 csharp script compile start...
+15:41:43 csharp script compiled successfully.
+15:42:38 csharp script compile start...
+15:42:39 csharp script compiled successfully.

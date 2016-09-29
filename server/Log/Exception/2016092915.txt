@@ -1,0 +1,106 @@
+Time:2016/9/29 15:28:08-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs, Line:650
+Message:当前上下文中不存在名称“ContextUser”
+
+
+Time:2016/9/29 15:28:08-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:34:46-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:当前上下文中不存在名称“id”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:与“ZyGames.Framework.Game.Service.ActionGetter.GetInt(string, ref int)”最匹配的重载方法具有一些无效参数
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:参数 2: 无法从“ref id”转换为“ref int”
+
+
+Time:2016/9/29 15:34:46-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:36:09-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:22
+Message:当前上下文中不存在名称“receipt”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:当前上下文中不存在名称“id”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:与“ZyGames.Framework.Game.Service.ActionGetter.GetInt(string, ref int)”最匹配的重载方法具有一些无效参数
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:参数 2: 无法从“ref id”转换为“ref int”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:37
+Message:当前上下文中不存在名称“receipt”
+
+
+Time:2016/9/29 15:36:09-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:36:12-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:当前上下文中不存在名称“id”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:与“ZyGames.Framework.Game.Service.ActionGetter.GetInt(string, ref int)”最匹配的重载方法具有一些无效参数
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:28
+Message:参数 2: 无法从“ref id”转换为“ref int”
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:37
+Message:当前上下文中不存在名称“receipt”
+
+
+Time:2016/9/29 15:36:12-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:36:21-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1052.cs, Line:37
+Message:当前上下文中不存在名称“receipt”
+
+
+Time:2016/9/29 15:36:21-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:38:00-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\PushMessageHelper.cs, Line:172
+Message:当前上下文中不存在名称“id”
+
+
+Time:2016/9/29 15:38:00-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:40:18-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs, Line:658
+Message:不能在此范围内声明名为“session”的局部变量，因为这样会使“session”具有不同的含义，而它已在“子级”范围中表示其他内容了
+
+
+Time:2016/9/29 15:40:18-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
+Time:2016/9/29 15:40:19-Compile assembly:DynamicScripts.CsScript error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs, Line:658
+Message:不能在此范围内声明名为“session”的局部变量，因为这样会使“session”具有不同的含义，而它已在“子级”范围中表示其他内容了
+
+
+Time:2016/9/29 15:40:19-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 332
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 254
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 259
+
+
