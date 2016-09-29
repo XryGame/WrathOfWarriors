@@ -86,7 +86,30 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
-            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            if (gameUser.OfflineDate > gameUser.LoginDate)
+            {
+                gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            }
+            else
+            {
+                gameUser.OfflineDate = DateTime.Now;
+                gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            }
+
+            if (gameUser.EventAwardData.OnlineStartTime < gameUser.EventAwardData.LastOnlineAwayReceiveTime)
+            {
+                if (gameUser.OfflineDate > gameUser.EventAwardData.LastOnlineAwayReceiveTime)
+                {
+                    gameUser.EventAwardData.OnlineStartTime = gameUser.EventAwardData.LastOnlineAwayReceiveTime;
+                }
+                else
+                {
+                    gameUser.EventAwardData.OnlineStartTime = gameUser.OfflineDate;
+                }
+              
+            }
+
+
             gameUser.LoginDate = DateTime.Now;
             gameUser.IsOnline = true;
             gameUser.ChatVesion = 0;
@@ -94,14 +117,14 @@ namespace GameServer.Script.Model.DataModel
             gameUser.IsRefreshing = true;
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
-            
-            // 在线奖励处理
+
             DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
 
             TimeSpan timeSpan = gameUser.OfflineDate.Subtract(startDate);
             int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+
             gameUser.EventAwardData.TodayOnlineTime += sec;
-            gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            
 
             // 计算上线时间，刷新数据
             var nowTime = DateTime.Now;

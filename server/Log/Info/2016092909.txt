@@ -45,3 +45,7 @@ Time:2016/9/29 9:20:52-消息：系统全局运行环境加载所需时间:1691.5941ms
 
 09:20:52 Server has started successfully!
 # Server is listening...
+09:31:00 Clear expired cache end.
+09:41:00 Clear expired cache end.
+09:45:02 csharp script compile start...
+09:45:03 csharp script compiled successfully.

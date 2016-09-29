@@ -136,5 +136,22 @@ namespace GameServer.Script.Model.Config
                 _OnlineStartTime = value;
             }
         }
+
+        /// <summary>
+        /// 上次领取在线奖时间
+        /// </summary>
+        private DateTime _LastOnlineAwayReceiveTime;
+        [ProtoMember(8)]
+        public DateTime LastOnlineAwayReceiveTime
+        {
+            get
+            {
+                return _LastOnlineAwayReceiveTime;
+            }
+            set
+            {
+                _LastOnlineAwayReceiveTime = value;
+            }
+        }
     }
 }

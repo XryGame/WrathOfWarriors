@@ -99,6 +99,7 @@ namespace GameServer.CsScript.Action
             user.UserStatus = UserStatus.MainUi;
             user.LoginDate = DateTime.Now;
             user.CreateDate = DateTime.Now;
+            user.OfflineDate = DateTime.Now;
             //user.ClassData = new UserClassData();
             //user.StudyTaskData = new UserStudyTaskData();
             //user.ExerciseTaskData = new UserExerciseTaskData();
@@ -106,6 +107,7 @@ namespace GameServer.CsScript.Action
             //user.CombatData = new UserCombatData();
             user.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
+            user.EventAwardData.OnlineStartTime = DateTime.Now;
 
             //user.FriendsData = new UserFriendsData();
             user.RefreshFightValue();

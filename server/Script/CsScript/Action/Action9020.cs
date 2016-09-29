@@ -49,20 +49,20 @@ namespace GameServer.CsScript.Action
                 return true;
             }
            
-            DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
-            TimeSpan timeSpan = DateTime.Now.Subtract(startDate);
-            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
-            int passsec = MathUtils.Addition(ContextUser.EventAwardData.TodayOnlineTime, sec, int.MaxValue);
-            if (passsec < surface.Time)
-            {
-                receipt.Result = EventStatus.Bad;
-                return true;
-            }
+            //DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
+            //TimeSpan timeSpan = DateTime.Now.Subtract(startDate);
+            //int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+            //int passsec = MathUtils.Addition(ContextUser.EventAwardData.TodayOnlineTime, sec, int.MaxValue);
+            //if (passsec < surface.Time)
+            //{
+            //    receipt.Result = EventStatus.Bad;
+            //    return true;
+            //}
 
 
             ContextUser.EventAwardData.TodayOnlineTime = surface.Time;
             ContextUser.EventAwardData.OnlineAwardId++;
-            ContextUser.EventAwardData.OnlineStartTime = DateTime.Now;
+            ContextUser.EventAwardData.LastOnlineAwayReceiveTime = DateTime.Now;
 
             receipt.AwardNum = surface.AwardNum;
 
