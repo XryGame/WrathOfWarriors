@@ -16,7 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
         public JPDailyQuestData New { get; set; }
 
         public TaskAwardType AwardType { get; set; }
-
+        
         public int AwardValue { get; set; }
 
         public int CurrDiamond { get; set; }

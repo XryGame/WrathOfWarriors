@@ -64,13 +64,14 @@ namespace GameServer.CsScript.Action
             ContextUser.EventAwardData.OnlineAwardId++;
             ContextUser.EventAwardData.LastOnlineAwayReceiveTime = DateTime.Now;
 
-            receipt.AwardNum = surface.AwardNum;
+            
 
             switch (surface.AwardType)
             {
                 case AwardType.Diamond:
                     {
                         UserHelper.GiveAwayDiamond(ContextUser.UserID, surface.AwardNum);
+                        receipt.AwardDiamondNum = surface.AwardNum;
                         receipt.CurrDiamond = ContextUser.DiamondNum;
                     }
                     break;

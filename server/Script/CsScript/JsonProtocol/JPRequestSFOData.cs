@@ -9,7 +9,7 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public EventStatus Result { get; set; }
 
-        public int AwardNum { get; set; }
+        public int AwardDiamondNum { get; set; }
 
         public int CurrDiamond { get; set; }
 

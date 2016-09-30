@@ -61,12 +61,13 @@ namespace GameServer.CsScript.Action
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-            receipt.AwardNum = config.RewardsNum;
+            
             switch (config.RewardsType)
             {
                 case AwardType.Diamond:
                     {
                         UserHelper.GiveAwayDiamond(ContextUser.UserID, config.RewardsNum);
+                        receipt.AwardDiamondNum = config.RewardsNum;
                     }
                     break;
                 case AwardType.ItemSkillBook:

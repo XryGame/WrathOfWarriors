@@ -99,13 +99,14 @@ namespace GameServer.CsScript.Action
                 ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, DataHelper.RepairSignNeedDiamond);
             }
 
-            receipt.AwardNum = signsurface.AwardNum;
+            
             
             switch (signsurface.AwardType)
             {
                 case AwardType.Diamond:
                     {
                         UserHelper.GiveAwayDiamond(ContextUser.UserID, signsurface.AwardNum);
+                        receipt.AwardDiamondNum = signsurface.AwardNum;
                         receipt.CurrDiamond = ContextUser.DiamondNum;
                     }
                     break;
