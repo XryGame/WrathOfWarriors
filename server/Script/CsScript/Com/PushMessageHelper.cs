@@ -112,6 +112,18 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action3002, packet, (rsession, asyncResult) => { }, 0);
         }
 
+
+
+        /// <summary>
+        /// 第二天在
+        /// </summary>
+        public static void RestoreUserNotification()
+        {
+            var onlinelist = GameSession.GetOnlineAll();
+            if (onlinelist.Count > 0)
+                ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
+        }
+
         /// <summary>
         /// 班级班长更换通知
         /// </summary>

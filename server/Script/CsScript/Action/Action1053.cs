@@ -38,6 +38,13 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             receipt = new JPRestoreUserData();
+
+            receipt.Vit = ContextUser.Vit;
+            receipt.CombatTimes = ContextUser.CombatData.CombatTimes;
+            receipt.CampaignTicketNum = ContextUser.CampaignTicketNum;
+            receipt.GiveAwayCount = ContextUser.FriendsData.GiveAwayCount;
+            receipt.ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes;
+
             receipt.DailyQuestData.ID = ContextUser.DailyQuestData.ID;
             receipt.DailyQuestData.IsFinish = ContextUser.DailyQuestData.IsFinish;
             receipt.DailyQuestData.RefreshCount = ContextUser.DailyQuestData.RefreshCount;

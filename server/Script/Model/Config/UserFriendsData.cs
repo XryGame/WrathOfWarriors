@@ -7,7 +7,7 @@ namespace GameServer.Script.Model.Config
 {
 
     /// <summary>
-    /// 用户竞技场信息
+    /// 用戶好友数据
     /// </summary>
     [Serializable, ProtoContract]
     public class UserFriendsData : EntityChangeEvent

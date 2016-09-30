@@ -40,11 +40,19 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
+            // 竞技场挑战次数
             gameUser.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
+            // 挑战班长次数
             gameUser.ChallengeMonitorTimes = 0;
+            // 赠送好友次数
+            gameUser.FriendsData.GiveAwayCount = 0;
+            // 体力
             if (gameUser.Vit < ConfigEnvSet.GetInt("User.RestoreVit"))
                 gameUser.Vit = ConfigEnvSet.GetInt("User.RestoreVit");
+            // 选票数量
             gameUser.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
+            // 购买的选票数量
+            gameUser.BuyCampaignTicketNum = 0;
 
             // 每日任务
             gameUser.DailyQuestData.ID = TaskType.No;
@@ -466,7 +474,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 RestoreUserData(session.UserId, false);
             }
-            ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
+            PushMessageHelper.RestoreUserNotification();
         }
         /// <summary>
         /// 每周二周五竞技场奖励任务
