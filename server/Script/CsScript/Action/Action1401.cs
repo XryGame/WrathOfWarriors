@@ -74,7 +74,8 @@ namespace GameServer.CsScript.Action
             receipt = new JPCombatMatchData();
             receipt.RankId = rankInfo.RankId;
             receipt.CombatTimes = ContextUser.CombatData.CombatTimes;
-            receipt.LastFailedTime = Util.ConvertDateTimeStamp(ContextUser.CombatData.LastFailedDate);
+            if (ContextUser.CombatData.LastFailedDate != DateTime.MinValue)
+                receipt.LastFailedTime = Util.ConvertDateTimeStamp(ContextUser.CombatData.LastFailedDate);
             //UserRank info = null;
             CacheList <int> MachList = new CacheList<int>();
             if (rankInfo.RankId <= 100)
