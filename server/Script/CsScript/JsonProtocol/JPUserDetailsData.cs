@@ -87,5 +87,7 @@ namespace GameServer.CsScript.JsonProtocol
         public int SelectedSceneMapId { get; set; }
 
         public JPEventAwardData EventAwardData { get; set; }
+
+        public CacheList<MailData> MailBox { get; set; }
     }
 }

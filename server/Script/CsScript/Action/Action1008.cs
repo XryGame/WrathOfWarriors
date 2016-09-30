@@ -300,6 +300,8 @@ namespace GameServer.CsScript.Action
             receipt.EventAwardData.IsTodayReceiveFirstWeek = ContextUser.EventAwardData.IsTodayReceiveFirstWeek;
             receipt.EventAwardData.TodayOnlineTime = ContextUser.EventAwardData.TodayOnlineTime;
             receipt.EventAwardData.OnlineAwardId = ContextUser.EventAwardData.OnlineAwardId;
+
+            receipt.MailBox = ContextUser.MailBox;
             return true;
         }
 

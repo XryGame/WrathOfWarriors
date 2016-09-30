@@ -56,6 +56,7 @@ namespace GameServer.Script.Model.DataModel
             AchievementList = new CacheList<AchievementData>();
             UnlockSceneMapList = new CacheList<int>();
             EventAwardData = new UserEventAwardData();
+            MailBox = new CacheList<MailData>();
         }
         public GameUser(int userid)
         : this()
@@ -869,6 +870,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 邮箱
+        /// </summary>
+        private CacheList<MailData> _MailBox;
+        [ProtoMember(56)]
+        [EntityField(true, ColumnDbType.LongText)]
+        public CacheList<MailData> MailBox
+        {
+            get
+            {
+                return _MailBox;
+            }
+            set
+            {
+                SetChange("MailBox", value);
+            }
+        }
+
 
         public override string GetNickName()
         {
@@ -972,6 +991,7 @@ namespace GameServer.Script.Model.DataModel
                     case "SelectedSceneMapId": return SelectedSceneMapId;
                     case "InviteFightDestUid": return InviteFightDestUid;
                     case "EventAwardData": return EventAwardData;
+                    case "MailBox": return MailBox;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1103,6 +1123,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "EventAwardData":
                         _EventAwardData = ConvertCustomField<UserEventAwardData>(value, index);
+                        break;
+                    case "MailBox":
+                        _MailBox = ConvertCustomField<CacheList<MailData>>(value, index);
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }

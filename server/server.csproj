@@ -270,6 +270,7 @@
     <Compile Include="Script\Model\Config\CampaignUserData.cs" />
     <Compile Include="Script\Model\Config\ChatData.cs" />
     <Compile Include="Script\Model\Config\CombatLogData.cs" />
+    <Compile Include="Script\Model\Config\MailData.cs" />
     <Compile Include="Script\Model\Config\UserDailyQuestData.cs" />
     <Compile Include="Script\Model\Config\FriendApplyData.cs" />
     <Compile Include="Script\Model\Config\FriendData.cs" />
