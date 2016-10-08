@@ -1156,6 +1156,11 @@ namespace GameServer.Script.Model.DataModel
             return SkillDataList.Find(t => (t.ID == id));
         }
 
+        public MailData findMail(string id)
+        {
+            return MailBox.Find(t => (t.ID == id));
+        }
+
 
         public SubjectStage getSubjectStage()
         {
@@ -2000,6 +2005,23 @@ namespace GameServer.Script.Model.DataModel
             else
             {
                 new BaseLog("NextDailyQuest").SaveFatalLog(string.Format("Task list is null!!!"));
+            }
+        }
+
+
+        public void AddNewMail(ref MailData mail)
+        {
+            if (mail == null)
+                return;
+
+            MailBox.Add(mail);
+            if (MailBox.Count >= DataHelper.MaxMailNum)
+            {
+                MailBox.RemoveAt(MailBox.Count - 1);
+            }
+            if (Callback != null && !IsRefreshing)
+            {
+                Callback.BeginInvoke("NewMail", UserID, _FightingValue, mail.ID, null, this);
             }
         }
     }

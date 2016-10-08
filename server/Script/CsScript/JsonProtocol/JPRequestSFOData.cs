@@ -7,6 +7,10 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPRequestSFOData
     {
+        public JPRequestSFOData()
+        {
+            AwardItemList = new List<int>();
+        }
         public EventStatus Result { get; set; }
 
         public int AwardDiamondNum { get; set; }

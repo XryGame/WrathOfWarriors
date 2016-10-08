@@ -137,6 +137,23 @@ namespace GameServer.CsScript.Action
                 user.AchievementList.Add(achdata);
             }
 
+            // 邮箱
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "标题",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = "内容",
+                ApppendDiamond = 200
+            };
+            mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+            mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
+            mail.AppendItem.Add(new ItemData() { ID = 10003, Num = 3 });
+            mail.AppendItem.Add(new ItemData() { ID = 10004, Num = 4 });
+
+            user.AddNewMail(ref mail);
+
             var cacheSet = new PersonalCacheStruct<GameUser>();
             cacheSet.Add(user);
             cacheSet.Update();
@@ -163,6 +180,8 @@ namespace GameServer.CsScript.Action
             combatranking.TryAppend(rankInfo);
             levelranking.TryAppend(rankInfo);
             fightvalueranking.TryAppend(rankInfo);
+
+
 
 
             

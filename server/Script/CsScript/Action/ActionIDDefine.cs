@@ -157,6 +157,13 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1065 = 1065;
 
         ///<summary>
+        ///新的邮件通知
+        ///</summary>
+        public const short Cst_Action1066 = 1066;
+
+
+
+        ///<summary>
         ///请求学习/劳动任务
         ///</summary>
         public const short Cst_Action1100 = 1100;
@@ -386,5 +393,20 @@ namespace GameServer.CsScript.Action
         ///请求领取在线时间奖励
         ///</summary>
         public const short Cst_Action9020 = 9020;
+
+        ///<summary>
+        ///请求读取邮件附件
+        ///</summary>
+        public const short Cst_Action10000 = 10000;
+
+        ///<summary>
+        ///请求领取邮件附件
+        ///</summary>
+        public const short Cst_Action10001 = 10001;
+
+        ///<summary>
+        ///请求删除邮件
+        ///</summary>
+        public const short Cst_Action10002 = 10002;
     }
 }

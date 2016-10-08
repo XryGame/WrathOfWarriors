@@ -18,6 +18,7 @@ namespace GameServer.Script.Model.Config
         public MailData()
             : base(false)
         {
+            AppendItem = new CacheList<ItemData>();
         }
         
         /// <summary>
@@ -48,7 +49,7 @@ namespace GameServer.Script.Model.Config
         /// 内容
         /// </summary>
         [ProtoMember(5)]
-        public DateTime Context { get; set; }
+        public string Context { get; set; }
 
         /// <summary>
         /// 是否已读
@@ -72,6 +73,12 @@ namespace GameServer.Script.Model.Config
                 _AppendItem = value;
             }
         }
+
+        /// <summary>
+        /// 附加钻石
+        /// </summary>
+        [ProtoMember(8)]
+        public int ApppendDiamond { get; set; }
 
     }
 }

@@ -112,6 +112,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\CsScript\Action\Action100.cs" />
+    <Compile Include="Script\CsScript\Action\Action10000.cs" />
+    <Compile Include="Script\CsScript\Action\Action10001.cs" />
+    <Compile Include="Script\CsScript\Action\Action10002.cs" />
     <Compile Include="Script\CsScript\Action\Action1002.cs" />
     <Compile Include="Script\CsScript\Action\Action1004.cs" />
     <Compile Include="Script\CsScript\Action\Action1005.cs" />
@@ -132,6 +135,7 @@
     <Compile Include="Script\CsScript\Action\Action1063.cs" />
     <Compile Include="Script\CsScript\Action\Action1064.cs" />
     <Compile Include="Script\CsScript\Action\Action1065.cs" />
+    <Compile Include="Script\CsScript\Action\Action1066.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1102.cs" />
@@ -236,6 +240,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestAddFriendData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignsListData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestDeleteMailData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestFightData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestSFOData.cs" />

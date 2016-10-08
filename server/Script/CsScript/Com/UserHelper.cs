@@ -605,8 +605,8 @@ namespace GameServer.Script.Model.DataModel
         /// <param name="value2"></param>
         public static void TriggerUserCallback(string property, int userId, object oldValue, object value)
         {
-            int useNum = MathUtils.Subtraction(value.ToInt(), oldValue.ToInt(), 0);
-            int consumeNum = MathUtils.Subtraction(oldValue.ToInt(), value.ToInt(), 0);
+            //int useNum = MathUtils.Subtraction(value.ToInt(), oldValue.ToInt(), 0);
+            //int consumeNum = MathUtils.Subtraction(oldValue.ToInt(), value.ToInt(), 0);
             if (property == "DiamondChange")
             {
                 GameSession session = GameSession.Get(userId);
@@ -666,6 +666,12 @@ namespace GameServer.Script.Model.DataModel
                 GameSession usession = GameSession.Get(userId);
                 if (usession != null)
                     PushMessageHelper.UserLevelUpNotification(usession, ischangeclass);
+            }
+            else if (property == "NewMail")
+            {
+                GameSession session = GameSession.Get(userId);
+                if (session != null)
+                    PushMessageHelper.NewMailNotification(session, value.ToString());
             }
         }
 

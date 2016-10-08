@@ -84,13 +84,12 @@ namespace GameServer.CsScript.Action
 
                             if (item.Type == ItemType.Skill)
                             {
-                                ItemData itemdata = ContextUser.ItemDataList.Find(t => (t.ID == surface.AwardID));
+                                ItemData itemdata = ContextUser.findItem(surface.AwardID);
                                 if (itemdata != null)
                                 {
                                     ContextUser.UserAddSkill(surface.AwardID, surface.AwardNum);
                                 }
                             }
-                            receipt.AwardItemList = new List<int>();
                             receipt.AwardItemList.Add(surface.AwardID);
                         }
                     }

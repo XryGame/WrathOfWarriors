@@ -43,6 +43,10 @@ namespace GameServer.Script.Model.DataModel
         /// 补签所需钻石数量
         /// </summary>
         static public int RepairSignNeedDiamond;
+        /// <summary>
+        /// 最大邮件数量
+        /// </summary>
+        static public int MaxMailNum;
 
 
         static public string[] JobTitles = {
@@ -72,6 +76,7 @@ namespace GameServer.Script.Model.DataModel
             FriendGiveAwayCountMax = ConfigEnvSet.GetInt("User.FriendGiveAwayCountMax");
             FriendGiveAwayVitValue = ConfigEnvSet.GetInt("User.FriendGiveAwayVitValue");
             RepairSignNeedDiamond = ConfigEnvSet.GetInt("User.RepairSignNeedDiamond");
+            MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
 
             var classcache = new ShareCacheStruct<ClassDataCache>();
             if (classcache.IsEmpty)

@@ -242,5 +242,16 @@ namespace GameServer.Script.CsScript.Com
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1065, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1065, packet, (rsession, asyncResult) => { }, 0);
         }
+
+        /// <summary>
+        /// 新邮件通知
+        /// </summary>
+        public static void NewMailNotification(GameSession session, string mailid)
+        {
+            var parameters = new Parameters();
+            parameters["NewMailId"] = mailid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1066, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1066, packet, (rsession, asyncResult) => { }, 0);
+        }
     }
 }

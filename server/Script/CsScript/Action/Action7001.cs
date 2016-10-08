@@ -85,7 +85,6 @@ namespace GameServer.CsScript.Action
                                     ContextUser.UserAddSkill(config.RewardsID, config.RewardsNum);
                                 }
                             }
-                            receipt.AwardItemList = new List<int>();
                             receipt.AwardItemList.Add(config.RewardsID);
                         }
                     }
