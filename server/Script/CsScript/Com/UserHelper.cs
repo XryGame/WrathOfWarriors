@@ -498,7 +498,7 @@ namespace GameServer.Script.Model.DataModel
         private static void ProgressCombatAward()
         {
             new BaseLog().SaveLog(string.Format("Progress Combat Award..."));
-            new BaseLog().SaveLog(string.Format("Combat Award Time: {0}", DateTime.Now.ToString()));
+
             int pageCount;
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             IList<UserRank> list = ranking.GetRange(0, ranking.Count, out pageCount);
