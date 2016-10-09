@@ -1,0 +1,64 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT Server version 6.7.9.8
+   ((        //        //   / /    / /       Game: 1   Server: 1
+     \\     //        //   / /    / /        Port: 9001
+       ) ) //        //   / /    / /        
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+
+09:04:36 Server is starting...
+09:04:43 script compiled successfully.
+09:04:43 Start checking table schema, please wait.
+09:04:44 Check table schema successfully.
+09:04:44 CacheFactory listen has started...
+# Server command "Ctrl+C" or "Ctrl+Break" exit.
+Time:2016/10/9 9:04:44-消息：系统加载单服配置开始...
+
+
+Time:2016/10/9 9:04:45-消息：系统加载单服配置所需时间:1631.6536ms
+
+
+Time:2016/10/9 9:04:45-消息：系统加载当天用户数:7/最大:100
+
+
+Time:2016/10/9 9:04:45-消息：系统加载当天用户所需时间:39.6262ms
+
+
+Time:2016/10/9 9:04:45-The ranking refresh is start...
+
+
+Time:2016/10/9 9:04:45-Trace>>The CombatRanking has be loaded, count:74
+
+
+Time:2016/10/9 9:04:45-Trace>>The LevelRanking has be loaded, count:74
+
+
+Time:2016/10/9 9:04:46-Trace>>The FightValueRanking has be loaded, count:74
+
+
+Time:2016/10/9 9:04:46-The ranking refresh is end.
+
+
+Time:2016/10/9 9:04:46-消息：系统全局运行环境加载所需时间:1780.4286ms
+
+
+09:04:46 Server has started successfully!
+# Server is listening...
+09:06:37 csharp script compile start...
+09:13:18 csharp script compile start...
+09:13:19 csharp script compiled successfully.
+09:13:39 csharp script compile start...
+09:13:40 csharp script compiled successfully.
+09:15:00 Clear expired cache end.
+09:17:44 csharp script compile start...
+09:17:45 csharp script compiled successfully.
+09:19:06 csharp script compile start...
+09:19:06 csharp script compiled successfully.
+09:19:46 csharp script compile start...
+09:19:46 csharp script compiled successfully.
+09:22:25 csharp script compile start...
+09:22:26 csharp script compiled successfully.
+09:24:34 csharp script compile start...
+09:24:34 csharp script compiled successfully.
+09:25:00 Clear expired cache end.

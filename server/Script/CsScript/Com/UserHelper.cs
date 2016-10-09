@@ -502,25 +502,84 @@ namespace GameServer.Script.Model.DataModel
 
             foreach (UserRank ur in list)
             {
+                GameUser user = FindUser(ur.UserID);
+                if (user == null)
+                    continue;
+
                 if (ur.RankId == 1)
                 {
-
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "学霸榜奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "恭喜您获得学霸榜第一名，以下是您获得的奖励，请查收！",
+                        ApppendDiamond = 200
+                    };
+                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+                    mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
+                    mail.AppendItem.Add(new ItemData() { ID = 10003, Num = 3 });
+                    user.AddNewMail(ref mail);
                 }
                 else if (ur.RankId == 2)
                 {
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "学霸榜奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "恭喜您获得学霸榜第二名，以下是您获得的奖励，请查收！",
+                        ApppendDiamond = 200
+                    };
+                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+                    mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
 
+                    user.AddNewMail(ref mail);
                 }
                 else if (ur.RankId == 3)
                 {
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "学霸榜奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "恭喜您获得学霸榜第三名，以下是您获得的奖励，请查收！",
+                        ApppendDiamond = 200
+                    };
+                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
 
+                    user.AddNewMail(ref mail);
                 }
                 else if (ur.RankId <= 10)
                 {
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "学霸榜奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "恭喜您获得学霸榜前十名，以下是您获得的奖励，请查收！",
+                        ApppendDiamond = 200
+                    };
 
+                    user.AddNewMail(ref mail);
                 }
                 else
                 {
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "学霸榜奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "根据您在学霸榜中的排名，奖励如下，请查收！",
+                        ApppendDiamond = 200
+                    };
 
+                    user.AddNewMail(ref mail);
                 }
             }
         }
