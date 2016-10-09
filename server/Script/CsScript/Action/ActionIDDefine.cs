@@ -209,6 +209,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1202 = 1202;
 
         ///<summary>
+        ///查询同班同学
+        ///</summary>
+        public const short Cst_Action1203 = 1203;
+
+        ///<summary>
         ///开宝箱
         ///</summary>
         public const short Cst_Action1301 = 1301;

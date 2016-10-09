@@ -2021,7 +2021,7 @@ namespace GameServer.Script.Model.DataModel
             }
             if (Callback != null && !IsRefreshing)
             {
-                Callback.BeginInvoke("NewMail", UserID, _FightingValue, mail.ID, null, this);
+                Callback.BeginInvoke("NewMail", UserID, 0, mail.ID, null, this);
             }
         }
     }

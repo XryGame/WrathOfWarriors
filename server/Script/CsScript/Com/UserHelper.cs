@@ -520,9 +520,7 @@ namespace GameServer.Script.Model.DataModel
                         Context = "恭喜您获得学霸榜第一名，以下是您获得的奖励，请查收！",
                         ApppendDiamond = 200
                     };
-                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
-                    mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
-                    mail.AppendItem.Add(new ItemData() { ID = 10003, Num = 3 });
+                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 3 });
                     user.AddNewMail(ref mail);
                 }
                 else if (ur.RankId == 2)
@@ -536,8 +534,7 @@ namespace GameServer.Script.Model.DataModel
                         Context = "恭喜您获得学霸榜第二名，以下是您获得的奖励，请查收！",
                         ApppendDiamond = 200
                     };
-                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
-                    mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
+                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 2 });
 
                     user.AddNewMail(ref mail);
                 }

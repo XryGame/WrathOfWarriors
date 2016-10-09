@@ -148,9 +148,6 @@ namespace GameServer.CsScript.Action
                 ApppendDiamond = 200
             };
             mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
-            mail.AppendItem.Add(new ItemData() { ID = 10002, Num = 2 });
-            mail.AppendItem.Add(new ItemData() { ID = 10003, Num = 3 });
-            mail.AppendItem.Add(new ItemData() { ID = 10004, Num = 4 });
 
             user.AddNewMail(ref mail);
 
