@@ -15,6 +15,7 @@ using ZyGames.Framework.RPC.Sockets;
 using ZyGames.Framework.Game.Contract;
 using GameServer.Script.CsScript.Com;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Log;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -496,6 +497,8 @@ namespace GameServer.Script.Model.DataModel
         /// </summary>
         private static void ProgressCombatAward()
         {
+            new BaseLog().SaveLog(string.Format("Progress Combat Award..."));
+            new BaseLog().SaveLog(string.Format("Combat Award Time: {0}", DateTime.Now.ToString()));
             int pageCount;
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             IList<UserRank> list = ranking.GetRange(0, ranking.Count, out pageCount);
