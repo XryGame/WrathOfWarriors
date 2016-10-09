@@ -395,7 +395,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action9020 = 9020;
 
         ///<summary>
-        ///请求读取邮件附件
+        ///请求读取邮件
         ///</summary>
         public const short Cst_Action10000 = 10000;
 

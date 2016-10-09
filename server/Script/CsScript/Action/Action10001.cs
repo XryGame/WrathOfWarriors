@@ -61,7 +61,7 @@ namespace GameServer.CsScript.Action
 
             for (int i = 0; i < list.Count; ++i)
             {
-                MailData mail = ContextUser.findMail(mailid);
+                MailData mail = ContextUser.findMail(list[i]);
                 if (mail == null)
                     continue;
                 
@@ -87,6 +87,7 @@ namespace GameServer.CsScript.Action
                     }
                     receipt.AwardItemList.Add(item.ID);
                 }
+                mail.AppendItem.Clear();
 
                 if (mail.ApppendDiamond > 0)
                 {

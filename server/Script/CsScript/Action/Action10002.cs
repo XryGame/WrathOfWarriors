@@ -55,10 +55,21 @@ namespace GameServer.CsScript.Action
                 {
                     if (m.ApppendDiamond != 0 || m.AppendItem.Count > 0)
                     {
-                        receipt.MailBox.Add(m);
+                        MailData tm = new MailData()
+                        {
+                            ID = m.ID,
+                            Title = m.Title,
+                            Sender = m.Sender,
+                            Date = m.Date,
+                            Context = m.Context,
+                            IsRead = m.IsRead,
+                            AppendItem = m.AppendItem,
+                            ApppendDiamond = m.ApppendDiamond,
+                        };
+                        receipt.MailBox.Add(tm);
                     }
                 }
-                if (receipt.MailBox.Count != ContextUser.MailBox.Count)
+                if (receipt.MailBox.Count > 0)
                     receipt.Result = EventStatus.Bad;
 
                 ContextUser.MailBox = receipt.MailBox;
@@ -74,10 +85,14 @@ namespace GameServer.CsScript.Action
                 {
                     receipt.Result = EventStatus.Bad;
                 }
+                else
+                {
+                    ContextUser.MailBox.Remove(mail);
+                }
 
                 receipt.MailBox = ContextUser.MailBox;
             }
-
+            
 
             return true;
         }
