@@ -1,4 +1,6 @@
-﻿namespace GameServer.CsScript.JsonProtocol
+﻿using ZyGames.Framework.Cache.Generic;
+
+namespace GameServer.CsScript.JsonProtocol
 {
     public class JPCombatMatchUserData
     {
@@ -13,5 +15,7 @@
         public int UserLv { get; set; }
 
         public int FightingValue { get; set; }
+
+        public CacheList<int> SkillCarryList { get; set; }
     }
 }

@@ -151,8 +151,12 @@ namespace GameServer.CsScript.Action
                 {
                     machinfo = ranking.Find(s => (s.RankId == mach_tops));
                 }
+                
                 if (machinfo != null)
                 {
+                    GameUser user = UserHelper.FindUser(machinfo.UserID);
+                    if (user == null)
+                        continue;
                     JPCombatMatchUserData data = new JPCombatMatchUserData()
                     {
                         UserId = machinfo.UserID,
@@ -160,7 +164,8 @@ namespace GameServer.CsScript.Action
                         LooksId = machinfo.LooksId,
                         RankId = machinfo.RankId,
                         UserLv = machinfo.UserLv,
-                        FightingValue = machinfo.FightingValue
+                        FightingValue = machinfo.FightingValue,
+                        SkillCarryList = user.SkillCarryList
                     };
 
                     receipt.RivalList.Add(data);
