@@ -69,13 +69,14 @@ namespace GameServer.CsScript.Action
                         }
 
                         bool isTimeEnough = false;
+                        int needtime = subjectExp.UnitTime * ContextUser.StudyTaskData.Count;
                         int mins = 0;
                         if (DateTime.Now > ContextUser.StudyTaskData.StartTime)
                         {
                             
                             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.StudyTaskData.StartTime);
                             mins = (int)Math.Floor(timeSpan.TotalMinutes);
-                            if (mins >= subjectExp.UnitTime * ContextUser.StudyTaskData.Count)
+                            if (mins >= needtime)
                             {
                                 isTimeEnough = true;
                             }
@@ -109,7 +110,7 @@ namespace GameServer.CsScript.Action
                         // 每日
                         if (ContextUser.DailyQuestData.ID == TaskType.Study)
                         {
-                            ContextUser.DailyQuestData.Count += mins;
+                            ContextUser.DailyQuestData.Count += needtime;
                             if (ContextUser.DailyQuestData.Count > 45)
                             {
                                 ContextUser.DailyQuestData.IsFinish = true;
@@ -119,7 +120,7 @@ namespace GameServer.CsScript.Action
                         }
 
                         // 成就
-                        UserHelper.AchievementProcess(ContextUser.UserID, mins, AchievementType.StudyTime);
+                        UserHelper.AchievementProcess(ContextUser.UserID, needtime, AchievementType.StudyTime);
 
                     }
                     break;
@@ -139,13 +140,14 @@ namespace GameServer.CsScript.Action
                             return true;
                         }
 
+                        int needtime = subjectExp.UnitTime * ContextUser.ExerciseTaskData.Count;
                         bool isTimeEnough = false;
                         int mins = 0;
                         if (DateTime.Now > ContextUser.ExerciseTaskData.StartTime)
                         {
                             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.ExerciseTaskData.StartTime);
                             mins = (int)Math.Floor(timeSpan.TotalMinutes);
-                            if (mins >= subjectExp.UnitTime * ContextUser.ExerciseTaskData.Count)
+                            if (mins >= needtime)
                             {
                                 isTimeEnough = true;
                             }
@@ -178,7 +180,7 @@ namespace GameServer.CsScript.Action
                         // 每日
                         if (ContextUser.DailyQuestData.ID == TaskType.Exercise)
                         {
-                            ContextUser.DailyQuestData.Count += mins;
+                            ContextUser.DailyQuestData.Count += needtime;
                             if (ContextUser.DailyQuestData.Count >= 20)
                             {
                                 ContextUser.DailyQuestData.IsFinish = true;
@@ -188,7 +190,7 @@ namespace GameServer.CsScript.Action
                         }
 
                         // 成就
-                        UserHelper.AchievementProcess(ContextUser.UserID, mins, AchievementType.ExerciseTime);
+                        UserHelper.AchievementProcess(ContextUser.UserID, needtime, AchievementType.ExerciseTime);
                     }
                     break;
                 default: throw new ArgumentException(string.Format("SubjectType Error[{0}] isn't exist.", subjectType));

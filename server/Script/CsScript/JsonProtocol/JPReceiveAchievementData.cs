@@ -7,7 +7,10 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPReceiveAchievementData
     {
-
+        public JPReceiveAchievementData()
+        {
+            AwardItemList = new List<int>();
+        }
         public EventStatus Result { get; set; }
         
         public int AwardDiamondNum { get; set; }
