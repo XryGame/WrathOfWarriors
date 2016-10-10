@@ -244,6 +244,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestDeleteMailData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestFightData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestRankData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestSFOData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestTaskData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestVoteData.cs" />

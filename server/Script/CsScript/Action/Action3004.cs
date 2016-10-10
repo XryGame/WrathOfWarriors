@@ -14,7 +14,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action3004 : BaseAction
     {
-        private List<JPRankUserData> receipt;
+        private JPRequestRankData receipt;
         private RankType _ranktype;
 
         public Action3004(ActionGetter actionGetter)
@@ -42,8 +42,10 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool TakeAction()
         {
-            receipt = new List<JPRankUserData>();
+            receipt = new JPRequestRankData();
+            receipt.Type = _ranktype;
             Ranking<UserRank> ranking = null;
+            
             switch (_ranktype)
             {
                 case RankType.Combat:
@@ -58,6 +60,21 @@ namespace GameServer.CsScript.Action
             }
             if (ranking == null)
                 return true;
+
+            int rankID = 0;
+            UserRank rankInfo = null;
+            if (ranking.TryGetRankNo(m => (m.UserID == ContextUser.UserID), out rankID))
+            {
+                rankInfo = ranking.Find(s => (s.UserID == ContextUser.UserID));
+            }
+
+            if (rankInfo != null)
+            {
+                receipt.SelfRank = rankInfo.RankId;
+            }
+
+
+
             int pagecout;
             var list = ranking.GetRange(0, 50, out pagecout);
             foreach (var data in list)
@@ -73,7 +90,7 @@ namespace GameServer.CsScript.Action
                     Exp = data.Exp,
                     FightingValue = data.FightingValue
                 };
-                receipt.Add(jpdata);
+                receipt.List.Add(jpdata);
             }
             return true;
         }
