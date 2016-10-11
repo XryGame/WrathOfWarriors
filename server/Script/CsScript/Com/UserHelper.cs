@@ -517,7 +517,7 @@ namespace GameServer.Script.Model.DataModel
                         Title = "学霸榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第一名，以下是您获得的奖励，请查收！",
+                        Context = "恭喜您获得学霸榜第一名，奖励如下，请查收！",
                         ApppendDiamond = 200
                     };
                     mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 3 });
@@ -531,7 +531,7 @@ namespace GameServer.Script.Model.DataModel
                         Title = "学霸榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第二名，以下是您获得的奖励，请查收！",
+                        Context = "恭喜您获得学霸榜第二名，奖励如下，请查收！",
                         ApppendDiamond = 200
                     };
                     mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 2 });
@@ -546,7 +546,7 @@ namespace GameServer.Script.Model.DataModel
                         Title = "学霸榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第三名，以下是您获得的奖励，请查收！",
+                        Context = "恭喜您获得学霸榜第三名，奖励如下，请查收！",
                         ApppendDiamond = 200
                     };
                     mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
@@ -561,7 +561,7 @@ namespace GameServer.Script.Model.DataModel
                         Title = "学霸榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜前十名，以下是您获得的奖励，请查收！",
+                        Context = "恭喜您获得学霸榜前十名，奖励如下，请查收！",
                         ApppendDiamond = 200
                     };
 

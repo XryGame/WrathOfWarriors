@@ -2015,9 +2015,9 @@ namespace GameServer.Script.Model.DataModel
                 return;
 
             MailBox.Add(mail);
-            if (MailBox.Count >= DataHelper.MaxMailNum)
+            if (MailBox.Count > DataHelper.MaxMailNum)
             {
-                MailBox.RemoveAt(MailBox.Count - 1);
+                MailBox.RemoveAt(0);
             }
             if (Callback != null && !IsRefreshing)
             {
