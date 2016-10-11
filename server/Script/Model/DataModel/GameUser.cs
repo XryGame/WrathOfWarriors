@@ -1576,6 +1576,7 @@ namespace GameServer.Script.Model.DataModel
             UserExpData data = new UserExpData();
             ExpData = data;
             RefreshFightValue();
+            
 
             if (Callback != null && !IsRefreshing)
             {
@@ -1583,6 +1584,23 @@ namespace GameServer.Script.Model.DataModel
             }
 
 
+        }
+
+
+        public void ResultStudyTask()
+        {
+            StudyTaskData.SubjectID = 0;
+            StudyTaskData.StartTime = DateTime.MinValue;
+            StudyTaskData.Count = 0;
+            StudyTaskData.SceneId = SceneType.No;
+        }
+
+        public void ResultExerciseTask()
+        {
+            ExerciseTaskData.SubjectID = 0;
+            ExerciseTaskData.StartTime = DateTime.MinValue;
+            ExerciseTaskData.Count = 0;
+            ExerciseTaskData.SceneId = SceneType.No;
         }
 
         /// <summary>

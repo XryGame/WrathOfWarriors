@@ -702,24 +702,32 @@ namespace GameServer.Script.Model.DataModel
                     }
                 }
 
-                // 将用户从原有班级中剔除
+                
                 bool ischangeclass = false;
-                if (user.UserLv % 2 == 0 && user.ClassData.ClassID != 0)
+                if (user.UserLv % 2 == 0)
                 {
-                    ischangeclass = true;
-                    user.ClassData.ClassID = 0;
-                    ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
-                    if (oldclass != null)
-                    {
-                        if (oldclass.MemberList.Find(t => (t ==userId)) != 0)
+                    user.ResultStudyTask();
+                    user.ResultExerciseTask();
+
+
+                    if (user.ClassData.ClassID != 0)
+                    {// 将用户从原有班级中剔除
+                        ischangeclass = true;
+                        user.ClassData.ClassID = 0;
+                        ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
+                        if (oldclass != null)
                         {
-                            oldclass.MemberList.Remove(userId);
-                            if (oldclass.Monitor == userId)
+                            if (oldclass.MemberList.Find(t => (t == userId)) != 0)
                             {
-                                oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
-                                PushMessageHelper.ClassMonitorChangeNotification(user.ClassData.ClassID);
+                                oldclass.MemberList.Remove(userId);
+                                if (oldclass.Monitor == userId)
+                                {
+                                    oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
+                                    PushMessageHelper.ClassMonitorChangeNotification(user.ClassData.ClassID);
+                                }
                             }
                         }
+
                     }
                 }
                 GameSession usession = GameSession.Get(userId);
