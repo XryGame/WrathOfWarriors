@@ -13,7 +13,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1401_竞技场入口
+    /// 1401_名人榜入口
     /// </summary>
     public class Action1401 : BaseAction
     {

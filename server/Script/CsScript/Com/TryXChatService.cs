@@ -16,7 +16,7 @@ using GameServer.Script.Model.LogModel;
 namespace GameServer.CsScript.Com
 {
     /// <summary>
-    /// 聊表功能
+    /// 聊天功能
     /// </summary>
     public class TryXChatService : ChatService
     {

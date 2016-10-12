@@ -192,7 +192,6 @@
     <Compile Include="Script\CsScript\Com\FightValueRanking.cs" />
     <Compile Include="Script\CsScript\GM\TryXGMCommand.cs" />
     <Compile Include="Script\CsScript\Com\LevelRanking.cs" />
-    <Compile Include="Script\CsScript\Com\MyChatService.cs" />
     <Compile Include="Script\CsScript\Com\PushMessageHelper.cs" />
     <Compile Include="Script\CsScript\Com\RoleFunc.cs" />
     <Compile Include="Script\CsScript\Com\TryXChatService.cs" />

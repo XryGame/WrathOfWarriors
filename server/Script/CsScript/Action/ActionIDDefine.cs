@@ -224,17 +224,17 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1310 = 1310;
 
         ///<summary>
-        ///竞技场入口
+        ///名人榜入口
         ///</summary>
         public const short Cst_Action1401 = 1401;
 
         ///<summary>
-        ///竞技场请求挑战
+        ///名人榜请求挑战
         ///</summary>
         public const short Cst_Action1402 = 1402;
 
         ///<summary>
-        ///竞技场挑战结果
+        ///名人榜挑战结果
         ///</summary>
         public const short Cst_Action1403 = 1403;
 

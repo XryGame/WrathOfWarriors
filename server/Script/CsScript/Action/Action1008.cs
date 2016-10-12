@@ -352,7 +352,7 @@ namespace GameServer.CsScript.Action
                 switch (ranktype)
                 {
                     case RankType.Combat:
-                        context = string.Format("竞技场排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
+                        context = string.Format("名人榜排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                         break;
                     case RankType.Level:
                         context = string.Format("等级排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);

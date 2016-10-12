@@ -41,7 +41,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
-            // 竞技场挑战次数
+            // 名人榜挑战次数
             gameUser.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             // 挑战班长次数
             gameUser.ChallengeMonitorTimes = 0;
@@ -171,7 +171,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.OfflineDate = DateTime.Now;
             gameUser.UserStatus = UserStatus.MainUi;
 
-            // 竞技场处理
+            // 名人榜处理
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             int rankID = 0;
             UserRank rankinfo = null;
@@ -294,7 +294,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 格式化输出竞技场日志
+        /// 格式化输出名人榜日志
         /// </summary>
         /// <param name="logdata"></param>
         /// <returns></returns>
@@ -478,7 +478,7 @@ namespace GameServer.Script.Model.DataModel
             PushMessageHelper.RestoreUserNotification();
         }
         /// <summary>
-        /// 每周二周五竞技场奖励任务
+        /// 每周二周五名人榜奖励任务
         /// </summary>
         /// <param name="planconfig"></param>
         public static void DoCombatAwardTask(PlanConfig planconfig)
@@ -493,7 +493,7 @@ namespace GameServer.Script.Model.DataModel
 
 
         /// <summary>
-        /// 进行发放竞技场奖励
+        /// 进行发放名人榜奖励
         /// </summary>
         private static void ProgressCombatAward()
         {

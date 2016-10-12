@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace GameServer.CsScript.Com
 {
     /// <summary>
-    /// 竞技场排行
+    /// 名人榜排行
     /// </summary>
     public class CombatRanking : Ranking<UserRank>
     {

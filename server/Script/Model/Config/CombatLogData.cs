@@ -9,7 +9,7 @@ namespace GameServer.Script.Model.Config
 {
 
     /// <summary>
-    /// 竞技场日志数据
+    /// 名人榜日志数据
     /// </summary>
     [Serializable, ProtoContract]
     public class CombatLogData : EntityChangeEvent

@@ -17,7 +17,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1403_竞技场挑战结果
+    /// 1403_名人榜挑战结果
     /// </summary>
     public class Action1403 : BaseAction
     {

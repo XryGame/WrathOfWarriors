@@ -8,7 +8,7 @@ namespace GameServer.Script.Model.Config
 {
 
     /// <summary>
-    /// 用户竞技场信息
+    /// 用户名人榜信息
     /// </summary>
     [Serializable, ProtoContract]
     public class UserCombatData : EntityChangeEvent
