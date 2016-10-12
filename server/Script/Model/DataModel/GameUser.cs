@@ -889,6 +889,25 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
+        /// <summary>
+        /// 当天是否抽奖
+        /// </summary>
+        private bool _IsTodayLottery;
+        [ProtoMember(57)]
+        [EntityField("IsTodayLottery")]
+        public bool IsTodayLottery
+        {
+            get
+            {
+                return _IsTodayLottery;
+            }
+            set
+            {
+                SetChange("IsTodayLottery", value);
+            }
+        }
+
+
         public override string GetNickName()
         {
             return NickName;
@@ -992,6 +1011,7 @@ namespace GameServer.Script.Model.DataModel
                     case "InviteFightDestUid": return InviteFightDestUid;
                     case "EventAwardData": return EventAwardData;
                     case "MailBox": return MailBox;
+                    case "IsTodayLottery": return IsTodayLottery;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1126,6 +1146,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "MailBox":
                         _MailBox = ConvertCustomField<CacheList<MailData>>(value, index);
+                        break;
+                    case "IsTodayLottery":
+                        _IsTodayLottery = value.ToBool();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }

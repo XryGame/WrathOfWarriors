@@ -302,6 +302,8 @@ namespace GameServer.CsScript.Action
             receipt.EventAwardData.OnlineAwardId = ContextUser.EventAwardData.OnlineAwardId;
 
             receipt.MailBox = ContextUser.MailBox;
+
+            receipt.IsTodayLottery = ContextUser.IsTodayLottery;
             return true;
         }
 

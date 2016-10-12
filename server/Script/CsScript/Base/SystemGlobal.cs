@@ -153,7 +153,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Signin>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_FirstWeek>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_OnlineReward>().AutoLoad(dbFilter);
-
+            new ShareCacheStruct<Config_Lottery>().AutoLoad(dbFilter);
 
             var classcache = new ShareCacheStruct<ClassDataCache>();
             classcache.AutoLoad(dbFilter);

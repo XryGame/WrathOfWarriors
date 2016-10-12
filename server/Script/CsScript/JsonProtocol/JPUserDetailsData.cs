@@ -89,5 +89,7 @@ namespace GameServer.CsScript.JsonProtocol
         public JPEventAwardData EventAwardData { get; set; }
 
         public CacheList<MailData> MailBox { get; set; }
+
+        public bool IsTodayLottery { get; set; }
     }
 }

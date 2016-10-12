@@ -413,5 +413,10 @@ namespace GameServer.CsScript.Action
         ///请求删除邮件
         ///</summary>
         public const short Cst_Action10002 = 10002;
+
+        ///<summary>
+        ///请求抽奖
+        ///</summary>
+        public const short Cst_Action10100 = 10100;
     }
 }

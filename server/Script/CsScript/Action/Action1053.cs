@@ -50,6 +50,8 @@ namespace GameServer.CsScript.Action
             receipt.DailyQuestData.RefreshCount = ContextUser.DailyQuestData.RefreshCount;
             receipt.DailyQuestData.FinishCount = ContextUser.DailyQuestData.FinishCount;
             receipt.DailyQuestData.Count = ContextUser.DailyQuestData.Count;
+
+            receipt.IsTodayLottery = false;
             return true;
         }
     }

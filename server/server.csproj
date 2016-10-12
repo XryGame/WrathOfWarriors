@@ -119,6 +119,7 @@
     <Compile Include="Script\CsScript\Action\Action1004.cs" />
     <Compile Include="Script\CsScript\Action\Action1005.cs" />
     <Compile Include="Script\CsScript\Action\Action1008.cs" />
+    <Compile Include="Script\CsScript\Action\Action10100.cs" />
     <Compile Include="Script\CsScript\Action\Action1050.cs" />
     <Compile Include="Script\CsScript\Action\Action1051.cs" />
     <Compile Include="Script\CsScript\Action\Action1052.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPInviteFightRivalData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPInviterData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPItemSkillData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLotteryData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOccupyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOccupySceneData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOpenBoxData.cs" />
@@ -262,6 +264,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ItemGrade.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_OnlineReward.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Role.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_RoleGrade.cs" />
@@ -298,7 +301,7 @@
     <Compile Include="Script\Model\DataModel\NickNameCache.cs" />
     <Compile Include="Script\Model\DataModel\DataHelper.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
-    <Compile Include="Script\Model\Enum\AchievementAwardType.cs" />
+    <Compile Include="Script\Model\Enum\AwardType.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />
     <Compile Include="Script\Model\Enum\ChatType.cs" />
@@ -308,6 +311,7 @@
     <Compile Include="Script\Model\Enum\EventType.cs" />
     <Compile Include="Script\Model\Enum\ItemType.cs" />
     <Compile Include="Script\Model\Enum\JobTitleType.cs" />
+    <Compile Include="Script\Model\Enum\LotteryAwardType.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxMode.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
     <Compile Include="Script\Model\Enum\RankType.cs" />

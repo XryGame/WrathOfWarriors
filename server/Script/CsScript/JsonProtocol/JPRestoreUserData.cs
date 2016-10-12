@@ -25,5 +25,7 @@ namespace GameServer.CsScript.JsonProtocol
         public JPDailyQuestData DailyQuestData { get; set; }
 
         public JPEventAwardData EventAwardData { get; set; }
+
+        public bool IsTodayLottery { get; set; }
     }
 }

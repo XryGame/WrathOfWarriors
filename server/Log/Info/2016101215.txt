@@ -1,0 +1,53 @@
+Time:2016/10/12 15:00:00-消息：Progress Combat Award...
+
+
+15:01:00 Clear expired cache end.
+Time:2016/10/12 15:01:00-消息：Progress Combat Award...
+
+
+Time:2016/10/12 15:02:00-消息：Progress Combat Award...
+
+
+Time:2016/10/12 15:03:00-消息：Progress Combat Award...
+
+
+Time:2016/10/12 15:04:00-消息：Progress Combat Award...
+
+
+Time:2016/10/12 15:05:00-消息：Progress Combat Award...
+
+
+15:05:12 csharp script compile start...
+15:05:12 csharp script compiled successfully.
+Time:2016/10/12 15:06:00-消息：Progress Combat Award...
+
+
+Time:2016/10/12 15:07:00-消息：Progress Combat Award...
+
+
+15:07:40 model script compile start...
+Time:2016/10/12 15:07:40-Wait for the update before Model script...
+
+
+Time:2016/10/12 15:07:40-Update before Model script OK.
+
+
+15:07:41 script compiled successfully.
+15:07:41 Start checking table schema, please wait.
+15:07:41 Check table schema successfully.
+Time:2016/10/12 15:07:41-Update Model script success.
+
+
+15:07:41 model script compiled successfully.
+Time:2016/10/12 15:07:41-消息：系统加载单服配置开始...
+
+
+Time:2016/10/12 15:07:41-消息：系统加载单服配置所需时间:440.082ms
+
+
+Time:2016/10/12 15:07:41-消息：系统加载当天用户数:13/最大:100
+
+
+Time:2016/10/12 15:07:42-消息：系统加载当天用户所需时间:105.4481ms
+
+

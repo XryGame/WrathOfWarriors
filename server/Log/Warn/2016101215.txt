@@ -1,0 +1,126 @@
+Time:2016/10/12 15:00:00-Trace>>OnEntitySyncQueue execute count:97, success:1094/total 1191, fail:0 start...
+
+
+Time:2016/10/12 15:01:00-Trace>>OnEntitySyncQueue execute count:95, success:1191/total 1286, fail:0 start...
+
+
+Time:2016/10/12 15:01:04-Trace>>OnEntitySyncQueue execute count:1, success:1286/total 1287, fail:0 start...
+
+
+Time:2016/10/12 15:01:06-Trace>>OnEntitySyncQueue execute count:1, success:1287/total 1288, fail:0 start...
+
+
+Time:2016/10/12 15:01:10-Trace>>OnEntitySyncQueue execute count:1, success:1288/total 1289, fail:0 start...
+
+
+Time:2016/10/12 15:01:11-Trace>>OnEntitySyncQueue execute count:1, success:1289/total 1290, fail:0 start...
+
+
+Time:2016/10/12 15:01:59-Trace>>OnEntitySyncQueue execute count:1, success:1290/total 1291, fail:0 start...
+
+
+Time:2016/10/12 15:02:00-Trace>>OnEntitySyncQueue execute count:95, success:1291/total 1386, fail:0 start...
+
+
+Time:2016/10/12 15:02:01-Trace>>OnEntitySyncQueue execute count:1, success:1386/total 1387, fail:0 start...
+
+
+Time:2016/10/12 15:02:05-Trace>>OnEntitySyncQueue execute count:1, success:1387/total 1388, fail:0 start...
+
+
+Time:2016/10/12 15:02:50-Trace>>OnEntitySyncQueue execute count:1, success:1388/total 1389, fail:0 start...
+
+
+Time:2016/10/12 15:02:52-Trace>>OnEntitySyncQueue execute count:1, success:1389/total 1390, fail:0 start...
+
+
+Time:2016/10/12 15:02:56-Trace>>OnEntitySyncQueue execute count:1, success:1390/total 1391, fail:0 start...
+
+
+Time:2016/10/12 15:03:00-Trace>>OnEntitySyncQueue execute count:95, success:1391/total 1486, fail:0 start...
+
+
+Time:2016/10/12 15:04:00-Trace>>OnEntitySyncQueue execute count:95, success:1486/total 1581, fail:0 start...
+
+
+Time:2016/10/12 15:04:26-Trace>>OnEntitySyncQueue execute count:1, success:1581/total 1582, fail:0 start...
+
+
+Time:2016/10/12 15:04:29-Trace>>OnEntitySyncQueue execute count:1, success:1582/total 1583, fail:0 start...
+
+
+Time:2016/10/12 15:04:40-Trace>>OnEntitySyncQueue execute count:1, success:1583/total 1584, fail:0 start...
+
+
+Time:2016/10/12 15:04:42-Trace>>OnEntitySyncQueue execute count:1, success:1584/total 1585, fail:0 start...
+
+
+Time:2016/10/12 15:04:47-Trace>>OnEntitySyncQueue execute count:1, success:1585/total 1586, fail:0 start...
+
+
+Time:2016/10/12 15:05:00-Trace>>OnEntitySyncQueue execute count:95, success:1586/total 1681, fail:0 start...
+
+
+Time:2016/10/12 15:05:59-Trace>>OnEntitySyncQueue execute count:1, success:1681/total 1682, fail:0 start...
+
+
+Time:2016/10/12 15:06:00-Trace>>OnEntitySyncQueue execute count:95, success:1682/total 1777, fail:0 start...
+
+
+Time:2016/10/12 15:06:01-Trace>>OnEntitySyncQueue execute count:1, success:1777/total 1778, fail:0 start...
+
+
+Time:2016/10/12 15:06:02-Trace>>Action-3002 Uid:107 access timeout 1016.7574/500ms.
+
+
+Time:2016/10/12 15:06:02-Trace>>Action-1008 Uid:107 access timeout 1073.2959/500ms.
+
+
+Time:2016/10/12 15:06:06-Trace>>OnEntitySyncQueue execute count:1, success:1778/total 1779, fail:0 start...
+
+
+Time:2016/10/12 15:06:11-Trace>>OnEntitySyncQueue execute count:1, success:1779/total 1780, fail:0 start...
+
+
+Time:2016/10/12 15:06:15-Trace>>OnEntitySyncQueue execute count:1, success:1780/total 1781, fail:0 start...
+
+
+Time:2016/10/12 15:06:18-Trace>>OnEntitySyncQueue execute count:1, success:1781/total 1782, fail:0 start...
+
+
+Time:2016/10/12 15:07:00-Trace>>OnEntitySyncQueue execute count:95, success:1782/total 1877, fail:0 start...
+
+
+Time:2016/10/12 15:07:09-Trace>>OnEntitySyncQueue execute count:1, success:1877/total 1878, fail:0 start...
+
+
+Time:2016/10/12 15:07:11-Trace>>OnEntitySyncQueue execute count:1, success:1878/total 1879, fail:0 start...
+
+
+Time:2016/10/12 15:07:14-Trace>>OnEntitySyncQueue execute count:1, success:1879/total 1880, fail:0 start...
+
+
+Time:2016/10/12 15:07:23-Trace>>OnEntitySyncQueue execute count:1, success:1880/total 1881, fail:0 start...
+
+
+Time:2016/10/12 15:07:25-Trace>>OnEntitySyncQueue execute count:1, success:1881/total 1882, fail:0 start...
+
+
+Time:2016/10/12 15:07:31-Trace>>OnEntitySyncQueue execute count:1, success:1882/total 1883, fail:0 start...
+
+
+Time:2016/10/12 15:07:34-Trace>>OnEntitySyncQueue execute count:1, success:1883/total 1884, fail:0 start...
+
+
+Time:2016/10/12 15:07:39-Trace>>OnEntitySyncQueue execute count:1, success:1884/total 1885, fail:0 start...
+
+
+Time:2016/10/12 15:07:40-Trace>>ClearTemp dir E:\ServerTools\code\xuesheng\server\server\temp error:System.UnauthorizedAccessException: 对路径“0idjmdfg.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptCompiler.cs:行号 93
+
+
+Time:2016/10/12 15:07:41-Trace>>OnEntitySyncQueue execute count:70, success:1885/total 1955, fail:0 start...
+
+

@@ -86,7 +86,7 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.EventAwardData.OnlineStartTime = DateTime.Now;
             }
 
-
+            gameUser.IsTodayLottery = false;
         }
         public static void UserOnline(int uid)
         {
@@ -100,7 +100,7 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
             }
             else
-            {
+            {// 离线时间比登录时间小，说明当前用户未下线
                 gameUser.OfflineDate = DateTime.Now;
                 gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
             }
@@ -713,7 +713,6 @@ namespace GameServer.Script.Model.DataModel
                     if (user.ClassData.ClassID != 0)
                     {// 将用户从原有班级中剔除
                         ischangeclass = true;
-                        user.ClassData.ClassID = 0;
                         ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
                         if (oldclass != null)
                         {
@@ -727,7 +726,7 @@ namespace GameServer.Script.Model.DataModel
                                 }
                             }
                         }
-
+                        user.ClassData.ClassID = 0;
                     }
                 }
                 GameSession usession = GameSession.Get(userId);
