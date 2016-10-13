@@ -301,9 +301,24 @@ namespace GameServer.CsScript.Action
             receipt.EventAwardData.TodayOnlineTime = ContextUser.EventAwardData.TodayOnlineTime;
             receipt.EventAwardData.OnlineAwardId = ContextUser.EventAwardData.OnlineAwardId;
 
+
             receipt.MailBox = ContextUser.MailBox;
 
             receipt.IsTodayLottery = ContextUser.IsTodayLottery;
+
+            UserPayCache userpay = UserHelper.FindUserPay(ContextUser.UserID);
+            if (userpay == null)
+            {
+                userpay = new UserPayCache();
+                var payCacheSet = new PersonalCacheStruct<UserPayCache>();
+                payCacheSet.Add(userpay);
+                payCacheSet.Update();
+            }
+                
+            if (ContextUser.BuyDiamond > 0 && !userpay.IsReceiveFirstPay)
+            {
+                receipt.IsCanReceiveFirstPay = true;
+            }
             return true;
         }
 

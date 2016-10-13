@@ -99,6 +99,14 @@ namespace GameServer.CsScript.Action
                         {
                             command = new DiamondCommand();
                         }
+                        else if (lower.StartsWith("gm weekcard"))
+                        {
+                            command = new PayWeekCardCommand();
+                        }
+                        else if (lower.StartsWith("gm monthcard"))
+                        {
+                            command = new PayMonthCardCommand();
+                        }
                         else
                         {
                             var chatService = new TryXChatService(ContextUser);

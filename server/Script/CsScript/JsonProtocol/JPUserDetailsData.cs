@@ -91,5 +91,7 @@ namespace GameServer.CsScript.JsonProtocol
         public CacheList<MailData> MailBox { get; set; }
 
         public bool IsTodayLottery { get; set; }
+
+        public bool IsCanReceiveFirstPay { get; set; }
     }
 }

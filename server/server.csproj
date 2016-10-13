@@ -192,6 +192,8 @@
     <Compile Include="Script\CsScript\Base\Util.cs" />
     <Compile Include="Script\CsScript\Com\CombatRanking.cs" />
     <Compile Include="Script\CsScript\Com\FightValueRanking.cs" />
+    <Compile Include="Script\CsScript\GM\PayMonthCardCommand.cs" />
+    <Compile Include="Script\CsScript\GM\PayWeekCardCommand.cs" />
     <Compile Include="Script\CsScript\GM\TryXGMCommand.cs" />
     <Compile Include="Script\CsScript\Com\LevelRanking.cs" />
     <Compile Include="Script\CsScript\Com\PushMessageHelper.cs" />

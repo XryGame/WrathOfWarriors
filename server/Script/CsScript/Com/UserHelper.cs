@@ -34,6 +34,11 @@ namespace GameServer.Script.Model.DataModel
             return new PersonalCacheStruct<GameUser>().FindKey(userid.ToString());
         }
 
+        public static UserPayCache FindUserPay(int userid)
+        {
+            return new PersonalCacheStruct<UserPayCache>().FindKey(userid.ToString());
+        }
+
         public static void RestoreUserData(int uid, bool islogin = true)
         {
             GameUser gameUser = FindUser(uid);
@@ -85,6 +90,64 @@ namespace GameServer.Script.Model.DataModel
             {
                 gameUser.EventAwardData.OnlineStartTime = DateTime.Now;
             }
+            // 周卡月卡处理
+            UserPayCache paycache = FindUserPay(uid);
+            if (paycache != null)
+            {
+                if (paycache.WeekCardDays > 0)
+                {
+                    TimeSpan timeSpan = DateTime.Now.Subtract(paycache.WeekCardAwardDate);
+                    int days = (int)Math.Floor(timeSpan.TotalDays);
+                    if (days > 0)
+                    {
+                        int count = days > paycache.WeekCardDays ? paycache.WeekCardDays : days;
+                        while (count > 0)
+                        {
+                            count--;
+                            paycache.WeekCardDays--;
+                            paycache.WeekCardAwardDate = DateTime.Now;
+                            MailData mail = new MailData()
+                            {
+                                ID = Guid.NewGuid().ToString(),
+                                Title = "周卡奖励",
+                                Sender = "系统",
+                                Date = DateTime.Now,
+                                Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", paycache.WeekCardDays),
+                                ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
+                            };
+
+                            gameUser.AddNewMail(ref mail);
+                        }
+                    }
+                }
+                if (paycache.MonthCardDays > 0)
+                {
+                    TimeSpan timeSpan = DateTime.Now.Subtract(paycache.MonthCardAwardDate);
+                    int days = (int)Math.Floor(timeSpan.TotalDays);
+                    if (days > 0)
+                    {
+                        int count = days > paycache.MonthCardDays ? paycache.MonthCardDays : days;
+                        while (count > 0)
+                        {
+                            count--;
+                            paycache.MonthCardDays--;
+                            paycache.MonthCardAwardDate = DateTime.Now;
+                            MailData mail = new MailData()
+                            {
+                                ID = Guid.NewGuid().ToString(),
+                                Title = "月卡奖励",
+                                Sender = "系统",
+                                Date = DateTime.Now,
+                                Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", paycache.MonthCardDays),
+                                ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
+                            };
+
+                            gameUser.AddNewMail(ref mail);
+                        }
+                    }
+                }
+            }
+
 
             gameUser.IsTodayLottery = false;
         }

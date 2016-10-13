@@ -90,6 +90,43 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("MonthCardDays", value);
             }
         }
+
+        /// <summary>
+        /// 周卡奖励日期
+        /// </summary>
+        private DateTime _WeekCardAwardDate;
+        [ProtoMember(6)]
+        [EntityField("WeekCardAwardDate")]
+        public DateTime WeekCardAwardDate
+        {
+            get
+            {
+                return _WeekCardAwardDate;
+            }
+            set
+            {
+                SetChange("WeekCardAwardDate", value);
+            }
+        }
+
+        /// <summary>
+        /// 月卡奖励日期
+        /// </summary>
+        private DateTime _MonthCardAwardDate;
+        [ProtoMember(7)]
+        [EntityField("MonthCardAwardDate")]
+        public DateTime MonthCardAwardDate
+        {
+            get
+            {
+                return _MonthCardAwardDate;
+            }
+            set
+            {
+                SetChange("MonthCardAwardDate", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -107,6 +144,8 @@ namespace GameServer.Script.Model.DataModel
                     case "IsReceiveFirstPay": return IsReceiveFirstPay;
                     case "WeekCardDays": return WeekCardDays;
                     case "MonthCardDays": return MonthCardDays;
+                    case "WeekCardAwardDate": return WeekCardAwardDate;
+                    case "MonthCardAwardDate": return MonthCardAwardDate;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -127,6 +166,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "MonthCardDays":
                         _MonthCardDays = value.ToInt();
+                        break;
+                    case "WeekCardAwardDate":
+                        _WeekCardAwardDate = value.ToDateTime();
+                        break;
+                    case "MonthCardAwardDate":
+                        _MonthCardAwardDate = value.ToDateTime();
                         break;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
