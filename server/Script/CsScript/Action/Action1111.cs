@@ -64,7 +64,7 @@ namespace GameServer.CsScript.Action
             ContextUser.UserStatus = UserStatus.MainUi;
             if (result == EventStatus.Good)
             {
-                ContextUser.AdditionFightExpValue(role.Exp);
+                //ContextUser.AdditionFightExpValue(role.Exp);
 
                 int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
 

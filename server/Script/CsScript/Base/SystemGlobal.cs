@@ -14,6 +14,7 @@ using GameServer.Script.Model.DataModel;
 using GameServer.CsScript.Com;
 using ZyGames.Framework.Common.Timing;
 using ZyGames.Framework.Common.Log;
+using ZyGames.Framework.Game.Contract;
 
 namespace GameServer.CsScript.Base
 {
@@ -171,6 +172,16 @@ namespace GameServer.CsScript.Base
         
         public static void Stop()
         {
+            var onlines = GameSession.GetOnlineAll();
+            foreach (var sess in onlines)
+            {
+                GameUser user = UserHelper.FindUser(sess.UserId);
+                if (user == null)
+                    continue;
+                user.IsOnline = false;
+                user.OfflineDate = DateTime.Now;
+            }
+
             //CountryCombat.Stop();
             //GameActiveCenter.Stop();
             //GuildGameActiveCenter.Stop();

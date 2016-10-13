@@ -30,7 +30,7 @@ namespace GameServer.CsScript.Action
             }
             else
             {
-                ErrorCode = ActionIDDefine.Cst_Action4001;
+                ErrorCode = ActionIDDefine.Cst_Action4002;
             }
                 
             return base.BuildJsonPack();

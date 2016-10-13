@@ -170,9 +170,5 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        protected override int GetIdentityId()
-        {
-            return ClassID;
-        }
     }
 }

@@ -179,9 +179,15 @@ namespace GameServer.CsScript.Action
             fightvalueranking.TryAppend(rankInfo);
 
 
+            // 充值数据
+            UserPayCache paycache = new UserPayCache()
+            {
+                UserID = user.UserID,
+            };
+            var payCacheSet = new PersonalCacheStruct<UserPayCache>();
+            payCacheSet.Add(paycache);
+            payCacheSet.Update();
 
-
-            
 
             return user;
         }

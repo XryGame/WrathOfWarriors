@@ -152,6 +152,7 @@
     <Compile Include="Script\CsScript\Action\Action1401.cs" />
     <Compile Include="Script\CsScript\Action\Action1402.cs" />
     <Compile Include="Script\CsScript\Action\Action1403.cs" />
+    <Compile Include="Script\CsScript\Action\Action1404.cs" />
     <Compile Include="Script\CsScript\Action\Action1501.cs" />
     <Compile Include="Script\CsScript\Action\Action1502.cs" />
     <Compile Include="Script\CsScript\Action\Action1503.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="Script\Model\DataModel\TUser.cs" />
     <Compile Include="Script\Model\DataModel\NickNameCache.cs" />
     <Compile Include="Script\Model\DataModel\DataHelper.cs" />
+    <Compile Include="Script\Model\DataModel\UserPayCache.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
     <Compile Include="Script\Model\Enum\AwardType.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />

@@ -23,7 +23,7 @@ namespace GameServer.CsScript.GM
         /// <summary>
         /// 添加玩家钻石
         /// </summary>
-        /// <param name="abilityId"></param>
+        /// <param name="num"></param>
         /// <param name="userId"></param>
         private void AddUserDiamond(int num, int userId)
         {
