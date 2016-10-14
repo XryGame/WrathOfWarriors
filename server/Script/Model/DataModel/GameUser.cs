@@ -1227,6 +1227,7 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+
         /// <summary>  
         /// 获得当前阶段BaseExp
         /// </summary>  

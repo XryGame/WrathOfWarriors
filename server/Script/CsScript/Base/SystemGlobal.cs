@@ -159,12 +159,9 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Vip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Pay>().AutoLoad(dbFilter);
 
-            var classcache = new ShareCacheStruct<ClassDataCache>();
-            classcache.AutoLoad(dbFilter);
-            var jobcache = new ShareCacheStruct<JobTitleDataCache>();
-            jobcache.AutoLoad(dbFilter);
-            var occupycache = new ShareCacheStruct<OccupyDataCache>();
-            occupycache.AutoLoad(dbFilter);
+            new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
+            new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
+            new ShareCacheStruct<OccupyDataCache>().AutoLoad(dbFilter);
 
             DataHelper.InitData();
             stopwatch.Stop();

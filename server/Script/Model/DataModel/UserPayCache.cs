@@ -4,6 +4,7 @@ using ProtoBuf;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Model;
+using GameServer.Script.Model.ConfigModel;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -34,6 +35,21 @@ namespace GameServer.Script.Model.DataModel
             set
             {
                 SetChange("UserID", value);
+            }
+        }
+
+        private int _PayMoney;
+        [ProtoMember(2)]
+        [EntityField("PayMoney", IsKey = true)]
+        public int PayMoney
+        {
+            get
+            {
+                return _PayMoney;
+            }
+            set
+            {
+                SetChange("PayMoney", value);
             }
         }
 
@@ -141,6 +157,7 @@ namespace GameServer.Script.Model.DataModel
                 switch (index)
                 {
                     case "UserID": return UserID;
+                    case "PayMoney": return PayMoney;
                     case "IsReceiveFirstPay": return IsReceiveFirstPay;
                     case "WeekCardDays": return WeekCardDays;
                     case "MonthCardDays": return MonthCardDays;
@@ -157,6 +174,9 @@ namespace GameServer.Script.Model.DataModel
                 {
                     case "UserID":
                         _UserID = value.ToInt();
+                        break;
+                    case "PayMoney":
+                        _PayMoney = value.ToInt();
                         break;
                     case "IsReceiveFirstPay":
                         _IsReceiveFirstPay = value.ToBool();
@@ -179,5 +199,22 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+
+        /// <summary>  
+        /// 根据充值数量获得用户Vip等级
+        /// </summary>  
+        /// <returns></returns>  
+        public short ConvertPayVipLevel()
+        {
+            var list = new ShareCacheStruct<Config_Vip>().FindAll(t => (t.PaySum <= PayMoney));
+            if (list.Count > 0)
+            { 
+                return (short)list[list.Count - 1].id;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
