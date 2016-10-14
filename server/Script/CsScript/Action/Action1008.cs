@@ -27,6 +27,7 @@ namespace GameServer.CsScript.Action
     public class Action1008 : BaseAction
     {
         private JPUserDetailsData receipt;
+        private Random random = new Random();
         public Action1008(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1008, actionGetter)
         {
@@ -306,6 +307,38 @@ namespace GameServer.CsScript.Action
 
             receipt.IsTodayLottery = ContextUser.IsTodayLottery;
 
+            if (!ContextUser.IsTodayLottery)
+            {
+                var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= ContextUser.UserLv));
+                if (list.Count > 0)
+                {
+                    int weight = 0;
+                    foreach (var cl in list)
+                    {
+                        weight += cl.Weight;
+                    }
+                    Config_Lottery lott = null;
+                    int randv = random.Next(weight);
+                    int tmpw = 0;
+                    for (int i = 0; i < list.Count; ++i)
+                    {
+                        tmpw += list[i].Weight;
+                        if (randv <= tmpw)
+                        {
+                            lott = list[i];
+                            break;
+                        }
+                    }
+                    if (lott != null)
+                    {
+                        ContextUser.RandomLotteryId = lott.ID;
+                        receipt.RandomLoteryId = lott.ID;
+                    }
+                }
+            }
+            
+
+            // 支付模块
             UserPayCache userpay = UserHelper.FindUserPay(ContextUser.UserID);
             if (userpay == null)
             {

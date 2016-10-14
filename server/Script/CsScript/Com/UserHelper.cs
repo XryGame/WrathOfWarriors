@@ -189,6 +189,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.IsRefreshing = true;
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
+            gameUser.RandomLotteryId = 0;
 
             DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
 

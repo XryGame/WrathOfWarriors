@@ -907,6 +907,16 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 随机的抽奖id
+        /// </summary>
+        [ProtoMember(58)]
+        public int RandomLotteryId
+        {
+            get;
+            set;
+        }
+
 
         public override string GetNickName()
         {

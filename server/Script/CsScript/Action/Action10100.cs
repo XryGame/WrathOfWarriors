@@ -19,7 +19,7 @@ namespace GameServer.CsScript.Action
     public class Action10100 : BaseAction
     {
         private JPLotteryData receipt;
-        private Random random = new Random();
+        
         public Action10100(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action10100, actionGetter)
         {
@@ -46,29 +46,10 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            if (ContextUser.IsTodayLottery)
+            if (ContextUser.IsTodayLottery || ContextUser.RandomLotteryId == 0)
                 return false;
 
-            var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= ContextUser.UserLv));
-            if (list.Count == 0)
-                return false;
-
-            int weight = 0;
-            foreach (var cl in list)
-            {
-                weight += cl.Weight;
-            }
-            Config_Lottery lott = null;
-            int randv = random.Next(weight);
-            int tmpw = 0;
-            for (int i = 0; i < list.Count; ++i)
-            {
-                tmpw += list[i].Weight;
-                if (randv <= tmpw)
-                    lott = list[i];
-                else
-                    break;
-            }
+            Config_Lottery lott = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
 
             if (lott == null)
                 return false;
