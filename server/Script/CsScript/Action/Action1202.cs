@@ -100,6 +100,7 @@ namespace GameServer.CsScript.Action
                 {
                     Uid = newcalss.Monitor,
                     Nickname = MUser.NickName,
+                    LooksId = MUser.LooksId,
                     UserLv = MUser.UserLv,
                     SkillCarryList = MUser.SkillCarryList
                 };

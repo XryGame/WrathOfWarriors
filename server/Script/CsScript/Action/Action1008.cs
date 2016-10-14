@@ -332,7 +332,10 @@ namespace GameServer.CsScript.Action
                     if (lott != null)
                     {
                         ContextUser.RandomLotteryId = lott.ID;
-                        receipt.RandomLoteryId = lott.ID;
+                        receipt.LotteryAwardType = lott.Type;
+                        receipt.LotteryId = lott.Content;
+                        if (lott == null)
+                            return false;
                     }
                 }
             }

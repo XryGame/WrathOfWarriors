@@ -269,6 +269,8 @@
     <Compile Include="Script\Model\ConfigModel\Config_ItemGrade.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_OnlineReward.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Pay.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Purchase.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Role.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_RoleGrade.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Scene.cs" />
@@ -278,6 +280,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_SkillGrade.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_SubjectExp.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Task.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Vip.cs" />
     <Compile Include="Script\Model\Config\AchievementData.cs" />
     <Compile Include="Script\Model\Config\CampaignUserData.cs" />
     <Compile Include="Script\Model\Config\ChatData.cs" />
@@ -333,6 +336,7 @@
     <Compile Include="Script\Model\Enum\TaskAwardType.cs" />
     <Compile Include="Script\Model\Enum\TaskType.cs" />
     <Compile Include="Script\Model\Enum\UserStatus.cs" />
+    <Compile Include="Script\Model\Enum\VipObtainType.cs" />
     <Compile Include="Script\Model\LogModel\UserChatLog.cs" />
     <Compile Include="Script\Model\LogModel\UserLoginLog.cs" />
     <Compile Include="Script\Model\UserCacheGlobal.cs" />

@@ -87,8 +87,9 @@ namespace GameServer.CsScript.Action
                     }
                     break;
             }
+            receipt.ItemList = ContextUser.ItemDataList;
+            receipt.SkillList = ContextUser.SkillDataList;
 
-            
             return true;
         }
     }
