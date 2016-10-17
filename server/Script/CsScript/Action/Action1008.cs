@@ -79,7 +79,7 @@ namespace GameServer.CsScript.Action
                 BaseExp = ContextUser.BaseExp,
                 FightExp = ContextUser.FightExp,
                 Vit = ContextUser.Vit,
-                VipLv = ContextUser.VipLv,
+                //VipLv = ContextUser.VipLv,
                 CreateDate = ContextUser.CreateDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 LoginDate = ContextUser.LoginDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 Attack = rolegrade.Attack,
@@ -345,16 +345,29 @@ namespace GameServer.CsScript.Action
             UserPayCache userpay = UserHelper.FindUserPay(ContextUser.UserID);
             if (userpay == null)
             {
-                userpay = new UserPayCache();
+                userpay = new UserPayCache()
+                {
+                    UserID = ContextUser.UserID,
+                    PayMoney = 0,
+                    IsReceiveFirstPay = false,
+                    WeekCardDays = 0,
+                    MonthCardDays = 0,
+                    WeekCardAwardDate = DateTime.MinValue,
+                    MonthCardAwardDate = DateTime.MinValue,
+                };
                 var payCacheSet = new PersonalCacheStruct<UserPayCache>();
                 payCacheSet.Add(userpay);
                 payCacheSet.Update();
             }
                 
-            if (ContextUser.BuyDiamond > 0 && !userpay.IsReceiveFirstPay)
+            if (userpay.PayMoney > 0 && !userpay.IsReceiveFirstPay)
             {
                 receipt.IsCanReceiveFirstPay = true;
             }
+
+            receipt.VipLv = userpay.ConvertPayVipLevel();
+            receipt.PayMoney = userpay.PayMoney;
+
             return true;
         }
 

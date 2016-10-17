@@ -423,5 +423,12 @@ namespace GameServer.CsScript.Action
         ///请求抽奖
         ///</summary>
         public const short Cst_Action10100 = 10100;
+
+        ///<summary>
+        ///领取首充奖励
+        ///</summary>
+        public const short Cst_Action10200 = 10200;
+
+
     }
 }

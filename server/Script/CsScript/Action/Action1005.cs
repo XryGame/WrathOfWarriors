@@ -183,6 +183,12 @@ namespace GameServer.CsScript.Action
             UserPayCache paycache = new UserPayCache()
             {
                 UserID = user.UserID,
+                PayMoney = 0,
+                IsReceiveFirstPay = false,
+                WeekCardDays = 0,
+                MonthCardDays = 0,
+                WeekCardAwardDate = DateTime.MinValue,
+                MonthCardAwardDate = DateTime.MinValue,
             };
             var payCacheSet = new PersonalCacheStruct<UserPayCache>();
             payCacheSet.Add(paycache);

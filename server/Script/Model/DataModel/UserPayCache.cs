@@ -40,7 +40,7 @@ namespace GameServer.Script.Model.DataModel
 
         private int _PayMoney;
         [ProtoMember(2)]
-        [EntityField("PayMoney", IsKey = true)]
+        [EntityField("PayMoney")]
         public int PayMoney
         {
             get
@@ -146,7 +146,7 @@ namespace GameServer.Script.Model.DataModel
         protected override int GetIdentityId()
         {
             //allow modify return value
-            return DefIdentityId;
+            return UserID;
         }
 
         protected override object this[string index]

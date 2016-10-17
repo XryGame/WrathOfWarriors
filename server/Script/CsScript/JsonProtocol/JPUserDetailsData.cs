@@ -97,5 +97,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int LotteryId { get; set; }
 
         public bool IsCanReceiveFirstPay { get; set; }
+
+        public int PayMoney { get; set; }
+        
     }
 }

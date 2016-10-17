@@ -99,6 +99,10 @@ namespace GameServer.CsScript.Action
                         {
                             command = new DiamondCommand();
                         }
+                        else if (lower.StartsWith("gm pay"))
+                        {
+                            command = new PayMoneyCommand();
+                        }
                         else if (lower.StartsWith("gm weekcard"))
                         {
                             command = new PayWeekCardCommand();

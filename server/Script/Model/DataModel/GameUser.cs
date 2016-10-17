@@ -1780,9 +1780,8 @@ namespace GameServer.Script.Model.DataModel
             Config_SkillGrade sg = sgcache.Find(t => (t.SkillID == id && t.SkillLv == skill.Lv));
             if (sg == null)
             {
-                throw new Exception(
-                    "UserAddSkill: ShareCacheStruct<Config_SkillGrade>().Find id=" + id + "SkillLv" + skill.Lv + " is not exist"
-                    );
+                new BaseLog().SaveLog(string.Format("SkillGrade table error SkillID={0}", id));
+                return;
             }
             if (isnew)
             {
