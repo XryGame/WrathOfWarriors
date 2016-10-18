@@ -148,8 +148,14 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
 
-
+            
             gameUser.IsTodayLottery = false;
+            gameUser.RandomLotteryId = 0;
+            var lottery = RandomLottery(gameUser.UserLv);
+            if (lottery != null)
+            {
+                gameUser.RandomLotteryId = lottery.ID;
+            }
         }
         public static void UserOnline(int uid)
         {
@@ -805,5 +811,31 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        public static Config_Lottery RandomLottery(short userlv)
+        {
+            var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= userlv));
+            if (list.Count > 0)
+            {
+                int weight = 0;
+                foreach (var cl in list)
+                {
+                    weight += cl.Weight;
+                }
+                Config_Lottery lott = null;
+                int randv = random.Next(weight);
+                int tmpw = 0;
+                for (int i = 0; i < list.Count; ++i)
+                {
+                    tmpw += list[i].Weight;
+                    if (randv <= tmpw)
+                    {
+                        lott = list[i];
+                        break;
+                    }
+                }
+                return lott;
+            }
+            return null;
+        }
     }
 }

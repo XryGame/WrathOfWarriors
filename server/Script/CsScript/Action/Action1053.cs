@@ -1,5 +1,7 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.ConfigModel;
+using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -52,6 +54,12 @@ namespace GameServer.CsScript.Action
             receipt.DailyQuestData.Count = ContextUser.DailyQuestData.Count;
 
             receipt.IsTodayLottery = false;
+            var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
+            if (lottery != null)
+            {
+                receipt.LotteryAwardType = lottery.Type;
+                receipt.LotteryId = lottery.Content;
+            }
             return true;
         }
     }

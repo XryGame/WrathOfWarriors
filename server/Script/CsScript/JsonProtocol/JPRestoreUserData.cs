@@ -27,5 +27,9 @@ namespace GameServer.CsScript.JsonProtocol
         public JPEventAwardData EventAwardData { get; set; }
 
         public bool IsTodayLottery { get; set; }
+
+        public LotteryAwardType LotteryAwardType { get; set; }
+
+        public int LotteryId { get; set; }
     }
 }

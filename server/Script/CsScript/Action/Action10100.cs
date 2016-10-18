@@ -75,11 +75,7 @@ namespace GameServer.CsScript.Action
 
                             if (item.Type == ItemType.Skill)
                             {
-                                ItemData itemdata = ContextUser.ItemDataList.Find(t => (t.ID == lott.Content));
-                                if (itemdata != null)
-                                {
-                                    ContextUser.UserAddSkill(lott.Content, 1);
-                                }
+                                ContextUser.CheckAddSkillBook(lott.Content, 1);
                             }
                             receipt.AwardItemId = lott.Content;
                             receipt.AwardNum = 1;

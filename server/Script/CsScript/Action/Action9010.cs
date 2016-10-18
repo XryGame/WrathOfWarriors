@@ -78,11 +78,7 @@ namespace GameServer.CsScript.Action
 
                             if (item.Type == ItemType.Skill)
                             {
-                                ItemData itemdata = ContextUser.findItem(surface.AwardID);
-                                if (itemdata != null)
-                                {
-                                    ContextUser.UserAddSkill(surface.AwardID, surface.AwardNum);
-                                }
+                                ContextUser.CheckAddSkillBook(surface.AwardID, surface.AwardNum);
                             }
                             receipt.AwardItemList.Add(surface.AwardID);
                         }

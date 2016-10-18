@@ -61,15 +61,6 @@ namespace GameServer.CsScript.Action
             if (item != null)
             {
                 ContextUser.UserAddItem(10003, 1);
-
-                if (item.Type == ItemType.Skill)
-                {
-                    ItemData itemdata = ContextUser.ItemDataList.Find(t => (t.ID == 10003));
-                    if (itemdata != null)
-                    {
-                        ContextUser.UserAddSkill(10003, 1);
-                    }
-                }
             }
             item = new ShareCacheStruct<Config_Item>().FindKey(20003);
             if (item != null)
@@ -78,11 +69,7 @@ namespace GameServer.CsScript.Action
 
                 if (item.Type == ItemType.Skill)
                 {
-                    ItemData itemdata = ContextUser.ItemDataList.Find(t => (t.ID == 20003));
-                    if (itemdata != null)
-                    {
-                        ContextUser.UserAddSkill(20003, 1);
-                    }
+                    ContextUser.CheckAddSkillBook(20003, 1);
                 }
             }
 

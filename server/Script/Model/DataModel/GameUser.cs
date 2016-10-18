@@ -1718,12 +1718,7 @@ namespace GameServer.Script.Model.DataModel
                         list.Add(sk.ID);
 
                         UserAddItem(sk.ID, 1);
-                        Config_SkillGrade sg = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.Condition == sk.ID));
-                        ItemData item = ItemDataList.Find(t => (t.ID == sk.ID));
-                        if (sg != null && item != null)
-                        {
-                            UserAddSkill(sg.SkillID, item.Num);
-                        }
+                        CheckAddSkillBook(sk.ID, 1);
 
                         break;
                     }
@@ -1828,6 +1823,16 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+
+        public void CheckAddSkillBook(int itemId, int num)
+        {
+            ItemData itemdata = findItem(itemId);
+            Config_SkillGrade sg = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.Condition == itemId));
+            if (sg != null && itemdata != null)
+            {
+                UserAddSkill(sg.SkillID, num);
+            }
+        }
 
         public int AdditionExpValue(int expvalue)
         {
@@ -2068,7 +2073,12 @@ namespace GameServer.Script.Model.DataModel
             MailBox.Add(mail);
             if (MailBox.Count > DataHelper.MaxMailNum)
             {
-                MailBox.RemoveAt(0);
+                MailData removemail = MailBox[0];
+                if (removemail.ApppendDiamond > 0)
+                {
+                    GiveAwayDiamond = MathUtils.Addition(GiveAwayDiamond, removemail.ApppendDiamond, int.MaxValue / 2);
+                }
+                MailBox.Remove(removemail);
             }
             if (Callback != null && !IsRefreshing)
             {

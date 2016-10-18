@@ -306,38 +306,25 @@ namespace GameServer.CsScript.Action
             receipt.MailBox = ContextUser.MailBox;
 
             receipt.IsTodayLottery = ContextUser.IsTodayLottery;
-
-            if (!ContextUser.IsTodayLottery)
+            if (!ContextUser.IsTodayLottery && ContextUser.RandomLotteryId == 0)
             {
-                var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= ContextUser.UserLv));
-                if (list.Count > 0)
+                var lottery = UserHelper.RandomLottery(ContextUser.UserLv);
+                if (lottery != null)
                 {
-                    int weight = 0;
-                    foreach (var cl in list)
-                    {
-                        weight += cl.Weight;
-                    }
-                    Config_Lottery lott = null;
-                    int randv = random.Next(weight);
-                    int tmpw = 0;
-                    for (int i = 0; i < list.Count; ++i)
-                    {
-                        tmpw += list[i].Weight;
-                        if (randv <= tmpw)
-                        {
-                            lott = list[i];
-                            break;
-                        }
-                    }
-                    if (lott != null)
-                    {
-                        ContextUser.RandomLotteryId = lott.ID;
-                        receipt.LotteryAwardType = lott.Type;
-                        receipt.LotteryId = lott.Content;
-                        if (lott == null)
-                            return false;
-                    }
+                    ContextUser.RandomLotteryId = lottery.ID;
+                    receipt.LotteryAwardType = lottery.Type;
+                    receipt.LotteryId = lottery.Content;
                 }
+            }
+            else
+            {
+                var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
+                if (lottery != null)
+                {
+                    receipt.LotteryAwardType = lottery.Type;
+                    receipt.LotteryId = lottery.Content;
+                }
+
             }
             
 
