@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Service;
 
@@ -39,6 +40,10 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            GameUser user = UserHelper.FindUser(UserId);
+            if (user == null)
+                return false;
+
             receipt = new JPRestoreUserData();
 
             receipt.Vit = ContextUser.Vit;

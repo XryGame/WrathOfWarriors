@@ -46,7 +46,10 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool TakeAction()
         {
-            var chatservice = new TryXChatService(ContextUser, chattype);
+            GameUser user = UserHelper.FindUser(UserId);
+            if (user == null)
+                return false;
+            var chatservice = new TryXChatService(user, chattype);
             //ContextUser.ChatVesion = chatservice.CurrVersion;
             chatList = chatservice.PopMessages();
             return true;

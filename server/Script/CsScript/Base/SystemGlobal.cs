@@ -75,7 +75,7 @@ namespace GameServer.CsScript.Base
             // 每周二，周五名人榜奖励
             //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "TuesdayCombatAwardTask", DayOfWeek.Tuesday, "04:00"));
             //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "FridayCombatAwardTask", DayOfWeek.Friday, "04:00"));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 60));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 3600));
 
             InitRanking();
             stopwatch.Stop();
@@ -178,13 +178,9 @@ namespace GameServer.CsScript.Base
                 GameUser user = UserHelper.FindUser(sess.UserId);
                 if (user == null)
                     continue;
-                user.IsOnline = false;
                 user.OfflineDate = DateTime.Now;
             }
 
-            //CountryCombat.Stop();
-            //GameActiveCenter.Stop();
-            //GuildGameActiveCenter.Stop();
         }
     }
 }

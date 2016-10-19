@@ -388,12 +388,20 @@ namespace GameServer.Script.Model.DataModel
             get;
             set;
         }
-        
+
+        private DateTime _RestoreDate;
         [ProtoMember(23)]
-        public DateTime UserOnlineDate
+        [EntityField("RestoreDate")]
+        public DateTime RestoreDate
         {
-            get;
-            set;
+            get
+            {
+                return _RestoreDate;
+            }
+            set
+            {
+                SetChange("RestoreDate", value);
+            }
         }
 
 
@@ -997,6 +1005,7 @@ namespace GameServer.Script.Model.DataModel
                     case "LoginDate": return LoginDate;
                     case "OfflineDate": return OfflineDate;
                     case "SessionID": return SessionID;
+                    case "RestoreDate": return RestoreDate;
                     case "StudyTaskData": return StudyTaskData;
                     case "ClassData": return ClassData;
                     case "ExerciseTaskData": return ExerciseTaskData;
@@ -1084,6 +1093,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "OfflineDate":
                         _OfflineDate = value.ToDateTime();
+                        break;
+                    case "RestoreDate":
+                        _RestoreDate = value.ToDateTime();
                         break;
                     case "ClassData":
                         _ClassData = ConvertCustomField<UserClassData>(value, index);

@@ -46,6 +46,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
+            
             // 名人榜挑战次数
             gameUser.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             // 挑战班长次数
@@ -78,7 +79,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.OccupySceneList.Clear();
 
             // 签到，首周，在线
-            if (gameUser.OfflineDate != DateTime.MinValue && gameUser.OfflineDate.Month != DateTime.Now.Month)
+            if (gameUser.RestoreDate != DateTime.MinValue && gameUser.RestoreDate.Month != DateTime.Now.Month)
             {// 下个月签到次数要清零
                 gameUser.EventAwardData.SignCount = 0;
             }
@@ -156,6 +157,10 @@ namespace GameServer.Script.Model.DataModel
             {
                 gameUser.RandomLotteryId = lottery.ID;
             }
+
+
+            // 设置新的恢复时间
+            gameUser.RestoreDate = DateTime.Now;
         }
         public static void UserOnline(int uid)
         {
@@ -195,7 +200,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.IsRefreshing = true;
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
-            gameUser.RandomLotteryId = 0;
+            //gameUser.RandomLotteryId = 0;
 
             DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
 
@@ -208,12 +213,12 @@ namespace GameServer.Script.Model.DataModel
             // 计算上线时间，刷新数据
             var nowTime = DateTime.Now;
             bool isRefresh = false;
-            if (gameUser.OfflineDate != DateTime.MinValue)
+            if (gameUser.RestoreDate != DateTime.MinValue)
             {
                 //TimeSpan timeSpan = nowTime.Date - gameUser.OfflineDate.Date;
-                timeSpan = DateTime.Now.Subtract(gameUser.OfflineDate);
+                timeSpan = DateTime.Now.Subtract(gameUser.RestoreDate);
                 int day = (int)Math.Floor(timeSpan.TotalDays);
-                if (day > 0 || (day == 0 && nowTime.Hour >= 5 && gameUser.OfflineDate.Hour < 5))
+                if (day > 0 || (day == 0 && nowTime.Hour >= 5 && gameUser.RestoreDate.Hour < 5))
                 {
                     isRefresh = true;
                 }
