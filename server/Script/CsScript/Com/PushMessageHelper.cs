@@ -46,7 +46,7 @@ namespace GameServer.Script.CsScript.Com
         {
             var parameters = new Parameters();
             parameters["ChatType"] = ChatType.World;
-            ActionFactory.SendAction(GameSession.GetOnlineAll(60), ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
+            ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
         }
         /// <summary>
         /// 发送聊天消息到指定班级成员通知

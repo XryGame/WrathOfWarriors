@@ -68,6 +68,11 @@ namespace GameServer.CsScript.Action
 
                 int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
 
+                if (ContextUser.ChallengeRoleList.Find(t => (t == monsterId)) == 0)
+                {
+                    ContextUser.ChallengeRoleList.Add(monsterId);
+                }
+
                 receipt = new JPReceiveTaskAwardData()
                 {
                     AwardExp = addvalue,
@@ -78,6 +83,7 @@ namespace GameServer.CsScript.Action
                 object outexpdata;
                 UserHelper.buildBaseExpData(ContextUser, out outexpdata);
                 receipt.CurrBaseExp = outexpdata;
+                receipt.ChallengeRoleList = ContextUser.ChallengeRoleList;
 
                 // 每日
                 if (ContextUser.DailyQuestData.ID == TaskType.FightTeacher)

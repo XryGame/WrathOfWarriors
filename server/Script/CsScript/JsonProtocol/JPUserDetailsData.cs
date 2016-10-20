@@ -99,6 +99,18 @@ namespace GameServer.CsScript.JsonProtocol
         public bool IsCanReceiveFirstPay { get; set; }
 
         public int PayMoney { get; set; }
-        
+
+        public int WeekCardDays { get; set; }
+
+        public int MonthCardDays { get; set; }
+
+        public CacheList<int> ChallengeRoleList { get; set; }
+
+        public int SweepingRoleId { get; set; }
+
+        public int SweepTimes { get; set; }
+
+        public long StartSweepTime { get; set; }
+
     }
 }

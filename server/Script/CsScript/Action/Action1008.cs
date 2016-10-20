@@ -355,6 +355,13 @@ namespace GameServer.CsScript.Action
             receipt.VipLv = userpay.ConvertPayVipLevel();
             receipt.PayMoney = userpay.PayMoney;
 
+            receipt.WeekCardDays = userpay.WeekCardDays;
+            receipt.MonthCardDays = userpay.MonthCardDays;
+
+            receipt.ChallengeRoleList = ContextUser.ChallengeRoleList;
+            receipt.SweepingRoleId = ContextUser.SweepingRoleId;
+            receipt.SweepTimes = ContextUser.SweepTimes;
+            receipt.StartSweepTime = Util.ConvertDateTimeStamp(ContextUser.StartSweepTime); 
             return true;
         }
 

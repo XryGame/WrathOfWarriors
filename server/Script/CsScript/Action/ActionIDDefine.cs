@@ -429,6 +429,14 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action10200 = 10200;
 
+        ///<summary>
+        ///请求扫荡
+        ///</summary>
+        public const short Cst_Action10300 = 10300;
 
+        ///<summary>
+        ///领取扫荡
+        ///</summary>
+        public const short Cst_Action10301 = 10301;
     }
 }

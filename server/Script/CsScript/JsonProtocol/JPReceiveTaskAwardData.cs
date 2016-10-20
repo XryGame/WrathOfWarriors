@@ -1,4 +1,5 @@
 ﻿using GameServer.Script.Model.Enum;
+using ZyGames.Framework.Cache.Generic;
 
 namespace GameServer.CsScript.JsonProtocol
 {
@@ -17,6 +18,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int CurrLv { get; set; }
 
         public int CurrFightValue { get; set; }
+
+        public CacheList<int> ChallengeRoleList { get; set; }
 
     }
 }

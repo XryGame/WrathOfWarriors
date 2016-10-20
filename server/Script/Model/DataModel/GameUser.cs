@@ -29,10 +29,6 @@ namespace GameServer.Script.Model.DataModel
     [Serializable, ProtoContract, EntityTable(CacheType.Dictionary, DbConfig.Data)]
     public class GameUser : BaseUser
     {
-        public const string Index_UserID = "Index_UserID";
-        public const string Index_Session = "Index_SessionID";
-        public const string Index_CityID = "Index_CityID";
-        public const string Index_RankID = "Index_RankID";
 
         public static AsyncDataChangeCallback Callback { get; set; }
 
@@ -57,6 +53,7 @@ namespace GameServer.Script.Model.DataModel
             UnlockSceneMapList = new CacheList<int>();
             EventAwardData = new UserEventAwardData();
             MailBox = new CacheList<MailData>();
+            ChallengeRoleList = new CacheList<int>();
         }
         public GameUser(int userid)
         : this()
@@ -925,6 +922,79 @@ namespace GameServer.Script.Model.DataModel
             set;
         }
 
+        /// <summary>
+        /// 记录挑战过的角色
+        /// </summary>
+        private CacheList<int> _ChallengeRoleList;
+        [ProtoMember(59)]
+        [EntityField(true, ColumnDbType.LongText)]
+        public CacheList<int> ChallengeRoleList
+        {
+            get
+            {
+                return _ChallengeRoleList;
+            }
+            set
+            {
+                SetChange("ChallengeRoleList", value);
+            }
+        }
+
+
+        /// <summary>
+        /// 扫荡的角色id
+        /// </summary>
+        private int _SweepingRoleId;
+        [ProtoMember(60)]
+        [EntityField("SweepingRoleId")]
+        public int SweepingRoleId
+        {
+            get
+            {
+                return _SweepingRoleId;
+            }
+            set
+            {
+                SetChange("SweepingRoleId", value);
+            }
+        }
+
+        /// <summary>
+        /// 扫荡的次数
+        /// </summary>
+        private int _SweepTimes;
+        [ProtoMember(61)]
+        [EntityField("SweepTimes")]
+        public int SweepTimes
+        {
+            get
+            {
+                return _SweepTimes;
+            }
+            set
+            {
+                SetChange("SweepTimes", value);
+            }
+        }
+
+        /// <summary>
+        /// 扫荡的开始时间
+        /// </summary>
+        private DateTime _StartSweepTime;
+        [ProtoMember(62)]
+        [EntityField("StartSweepTime")]
+        public DateTime StartSweepTime
+        {
+            get
+            {
+                return _StartSweepTime;
+            }
+            set
+            {
+                SetChange("StartSweepTime", value);
+            }
+        }
+
 
         public override string GetNickName()
         {
@@ -1031,6 +1101,10 @@ namespace GameServer.Script.Model.DataModel
                     case "EventAwardData": return EventAwardData;
                     case "MailBox": return MailBox;
                     case "IsTodayLottery": return IsTodayLottery;
+                    case "ChallengeRoleList": return ChallengeRoleList;
+                    case "SweepingRoleId": return SweepingRoleId;
+                    case "SweepTimes": return SweepTimes;
+                    case "StartSweepTime": return StartSweepTime;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1171,6 +1245,18 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "IsTodayLottery":
                         _IsTodayLottery = value.ToBool();
+                        break;
+                    case "ChallengeRoleList":
+                        _ChallengeRoleList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "SweepingRoleId":
+                        _SweepingRoleId = value.ToInt();
+                        break;
+                    case "SweepTimes":
+                        _SweepTimes = value.ToInt();
+                        break;
+                    case "StartSweepTime":
+                        _StartSweepTime = value.ToDateTime();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }

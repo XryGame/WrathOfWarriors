@@ -121,6 +121,8 @@
     <Compile Include="Script\CsScript\Action\Action1008.cs" />
     <Compile Include="Script\CsScript\Action\Action10100.cs" />
     <Compile Include="Script\CsScript\Action\Action10200.cs" />
+    <Compile Include="Script\CsScript\Action\Action10300.cs" />
+    <Compile Include="Script\CsScript\Action\Action10301.cs" />
     <Compile Include="Script\CsScript\Action\Action1050.cs" />
     <Compile Include="Script\CsScript\Action\Action1051.cs" />
     <Compile Include="Script\CsScript\Action\Action1052.cs" />
@@ -252,6 +254,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestRankData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestSFOData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestSweepData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestTaskData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestVoteData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRestoreUserData.cs" />
