@@ -21,7 +21,7 @@ namespace GameServer.CsScript.Action
         private JPRequestTaskData receipt;
         private SubjectType subjectType;
         private SceneType sceneId;
-        private int subjectId;
+        private SubjectID subjectId;
         private int count;
 
         public Action1100(ActionGetter actionGetter)
@@ -48,7 +48,7 @@ namespace GameServer.CsScript.Action
         {
             if (httpGet.GetEnum("SubjectType", ref subjectType)
                 && httpGet.GetEnum("SceneId", ref sceneId)
-                && httpGet.GetInt("SubjectId", ref subjectId)
+                && httpGet.GetEnum("SubjectId", ref subjectId)
                 && httpGet.GetInt("Count", ref count)
                 && count > 0)
             {

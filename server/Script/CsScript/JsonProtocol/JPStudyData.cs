@@ -6,7 +6,7 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPStudyData
     {
-        public int SubjectID { get; set; }
+        public SubjectID SubjectID { get; set; }
 
         public long StartTime { get; set; }
 

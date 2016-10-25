@@ -5,6 +5,10 @@ namespace GameServer.Script.Model.Enum
     public enum SubjectID
     {
         /// <summary>
+        /// 默认空
+        /// </summary>
+        id0 = 0,
+        /// <summary>
         /// 小学语文
         /// </summary>
         id1 = 1,
@@ -17,15 +21,15 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         id3,
         /// <summary>
-        /// 办黑板报
+        /// 扫地
         /// </summary>
         id4,
         /// <summary>
-        /// 打扫卫生
+        /// 倒垃圾
         /// </summary>
         id5,
         /// <summary>
-        /// 花草浇水
+        /// 擦桌子
         /// </summary>
         id6,
         /// <summary>
@@ -53,19 +57,19 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         id12,
         /// <summary>
-        /// 办黑板报
+        /// 扫地
         /// </summary>
         id13,
         /// <summary>
-        /// 打扫卫生
+        /// 倒垃圾
         /// </summary>
         id14,
         /// <summary>
-        /// 花草浇水
+        /// 擦桌子
         /// </summary>
         id15,
         /// <summary>
-        /// 帮助同学
+        /// 浇花
         /// </summary>
         id16,
         /// <summary>
@@ -93,19 +97,19 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         id22,
         /// <summary>
-        /// 办黑板报
+        /// 扫地
         /// </summary>
         id23,
         /// <summary>
-        /// 打扫卫生
+        /// 倒垃圾
         /// </summary>
         id24,
         /// <summary>
-        /// 花草浇水
+        /// 擦桌子
         /// </summary>
         id25,
         /// <summary>
-        /// 帮助同学
+        /// 浇花
         /// </summary>
         id26,
         /// <summary>
@@ -133,19 +137,19 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         id32,
         /// <summary>
-        /// 办黑板报
+        /// 扫地
         /// </summary>
         id33,
         /// <summary>
-        /// 打扫卫生
+        /// 倒垃圾
         /// </summary>
         id34,
         /// <summary>
-        /// 花草浇水
+        /// 擦桌子
         /// </summary>
         id35,
         /// <summary>
-        /// 帮助同学
+        /// 浇花
         /// </summary>
         id36,
 

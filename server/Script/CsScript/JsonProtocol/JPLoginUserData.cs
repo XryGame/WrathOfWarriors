@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameServer.Script.Model.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameServer.CsScript.JsonProtocol
 {
-    public class JPUserData
+    public class JPLoginUserData
     {
         public int UserId { get; set; }
 

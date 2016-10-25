@@ -11,7 +11,7 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public SubjectType SubjectT { get; set; }
 
-        public int SubjectId { get; set; }
+        public SubjectID SubjectId { get; set; }
 
     }
 }

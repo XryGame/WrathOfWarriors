@@ -143,8 +143,7 @@ namespace GameServer.CsScript.Locale
         public string St3001_ChatNotSend = "您的发言过于频繁，10秒后可继续发言";
 
         public string NoValidTimes = "次数达到上限";
-
-        public string St1066_PayError = "充值失败";
+        
 
 
     }

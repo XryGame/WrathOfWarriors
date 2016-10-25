@@ -68,7 +68,7 @@ namespace GameServer.CsScript.Action
             receipt = new JPFriendApplyReceiptData();
             receipt.Data.UserId = destuid;
             receipt.Data.NickName = dest.NickName;
-
+            receipt.Data.LooksId = dest.LooksId;
             FriendApplyData apply = ContextUser.FindFriendApply(destuid);
             if (apply == null)
             {

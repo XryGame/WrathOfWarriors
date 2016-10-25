@@ -15,6 +15,8 @@ using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Net;
 using ZyGames.Framework.RPC.Sockets;
+using System.Linq;
+using System.Reflection;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -1335,7 +1337,7 @@ namespace GameServer.Script.Model.DataModel
             int ret = 0;
             foreach (Config_SubjectExp se in (type == SubjectType.Study ? DataHelper.StudyExplist : DataHelper.ExerciseExplist))
             {
-                switch ((SubjectID)se.id)
+                switch (se.id)
                 {
                     case SubjectID.id1:
                         ret = MathUtils.Addition(ret, ExpData.id1, int.MaxValue);
@@ -1496,7 +1498,7 @@ namespace GameServer.Script.Model.DataModel
                 return 0;
 
 
-            Config_SubjectExp subjectExp = new ShareCacheStruct<Config_SubjectExp>().FindKey(sid.ToInt());
+            Config_SubjectExp subjectExp = new ShareCacheStruct<Config_SubjectExp>().FindKey(sid);
 
             if (subjectExp == null)
                 throw new Exception("AdditionBaseExpValue:" + sid + " is not exist");
@@ -1721,7 +1723,7 @@ namespace GameServer.Script.Model.DataModel
 
         public void ResultStudyTask()
         {
-            StudyTaskData.SubjectID = 0;
+            StudyTaskData.SubjectID = SubjectID.id0;
             StudyTaskData.StartTime = DateTime.MinValue;
             StudyTaskData.Count = 0;
             StudyTaskData.SceneId = SceneType.No;
@@ -1729,7 +1731,7 @@ namespace GameServer.Script.Model.DataModel
 
         public void ResultExerciseTask()
         {
-            ExerciseTaskData.SubjectID = 0;
+            ExerciseTaskData.SubjectID = SubjectID.id0;
             ExerciseTaskData.StartTime = DateTime.MinValue;
             ExerciseTaskData.Count = 0;
             ExerciseTaskData.SceneId = SceneType.No;
@@ -2011,26 +2013,99 @@ namespace GameServer.Script.Model.DataModel
             Attack = 0;
             Defense = 0;
             Hp = 0;
-            Attack += rolegrade.Attack;
-            Defense += rolegrade.Defense;
-            Hp += rolegrade.HP;
 
-            foreach (ItemData item in ItemDataList)
+
+            Type type = ExpData.GetType();
+            float percent = 0f;
+            int hp_ = 0;
+            int atk_ = 0;
+            int def_ = 0;
+            int exp_ = 0;
+            // 生命
+            List<SubjectChildType> HpList = new List<SubjectChildType>();
+            HpList.Add(SubjectChildType.Yingyu);
+            HpList.Add(SubjectChildType.Tiyu);
+            HpList.Add(SubjectChildType.Daolaji);
+            HpList.Add(SubjectChildType.Jiaohua);
+            foreach (var v in HpList)
             {
-                Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
-                if (cfgitem.Type == ItemType.Item)
+                hp_ = 0;
+                exp_ = 0;
+                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                foreach (var sub in list)
                 {
-                    List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
-                    if (itemgradelist.Count > 0)
-                    {
-                        Attack += itemgradelist[itemgradelist.Count - 1].Attack;
-                        Defense += itemgradelist[itemgradelist.Count - 1].Defense;
-                        Hp += itemgradelist[itemgradelist.Count - 1].HP;
-                    }
+                    string propertyName = string.Format("{0}", sub.id);
+                    PropertyInfo pi = type.GetProperties().FirstOrDefault(x => x.Name == propertyName);
+                    if (pi != null)
+                        exp_ += pi.GetValue(ExpData).ToInt();
                 }
+                float factor = 0.5f;
+                percent = (float)exp_ / rolegrade.BaseExp;
+                hp_ += (int)(rolegrade.HP * (1 + percent) * factor);
+                Hp += hp_;
+            }
+            // 攻击
+            List<SubjectChildType> AtkList = new List<SubjectChildType>();
+            AtkList.Add(SubjectChildType.Shuxue);
+            AtkList.Add(SubjectChildType.Lizong);
+            AtkList.Add(SubjectChildType.Saodi);
+            foreach (var v in AtkList)
+            {
+                atk_ = 0;
+                exp_ = 0;
+                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                foreach (var sub in list)
+                {
+                    string propertyName = string.Format("{0}", sub.id);
+                    PropertyInfo pi = type.GetProperties().FirstOrDefault(x => x.Name == propertyName);
+                    if (pi != null)
+                        exp_ += pi.GetValue(ExpData).ToInt();
+                }
+                float factor = v == SubjectChildType.Saodi ? 0.4f : 0.6f;
+                percent = (float)exp_ / rolegrade.BaseExp;
+                atk_ += (int)(rolegrade.Attack * (1 + percent) * factor);
+                Attack += atk_;
             }
 
-            FightingValue = Attack * 2 + Defense + Hp;
+            // 防御
+            List<SubjectChildType> DefList = new List<SubjectChildType>();
+            DefList.Add(SubjectChildType.Yuwen);
+            DefList.Add(SubjectChildType.Wenzong);
+            DefList.Add(SubjectChildType.Cazhuozi);
+            foreach (var v in DefList)
+            {
+                def_ = 0;
+                exp_ = 0;
+                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                foreach (var sub in list)
+                {
+                    string propertyName = string.Format("{0}", sub.id);
+                    PropertyInfo pi = type.GetProperties().FirstOrDefault(x => x.Name == propertyName);
+                    if (pi != null)
+                        exp_ += pi.GetValue(ExpData).ToInt();
+                }
+                float factor = v == SubjectChildType.Cazhuozi ? 0.6f : 0.4f;
+                percent = (float)exp_ / rolegrade.BaseExp;
+                def_ += (int)(rolegrade.Defense * (1 + percent) * factor);
+                Defense += def_;
+            }
+
+            //foreach (ItemData item in ItemDataList)
+            //{
+            //    Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
+            //    if (cfgitem.Type == ItemType.Item)
+            //    {
+            //        List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
+            //        if (itemgradelist.Count > 0)
+            //        {
+            //            Attack += itemgradelist[itemgradelist.Count - 1].Attack;
+            //            Defense += itemgradelist[itemgradelist.Count - 1].Defense;
+            //            Hp += itemgradelist[itemgradelist.Count - 1].HP;
+            //        }
+            //    }
+            //}
+
+            FightingValue = Attack * 5 + Defense * 5 + Hp;
         }
 
         /// <summary>

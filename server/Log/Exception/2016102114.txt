@@ -1,0 +1,130 @@
+Time:2016/10/21 14:29:26-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 93
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 80
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/10/21 14:30:00-Trace>>TimeListener notify error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.JobTitleDataCache 无法强制转换为 [B]GameServer.Script.Model.DataModel.JobTitleDataCache。类型 A 源自“1ju5lhau, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\1ju5lhau.dll”位置处)。类型 B 源自“kiv5dz4i, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\kiv5dz4i.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.EntityContainer`1.TryGetCacheItem[TValue](String groupKey, Boolean isAutoLoad, TValue& itemData, LoadingStatus& loadStatus) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\EntityContainer.cs:行号 808
+   在 ZyGames.Framework.Cache.Generic.EntityContainer`1.TryGetEntity(String entityKey, T& entityData) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\EntityContainer.cs:行号 414
+   在 ZyGames.Framework.Cache.Generic.ShareCacheStruct`1.FindKey(Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\ShareCacheStruct.cs:行号 276
+   在 GameServer.Script.Model.DataModel.UserHelper.DoZeroRefreshDataTask(PlanConfig planconfig)
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass19_0.<DoNotify>b__0(Object obj) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework.Common\Timing\TimeListener.cs:行号 208
+
+
+Time:2016/10/21 14:31:28-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/10/21 14:31:28-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 93
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 80
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/10/21 14:31:34-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/10/21 14:31:34-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 93
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 80
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/10/21 14:31:51-Compile assembly:DynamicScripts.Model error:
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\ConfigModel\Config_SubjectExp.cs, Line:162
+Message:无法将类型“int”隐式转换为“GameServer.Script.Model.Enum.SubjectID”。存在一个显式转换(是否缺少强制转换?)
+File:e:\ServerTools\code\xuesheng\server\server\Script\Model\DataModel\GameUser.cs, Line:2018
+Message:变量“yingyu”已赋值，但其值从未使用过
+
+
+Time:2016/10/21 14:31:51-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 304
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 276
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\CSharpRuntimeScope.cs:行号 86
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptRuntimeDomain.cs:行号 113
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope() 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 160
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 243
+
+
+Time:2016/10/21 14:32:06-Trace>>Try load cache "" data error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.Data.DbConnectionProvider.CreateDbProvider(SchemaTable schema) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Data\DbConnectionProvider.cs:行号 160
+   在 ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.TryReceiveData[T](TransReceiveParam receiveParam, List`1& dataList) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\Pool\BaseCachePool.cs:行号 189
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.TryLoadCache(TransReceiveParam receiveParam, Int32 periodTime) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\BaseCacheStruct.cs:行号 322
+
+
+Time:2016/10/21 14:32:07-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 93
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 80
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Script\ScriptEngines.cs:行号 250
+
+
+Time:2016/10/21 14:35:25-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“q2gvjxoe, Version=1.0.0.11, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\q2gvjxoe.dll”位置处)。类型 B 源自“kiv5dz4i, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\kiv5dz4i.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\CacheCollection.cs:行号 190
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 275
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 288
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUser(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/10/21 14:38:36-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindCombatRankUser(Int32 userid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 667
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 384
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_88d1300adf754349864f38ab278dadb0%7C1%7C1%26Uid%3D9%26St%3Dst%26ActionId%3D1008%26sign%3D268fb4f9c54d8a4f8f3a7ab7e1ab9beb
+
+
+Time:2016/10/21 14:39:05-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“q2gvjxoe, Version=1.0.0.11, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\q2gvjxoe.dll”位置处)。类型 B 源自“kiv5dz4i, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\kiv5dz4i.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\CacheCollection.cs:行号 190
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 275
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 288
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUser(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2016/10/21 14:39:13-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindCombatRankUser(Int32 userid) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 667
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 384
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+?d=MsgId%3D2%26Sid%3Ds_e7defd0c8db04de4b81ec9f226c16966%7C1%7C1%26Uid%3D9%26St%3Dst%26ActionId%3D1008%26sign%3Dcfc75c425cf0628b896cbd78b47add7c
+
+
+Time:2016/10/21 14:39:28-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.GameUser 无法强制转换为 [B]GameServer.Script.Model.DataModel.GameUser。类型 A 源自“q2gvjxoe, Version=1.0.0.11, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\q2gvjxoe.dll”位置处)。类型 B 源自“kiv5dz4i, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\xuesheng\server\server\temp\kiv5dz4i.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\CacheCollection.cs:行号 190
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 275
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys) 位置 E:\ServerTools\Scut-6.7.9.8R1\Scut-6.7.9.8R1\Source\Framework\ZyGames.Framework\Cache\Generic\PersonalCacheStruct.cs:行号 288
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUser(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+

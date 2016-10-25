@@ -13,7 +13,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public SceneType SceneId { get; set; }
 
-        public int SubjectId { get; set; }
+        public SubjectID SubjectId { get; set; }
 
         public long StartTime { get; set; }
 

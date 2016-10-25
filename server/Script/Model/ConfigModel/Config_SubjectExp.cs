@@ -21,12 +21,12 @@ namespace GameServer.Script.Model.ConfigModel
         }
         
         #region auto-generated Property
-        private int _id;
+        private SubjectID _id;
         /// <summary>
         /// ID
         /// </summary>
         [EntityField("id", IsKey = true)]
-        public int id
+        public SubjectID id
         {
             get
             {
@@ -67,6 +67,23 @@ namespace GameServer.Script.Model.ConfigModel
             private set
             {
                 SetChange("Type", value);
+            }
+        }
+
+        private SubjectChildType _SubType;
+        /// <summary>
+        /// 子类型
+        /// </summary>
+        [EntityField("SubType")]
+        public SubjectChildType SubType
+        {
+            get
+            {
+                return _SubType;
+            }
+            private set
+            {
+                SetChange("SubType", value);
             }
         }
         private int _Stage;
@@ -127,6 +144,8 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "id": return id;
                     case "Subject": return Subject;
+                    case "Type": return Type;
+                    case "SubType": return SubType;
                     case "Stage": return Stage;
                     case "UnitTime": return UnitTime;
                     case "UnitExp": return UnitExp;
@@ -140,14 +159,17 @@ namespace GameServer.Script.Model.ConfigModel
 				switch (index)
 				{
                     case "id":
-                        _id = value.ToInt(); 
+                        _id = value.ToEnum<SubjectID>(); 
                         break; 
                     case "Subject":
                         _Subject = value.ToNotNullString(); 
                         break; 
                     case "Type":
-                        _Type = (SubjectType)value.ToInt(); 
-                        break; 
+                        _Type = value.ToEnum<SubjectType>(); 
+                        break;
+                    case "SubType":
+                        _SubType = value.ToEnum< SubjectChildType>();
+                        break;
                     case "Stage":
                         _Stage = value.ToInt(); 
                         break;

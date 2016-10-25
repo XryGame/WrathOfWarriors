@@ -99,7 +99,7 @@ namespace GameServer.CsScript.Action
                 ActionId = actionGetter.GetActionId(),
                 ErrorCode = ErrorCode,
                 ErrorInfo = ErrorInfo,
-                Data = new JPUserData()
+                Data = new JPLoginUserData()
                 {
                     UserId = Current.UserId,
                     SessionId = Current.SessionId,

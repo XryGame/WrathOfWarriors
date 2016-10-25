@@ -23,9 +23,9 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 科目ID(为0表示没有科目任务)
         /// </summary>
-        private int _SubjectID;
+        private SubjectID _SubjectID;
         [ProtoMember(1)]
-        public int SubjectID
+        public SubjectID SubjectID
         {
             get
             {

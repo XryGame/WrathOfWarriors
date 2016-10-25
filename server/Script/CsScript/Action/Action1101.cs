@@ -55,7 +55,7 @@ namespace GameServer.CsScript.Action
             {
                 case SubjectType.Study:
                     {
-                        if (ContextUser.StudyTaskData.SubjectID == 0)
+                        if (ContextUser.StudyTaskData.SubjectID == SubjectID.id0)
                         {
                             ErrorInfo = Language.Instance.CanNotOperationOfNow;
                             return true;
@@ -103,7 +103,7 @@ namespace GameServer.CsScript.Action
                         UserHelper.buildBaseExpData(ContextUser, out outexpdata);
                         receipt.CurrBaseExp = outexpdata;
 
-                        ContextUser.StudyTaskData.SubjectID = 0;
+                        ContextUser.StudyTaskData.SubjectID = SubjectID.id0;
                         ContextUser.StudyTaskData.Count = 0;
 
 
@@ -127,7 +127,7 @@ namespace GameServer.CsScript.Action
                 case SubjectType.Exercise:
                     {
                         
-                        if (ContextUser.ExerciseTaskData.SubjectID == 0)
+                        if (ContextUser.ExerciseTaskData.SubjectID == SubjectID.id0)
                         {
                             ErrorInfo = Language.Instance.CanNotOperationOfNow;
                             return true;
@@ -174,7 +174,7 @@ namespace GameServer.CsScript.Action
                         UserHelper.buildBaseExpData(ContextUser, out outexpdata);
                         receipt.CurrBaseExp = outexpdata;
 
-                        ContextUser.ExerciseTaskData.SubjectID = 0;
+                        ContextUser.ExerciseTaskData.SubjectID = SubjectID.id0;
                         ContextUser.ExerciseTaskData.Count = 0;
 
                         // 每日

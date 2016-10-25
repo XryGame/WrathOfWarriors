@@ -58,7 +58,7 @@ namespace GameServer.CsScript.Action
             {
                 case SubjectType.Study:
                     {
-                        if (ContextUser.StudyTaskData.SubjectID == 0)
+                        if (ContextUser.StudyTaskData.SubjectID == SubjectID.id0)
                         {
                             ErrorInfo = Language.Instance.CanNotOperationOfNow;
                             return true;

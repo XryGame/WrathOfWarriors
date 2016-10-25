@@ -123,6 +123,7 @@
     <Compile Include="Script\CsScript\Action\Action10200.cs" />
     <Compile Include="Script\CsScript\Action\Action10300.cs" />
     <Compile Include="Script\CsScript\Action\Action10301.cs" />
+    <Compile Include="Script\CsScript\Action\Action10302.cs" />
     <Compile Include="Script\CsScript\Action\Action1050.cs" />
     <Compile Include="Script\CsScript\Action\Action1051.cs" />
     <Compile Include="Script\CsScript\Action\Action1052.cs" />
@@ -261,7 +262,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRivalData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPStudyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\ResultData.cs" />
-    <Compile Include="Script\CsScript\JsonProtocol\JPUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLoginUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPUserDetailsData.cs" />
     <Compile Include="Script\CsScript\Locale\SimplifiedLanguage.cs" />
     <Compile Include="Script\CsScript\MainClass.cs" />
@@ -335,6 +336,7 @@
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\RequestVoteResult.cs" />
     <Compile Include="Script\Model\Enum\SceneType.cs" />
+    <Compile Include="Script\Model\Enum\SubjectChildType.cs" />
     <Compile Include="Script\Model\Enum\SubjectID.cs" />
     <Compile Include="Script\Model\Enum\SubjectStage.cs" />
     <Compile Include="Script\Model\Enum\SubjectType.cs" />
