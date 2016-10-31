@@ -232,5 +232,6 @@ namespace GameServer.Script.Model.ConfigModel
             //allow modify return value
             return DefIdentityId;
         }
+
 	}
 }

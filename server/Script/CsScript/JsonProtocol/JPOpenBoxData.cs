@@ -11,6 +11,9 @@ namespace GameServer.CsScript.JsonProtocol
         {
             IDList = new List<int>();
         }
+
+        public OpenBoxResult Result { get; set; }
+
         public OpenBoxType Type { get; set; }
 
         public List<int> IDList { get; set; }

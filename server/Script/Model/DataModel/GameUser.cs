@@ -1810,13 +1810,23 @@ namespace GameServer.Script.Model.DataModel
                 itemslist.AddRange(items);
             }
 
+            // 如果拥有道具达到最高等级，排除抽奖
+            foreach (var v in ItemDataList)
+            {
+                var ritem = itemslist.Find(t => (t.ID == v.ID));
+                if (ritem != null && v.Num >= GetItemLvMax(v.ID))
+                {
+                    itemslist.Remove(ritem);
+                }
+            }
+
             int itemprob = 0;
             foreach (Config_Item it in itemslist)
             {
                 itemprob += it.GainProbability;
             }
 
-            for (int i = 0; i < count; ++i)
+            for (int i = 0; i < count && itemprob > 0; ++i)
             {
                 int randv = random.Next(itemprob);
                 int prob = 0;
@@ -1852,13 +1862,24 @@ namespace GameServer.Script.Model.DataModel
                 skilllist.AddRange(items);
             }
 
+            // 如果拥有技能达到最高等级，排除抽奖
+            foreach (var v in SkillDataList)
+            {
+                var rskill = skilllist.Find(t => (t.ID == v.ID));
+                if (rskill != null && v.Lv >= GetSkillLvMax(v.ID))
+                {
+                    skilllist.Remove(rskill);
+                }
+            }
+
+
             int skillprob = 0;
             foreach (Config_Item sk in skilllist)
             {
                 skillprob += sk.GainProbability;
             }
 
-            for (int i = 0; i < count; ++i)
+            for (int i = 0; i < count && skillprob > 0; ++i)
             {
                 int randv = random.Next(skillprob);
                 int prob = 0;
@@ -1877,6 +1898,26 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
             return list;
+        }
+
+        public int GetItemLvMax(int id)
+        {
+            var list = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ItemID == id));
+            if (list.Count > 0)
+            {
+                return list[list.Count - 1].ItemLv;
+            }
+            return 0;
+        }
+
+        public int GetSkillLvMax(int id)
+        {
+            var list = new ShareCacheStruct<Config_SkillGrade>().FindAll(t => (t.SkillID == id));
+            if (list.Count > 0)
+            {
+                return list[list.Count - 1].SkillLv;
+            }
+            return 0;
         }
 
 

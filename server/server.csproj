@@ -330,6 +330,7 @@
     <Compile Include="Script\Model\Enum\JobTitleType.cs" />
     <Compile Include="Script\Model\Enum\LotteryAwardType.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxMode.cs" />
+    <Compile Include="Script\Model\Enum\OpenBoxResult.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
     <Compile Include="Script\Model\Enum\RankType.cs" />
     <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />

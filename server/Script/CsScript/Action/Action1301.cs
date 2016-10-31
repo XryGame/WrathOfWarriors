@@ -52,6 +52,8 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            receipt = new JPOpenBoxData();
+            receipt.Type = opentype;
 
             int count = openmode.ToInt();
             int needdiamond = 0;
@@ -66,51 +68,65 @@ namespace GameServer.CsScript.Action
             }
             if (ContextUser.DiamondNum < needdiamond)
             {
-                ErrorInfo = Language.Instance.NoDiamondError;
+                receipt.Result = OpenBoxResult.NoDiamond;
                 return true;
             }
 
             ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needdiamond);
 
-
-            receipt = new JPOpenBoxData();
-            receipt.Type = opentype;
+            
             switch (opentype)
             {
                 case OpenBoxType.Item:
                     {
                         receipt.IDList = ContextUser.RandItem(count);
-                        // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.RandItem)
+                        if (receipt.IDList.Count > 0)
                         {
-                            ContextUser.DailyQuestData.IsFinish = true;
-                            PushMessageHelper.DailyQuestFinishNotification(Current);
+                            // 每日
+                            if (ContextUser.DailyQuestData.ID == TaskType.RandItem)
+                            {
+                                ContextUser.DailyQuestData.IsFinish = true;
+                                PushMessageHelper.DailyQuestFinishNotification(Current);
+                            }
+
+                            // 成就
+                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
                         }
 
-                        // 成就
-                        UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
                     }
 
                     break;
                 case OpenBoxType.Skill:
                     {
                         receipt.IDList = ContextUser.RandSkillBook(count);
-                        // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.RandSkillBook)
+                        if (receipt.IDList.Count > 0)
                         {
-                            ContextUser.DailyQuestData.IsFinish = true;
-                            PushMessageHelper.DailyQuestFinishNotification(Current);
+                            // 每日
+                            if (ContextUser.DailyQuestData.ID == TaskType.RandSkillBook)
+                            {
+                                ContextUser.DailyQuestData.IsFinish = true;
+                                PushMessageHelper.DailyQuestFinishNotification(Current);
+                            }
+
+                            // 成就
+                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
                         }
 
-                        // 成就
-                        UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
                     }
                     break;
             }
-            ContextUser.RefreshFightValue();
-            receipt.ItemList = ContextUser.ItemDataList;
-            receipt.SkillList = ContextUser.SkillDataList;
-            receipt.CurrFightValue = ContextUser.FightingValue;
+            if (receipt.IDList.Count > 0)
+            {
+                ContextUser.RefreshFightValue();
+                receipt.ItemList = ContextUser.ItemDataList;
+                receipt.SkillList = ContextUser.SkillDataList;
+                receipt.CurrFightValue = ContextUser.FightingValue;
+            }
+            else
+            {
+                receipt.Result = OpenBoxResult.MaxLevel;
+            }
+
             return true;
         }
     }
