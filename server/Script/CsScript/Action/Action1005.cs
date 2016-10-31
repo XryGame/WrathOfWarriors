@@ -63,6 +63,7 @@ namespace GameServer.CsScript.Action
                 roleFunc.OnCreateAfter(gameUser);
             }
             user = new SessionUser(gameUser);
+            //Current.Bind(user);
             UserLoginLog userLoginLog = new UserLoginLog();
             userLoginLog.UserId = UserId.ToString();
             userLoginLog.SessionID = Sid;
@@ -87,11 +88,12 @@ namespace GameServer.CsScript.Action
             GameUser user = new GameUser(UserId);
             user.IsRefreshing = true;
             user.SessionID = Sid;
+            user.EnterServerId = ServerID;
             user.Pid = Pid;
             user.RetailID = RetailID;
             user.NickName = UserName;
             user.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
-            user.UserStage = 1;
+            user.UserStage = SubjectStage.PreschoolSchool;
             user.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
             user.Vit = ConfigEnvSet.GetInt("User.InitVit");
             user.VipLv = ConfigEnvSet.GetInt("User.VipLv");
@@ -108,6 +110,7 @@ namespace GameServer.CsScript.Action
             user.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
             user.EventAwardData.OnlineStartTime = DateTime.Now;
+            user.PlotId = 0;
 
             //user.FriendsData = new UserFriendsData();
             user.RefreshFightValue();

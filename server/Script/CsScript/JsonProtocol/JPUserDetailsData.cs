@@ -112,5 +112,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public long StartSweepTime { get; set; }
 
+        public int PlotId { get; set; }
+
     }
 }

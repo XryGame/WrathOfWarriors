@@ -92,6 +92,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -124,6 +125,7 @@
     <Compile Include="Script\CsScript\Action\Action10300.cs" />
     <Compile Include="Script\CsScript\Action\Action10301.cs" />
     <Compile Include="Script\CsScript\Action\Action10302.cs" />
+    <Compile Include="Script\CsScript\Action\Action10400.cs" />
     <Compile Include="Script\CsScript\Action\Action1050.cs" />
     <Compile Include="Script\CsScript\Action\Action1051.cs" />
     <Compile Include="Script\CsScript\Action\Action1052.cs" />
@@ -217,6 +219,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPClassesData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPClassMemberData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatFightEndData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatLogData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatRivalData.cs" />
@@ -269,6 +272,7 @@
     <Compile Include="Script\CsScript\WebSocketActionDispatcher.cs" />
     <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Achievement.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
@@ -336,6 +340,7 @@
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\RequestVoteResult.cs" />
     <Compile Include="Script\Model\Enum\SceneType.cs" />
+    <Compile Include="Script\Model\Enum\ServerStatus.cs" />
     <Compile Include="Script\Model\Enum\SubjectChildType.cs" />
     <Compile Include="Script\Model\Enum\SubjectID.cs" />
     <Compile Include="Script\Model\Enum\SubjectStage.cs" />

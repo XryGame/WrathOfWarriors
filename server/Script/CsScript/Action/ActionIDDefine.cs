@@ -443,5 +443,10 @@ namespace GameServer.CsScript.Action
         ///扫荡减CD
         ///</summary>
         public const short Cst_Action10302 = 10302;
+
+        ///<summary>
+        ///剧情
+        ///</summary>
+        public const short Cst_Action10400 = 10400;
     }
 }

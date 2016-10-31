@@ -177,11 +177,20 @@ namespace GameServer.CsScript.Action
             // 日志
             foreach (CombatLogData data in ContextUser.CombatLogList)
             {
-                string logstr = UserHelper.FormatCombatLog(data);
-                if (!string.IsNullOrEmpty(logstr))
+                UserRank info = null;
+                if (ranking.TryGetRankNo(m => (m.UserID == data.UserId), out rankID))
                 {
-                    receipt.LogList.Add(logstr);
+                    info = ranking.Find(s => (s.UserID == data.UserId));
                 }
+
+                JPCombatLogData cld = new JPCombatLogData();
+                cld.UserId = data.UserId;
+                if (info != null)
+                    cld.RivalCurrRankId = info.RankId;
+                cld.Type = data.Type;
+                cld.FightResult = data.Status;
+                cld.Log = UserHelper.FormatCombatLog(data);
+                receipt.LogList.Add(cld);
             }
 
             return true;

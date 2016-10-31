@@ -15,6 +15,13 @@ using GameServer.CsScript.Com;
 using ZyGames.Framework.Common.Timing;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Contract;
+using ZyGames.Framework.Script;
+using ZyGames.Framework.Game.Config;
+using System.Web;
+using System.Text;
+using ZyGames.Framework.Game.Sns._91sdk;
+using GameServer.Script.Model.Enum;
+using System.Configuration;
 
 namespace GameServer.CsScript.Base
 {
@@ -65,6 +72,7 @@ namespace GameServer.CsScript.Base
 
             GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
+            TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
@@ -75,7 +83,7 @@ namespace GameServer.CsScript.Base
             // 每周二，周五名人榜奖励
             //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "TuesdayCombatAwardTask", DayOfWeek.Tuesday, "04:00"));
             //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "FridayCombatAwardTask", DayOfWeek.Friday, "04:00"));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 3600));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
 
             InitRanking();
             stopwatch.Stop();
@@ -158,6 +166,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Purchase>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Vip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Pay>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_CelebrityRanking>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
@@ -172,6 +181,8 @@ namespace GameServer.CsScript.Base
         
         public static void Stop()
         {
+            SendServerStatus(ServerStatus.Close, 0);
+
             var onlines = GameSession.GetOnlineAll();
             foreach (var sess in onlines)
             {
@@ -181,6 +192,57 @@ namespace GameServer.CsScript.Base
                 user.OfflineDate = DateTime.Now;
             }
 
+        }
+
+
+        public static void submitServerStatus(PlanConfig planconfig)
+        {
+            if (ScriptEngines.IsCompiling)
+            {
+                return;
+            }
+            //do something
+            var onlines = GameSession.GetOnlineAll();
+            if (onlines.Count < 2)
+                SendServerStatus(ServerStatus.Unhindered, onlines.Count);
+            else
+                SendServerStatus(ServerStatus.crowd, onlines.Count);
+        }
+
+        public static void SendServerStatus(ServerStatus status, int activeNum)
+        {
+            string Sign = "3f261d4f2f8941ea90552cf7507f021b";
+            string addr = ConfigurationManager.AppSettings["ServerStatusAddr"];
+            string url = addr + "/Service.aspx?d=";
+            string urlData = string.Format("MsgId={0}&Sid={1}&Uid={2}&St={3}&ActionId={4}&GameID={5}&ServerID={6}&Status={7}&ActiveNum={8}&ServerUrl={9}&Sign={10}",
+                0,
+                0,
+                0,
+                0,
+                1002,
+                1,
+                ConfigManager.Configger.GetFirstOrAddConfig<AppServerSection>().ProductServerId,
+                status.ToInt(),
+                activeNum,
+                ConfigUtils.GetSetting("Game.IpAddress") + ":" + ConfigUtils.GetSetting("Game.Port"),
+                Sign
+            );
+            string getUrlData = url + HttpUtility.UrlEncode(urlData, Encoding.UTF8);
+
+            string result = HttpPostManager.GetStringData(getUrlData);
+            try
+            {
+                if (string.IsNullOrEmpty(result))
+                {
+                    TraceLog.ReleaseWrite("Submit server status fail result:{0}, request url:{1}", result, getUrlData);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                new BaseLog().SaveLog(ex);
+                return;
+            }
         }
     }
 }

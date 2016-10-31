@@ -14,58 +14,86 @@ using ZyGames.Framework.Common;
 using ZyGames.Framework.RPC.Sockets;
 using GameServer.CsScript.JsonProtocol;
 using ZyGames.Framework.Game.Contract;
+using ZyGames.Framework.Common.Log;
 
 namespace GameServer.CsScript.Action
 {
-    //public class MyLogin : ILogin
-    //{
-    //    public MyLogin(string pid)
-    //    {
-    //        PassportID = pid;
-    //        Password = string.Empty;
-    //    }
+    public class MyLogin : ILogin
+    {
+        public MyLogin(string pid, string pwd, int enterServerId)
+        {
+            PassportID = pid;
+            Password = pwd;
+            EnterServerId = enterServerId;
+        }
 
-    //    public string GetRegPassport()
-    //    {
-    //        return PassportID;
-    //    }
+        public string GetRegPassport()
+        {
+            return PassportID;
+        }
 
-    //    public bool CheckLogin()
-    //    {
-    //        var cache = new ShareCacheStruct<TUser>();
-    //        TUser tUser = cache.Find(t => t.UserName == PassportID);
-    //        if (tUser != null)
-    //        {
-    //            UserID = tUser.UserId.ToString();
-    //            return true;
-    //        }
-    //        //not user create it.
-    //        tUser = new TUser()
-    //        {
-    //            UserId = (int)RedisConnectionPool.GetNextNo(typeof(TUser).FullName),
-    //            UserName = PassportID,
-    //            AccessTime = DateTime.Now
-    //        };
-    //        if (cache.Add(tUser))
-    //        {
-    //            UserID = tUser.UserId.ToString();
-    //            return true;
-    //        }
-    //        return false;
-    //    }
+        public bool CheckLogin()
+        {
+            var cache = new ShareCacheStruct<TUser>();
+            var userlist = cache.FindAll(t => (t.PassportID == PassportID));
+            if (userlist.Count > 0)
+            {
+                try
+                {
+                    if (userlist[0].Password.CompareTo(Password) == 0)
+                    {
+                        var user = userlist.Find(t => (t.ServerId == EnterServerId));
+                        if (user != null)
+                        {
+                            UserID = user.UserId.ToString();
+                            return true;
+                        }
 
-    //    public string PassportID { get; private set; }
-    //    public string UserID { get; private set; }
-    //    public int UserType { get; private set; }
-    //    public string Password { get; set; }
-    //    public string SessionID { get; private set; }
-    //}
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    new BaseLog().SaveLog(ex);
+                    return false;
+                }
+            }
+
+            //not user create it.
+            TUser tUser = new TUser()
+            {
+                UserId = (int)RedisConnectionPool.GetNextNo(typeof(TUser).FullName),
+                PassportID = PassportID,
+                Password = Password,
+                ServerId = EnterServerId,
+                AccessTime = DateTime.Now
+            };
+            if (cache.Add(tUser))
+            {
+                UserID = tUser.UserId.ToString();
+                return true;
+            }
+
+            return false;
+        }
+
+        public string PassportID { get; private set; }
+        public string UserID { get; private set; }
+        public int UserType { get; private set; }
+        public string Password { get; set; }
+        public string SessionID { get; private set; }
+
+        public int EnterServerId { get; private set; }
+    }
     /// <summary>
     /// login
     /// </summary>
     public class Action1004 : LoginAction
     {
-        //private string _userName;
         private bool isCreated = false;
         public Action1004(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1004, actionGetter)
@@ -79,17 +107,17 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         //public override bool GetUrlElement()
         //{
-        //    //if (httpGet.GetString("UserName", ref _userName))
-        //    //{
+        //    if (httpGet.GetInt("EnterServerId", ref _EnterServerId))
+        //    {
         //        return true;
-        //    //}
-        //    //return false;
+        //    }
+        //    return false;
         //}
-        //protected override ILogin CreateLogin()
-        //{
-        //    //return new MyLogin(_userName);
-        //    return new MyLogin(PassportId);
-        //}
+        protected override ILogin CreateLogin()
+        {
+            return new MyLogin(PassportId, Password, ServerID);
+
+        }
 
         protected override string BuildJsonPack()
         {
@@ -109,6 +137,11 @@ namespace GameServer.CsScript.Action
             return MathUtils.ToJson(resultData);
         }
 
+        //protected override void SetParameter(ILogin login)
+        //{
+        //    login
+        //}
+
         protected override bool DoSuccess(int userId, out IUser user)
         {
             user = null;
@@ -120,14 +153,15 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
 
-            var cacheSet = new PersonalCacheStruct<GameUser>();
-            GameUser gameUser = cacheSet.FindKey(userId.ToString());
-            if (gameUser == null ||
-                string.IsNullOrEmpty(gameUser.SessionID) ||
-                (Current.User != null && !Current.User.IsOnlining))
-            {
-                gameUser = cacheSet.FindKey(userId.ToString());
-            }
+            GameUser gameUser = UserHelper.FindUser(userId);
+            //var cacheSet = new PersonalCacheStruct<GameUser>();
+            //GameUser gameUser = cacheSet.FindKey(userId.ToString());
+            //if (gameUser == null ||
+            //    string.IsNullOrEmpty(gameUser.SessionID) ||
+            //    (Current.User != null && !Current.User.IsOnlining))
+            //{
+            //    gameUser = cacheSet.FindKey(userId.ToString());
+            //}
 
             //if (gameUser != null)
             //{
@@ -150,11 +184,11 @@ namespace GameServer.CsScript.Action
             if (gameUser == null)
             {
                 user = new SessionUser() { PassportId = PassportId, UserId = userId };
-                ////ErrorCode = 1005;
                 return true;
             }
             isCreated = true;
-            //user = new SessionUser(gameUser);
+            user = new SessionUser(gameUser);
+            //Current.Bind(user);
             if (gameUser.UserStatus == UserStatus.Lock)
             {
                 ErrorCode = Language.Instance.TimeoutCode;

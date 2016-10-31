@@ -86,12 +86,12 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("SubType", value);
             }
         }
-        private int _Stage;
+        private SubjectStage _Stage;
         /// <summary>
         /// 阶段
         /// </summary>
         [EntityField("Stage")]
-        public int Stage
+        public SubjectStage Stage
         {
             get
             {
@@ -171,7 +171,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _SubType = value.ToEnum< SubjectChildType>();
                         break;
                     case "Stage":
-                        _Stage = value.ToInt(); 
+                        _Stage = value.ToEnum<SubjectStage>(); 
                         break;
                     case "UnitTime":
                         _UnitTime = value.ToInt();

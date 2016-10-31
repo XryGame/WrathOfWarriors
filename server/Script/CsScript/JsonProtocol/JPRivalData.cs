@@ -28,7 +28,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int HP { get; set; }
 
-        public int UserStage { get; set; }
+        public SubjectStage UserStage { get; set; }
 
         public CacheList<ItemData> ItemList { get; set; }
         

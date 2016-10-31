@@ -9,8 +9,7 @@ using ZyGames.Framework.Model;
 
 namespace GameServer.Script.Model.DataModel
 {
-    [ProtoContract]
-    [EntityTable(CacheType.Entity, DbConfig.Data)]
+    [Serializable, ProtoContract, EntityTable(CacheType.Entity, DbConfig.Data)]
     public class TUser : ShareEntity, IUser
     {
         [ProtoMember(1)]
@@ -19,13 +18,21 @@ namespace GameServer.Script.Model.DataModel
 
         [ProtoMember(2)]
         [EntityField]
-        public string UserName { get; set; }
+        public string PassportID { get; set; }
 
         [ProtoMember(3)]
         [EntityField]
-        public DateTime AccessTime { get; set; }
+        public string Password { get; set; }
 
         [ProtoMember(4)]
+        [EntityField]
+        public int ServerId { get; set; }
+
+        [ProtoMember(5)]
+        [EntityField]
+        public DateTime AccessTime { get; set; }
+
+        [ProtoMember(6)]
         [EntityField]
         public string Token { get; set; }
 
@@ -40,7 +47,7 @@ namespace GameServer.Script.Model.DataModel
 
         public string GetPassportId()
         {
-            return UserName;
+            return PassportID;
         }
 
         public void RefleshOnlineDate()

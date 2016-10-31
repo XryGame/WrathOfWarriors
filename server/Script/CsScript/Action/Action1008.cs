@@ -61,12 +61,12 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
             ContextUser.UserLv = ContextUser.ConvertExp2Level();
-            Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(ContextUser.UserLv);
-            if (rolegrade == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                return true;
-            }
+            //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(ContextUser.UserLv);
+            //if (rolegrade == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+            //    return true;
+            //}
             ContextUser.RefreshFightValue();
 
             receipt = new JPUserDetailsData()
@@ -82,9 +82,9 @@ namespace GameServer.CsScript.Action
                 //VipLv = ContextUser.VipLv,
                 CreateDate = ContextUser.CreateDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 LoginDate = ContextUser.LoginDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                Attack = rolegrade.Attack,
-                Defense = rolegrade.Defense,
-                HP = rolegrade.HP,
+                Attack = ContextUser.Attack,
+                Defense = ContextUser.Defense,
+                HP = ContextUser.Hp,
                 ClassID = ContextUser.ClassData.ClassID,
                 FightValue = ContextUser.FightingValue,
                 ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes
@@ -361,7 +361,9 @@ namespace GameServer.CsScript.Action
             receipt.ChallengeRoleList = ContextUser.ChallengeRoleList;
             receipt.SweepingRoleId = ContextUser.SweepingRoleId;
             receipt.SweepTimes = ContextUser.SweepTimes;
-            receipt.StartSweepTime = Util.ConvertDateTimeStamp(ContextUser.StartSweepTime); 
+            receipt.StartSweepTime = Util.ConvertDateTimeStamp(ContextUser.StartSweepTime);
+
+            receipt.PlotId = ContextUser.PlotId;
             return true;
         }
 

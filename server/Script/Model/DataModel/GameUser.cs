@@ -78,9 +78,56 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("UserID", value);
             }
         }
-        
-        private string _NickName;
+
+        private int _EnterServerId;
+
         [ProtoMember(2)]
+        [EntityField("EnterServerId")]
+        public int EnterServerId
+        {
+            get
+            {
+                return _EnterServerId;
+            }
+            set
+            {
+                SetChange("EnterServerId", value);
+            }
+        }
+
+
+        private string _RetailID;
+
+        [ProtoMember(3)]
+        [EntityField("RetailID")]
+        public string RetailID
+        {
+            get
+            {
+                return _RetailID;
+            }
+            set
+            {
+                SetChange("RetailID", value);
+            }
+        }
+        private string _Pid;
+        [ProtoMember(4)]
+        [EntityField("Pid")]
+        public string Pid
+        {
+            get
+            {
+                return _Pid;
+            }
+            set
+            {
+                SetChange("Pid", value);
+            }
+        }
+
+        private string _NickName;
+        [ProtoMember(5)]
         [EntityField("NickName")]
         public string NickName
         {
@@ -95,7 +142,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private short _UserLv;
-        [ProtoMember(3)]
+        [ProtoMember(6)]
         [EntityField("UserLv")]
         public short UserLv
         {
@@ -109,10 +156,10 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        private short _UserStage;
-        [ProtoMember(4)]
+        private SubjectStage _UserStage;
+        [ProtoMember(7)]
         [EntityField("UserStage")]
-        public short UserStage
+        public SubjectStage UserStage
         {
             get
             {
@@ -125,7 +172,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _GiveAwayDiamond;
-        [ProtoMember(5)]
+        [ProtoMember(8)]
         [EntityField("GiveAwayDiamond")]
         public int GiveAwayDiamond
         {
@@ -143,7 +190,7 @@ namespace GameServer.Script.Model.DataModel
             }
         }
         private int _BuyDiamond;
-        [ProtoMember(6)]
+        [ProtoMember(9)]
         [EntityField("BuyDiamond")]
         public int BuyDiamond
         {
@@ -162,7 +209,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _UsedDiamond;
-        [ProtoMember(7)]
+        [ProtoMember(10)]
         [EntityField("UsedDiamond")]
         public int UsedDiamond
         {
@@ -181,7 +228,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _BaseExp;
-        [ProtoMember(8)]
+        [ProtoMember(11)]
         [EntityField("BaseExp")]
         public int BaseExp
         {
@@ -196,7 +243,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _FightExp;
-        [ProtoMember(9)]
+        [ProtoMember(12)]
         [EntityField("FightExp")]
         public int FightExp
         {
@@ -211,7 +258,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _Vit;
-        [ProtoMember(10)]
+        [ProtoMember(13)]
         [EntityField("Vit")]
         public int Vit
         {
@@ -226,7 +273,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _VipLv;
-        [ProtoMember(11)]
+        [ProtoMember(14)]
         [EntityField("VipLv")]
         public int VipLv
         {
@@ -240,7 +287,7 @@ namespace GameServer.Script.Model.DataModel
             }
         }
         private UserStatus _UserStatus;
-        [ProtoMember(12)]
+        [ProtoMember(15)]
         [EntityField("UserStatus")]
         public UserStatus UserStatus
         {
@@ -255,7 +302,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private int _FightingValue;
-        [ProtoMember(13)]
+        [ProtoMember(16)]
         [EntityField("FightingValue")]
         public int FightingValue
         {
@@ -274,38 +321,9 @@ namespace GameServer.Script.Model.DataModel
         }
 
   
-        private string _RetailID;
-
-        [ProtoMember(14)]
-        [EntityField("RetailID")]
-        public string RetailID
-        {
-            get
-            {
-                return _RetailID;
-            }
-            set
-            {
-                SetChange("RetailID", value);
-            }
-        }
-        private string _Pid;
-        [ProtoMember(15)]
-        [EntityField("Pid")]
-        public string Pid
-        {
-            get
-            {
-                return _Pid;
-            }
-            set
-            {
-                SetChange("Pid", value);
-            }
-        }
         
         private DateTime _CreateDate;
-        [ProtoMember(16)]
+        [ProtoMember(17)]
         [EntityField("CreateDate")]
         public DateTime CreateDate
         {
@@ -320,7 +338,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private DateTime _LoginDate;
-        [ProtoMember(17)]
+        [ProtoMember(18)]
         [EntityField("LoginDate")]
         public DateTime LoginDate
         {
@@ -335,7 +353,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private DateTime _OfflineDate;
-        [ProtoMember(18)]
+        [ProtoMember(19)]
         [EntityField("OfflineDate")]
         public DateTime OfflineDate
         {
@@ -351,45 +369,8 @@ namespace GameServer.Script.Model.DataModel
 
         #endregion
 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return UserID;
-        }
-
-        [ProtoMember(19)]
-        public bool IsRefreshing { get; set; }
-
-        private string _sessionID;
-        public string SessionID
-        {
-            get
-            {
-                return _sessionID;
-            }
-            set
-            {
-                _sessionID = value;
-            }
-        }
-
-        [ProtoMember(20)]
-        public int GameId { get; set; }
-
-
-        [ProtoMember(21)]
-        public int ServerId { get; set; }
-        
-
-        [ProtoMember(22)]
-        public bool IsOnline
-        {
-            get;
-            set;
-        }
-
         private DateTime _RestoreDate;
-        [ProtoMember(23)]
+        [ProtoMember(20)]
         [EntityField("RestoreDate")]
         public DateTime RestoreDate
         {
@@ -405,7 +386,7 @@ namespace GameServer.Script.Model.DataModel
 
 
         private UserClassData _ClassData;
-        [ProtoMember(24)]
+        [ProtoMember(21)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserClassData ClassData
         {
@@ -420,7 +401,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private UserStudyTaskData _StudyTaskData;
-        [ProtoMember(25)]
+        [ProtoMember(22)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserStudyTaskData StudyTaskData
         {
@@ -435,7 +416,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private UserExerciseTaskData _ExerciseTaskData;
-        [ProtoMember(26)]
+        [ProtoMember(23)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserExerciseTaskData ExerciseTaskData
         {
@@ -449,7 +430,7 @@ namespace GameServer.Script.Model.DataModel
             }
         }
         private UserExpData _ExpData;
-        [ProtoMember(27)]
+        [ProtoMember(24)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserExpData ExpData
         {
@@ -470,7 +451,7 @@ namespace GameServer.Script.Model.DataModel
         /// 道具列表
         /// </summary>
         private CacheList<ItemData> _ItemDataList;
-        [ProtoMember(28)]
+        [ProtoMember(25)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<ItemData> ItemDataList
         {
@@ -490,7 +471,7 @@ namespace GameServer.Script.Model.DataModel
         /// 技能列表
         /// </summary>
         private CacheList<SkillData> _SkillDataList;
-        [ProtoMember(29)]
+        [ProtoMember(26)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<SkillData> SkillDataList
         {
@@ -505,7 +486,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private CacheList<int> _SkillCarryList;
-        [ProtoMember(30)]
+        [ProtoMember(27)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<int> SkillCarryList
         {
@@ -521,7 +502,7 @@ namespace GameServer.Script.Model.DataModel
 
 
         private UserCombatData _CombatData;
-        [ProtoMember(31)]
+        [ProtoMember(28)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserCombatData CombatData
         {
@@ -536,7 +517,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private CacheList<CombatLogData> _CombatLogList;
-        [ProtoMember(32)]
+        [ProtoMember(29)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<CombatLogData> CombatLogList
         {
@@ -551,7 +532,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         private UserFriendsData _FriendsData;
-        [ProtoMember(33)]
+        [ProtoMember(30)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserFriendsData FriendsData
         {
@@ -565,50 +546,11 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-
-        /// <summary>
-        /// 聊天日期
-        /// </summary>
-        [ProtoMember(34)]
-        public DateTime ChatDate
-        {
-            get;
-            set;
-        }
-
-        private int _ChatVesion;
-
-        /// <summary>
-        ///  聊天版本
-        /// </summary>
-        [ProtoMember(35)]
-        public int ChatVesion
-        {
-            get
-            {
-                return _ChatVesion;
-            }
-            set
-            {
-                _ChatVesion = value;
-            }
-        }
-
-        /// <summary>
-        /// 公告版本 
-        /// </summary>
-        [ProtoMember(36)]
-        public int BroadcastVesion
-        {
-            get;
-            set;
-        }
-
         /// <summary>
         /// 等级排名
         /// </summary>
         private int _LevelRankId;
-        [ProtoMember(37)]
+        [ProtoMember(31)]
         [EntityField("LevelRankId")]
         public int LevelRankId
         {
@@ -625,7 +567,7 @@ namespace GameServer.Script.Model.DataModel
         /// 战斗力排名
         /// </summary>
         private int _FightValueRankId;
-        [ProtoMember(38)]
+        [ProtoMember(32)]
         [EntityField("FightValueRankId")]
         public int FightValueRankId
         {
@@ -643,7 +585,7 @@ namespace GameServer.Script.Model.DataModel
         /// 形象ID
         /// </summary>
         private int _LooksId;
-        [ProtoMember(39)]
+        [ProtoMember(33)]
         [EntityField("LooksId")]
         public int LooksId
         {
@@ -657,32 +599,12 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        [ProtoMember(40)]
-        public int Attack
-        {
-            get;
-            set;
-        }
-
-        [ProtoMember(41)]
-        public int Defense
-        {
-            get;
-            set;
-        }
-
-        [ProtoMember(42)]
-        public int Hp
-        {
-            get;
-            set;
-        }
 
         /// <summary>
         /// 挑战班长有效次数
         /// </summary>
         private int _ChallengeMonitorTimes;
-        [ProtoMember(43)]
+        [ProtoMember(34)]
         [EntityField("ChallengeMonitorTimes")]
         public int ChallengeMonitorTimes
         {
@@ -700,7 +622,7 @@ namespace GameServer.Script.Model.DataModel
         /// 免费竞选票数
         /// </summary>
         private int _CampaignTicketNum;
-        [ProtoMember(44)]
+        [ProtoMember(35)]
         [EntityField("CampaignTicketNum")]
         public int CampaignTicketNum
         {
@@ -717,7 +639,7 @@ namespace GameServer.Script.Model.DataModel
         /// 购买的竞选票数
         /// </summary>
         private int _BuyCampaignTicketNum;
-        [ProtoMember(45)]
+        [ProtoMember(36)]
         [EntityField("BuyCampaignTicketNum")]
         public int BuyCampaignTicketNum
         {
@@ -730,24 +652,12 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("BuyCampaignTicketNum", value);
             }
         }
-        [ProtoMember(46)]
-        public JobTitleType AditionJobTitle
-        {
-            get;
-            set;
-        }
 
-        [ProtoMember(47)]
-        public bool IsHaveJobTitle
-        {
-            get;
-            set;
-        }
         /// <summary>
         /// 每日任务数据
         /// </summary>
         private UserDailyQuestData _DailyQuestData;
-        [ProtoMember(48)]
+        [ProtoMember(37)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserDailyQuestData DailyQuestData
         {
@@ -765,7 +675,7 @@ namespace GameServer.Script.Model.DataModel
         /// 占领挑战过的场景
         /// </summary>
         private CacheList<SceneType> _OccupySceneList;
-        [ProtoMember(49)]
+        [ProtoMember(38)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<SceneType> OccupySceneList
         {
@@ -779,19 +689,13 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        [ProtoMember(50)]
-        public SceneType OccupySceneType
-        {
-            get;
-            set;
-        }
 
 
         /// <summary>
         /// 占领挑战过的场景
         /// </summary>
         private CacheList<AchievementData> _AchievementList;
-        [ProtoMember(51)]
+        [ProtoMember(39)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<AchievementData> AchievementList
         {
@@ -809,7 +713,7 @@ namespace GameServer.Script.Model.DataModel
         /// 解锁场景地图list
         /// </summary>
         private CacheList<int> _UnlockSceneMapList;
-        [ProtoMember(52)]
+        [ProtoMember(40)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<int> UnlockSceneMapList
         {
@@ -827,7 +731,7 @@ namespace GameServer.Script.Model.DataModel
         /// 选择默认的场景地图
         /// </summary>
         private int _SelectedSceneMapId;
-        [ProtoMember(53)]
+        [ProtoMember(41)]
         [EntityField("SelectedSceneMapId")]
         public int SelectedSceneMapId
         {
@@ -845,7 +749,7 @@ namespace GameServer.Script.Model.DataModel
         /// 邀请切磋目标Uid
         /// </summary>
         private int _InviteFightDestUid;
-        [ProtoMember(54)]
+        [ProtoMember(42)]
         [EntityField("InviteFightDestUid")]
         public int InviteFightDestUid
         {
@@ -863,7 +767,7 @@ namespace GameServer.Script.Model.DataModel
         /// 签到，首周，在线奖励数据
         /// </summary>
         private UserEventAwardData _EventAwardData;
-        [ProtoMember(55)]
+        [ProtoMember(43)]
         [EntityField(true, ColumnDbType.LongText)]
         public UserEventAwardData EventAwardData
         {
@@ -881,7 +785,7 @@ namespace GameServer.Script.Model.DataModel
         /// 邮箱
         /// </summary>
         private CacheList<MailData> _MailBox;
-        [ProtoMember(56)]
+        [ProtoMember(44)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<MailData> MailBox
         {
@@ -900,7 +804,7 @@ namespace GameServer.Script.Model.DataModel
         /// 当天是否抽奖
         /// </summary>
         private bool _IsTodayLottery;
-        [ProtoMember(57)]
+        [ProtoMember(45)]
         [EntityField("IsTodayLottery")]
         public bool IsTodayLottery
         {
@@ -914,21 +818,12 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        /// <summary>
-        /// 随机的抽奖id
-        /// </summary>
-        [ProtoMember(58)]
-        public int RandomLotteryId
-        {
-            get;
-            set;
-        }
 
         /// <summary>
         /// 记录挑战过的角色
         /// </summary>
         private CacheList<int> _ChallengeRoleList;
-        [ProtoMember(59)]
+        [ProtoMember(46)]
         [EntityField(true, ColumnDbType.LongText)]
         public CacheList<int> ChallengeRoleList
         {
@@ -947,7 +842,7 @@ namespace GameServer.Script.Model.DataModel
         /// 扫荡的角色id
         /// </summary>
         private int _SweepingRoleId;
-        [ProtoMember(60)]
+        [ProtoMember(47)]
         [EntityField("SweepingRoleId")]
         public int SweepingRoleId
         {
@@ -965,7 +860,7 @@ namespace GameServer.Script.Model.DataModel
         /// 扫荡的次数
         /// </summary>
         private int _SweepTimes;
-        [ProtoMember(61)]
+        [ProtoMember(48)]
         [EntityField("SweepTimes")]
         public int SweepTimes
         {
@@ -983,7 +878,7 @@ namespace GameServer.Script.Model.DataModel
         /// 扫荡的开始时间
         /// </summary>
         private DateTime _StartSweepTime;
-        [ProtoMember(62)]
+        [ProtoMember(49)]
         [EntityField("StartSweepTime")]
         public DateTime StartSweepTime
         {
@@ -997,6 +892,154 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 剧情ID
+        /// </summary>
+        private int _PlotId;
+        [ProtoMember(50)]
+        [EntityField("PlotId")]
+        public int PlotId
+        {
+            get
+            {
+                return _PlotId;
+            }
+            set
+            {
+                SetChange("PlotId", value);
+            }
+        }
+
+
+
+        protected override int GetIdentityId()
+        {
+            //allow modify return value
+            return UserID;
+        }
+
+        [ProtoMember(60)]
+        public bool IsRefreshing { get; set; }
+
+        private string _sessionID;
+        public string SessionID
+        {
+            get
+            {
+                return _sessionID;
+            }
+            set
+            {
+                _sessionID = value;
+            }
+        }
+
+        [ProtoMember(61)]
+        public int GameId { get; set; }
+
+
+        [ProtoMember(62)]
+        public int ServerId { get; set; }
+
+
+        [ProtoMember(63)]
+        public bool IsOnline
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(64)]
+        public int Attack
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(65)]
+        public int Defense
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(66)]
+        public int Hp
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// 聊天日期
+        /// </summary>
+        [ProtoMember(67)]
+        public DateTime ChatDate
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///  聊天版本
+        /// </summary>
+        private int _ChatVesion;
+        [ProtoMember(68)]
+        public int ChatVesion
+        {
+            get
+            {
+                return _ChatVesion;
+            }
+            set
+            {
+                _ChatVesion = value;
+            }
+        }
+
+        /// <summary>
+        /// 公告版本 
+        /// </summary>
+        [ProtoMember(69)]
+        public int BroadcastVesion
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(70)]
+        public JobTitleType AditionJobTitle
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(71)]
+        public bool IsHaveJobTitle
+        {
+            get;
+            set;
+        }
+
+
+        [ProtoMember(72)]
+        public SceneType OccupySceneType
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// 随机的抽奖id
+        /// </summary>
+        [ProtoMember(73)]
+        public int RandomLotteryId
+        {
+            get;
+            set;
+        }
 
         public override string GetNickName()
         {
@@ -1058,7 +1101,9 @@ namespace GameServer.Script.Model.DataModel
                 switch (index)
                 {
                     case "UserID": return UserID;
-                    //case "UserName": return IdentityId;
+                    case "EnterServerId": return EnterServerId;
+                    case "RetailID": return RetailID;
+                    case "Pid": return Pid;
                     case "NickName": return NickName;
                     case "UserLv": return UserLv;
                     case "UserStage": return UserStage;
@@ -1071,8 +1116,6 @@ namespace GameServer.Script.Model.DataModel
                     case "VipLv": return VipLv;
                     case "UserStatus": return UserStatus;
                     case "FightingValue": return FightingValue;
-                    case "RetailID": return RetailID;
-                    case "Pid": return Pid;
                     case "CreateDate": return CreateDate;
                     case "LoginDate": return LoginDate;
                     case "OfflineDate": return OfflineDate;
@@ -1107,6 +1150,7 @@ namespace GameServer.Script.Model.DataModel
                     case "SweepingRoleId": return SweepingRoleId;
                     case "SweepTimes": return SweepTimes;
                     case "StartSweepTime": return StartSweepTime;
+                    case "PlotId": return PlotId;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1119,6 +1163,15 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID":
                         _UserID = value.ToInt();
                         break;
+                    case "EnterServerId":
+                        _EnterServerId = value.ToInt();
+                        break;
+                    case "RetailID":
+                        _RetailID = value.ToNotNullString();
+                        break;
+                    case "Pid":
+                        _Pid = value.ToNotNullString();
+                        break;
                     case "NickName":
                         _NickName = value.ToNotNullString();
                         break;
@@ -1126,7 +1179,7 @@ namespace GameServer.Script.Model.DataModel
                         _UserLv = value.ToShort();
                         break;
                     case "UserStage":
-                        _UserStage = value.ToShort();
+                        _UserStage = value.ToEnum<SubjectStage>();
                         break;
                     case "GiveAwayDiamond":
                         _GiveAwayDiamond = value.ToInt();
@@ -1154,12 +1207,6 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "FightingValue":
                         _FightingValue = value.ToInt();
-                        break;
-                    case "RetailID":
-                        _RetailID = value.ToNotNullString();
-                        break;
-                    case "Pid":
-                        _Pid = value.ToNotNullString();
                         break;
                     case "CreateDate":
                         _CreateDate = value.ToDateTime();
@@ -1259,6 +1306,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "StartSweepTime":
                         _StartSweepTime = value.ToDateTime();
+                        break;
+                    case "PlotId":
+                        _PlotId = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
@@ -1754,7 +1804,9 @@ namespace GameServer.Script.Model.DataModel
             List<Config_Item> itemslist = new List<Config_Item>();
             foreach (Config_Scene sc in scenes)
             {
-                List<Config_Item> items = new ShareCacheStruct<Config_Item>().FindAll(t => (t.Map == (int)sc.ID));
+                List<Config_Item> items = new ShareCacheStruct<Config_Item>().FindAll(
+                    t => (t.Type == ItemType.Item) && t.Map == (int)sc.ID
+                    );
                 itemslist.AddRange(items);
             }
 
@@ -2009,7 +2061,9 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
-
+            var sctcache = new ShareCacheStruct<Config_SubjectExp>();
+            /// 如果是学前班阶段，按照小学阶段算
+            SubjectStage stage = UserStage == SubjectStage.PreschoolSchool ? SubjectStage.PrimarySchool : UserStage;
             Attack = 0;
             Defense = 0;
             Hp = 0;
@@ -2029,9 +2083,14 @@ namespace GameServer.Script.Model.DataModel
             HpList.Add(SubjectChildType.Jiaohua);
             foreach (var v in HpList)
             {
+                if (sctcache.Find(t => (t.SubType == v && t.Stage == stage)) == null)
+                {
+                    continue;
+                }
                 hp_ = 0;
                 exp_ = 0;
-                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                var list = sctcache.FindAll(t => (t.SubType == v && t.Stage == stage));
+
                 foreach (var sub in list)
                 {
                     string propertyName = string.Format("{0}", sub.id);
@@ -2051,9 +2110,14 @@ namespace GameServer.Script.Model.DataModel
             AtkList.Add(SubjectChildType.Saodi);
             foreach (var v in AtkList)
             {
+                if (sctcache.Find(t => (t.SubType == v && t.Stage == stage)) == null)
+                {
+                    continue;
+                }
                 atk_ = 0;
                 exp_ = 0;
-                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v && t.Stage == stage));
+
                 foreach (var sub in list)
                 {
                     string propertyName = string.Format("{0}", sub.id);
@@ -2074,9 +2138,14 @@ namespace GameServer.Script.Model.DataModel
             DefList.Add(SubjectChildType.Cazhuozi);
             foreach (var v in DefList)
             {
+                if (sctcache.Find(t => (t.SubType == v && t.Stage == stage)) == null)
+                {
+                    continue;
+                }
                 def_ = 0;
                 exp_ = 0;
-                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v));
+                var list = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.SubType == v && t.Stage == stage));
+
                 foreach (var sub in list)
                 {
                     string propertyName = string.Format("{0}", sub.id);
@@ -2090,22 +2159,36 @@ namespace GameServer.Script.Model.DataModel
                 Defense += def_;
             }
 
-            //foreach (ItemData item in ItemDataList)
-            //{
-            //    Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
-            //    if (cfgitem.Type == ItemType.Item)
-            //    {
-            //        List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
-            //        if (itemgradelist.Count > 0)
-            //        {
-            //            Attack += itemgradelist[itemgradelist.Count - 1].Attack;
-            //            Defense += itemgradelist[itemgradelist.Count - 1].Defense;
-            //            Hp += itemgradelist[itemgradelist.Count - 1].HP;
-            //        }
-            //    }
-            //}
-
             FightingValue = Attack * 5 + Defense * 5 + Hp;
+        }
+
+        /// <summary>
+        /// 获得竞技场加成后的战斗力
+        /// </summary>
+        public int GetCombatFightValue()
+        {
+  
+            Attack = 0;
+            Defense = 0;
+            Hp = 0;
+
+            var list = ItemDataList.FindAll(t => (t.ID >= 10028 && t.ID <= 10033));
+            foreach (var item in list)
+            {
+                Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
+                if (cfgitem.Type == ItemType.Item)
+                {
+                    List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
+                    if (itemgradelist.Count > 0)
+                    {
+                        Attack += itemgradelist[itemgradelist.Count - 1].Attack;
+                        Defense += itemgradelist[itemgradelist.Count - 1].Defense;
+                        Hp += itemgradelist[itemgradelist.Count - 1].HP;
+                    }
+                }
+            }
+
+            return FightingValue + (Attack * 5 + Defense * 5 + Hp);
         }
 
         /// <summary>

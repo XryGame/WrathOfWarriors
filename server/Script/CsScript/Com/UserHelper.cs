@@ -34,6 +34,17 @@ namespace GameServer.Script.Model.DataModel
             return new PersonalCacheStruct<GameUser>().FindKey(userid.ToString());
         }
 
+
+        public static GameUser FindUser(string PassportID, int EnterServerId)
+        {
+            var list = new PersonalCacheStruct<GameUser>().FindGlobal(t => (
+            t.Pid == PassportID && t.EnterServerId == EnterServerId)
+            );
+            if (list.Count > 0)
+                return list[0];
+            return null;
+        }
+
         public static UserPayCache FindUserPay(int userid)
         {
             return new PersonalCacheStruct<UserPayCache>().FindKey(userid.ToString());
@@ -201,6 +212,8 @@ namespace GameServer.Script.Model.DataModel
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
             //gameUser.RandomLotteryId = 0;
+            // 名人榜处理
+            CombatProcess(uid);
 
             DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
 
@@ -247,28 +260,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.UserStatus = UserStatus.MainUi;
 
             // 名人榜处理
-            Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            int rankID = 0;
-            UserRank rankinfo = null;
-            UserRank rivalrankinfo = null;
-            if (ranking.TryGetRankNo(m => m.UserID == uid, out rankID))
-            {
-                rankinfo = ranking.Find(s => s.UserID == uid);
-            }
-            if (rankinfo != null && rankinfo.FightDestUid > 0)
-            {
-                rankinfo.IsFighting = false;
-
-                if (ranking.TryGetRankNo(m => m.UserID == rankinfo.FightDestUid, out rankID))
-                {
-                    rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
-                }
-                if (rivalrankinfo != null && rivalrankinfo.IsFighting)
-                {
-                    rivalrankinfo.IsFighting = false;
-                }
-                rankinfo.FightDestUid = 0;
-            }
+            CombatProcess(uid);
 
             // 班级处理
             if (gameUser.ClassData.ClassID != 0)
@@ -299,6 +291,32 @@ namespace GameServer.Script.Model.DataModel
 
         }
    
+        public static void CombatProcess(int uid)
+        {
+            // 名人榜处理
+            Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            int rankID = 0;
+            UserRank rankinfo = null;
+            UserRank rivalrankinfo = null;
+            if (ranking.TryGetRankNo(m => m.UserID == uid, out rankID))
+            {
+                rankinfo = ranking.Find(s => s.UserID == uid);
+            }
+            if (rankinfo != null && rankinfo.FightDestUid > 0)
+            {
+                rankinfo.IsFighting = false;
+
+                if (ranking.TryGetRankNo(m => m.UserID == rankinfo.FightDestUid, out rankID))
+                {
+                    rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
+                }
+                if (rivalrankinfo != null && rivalrankinfo.IsFighting)
+                {
+                    rivalrankinfo.IsFighting = false;
+                }
+                rankinfo.FightDestUid = 0;
+            }
+        }
 
         public static void buildBaseExpData(GameUser gameUser, out object outdata)
         {
@@ -578,13 +596,15 @@ namespace GameServer.Script.Model.DataModel
             Ranking<UserRank> ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             IList<UserRank> list = ranking.GetRange(0, ranking.Count, out pageCount);
 
+            var crlist = new ShareCacheStruct<Config_CelebrityRanking>().FindAll();
             foreach (UserRank ur in list)
             {
                 GameUser user = FindUser(ur.UserID);
                 if (user == null)
                     continue;
-
-                if (ur.RankId == 1)
+                
+                Config_CelebrityRanking cr = crlist.Find(t => (t.Ranking >= ur.RankId));
+                if (cr != null)
                 {
                     MailData mail = new MailData()
                     {
@@ -592,68 +612,9 @@ namespace GameServer.Script.Model.DataModel
                         Title = "学霸榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第一名，奖励如下，请查收！",
-                        ApppendDiamond = 200
+                        Context = string.Format("截止当前时间，您获得学霸榜第{0}名，奖励如下，请查收！", ur.RankId),
+                        ApppendDiamond = cr.AwardNum
                     };
-                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 3 });
-                    user.AddNewMail(ref mail);
-                }
-                else if (ur.RankId == 2)
-                {
-                    MailData mail = new MailData()
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Title = "学霸榜奖励",
-                        Sender = "系统",
-                        Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第二名，奖励如下，请查收！",
-                        ApppendDiamond = 200
-                    };
-                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 2 });
-
-                    user.AddNewMail(ref mail);
-                }
-                else if (ur.RankId == 3)
-                {
-                    MailData mail = new MailData()
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Title = "学霸榜奖励",
-                        Sender = "系统",
-                        Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜第三名，奖励如下，请查收！",
-                        ApppendDiamond = 200
-                    };
-                    mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
-
-                    user.AddNewMail(ref mail);
-                }
-                else if (ur.RankId <= 10)
-                {
-                    MailData mail = new MailData()
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Title = "学霸榜奖励",
-                        Sender = "系统",
-                        Date = DateTime.Now,
-                        Context = "恭喜您获得学霸榜前十名，奖励如下，请查收！",
-                        ApppendDiamond = 200
-                    };
-
-                    user.AddNewMail(ref mail);
-                }
-                else
-                {
-                    MailData mail = new MailData()
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Title = "学霸榜奖励",
-                        Sender = "系统",
-                        Date = DateTime.Now,
-                        Context = "根据您在学霸榜中的排名，奖励如下，请查收！",
-                        ApppendDiamond = 200
-                    };
-
                     user.AddNewMail(ref mail);
                 }
             }

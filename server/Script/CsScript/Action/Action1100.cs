@@ -81,11 +81,15 @@ namespace GameServer.CsScript.Action
                 ErrorInfo = string.Format(Language.Instance.DBTableError, "SubjectExp");
                 return true;
             }
-            if (ContextUser.UserLv < scene.ClearGrade || ContextUser.UserStage < subjectExp.Stage)
+            if (ContextUser.UserStage != SubjectStage.PreschoolSchool)
             {
-                ErrorInfo = Language.Instance.RequestIDError;
-                return true;
+                if (ContextUser.UserLv < scene.ClearGrade || ContextUser.UserStage != subjectExp.Stage)
+                {
+                    ErrorInfo = Language.Instance.RequestIDError;
+                    return true;
+                }
             }
+
 
             switch (subjectType)
             {

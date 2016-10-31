@@ -4,6 +4,7 @@ using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
+using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
@@ -147,7 +148,7 @@ namespace GameServer.CsScript.Action
             receipt.LastFailedTime = Util.ConvertDateTimeStamp(ContextUser.CombatData.LastFailedDate);
             if (result == EventStatus.Good)
             {
-                receipt.AwardDiamond = rankrise * 20;
+                receipt.AwardDiamond = ConfigEnvSet.GetInt("User.CombatWinAward");
                 UserHelper.GiveAwayDiamond(ContextUser.UserID, receipt.AwardDiamond);
             }
             receipt.CurrDiamond = ContextUser.DiamondNum;

@@ -24,7 +24,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Hp { get; set; }
 
-        public int UserStage { get; set; }
+        public SubjectStage UserStage { get; set; }
 
         public int CombatRankId { get; set; }
         

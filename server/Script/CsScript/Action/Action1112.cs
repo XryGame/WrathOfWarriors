@@ -53,6 +53,7 @@ namespace GameServer.CsScript.Action
             }
 
             ContextUser.UnlockSceneMapList.Add(mapid);
+            ContextUser.SelectedSceneMapId = mapid;
             ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, scenemap.UnLockPay);
             receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.Extend1 = mapid;
