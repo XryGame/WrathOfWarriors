@@ -4,9 +4,7 @@ using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
-using System;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 

@@ -3,7 +3,6 @@ using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.Enum.Enum;
-using System.Collections.Generic;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
 

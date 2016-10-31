@@ -1,5 +1,4 @@
-﻿using GameServer.CsScript.Base;
-using GameServer.CsScript.Com;
+﻿using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;

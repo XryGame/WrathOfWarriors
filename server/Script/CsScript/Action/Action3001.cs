@@ -5,17 +5,11 @@ using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
-using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common.Configuration;
-using ZyGames.Framework.Game.Command;
 using ZyGames.Framework.Game.Config;
-using ZyGames.Framework.Game.Context;
-using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
-using ZyGames.Framework.Net;
-using ZyGames.Framework.RPC.Sockets;
 
 namespace GameServer.CsScript.Action
 {

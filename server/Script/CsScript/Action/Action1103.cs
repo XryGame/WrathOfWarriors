@@ -1,7 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
-using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;

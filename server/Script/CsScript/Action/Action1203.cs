@@ -3,7 +3,6 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.DataModel;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action

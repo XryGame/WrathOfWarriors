@@ -1,17 +1,9 @@
-﻿using GameServer.CsScript.Base;
-using GameServer.CsScript.Com;
-using GameServer.CsScript.JsonProtocol;
-using GameServer.Script.CsScript.Action;
-using GameServer.Script.CsScript.Com;
-using GameServer.Script.Model.Config;
+﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
-using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
-using ZyGames.Framework.Common.Log;
-using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 

@@ -1,7 +1,6 @@
 ﻿using ZyGames.Framework.Game.Service;
 using System.Collections.Generic;
 using ZyGames.Framework.Game.Model;
-using ZyGames.Framework.Cache.Generic;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.CsScript.Action;
 using GameServer.CsScript.Com;

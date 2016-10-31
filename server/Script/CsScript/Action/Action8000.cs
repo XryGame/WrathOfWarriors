@@ -1,10 +1,7 @@
-﻿using GameServer.CsScript.JsonProtocol;
-using GameServer.Script.CsScript.Action;
+﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
-using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
-using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
