@@ -1940,7 +1940,7 @@ namespace GameServer.Script.Model.DataModel
                 item.Num = MathUtils.Addition(item.Num, num);
                 ItemDataList.Add(item);
             }
-            else
+            else if (item.Num < GetItemLvMax(id))
             {
                 item.Num = MathUtils.Addition(item.Num, num);
             }
