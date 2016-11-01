@@ -56,7 +56,8 @@ namespace GameServer.CsScript.Action
                 dest.UserStatus = UserStatus.Fighting;
 
                 EventStatus retresult = EventStatus.Good;
-                float diff = (float)ContextUser.GetCombatFightValue() / dest.GetCombatFightValue();
+                //float diff = (float)ContextUser.GetCombatFightValue() / dest.GetCombatFightValue();
+                float diff = (float)ContextUser.FightingValue / dest.FightingValue;
                 if (diff > 1.1f)
                 {
                     retresult = EventStatus.Good;

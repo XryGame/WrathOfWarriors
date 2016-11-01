@@ -2200,6 +2200,23 @@ namespace GameServer.Script.Model.DataModel
                 Defense += def_;
             }
 
+            // 附加竞技道具的数值
+            var combatlist = ItemDataList.FindAll(t => (t.ID >= 10028 && t.ID <= 10033));
+            foreach (var item in combatlist)
+            {
+                Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
+                if (cfgitem.Type == ItemType.Item)
+                {
+                    List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
+                    if (itemgradelist.Count > 0)
+                    {
+                        Attack += itemgradelist[itemgradelist.Count - 1].Attack;
+                        Defense += itemgradelist[itemgradelist.Count - 1].Defense;
+                        Hp += itemgradelist[itemgradelist.Count - 1].HP;
+                    }
+                }
+            }
+
             FightingValue = Attack * 5 + Defense * 5 + Hp;
         }
 

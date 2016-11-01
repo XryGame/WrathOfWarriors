@@ -144,13 +144,13 @@ namespace GameServer.CsScript.Action
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "标题",
+                Title = "欢迎进入学生战纪",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = "内容",
-                ApppendDiamond = 200
+                Context = "欢迎进入学生战纪",
+                ApppendDiamond = 0
             };
-            mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+            //mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
 
             user.AddNewMail(ref mail);
 
