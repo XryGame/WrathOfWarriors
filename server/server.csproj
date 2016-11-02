@@ -237,6 +237,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPInviteFightRivalData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPInviterData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPItemSkillData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLevelUpData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPLotteryData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOccupyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOccupySceneData.cs" />

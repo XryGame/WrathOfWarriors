@@ -83,7 +83,8 @@ namespace GameServer.CsScript.Action
                         if (receipt.IDList.Count > 0)
                         {
                             // 每日
-                            if (ContextUser.DailyQuestData.ID == TaskType.RandItem)
+                            if (ContextUser.DailyQuestData.ID == TaskType.RandItem
+                                && ContextUser.DailyQuestData.IsFinish == false)
                             {
                                 ContextUser.DailyQuestData.IsFinish = true;
                                 PushMessageHelper.DailyQuestFinishNotification(Current);
@@ -102,7 +103,8 @@ namespace GameServer.CsScript.Action
                         if (receipt.IDList.Count > 0)
                         {
                             // 每日
-                            if (ContextUser.DailyQuestData.ID == TaskType.RandSkillBook)
+                            if (ContextUser.DailyQuestData.ID == TaskType.RandSkillBook
+                                && ContextUser.DailyQuestData.IsFinish == false)
                             {
                                 ContextUser.DailyQuestData.IsFinish = true;
                                 PushMessageHelper.DailyQuestFinishNotification(Current);
@@ -117,7 +119,10 @@ namespace GameServer.CsScript.Action
             }
             if (receipt.IDList.Count > 0)
             {
+
                 ContextUser.RefreshFightValue();
+
+                receipt.Result = OpenBoxResult.OK;
                 receipt.ItemList = ContextUser.ItemDataList;
                 receipt.SkillList = ContextUser.SkillDataList;
                 receipt.CurrFightValue = ContextUser.FightingValue;

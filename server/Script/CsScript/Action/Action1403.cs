@@ -155,7 +155,8 @@ namespace GameServer.CsScript.Action
 
 
             // 每日
-            if (ContextUser.DailyQuestData.ID == TaskType.CombatFight)
+            if (ContextUser.DailyQuestData.ID == TaskType.CombatFight
+                && ContextUser.DailyQuestData.IsFinish == false)
             {
                 ContextUser.DailyQuestData.IsFinish = true;
                 PushMessageHelper.DailyQuestFinishNotification(Current);

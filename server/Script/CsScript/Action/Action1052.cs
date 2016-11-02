@@ -10,7 +10,8 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1052 : BaseAction
     {
-        private bool IsChangeClass;
+        private JPLevelUpData receipt;
+        private bool _isChangeClass;
         public Action1052(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1052, actionGetter)
         {
@@ -19,13 +20,17 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            body = IsChangeClass;
+            if (receipt != null)
+            {
+                body = receipt;
+            }
+
             return base.BuildJsonPack();
         }
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetBool("IsChangeClass", ref IsChangeClass))
+            if (httpGet.GetBool("IsChangeClass", ref _isChangeClass))
             {
                 return true;
             }
@@ -34,6 +39,11 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            receipt = new JPLevelUpData()
+            {
+                CurrLevel = ContextUser.UserLv,
+                IsChangeClass = _isChangeClass
+            };
             return true;
         }
     }

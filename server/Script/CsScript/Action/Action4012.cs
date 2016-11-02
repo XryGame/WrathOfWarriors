@@ -112,7 +112,8 @@ namespace GameServer.CsScript.Action
 
 
             // 每日
-            if (ContextUser.DailyQuestData.ID == TaskType.Vote)
+            if (ContextUser.DailyQuestData.ID == TaskType.Vote
+                && ContextUser.DailyQuestData.IsFinish == false)
             {
                 ContextUser.DailyQuestData.IsFinish = true;
                 PushMessageHelper.DailyQuestFinishNotification(Current);

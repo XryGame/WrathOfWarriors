@@ -108,7 +108,8 @@ namespace GameServer.CsScript.Action
 
 
                         // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.Study)
+                        if (ContextUser.DailyQuestData.ID == TaskType.Study
+                            && ContextUser.DailyQuestData.IsFinish == false)
                         {
                             ContextUser.DailyQuestData.Count += needtime;
                             if (ContextUser.DailyQuestData.Count > 45)
@@ -178,7 +179,8 @@ namespace GameServer.CsScript.Action
                         ContextUser.ExerciseTaskData.Count = 0;
 
                         // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.Exercise)
+                        if (ContextUser.DailyQuestData.ID == TaskType.Exercise
+                            && ContextUser.DailyQuestData.IsFinish == false)
                         {
                             ContextUser.DailyQuestData.Count += needtime;
                             if (ContextUser.DailyQuestData.Count >= 20)

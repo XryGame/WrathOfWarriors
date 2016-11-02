@@ -94,7 +94,8 @@ namespace GameServer.CsScript.Action
             receipt = destuid;
 
             // 每日
-            if (ContextUser.DailyQuestData.ID == TaskType.GiveAwayFriend)
+            if (ContextUser.DailyQuestData.ID == TaskType.GiveAwayFriend
+                && ContextUser.DailyQuestData.IsFinish == false)
             {
                 ContextUser.DailyQuestData.IsFinish = true;
                 PushMessageHelper.DailyQuestFinishNotification(Current);
