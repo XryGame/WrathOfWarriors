@@ -7,5 +7,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Script.CsScript")]
 [assembly: AssemblyCopyright("Copyright Scut")]
 [assembly: ComVisible(false)]
-[assembly: Guid("d33c9e62-dc78-44da-98a0-addc207f66e1")]
+[assembly: Guid("998ec137-02e4-4391-8cbc-b074450a0531")]
 [assembly: AssemblyVersion("1.0.0.2")]
