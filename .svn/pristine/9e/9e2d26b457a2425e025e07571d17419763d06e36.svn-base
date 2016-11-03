@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0007D1BF-2E54-41A0-B991-ACE56E94F133}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameServer</RootNamespace>
+    <AssemblyName>server</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>.\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython">
+      <HintPath>.\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>.\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="KopiLua">
+      <HintPath>.\KopiLua.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>.\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>.\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>.\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>.\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>.\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>.\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>.\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLua">
+      <HintPath>.\NLua.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>.\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="ScutSecurity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ScutSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>.\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>.\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>.\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>.\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZyGames.Framework">
+      <HintPath>.\ZyGames.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ZyGames.Framework.Common">
+      <HintPath>.\ZyGames.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ZyGames.Framework.Game, Version=6.7.9.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ZyGames.Framework.Game.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\CsScript\Action\Action100.cs" />
+    <Compile Include="Script\CsScript\Action\Action10000.cs" />
+    <Compile Include="Script\CsScript\Action\Action10001.cs" />
+    <Compile Include="Script\CsScript\Action\Action10002.cs" />
+    <Compile Include="Script\CsScript\Action\Action1002.cs" />
+    <Compile Include="Script\CsScript\Action\Action1004.cs" />
+    <Compile Include="Script\CsScript\Action\Action1005.cs" />
+    <Compile Include="Script\CsScript\Action\Action1008.cs" />
+    <Compile Include="Script\CsScript\Action\Action10100.cs" />
+    <Compile Include="Script\CsScript\Action\Action10200.cs" />
+    <Compile Include="Script\CsScript\Action\Action10300.cs" />
+    <Compile Include="Script\CsScript\Action\Action10301.cs" />
+    <Compile Include="Script\CsScript\Action\Action10302.cs" />
+    <Compile Include="Script\CsScript\Action\Action10400.cs" />
+    <Compile Include="Script\CsScript\Action\Action1050.cs" />
+    <Compile Include="Script\CsScript\Action\Action1051.cs" />
+    <Compile Include="Script\CsScript\Action\Action1052.cs" />
+    <Compile Include="Script\CsScript\Action\Action1053.cs" />
+    <Compile Include="Script\CsScript\Action\Action1054.cs" />
+    <Compile Include="Script\CsScript\Action\Action1055.cs" />
+    <Compile Include="Script\CsScript\Action\Action1056.cs" />
+    <Compile Include="Script\CsScript\Action\Action1057.cs" />
+    <Compile Include="Script\CsScript\Action\Action1058.cs" />
+    <Compile Include="Script\CsScript\Action\Action1059.cs" />
+    <Compile Include="Script\CsScript\Action\Action1060.cs" />
+    <Compile Include="Script\CsScript\Action\Action1061.cs" />
+    <Compile Include="Script\CsScript\Action\Action1062.cs" />
+    <Compile Include="Script\CsScript\Action\Action1063.cs" />
+    <Compile Include="Script\CsScript\Action\Action1064.cs" />
+    <Compile Include="Script\CsScript\Action\Action1065.cs" />
+    <Compile Include="Script\CsScript\Action\Action1066.cs" />
+    <Compile Include="Script\CsScript\Action\Action1100.cs" />
+    <Compile Include="Script\CsScript\Action\Action1101.cs" />
+    <Compile Include="Script\CsScript\Action\Action1102.cs" />
+    <Compile Include="Script\CsScript\Action\Action1103.cs" />
+    <Compile Include="Script\CsScript\Action\Action1110.cs" />
+    <Compile Include="Script\CsScript\Action\Action1111.cs" />
+    <Compile Include="Script\CsScript\Action\Action1112.cs" />
+    <Compile Include="Script\CsScript\Action\Action1201.cs" />
+    <Compile Include="Script\CsScript\Action\Action1202.cs" />
+    <Compile Include="Script\CsScript\Action\Action1203.cs" />
+    <Compile Include="Script\CsScript\Action\Action1301.cs" />
+    <Compile Include="Script\CsScript\Action\Action1310.cs" />
+    <Compile Include="Script\CsScript\Action\Action1401.cs" />
+    <Compile Include="Script\CsScript\Action\Action1402.cs" />
+    <Compile Include="Script\CsScript\Action\Action1403.cs" />
+    <Compile Include="Script\CsScript\Action\Action1404.cs" />
+    <Compile Include="Script\CsScript\Action\Action1501.cs" />
+    <Compile Include="Script\CsScript\Action\Action1502.cs" />
+    <Compile Include="Script\CsScript\Action\Action1503.cs" />
+    <Compile Include="Script\CsScript\Action\Action1504.cs" />
+    <Compile Include="Script\CsScript\Action\Action1505.cs" />
+    <Compile Include="Script\CsScript\Action\Action1600.cs" />
+    <Compile Include="Script\CsScript\Action\Action3001.cs" />
+    <Compile Include="Script\CsScript\Action\Action3002.cs" />
+    <Compile Include="Script\CsScript\Action\Action3003.cs" />
+    <Compile Include="Script\CsScript\Action\Action3004.cs" />
+    <Compile Include="Script\CsScript\Action\Action4000.cs" />
+    <Compile Include="Script\CsScript\Action\Action4001.cs" />
+    <Compile Include="Script\CsScript\Action\Action4002.cs" />
+    <Compile Include="Script\CsScript\Action\Action4003.cs" />
+    <Compile Include="Script\CsScript\Action\Action4010.cs" />
+    <Compile Include="Script\CsScript\Action\Action4011.cs" />
+    <Compile Include="Script\CsScript\Action\Action4012.cs" />
+    <Compile Include="Script\CsScript\Action\Action4013.cs" />
+    <Compile Include="Script\CsScript\Action\Action404.cs" />
+    <Compile Include="Script\CsScript\Action\Action5000.cs" />
+    <Compile Include="Script\CsScript\Action\Action5001.cs" />
+    <Compile Include="Script\CsScript\Action\Action6000.cs" />
+    <Compile Include="Script\CsScript\Action\Action6001.cs" />
+    <Compile Include="Script\CsScript\Action\Action6002.cs" />
+    <Compile Include="Script\CsScript\Action\Action7000.cs" />
+    <Compile Include="Script\CsScript\Action\Action7001.cs" />
+    <Compile Include="Script\CsScript\Action\Action8000.cs" />
+    <Compile Include="Script\CsScript\Action\Action8001.cs" />
+    <Compile Include="Script\CsScript\Action\Action8002.cs" />
+    <Compile Include="Script\CsScript\Action\Action8003.cs" />
+    <Compile Include="Script\CsScript\Action\Action9000.cs" />
+    <Compile Include="Script\CsScript\Action\Action9010.cs" />
+    <Compile Include="Script\CsScript\Action\Action9020.cs" />
+    <Compile Include="Script\CsScript\Action\ActionIDDefine.cs" />
+    <Compile Include="Script\CsScript\Action\BaseAction.cs" />
+    <Compile Include="Script\CsScript\Base\SystemGlobal.cs" />
+    <Compile Include="Script\CsScript\Base\Util.cs" />
+    <Compile Include="Script\CsScript\Com\CombatRanking.cs" />
+    <Compile Include="Script\CsScript\Com\FightValueRanking.cs" />
+    <Compile Include="Script\CsScript\GM\PayMoneyCommand.cs" />
+    <Compile Include="Script\CsScript\GM\PayMonthCardCommand.cs" />
+    <Compile Include="Script\CsScript\GM\PayWeekCardCommand.cs" />
+    <Compile Include="Script\CsScript\GM\TryXGMCommand.cs" />
+    <Compile Include="Script\CsScript\Com\LevelRanking.cs" />
+    <Compile Include="Script\CsScript\Com\PushMessageHelper.cs" />
+    <Compile Include="Script\CsScript\Com\RoleFunc.cs" />
+    <Compile Include="Script\CsScript\Com\TryXChatService.cs" />
+    <Compile Include="Script\CsScript\Com\UserHelper.cs" />
+    <Compile Include="Script\CsScript\GM\DiamondCommand.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPBroadcastData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPBuyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCampaignsData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCampaignsUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPChallengeClassMonitorData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPChatData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPChatListData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPClassData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPClassesData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPClassMemberData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatFightEndData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatLogData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatRivalData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPDailyQuestData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPEventAwardData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPExerciseData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPExpMiddleSchoolData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPExpPrimarySchoolData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPExpSeniorHighSchoolData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPExpUniversityData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPFriendApplyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPFriendApplyReceipt.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPFriendData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPGiveUpTaskData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPInviteFightRivalData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPInviterData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPItemSkillData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLevelUpData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLotteryData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPOccupyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPOccupySceneData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPOpenBoxData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPPassData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPQueryClassMonitorData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPQueryUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRankUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPReceiveAchievementData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPReceiveDailyQuestData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPReceiveFriendGiveAwayData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPReceiveTaskAwardData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRefreshDailyQuestData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestAddFriendData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignsListData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestDeleteMailData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestFightData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestRankData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestSFOData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestSweepData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestTaskData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestVoteData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRestoreUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRivalData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPStudyData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\ResultData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPLoginUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPUserDetailsData.cs" />
+    <Compile Include="Script\CsScript\Locale\SimplifiedLanguage.cs" />
+    <Compile Include="Script\CsScript\MainClass.cs" />
+    <Compile Include="Script\CsScript\WebSocketActionDispatcher.cs" />
+    <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Achievement.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_ItemGrade.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_OnlineReward.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Pay.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Purchase.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Role.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_RoleGrade.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Scene.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_SceneMap.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Signin.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Skill.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_SkillGrade.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_SubjectExp.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Task.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Vip.cs" />
+    <Compile Include="Script\Model\Config\AchievementData.cs" />
+    <Compile Include="Script\Model\Config\CampaignUserData.cs" />
+    <Compile Include="Script\Model\Config\ChatData.cs" />
+    <Compile Include="Script\Model\Config\CombatLogData.cs" />
+    <Compile Include="Script\Model\Config\MailData.cs" />
+    <Compile Include="Script\Model\Config\UserDailyQuestData.cs" />
+    <Compile Include="Script\Model\Config\FriendApplyData.cs" />
+    <Compile Include="Script\Model\Config\FriendData.cs" />
+    <Compile Include="Script\Model\Config\SkillData.cs" />
+    <Compile Include="Script\Model\Config\UserClassData.cs" />
+    <Compile Include="Script\Model\Config\UserCombatData.cs" />
+    <Compile Include="Script\Model\Config\UserEventAwardData.cs" />
+    <Compile Include="Script\Model\Config\UserExerciseTaskData.cs" />
+    <Compile Include="Script\Model\Config\UserExpData.cs" />
+    <Compile Include="Script\Model\Config\ItemData.cs" />
+    <Compile Include="Script\Model\Config\UserFriendsData.cs" />
+    <Compile Include="Script\Model\Config\UserRank.cs" />
+    <Compile Include="Script\Model\Config\UserStudyTaskData.cs" />
+    <Compile Include="Script\Model\DataModel\ClassDataCache.cs" />
+    <Compile Include="Script\Model\DataModel\GameUser.cs" />
+    <Compile Include="Script\Model\DataModel\JobTitleDataCache.cs" />
+    <Compile Include="Script\Model\DataModel\OccupyDataCache.cs" />
+    <Compile Include="Script\Model\DataModel\TUser.cs" />
+    <Compile Include="Script\Model\DataModel\NickNameCache.cs" />
+    <Compile Include="Script\Model\DataModel\DataHelper.cs" />
+    <Compile Include="Script\Model\DataModel\UserPayCache.cs" />
+    <Compile Include="Script\Model\DbConfig.cs" />
+    <Compile Include="Script\Model\Enum\AwardType.cs" />
+    <Compile Include="Script\Model\Enum\AchievementType.cs" />
+    <Compile Include="Script\Model\Enum\CampaignStatus.cs" />
+    <Compile Include="Script\Model\Enum\ChatType.cs" />
+    <Compile Include="Script\Model\Enum\ColorType.cs" />
+    <Compile Include="Script\Model\Enum\CombatReqRivalResult.cs" />
+    <Compile Include="Script\Model\Enum\EventStatus.cs" />
+    <Compile Include="Script\Model\Enum\EventType.cs" />
+    <Compile Include="Script\Model\Enum\ItemType.cs" />
+    <Compile Include="Script\Model\Enum\JobTitleType.cs" />
+    <Compile Include="Script\Model\Enum\LotteryAwardType.cs" />
+    <Compile Include="Script\Model\Enum\OpenBoxMode.cs" />
+    <Compile Include="Script\Model\Enum\OpenBoxResult.cs" />
+    <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
+    <Compile Include="Script\Model\Enum\RankType.cs" />
+    <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestChallengeClassMonitorResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestFriendResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestInviteFightResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestOccupyResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestVoteResult.cs" />
+    <Compile Include="Script\Model\Enum\SceneType.cs" />
+    <Compile Include="Script\Model\Enum\ServerStatus.cs" />
+    <Compile Include="Script\Model\Enum\SubjectChildType.cs" />
+    <Compile Include="Script\Model\Enum\SubjectID.cs" />
+    <Compile Include="Script\Model\Enum\SubjectStage.cs" />
+    <Compile Include="Script\Model\Enum\SubjectType.cs" />
+    <Compile Include="Script\Model\Enum\TaskAwardType.cs" />
+    <Compile Include="Script\Model\Enum\TaskType.cs" />
+    <Compile Include="Script\Model\Enum\UserStatus.cs" />
+    <Compile Include="Script\Model\Enum\VipObtainType.cs" />
+    <Compile Include="Script\Model\LogModel\UserChatLog.cs" />
+    <Compile Include="Script\Model\LogModel\UserLoginLog.cs" />
+    <Compile Include="Script\Model\UserCacheGlobal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameServer.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NLog.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
