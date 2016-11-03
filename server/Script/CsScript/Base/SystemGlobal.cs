@@ -205,8 +205,10 @@ namespace GameServer.CsScript.Base
             var onlines = GameSession.GetOnlineAll();
             if (onlines.Count < 2)
                 SendServerStatus(ServerStatus.Unhindered, onlines.Count);
+            else if (onlines.Count < 100)
+                SendServerStatus(ServerStatus.Crowd, onlines.Count);
             else
-                SendServerStatus(ServerStatus.crowd, onlines.Count);
+                SendServerStatus(ServerStatus.Full, onlines.Count);
         }
 
         public static void SendServerStatus(ServerStatus status, int activeNum)

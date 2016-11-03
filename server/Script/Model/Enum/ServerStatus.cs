@@ -15,7 +15,11 @@ namespace GameServer.Script.Model.Enum
         /// <summary>
         /// 拥挤
         /// </summary>
-        crowd,
+        Crowd,
+        /// <summary>
+        /// 爆满
+        /// </summary>
+        Full,
 
     }
 }
