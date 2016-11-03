@@ -2,6 +2,7 @@
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
@@ -63,9 +64,13 @@ namespace GameServer.CsScript.Action
             object outexpdata;
             UserHelper.buildBaseExpData(ContextUser, out outexpdata);
             receipt.CurrBaseExp = outexpdata;
-            
+
+            // 成就
+            UserHelper.AchievementProcess(ContextUser.UserID, ContextUser.SweepTimes, AchievementType.ChallengeCount);
+
             ContextUser.SweepingRoleId = 0;
             ContextUser.SweepTimes = 0;
+
 
             return true;
         }

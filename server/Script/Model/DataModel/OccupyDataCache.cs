@@ -126,5 +126,10 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        public void ResetOccupy()
+        {
+            UserId = 0;
+            NickName = "";
+        }
     }
 }

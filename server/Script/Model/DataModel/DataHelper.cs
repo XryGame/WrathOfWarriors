@@ -48,6 +48,10 @@ namespace GameServer.Script.Model.DataModel
         /// </summary>
         static public int MaxMailNum;
 
+        /// <summary>
+        /// 开启每日任务系统用户等级
+        /// </summary>
+        static public int OpenTaskUserLevel;
 
         static public string[] JobTitles = {
             "学生会会长", "秘书部部长", "学习部部长", "宣传部部长", "艺术部部长", "体育部部长", "班级委员会"
@@ -77,6 +81,8 @@ namespace GameServer.Script.Model.DataModel
             FriendGiveAwayVitValue = ConfigEnvSet.GetInt("User.FriendGiveAwayVitValue");
             RepairSignNeedDiamond = ConfigEnvSet.GetInt("User.RepairSignNeedDiamond");
             MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
+            OpenTaskUserLevel = ConfigEnvSet.GetInt("System.OpenTaskUserLevel");
+
 
             var classcache = new ShareCacheStruct<ClassDataCache>();
             if (classcache.IsEmpty)

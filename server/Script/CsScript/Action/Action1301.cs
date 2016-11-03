@@ -83,12 +83,7 @@ namespace GameServer.CsScript.Action
                         if (receipt.IDList.Count > 0)
                         {
                             // 每日
-                            if (ContextUser.DailyQuestData.ID == TaskType.RandItem
-                                && ContextUser.DailyQuestData.IsFinish == false)
-                            {
-                                ContextUser.DailyQuestData.IsFinish = true;
-                                PushMessageHelper.DailyQuestFinishNotification(Current);
-                            }
+                            UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.RandItem, 1);
 
                             // 成就
                             UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
@@ -103,12 +98,8 @@ namespace GameServer.CsScript.Action
                         if (receipt.IDList.Count > 0)
                         {
                             // 每日
-                            if (ContextUser.DailyQuestData.ID == TaskType.RandSkillBook
-                                && ContextUser.DailyQuestData.IsFinish == false)
-                            {
-                                ContextUser.DailyQuestData.IsFinish = true;
-                                PushMessageHelper.DailyQuestFinishNotification(Current);
-                            }
+                            UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.RandSkillBook, 1);
+
 
                             // 成就
                             UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);

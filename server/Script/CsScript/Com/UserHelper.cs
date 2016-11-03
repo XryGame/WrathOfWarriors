@@ -777,6 +777,66 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        public static void EveryDayTaskProcess(int UserId, TaskType type, int count)
+        {
+            GameUser user = FindUser(UserId);
+            if (user == null)
+                return;
+            if (user.UserLv < DataHelper.OpenTaskUserLevel || user.DailyQuestData.IsFinish == false)
+                return;
+
+            if (user.DailyQuestData.ID == TaskType.FightTeacher)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+            else if (user.DailyQuestData.ID == TaskType.Study)
+            {
+                user.DailyQuestData.Count += count;
+                if (user.DailyQuestData.Count > 45)
+                {
+                    user.DailyQuestData.IsFinish = true;
+                }
+            }
+            else if (user.DailyQuestData.ID == TaskType.Exercise)
+            {
+                user.DailyQuestData.Count += count;
+                if (user.DailyQuestData.Count >= 20)
+                {
+                    user.DailyQuestData.IsFinish = true;
+                }
+
+            }
+            else if (user.DailyQuestData.ID == TaskType.RandItem)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+            else if (user.DailyQuestData.ID == TaskType.RandSkillBook)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+            else if (user.DailyQuestData.ID == TaskType.CombatFight)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+            else if (user.DailyQuestData.ID == TaskType.GiveAwayFriend)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+            else if (user.DailyQuestData.ID == TaskType.Vote)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
+
+
+            if (user.DailyQuestData.IsFinish == true)
+            {
+                GameSession session = GameSession.Get(UserId);
+                if (session != null)
+                    PushMessageHelper.DailyQuestFinishNotification(session);
+            }
+
+
+        }
         public static Config_Lottery RandomLottery(short userlv)
         {
             var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= userlv));

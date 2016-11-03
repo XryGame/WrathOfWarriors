@@ -108,17 +108,8 @@ namespace GameServer.CsScript.Action
 
 
                         // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.Study
-                            && ContextUser.DailyQuestData.IsFinish == false)
-                        {
-                            ContextUser.DailyQuestData.Count += needtime;
-                            if (ContextUser.DailyQuestData.Count > 45)
-                            {
-                                ContextUser.DailyQuestData.IsFinish = true;
-                                PushMessageHelper.DailyQuestFinishNotification(Current);
-                            }
+                        UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Study, needtime);
 
-                        }
 
                         // 成就
                         UserHelper.AchievementProcess(ContextUser.UserID, needtime, AchievementType.StudyTime);
@@ -179,17 +170,7 @@ namespace GameServer.CsScript.Action
                         ContextUser.ExerciseTaskData.Count = 0;
 
                         // 每日
-                        if (ContextUser.DailyQuestData.ID == TaskType.Exercise
-                            && ContextUser.DailyQuestData.IsFinish == false)
-                        {
-                            ContextUser.DailyQuestData.Count += needtime;
-                            if (ContextUser.DailyQuestData.Count >= 20)
-                            {
-                                ContextUser.DailyQuestData.IsFinish = true;
-                                PushMessageHelper.DailyQuestFinishNotification(Current);
-                            }
-
-                        }
+                        UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Exercise, needtime);
 
                         // 成就
                         UserHelper.AchievementProcess(ContextUser.UserID, needtime, AchievementType.ExerciseTime);

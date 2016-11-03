@@ -74,6 +74,15 @@ namespace GameServer.CsScript.Action
 
             if (findocc.UserId == 0)
             {
+                var list = occupycache.FindAll();
+                foreach (var v in list)
+                {
+                    if (v.UserId == ContextUser.UserID)
+                    {
+                        v.ResetOccupy();
+                    }
+                }
+
                 findocc.UserId = ContextUser.UserID;
                 findocc.NickName = ContextUser.NickName;
 

@@ -15,7 +15,9 @@ namespace GameServer.CsScript.Action
     public class Action10200 : BaseAction
     {
         private JPRequestSFOData receipt;
-        
+        private int AwardDiamondNum = ConfigEnvSet.GetInt("System.FirstPayAwardDiamondNum");
+        private int AwardItemId = ConfigEnvSet.GetInt("System.FirstPayAwardItemID");
+        private int AwardSkillBookId = ConfigEnvSet.GetInt("System.FirstPayAwardSkillBookID");
         public Action10200(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action10200, actionGetter)
         {
@@ -52,27 +54,27 @@ namespace GameServer.CsScript.Action
             usepay.IsReceiveFirstPay = true;
             receipt.Result = EventStatus.Good;
 
-            UserHelper.GiveAwayDiamond(ContextUser.UserID, 200);
-            Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(10003);
+            UserHelper.GiveAwayDiamond(ContextUser.UserID, AwardDiamondNum);
+            Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(AwardItemId);
             if (item != null)
             {
-                ContextUser.UserAddItem(10003, 1);
+                ContextUser.UserAddItem(AwardItemId, 1);
             }
-            item = new ShareCacheStruct<Config_Item>().FindKey(20003);
+            item = new ShareCacheStruct<Config_Item>().FindKey(AwardSkillBookId);
             if (item != null)
             {
-                ContextUser.UserAddItem(20003, 1);
+                ContextUser.UserAddItem(AwardSkillBookId, 1);
 
                 if (item.Type == ItemType.Skill)
                 {
-                    ContextUser.CheckAddSkillBook(20003, 1);
+                    ContextUser.CheckAddSkillBook(AwardSkillBookId, 1);
                 }
             }
 
-            receipt.AwardDiamondNum = 200;
+            receipt.AwardDiamondNum = AwardDiamondNum;
             receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.AwardItemList.Add(10003);
-            receipt.AwardItemList.Add(20003);
+            receipt.AwardItemList.Add(AwardItemId);
+            receipt.AwardItemList.Add(AwardSkillBookId);
             receipt.ItemList = ContextUser.ItemDataList;
             receipt.SkillList = ContextUser.SkillDataList;
 

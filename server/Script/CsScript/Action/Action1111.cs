@@ -84,12 +84,7 @@ namespace GameServer.CsScript.Action
                 receipt.ChallengeRoleList = ContextUser.ChallengeRoleList;
 
                 // 每日
-                if (ContextUser.DailyQuestData.ID == TaskType.FightTeacher
-                    && ContextUser.DailyQuestData.IsFinish == false)
-                {
-                    ContextUser.DailyQuestData.IsFinish = true;
-                    PushMessageHelper.DailyQuestFinishNotification(Current);
-                }
+                UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.FightTeacher, 1);
 
                 // 成就
                 UserHelper.AchievementProcess(ContextUser.UserID, 1, AchievementType.ChallengeCount);
