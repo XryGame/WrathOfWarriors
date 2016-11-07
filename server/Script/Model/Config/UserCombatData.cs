@@ -69,5 +69,22 @@ namespace GameServer.Script.Model.Config
                 _LastFailedDate = value;
             }
         }
+
+        /// <summary>
+        /// 购买名人榜挑战次数
+        /// </summary>
+        private int _ButTimes;
+        [ProtoMember(4)]
+        public int ButTimes
+        {
+            get
+            {
+                return _ButTimes;
+            }
+            set
+            {
+                _ButTimes = value;
+            }
+        }
     }
 }

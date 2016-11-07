@@ -60,6 +60,7 @@ namespace GameServer.Script.Model.DataModel
             
             // 名人榜挑战次数
             gameUser.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
+            gameUser.CombatData.ButTimes = 0;
             // 挑战班长次数
             gameUser.ChallengeMonitorTimes = 0;
             // 赠送好友次数

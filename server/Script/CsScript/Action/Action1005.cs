@@ -163,8 +163,8 @@ namespace GameServer.CsScript.Action
 
             // 加入排行榜
             Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-            Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            //Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
             UserRank rankInfo = new UserRank()
             {
                 UserID = user.UserID,
@@ -178,8 +178,8 @@ namespace GameServer.CsScript.Action
                 RankDate = DateTime.Now,
             };
             combatranking.TryAppend(rankInfo);
-            levelranking.TryAppend(rankInfo);
-            fightvalueranking.TryAppend(rankInfo);
+            //levelranking.TryAppend(rankInfo);
+            //fightvalueranking.TryAppend(rankInfo);
 
 
             // 充值数据

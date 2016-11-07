@@ -11,14 +11,14 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 10500_购买体力
+    /// 1405_购买名人榜挑战次数
     /// </summary>
-    public class Action10500 : BaseAction
+    public class Action1405 : BaseAction
     {
         private JPBuyData receipt;
 
-        public Action10500(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action10500, actionGetter)
+        public Action1405(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1405, actionGetter)
         {
 
         }
@@ -44,32 +44,29 @@ namespace GameServer.CsScript.Action
                 ErrorInfo = string.Format(Language.Instance.DBTableError, "Config_Vip");
                 return true;
             }
-                
-            int canBuyTimes = vip.BuyStamina;
+
+            int canBuyTimes = vip.BuyAthletics;
             if (ContextUser.VipLv == 0)
                 canBuyTimes -= 1;
             
-            var purchase = new ShareCacheStruct<Config_Purchase>().FindKey(ContextUser.BuyVitCount + 1);
-
-            if (ContextUser.BuyVitCount >= canBuyTimes || purchase == null)
+            if (ContextUser.CombatData.ButTimes >= canBuyTimes)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-            int needDiamond = purchase.SpendDiamond;
-
-
+            int needDiamond = ConfigEnvSet.GetInt("User.BuyCombatTimesNeedDiamond");
+            
             if (ContextUser.DiamondNum < needDiamond)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-                    
+
             ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
-            ContextUser.Vit = MathUtils.Addition(ContextUser.Vit, purchase.Stamina);
-            ContextUser.BuyVitCount++;
+            ContextUser.CombatData.CombatTimes = MathUtils.Addition(ContextUser.CombatData.CombatTimes, 1);
+            ContextUser.CombatData.ButTimes++;
             receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.Extend1 = ContextUser.Vit;
+            receipt.Extend1 = ContextUser.CombatData.CombatTimes;
             return true;
         }
     }

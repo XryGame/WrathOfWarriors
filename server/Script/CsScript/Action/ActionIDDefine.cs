@@ -248,6 +248,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1404 = 1404;
 
         ///<summary>
+        ///名人榜购买挑战次数
+        ///</summary>
+        public const short Cst_Action1405 = 1405;
+
+        ///<summary>
         ///请求添加好友
         ///</summary>
         public const short Cst_Action1501 = 1501;
