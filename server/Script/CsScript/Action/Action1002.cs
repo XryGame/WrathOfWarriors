@@ -101,6 +101,10 @@ namespace GameServer.CsScript.Action
                 string[] userList = SnsManager.GetRegPassport(deviceID);
                 passport = userList[0];
                 password = userList[1];
+
+                //SnsUser snsuser = SnsManager.LoginByWeixin("d4ddg555w222222ddg");
+                //passport = snsuser.PassportId;
+                //password = snsuser.Password;
                 return true;
             }
             catch (Exception ex)

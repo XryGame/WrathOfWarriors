@@ -909,7 +909,41 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("PlotId", value);
             }
         }
+        /// <summary>
+        /// 购买体力次数
+        /// </summary>
+        private int _BuyVitCount;
+        [ProtoMember(51)]
+        [EntityField("BuyVitCount")]
+        public int BuyVitCount
+        {
+            get
+            {
+                return _BuyVitCount;
+            }
+            set
+            {
+                SetChange("BuyVitCount", value);
+            }
+        }
 
+        /// <summary>
+        /// 购领取体力状态
+        /// </summary>
+        private ReceiveVitStatus _ReceiveVitStatus;
+        [ProtoMember(52)]
+        [EntityField("ReceiveVitStatus")]
+        public ReceiveVitStatus ReceiveVitStatus
+        {
+            get
+            {
+                return _ReceiveVitStatus;
+            }
+            set
+            {
+                SetChange("ReceiveVitStatus", value);
+            }
+        }
 
 
         protected override int GetIdentityId()
@@ -1151,6 +1185,8 @@ namespace GameServer.Script.Model.DataModel
                     case "SweepTimes": return SweepTimes;
                     case "StartSweepTime": return StartSweepTime;
                     case "PlotId": return PlotId;
+                    case "BuyVitCount": return BuyVitCount;
+                    case "ReceiveVitStatus": return ReceiveVitStatus;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1309,6 +1345,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "PlotId":
                         _PlotId = value.ToInt();
+                        break;
+                    case "BuyVitCount":
+                        _BuyVitCount = value.ToInt();
+                        break;
+                    case "ReceiveVitStatus":
+                        _ReceiveVitStatus = value.ToEnum<ReceiveVitStatus>();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
@@ -1515,6 +1557,28 @@ namespace GameServer.Script.Model.DataModel
             return sumexp;
         }
 
+        /// <summary>
+        /// 检测用户升级
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckLevelUp()
+        {
+            short currlv = ConvertExp2Level();
+            if (currlv > UserLv)
+            {
+                var list = new ShareCacheStruct<Config_Role>().FindAll(t => (t.RoleLV == UserLv));
+                foreach (var v in list)
+                {
+                    if (ChallengeRoleList.Find(t => (t == v.ID)) == 0)
+                        return false;
+                }
+                UserLv = currlv;
+                UserLevelUp();
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>  
         /// 添加BaseExp
         /// </summary>  
@@ -1671,12 +1735,7 @@ namespace GameServer.Script.Model.DataModel
             int addvalue = Math.Min(subjectExp.UnitExp * count, maxaddv);
             BaseExp = MathUtils.Addition(BaseExp, addvalue, int.MaxValue);
 
-            short currlv = ConvertExp2Level();
-            if (currlv > UserLv)
-            {
-                UserLv = currlv;
-                UserLevelUp();
-            }
+            CheckLevelUp();
 
             return addvalue;
         }
@@ -1718,12 +1777,7 @@ namespace GameServer.Script.Model.DataModel
             int addvalue = Math.Min(expvalue, maxaddv);
             BaseExp = MathUtils.Addition(BaseExp, addvalue, int.MaxValue);
 
-            short currlv = ConvertExp2Level();
-            if (currlv > UserLv)
-            {
-                UserLv = currlv;
-                UserLevelUp();
-            }
+            CheckLevelUp();
 
             return addvalue;
         }
@@ -1741,12 +1795,8 @@ namespace GameServer.Script.Model.DataModel
 
 
             FightExp = MathUtils.Addition(FightExp, addvalue, int.MaxValue);
-            short currlv = ConvertExp2Level();
-            if (currlv > UserLv)
-            {
-                UserLv = currlv;
-                UserLevelUp();
-            }
+
+            CheckLevelUp();
 
             return addvalue;
         }
@@ -1759,6 +1809,7 @@ namespace GameServer.Script.Model.DataModel
         {
             UserExpData data = new UserExpData();
             ExpData = data;
+
             RefreshFightValue();
             
 

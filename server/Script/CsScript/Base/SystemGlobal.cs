@@ -99,8 +99,8 @@ namespace GameServer.CsScript.Base
         {
             int timeOut = ConfigUtils.GetSetting("Ranking.timeout", "3600").ToInt();
             RankingFactory.Add(new CombatRanking());
-            RankingFactory.Add(new LevelRanking());
-            RankingFactory.Add(new FightValueRanking());
+            //RankingFactory.Add(new LevelRanking());
+            //RankingFactory.Add(new FightValueRanking());
             RankingFactory.Start(timeOut);
         }
         

@@ -114,5 +114,11 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int PlotId { get; set; }
 
+        public int BuyVitCount { get; set; }
+
+        public ReceiveVitStatus ReceiveVitStatus { get; set; }
+
+        public int CombatRankId { get; set; }
+
     }
 }

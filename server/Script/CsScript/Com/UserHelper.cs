@@ -169,6 +169,7 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.RandomLotteryId = lottery.ID;
             }
 
+            gameUser.BuyVitCount = 0;
 
             // 设置新的恢复时间
             gameUser.RestoreDate = DateTime.Now;
@@ -629,6 +630,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 rankInfo = ranking.Find(s => (s.UserID == userid));
             }
+
             return rankInfo;
         }
 

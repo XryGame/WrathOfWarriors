@@ -58,14 +58,14 @@ namespace GameServer.CsScript.Action
             //    ErrorInfo = Language.Instance.NoFoundUser;
             //    return true;
             //}
-            ContextUser.UserLv = ContextUser.ConvertExp2Level();
+            //ContextUser.UserLv = ContextUser.ConvertExp2Level();
             //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(ContextUser.UserLv);
             //if (rolegrade == null)
             //{
             //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
             //    return true;
             //}
-            ContextUser.RefreshFightValue();
+            //ContextUser.RefreshFightValue();
 
             receipt = new JPUserDetailsData()
             {
@@ -87,10 +87,7 @@ namespace GameServer.CsScript.Action
                 FightValue = ContextUser.FightingValue,
                 ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes
             };
-
-            //var fv = MathUtils.Addition(receipt.Attack, receipt.Defense, int.MaxValue);
-            //receipt.FightValue = MathUtils.Addition(fv, receipt.HP, int.MaxValue);
-
+            
 
             receipt.StudyData.SubjectID = ContextUser.StudyTaskData.SubjectID;
             receipt.StudyData.StartTime = Util.ConvertDateTimeStamp(ContextUser.StudyTaskData.StartTime);
@@ -101,34 +98,7 @@ namespace GameServer.CsScript.Action
             receipt.ExerciseData.StartTime = Util.ConvertDateTimeStamp(ContextUser.ExerciseTaskData.StartTime);
             receipt.ExerciseData.Count = ContextUser.ExerciseTaskData.Count;
             receipt.ExerciseData.SceneId = ContextUser.ExerciseTaskData.SceneId;
-            //if (ContextUser.ExpData == null)
-            //{
-            //    ContextUser.ExpData = new UserExpData();
-            //}
-            //if (ContextUser.ItemDataList == null)
-            //{
-            //    ContextUser.ItemDataList = new CacheList<ItemData>();
-            //}
-            //if (ContextUser.SkillDataList == null)
-            //{
-            //    ContextUser.SkillDataList = new CacheList<SkillData>();
-            //}
-            //if (ContextUser.SkillCarryList == null)
-            //{
-            //    ContextUser.SkillCarryList = new CacheList<int>();
-            //}
-            //if (ContextUser.CombatData == null)
-            //{
-            //    ContextUser.CombatData = new UserCombatData();
-            //}
-            //if (ContextUser.CombatLogList == null)
-            //{
-            //    ContextUser.CombatLogList = new CacheList<CombatLogData>();
-            //}
-            //if (ContextUser.FriendsData == null)
-            //{
-            //    ContextUser.FriendsData = new UserFriendsData();
-            //}
+
             SubjectStage stage = ContextUser.getSubjectStage();
             switch (stage)
             {
@@ -362,6 +332,15 @@ namespace GameServer.CsScript.Action
             receipt.StartSweepTime = Util.ConvertDateTimeStamp(ContextUser.StartSweepTime);
 
             receipt.PlotId = ContextUser.PlotId;
+
+            receipt.BuyVitCount = ContextUser.BuyVitCount;
+            receipt.ReceiveVitStatus = ContextUser.ReceiveVitStatus;
+
+            UserRank combatrank = UserHelper.FindCombatRankUser(ContextUser.UserID);
+            if (combatrank != null)
+            {
+                receipt.CombatRankId = combatrank.RankId;
+            }
             return true;
         }
 
@@ -382,30 +361,30 @@ namespace GameServer.CsScript.Action
             RankType ranktype = RankType.No;
             int rankid = 0;
             UserRank combatrank = UserHelper.FindCombatRankUser(ContextUser.UserID);
-            UserRank fightvaluerank = UserHelper.FindFightValueRankUser(ContextUser.UserID);
-            UserRank levelrank = UserHelper.FindLevelRankUser(ContextUser.UserID);
+            //UserRank fightvaluerank = UserHelper.FindFightValueRankUser(ContextUser.UserID);
+            //UserRank levelrank = UserHelper.FindLevelRankUser(ContextUser.UserID);
             
             if (combatrank != null && combatrank.RankId != 0 && combatrank.RankId < 10)
             {
                 ranktype = RankType.Combat;
                 rankid = combatrank.RankId;
             }
-            if (fightvaluerank != null && fightvaluerank.RankId != 0 && fightvaluerank.RankId < 10)
-            {
-                if (ranktype == RankType.No || fightvaluerank.RankId < rankid)
-                {
-                    ranktype = RankType.FightValue;
-                    rankid = fightvaluerank.RankId;
-                }
-            }
-            if (levelrank != null && levelrank.RankId != 0 && levelrank.RankId < 10)
-            {
-                if (ranktype == RankType.No || levelrank.RankId < rankid)
-                {
-                    ranktype = RankType.Level;
-                    rankid = levelrank.RankId;
-                }
-            }
+            //if (fightvaluerank != null && fightvaluerank.RankId != 0 && fightvaluerank.RankId < 10)
+            //{
+            //    if (ranktype == RankType.No || fightvaluerank.RankId < rankid)
+            //    {
+            //        ranktype = RankType.FightValue;
+            //        rankid = fightvaluerank.RankId;
+            //    }
+            //}
+            //if (levelrank != null && levelrank.RankId != 0 && levelrank.RankId < 10)
+            //{
+            //    if (ranktype == RankType.No || levelrank.RankId < rankid)
+            //    {
+            //        ranktype = RankType.Level;
+            //        rankid = levelrank.RankId;
+            //    }
+            //}
 
             if (ranktype != RankType.No)
             {

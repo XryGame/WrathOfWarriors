@@ -28,15 +28,7 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1111;
-            }
-
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -62,14 +54,18 @@ namespace GameServer.CsScript.Action
             ContextUser.UserStatus = UserStatus.MainUi;
             if (result == EventStatus.Good)
             {
-                //ContextUser.AdditionFightExpValue(role.Exp);
 
-                int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
 
                 if (ContextUser.ChallengeRoleList.Find(t => (t == monsterId)) == 0)
                 {
                     ContextUser.ChallengeRoleList.Add(monsterId);
                 }
+
+                //ContextUser.AdditionFightExpValue(role.Exp);
+
+                int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
+
+
 
                 receipt = new JPReceiveTaskAwardData()
                 {

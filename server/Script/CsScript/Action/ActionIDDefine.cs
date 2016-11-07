@@ -76,6 +76,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1008 = 1008;
 
         ///<summary>
+        ///公众号微信登录
+        ///</summary>
+        public const short Cst_Action1020 = 1020;
+
+        ///<summary>
         ///战斗力改变通知接口
         ///</summary>
         public const short Cst_Action1050 = 1050;
@@ -447,5 +452,16 @@ namespace GameServer.CsScript.Action
         ///剧情
         ///</summary>
         public const short Cst_Action10400 = 10400;
+
+
+        ///<summary>
+        ///购买体力
+        ///</summary>
+        public const short Cst_Action10500 = 10500; 
+        
+        ///<summary>
+        ///领取体力
+        ///</summary>
+        public const short Cst_Action10501 = 10501;
     }
 }

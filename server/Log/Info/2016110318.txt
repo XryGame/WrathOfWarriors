@@ -1,0 +1,39 @@
+Time:2016/11/3 18:00:00-消息：Progress Combat Award...
+
+
+18:09:04 Clear expired cache end.
+Time:2016/11/3 18:10:00-消息：Progress Combat Award...
+
+
+18:19:04 Clear expired cache end.
+Time:2016/11/3 18:20:00-消息：Progress Combat Award...
+
+
+Time:2016/11/3 18:29:05-The ranking refresh is start...
+
+
+18:29:05 Clear expired cache end.
+Time:2016/11/3 18:29:05-Trace>>The CombatRanking has be loaded, count:111
+
+
+Time:2016/11/3 18:29:05-Trace>>The LevelRanking has be loaded, count:111
+
+
+Time:2016/11/3 18:29:05-Trace>>The FightValueRanking has be loaded, count:111
+
+
+Time:2016/11/3 18:29:05-The ranking refresh is end.
+
+
+Time:2016/11/3 18:30:00-消息：Progress Combat Award...
+
+
+18:39:05 Clear expired cache end.
+Time:2016/11/3 18:40:00-消息：Progress Combat Award...
+
+
+18:49:05 Clear expired cache end.
+Time:2016/11/3 18:50:00-消息：Progress Combat Award...
+
+
+18:59:05 Clear expired cache end.

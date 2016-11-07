@@ -121,12 +121,15 @@
     <Compile Include="Script\CsScript\Action\Action1005.cs" />
     <Compile Include="Script\CsScript\Action\Action1008.cs" />
     <Compile Include="Script\CsScript\Action\Action10100.cs" />
+    <Compile Include="Script\CsScript\Action\Action1020.cs" />
     <Compile Include="Script\CsScript\Action\Action10200.cs" />
     <Compile Include="Script\CsScript\Action\Action10300.cs" />
     <Compile Include="Script\CsScript\Action\Action10301.cs" />
     <Compile Include="Script\CsScript\Action\Action10302.cs" />
     <Compile Include="Script\CsScript\Action\Action10400.cs" />
     <Compile Include="Script\CsScript\Action\Action1050.cs" />
+    <Compile Include="Script\CsScript\Action\Action10500.cs" />
+    <Compile Include="Script\CsScript\Action\Action10501.cs" />
     <Compile Include="Script\CsScript\Action\Action1051.cs" />
     <Compile Include="Script\CsScript\Action\Action1052.cs" />
     <Compile Include="Script\CsScript\Action\Action1053.cs" />
@@ -334,6 +337,7 @@
     <Compile Include="Script\Model\Enum\OpenBoxResult.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
     <Compile Include="Script\Model\Enum\RankType.cs" />
+    <Compile Include="Script\Model\Enum\ReceiveVitStatus.cs" />
     <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />
     <Compile Include="Script\Model\Enum\RequestChallengeClassMonitorResult.cs" />
     <Compile Include="Script\Model\Enum\RequestFriendResult.cs" />
