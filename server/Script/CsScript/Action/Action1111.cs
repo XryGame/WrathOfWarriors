@@ -64,7 +64,11 @@ namespace GameServer.CsScript.Action
                 //ContextUser.AdditionFightExpValue(role.Exp);
 
                 int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
-
+                if (addvalue > 0)
+                {
+                    ContextUser.RefreshFightValue();
+                }
+                    
 
 
                 receipt = new JPReceiveTaskAwardData()

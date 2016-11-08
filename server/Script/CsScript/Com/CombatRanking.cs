@@ -105,12 +105,12 @@ namespace GameServer.CsScript.Com
         protected override IList<UserRank> GetCacheList()
         {
             /// 修改刷新
-            rankList.Clear();
+            //rankList.Clear();
 
-            //if (rankList.Count > 0)
-            //{
-            //    return rankList;
-            //}
+            if (rankList.Count > 0)
+            {
+                return rankList;
+            }
             var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
             string sql = "SELECT UserID,NickName,LooksId,UserLv,VipLv,FightingValue,CombatData FROM GameUser";
             using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))

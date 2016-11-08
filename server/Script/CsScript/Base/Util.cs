@@ -1,5 +1,6 @@
 ﻿using GameServer.Script.Model.Config;
 using System;
+using System.Security.Cryptography;
 using ZyGames.Framework.Game.Lang;
 
 namespace GameServer.CsScript.Base
@@ -60,5 +61,35 @@ namespace GameServer.CsScript.Base
             return result;
         }
 
+        /// <summary>
+        /// 解密数据
+        /// </summary>
+        /// <param name="DataToDeCrypto">要解密的数据</param>
+        /// <param name="RSAKeyInfo"></param>
+        /// <param name="DoOAEPPadding"></param>
+        /// <returns></returns>
+        static public byte[] RSADeCrtypto(byte[] DataToDeCrypto, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
+        {
+            try
+            {
+                RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
+                // System.Security.Cryptography.RSA 的参数。
+                RSA.ImportParameters(RSAKeyInfo);
+                //
+                // 参数:
+                //  
+                //     要解密的数据。
+                //
+                //
+                //     如果为 true，则使用 OAEP 填充（仅在运行 Microsoft Windows XP 或更高版本的计算机上可用）执行直接的 System.Security.Cryptography.RSA
+                //     解密；否则，如果为 false，则使用 PKCS#1 1.5 版填充。
+                return RSA.Decrypt(DataToDeCrypto, DoOAEPPadding);
+            }
+            catch (CryptographicException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }

@@ -2268,7 +2268,7 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
 
-            FightingValue = Attack * 5 + Defense * 5 + Hp;
+            FightingValue = Attack * 5 + Defense * 5 + (Hp / 10);
         }
 
         /// <summary>

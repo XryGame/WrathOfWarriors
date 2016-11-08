@@ -304,7 +304,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 rankinfo = ranking.Find(s => s.UserID == uid);
             }
-            if (rankinfo != null && rankinfo.FightDestUid > 0)
+            if (rankinfo != null)
             {
                 rankinfo.IsFighting = false;
 

@@ -57,8 +57,18 @@ namespace GameServer.Script.Model.DataModel
             "学生会会长", "秘书部部长", "学习部部长", "宣传部部长", "艺术部部长", "体育部部长", "班级委员会"
         };
 
-
-
+        /// <summary>
+        /// 挑战班长成功获得钻石数量
+        /// </summary>
+        static public int ChallengeTheMonitorAwardDiamond;
+        /// <summary>
+        /// 占领成功获得钻石数量
+        /// </summary>
+        static public int OccupyAwardDiamond;
+        /// <summary>
+        /// 邀请切磋成功获得钻石数量
+        /// </summary>
+        static public int InviteFightAwardDiamond;
 
 
         static DataHelper()
@@ -82,7 +92,9 @@ namespace GameServer.Script.Model.DataModel
             RepairSignNeedDiamond = ConfigEnvSet.GetInt("User.RepairSignNeedDiamond");
             MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
             OpenTaskUserLevel = ConfigEnvSet.GetInt("System.OpenTaskUserLevel");
-
+            ChallengeTheMonitorAwardDiamond = ConfigEnvSet.GetInt("User.ChallengeTheMonitorAwardDiamond");
+            OccupyAwardDiamond = ConfigEnvSet.GetInt("User.OccupyAwardDiamond");
+            InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
 
             var classcache = new ShareCacheStruct<ClassDataCache>();
             if (classcache.IsEmpty)

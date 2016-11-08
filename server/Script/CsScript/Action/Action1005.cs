@@ -62,6 +62,10 @@ namespace GameServer.CsScript.Action
                 gameUser = CreateRole();
                 roleFunc.OnCreateAfter(gameUser);
             }
+            else
+            {
+                return false;
+            }
             user = new SessionUser(gameUser);
             //Current.Bind(user);
             UserLoginLog userLoginLog = new UserLoginLog();
@@ -178,6 +182,8 @@ namespace GameServer.CsScript.Action
                 RankDate = DateTime.Now,
             };
             combatranking.TryAppend(rankInfo);
+            var combat = combatranking as CombatRanking;
+            combat.rankList.Add(rankInfo);
             //levelranking.TryAppend(rankInfo);
             //fightvalueranking.TryAppend(rankInfo);
 

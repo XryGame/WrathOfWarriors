@@ -63,6 +63,8 @@ namespace GameServer.CsScript.Action
                 }
                 findocc.UserId = ContextUser.UserID;
                 findocc.NickName = ContextUser.NickName;
+
+                UserHelper.GiveAwayDiamond(ContextUser.UserID, DataHelper.OccupyAwardDiamond);
             }
             findocc.ChallengerId = 0;
             findocc.ChallengerNickName = "";

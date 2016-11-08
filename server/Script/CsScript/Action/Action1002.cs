@@ -21,8 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
+using GameServer.CsScript.Base;
 using GameServer.CsScript.JsonProtocol;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
@@ -102,9 +105,7 @@ namespace GameServer.CsScript.Action
                 passport = userList[0];
                 password = userList[1];
 
-                //SnsUser snsuser = SnsManager.LoginByWeixin("d4ddg555w222222ddg");
-                //passport = snsuser.PassportId;
-                //password = snsuser.Password;
+
                 return true;
             }
             catch (Exception ex)

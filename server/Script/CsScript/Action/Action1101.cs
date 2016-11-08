@@ -105,7 +105,10 @@ namespace GameServer.CsScript.Action
 
                         ContextUser.StudyTaskData.SubjectID = SubjectID.id0;
                         ContextUser.StudyTaskData.Count = 0;
-
+                        if (addvalue > 0)
+                        {
+                            ContextUser.RefreshFightValue();
+                        }
 
                         // 每日
                         UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Study, needtime);
@@ -168,6 +171,10 @@ namespace GameServer.CsScript.Action
 
                         ContextUser.ExerciseTaskData.SubjectID = SubjectID.id0;
                         ContextUser.ExerciseTaskData.Count = 0;
+                        if (addvalue > 0)
+                        {
+                            ContextUser.RefreshFightValue();
+                        }
 
                         // 每日
                         UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Exercise, needtime);

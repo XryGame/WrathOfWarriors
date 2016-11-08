@@ -46,14 +46,24 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1002 = 1002;
 
         ///<summary>
-        ///用户注册
+        ///微信公众号登录ID获取接口
         ///</summary>
-        public const short Cst_Action1003 = 1003;
+        public const short Cst_Action10020 = 10020;
+
+        /////<summary>
+        /////用户注册
+        /////</summary>
+        //public const short Cst_Action1003 = 1003;
 
         ///<summary>
-        ///用户登录
+        ///用户登录(账号密码)
         ///</summary>
         public const short Cst_Action1004 = 1004;
+
+        ///<summary>
+        ///微信公众号登录ID获取接口
+        ///</summary>
+        public const short Cst_Action10040 = 10040;
 
         ///<summary>
         ///创建角色
