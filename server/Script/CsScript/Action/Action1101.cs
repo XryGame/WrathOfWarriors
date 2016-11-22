@@ -159,7 +159,10 @@ namespace GameServer.CsScript.Action
                             ErrorInfo = Language.Instance.NoReachScheduleTime;
                             return true;
                         }
-                        int addvalue = ContextUser.AdditionBaseExpValue((SubjectID)ContextUser.ExerciseTaskData.SubjectID, ContextUser.ExerciseTaskData.Count);
+                        int addvalue = ContextUser.AdditionBaseExpValue(
+                            ContextUser.ExerciseTaskData.SubjectID, 
+                            ContextUser.ExerciseTaskData.Count,
+                            ContextUser.ExerciseTaskData.SceneId);
 
 
                         receipt = new JPReceiveTaskAwardData()
