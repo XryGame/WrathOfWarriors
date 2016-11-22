@@ -1,3 +1,0 @@
-Time:2016/8/1 15:52:32-Trace>>Http request [/Service.aspx?d=?d=MsgId%3D1%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1002%26MobileType%3D1%26GameType%3D0%26RetailID%3D0000%26ClientAppVersion%3D1.0%26DeviceID%3D8e6f64a8-b473-4695-bbfa-3f05622084ab%26ScreenX%3D0%26ScreenY%3D0%26sign%3D40f40cd83b4cf856512aad18cb70f1ca] timeout 6238ms
-
-

@@ -76,6 +76,8 @@ namespace GameServer.Script.Model.DataModel
 
         }
 
+
+
         static public void InitData()
         {
 

@@ -83,6 +83,7 @@ namespace GameServer.CsScript.Action
                             if (userclassdata != null)
                                 jpuserdata.ClassName = userclassdata.Name;
                             jpuserdata.VoteCount = userdata.VoteCount;
+                            jpuserdata.LooksId = userdata.LooksId;
                             data.CampaignsUserDataList.Add(jpuserdata);
                         }
                     }

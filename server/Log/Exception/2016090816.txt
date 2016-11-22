@@ -1,6 +1,0 @@
-Time:2016/9/8 16:46:36-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
-   在 GameServer.CsScript.Action.Action1008.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1008.cs:行号 277
-   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
-?d=MsgId%3D2%26Sid%3Ds_d0095f74b86c4ec582ddebe1240b1e12%7C1%7C1%26Uid%3D35%26St%3Dst%26ActionId%3D1008%26sign%3D87dfcd5ab842f3b88278d317fb18af28
-
-

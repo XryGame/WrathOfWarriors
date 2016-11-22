@@ -23,13 +23,17 @@ THE SOFTWARE.
 ****************************************************************************/
 using GameServer.CsScript.Base;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.Model.DataModel;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Security;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 using ZyGames.Framework.Game.Sns;
+using ZyGames.Framework.Redis;
 using ZyGames.Framework.RPC.Sockets;
 
 namespace GameServer.CsScript.Action
@@ -81,19 +85,19 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (/*httpGet.GetInt("MobileType", ref mobileType) &&
-                httpGet.GetInt("GameType", ref gameType) &&
-                httpGet.GetString("RetailID", ref retailID) &&
-                httpGet.GetString("ClientAppVersion", ref clientAppVersion) &&*/
-                httpGet.GetString("DeviceID", ref deviceID))
-            {
-                //httpGet.GetInt("ScreenX", ref ScreenX);
-                //httpGet.GetInt("ScreenY", ref ScreenY);
-            }
-            else
-            {
-                return false;
-            }
+            //if (/*httpGet.GetInt("MobileType", ref mobileType) &&
+            //    httpGet.GetInt("GameType", ref gameType) &&
+            //    httpGet.GetString("RetailID", ref retailID) &&
+            //    httpGet.GetString("ClientAppVersion", ref clientAppVersion) &&*/
+            //    httpGet.GetString("DeviceID", ref deviceID))
+            //{
+            //    //httpGet.GetInt("ScreenX", ref ScreenX);
+            //    //httpGet.GetInt("ScreenY", ref ScreenY);
+            //}
+            //else
+            //{
+            //    return false;
+            //}
             return true;
         }
 
@@ -101,11 +105,7 @@ namespace GameServer.CsScript.Action
         {
             try
             {
-                string[] userList = SnsManager.GetRegPassport(deviceID);
-                passport = userList[0];
-                password = userList[1];
-
-
+                Util.CrateAccount(out passport, out password);
                 return true;
             }
             catch (Exception ex)

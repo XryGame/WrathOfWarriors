@@ -21,5 +21,11 @@ namespace GameServer.CsScript.JsonProtocol
 
         public CacheList<int> ChallengeRoleList { get; set; }
 
+        public int Attack { get; set; }
+
+        public int Defense { get; set; }
+
+        public int HP { get; set; }
+
     }
 }

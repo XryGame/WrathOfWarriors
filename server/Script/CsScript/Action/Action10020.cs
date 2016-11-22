@@ -1,11 +1,16 @@
 ﻿
 using GameServer.CsScript.Base;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.Model.DataModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Security;
+using ZyGames.Framework.Common.Serialization;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 using ZyGames.Framework.Game.Sns;
@@ -21,12 +26,25 @@ namespace GameServer.CsScript.Action
         private string passport = string.Empty;
         private string password = string.Empty;
         private string logindata = string.Empty;
-        //private int mobileType = 0;
-        //private int gameType = 0;
-        //private string retailID = string.Empty;
-        //private string clientAppVersion = string.Empty;
-        //private int ScreenX = 0;
-        //private int ScreenY = 0;
+        private string md5key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXdPs18RFj4XBEzbPNZ+58CsPC7AeVhZ3zWxVKPfozuwVCR1kDhYp/5e2tMVoleayDpAq/2FJUNTbTu5eYkow11Cho2RRGuMRRhl0RJ0lqItuwbe4a8/D2cgqsw+BxrZLcWO0xpnE7NGTkMc7sRz60Muq5izhLYrDUn/KUd7qi/QIDAQAB";
+
+
+
+        private class JsonData
+        {
+            public string openid { get; set; }
+            public string nickname { get; set; }
+            public int sex { get; set; }
+            public string language { get; set; }
+            public string city { get; set; }
+            public string province { get; set; }
+            public string country { get; set; }
+            public string headimgurl { get; set; }
+            public List<string> privilege { get; set; }
+            public string unionid { get; set; }
+            public string code { get; set; }
+        }
+
 
         public Action10020(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action10020, actionGetter)
@@ -35,11 +53,6 @@ namespace GameServer.CsScript.Action
             actionGetter.OpCode = OpCode.Text;
         }
 
-        //public override void BuildPacket()
-        //{
-        //    PushIntoStack(passport);
-        //    PushIntoStack(password);
-        //}
 
         protected override string BuildJsonPack()
         {
@@ -62,68 +75,34 @@ namespace GameServer.CsScript.Action
         {
             if (httpGet.GetString("LoginData", ref logindata))
             {
+                return true;
             }
-            else
-            {
-                return false;
-            }
-            return true;
+            return false;
         }
 
         public override bool TakeAction()
         {
             try
             {
-                try
-                {
-                    UnicodeEncoding ByteConverter = new UnicodeEncoding();
-
-                    RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
-                    RSA.FromXmlString("");
-
-                    RSAParameters rsaParameters = new RSAParameters();
-
-                    string publkey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXdPs18RFj4XBEzbPNZ+58CsPC7AeVhZ3zWxVKPfozuwVCR1kDhYp / 5e2tMVoleayDpAq / 2FJUNTbTu5eYkow11Cho2RRGuMRRhl0RJ0lqItuwbe4a8 / D2cgqsw + BxrZLcWO0xpnE7NGTkMc7sRz60Muq5izhLYrDUn / KUd7qi / QIDAQAB";
-                    string data = "j3GqT+15mgi8L6/vjksOUNOVj1X5kpL8RX6GiZPodbnEqnu8KAS6PnqG2c00WQDS891K15UPaisp7lW40hgCWNFjJrdxz6f8irOS6oBhWAfQcwgKkivqKP/lD0JmVIGB5UOMcUDyAJUVR3NMP5sto6dRfGGSGRX5YU5c7KL9hKg=";
-                    rsaParameters.Exponent = Convert.FromBase64String("AQAB");
-                    rsaParameters.Modulus =
-                        Convert.FromBase64String(
-                            publkey
-                            );
-
-                    byte[] encryptedData;
-                    byte[] decryptedData;
-
-                    encryptedData = Convert.FromBase64String(data);
-
-                    decryptedData = Util.RSADeCrtypto(encryptedData, rsaParameters, true);
-                    string ddd = ByteConverter.GetString(decryptedData);
-                }
-                catch (Exception)
+                JsonData data = JsonUtils.Deserialize<JsonData>(logindata);
+                    
+                string sign = CryptoHelper.MD5_Encrypt(data.openid + md5key);
+                if (data.code.CompareTo(sign) != 0)
                 {
                     return false;
                 }
 
-
-
-
-
-
-
-                //string openId = "d4ddg555w222222ddg";
-                //string[] userList = SnsManager.GetRegPassportByOpenId(openId);
-                //passport = userList[0];
-                //password = userList[1];
-
-                //SnsUser snsuser = SnsManager.LoginByWeixin("d4ddg555w222222ddg");
-                //if (snsuser == null)
-                //{
-
-                //}
-                //passport = snsuser.PassportId;
-                //password = snsuser.Password;
-
-
+                var ucpcache = new ShareCacheStruct<UserCenterPassport>();
+                var ucp = ucpcache.Find(t => (t.OpenId.CompareTo(data.openid) == 0));
+                if (ucp == null)
+                {
+                    Util.CrateAccountByOpenId(data.openid, out passport, out password);
+                }
+                else
+                {
+                    passport = ucp.PassportID;
+                    password = ucp.Password;
+                }
                 return true;
             }
             catch (Exception ex)

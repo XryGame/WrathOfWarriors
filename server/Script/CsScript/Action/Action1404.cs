@@ -1,4 +1,5 @@
 ﻿using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Common;
@@ -41,11 +42,9 @@ namespace GameServer.CsScript.Action
 
             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.CombatData.LastFailedDate);
             int mins = (int)Math.Floor(timeSpan.TotalMinutes);
+            int surplus = MathUtils.Subtraction(ConfigEnvSet.GetInt("User.CombatFailedCD"), mins, 0);
 
-            if (mins == 0)
-                return false;
-
-            if (ContextUser.DiamondNum < mins)
+            if (ContextUser.DiamondNum < surplus)
                 return false;
 
             ContextUser.CombatData.LastFailedDate = DateTime.MinValue;

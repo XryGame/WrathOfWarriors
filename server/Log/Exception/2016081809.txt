@@ -1,7 +1,0 @@
-Time:2016/8/18 9:32:02-Trace>>Action1301 error:System.Exception: UserAddSkill: ShareCacheStruct<Config_SkillGrade>().Find id=10001SkillLv2 is not exist
-   在 GameServer.CsScript.Base.UserHelper.UserAddSkill(GameUser& gameUser, Int32 id, Int32 ownnum) 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Com\UserHelper.cs:行号 474
-   在 GameServer.CsScript.Action.Action1301.TakeAction() 位置 e:\ServerTools\code\xuesheng\server\server\Script\CsScript\Action\Action1301.cs:行号 159
-   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
-?d=MsgId%3D3%26Sid%3Ds_6748aa46bae24b5d83aefe4adc9bf132%7C1%7C1%26Uid%3D38%26St%3Dst%26ActionId%3D1301%26OpenType%3D2%26OpenMode%3D1%26sign%3Da6bde5b61ef524e8f840258ae809118d
-
-

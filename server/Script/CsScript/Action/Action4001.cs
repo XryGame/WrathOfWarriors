@@ -91,6 +91,9 @@ namespace GameServer.CsScript.Action
                     receipt.ItemList = monitor.ItemDataList;
                     receipt.SkillList = monitor.SkillDataList;
                     receipt.SkillCarryList = monitor.SkillCarryList;
+                    var rankuser = UserHelper.FindCombatRankUser(monitor.UserID);
+                    if (rankuser != null)
+                        receipt.RankId = rankuser.RankId;
 
                     classdata.IsChallenging = true;
                     classdata.ChallengeUserId = ContextUser.UserID;

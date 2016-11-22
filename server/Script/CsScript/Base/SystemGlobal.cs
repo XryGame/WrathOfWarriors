@@ -22,6 +22,7 @@ using System.Text;
 using ZyGames.Framework.Game.Sns._91sdk;
 using GameServer.Script.Model.Enum;
 using System.Configuration;
+using System.Threading;
 
 namespace GameServer.CsScript.Base
 {
@@ -76,14 +77,14 @@ namespace GameServer.CsScript.Base
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
-            //TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "00:00"));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 600));
+            TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "00:00"));
+            //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 600));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
             // 每周二，周五名人榜奖励
-            //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "TuesdayCombatAwardTask", DayOfWeek.Tuesday, "04:00"));
-            //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "FridayCombatAwardTask", DayOfWeek.Friday, "04:00"));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
+            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "TuesdayCombatAwardTask", DayOfWeek.Tuesday, "04:00"));
+            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "FridayCombatAwardTask", DayOfWeek.Friday, "04:00"));
+            //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
 
             InitRanking();
             stopwatch.Stop();
@@ -148,6 +149,10 @@ namespace GameServer.CsScript.Base
             int capacity = int.MaxValue;
             //todo Load
             var dbFilter = new DbDataFilter(capacity);
+
+            new ShareCacheStruct<UserCenterPassport>().AutoLoad(dbFilter);
+            new ShareCacheStruct<UserCenterUser>().AutoLoad(dbFilter);
+
             new ShareCacheStruct<Config_RoleGrade>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Role>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_SceneMap>().AutoLoad(dbFilter);
@@ -192,6 +197,7 @@ namespace GameServer.CsScript.Base
                 user.OfflineDate = DateTime.Now;
             }
 
+            Thread.Sleep(5000);
         }
 
 
@@ -213,6 +219,7 @@ namespace GameServer.CsScript.Base
 
         public static void SendServerStatus(ServerStatus status, int activeNum)
         {
+
             string Sign = "3f261d4f2f8941ea90552cf7507f021b";
             string addr = ConfigurationManager.AppSettings["ServerStatusAddr"];
             string url = addr + "/Service.aspx?d=";

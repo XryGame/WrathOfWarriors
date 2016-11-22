@@ -27,7 +27,7 @@ namespace GameServer.CsScript.GM
         /// <param name="userId"></param>
         private void AddUserDiamond(int num, int userId)
         {
-            UserHelper.GiveAwayDiamond(userId, num);
+            UserHelper.PayDiamond(userId, num);
         }
     }
 }

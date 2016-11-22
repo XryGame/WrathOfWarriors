@@ -140,12 +140,15 @@
     <Compile Include="Script\CsScript\Action\Action1058.cs" />
     <Compile Include="Script\CsScript\Action\Action1059.cs" />
     <Compile Include="Script\CsScript\Action\Action1060.cs" />
+    <Compile Include="Script\CsScript\Action\Action10600.cs" />
     <Compile Include="Script\CsScript\Action\Action1061.cs" />
     <Compile Include="Script\CsScript\Action\Action1062.cs" />
     <Compile Include="Script\CsScript\Action\Action1063.cs" />
     <Compile Include="Script\CsScript\Action\Action1064.cs" />
     <Compile Include="Script\CsScript\Action\Action1065.cs" />
     <Compile Include="Script\CsScript\Action\Action1066.cs" />
+    <Compile Include="Script\CsScript\Action\Action10700.cs" />
+    <Compile Include="Script\CsScript\Action\Action10800.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1102.cs" />
@@ -163,6 +166,7 @@
     <Compile Include="Script\CsScript\Action\Action1403.cs" />
     <Compile Include="Script\CsScript\Action\Action1404.cs" />
     <Compile Include="Script\CsScript\Action\Action1405.cs" />
+    <Compile Include="Script\CsScript\Action\Action1406.cs" />
     <Compile Include="Script\CsScript\Action\Action1501.cs" />
     <Compile Include="Script\CsScript\Action\Action1502.cs" />
     <Compile Include="Script\CsScript\Action\Action1503.cs" />
@@ -227,6 +231,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatRivalData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatSimpleUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPDailyQuestData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPEventAwardData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPExerciseData.cs" />
@@ -255,6 +260,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPReceiveFriendGiveAwayData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPReceiveTaskAwardData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRefreshDailyQuestData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestAccumulatePay.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestAddFriendData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignsListData.cs" />
@@ -276,6 +282,7 @@
     <Compile Include="Script\CsScript\MainClass.cs" />
     <Compile Include="Script\CsScript\WebSocketActionDispatcher.cs" />
     <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_AccumulatePay.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Achievement.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />
@@ -318,7 +325,8 @@
     <Compile Include="Script\Model\DataModel\GameUser.cs" />
     <Compile Include="Script\Model\DataModel\JobTitleDataCache.cs" />
     <Compile Include="Script\Model\DataModel\OccupyDataCache.cs" />
-    <Compile Include="Script\Model\DataModel\TUser.cs" />
+    <Compile Include="Script\Model\DataModel\UserCenterPassport.cs" />
+    <Compile Include="Script\Model\DataModel\UserCenterUser.cs" />
     <Compile Include="Script\Model\DataModel\NickNameCache.cs" />
     <Compile Include="Script\Model\DataModel\DataHelper.cs" />
     <Compile Include="Script\Model\DataModel\UserPayCache.cs" />
@@ -338,6 +346,7 @@
     <Compile Include="Script\Model\Enum\OpenBoxResult.cs" />
     <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
     <Compile Include="Script\Model\Enum\RankType.cs" />
+    <Compile Include="Script\Model\Enum\ReceiveAccumulatePayResult.cs" />
     <Compile Include="Script\Model\Enum\ReceiveVitStatus.cs" />
     <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />
     <Compile Include="Script\Model\Enum\RequestChallengeClassMonitorResult.cs" />

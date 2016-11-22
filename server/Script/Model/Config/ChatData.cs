@@ -73,5 +73,11 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(12)]
         public int LooksId { get; set; }
+
+        /// <summary>
+        /// 是否是拉选票
+        /// </summary>
+        [ProtoMember(13)]
+        public bool IsCanvass { get; set; }
     }
 }

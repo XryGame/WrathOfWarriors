@@ -263,6 +263,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1405 = 1405;
 
         ///<summary>
+        ///名人榜前20
+        ///</summary>
+        public const short Cst_Action1406 = 1406;
+
+        ///<summary>
         ///请求添加好友
         ///</summary>
         public const short Cst_Action1501 = 1501;
@@ -478,5 +483,21 @@ namespace GameServer.CsScript.Action
         ///领取体力
         ///</summary>
         public const short Cst_Action10501 = 10501;
+
+        ///<summary>
+        ///改名
+        ///</summary>
+        public const short Cst_Action10600 = 10600;
+
+        ///<summary>
+        ///领取累充
+        ///</summary>
+        public const short Cst_Action10700 = 10700;
+
+        ///<summary>
+        ///一键拉票
+        ///</summary>
+        public const short Cst_Action10800 = 10800;
+
     }
 }

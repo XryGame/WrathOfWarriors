@@ -120,5 +120,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int CombatRankId { get; set; }
 
+        public CacheList<int> AccumulatePayList { get; set; }
+
     }
 }

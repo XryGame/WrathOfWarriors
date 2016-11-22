@@ -22,6 +22,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int FightValue { get; set; }
 
+        public int RankId { get; set; }
+
         public CacheList<ItemData> ItemList { get; set; }
 
         public CacheList<SkillData> SkillList { get; set; }

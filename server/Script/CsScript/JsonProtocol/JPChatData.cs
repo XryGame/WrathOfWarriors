@@ -19,5 +19,7 @@ namespace GameServer.CsScript.JsonProtocol
         public long SendTimestamp { get; set; }
 
         public int LooksId { get; set; }
+
+        public bool IsCanvass { get; set; }
     }
 }

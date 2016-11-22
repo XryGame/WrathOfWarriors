@@ -16,6 +16,7 @@ using ZyGames.Framework.Game.Contract;
 using GameServer.Script.CsScript.Com;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
+using ZyGames.Framework.Game.Model;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -23,7 +24,7 @@ namespace GameServer.Script.Model.DataModel
     {
         static private Random random = new Random();
 
-        static int scount = 0;
+        //static int scount = 0;
         static UserHelper()
         {
 
@@ -522,11 +523,11 @@ namespace GameServer.Script.Model.DataModel
             
 
 
-            if (scount == 7)
-                scount = 0;
-            var fdnow = jobcache.FindKey((JobTitleType)scount);
-            scount++;
-            ///var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
+            ////if (scount == 7)
+            ////    scount = 0;
+            ////var fdnow = jobcache.FindKey((JobTitleType)scount);
+            ////scount++;
+            var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
             if (fdnow != null)
             {
                 // 取消加成
@@ -692,7 +693,16 @@ namespace GameServer.Script.Model.DataModel
             AchievementProcess(uid, count, AchievementType.AwardDiamondCount);
         }
 
+        public static void PayDiamond(int uid, int count)
+        {
+            GameUser user = FindUser(uid);
+            if (user == null)
+                return;
+            user.BuyDiamond = MathUtils.Addition(user.BuyDiamond, count, int.MaxValue / 2);
 
+            // 成就
+            AchievementProcess(uid, count, AchievementType.AwardDiamondCount);
+        }
 
         /// <summary>
         /// 处理玩家变更数据
@@ -741,7 +751,7 @@ namespace GameServer.Script.Model.DataModel
                     }
                 }
 
-                
+
                 bool ischangeclass = false;
                 if (user.UserLv % 2 == 0)
                 {
@@ -778,6 +788,17 @@ namespace GameServer.Script.Model.DataModel
                 if (session != null)
                     PushMessageHelper.NewMailNotification(session, value.ToString());
             }
+            else if (property == "GetCombatItem")
+            {
+                GameUser user = FindUser(userId);
+                var item = new ShareCacheStruct<Config_Item>().FindKey(value.ToInt());
+                if (user != null && item != null)
+                {
+                    string context = string.Format("恭喜玩家 {0} 获得竞技道具【{1}】 ！", user.NickName, item.Name);
+                    PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+                }
+            }
+
         }
 
         public static void EveryDayTaskProcess(int UserId, TaskType type, int count)

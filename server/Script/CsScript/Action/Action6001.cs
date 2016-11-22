@@ -122,6 +122,9 @@ namespace GameServer.CsScript.Action
             receipt.RivalData.Attack = rolegrade.Attack;
             receipt.RivalData.Defense = rolegrade.Defense;
             receipt.RivalData.HP = rolegrade.HP;
+            var rankuser = UserHelper.FindCombatRankUser(dest.UserID);
+            if (rankuser != null)
+                receipt.RivalData.RankId = rankuser.RankId;
             if (dest.ClassData.ClassID > 0)
             {
                 var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(dest.ClassData.ClassID);

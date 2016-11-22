@@ -336,6 +336,8 @@ namespace GameServer.CsScript.Action
             receipt.BuyVitCount = ContextUser.BuyVitCount;
             receipt.ReceiveVitStatus = ContextUser.ReceiveVitStatus;
 
+            receipt.AccumulatePayList = ContextUser.AccumulatePayList;
+
             UserRank combatrank = UserHelper.FindCombatRankUser(ContextUser.UserID);
             if (combatrank != null)
             {

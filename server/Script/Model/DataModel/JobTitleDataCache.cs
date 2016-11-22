@@ -58,7 +58,7 @@ namespace GameServer.Script.Model.DataModel
             }
         }
         /// <summary>
-        /// 获得该职称的用户id
+        /// 竞选状态
         /// </summary>
         private CampaignStatus _Status;
         [ProtoMember(3)]

@@ -110,6 +110,10 @@ namespace GameServer.CsScript.Action
                             ContextUser.RefreshFightValue();
                         }
 
+                        receipt.Attack = ContextUser.Attack;
+                        receipt.Defense = ContextUser.Defense;
+                        receipt.HP = ContextUser.Hp;
+
                         // 每日
                         UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Study, needtime);
 
@@ -175,6 +179,9 @@ namespace GameServer.CsScript.Action
                         {
                             ContextUser.RefreshFightValue();
                         }
+                        receipt.Attack = ContextUser.Attack;
+                        receipt.Defense = ContextUser.Defense;
+                        receipt.HP = ContextUser.Hp;
 
                         // 每日
                         UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.Exercise, needtime);

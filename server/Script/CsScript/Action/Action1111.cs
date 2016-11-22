@@ -69,14 +69,16 @@ namespace GameServer.CsScript.Action
                     ContextUser.RefreshFightValue();
                 }
                     
-
-
+                
                 receipt = new JPReceiveTaskAwardData()
                 {
                     AwardExp = addvalue,
                     CurrFightExp = ContextUser.FightExp,
                     CurrLv = ContextUser.UserLv,
-                    CurrFightValue = ContextUser.FightingValue
+                    CurrFightValue = ContextUser.FightingValue,
+                    Attack = ContextUser.Attack,
+                    Defense = ContextUser.Defense,
+                    HP = ContextUser.Hp,
                 };
                 object outexpdata;
                 UserHelper.buildBaseExpData(ContextUser, out outexpdata);

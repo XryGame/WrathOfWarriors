@@ -1,7 +1,12 @@
 ﻿using GameServer.Script.Model.Config;
+using GameServer.Script.Model.DataModel;
 using System;
 using System.Security.Cryptography;
+using System.Text;
+using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common.Security;
 using ZyGames.Framework.Game.Lang;
+using ZyGames.Framework.Redis;
 
 namespace GameServer.CsScript.Base
 {
@@ -90,6 +95,62 @@ namespace GameServer.CsScript.Base
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+
+
+        /// <summary>
+        /// 获取6位随机密码
+        /// </summary>
+        /// <returns></returns>
+        static public string GetRandomPwd()
+        {
+            Random random = new Random();
+            int rid = random.Next(0, 999999);
+            return rid.ToString().PadLeft(6, '0');
+        }
+        /// <summary>
+        /// 获取随机GUID密码
+        /// </summary>
+        /// <returns></returns>
+        static public string GetRandomGUIDPwd()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
+
+        static public void CrateAccount(out string passport, out string password)
+        {
+            var ucpcache = new ShareCacheStruct<UserCenterPassport>();
+            passport = "x" + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterPassport).FullName);
+            password = CryptoHelper.MD5_Encrypt(GetRandomPwd(), Encoding.UTF8).ToLower();
+
+            UserCenterPassport ucp = new UserCenterPassport()
+            {
+                PassportID = passport,
+                Password = password,
+                CreateTime = DateTime.Now,
+                RetailId = "0000",
+                OpenId = "",
+            };
+            ucpcache.Add(ucp);
+            ucpcache.Update();
+        }
+
+        static public void CrateAccountByOpenId(string openId, out string passport, out string password)
+        {
+            var ucpcache = new ShareCacheStruct<UserCenterPassport>();
+            passport = "x" + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterPassport).FullName);
+            password = CryptoHelper.MD5_Encrypt(GetRandomPwd(), Encoding.UTF8).ToLower();
+
+            UserCenterPassport ucp = new UserCenterPassport()
+            {
+                PassportID = passport,
+                Password = password,
+                CreateTime = DateTime.Now,
+                RetailId = "1111",
+                OpenId = openId,
+            };
+            ucpcache.Add(ucp);
+            ucpcache.Update();
         }
     }
 }

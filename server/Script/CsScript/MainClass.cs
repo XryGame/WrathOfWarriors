@@ -82,11 +82,8 @@ namespace Game.Script
 
         protected override void OnDisconnected(GameSession session)
         {
-            var user = session.User as TUser;
-            if (user != null)
-            {
-                user.ChatVesion = 0;
-            }
+            var user = session.User as SessionUser;
+
             Console.WriteLine("Client {0} is closed.", session.RemoteAddress);
 
 

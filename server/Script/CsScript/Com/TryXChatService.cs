@@ -79,7 +79,7 @@ namespace GameServer.CsScript.Com
             return false;
         }
 
-        public void SystemSend(ChatType chatType, string content)
+        public void SystemSend(ChatType chatType, string content, bool IsCanvass = false)
         {
             if (chatType == ChatType.Whisper) return;
             var chat = new ChatData
@@ -94,7 +94,8 @@ namespace GameServer.CsScript.Com
                 ChatType = chatType,
                 Content = content,
                 SendDate = DateTime.Now,
-                LooksId = 0
+                LooksId = 0,
+                IsCanvass = IsCanvass,
             };
             Send(chat);
         }
