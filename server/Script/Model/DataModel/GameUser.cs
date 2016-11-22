@@ -1093,6 +1093,15 @@ namespace GameServer.Script.Model.DataModel
             get;
             set;
         }
+        /// <summary>
+        /// 占领加成的场景
+        /// </summary>
+        [ProtoMember(74)]
+        public List<SceneType> OccupyAddList
+        {
+            get;
+            set;
+        }
 
         public override string GetNickName()
         {
@@ -1606,7 +1615,7 @@ namespace GameServer.Script.Model.DataModel
         /// 添加BaseExp
         /// </summary>  
         /// <returns>增加经验值</returns>  
-        public int AdditionBaseExpValue(SubjectID sid, int count)
+        public int AdditionBaseExpValue(SubjectID sid, int count, SceneType sceneId = SceneType.No)
         {
             int maxaddv = 0;
             int sumexp = GetSumBaseExp();
@@ -1640,7 +1649,7 @@ namespace GameServer.Script.Model.DataModel
             if (subjectExp == null)
                 throw new Exception("AdditionBaseExpValue:" + sid + " is not exist");
             
-            int predictaddexpv = AdditionExpValue(subjectExp.UnitExp * count);
+            int predictaddexpv = AdditionExpValue(subjectExp.UnitExp * count, sceneId);
             int addvalue = Math.Min(subjectExp.UnitExp * count, maxaddv);
             switch (sid)
             {
@@ -1813,7 +1822,8 @@ namespace GameServer.Script.Model.DataModel
                 return 0;
             }
 
-            int addvalue = AdditionExpValue(expvalue);
+            //int addvalue = AdditionExpValue(expvalue, sceneId);
+            int addvalue = expvalue;
             addvalue = Math.Min(addvalue, rolegrade.FightExp - FightExp);
 
 
@@ -2106,9 +2116,8 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        public int AdditionExpValue(int expvalue)
+        public int JobTitleAdditionValue()
         {
-            float fpredictaddexpv = expvalue;
             int baseaddv = 0;
             // 职称加成
             if (AditionJobTitle != JobTitleType.No)
@@ -2140,21 +2149,21 @@ namespace GameServer.Script.Model.DataModel
                 if (IsHaveJobTitle)
                     baseaddv += 5;
             }
+            return baseaddv;
+        }
+
+        public int AdditionExpValue(int expvalue, SceneType sceneId)
+        {
+            float fpredictaddexpv = expvalue;
+            int baseaddv = JobTitleAdditionValue();
+
+            
             // 占领加成
-            var occupycache = new ShareCacheStruct<OccupyDataCache>();
             var scenes = new ShareCacheStruct<Config_Scene>();
-            for (SceneType i = SceneType.Piazza; i <= SceneType.MusicHall; ++i)
+            if (OccupyAddList.Find(t => (t == sceneId)) == sceneId)
             {
-                var os = occupycache.FindKey(i);
-                if (os == null)
-                    continue;
-                if (os.UserId == UserID)
-                {
-                    var scene = scenes.FindKey(i);
-                    if (scene == null)
-                        continue;
-                    baseaddv += scene.OccupyAdd % 100;
-                }
+                var scene = scenes.FindKey(sceneId);
+                baseaddv += scene.OccupyAdd % 100;
             }
 
 
@@ -2477,6 +2486,15 @@ namespace GameServer.Script.Model.DataModel
             {
                 Callback.BeginInvoke("NewMail", UserID, 0, mail.ID, null, this);
             }
+        }
+
+        public bool IsHaveOccupyAdd()
+        {
+            var occupycache = new ShareCacheStruct<OccupyDataCache>();
+            var findocc = occupycache.Find(t => (t.UserId == UserID));
+            if (findocc != null)
+                return true;
+            return false;
         }
     }
 }

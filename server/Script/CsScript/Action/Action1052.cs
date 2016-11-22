@@ -41,6 +41,9 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPLevelUpData()
             {
+                Attack = ContextUser.Attack,
+                Defense = ContextUser.Defense,
+                Hp = ContextUser.Hp,
                 CurrLevel = ContextUser.UserLv,
                 IsChangeClass = _isChangeClass
             };

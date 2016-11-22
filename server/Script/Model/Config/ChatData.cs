@@ -13,9 +13,19 @@ namespace GameServer.Script.Model.Config
     public class ChatData : ChatMessage
     {
         /// <summary>
+        /// 子类型
+        /// </summary>
+        [ProtoMember(1)]
+        public ChatChildType ChildType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// 发信人Vip 
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(2)]
         public short FromUserVip
         {
             get;
@@ -25,7 +35,7 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 发信人名称
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(3)]
         public string FromUserName
         {
             get;
@@ -35,7 +45,7 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 收信人Vip 
         /// </summary>
-        [ProtoMember(6)]
+        [ProtoMember(4)]
         public short ToUserVip
         {
             get;
@@ -45,7 +55,7 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 收信人名称
         /// </summary>
-        [ProtoMember(7)]
+        [ProtoMember(5)]
         public string ToUserName
         {
             get;
@@ -55,7 +65,7 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 聊天类型
         /// </summary>
-        [ProtoMember(9)]
+        [ProtoMember(6)]
         public ChatType ChatType
         {
             get;
@@ -65,19 +75,14 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 班级ID
         /// </summary>
-        [ProtoMember(11)]
+        [ProtoMember(7)]
         public int ClassID { get; set; }
 
         /// <summary>
         /// 形象ID
         /// </summary>
-        [ProtoMember(12)]
+        [ProtoMember(8)]
         public int LooksId { get; set; }
 
-        /// <summary>
-        /// 是否是拉选票
-        /// </summary>
-        [ProtoMember(13)]
-        public bool IsCanvass { get; set; }
     }
 }

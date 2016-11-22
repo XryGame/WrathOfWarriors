@@ -74,6 +74,7 @@ namespace GameServer.CsScript.Action
                 LooksId = ContextUser.LooksId,
                 UserLv = ContextUser.UserLv,
                 Diamond = ContextUser.DiamondNum,
+                BuyDiamond = ContextUser.BuyDiamond,
                 BaseExp = ContextUser.BaseExp,
                 FightExp = ContextUser.FightExp,
                 Vit = ContextUser.Vit,
@@ -238,8 +239,31 @@ namespace GameServer.CsScript.Action
                 }
             }
 
-            receipt.AditionJobTitle = ContextUser.AditionJobTitle;
-            receipt.IsHaveJobTitle = ContextUser.IsHaveJobTitle;
+            if (ContextUser.AditionJobTitle != JobTitleType.No)
+            {
+                receipt.JobTitleAddValue = ContextUser.JobTitleAdditionValue();
+            }
+            //receipt.AditionJobTitle = ContextUser.AditionJobTitle;
+            //receipt.IsHaveJobTitle = ContextUser.IsHaveJobTitle;
+            var occupycache = new ShareCacheStruct<OccupyDataCache>();
+            for (SceneType i = SceneType.Piazza; i <= SceneType.MusicHall; ++i)
+            {
+                var os = occupycache.FindKey(i);
+                if (os == null)
+                    continue;
+
+                if (ContextUser.ClassData.ClassID != 0)
+                {
+                    var classdata = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
+                    if (classdata != null)
+                    {
+                        if (classdata.MemberList.Find(t => (t == os.UserId)) == os.UserId)
+                        {
+                            receipt.OccupyAddList.Add(i);
+                        }
+                    }
+                }
+            }
 
             receipt.DailyQuestData.ID = ContextUser.DailyQuestData.ID;
             receipt.DailyQuestData.IsFinish = ContextUser.DailyQuestData.IsFinish;
@@ -320,8 +344,9 @@ namespace GameServer.CsScript.Action
                 receipt.IsCanReceiveFirstPay = true;
             }
 
-            receipt.VipLv = userpay.ConvertPayVipLevel();
-            receipt.PayMoney = userpay.PayMoney;
+            ContextUser.VipLv = userpay.ConvertPayVipLevel();
+            receipt.VipLv = ContextUser.VipLv;
+            //receipt.PayMoney = userpay.PayMoney;
 
             receipt.WeekCardDays = userpay.WeekCardDays;
             receipt.MonthCardDays = userpay.MonthCardDays;

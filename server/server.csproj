@@ -221,6 +221,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPCampaignsData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCampaignsUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPChallengeClassMonitorData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPChangeNickNameData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPChatData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPChatListData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPClassData.cs" />
@@ -334,6 +335,7 @@
     <Compile Include="Script\Model\Enum\AwardType.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />
+    <Compile Include="Script\Model\Enum\ChatChildType.cs" />
     <Compile Include="Script\Model\Enum\ChatType.cs" />
     <Compile Include="Script\Model\Enum\ColorType.cs" />
     <Compile Include="Script\Model\Enum\CombatReqRivalResult.cs" />

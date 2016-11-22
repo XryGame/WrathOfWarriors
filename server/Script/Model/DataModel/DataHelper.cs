@@ -11,13 +11,21 @@ namespace GameServer.Script.Model.DataModel
         static public List<Config_SubjectExp> StudyExplist;
         static public List<Config_SubjectExp> ExerciseExplist;
         /// <summary>
-        /// 开启宝箱一次所需钻石
+        /// 开启道具宝箱一次所需钻石
         /// </summary>
-        static public int OpenBoxOnceNeedDiamond;
+        static public int OpenItemBoxOnceNeedDiamond;
         /// <summary>
-        /// 宝箱10连抽所需钻石
+        /// 道具宝箱10连抽所需钻石
         /// </summary>
-        static public int OpenBoxConsecutiveNeedDiamond;
+        static public int OpenItemBoxConsecutiveNeedDiamond;
+        /// <summary>
+        /// 开启技能宝箱一次所需钻石
+        /// </summary>
+        static public int OpenSkillBoxOnceNeedDiamond;
+        /// <summary>
+        /// 道技能宝箱10连抽所需钻石
+        /// </summary>
+        static public int OpenSkillBoxConsecutiveNeedDiamond;
         /// <summary>
         /// 名人榜日志最大数量
         /// </summary>
@@ -84,8 +92,10 @@ namespace GameServer.Script.Model.DataModel
             StudyExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Study));
             ExerciseExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Exercise));
 
-            OpenBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenBoxDiamond");
-            OpenBoxConsecutiveNeedDiamond = OpenBoxOnceNeedDiamond * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount");
+            OpenItemBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenItemBoxDiamond");
+            OpenItemBoxConsecutiveNeedDiamond = OpenItemBoxOnceNeedDiamond * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount");
+            OpenSkillBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenSkillBoxDiamond");
+            OpenSkillBoxConsecutiveNeedDiamond = OpenSkillBoxOnceNeedDiamond * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount");
             CombatLogCountMax = ConfigEnvSet.GetInt("User.CombatLogCountMax");
             FriendCountMax = ConfigEnvSet.GetInt("User.FriendCountMax");
             FriendApplyCountMax = ConfigEnvSet.GetInt("User.FriendApplyCountMax");

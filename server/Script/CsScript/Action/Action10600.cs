@@ -12,11 +12,11 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 10500_购买体力
+    /// 10600_改名
     /// </summary>
     public class Action10600 : BaseAction
     {
-        private JPBuyData receipt;
+        private JPChangeNickNameData receipt;
         private string newName;
 
         public Action10600(ActionGetter actionGetter)
@@ -42,8 +42,8 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPBuyData();
-            receipt.Result = EventStatus.Good;
+            receipt = new JPChangeNickNameData();
+            
 
             int needDiamond = ConfigEnvSet.GetInt("System.ChangeNicknameNeedDiamond");
             if (ContextUser.DiamondNum < needDiamond)
@@ -63,10 +63,11 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
+            receipt.Result = EventStatus.Good;
             ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
             ContextUser.NickName = newName;
             receipt.CurrDiamond = ContextUser.DiamondNum;
-
+            receipt.NewNickName = newName;
             return true;
         }
     }

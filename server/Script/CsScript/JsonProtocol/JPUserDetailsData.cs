@@ -1,5 +1,6 @@
 ﻿using GameServer.Script.Model.Config;
 using GameServer.Script.Model.Enum;
+using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
 
 namespace GameServer.CsScript.JsonProtocol
@@ -15,6 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
             StudyData = new JPStudyData();
             ExerciseData = new JPExerciseData();
             EventAwardData = new JPEventAwardData();
+            OccupyAddList = new List<SceneType>();
         }
         public int UserId { get; set; }
 
@@ -25,6 +27,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int UserLv { get; set; }
 
         public int Diamond { get; set; }
+
+        public int BuyDiamond { get; set; }
 
         public int BaseExp { get; set; }
 
@@ -72,9 +76,15 @@ namespace GameServer.CsScript.JsonProtocol
 
         public JPQueryClassMonitorData ClassMonitorData { get; set; }
 
-        public JobTitleType AditionJobTitle { get; set; }
+        public int JobTitleAddValue { get; set; }
 
-        public bool IsHaveJobTitle { get; set; }
+        public List<SceneType> OccupyAddList { get; set; }
+
+        //public JobTitleType AditionJobTitle { get; set; }
+
+        //public bool IsHaveJobTitle { get; set; }
+
+        //public SceneType OccupySceneType { get; set; }
 
         public JPDailyQuestData DailyQuestData { get; set; }
 
@@ -98,7 +108,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public bool IsCanReceiveFirstPay { get; set; }
 
-        public int PayMoney { get; set; }
+        //public int PayMoney { get; set; }
 
         public int WeekCardDays { get; set; }
 

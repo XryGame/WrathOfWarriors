@@ -87,7 +87,10 @@ namespace GameServer.CsScript.Action
                             return true;
                         }
 
-                        int addvalue = ContextUser.AdditionBaseExpValue((SubjectID)ContextUser.StudyTaskData.SubjectID, ContextUser.StudyTaskData.Count);
+                        int addvalue = ContextUser.AdditionBaseExpValue(
+                            ContextUser.StudyTaskData.SubjectID, 
+                            ContextUser.StudyTaskData.Count,
+                            ContextUser.StudyTaskData.SceneId);
 
                         receipt = new JPReceiveTaskAwardData()
                         {

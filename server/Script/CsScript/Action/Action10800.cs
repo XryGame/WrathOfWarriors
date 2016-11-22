@@ -66,7 +66,7 @@ namespace GameServer.CsScript.Action
             {
                 string context = string.Format("{0}{1} 正在参加 {2} 的竞选，支持一下吧！", classdata.Name, ContextUser.NickName, fdnow.Title);
                 var chatService = new TryXChatService();
-                chatService.SystemSend(ChatType.System, context, true);
+                chatService.SystemSend(ChatType.System, context, ChatChildType.Canvass);
                 PushMessageHelper.SendSystemChatToOnlineUser();
             }
             

@@ -483,6 +483,26 @@ namespace GameServer.Script.Model.DataModel
                         fd.LooksId = votemax.LooksId;
 
                         electionfd = fd;
+
+                        GameUser winuser = FindUser(votemax.UserId);
+                        if (winuser != null)
+                        {
+                            winuser.AditionJobTitle = fd.TypeId;
+                            winuser.IsHaveJobTitle = true;
+                        }
+                            
+                        var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(votemax.ClassId);
+                        if (classdata != null)
+                        {
+                            foreach (int id in classdata.MemberList)
+                            {
+                                GameUser mem = FindUser(id);
+                                if (mem == null)
+                                    continue;
+                                if (mem.AditionJobTitle == JobTitleType.No)
+                                    mem.AditionJobTitle = fd.TypeId;
+                            }
+                        }
                     }
                 }
             }
@@ -541,8 +561,10 @@ namespace GameServer.Script.Model.DataModel
                             GameUser mem = FindUser(id);
                             if (mem == null)
                                 continue;
-                            mem.AditionJobTitle = JobTitleType.No;
-                            mem.IsHaveJobTitle = false;
+                            if (mem.AditionJobTitle != JobTitleType.No)
+                                mem.AditionJobTitle = JobTitleType.No;
+                            if (mem.IsHaveJobTitle != false)
+                                mem.IsHaveJobTitle = false;
                         }
                     }
                 }
@@ -796,6 +818,10 @@ namespace GameServer.Script.Model.DataModel
                 {
                     string context = string.Format("恭喜玩家 {0} 获得竞技道具【{1}】 ！", user.NickName, item.Name);
                     PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                    var chatService = new TryXChatService();
+                    chatService.SystemSend(ChatType.System, context);
+                    PushMessageHelper.SendSystemChatToOnlineUser();
                 }
             }
 

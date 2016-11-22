@@ -8,6 +8,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public ChatType Type { get; set; }
 
+        public ChatChildType ChildType { get; set; }
+
         public string Message { get; set; }
 
         public int UserId { get; set; }
@@ -20,6 +22,6 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int LooksId { get; set; }
 
-        public bool IsCanvass { get; set; }
+        
     }
 }

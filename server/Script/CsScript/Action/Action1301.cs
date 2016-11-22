@@ -57,28 +57,28 @@ namespace GameServer.CsScript.Action
 
             int count = openmode.ToInt();
             int needdiamond = 0;
-            switch (openmode)
-            {
-                case OpenBoxMode.Once:
-                    needdiamond = DataHelper.OpenBoxOnceNeedDiamond;
-                    break;
-                case OpenBoxMode.Consecutive:
-                    needdiamond = DataHelper.OpenBoxConsecutiveNeedDiamond;
-                    break;
-            }
-            if (ContextUser.DiamondNum < needdiamond)
-            {
-                receipt.Result = OpenBoxResult.NoDiamond;
-                return true;
-            }
-
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needdiamond);
 
             
             switch (opentype)
             {
                 case OpenBoxType.Item:
                     {
+                        switch (openmode)
+                        {
+                            case OpenBoxMode.Once:
+                                needdiamond = DataHelper.OpenItemBoxOnceNeedDiamond;
+                                break;
+                            case OpenBoxMode.Consecutive:
+                                needdiamond = DataHelper.OpenItemBoxConsecutiveNeedDiamond;
+                                break;
+                        }
+                        if (ContextUser.DiamondNum < needdiamond)
+                        {
+                            receipt.Result = OpenBoxResult.NoDiamond;
+                            return true;
+                        }
+                        ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needdiamond);
+
                         receipt.IDList = ContextUser.RandItem(count);
                         if (receipt.IDList.Count > 0)
                         {
@@ -94,6 +94,22 @@ namespace GameServer.CsScript.Action
                     break;
                 case OpenBoxType.Skill:
                     {
+                        switch (openmode)
+                        {
+                            case OpenBoxMode.Once:
+                                needdiamond = DataHelper.OpenSkillBoxOnceNeedDiamond;
+                                break;
+                            case OpenBoxMode.Consecutive:
+                                needdiamond = DataHelper.OpenSkillBoxConsecutiveNeedDiamond;
+                                break;
+                        }
+                        if (ContextUser.DiamondNum < needdiamond)
+                        {
+                            receipt.Result = OpenBoxResult.NoDiamond;
+                            return true;
+                        }
+                        ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needdiamond);
+
                         receipt.IDList = ContextUser.RandSkillBook(count);
                         if (receipt.IDList.Count > 0)
                         {
