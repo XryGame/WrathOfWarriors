@@ -12,15 +12,15 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 11000_兑换CDK
+    /// 10700_领取累充
     /// </summary>
-    public class Action11000 : BaseAction
+    public class Action10700 : BaseAction
     {
-        private JPRequestCdKeyData receipt;
+        private JPRequestAccumulatePay receipt;
         private Random random = new Random();
-        private string _CDKey;
-        public Action11000(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action11000, actionGetter)
+        private int receiveId;
+        public Action10700(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action10700, actionGetter)
         {
 
         }
@@ -32,7 +32,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetString("CDKey", ref _CDKey))
+            if (httpGet.GetInt("ReceiveId", ref receiveId))
             {
                 return true;
             }
@@ -41,32 +41,28 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestCdKeyData();
-            receipt.Result = ReceiveCdKeyResult.OK;
+            receipt = new JPRequestAccumulatePay();
+            receipt.ReceiveId = receiveId;
+            receipt.Result = ReceiveAccumulatePayResult.Ok;
 
-
-            var acc = new ShareCacheStruct<Config_CdKey>().FindKey(_CDKey);
+            if (ContextUser.AccumulatePayList.Find(t => (t == receiveId)) != 0)
+            {
+                receipt.Result = ReceiveAccumulatePayResult.Received;
+                return true;
+            }
+            var acc = new ShareCacheStruct<Config_AccumulatePay>().FindKey(receiveId);
             if (acc == null)
             {
-                receipt.Result = ReceiveCdKeyResult.Invalid;
+                return false;
+            }
+           
+            if (ContextUser.BuyDiamond < acc.Time)
+            {
+                receipt.Result = ReceiveAccumulatePayResult.NoDiamond;
                 return true;
             }
-            var cdkscache = new ShareCacheStruct<CDKeyCache>();
-            if (cdkscache.FindKey(_CDKey) != null)
-            {
-                receipt.Result = ReceiveCdKeyResult.Received;
-                return true;
-            }
 
-            CDKeyCache cdk = new CDKeyCache()
-            {
-                CDKey = _CDKey,
-                UsedTime = DateTime.Now
-            };
-
-            cdkscache.Add(cdk);
-            cdkscache.Update();
-
+            ContextUser.AccumulatePayList.Add(receiveId);
             int randcount = 0;
             List<int> itemlist = new List<int>();
             int diamond = 0;
@@ -114,6 +110,7 @@ namespace GameServer.CsScript.Action
             {
                 UserHelper.GiveAwayDiamond(ContextUser.UserID, diamond);
                 receipt.AwardDiamondNum = diamond;
+                
             }
             receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.ItemList = ContextUser.ItemDataList;

@@ -16,7 +16,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action11000 : BaseAction
     {
-        private JPRequestCdKeyData receipt;
+        private JPRequestSFOData receipt;
         private Random random = new Random();
         private string _CDKey;
         public Action11000(ActionGetter actionGetter)
@@ -41,20 +41,20 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestCdKeyData();
-            receipt.Result = ReceiveCdKeyResult.OK;
+            receipt = new JPRequestSFOData();
+            receipt.Result = EventStatus.Good;
 
 
             var acc = new ShareCacheStruct<Config_CdKey>().FindKey(_CDKey);
             if (acc == null)
             {
-                receipt.Result = ReceiveCdKeyResult.Invalid;
+                receipt.Result = EventStatus.Bad;
                 return true;
             }
             var cdkscache = new ShareCacheStruct<CDKeyCache>();
             if (cdkscache.FindKey(_CDKey) != null)
             {
-                receipt.Result = ReceiveCdKeyResult.Received;
+                receipt.Result = EventStatus.Bad;
                 return true;
             }
 

@@ -273,7 +273,6 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestAddFriendData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCampaignsListData.cs" />
-    <Compile Include="Script\CsScript\JsonProtocol\JPRequestCdKeyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestDeleteMailData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestFightData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
@@ -360,7 +359,6 @@
     <Compile Include="Script\Model\Enum\OpenBoxType.cs" />
     <Compile Include="Script\Model\Enum\RankType.cs" />
     <Compile Include="Script\Model\Enum\ReceiveAccumulatePayResult.cs" />
-    <Compile Include="Script\Model\Enum\ReceiveCdKeyResult.cs" />
     <Compile Include="Script\Model\Enum\ReceiveVitStatus.cs" />
     <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />
     <Compile Include="Script\Model\Enum\RequestCanvassResult.cs" />

@@ -422,13 +422,13 @@ namespace GameServer.CsScript.Action
                 switch (ranktype)
                 {
                     case RankType.Combat:
-                        context = string.Format("名人榜排名第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
+                        context = string.Format("名人榜排名第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                         break;
                     case RankType.Level:
-                        context = string.Format("排行榜排名第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
+                        context = string.Format("排行榜排名第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                         break;
                     //case RankType.FightValue:
-                    //    context = string.Format("战斗力排行第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
+                    //    context = string.Format("战斗力排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                     //    break;
                 }
 
