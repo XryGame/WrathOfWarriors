@@ -57,7 +57,7 @@ namespace GameServer.Script.Model.DataModel
             MailBox = new CacheList<MailData>();
             ChallengeRoleList = new CacheList<int>();
             AccumulatePayList = new CacheList<int>();
-            OccupyAddList = new List<SceneType>();
+            OccupyAddList = new CacheList<SceneType>();
         }
         public GameUser(int userid)
         : this()
@@ -694,7 +694,7 @@ namespace GameServer.Script.Model.DataModel
 
 
         /// <summary>
-        /// 占领挑战过的场景
+        /// 成就
         /// </summary>
         private CacheList<AchievementData> _AchievementList;
         [ProtoMember(39)]
@@ -965,6 +965,40 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// vip礼包领取进度
+        /// </summary>
+        private int _VipGiftProgress;
+        [ProtoMember(54)]
+        [EntityField("VipGiftProgress")]
+        public int VipGiftProgress
+        {
+            get
+            {
+                return _VipGiftProgress;
+            }
+            set
+            {
+                SetChange("VipGiftProgress", value);
+            }
+        }
+        /// <summary>
+        /// 一键拉票日期
+        /// </summary>
+        private DateTime _CanvassDate;
+        [ProtoMember(55)]
+        [EntityField("CanvassDate")]
+        public DateTime CanvassDate
+        {
+            get
+            {
+                return _CanvassDate;
+            }
+            set
+            {
+                SetChange("CanvassDate", value);
+            }
+        }
 
         protected override int GetIdentityId()
         {
@@ -1098,7 +1132,7 @@ namespace GameServer.Script.Model.DataModel
         /// 占领加成的场景
         /// </summary>
         [ProtoMember(74)]
-        public List<SceneType> OccupyAddList
+        public CacheList<SceneType> OccupyAddList
         {
             get;
             set;
@@ -1217,6 +1251,8 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyVitCount": return BuyVitCount;
                     case "ReceiveVitStatus": return ReceiveVitStatus;
                     case "AccumulatePayList": return AccumulatePayList;
+                    case "VipGiftProgress": return VipGiftProgress;
+                    case "CanvassDate": return CanvassDate;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1384,6 +1420,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "AccumulatePayList":
                         _AccumulatePayList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "VipGiftProgress":
+                        _VipGiftProgress = value.ToInt();
+                        break;
+                    case "CanvassDate":
+                        _CanvassDate = value.ToDateTime();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
@@ -1596,6 +1638,11 @@ namespace GameServer.Script.Model.DataModel
         /// <returns></returns>
         public bool CheckLevelUp()
         {
+            var listlv = new ShareCacheStruct<Config_RoleGrade>().FindAll();
+            if (UserLv >= listlv.Count)
+            {
+                return true;
+            }
             short currlv = ConvertExp2Level();
             if (currlv > UserLv)
             {
@@ -1651,116 +1698,116 @@ namespace GameServer.Script.Model.DataModel
                 throw new Exception("AdditionBaseExpValue:" + sid + " is not exist");
             
             int predictaddexpv = AdditionExpValue(subjectExp.UnitExp * count, sceneId);
-            int addvalue = Math.Min(subjectExp.UnitExp * count, maxaddv);
+            int addvalue = Math.Min(predictaddexpv, maxaddv);
             switch (sid)
             {
                 case SubjectID.id1:
-                    ExpData.id1 = MathUtils.Addition(ExpData.id1, predictaddexpv, ExpData.id1 + addvalue);
+                    ExpData.id1 = MathUtils.Addition(ExpData.id1, addvalue);
                     break;
                 case SubjectID.id2:
-                    ExpData.id2 = MathUtils.Addition(ExpData.id2, predictaddexpv, ExpData.id2 + addvalue);
+                    ExpData.id2 = MathUtils.Addition(ExpData.id2, addvalue);
                     break;
                 case SubjectID.id3:
-                    ExpData.id3 = MathUtils.Addition(ExpData.id3, predictaddexpv, ExpData.id3 + addvalue);
+                    ExpData.id3 = MathUtils.Addition(ExpData.id3, addvalue);
                     break;
                 case SubjectID.id4:
-                    ExpData.id4 = MathUtils.Addition(ExpData.id4, predictaddexpv, ExpData.id4 + addvalue);
+                    ExpData.id4 = MathUtils.Addition(ExpData.id4, addvalue);
                     break;
                 case SubjectID.id5:
-                    ExpData.id5 = MathUtils.Addition(ExpData.id5, predictaddexpv, ExpData.id5 + addvalue);
+                    ExpData.id5 = MathUtils.Addition(ExpData.id5, addvalue);
                     break;
                 case SubjectID.id6:
-                    ExpData.id6 = MathUtils.Addition(ExpData.id6, predictaddexpv, ExpData.id3 + addvalue);
+                    ExpData.id6 = MathUtils.Addition(ExpData.id6, addvalue);
                     break;
                 case SubjectID.id7:
-                    ExpData.id7 = MathUtils.Addition(ExpData.id7, predictaddexpv, ExpData.id7 + addvalue);
+                    ExpData.id7 = MathUtils.Addition(ExpData.id7, addvalue);
                     break;
                 case SubjectID.id8:
-                    ExpData.id8 = MathUtils.Addition(ExpData.id8, predictaddexpv, ExpData.id8 + addvalue);
+                    ExpData.id8 = MathUtils.Addition(ExpData.id8, addvalue);
                     break;
                 case SubjectID.id9:
-                    ExpData.id9 = MathUtils.Addition(ExpData.id9, predictaddexpv, ExpData.id9 + addvalue);
+                    ExpData.id9 = MathUtils.Addition(ExpData.id9, addvalue);
                     break;
                 case SubjectID.id10:
-                    ExpData.id10 = MathUtils.Addition(ExpData.id10, predictaddexpv, ExpData.id10 + addvalue);
+                    ExpData.id10 = MathUtils.Addition(ExpData.id10, addvalue);
                     break;
                 case SubjectID.id11:
-                    ExpData.id11 = MathUtils.Addition(ExpData.id11, predictaddexpv, ExpData.id11 + addvalue);
+                    ExpData.id11 = MathUtils.Addition(ExpData.id11, addvalue);
                     break;
                 case SubjectID.id12:
-                    ExpData.id12 = MathUtils.Addition(ExpData.id12, predictaddexpv, ExpData.id12 + addvalue);
+                    ExpData.id12 = MathUtils.Addition(ExpData.id12, addvalue);
                     break;
                 case SubjectID.id13:
-                    ExpData.id13 = MathUtils.Addition(ExpData.id13, predictaddexpv, ExpData.id13 + addvalue);
+                    ExpData.id13 = MathUtils.Addition(ExpData.id13, addvalue);
                     break;
                 case SubjectID.id14:
-                    ExpData.id14 = MathUtils.Addition(ExpData.id14, predictaddexpv, ExpData.id14 + addvalue);
+                    ExpData.id14 = MathUtils.Addition(ExpData.id14, addvalue);
                     break;
                 case SubjectID.id15:
-                    ExpData.id15 = MathUtils.Addition(ExpData.id15, predictaddexpv, ExpData.id15 + addvalue);
+                    ExpData.id15 = MathUtils.Addition(ExpData.id15, addvalue);
                     break;
                 case SubjectID.id16:
-                    ExpData.id16 = MathUtils.Addition(ExpData.id16, predictaddexpv, ExpData.id16 + addvalue);
+                    ExpData.id16 = MathUtils.Addition(ExpData.id16, addvalue);
                     break;
                 case SubjectID.id17:
-                    ExpData.id17 = MathUtils.Addition(ExpData.id17, predictaddexpv, ExpData.id17 + addvalue);
+                    ExpData.id17 = MathUtils.Addition(ExpData.id17, addvalue);
                     break;
                 case SubjectID.id18:
-                    ExpData.id18 = MathUtils.Addition(ExpData.id18, predictaddexpv, ExpData.id18 + addvalue);
+                    ExpData.id18 = MathUtils.Addition(ExpData.id18, addvalue);
                     break;
                 case SubjectID.id19:
-                    ExpData.id19 = MathUtils.Addition(ExpData.id19, predictaddexpv, ExpData.id19 + addvalue);
+                    ExpData.id19 = MathUtils.Addition(ExpData.id19, addvalue);
                     break;
                 case SubjectID.id20:
-                    ExpData.id20 = MathUtils.Addition(ExpData.id20, predictaddexpv, ExpData.id20 + addvalue);
+                    ExpData.id20 = MathUtils.Addition(ExpData.id20, addvalue);
                     break;
                 case SubjectID.id21:
-                    ExpData.id21 = MathUtils.Addition(ExpData.id21, predictaddexpv, ExpData.id21 + addvalue);
+                    ExpData.id21 = MathUtils.Addition(ExpData.id21, addvalue);
                     break;
                 case SubjectID.id22:
-                    ExpData.id22 = MathUtils.Addition(ExpData.id22, predictaddexpv, ExpData.id22 + addvalue);
+                    ExpData.id22 = MathUtils.Addition(ExpData.id22, addvalue);
                     break;
                 case SubjectID.id23:
-                    ExpData.id23 = MathUtils.Addition(ExpData.id23, predictaddexpv, ExpData.id23 + addvalue);
+                    ExpData.id23 = MathUtils.Addition(ExpData.id23, addvalue);
                     break;
                 case SubjectID.id24:
-                    ExpData.id24 = MathUtils.Addition(ExpData.id24, predictaddexpv, ExpData.id24 + addvalue);
+                    ExpData.id24 = MathUtils.Addition(ExpData.id24, addvalue);
                     break;
                 case SubjectID.id25:
-                    ExpData.id25 = MathUtils.Addition(ExpData.id25, predictaddexpv, ExpData.id25 + addvalue);
+                    ExpData.id25 = MathUtils.Addition(ExpData.id25, addvalue);
                     break;
                 case SubjectID.id26:
-                    ExpData.id26 = MathUtils.Addition(ExpData.id26, predictaddexpv, ExpData.id26 + addvalue);
+                    ExpData.id26 = MathUtils.Addition(ExpData.id26, addvalue);
                     break;
                 case SubjectID.id27:
-                    ExpData.id27 = MathUtils.Addition(ExpData.id27, predictaddexpv, ExpData.id27 + addvalue);
+                    ExpData.id27 = MathUtils.Addition(ExpData.id27, addvalue);
                     break;
                 case SubjectID.id28:
-                    ExpData.id28 = MathUtils.Addition(ExpData.id28, predictaddexpv, ExpData.id28 + addvalue);
+                    ExpData.id28 = MathUtils.Addition(ExpData.id28, addvalue);
                     break;
                 case SubjectID.id29:
-                    ExpData.id29 = MathUtils.Addition(ExpData.id29, predictaddexpv, ExpData.id29 + addvalue);
+                    ExpData.id29 = MathUtils.Addition(ExpData.id29, addvalue);
                     break;
                 case SubjectID.id30:
-                    ExpData.id30 = MathUtils.Addition(ExpData.id30, predictaddexpv, ExpData.id30 + addvalue);
+                    ExpData.id30 = MathUtils.Addition(ExpData.id30, addvalue);
                     break;
                 case SubjectID.id31:
-                    ExpData.id31 = MathUtils.Addition(ExpData.id31, predictaddexpv, ExpData.id31 + addvalue);
+                    ExpData.id31 = MathUtils.Addition(ExpData.id31, addvalue);
                     break;
                 case SubjectID.id32:
-                    ExpData.id32 = MathUtils.Addition(ExpData.id32, predictaddexpv, ExpData.id32 + addvalue);
+                    ExpData.id32 = MathUtils.Addition(ExpData.id32, addvalue);
                     break;
                 case SubjectID.id33:
-                    ExpData.id33 = MathUtils.Addition(ExpData.id33, predictaddexpv, ExpData.id33 + addvalue);
+                    ExpData.id33 = MathUtils.Addition(ExpData.id33, addvalue);
                     break;
                 case SubjectID.id34:
-                    ExpData.id34 = MathUtils.Addition(ExpData.id34, predictaddexpv, ExpData.id34 + addvalue);
+                    ExpData.id34 = MathUtils.Addition(ExpData.id34, addvalue);
                     break;
                 case SubjectID.id35:
-                    ExpData.id35 = MathUtils.Addition(ExpData.id35, predictaddexpv, ExpData.id35 + addvalue);
+                    ExpData.id35 = MathUtils.Addition(ExpData.id35, addvalue);
                     break;
                 case SubjectID.id36:
-                    ExpData.id36 = MathUtils.Addition(ExpData.id36, predictaddexpv, ExpData.id36 + addvalue);
+                    ExpData.id36 = MathUtils.Addition(ExpData.id36, addvalue);
                     break;
                 default: throw new ArgumentException(string.Format("Config_SubjectExp id[{0}] isn't exist.", sid));
             }
@@ -1806,7 +1853,7 @@ namespace GameServer.Script.Model.DataModel
 
             int addvalue = Math.Min(expvalue, maxaddv);
 
-            ExpData.Ext = MathUtils.Addition(ExpData.id1, expvalue, ExpData.id1 + addvalue);
+            ExpData.Ext = MathUtils.Addition(ExpData.id1, addvalue);
             
             BaseExp = MathUtils.Addition(BaseExp, addvalue, int.MaxValue);
 
@@ -1845,7 +1892,10 @@ namespace GameServer.Script.Model.DataModel
             ExpData = data;
 
             RefreshFightValue();
-            
+
+            Vit = Math.Max(Vit, DataHelper.InitVit);
+
+            UserStage = getSubjectStage();
 
             if (Callback != null && !IsRefreshing)
             {
@@ -1886,13 +1936,22 @@ namespace GameServer.Script.Model.DataModel
                 return list;
             }
             Random random = new Random();
-            List<Config_Item> itemslist = new List<Config_Item>();
+            //List<Config_Item> itemslist = new List<Config_Item>();
+            List<Config_Item> itemslist = new ShareCacheStruct<Config_Item>().FindAll(
+                        t => (t.Type == ItemType.Item) && t.Map == 0
+                );
             foreach (Config_Scene sc in scenes)
             {
                 List<Config_Item> items = new ShareCacheStruct<Config_Item>().FindAll(
-                    t => (t.Type == ItemType.Item) && t.Map == (int)sc.ID
-                    );
-                itemslist.AddRange(items);
+                                        t => (t.Type == ItemType.Item) && t.Map == (int)sc.ID
+                                );
+                for (int i = 0; i < items.Count; ++i)
+                {
+                    if (itemslist.Find(t => (t.ID == items[i].ID)) == null)
+                    {
+                        itemslist.Add(items[i]);
+                    }
+                }
             }
 
             // 如果拥有道具达到最高等级，排除抽奖
@@ -1944,16 +2003,27 @@ namespace GameServer.Script.Model.DataModel
             foreach (Config_Scene sc in scenes)
             {
                 List<Config_Item> items = new ShareCacheStruct<Config_Item>().FindAll(t => (t.Type == ItemType.Skill));
-                skilllist.AddRange(items);
+                for (int i = 0; i < items.Count; ++i)
+                {
+                    if (skilllist.Find(t => (t.ID == items[i].ID)) == null)
+                    {
+                        skilllist.Add(items[i]);
+                    }
+                }
+                
             }
 
             // 如果拥有技能达到最高等级，排除抽奖
             foreach (var v in SkillDataList)
             {
-                var rskill = skilllist.Find(t => (t.ID == v.ID));
-                if (rskill != null && v.Lv >= GetSkillLvMax(v.ID))
+                if (v.Lv >= GetSkillLvMax(v.ID))
                 {
-                    skilllist.Remove(rskill);
+                    var skillgrade = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.SkillID == v.ID));
+                    var rskill = skilllist.Find(t => (t.ID == skillgrade.Condition));
+                    if (rskill != null)
+                    {
+                        skilllist.Remove(rskill);
+                    }
                 }
             }
 
@@ -2015,7 +2085,7 @@ namespace GameServer.Script.Model.DataModel
         /// 用户获得道具
         /// </summary>  
         /// <returns></returns>  
-        public void UserAddItem(int id, int num)
+        public bool UserAddItem(int id, int num)
         {
             ItemData item = ItemDataList.Find(t => (t.ID == id));
             if (item == null)
@@ -2029,18 +2099,24 @@ namespace GameServer.Script.Model.DataModel
             {
                 item.Num = MathUtils.Addition(item.Num, num);
             }
+            else
+            {
+                return false;
+            }
 
             if (id >= 10001 && id <= 10006 && Callback != null && !IsRefreshing)
             {
                 Callback.BeginInvoke("GetCombatItem", UserID, 0, id, null, this);
             }
+
+            return true;
         }
 
         /// <summary>  
         /// 用户获得技能书
         /// </summary>  
         /// <returns></returns>  
-        public void UserAddSkill(int id, int ownnum)
+        public bool UserAddSkill(int id, int ownnum)
         {
             SkillData skill = SkillDataList.Find(t => (t.ID == id));
             bool isnew = false;
@@ -2054,12 +2130,15 @@ namespace GameServer.Script.Model.DataModel
                 isnew = true;
             }
 
+            if (skill.Lv >= GetSkillLvMax(skill.ID))
+                return false;
+
             var sgcache = new ShareCacheStruct<Config_SkillGrade>();
             Config_SkillGrade sg = sgcache.Find(t => (t.SkillID == id && t.SkillLv == skill.Lv));
             if (sg == null)
             {
                 new BaseLog().SaveLog(string.Format("SkillGrade table error SkillID={0}", id));
-                return;
+                return false;
             }
             if (isnew)
             {
@@ -2104,17 +2183,20 @@ namespace GameServer.Script.Model.DataModel
                     }
                 }
             }
+
+            return true;
         }
 
 
-        public void CheckAddSkillBook(int itemId, int num)
+        public bool CheckAddSkillBook(int itemId, int num)
         {
             ItemData itemdata = findItem(itemId);
             Config_SkillGrade sg = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.Condition == itemId));
             if (sg != null && itemdata != null)
             {
-                UserAddSkill(sg.SkillID, num);
+                return UserAddSkill(sg.SkillID, num);
             }
+            return false;
         }
 
         public int JobTitleAdditionValue()
@@ -2193,7 +2275,11 @@ namespace GameServer.Script.Model.DataModel
             }
             var sctcache = new ShareCacheStruct<Config_SubjectExp>();
             /// 如果是学前班阶段，按照小学阶段算
-            SubjectStage stage = UserStage == SubjectStage.PreschoolSchool ? SubjectStage.PrimarySchool : UserStage;
+            SubjectStage stage = getSubjectStage();
+            if (UserStage != stage)
+                UserStage = stage;
+            if (stage == SubjectStage.PreschoolSchool)
+                stage = SubjectStage.PrimarySchool;
             Attack = 0;
             Defense = 0;
             Hp = 0;
@@ -2307,7 +2393,7 @@ namespace GameServer.Script.Model.DataModel
             //    }
             //}
 
-            FightingValue = Attack * 5 + Defense * 5 + (Hp / 10);
+            FightingValue = Attack * 10 + Defense * 10 + Hp;
         }
 
         /// <summary>

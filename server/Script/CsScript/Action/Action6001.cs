@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
@@ -18,7 +19,7 @@ namespace GameServer.CsScript.Action
         private JPRequestOccupyData receipt;
 
         private SceneType scenetype;
-
+        private int mapid;
         public Action6001(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action6001, actionGetter)
         {
@@ -40,7 +41,8 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetEnum("SceneId", ref scenetype))
+            if (httpGet.GetEnum("SceneId", ref scenetype)
+                && httpGet.GetInt("MapId", ref mapid))
             {
                 return true;
             }
@@ -51,6 +53,13 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPRequestOccupyData();
             receipt.Result = RequestOccupyResult.Normal;
+
+            Config_SceneMap scenemap = new ShareCacheStruct<Config_SceneMap>().FindKey(mapid);
+            if (scenemap == null || ContextUser.UnlockSceneMapList.Find(t => (t == mapid)) == 0)
+            {
+                ErrorInfo = Language.Instance.RequestIDError;
+                return false;
+            }
 
             var occupycache = new ShareCacheStruct<OccupyDataCache>();
             var findocc = occupycache.FindKey(scenetype);
@@ -93,6 +102,26 @@ namespace GameServer.CsScript.Action
 
                 ContextUser.OccupySceneList.Add(scenetype);
                 receipt.OccupySceneList = ContextUser.OccupySceneList;
+
+                UserHelper.GiveAwayDiamond(ContextUser.UserID, DataHelper.OccupyAwardDiamond);
+
+                ClassDataCache classdata = new ShareCacheStruct<ClassDataCache>().FindKey(ContextUser.ClassData.ClassID);
+                if (classdata != null)
+                {
+                    //foreach (int id in classdata.MemberList)
+                    //{
+                    //    GameUser mem = UserHelper.FindUser(id);
+                    //    if (mem == null)
+                    //        continue;
+                    //    if (mem.OccupyAddList.Find(t => (t == scenetype)) != scenetype)
+                    //        mem.OccupyAddList.Add(scenetype);
+
+                    //}
+                    PushMessageHelper.ClassOccupyAddChangeNotification(ContextUser.ClassData.ClassID);
+                }
+
+                UserHelper.OccupySucceedNotification(findocc.SceneId);
+
                 return true;
             }
 
@@ -102,13 +131,14 @@ namespace GameServer.CsScript.Action
             GameUser dest = UserHelper.FindUser(findocc.UserId);
             if (dest == null)
                 return false;
-            Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(dest.UserLv);
-            if (rolegrade == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                return true;
-            }
+            //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(dest.UserLv);
+            //if (rolegrade == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+            //    return true;
+            //}
             ContextUser.UserStatus = UserStatus.Fighting;
+            ContextUser.SelectedSceneMapId = mapid;
 
             ContextUser.OccupySceneType = scenetype;
             ContextUser.OccupySceneList.Add(scenetype);
@@ -119,9 +149,9 @@ namespace GameServer.CsScript.Action
             receipt.RivalData.LooksId = dest.LooksId;
             receipt.RivalData.UserLv = dest.UserLv;
             receipt.RivalData.VipLv = dest.VipLv;
-            receipt.RivalData.Attack = rolegrade.Attack;
-            receipt.RivalData.Defense = rolegrade.Defense;
-            receipt.RivalData.HP = rolegrade.HP;
+            receipt.RivalData.Attack = dest.Attack;
+            receipt.RivalData.Defense = dest.Defense;
+            receipt.RivalData.HP = dest.Hp;
             var rankuser = UserHelper.FindCombatRankUser(dest.UserID);
             if (rankuser != null)
                 receipt.RivalData.RankId = rankuser.RankId;
@@ -139,6 +169,10 @@ namespace GameServer.CsScript.Action
             receipt.RivalData.ItemList = dest.ItemDataList;
             receipt.RivalData.SkillList = dest.SkillDataList;
             receipt.RivalData.SkillCarryList = dest.SkillCarryList;
+            if (dest.UnlockSceneMapList.Find(t => (t == ContextUser.SelectedSceneMapId)) != 0)
+            {
+                receipt.RivalData.IsUnlockSelectMap = true;
+            }
             return true;
         }
 

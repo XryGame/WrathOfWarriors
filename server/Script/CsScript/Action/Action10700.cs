@@ -45,7 +45,7 @@ namespace GameServer.CsScript.Action
             receipt.ReceiveId = receiveId;
             receipt.Result = ReceiveAccumulatePayResult.Ok;
 
-            if (ContextUser.AccumulatePayList.Find(t => (t == receiveId)) == receiveId)
+            if (ContextUser.AccumulatePayList.Find(t => (t == receiveId)) != 0)
             {
                 receipt.Result = ReceiveAccumulatePayResult.Received;
                 return true;
@@ -65,18 +65,23 @@ namespace GameServer.CsScript.Action
             ContextUser.AccumulatePayList.Add(receiveId);
             int randcount = 0;
             List<int> itemlist = new List<int>();
+            int diamond = 0;
             if (acc.AwardA == 1) randcount++;
             else if (acc.AwardA >= 10000) itemlist.Add(acc.AwardA);
+            else diamond += acc.AwardA;
             if (acc.AwardB == 1) randcount++;
             else if (acc.AwardB >= 10000) itemlist.Add(acc.AwardB);
+            else diamond += acc.AwardB;
             if (acc.AwardC == 1) randcount++;
             else if (acc.AwardC >= 10000) itemlist.Add(acc.AwardC);
+            else diamond += acc.AwardC;
             if (acc.AwardD == 1) randcount++;
             else if (acc.AwardD >= 10000) itemlist.Add(acc.AwardD);
+            else diamond += acc.AwardD;
 
             for (int i = 0; i < randcount; ++i)
             {
-                if (random.Next(1000) < 500)
+                if (random.Next(1000) < 750)
                 {// 道具
                     receipt.AwardItemList.AddRange(ContextUser.RandItem(1));
                 }
@@ -100,7 +105,14 @@ namespace GameServer.CsScript.Action
                     receipt.AwardItemList.Add(it);
                 }
             }
-            
+
+            if (diamond > 0)
+            {
+                UserHelper.GiveAwayDiamond(ContextUser.UserID, diamond);
+                receipt.AwardDiamondNum = diamond;
+                
+            }
+            receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.ItemList = ContextUser.ItemDataList;
             receipt.SkillList = ContextUser.SkillDataList;
 

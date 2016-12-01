@@ -30,5 +30,6 @@ namespace GameServer.CsScript.JsonProtocol
 
         public CacheList<int> SkillCarryList { get; set; }
 
+        public bool IsUnlockSelectMap { get; set; }
     }
 }

@@ -239,12 +239,13 @@ namespace GameServer.CsScript.Action
                 }
             }
 
-            if (ContextUser.AditionJobTitle != JobTitleType.No)
-            {
+            //if (ContextUser.AditionJobTitle != JobTitleType.No)
+            //{
                 receipt.JobTitleAddValue = ContextUser.JobTitleAdditionValue();
-            }
+            //}
             //receipt.AditionJobTitle = ContextUser.AditionJobTitle;
             //receipt.IsHaveJobTitle = ContextUser.IsHaveJobTitle;
+            ContextUser.OccupyAddList.Clear();
             var occupycache = new ShareCacheStruct<OccupyDataCache>();
             for (SceneType i = SceneType.Piazza; i <= SceneType.MusicHall; ++i)
             {
@@ -257,13 +258,14 @@ namespace GameServer.CsScript.Action
                     var classdata = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
                     if (classdata != null)
                     {
-                        if (classdata.MemberList.Find(t => (t == os.UserId)) == os.UserId)
+                        if (classdata.MemberList.Find(t => (t == os.UserId)) != 0)
                         {
-                            receipt.OccupyAddList.Add(i);
+                            ContextUser.OccupyAddList.Add(i);
                         }
                     }
                 }
             }
+            receipt.OccupyAddList = ContextUser.OccupyAddList;
 
             receipt.DailyQuestData.ID = ContextUser.DailyQuestData.ID;
             receipt.DailyQuestData.IsFinish = ContextUser.DailyQuestData.IsFinish;
@@ -300,7 +302,7 @@ namespace GameServer.CsScript.Action
             receipt.IsTodayLottery = ContextUser.IsTodayLottery;
             if (!ContextUser.IsTodayLottery && ContextUser.RandomLotteryId == 0)
             {
-                var lottery = UserHelper.RandomLottery(ContextUser.UserLv);
+                var lottery = UserHelper.RandomLottery(ContextUser.UserID, ContextUser.UserLv);
                 if (lottery != null)
                 {
                     ContextUser.RandomLotteryId = lottery.ID;
@@ -346,7 +348,7 @@ namespace GameServer.CsScript.Action
 
             ContextUser.VipLv = userpay.ConvertPayVipLevel();
             receipt.VipLv = ContextUser.VipLv;
-            //receipt.PayMoney = userpay.PayMoney;
+            receipt.PayMoney = userpay.PayMoney;
 
             receipt.WeekCardDays = userpay.WeekCardDays;
             receipt.MonthCardDays = userpay.MonthCardDays;
@@ -368,6 +370,8 @@ namespace GameServer.CsScript.Action
             {
                 receipt.CombatRankId = combatrank.RankId;
             }
+
+            receipt.VipGiftProgress = ContextUser.VipGiftProgress;
             return true;
         }
 
@@ -418,22 +422,40 @@ namespace GameServer.CsScript.Action
                 switch (ranktype)
                 {
                     case RankType.Combat:
-                        context = string.Format("名人榜排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
+                        context = string.Format("名人榜排名第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                         break;
                     case RankType.Level:
-                        context = string.Format("等级排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
+                        context = string.Format("排行榜排名第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
                         break;
-                    case RankType.FightValue:
-                        context = string.Format("战斗力排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
-                        break;
+                    //case RankType.FightValue:
+                    //    context = string.Format("战斗力排行第 {0} 名的 {1} 上线了", rankid, ContextUser.NickName);
+                    //    break;
                 }
 
-                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+                if (ContextUser.UserLv >= DataHelper.OpenRankSystemUserLevel)
+                {
+                    PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
 
-                var chatService = new TryXChatService();
-                chatService.SystemSend(ChatType.System, context);
-                PushMessageHelper.SendSystemChatToOnlineUser();
+                    var chatService = new TryXChatService();
+                    chatService.SystemSend(context);
+                    PushMessageHelper.SendSystemChatToOnlineUser();
+                }
+
             }
+
+            // 通知好友上线
+            foreach (FriendData fd in ContextUser.FriendsData.FriendsList)
+            {
+                GameSession session = GameSession.Get(fd.UserId);
+                if (session != null)
+                {
+                    PushMessageHelper.FriendOnlineNotification(session, ContextUser.UserID);
+                }
+            }
+            context = "欢迎进入创想学院！";
+            var chatServices = new TryXChatService();
+            chatServices.SystemSendWhisper(ContextUser, context);
+            PushMessageHelper.SendSystemChatToUser(Current);
 
             ContextUser.IsRefreshing = false;
 

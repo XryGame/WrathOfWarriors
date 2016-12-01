@@ -16,7 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
             StudyData = new JPStudyData();
             ExerciseData = new JPExerciseData();
             EventAwardData = new JPEventAwardData();
-            OccupyAddList = new List<SceneType>();
+            OccupyAddList = new CacheList<SceneType>();
         }
         public int UserId { get; set; }
 
@@ -78,7 +78,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int JobTitleAddValue { get; set; }
 
-        public List<SceneType> OccupyAddList { get; set; }
+        public CacheList<SceneType> OccupyAddList { get; set; }
 
         //public JobTitleType AditionJobTitle { get; set; }
 
@@ -108,7 +108,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public bool IsCanReceiveFirstPay { get; set; }
 
-        //public int PayMoney { get; set; }
+        public int PayMoney { get; set; }
 
         public int WeekCardDays { get; set; }
 
@@ -131,6 +131,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int CombatRankId { get; set; }
 
         public CacheList<int> AccumulatePayList { get; set; }
+
+        public int VipGiftProgress { get; set; }
 
     }
 }

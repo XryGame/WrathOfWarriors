@@ -35,6 +35,8 @@ namespace GameServer.CsScript.JsonProtocol
         public CacheList<ItemData> ItemList { get; set; }
 
         public List<SkillData> SkillList { get; set; }
-        
+
+        public bool IsUnlockSelectMap { get; set; }
+
     }
 }

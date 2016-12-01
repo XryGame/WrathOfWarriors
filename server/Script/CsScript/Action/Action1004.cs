@@ -104,7 +104,7 @@ namespace GameServer.CsScript.Action
                 //not user create it.
                 ucu = new UserCenterUser()
                 {
-                    UserId = (int)RedisConnectionPool.GetNextNo(typeof(UserCenterUser).FullName),
+                    UserId = 1000000 + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterUser).FullName),
                     PassportID = PassportId,
                     ServerId = ServerID,
                     AccessTime = DateTime.Now,

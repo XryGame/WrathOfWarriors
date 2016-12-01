@@ -42,17 +42,19 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            receipt = new JPLotteryData();
             if (ContextUser.IsTodayLottery || ContextUser.RandomLotteryId == 0)
-                return false;
+            {
+                receipt.Result = RequestLotteryResult.NoTimes;
+                return true;
+            }
 
             Config_Lottery lott = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
 
             if (lott == null)
                 return false;
 
-            ContextUser.IsTodayLottery = true;
-
-            receipt = new JPLotteryData();
+            
             receipt.Type = lott.Type;
             switch (lott.Type)
             {
@@ -67,11 +69,21 @@ namespace GameServer.CsScript.Action
                         Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(lott.Content);
                         if (item != null)
                         {
-                            ContextUser.UserAddItem(lott.Content, 1);
-
-                            if (item.Type == ItemType.Skill)
+                            if (item.Type == ItemType.Item)
                             {
-                                ContextUser.CheckAddSkillBook(lott.Content, 1);
+                                if (!ContextUser.UserAddItem(lott.Content, 1))
+                                {
+                                    receipt.Result = RequestLotteryResult.Full;
+                                    return true;
+                                }
+                            }
+                            else if (item.Type == ItemType.Skill)
+                            {
+                                if (!ContextUser.CheckAddSkillBook(lott.Content, 1))
+                                {
+                                    receipt.Result = RequestLotteryResult.Full;
+                                    return true;
+                                }
                             }
                             receipt.AwardItemId = lott.Content;
                             receipt.AwardNum = 1;
@@ -79,6 +91,9 @@ namespace GameServer.CsScript.Action
                     }
                     break;
             }
+
+            ContextUser.IsTodayLottery = true;
+            receipt.Result = RequestLotteryResult.OK;
             receipt.ItemList = ContextUser.ItemDataList;
             receipt.SkillList = ContextUser.SkillDataList;
 

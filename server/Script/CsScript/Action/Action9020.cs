@@ -89,7 +89,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case AwardType.RandItemSkillBook:
                     {
-                        if (random.Next(1000) < 500)
+                        if (random.Next(1000) < 750)
                         {// 道具
                             receipt.AwardItemList = ContextUser.RandItem(surface.AwardNum);
                         }

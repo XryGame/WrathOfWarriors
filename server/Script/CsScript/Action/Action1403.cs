@@ -101,10 +101,10 @@ namespace GameServer.CsScript.Action
                 {
                     rankinfo = ranking.Find(s => s.UserID == ContextUser.UserID);
                 }
-                rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
+                //rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
                 if (ranking.TryMove(rivalrankinfo.RankId, fromid))
                 {
-                    rivalrankinfo = ranking.Find(s => s.UserID == ContextUser.UserID);
+                    rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
                 }
             }
             else

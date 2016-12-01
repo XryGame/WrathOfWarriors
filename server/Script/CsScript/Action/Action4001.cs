@@ -75,18 +75,18 @@ namespace GameServer.CsScript.Action
                 GameUser monitor = UserHelper.FindUser(classdata.Monitor);
                 if (monitor != null)
                 {
-                    Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(monitor.UserLv);
-                    if (rolegrade == null)
-                    {
-                        ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                        return true;
-                    }
+                    //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(monitor.UserLv);
+                    //if (rolegrade == null)
+                    //{
+                    //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+                    //    return true;
+                    //}
                     receipt.UserId = monitor.UserID;
                     receipt.NickName = monitor.NickName;
                     receipt.LooksId = monitor.LooksId;
-                    receipt.Attack = rolegrade.Attack;
-                    receipt.Defense = rolegrade.Defense;
-                    receipt.HP = rolegrade.HP;
+                    receipt.Attack = monitor.Attack;
+                    receipt.Defense = monitor.Defense;
+                    receipt.HP = monitor.Hp;
                     receipt.FightValue = monitor.FightingValue;
                     receipt.ItemList = monitor.ItemDataList;
                     receipt.SkillList = monitor.SkillDataList;
@@ -94,6 +94,10 @@ namespace GameServer.CsScript.Action
                     var rankuser = UserHelper.FindCombatRankUser(monitor.UserID);
                     if (rankuser != null)
                         receipt.RankId = rankuser.RankId;
+                    if (monitor.UnlockSceneMapList.Find(t => (t == mapid)) != 0)
+                    {
+                        receipt.IsUnlockSelectMap = true;
+                    }
 
                     classdata.IsChallenging = true;
                     classdata.ChallengeUserId = ContextUser.UserID;

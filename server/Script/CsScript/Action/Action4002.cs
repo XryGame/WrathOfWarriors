@@ -60,6 +60,8 @@ namespace GameServer.CsScript.Action
                 UserHelper.GiveAwayDiamond(ContextUser.UserID, DataHelper.ChallengeTheMonitorAwardDiamond);
 
                 PushMessageHelper.ClassMonitorChangeNotification(ContextUser.ClassData.ClassID);
+
+                UserHelper.ChallengeMonitorSucceedNotification(ContextUser.ClassData.ClassID);
             }
             ContextUser.UserStatus = UserStatus.MainUi;
             ContextUser.ChallengeMonitorTimes = 1;

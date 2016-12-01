@@ -11,6 +11,10 @@ namespace GameServer.Script.Model.DataModel
         static public List<Config_SubjectExp> StudyExplist;
         static public List<Config_SubjectExp> ExerciseExplist;
         /// <summary>
+        /// 用户初始体力
+        /// </summary>
+        static public int InitVit;
+        /// <summary>
         /// 开启道具宝箱一次所需钻石
         /// </summary>
         static public int OpenItemBoxOnceNeedDiamond;
@@ -59,7 +63,11 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 开启每日任务系统用户等级
         /// </summary>
-        static public int OpenTaskUserLevel;
+        static public int OpenTaskSystemUserLevel;
+        /// <summary>
+        /// 开启排行榜系统用户等级
+        /// </summary>
+        static public int OpenRankSystemUserLevel;
 
         static public string[] JobTitles = {
             "学生会会长", "秘书部部长", "学习部部长", "宣传部部长", "艺术部部长", "体育部部长", "班级委员会"
@@ -92,10 +100,12 @@ namespace GameServer.Script.Model.DataModel
             StudyExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Study));
             ExerciseExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Exercise));
 
+            InitVit = ConfigEnvSet.GetInt("User.InitVit");
             OpenItemBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenItemBoxDiamond");
-            OpenItemBoxConsecutiveNeedDiamond = OpenItemBoxOnceNeedDiamond * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount");
+
+            OpenItemBoxConsecutiveNeedDiamond = OpenItemBoxOnceNeedDiamond * 5 * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount") / 10;
             OpenSkillBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenSkillBoxDiamond");
-            OpenSkillBoxConsecutiveNeedDiamond = OpenSkillBoxOnceNeedDiamond * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount");
+            OpenSkillBoxConsecutiveNeedDiamond = OpenSkillBoxOnceNeedDiamond * 5 * 10 / 100 * ConfigEnvSet.GetInt("User.OpenTenTimesBoxDiscount") / 10;
             CombatLogCountMax = ConfigEnvSet.GetInt("User.CombatLogCountMax");
             FriendCountMax = ConfigEnvSet.GetInt("User.FriendCountMax");
             FriendApplyCountMax = ConfigEnvSet.GetInt("User.FriendApplyCountMax");
@@ -103,7 +113,8 @@ namespace GameServer.Script.Model.DataModel
             FriendGiveAwayVitValue = ConfigEnvSet.GetInt("User.FriendGiveAwayVitValue");
             RepairSignNeedDiamond = ConfigEnvSet.GetInt("User.RepairSignNeedDiamond");
             MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
-            OpenTaskUserLevel = ConfigEnvSet.GetInt("System.OpenTaskUserLevel");
+            OpenTaskSystemUserLevel = ConfigEnvSet.GetInt("System.OpenTaskSystemUserLevel");
+            OpenRankSystemUserLevel = ConfigEnvSet.GetInt("System.OpenRankSystemUserLevel");
             ChallengeTheMonitorAwardDiamond = ConfigEnvSet.GetInt("User.ChallengeTheMonitorAwardDiamond");
             OccupyAwardDiamond = ConfigEnvSet.GetInt("User.OccupyAwardDiamond");
             InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
@@ -183,6 +194,7 @@ namespace GameServer.Script.Model.DataModel
             var occupycache = new ShareCacheStruct<OccupyDataCache>();
             for (SceneType st = SceneType.Piazza; st <= SceneType.MusicHall; ++st)
             {
+                var occ = occupycache.FindKey(st);
                 if (occupycache.FindKey(st) == null)
                 {
                     OccupyDataCache data = new OccupyDataCache()
@@ -190,6 +202,11 @@ namespace GameServer.Script.Model.DataModel
                         SceneId = st
                     };
                     occupycache.Add(data);
+                }
+                else
+                {
+                    occ.ChallengerId = 0;
+                    occ.ChallengerNickName = "";
                 }
             }
             occupycache.Update();

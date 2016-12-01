@@ -41,16 +41,16 @@ namespace GameServer.CsScript.Action
             }
 
             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.CombatData.LastFailedDate);
-            int mins = (int)Math.Floor(timeSpan.TotalMinutes);
-            int surplus = MathUtils.Subtraction(ConfigEnvSet.GetInt("User.CombatFailedCD"), mins, 0);
-
-            if (ContextUser.DiamondNum < surplus)
+            float mins = timeSpan.TotalMinutes.ToFloat();
+            float surplus = MathUtils.Subtraction(ConfigEnvSet.GetInt("User.CombatFailedCD").ToFloat(), mins, 1.0f);
+            int needDiamond = Math.Ceiling(surplus).ToInt();
+            if (ContextUser.DiamondNum < needDiamond)
                 return false;
 
             ContextUser.CombatData.LastFailedDate = DateTime.MinValue;
             receipt = EventStatus.Good;
 
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, mins);
+            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
             return true;
         }
 

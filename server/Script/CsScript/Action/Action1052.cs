@@ -43,8 +43,9 @@ namespace GameServer.CsScript.Action
             {
                 Attack = ContextUser.Attack,
                 Defense = ContextUser.Defense,
-                Hp = ContextUser.Hp,
+                HP = ContextUser.Hp,
                 CurrLevel = ContextUser.UserLv,
+                CurrVit = ContextUser.Vit,
                 IsChangeClass = _isChangeClass
             };
             return true;

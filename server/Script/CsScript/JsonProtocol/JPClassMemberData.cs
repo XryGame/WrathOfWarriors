@@ -10,9 +10,9 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPClassMemberData
     {
-        public int Uid { get; set; }
+        public int UserId { get; set; }
 
-        public string Nickname { get; set; }
+        public string NickName { get; set; }
 
         public int UserLv { get; set; }
 

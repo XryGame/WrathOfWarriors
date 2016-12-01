@@ -1,4 +1,5 @@
 ﻿using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
@@ -53,18 +54,37 @@ namespace GameServer.CsScript.Action
             }
             if (result == EventStatus.Good)
             {
+                SceneType oldscene = SceneType.No;
                 var list = occupycache.FindAll();
                 foreach (var v in list)
                 {
                     if (v.UserId == ContextUser.UserID)
                     {
                         v.ResetOccupy();
+                        oldscene = v.SceneId;
                     }
                 }
                 findocc.UserId = ContextUser.UserID;
                 findocc.NickName = ContextUser.NickName;
 
                 UserHelper.GiveAwayDiamond(ContextUser.UserID, DataHelper.OccupyAwardDiamond);
+
+                var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(ContextUser.ClassData.ClassID);
+                if (classdata != null)
+                {
+                    //foreach (int id in classdata.MemberList)
+                    //{
+                    //    GameUser mem = UserHelper.FindUser(id);
+                    //    if (mem == null)
+                    //        continue;
+                    //    if (mem.OccupyAddList.Find(t => (t == oldscene)) == oldscene)
+                    //        mem.OccupyAddList.Remove(oldscene);
+                    //    if (mem.OccupyAddList.Find(t => (t == findocc.SceneId)) != findocc.SceneId)
+                    //        mem.OccupyAddList.Add(findocc.SceneId);
+                    //}
+                    PushMessageHelper.ClassOccupyAddChangeNotification(ContextUser.ClassData.ClassID);
+                }
+                UserHelper.OccupySucceedNotification(findocc.SceneId);
             }
             findocc.ChallengerId = 0;
             findocc.ChallengerNickName = "";

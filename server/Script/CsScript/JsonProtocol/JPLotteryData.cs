@@ -6,6 +6,8 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPLotteryData
     {
+        public RequestLotteryResult Result { get; set; }
+
         public LotteryAwardType Type { get; set; }
 
         public int AwardItemId { get; set; }

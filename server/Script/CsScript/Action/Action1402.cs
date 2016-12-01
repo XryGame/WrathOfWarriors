@@ -111,12 +111,12 @@ namespace GameServer.CsScript.Action
                 ErrorInfo = Language.Instance.NoFoundUser;
                 return true;
             }
-            Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(rivalrankinfo.UserLv);
-            if (rolegrade == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                return true;
-            }
+            //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(rivalrankinfo.UserLv);
+            //if (rolegrade == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+            //    return true;
+            //}
 
             ContextUser.UserStatus = UserStatus.Fighting;
             ContextUser.SelectedSceneMapId = mapid;
@@ -132,9 +132,9 @@ namespace GameServer.CsScript.Action
             receipt.RankId = rivalrankinfo.RankId;
             receipt.UserLv = rivalrankinfo.UserLv;
             receipt.FightingValue = rivalrankinfo.FightingValue;
-            receipt.Attack = rolegrade.Attack;
-            receipt.Defense = rolegrade.Defense;
-            receipt.HP = rolegrade.HP;
+            receipt.Attack = rival.Attack;
+            receipt.Defense = rival.Defense;
+            receipt.HP = rival.Hp;
             receipt.ItemList = rival.ItemDataList;
             foreach (int skid in rival.SkillCarryList)
             {
@@ -144,7 +144,11 @@ namespace GameServer.CsScript.Action
                     receipt.SkillList.Add(sd);
                 }
             }
-            
+            if (rival.UnlockSceneMapList.Find(t => (t == ContextUser.SelectedSceneMapId)) != 0)
+            {
+                receipt.IsUnlockSelectMap = true;
+            }
+
             return true;
         }
 

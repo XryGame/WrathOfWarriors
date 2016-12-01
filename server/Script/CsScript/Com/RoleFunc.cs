@@ -12,11 +12,11 @@ namespace GameServer.CsScript.Com
     /// </summary>
     public class RoleFunc
     {
-        private SensitiveWordService _wordServer;
+        //private SensitiveWordService _wordServer;
 
         public RoleFunc()
         {
-            _wordServer = new SensitiveWordService();
+            //_wordServer = new SensitiveWordService();
         }
         /// <summary>
         /// 验证有效范围
@@ -49,7 +49,11 @@ namespace GameServer.CsScript.Com
         public bool VerifyKeyword(string nickName, out string msg)
         {
             msg = "";
-            if (_wordServer.IsVerified(nickName))
+            foreach (Config_ChatKeyWord chatKeyWord in TryXChatService.ChatKeyWordList)
+            {
+                nickName = nickName.Replace(chatKeyWord.KeyWord, new string('*', chatKeyWord.KeyWord.Length));
+            }
+            if (nickName.Contains("*"))
             {
                 msg = Language.Instance.St1005_NickNameExistKeyword;
                 return true;

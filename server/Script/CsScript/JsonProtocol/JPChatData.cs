@@ -22,6 +22,6 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int LooksId { get; set; }
 
-        
+        public int FromUserVip { get; set; }
     }
 }

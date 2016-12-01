@@ -89,6 +89,14 @@ namespace GameServer.CsScript.Action
                         {
                             CacheFactory.UpdateNotify(true);
                         }
+                        else if (lower.StartsWith("gm setlv"))
+                        {
+                            command = new SetLevelCommand();
+                        }
+                        else if (lower.StartsWith("gm vit"))
+                        {
+                            command = new VitCommand();
+                        }
                         else if (lower.StartsWith("gm diamond"))
                         {
                             command = new DiamondCommand();

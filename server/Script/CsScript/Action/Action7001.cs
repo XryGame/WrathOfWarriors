@@ -1,10 +1,13 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -85,7 +88,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case AwardType.RandItemSkillBook:
                     {
-                        if (random.Next(1000) < 500)
+                        if (random.Next(1000) < 750)
                         {// 道具
                             receipt.AwardItemList = ContextUser.RandItem(config.RewardsNum);
                         }
@@ -105,6 +108,7 @@ namespace GameServer.CsScript.Action
                 achievement.ID = select.id;
                 achievement.IsFinish = false;
                 achievement.IsReceive = false;
+                
             }
             else
             {
@@ -122,5 +126,21 @@ namespace GameServer.CsScript.Action
             return true;
         }
 
+
+        public override void TakeActionAffter(bool state)
+        {
+            // 等级成就检测完成
+            AchievementData achdata = ContextUser.AchievementList.Find(t => (t.Type == AchievementType.LevelCount));
+            if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+            {
+                var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
+                if (achdata.Count >= achconfig.ObjectiveNum)
+                {
+                    achdata.IsFinish = true;
+                    PushMessageHelper.AchievementFinishNotification(Current, achdata.ID);
+                }
+            }
+            base.TakeActionAffter(state);
+        }
     }
 }

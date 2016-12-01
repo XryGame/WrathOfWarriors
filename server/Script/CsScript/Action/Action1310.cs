@@ -88,7 +88,7 @@ namespace GameServer.CsScript.Action
             }
             
 
-            receipt = new CacheList<int>();
+            //receipt = new CacheList<int>();
             receipt = ContextUser.SkillCarryList;
             return true;
         }

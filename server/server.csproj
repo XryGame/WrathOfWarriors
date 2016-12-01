@@ -147,9 +147,15 @@
     <Compile Include="Script\CsScript\Action\Action1064.cs" />
     <Compile Include="Script\CsScript\Action\Action1065.cs" />
     <Compile Include="Script\CsScript\Action\Action1066.cs" />
+    <Compile Include="Script\CsScript\Action\Action1067.cs" />
+    <Compile Include="Script\CsScript\Action\Action1068.cs" />
+    <Compile Include="Script\CsScript\Action\Action1069.cs" />
+    <Compile Include="Script\CsScript\Action\Action1070.cs" />
     <Compile Include="Script\CsScript\Action\Action10700.cs" />
     <Compile Include="Script\CsScript\Action\Action10800.cs" />
+    <Compile Include="Script\CsScript\Action\Action10900.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
+    <Compile Include="Script\CsScript\Action\Action11000.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1102.cs" />
     <Compile Include="Script\CsScript\Action\Action1103.cs" />
@@ -209,6 +215,7 @@
     <Compile Include="Script\CsScript\GM\PayMoneyCommand.cs" />
     <Compile Include="Script\CsScript\GM\PayMonthCardCommand.cs" />
     <Compile Include="Script\CsScript\GM\PayWeekCardCommand.cs" />
+    <Compile Include="Script\CsScript\GM\SetLevelCommand.cs" />
     <Compile Include="Script\CsScript\GM\TryXGMCommand.cs" />
     <Compile Include="Script\CsScript\Com\LevelRanking.cs" />
     <Compile Include="Script\CsScript\Com\PushMessageHelper.cs" />
@@ -216,6 +223,7 @@
     <Compile Include="Script\CsScript\Com\TryXChatService.cs" />
     <Compile Include="Script\CsScript\Com\UserHelper.cs" />
     <Compile Include="Script\CsScript\GM\DiamondCommand.cs" />
+    <Compile Include="Script\CsScript\GM\VitCommand.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPBroadcastData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPBuyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCampaignsData.cs" />
@@ -285,6 +293,7 @@
     <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_AccumulatePay.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Achievement.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_CdKey.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
@@ -322,6 +331,7 @@
     <Compile Include="Script\Model\Config\UserFriendsData.cs" />
     <Compile Include="Script\Model\Config\UserRank.cs" />
     <Compile Include="Script\Model\Config\UserStudyTaskData.cs" />
+    <Compile Include="Script\Model\DataModel\CDKeyCache.cs" />
     <Compile Include="Script\Model\DataModel\ClassDataCache.cs" />
     <Compile Include="Script\Model\DataModel\GameUser.cs" />
     <Compile Include="Script\Model\DataModel\JobTitleDataCache.cs" />
@@ -351,9 +361,11 @@
     <Compile Include="Script\Model\Enum\ReceiveAccumulatePayResult.cs" />
     <Compile Include="Script\Model\Enum\ReceiveVitStatus.cs" />
     <Compile Include="Script\Model\Enum\RequestCampaignResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestCanvassResult.cs" />
     <Compile Include="Script\Model\Enum\RequestChallengeClassMonitorResult.cs" />
     <Compile Include="Script\Model\Enum\RequestFriendResult.cs" />
     <Compile Include="Script\Model\Enum\RequestInviteFightResult.cs" />
+    <Compile Include="Script\Model\Enum\RequestLotteryResult.cs" />
     <Compile Include="Script\Model\Enum\RequestOccupyResult.cs" />
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\RequestVoteResult.cs" />

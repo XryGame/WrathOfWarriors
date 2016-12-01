@@ -74,7 +74,7 @@ namespace GameServer.CsScript.Action
                     SendTimestamp = Util.ConvertDateTimeStamp(chat.SendDate),
                     LooksId = chat.LooksId,
                     ChildType = chat.ChildType,
-
+                    FromUserVip = chat.FromUserVip,
                 };
                 receipt.List.Add(JPChatData);
             }

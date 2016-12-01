@@ -24,7 +24,7 @@ namespace GameServer.Script.Model.DataModel
     {
         static private Random random = new Random();
 
-        //static int scount = 0;
+        static int scount = 0;
         static UserHelper()
         {
 
@@ -165,7 +165,7 @@ namespace GameServer.Script.Model.DataModel
             
             gameUser.IsTodayLottery = false;
             gameUser.RandomLotteryId = 0;
-            var lottery = RandomLottery(gameUser.UserLv);
+            var lottery = RandomLottery(gameUser.UserID, gameUser.UserLv);
             if (lottery != null)
             {
                 gameUser.RandomLotteryId = lottery.ID;
@@ -290,7 +290,15 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.OccupySceneType = SceneType.No;
             }
 
-
+            // 通知好友下线
+            foreach (FriendData fd in gameUser.FriendsData.FriendsList)
+            {
+                GameSession session = GameSession.Get(fd.UserId);
+                if (session != null)
+                {
+                    PushMessageHelper.FriendOffineNotification(session, gameUser.UserID);
+                }
+            }
 
         }
    
@@ -305,7 +313,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 rankinfo = ranking.Find(s => s.UserID == uid);
             }
-            if (rankinfo != null)
+            if (rankinfo != null && rankinfo.FightDestUid != 0)
             {
                 rankinfo.IsFighting = false;
 
@@ -490,7 +498,7 @@ namespace GameServer.Script.Model.DataModel
                             winuser.AditionJobTitle = fd.TypeId;
                             winuser.IsHaveJobTitle = true;
                         }
-                            
+                        PushMessageHelper.UserJobTitleAddChangedNotification(GameSession.Get(winuser.UserID));
                         var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(votemax.ClassId);
                         if (classdata != null)
                         {
@@ -503,6 +511,10 @@ namespace GameServer.Script.Model.DataModel
                                     mem.AditionJobTitle = fd.TypeId;
                             }
                         }
+                        PushMessageHelper.ClassJobTitleAddChangeNotification(votemax.ClassId);
+
+
+                        CampaignSucceedNotification(fd.TypeId);
                     }
                 }
             }
@@ -540,17 +552,20 @@ namespace GameServer.Script.Model.DataModel
 
 
             }
-            
 
 
-            ////if (scount == 7)
-            ////    scount = 0;
-            ////var fdnow = jobcache.FindKey((JobTitleType)scount);
-            ////scount++;
-            var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
+
+            if (scount == 7)
+                scount = 0;
+            var fdnow = jobcache.FindKey((JobTitleType)scount);
+            scount++;
+
+            //var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
             if (fdnow != null)
             {
                 // 取消加成
+                if (fdnow.UserId != 0)
+                    PushMessageHelper.UserJobTitleAddChangedNotification(GameSession.Get(fdnow.UserId));
                 if (fdnow.ClassId != 0)
                 {
                     var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(fdnow.ClassId);
@@ -567,6 +582,7 @@ namespace GameServer.Script.Model.DataModel
                                 mem.IsHaveJobTitle = false;
                         }
                     }
+                    PushMessageHelper.ClassJobTitleAddChangeNotification(fdnow.ClassId);
                 }
 
                 fdnow.Status = CampaignStatus.Runing;
@@ -634,10 +650,10 @@ namespace GameServer.Script.Model.DataModel
                     MailData mail = new MailData()
                     {
                         ID = Guid.NewGuid().ToString(),
-                        Title = "学霸榜奖励",
+                        Title = "名人榜奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = string.Format("截止当前时间，您获得学霸榜第{0}名，奖励如下，请查收！", ur.RankId),
+                        Context = string.Format("截止当前时间，您获得名人榜第{0}名，奖励如下，请查收！", ur.RankId),
                         ApppendDiamond = cr.AwardNum
                     };
                     user.AddNewMail(ref mail);
@@ -795,6 +811,25 @@ namespace GameServer.Script.Model.DataModel
                                     oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
                                     PushMessageHelper.ClassMonitorChangeNotification(user.ClassData.ClassID);
                                 }
+
+                                var occupylist = new ShareCacheStruct<OccupyDataCache>().FindAll();
+                                foreach (var v in occupylist)
+                                {
+                                    if (v.UserId == user.UserID)
+                                    {
+                                        //foreach (int id in oldclass.MemberList)
+                                        //{
+                                        //    GameUser mem = FindUser(id);
+                                        //    if (mem == null)
+                                        //        continue;
+                                        //    if (mem.OccupyAddList.Find(t => (t == v.SceneId)) == v.SceneId)
+                                        //        mem.OccupyAddList.Remove(v.SceneId);
+
+                                        //}
+                                        PushMessageHelper.ClassOccupyAddChangeNotification(user.ClassData.ClassID);
+                                    }
+                                }
+
                             }
                         }
                         user.ClassData.ClassID = 0;
@@ -812,17 +847,7 @@ namespace GameServer.Script.Model.DataModel
             }
             else if (property == "GetCombatItem")
             {
-                GameUser user = FindUser(userId);
-                var item = new ShareCacheStruct<Config_Item>().FindKey(value.ToInt());
-                if (user != null && item != null)
-                {
-                    string context = string.Format("恭喜玩家 {0} 获得竞技道具【{1}】 ！", user.NickName, item.Name);
-                    PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
-
-                    var chatService = new TryXChatService();
-                    chatService.SystemSend(ChatType.System, context);
-                    PushMessageHelper.SendSystemChatToOnlineUser();
-                }
+                CombatItemNotification(userId, value.ToInt());
             }
 
         }
@@ -832,7 +857,7 @@ namespace GameServer.Script.Model.DataModel
             GameUser user = FindUser(UserId);
             if (user == null)
                 return;
-            if (user.UserLv < DataHelper.OpenTaskUserLevel || user.DailyQuestData.IsFinish == false)
+            if (user.UserLv < DataHelper.OpenTaskSystemUserLevel || user.DailyQuestData.IsFinish != false)
                 return;
 
             if (user.DailyQuestData.ID == TaskType.FightTeacher)
@@ -876,6 +901,10 @@ namespace GameServer.Script.Model.DataModel
             {
                 user.DailyQuestData.IsFinish = true;
             }
+            else if (user.DailyQuestData.ID == TaskType.BuyTime)
+            {
+                user.DailyQuestData.IsFinish = true;
+            }
 
 
             if (user.DailyQuestData.IsFinish == true)
@@ -887,9 +916,49 @@ namespace GameServer.Script.Model.DataModel
 
 
         }
-        public static Config_Lottery RandomLottery(short userlv)
+        public static Config_Lottery RandomLottery(int userId, short userlv)
         {
+            GameUser user = FindUser(userId);
             var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= userlv));
+            List<int> removelist = new List<int>();
+            foreach (var v in list)
+            {
+                if (v.Type == LotteryAwardType.Item)
+                {
+                    Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(v.Content);
+                    if (item != null)
+                    {
+                        if (item.Type == ItemType.Item)
+                        {
+                            ItemData itemdata = user.findItem(v.Content);
+                            if (itemdata != null && itemdata.Num >= user.GetItemLvMax(itemdata.ID))
+                            {
+                                removelist.Add(v.ID);
+                            }
+                        }
+                        else if (item.Type == ItemType.Skill)
+                        {
+                            Config_SkillGrade sg = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.Condition == item.ID));
+                            if (sg != null)
+                            {
+                                SkillData skill = user.findSkill(sg.SkillID);
+                                if (skill != null && skill.Lv >= user.GetSkillLvMax(skill.ID))
+                                    removelist.Add(v.ID);
+                            }
+                            else
+                            {
+                                removelist.Add(v.ID);
+                            }
+                        }
+                    }
+                }
+                
+            }
+            for (int i = 0; i < removelist.Count; ++i)
+            {
+                list.RemoveAll(t => (t.ID == removelist[i]));
+            }
+
             if (list.Count > 0)
             {
                 int weight = 0;
@@ -912,6 +981,109 @@ namespace GameServer.Script.Model.DataModel
                 return lott;
             }
             return null;
+        }
+
+
+        /// <summary>
+        /// 竞选成功广播在线玩家
+        /// </summary>
+        /// <param name="JobTitleType"></param>
+        public static void CampaignSucceedNotification(JobTitleType jtt)
+        {
+            JobTitleDataCache jtdc = new ShareCacheStruct<JobTitleDataCache>().FindKey(jtt);
+            if (jtdc != null)
+            {
+                ClassDataCache classdata = new ShareCacheStruct<ClassDataCache>().FindKey(jtdc.ClassId);
+                if (classdata == null)
+                    return;
+                GameUser monitor = FindUser(classdata.Monitor);
+                if (monitor == null)
+                    return;
+                string context = string.Format(
+                    "恭喜 {0} 的 {1} 当选为新的【{2}】，该班级全体成员7天内在所有场景进行学习与劳动均可获得经验加成！",
+                    classdata.Name,
+                    monitor.NickName,
+                    DataHelper.JobTitles[jtt.ToInt()]
+                    );
+
+                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                var chatService = new TryXChatService();
+                chatService.SystemRedundantSend(context, monitor.UserID, ChatChildType.CampaignSucceed);
+                PushMessageHelper.SendSystemChatToOnlineUser();
+            }
+        }
+
+        /// <summary>
+        /// 占领成功广播在线玩家
+        /// </summary>
+        /// <param name="SceneType"></param>
+        public static void OccupySucceedNotification(SceneType st)
+        {
+            OccupyDataCache occupydata = new ShareCacheStruct<OccupyDataCache>().FindKey(st);
+            if (occupydata != null)
+            {
+                GameUser user = FindUser(occupydata.UserId);
+                if (user == null)
+                    return;
+                ClassDataCache classdata = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
+                if (classdata == null)
+                    return;
+                string context = string.Format(
+                    "恭喜 {0} 的 {1} 占领【{2}】，在占领期间，班级所有成员学习和劳动均可获得120%经验加成！",
+                    classdata.Name,
+                    user.NickName,
+                    new ShareCacheStruct<Config_Scene>().FindKey(st).Name
+                    );
+
+                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                var chatService = new TryXChatService();
+                chatService.SystemRedundantSend(context, user.UserID, ChatChildType.OccupySucceed);
+                PushMessageHelper.SendSystemChatToOnlineUser();
+            }
+        }
+
+        /// <summary>
+        /// 获得竞技道具广播在线玩家
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="itemId"></param>
+        public static void CombatItemNotification(int userId, int itemId)
+        {
+            GameUser user = FindUser(userId);
+            var item = new ShareCacheStruct<Config_Item>().FindKey(itemId);
+            if (user != null && item != null)
+            {
+                string context = string.Format("恭喜 {0} 获得竞技对战道具【{1}】！", user.NickName, item.Name);
+                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                var chatService = new TryXChatService();
+                chatService.SystemSend(context);
+                PushMessageHelper.SendSystemChatToOnlineUser();
+            }
+        }
+
+        /// <summary>
+        /// 挑战班长成功广播在线玩家
+        /// </summary>
+        /// <param name="classId"></param>
+        public static void ChallengeMonitorSucceedNotification(int classId)
+        {
+            ClassDataCache classdata = new ShareCacheStruct<ClassDataCache>().FindKey(classId);
+            if (classdata != null)
+            {
+                GameUser monitor = FindUser(classdata.Monitor);
+                if (monitor == null)
+                    return;
+                string context = string.Format("恭喜 {0} 挑战班长成功，成为 {1} 的新任班长！", monitor.NickName, classdata.Name);
+
+                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                var chatService = new TryXChatService();
+                chatService.SystemSend(context);
+                PushMessageHelper.SendSystemChatToOnlineUser();
+            }
         }
     }
 }

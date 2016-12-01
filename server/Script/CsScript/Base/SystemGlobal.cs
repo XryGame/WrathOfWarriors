@@ -73,12 +73,12 @@ namespace GameServer.CsScript.Base
 
             GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
-            TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
+            //TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
-            TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "00:00"));
-            //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 600));
+            //TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "00:00"));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 600));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
             // 每周二，周五名人榜奖励
@@ -172,6 +172,9 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Vip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Pay>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_CelebrityRanking>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_AccumulatePay>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_CdKey>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_ChatKeyWord>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
@@ -186,7 +189,7 @@ namespace GameServer.CsScript.Base
         
         public static void Stop()
         {
-            SendServerStatus(ServerStatus.Close, 0);
+            //SendServerStatus(ServerStatus.Close, 0);
 
             var onlines = GameSession.GetOnlineAll();
             foreach (var sess in onlines)
@@ -237,10 +240,10 @@ namespace GameServer.CsScript.Base
                 Sign
             );
             string getUrlData = url + HttpUtility.UrlEncode(urlData, Encoding.UTF8);
-
-            string result = HttpPostManager.GetStringData(getUrlData);
+            
             try
             {
+                string result = HttpPostManager.GetStringData(getUrlData);
                 if (string.IsNullOrEmpty(result))
                 {
                     TraceLog.ReleaseWrite("Submit server status fail result:{0}, request url:{1}", result, getUrlData);

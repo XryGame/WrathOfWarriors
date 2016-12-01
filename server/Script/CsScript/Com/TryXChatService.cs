@@ -24,7 +24,7 @@ namespace GameServer.CsScript.Com
         private const int MsgTimeOut = 30;//分钟
         private const int IntervalSend = 5;
         private ChatType ChatType;
-        public static List<ChatKeyWord> ChatKeyWordList
+        public static List<Config_ChatKeyWord> ChatKeyWordList
         {
             get;
             private set;
@@ -37,7 +37,7 @@ namespace GameServer.CsScript.Com
 
         public static void InitChatKeyWord()
         {
-            ChatKeyWordList = new ShareCacheStruct<ChatKeyWord>().FindAll();
+            ChatKeyWordList = new ShareCacheStruct<Config_ChatKeyWord>().FindAll();
         }
 
         public TryXChatService()
@@ -79,9 +79,8 @@ namespace GameServer.CsScript.Com
             return false;
         }
 
-        public void SystemSend(ChatType chatType, string content, ChatChildType childType = ChatChildType.Normal)
+        public void SystemSend(string content)
         {
-            if (chatType == ChatType.Whisper) return;
             var chat = new ChatData
             {
                 Version = NextVersion,
@@ -91,11 +90,31 @@ namespace GameServer.CsScript.Com
                 ToUserID = 0,
                 ToUserName = string.Empty,
                 ToUserVip = 0,
-                ChatType = chatType,
+                ChatType = ChatType.System,
                 Content = content,
                 SendDate = DateTime.Now,
                 LooksId = 0,
-                ChildType = childType,
+                ChildType = ChatChildType.Normal,
+            };
+            Send(chat);
+        }
+
+        public void SystemRedundantSend(string content, int userId, ChatChildType childtype)
+        {
+            var chat = new ChatData
+            {
+                Version = NextVersion,
+                FromUserID = userId,
+                FromUserName = Language.Instance.KingName,
+                FromUserVip = 0,
+                ToUserID = 0,
+                ToUserName = string.Empty,
+                ToUserVip = 0,
+                ChatType = ChatType.System,
+                Content = content,
+                SendDate = DateTime.Now,
+                LooksId = 0,
+                ChildType = childtype,
             };
             Send(chat);
         }
@@ -247,7 +266,7 @@ namespace GameServer.CsScript.Com
 
         protected override string FilterMessage(string message)
         {
-            foreach (ChatKeyWord chatKeyWord in ChatKeyWordList)
+            foreach (Config_ChatKeyWord chatKeyWord in ChatKeyWordList)
             {
                 message = message.Replace(chatKeyWord.KeyWord, new string('*', chatKeyWord.KeyWord.Length));
             }

@@ -99,7 +99,7 @@ namespace GameServer.CsScript.Action
             user.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
             user.UserStage = SubjectStage.PreschoolSchool;
             user.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
-            user.Vit = ConfigEnvSet.GetInt("User.InitVit");
+            user.Vit = DataHelper.InitVit;
             user.VipLv = ConfigEnvSet.GetInt("User.VipLv");
             user.LooksId = looksid;
             user.UserStatus = UserStatus.MainUi;
@@ -115,7 +115,7 @@ namespace GameServer.CsScript.Action
             user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
             user.EventAwardData.OnlineStartTime = DateTime.Now;
             user.PlotId = 0;
-
+            user.IsOnline = true;
             //user.FriendsData = new UserFriendsData();
             user.RefreshFightValue();
 
@@ -145,18 +145,18 @@ namespace GameServer.CsScript.Action
             }
 
             // 邮箱
-            MailData mail = new MailData()
-            {
-                ID = Guid.NewGuid().ToString(),
-                Title = "欢迎进入学生战纪",
-                Sender = "系统",
-                Date = DateTime.Now,
-                Context = "欢迎进入学生战纪",
-                ApppendDiamond = 0
-            };
-            //mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+            //MailData mail = new MailData()
+            //{
+            //    ID = Guid.NewGuid().ToString(),
+            //    Title = "欢迎进入学生战纪",
+            //    Sender = "系统",
+            //    Date = DateTime.Now,
+            //    Context = "欢迎进入学生战纪",
+            //    ApppendDiamond = 0
+            //};
+            ////mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
 
-            user.AddNewMail(ref mail);
+            //user.AddNewMail(ref mail);
 
             var cacheSet = new PersonalCacheStruct<GameUser>();
             cacheSet.Add(user);

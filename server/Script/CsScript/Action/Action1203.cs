@@ -58,8 +58,8 @@ namespace GameServer.CsScript.Action
                 {
                     JPClassMemberData data = new JPClassMemberData()
                     {
-                        Uid = member,
-                        Nickname = MUser.NickName,
+                        UserId = member,
+                        NickName = MUser.NickName,
                         UserLv = MUser.UserLv,
                         LooksId = MUser.LooksId,
                         FightValue = MUser.FightingValue,

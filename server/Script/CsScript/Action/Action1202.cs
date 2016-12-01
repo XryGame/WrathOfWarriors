@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using System.Collections.Generic;
@@ -66,7 +67,7 @@ namespace GameServer.CsScript.Action
             // 将用户从原有班级中剔除
             if (ContextUser.ClassData.ClassID != 0)
             {
-                ClassDataCache oldclass = classeslist.Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
+                ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
                 if (oldclass != null)
                 {
                     if (oldclass.MemberList.Find(t => (t == UserId)) != 0)
@@ -77,6 +78,7 @@ namespace GameServer.CsScript.Action
                             oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
                         }
                     }
+
                 }
             }
             // 将用户加入到新班级中
@@ -98,8 +100,8 @@ namespace GameServer.CsScript.Action
             { 
                 receipt.Monitor = new JPClassMemberData()
                 {
-                    Uid = newcalss.Monitor,
-                    Nickname = MUser.NickName,
+                    UserId = newcalss.Monitor,
+                    NickName = MUser.NickName,
                     LooksId = MUser.LooksId,
                     UserLv = MUser.UserLv,
                     SkillCarryList = MUser.SkillCarryList
@@ -109,9 +111,28 @@ namespace GameServer.CsScript.Action
             foreach (int uid in newcalss.MemberList)
             {
                 JPClassMemberData tmp = new JPClassMemberData();
-                tmp.Uid = uid;
+                tmp.UserId = uid;
                 receipt.MemberList.Add(tmp);
             }
+            // 占领加成处理
+            var occupylist = new ShareCacheStruct<OccupyDataCache>().FindAll();
+            foreach (var v in occupylist)
+            {
+                if (v.UserId == ContextUser.UserID)
+                {
+                    //foreach (int id in newcalss.MemberList)
+                    //{
+                    //    GameUser mem = UserHelper.FindUser(id);
+                    //    if (mem == null)
+                    //        continue;
+                    //    if (mem.OccupyAddList.Find(t => (t == v.SceneId)) != v.SceneId)
+                    //        mem.OccupyAddList.Add(v.SceneId);
+
+                    //}
+                    PushMessageHelper.ClassOccupyAddChangeNotification(ContextUser.ClassData.ClassID);
+                }
+            }
+
 
 
             // 扩充班级

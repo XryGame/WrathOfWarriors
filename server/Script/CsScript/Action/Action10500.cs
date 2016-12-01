@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
@@ -70,6 +71,9 @@ namespace GameServer.CsScript.Action
             ContextUser.BuyVitCount++;
             receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.Extend1 = ContextUser.Vit;
+
+            // 每日
+            UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.BuyTime, 1);
             return true;
         }
     }

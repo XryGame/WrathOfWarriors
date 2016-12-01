@@ -52,22 +52,22 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            int mins = 0;
-            int sec = ConfigEnvSet.GetInt("User.SweepCD") * ContextUser.SweepTimes;
+            float mins = 0;
+            float sec = ConfigEnvSet.GetInt("User.SweepCD") * ContextUser.SweepTimes;
             DateTime endtime = ContextUser.StartSweepTime.AddSeconds(sec);
             if (DateTime.Now >= endtime)
             {
-                mins = (int)endtime.Subtract(ContextUser.StartSweepTime).TotalMinutes;
+                mins = endtime.Subtract(ContextUser.StartSweepTime).TotalMinutes.ToFloat();
             }
             else
             {
                 TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.StartSweepTime);
-                int tmpmin = sec / 60;
-                mins = (int)MathUtils.Subtraction(tmpmin, timeSpan.TotalMinutes, 0);
+                float tmpmin = sec / 60.0f;
+                mins = MathUtils.Subtraction(tmpmin, timeSpan.TotalMinutes.ToFloat(), 1.0f);
             }
+            int needDiamond = Math.Ceiling(mins).ToInt();
 
-            if (mins == 0)
-                return false;
+            if (mins == 0)                return false;
 
             if (ContextUser.DiamondNum < mins)
                 return false;

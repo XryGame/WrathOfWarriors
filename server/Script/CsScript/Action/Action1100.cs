@@ -60,13 +60,13 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             
-            var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
-            Config_RoleGrade rolegrade = roleGradeCache.FindKey(ContextUser.UserLv);
-            if (rolegrade == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                return true;
-            }
+            //var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
+            //Config_RoleGrade rolegrade = roleGradeCache.FindKey(ContextUser.UserLv);
+            //if (rolegrade == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+            //    return true;
+            //}
             var sceneCache = new ShareCacheStruct<Config_Scene>();
             Config_Scene scene = sceneCache.FindKey(sceneId);
             if (scene == null)

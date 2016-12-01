@@ -55,12 +55,12 @@ namespace GameServer.CsScript.Action
             GameUser dest = UserHelper.FindUser(destuid);
             if (dest == null)
                 return false;
-            Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(dest.UserLv);
-            if (rolegrade == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-                return true;
-            }
+            //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(dest.UserLv);
+            //if (rolegrade == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
+            //    return true;
+            //}
 
             receipt = new JPInviteFightRivalData();
             receipt.AppointResult = fightresult;
@@ -69,9 +69,9 @@ namespace GameServer.CsScript.Action
             receipt.RivalData.LooksId = dest.LooksId;
             receipt.RivalData.UserLv = dest.UserLv;
             receipt.RivalData.VipLv = dest.VipLv;
-            receipt.RivalData.Attack = rolegrade.Attack;
-            receipt.RivalData.Defense = rolegrade.Defense;
-            receipt.RivalData.HP = rolegrade.HP;
+            receipt.RivalData.Attack = dest.Attack;
+            receipt.RivalData.Defense = dest.Defense;
+            receipt.RivalData.HP = dest.Hp;
             var rankuser = UserHelper.FindCombatRankUser(dest.UserID);
             if (rankuser != null)
                 receipt.RivalData.RankId = rankuser.RankId;

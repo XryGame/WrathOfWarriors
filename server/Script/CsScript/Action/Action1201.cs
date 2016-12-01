@@ -64,8 +64,8 @@ namespace GameServer.CsScript.Action
                 {
                     classdata.Monitor = new JPClassMemberData()
                     {
-                        Uid = data.Monitor,
-                        Nickname = MUser.NickName,
+                        UserId = data.Monitor,
+                        NickName = MUser.NickName,
                         UserLv = MUser.UserLv
                     };
                 }

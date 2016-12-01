@@ -9,9 +9,9 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Once = 1,
         /// <summary>
-        /// 连续10次
+        /// 连续5次
         /// </summary>
-        Consecutive = 10,
+        Consecutive = 5,
 
     }
 }

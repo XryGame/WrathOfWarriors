@@ -69,25 +69,26 @@ namespace GameServer.CsScript.Action
                             return true;
                         }
 
-                        int passmins = 0;
-                        int residuemins = 0;
+                        float passmins = 0;
+                        float residuemins = 0;
                         if (DateTime.Now > ContextUser.StudyTaskData.StartTime)
                         {
                             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.StudyTaskData.StartTime);
-                            passmins = (int)Math.Floor(timeSpan.TotalMinutes);
+                            passmins = Math.Floor(timeSpan.TotalMinutes).ToFloat();
                         }
                         residuemins = MathUtils.Subtraction(
                             subjectExp.UnitTime * ContextUser.StudyTaskData.Count, passmins, 0
                             );
-
-                        if (ContextUser.DiamondNum < residuemins)
+                        residuemins = Math.Max(residuemins / 5.0f, 1.0f);
+                        int needDiamond = Math.Ceiling(residuemins).ToInt();
+                        if (ContextUser.DiamondNum < needDiamond)
                         {
                             receipt.Result = EventStatus.Bad;
                         }
                         else
                         {
                             ContextUser.StudyTaskData.StartTime = DateTime.MinValue;
-                            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, residuemins);
+                            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
                         }
                     }
                     break;
@@ -101,25 +102,27 @@ namespace GameServer.CsScript.Action
                             return true;
                         }
 
-                        int passmins = 0;
-                        int residuemins = 0;
+                        float passmins = 0;
+                        float residuemins = 0;
                         if (DateTime.Now > ContextUser.ExerciseTaskData.StartTime)
                         {
                             TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.ExerciseTaskData.StartTime);
-                            passmins = (int)Math.Floor(timeSpan.TotalMinutes);
+                            passmins = Math.Floor(timeSpan.TotalMinutes).ToFloat();
                         }
                         residuemins = MathUtils.Subtraction(
                             subjectExp.UnitTime * ContextUser.ExerciseTaskData.Count, passmins, 0
                             );
 
-                        if (ContextUser.DiamondNum < residuemins)
+                        residuemins = Math.Max(residuemins / 5.0f, 1.0f);
+                        int needDiamond = Math.Ceiling(residuemins).ToInt();
+                        if (ContextUser.DiamondNum < needDiamond)
                         {
                             receipt.Result = EventStatus.Bad;
                         }
                         else
                         {
                             ContextUser.ExerciseTaskData.StartTime = DateTime.MinValue;
-                            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, residuemins);
+                            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
                         }
                     }
                     break;

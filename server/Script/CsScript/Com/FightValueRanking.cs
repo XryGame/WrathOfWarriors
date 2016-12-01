@@ -41,17 +41,14 @@ namespace GameServer.CsScript.Com
             {
                 return -1;
             }
-            result = x.RankId.CompareTo(y.RankId);
+
+            result = y.FightingValue.CompareTo(x.FightingValue);
             if (result == 0)
             {
-                result = y.FightingValue.CompareTo(x.FightingValue);
+                result = x.UserLv.CompareTo(y.UserLv);
                 if (result == 0)
                 {
-                    result = x.UserLv.CompareTo(y.UserLv);
-                    if (result == 0)
-                    {
-                        result = x.UserID.CompareTo(y.UserID);
-                    }
+                    result = x.UserID.CompareTo(y.UserID);
                 }
             }
             return result;
@@ -60,12 +57,12 @@ namespace GameServer.CsScript.Com
         protected override IList<UserRank> GetCacheList()
         {
             /// 修改刷新
-            rankList.Clear();
+            //rankList.Clear();
 
-            //if (rankList.Count > 0)
-            //{
-            //    return rankList;
-            //}
+            if (rankList.Count > 0)
+            {
+                return rankList;
+            }
             var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
             string sql = "SELECT UserID,NickName,LooksId,UserLv,VipLv,FightingValue,FightValueRankId FROM GameUser";
             using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))

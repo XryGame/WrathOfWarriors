@@ -11,22 +11,22 @@ namespace GameServer.Script.Model.ConfigModel
     /// 
     /// </summary>
     [Serializable, ProtoContract, EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
-    public class ChatKeyWord : ShareEntity
+    public class Config_ChatKeyWord : ShareEntity
     {
 
         
-        public ChatKeyWord()
+        public Config_ChatKeyWord()
             : base(AccessLevel.ReadOnly)
         {
         }
         
         #region auto-generated Property
-        private string _KeyID;
+        private int _KeyID;
         /// <summary>
         /// 
         /// </summary>
         [EntityField("KeyID", IsKey = true)]
-        public string KeyID
+        public int KeyID
         {
             get
             {
@@ -63,7 +63,7 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "KeyID": return KeyID;
                     case "KeyWord": return KeyWord;
-					default: throw new ArgumentException(string.Format("ChatKeyWord index[{0}] isn't exist.", index));
+					default: throw new ArgumentException(string.Format("Config_ChatKeyWord index[{0}] isn't exist.", index));
 				}
                 #endregion
 			}
@@ -73,12 +73,12 @@ namespace GameServer.Script.Model.ConfigModel
 				switch (index)
 				{
                     case "KeyID": 
-                        _KeyID = value.ToNotNullString(); 
+                        _KeyID = value.ToInt(); 
                         break; 
                     case "KeyWord": 
                         _KeyWord = value.ToNotNullString(); 
                         break; 
-					default: throw new ArgumentException(string.Format("ChatKeyWord index[{0}] isn't exist.", index));
+					default: throw new ArgumentException(string.Format("Config_ChatKeyWord index[{0}] isn't exist.", index));
 				}
                 #endregion
 			}

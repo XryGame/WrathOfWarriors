@@ -33,6 +33,8 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="context"></param>
         public static void SendNoticeToUser(GameSession session, NoticeType type, string context)
         {
+            if (session == null)
+                return;
             var parameter = new Parameters();
             parameter["NoticeType"] = type;
             parameter["Context"] = context;
@@ -59,7 +61,7 @@ namespace GameServer.Script.CsScript.Com
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null)
+                if (mem != null && GameSession.Get(memuid) != null)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -106,6 +108,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void SendSystemChatToUser(GameSession session)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["ChatType"] = ChatType.System;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action3002, session, parameters, OpCode.Text, null);
@@ -132,10 +136,12 @@ namespace GameServer.Script.CsScript.Com
         {
             var userList = new List<IUser>();
             ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
+            if (classes == null)
+                return;
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null)
+                if (mem != null && GameSession.Get(memuid) != null)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -150,6 +156,8 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="classid"></param>
         public static void DailyQuestFinishNotification(GameSession session)
         {
+            if (session == null)
+                return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1060, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1060, packet, (rsession, asyncResult) => { }, 0);
         }
@@ -159,6 +167,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void AchievementFinishNotification(GameSession session, int id)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["ID"] = id;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1061, session, parameters, OpCode.Text, null);
@@ -171,6 +181,8 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="session"></param>
         public static void UserFightValueChangedNotification(GameSession session)
         {
+            if (session == null)
+                return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1050, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1050, packet, (rsession, asyncResult) => { }, 0);
         }
@@ -180,6 +192,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void UserLevelUpNotification(GameSession session, bool ischangeclass)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["IsChangeClass"] = ischangeclass;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, parameters, OpCode.Text, null);
@@ -192,6 +206,8 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="session"></param>
         public static void UserDiamondChangedNotification(GameSession session)
         {
+            if (session == null)
+                return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
         }
@@ -202,6 +218,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void InviteFightNotification(GameSession session, int inviteuid)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["InviterUid"] = inviteuid;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1062, session, parameters, OpCode.Text, null);
@@ -214,6 +232,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void CancelInviteFightNotification(GameSession session, string nickname)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["NickName"] = nickname;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1063, session, parameters, OpCode.Text, null);
@@ -225,6 +245,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void RefuseInviteFightNotification(GameSession session, string nickname)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["NickName"] = nickname;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1064, session, parameters, OpCode.Text, null);
@@ -236,6 +258,8 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void StartInviteFightNotification(GameSession session, int destUserId, EventStatus result)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["DestUid"] = destUserId;
             parameters["FightResult"] = result;
@@ -248,10 +272,90 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void NewMailNotification(GameSession session, string mailid)
         {
+            if (session == null)
+                return;
             var parameters = new Parameters();
             parameters["NewMailId"] = mailid;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1066, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1066, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 班级 占领加成改变通知
+        /// </summary>
+        /// <param name="classid"></param>
+        public static void ClassOccupyAddChangeNotification(int classid)
+        {
+            var userList = new List<IUser>();
+            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
+            foreach (int memuid in classes.MemberList)
+            {
+                var mem = UserHelper.FindUser(memuid);
+                if (mem != null && GameSession.Get(memuid) != null)
+                {
+                    userList.Add(new SessionUser(mem));
+                }
+            }
+
+            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action1067, null, (asyncResult) => { }, OpCode.Text, 0);
+        }
+
+
+        /// <summary>
+        /// 班级 竞选加成改变通知
+        /// </summary>
+        /// <param name="classid"></param>
+        public static void ClassJobTitleAddChangeNotification(int classid)
+        {
+            var userList = new List<IUser>();
+            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
+            foreach (int memuid in classes.MemberList)
+            {
+                var mem = UserHelper.FindUser(memuid);
+                if (mem != null && GameSession.Get(memuid) != null)
+                {
+                    userList.Add(new SessionUser(mem));
+                }
+            }
+
+            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action1068, null, (asyncResult) => { }, OpCode.Text, 0);
+        }
+
+        /// <summary>
+        /// 个人竞选加成改变通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void UserJobTitleAddChangedNotification(GameSession session)
+        {
+            if (session == null)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1068, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1068, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 好友上线通知
+        /// </summary>
+        public static void FriendOnlineNotification(GameSession session, int friendUid)
+        {
+            if (session == null)
+                return;
+            var parameters = new Parameters();
+            parameters["FriendUid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1069, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1069, packet, (rsession, asyncResult) => { }, 0);
+        }
+        /// <summary>
+        /// 好友下线通知
+        /// </summary>
+        public static void FriendOffineNotification(GameSession session, int friendUid)
+        {
+            if (session == null)
+                return;
+            var parameters = new Parameters();
+            parameters["FriendUid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1070, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1070, packet, (rsession, asyncResult) => { }, 0);
         }
     }
 }

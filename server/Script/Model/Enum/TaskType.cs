@@ -26,7 +26,7 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         RandSkillBook,
         /// <summary>
-        /// 学霸榜中挑战同学1次
+        /// 名人榜中挑战同学1次
         /// </summary>
         CombatFight,
         /// <summary>

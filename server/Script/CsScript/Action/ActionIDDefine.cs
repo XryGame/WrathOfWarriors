@@ -175,7 +175,30 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1066 = 1066;
 
+        ///<summary>
+        ///占领加成改变
+        ///</summary>
+        public const short Cst_Action1067 = 1067;
 
+        ///<summary>
+        ///竞选加成改变
+        ///</summary>
+        public const short Cst_Action1068 = 1068;
+
+        ///<summary>
+        ///好友上线通知
+        ///</summary>
+        public const short Cst_Action1069 = 1069;
+
+        ///<summary>
+        ///好友下线通知
+        ///</summary>
+        public const short Cst_Action1070= 1070;
+
+        ///<summary>
+        ///服务器状态通知
+        ///</summary>
+        public const short Cst_Action1099 = 1099;
 
         ///<summary>
         ///请求学习/劳动任务
@@ -498,6 +521,16 @@ namespace GameServer.CsScript.Action
         ///一键拉票
         ///</summary>
         public const short Cst_Action10800 = 10800;
+
+        ///<summary>
+        ///领取VIP礼包
+        ///</summary>
+        public const short Cst_Action10900 = 10900;
+
+        ///<summary>
+        ///兑换CDK
+        ///</summary>
+        public const short Cst_Action11000 = 11000;
 
     }
 }
