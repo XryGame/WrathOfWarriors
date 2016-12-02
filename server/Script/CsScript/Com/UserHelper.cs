@@ -120,17 +120,8 @@ namespace GameServer.Script.Model.DataModel
                             count--;
                             paycache.WeekCardDays--;
                             paycache.WeekCardAwardDate = DateTime.Now;
-                            MailData mail = new MailData()
-                            {
-                                ID = Guid.NewGuid().ToString(),
-                                Title = "周卡奖励",
-                                Sender = "系统",
-                                Date = DateTime.Now,
-                                Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", paycache.WeekCardDays),
-                                ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
-                            };
 
-                            gameUser.AddNewMail(ref mail);
+                            AddWeekCardMail(gameUser, paycache);
                         }
                     }
                 }
@@ -146,17 +137,8 @@ namespace GameServer.Script.Model.DataModel
                             count--;
                             paycache.MonthCardDays--;
                             paycache.MonthCardAwardDate = DateTime.Now;
-                            MailData mail = new MailData()
-                            {
-                                ID = Guid.NewGuid().ToString(),
-                                Title = "月卡奖励",
-                                Sender = "系统",
-                                Date = DateTime.Now,
-                                Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", paycache.MonthCardDays),
-                                ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
-                            };
 
-                            gameUser.AddNewMail(ref mail);
+                            AddMouthCardMail(gameUser, paycache);
                         }
                     }
                 }
@@ -175,6 +157,35 @@ namespace GameServer.Script.Model.DataModel
 
             // 设置新的恢复时间
             gameUser.RestoreDate = DateTime.Now;
+        }
+
+        public static void AddWeekCardMail(GameUser user, UserPayCache pay)
+        {
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "周卡奖励",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", pay.WeekCardDays),
+                ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
+            };
+
+            user.AddNewMail(ref mail);
+        }
+        public static void AddMouthCardMail(GameUser user, UserPayCache pay)
+        {
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "月卡奖励",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", pay.MonthCardDays),
+                ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
+            };
+
+            user.AddNewMail(ref mail);
         }
         public static void UserOnline(int uid)
         {
@@ -421,11 +432,11 @@ namespace GameServer.Script.Model.DataModel
                 string tmp = "";
                 if (logdata.Status == EventStatus.Good)
                 {
-                    tmp = string.Format("成功，排名上升 {0} 位。", logdata.RankIdDiff);
+                    tmp = string.Format("成功，排名上升至 {0} 位。", logdata.RankId);
                 }
                 else
                 {
-                    tmp = string.Format("失败。", logdata.RankIdDiff);
+                    tmp = string.Format("失败。");
                 }
                 ret += tmp;
             }
@@ -438,11 +449,11 @@ namespace GameServer.Script.Model.DataModel
                 string tmp = "";
                 if (logdata.Status == EventStatus.Good)
                 {
-                    tmp = string.Format("成功，排名下降 {0} 位。", logdata.RankIdDiff);
+                    tmp = string.Format("成功，排名下降至 {0} 位。", logdata.RankId);
                 }
                 else
                 {
-                    tmp = string.Format("失败。", logdata.RankIdDiff);
+                    tmp = string.Format("失败。");
                 }
                 ret += tmp;
             }
@@ -796,11 +807,11 @@ namespace GameServer.Script.Model.DataModel
                     user.ResultStudyTask();
                     user.ResultExerciseTask();
 
-
-                    if (user.ClassData.ClassID != 0)
+                    int inclass = value.ToInt();
+                    if (inclass != 0)
                     {// 将用户从原有班级中剔除
                         ischangeclass = true;
-                        ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
+                        ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().FindKey(inclass);
                         if (oldclass != null)
                         {
                             if (oldclass.MemberList.Find(t => (t == userId)) != 0)
@@ -809,7 +820,7 @@ namespace GameServer.Script.Model.DataModel
                                 if (oldclass.Monitor == userId)
                                 {
                                     oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
-                                    PushMessageHelper.ClassMonitorChangeNotification(user.ClassData.ClassID);
+                                    PushMessageHelper.ClassMonitorChangeNotification(inclass);
                                 }
 
                                 var occupylist = new ShareCacheStruct<OccupyDataCache>().FindAll();
@@ -826,13 +837,12 @@ namespace GameServer.Script.Model.DataModel
                                         //        mem.OccupyAddList.Remove(v.SceneId);
 
                                         //}
-                                        PushMessageHelper.ClassOccupyAddChangeNotification(user.ClassData.ClassID);
+                                        PushMessageHelper.ClassOccupyAddChangeNotification(inclass);
                                     }
                                 }
 
                             }
                         }
-                        user.ClassData.ClassID = 0;
                     }
                 }
                 GameSession usession = GameSession.Get(userId);
@@ -851,6 +861,7 @@ namespace GameServer.Script.Model.DataModel
             }
 
         }
+
 
         public static void EveryDayTaskProcess(int UserId, TaskType type, int count)
         {

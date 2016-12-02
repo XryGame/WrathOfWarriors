@@ -67,7 +67,8 @@ namespace GameServer.CsScript.Action
             }
             int needDiamond = Math.Ceiling(mins).ToInt();
 
-            if (mins == 0)                return false;
+            if (mins == 0)
+                return false;
 
             if (ContextUser.DiamondNum < mins)
                 return false;

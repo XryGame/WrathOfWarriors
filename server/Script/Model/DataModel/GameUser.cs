@@ -1897,11 +1897,17 @@ namespace GameServer.Script.Model.DataModel
 
             UserStage = getSubjectStage();
 
+
+
             if (Callback != null && !IsRefreshing)
             {
-                Callback.BeginInvoke("LevelUp", UserID, 0, 0, null, this);
+                Callback.BeginInvoke("LevelUp", UserID, 0, ClassData.ClassID, null, this);
             }
-
+            if (UserLv % 2 == 0)
+            {
+                ClassData.ClassID = 0;
+            }
+            
 
         }
 
@@ -2269,10 +2275,12 @@ namespace GameServer.Script.Model.DataModel
         public void RefreshFightValue()
         {
             Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(UserLv);
+            Config_RoleGrade rolelastgrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(UserLv - 1);
             if (rolegrade == null)
             {
                 return;
             }
+            int baseExpDValue = rolelastgrade == null ? rolegrade.BaseExp : rolegrade.BaseExp - rolelastgrade.BaseExp;
             var sctcache = new ShareCacheStruct<Config_SubjectExp>();
             /// 如果是学前班阶段，按照小学阶段算
             SubjectStage stage = getSubjectStage();
@@ -2315,7 +2323,7 @@ namespace GameServer.Script.Model.DataModel
                         exp_ += pi.GetValue(ExpData).ToInt();
                 }
                 float factor = 0.5f;
-                percent = (float)exp_ / rolegrade.BaseExp;
+                percent = (float)exp_ / baseExpDValue;
                 hp_ += (int)(rolegrade.HP * (1 + percent) * factor);
                 Hp += hp_;
             }
@@ -2342,7 +2350,7 @@ namespace GameServer.Script.Model.DataModel
                         exp_ += pi.GetValue(ExpData).ToInt();
                 }
                 float factor = v == SubjectChildType.Saodi ? 0.4f : 0.6f;
-                percent = (float)exp_ / rolegrade.BaseExp;
+                percent = (float)exp_ / baseExpDValue;
                 atk_ += (int)(rolegrade.Attack * (1 + percent) * factor);
                 Attack += atk_;
             }
@@ -2370,7 +2378,7 @@ namespace GameServer.Script.Model.DataModel
                         exp_ += pi.GetValue(ExpData).ToInt();
                 }
                 float factor = v == SubjectChildType.Cazhuozi ? 0.6f : 0.4f;
-                percent = (float)exp_ / rolegrade.BaseExp;
+                percent = (float)exp_ / baseExpDValue;
                 def_ += (int)(rolegrade.Defense * (1 + percent) * factor);
                 Defense += def_;
             }

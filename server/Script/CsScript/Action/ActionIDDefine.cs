@@ -406,6 +406,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action6002 = 6002;
 
         ///<summary>
+        ///购买占领资格
+        ///</summary>
+        public const short Cst_Action6003 = 6003;
+
+        ///<summary>
         ///请求成就数据
         ///</summary>
         public const short Cst_Action7000 = 7000;

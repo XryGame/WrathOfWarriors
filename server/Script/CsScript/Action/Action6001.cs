@@ -69,11 +69,11 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            //if (ContextUser.OccupySceneList.Find(t => (t == scenetype)) != SceneType.No)
-            //{
-            //    receipt.Result = RequestOccupyResult.NoTimes;
-            //    return true;
-            //}
+            if (ContextUser.OccupySceneList.Find(t => (t == scenetype)) != SceneType.No)
+            {
+                receipt.Result = RequestOccupyResult.NoTimes;
+                return true;
+            }
 
             if (findocc.UserId == ContextUser.UserID || findocc.ChallengerId > 0)
             {

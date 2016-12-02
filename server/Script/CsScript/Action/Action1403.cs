@@ -123,6 +123,7 @@ namespace GameServer.CsScript.Action
             log.Type = EventType.Challenge;
             log.Status = result;
             log.RankIdDiff = rankrise;
+            log.RankId = rankinfo.RankId;
             ContextUser.PushCombatLog(ref log);
 
             GameUser rival = UserHelper.FindUser(rankinfo.FightDestUid);
@@ -134,6 +135,7 @@ namespace GameServer.CsScript.Action
                 log.Type = EventType.PassiveChallenge;
                 log.Status = result;
                 log.RankIdDiff = rankrise;
+                log.RankId = rivalrankinfo.RankId;
                 rival.PushCombatLog(ref log);
             }
             

@@ -49,5 +49,11 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(5)]
         public int RankIdDiff { get; set; }
+
+        /// <summary>
+        /// 排名
+        /// </summary>
+        [ProtoMember(6)]
+        public int RankId { get; set; }
     }
 }

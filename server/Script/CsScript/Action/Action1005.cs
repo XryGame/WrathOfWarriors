@@ -145,18 +145,18 @@ namespace GameServer.CsScript.Action
             }
 
             // 邮箱
-            //MailData mail = new MailData()
-            //{
-            //    ID = Guid.NewGuid().ToString(),
-            //    Title = "欢迎进入学生战纪",
-            //    Sender = "系统",
-            //    Date = DateTime.Now,
-            //    Context = "欢迎进入学生战纪",
-            //    ApppendDiamond = 0
-            //};
-            ////mail.AppendItem.Add(new ItemData() { ID = 10001, Num = 1 });
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "欢迎进入学生战纪",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = "送您月卡3天，快去体验吧！",
+                ApppendDiamond = 0
+            };
 
-            //user.AddNewMail(ref mail);
+            user.AddNewMail(ref mail);
+            
 
             var cacheSet = new PersonalCacheStruct<GameUser>();
             cacheSet.Add(user);
@@ -194,8 +194,8 @@ namespace GameServer.CsScript.Action
                 UserID = user.UserID,
                 PayMoney = 0,
                 IsReceiveFirstPay = false,
-                WeekCardDays = 0,
-                MonthCardDays = 0,
+                WeekCardDays = 2,
+                MonthCardDays = 2,
                 WeekCardAwardDate = DateTime.MinValue,
                 MonthCardAwardDate = DateTime.MinValue,
             };
@@ -203,7 +203,7 @@ namespace GameServer.CsScript.Action
             payCacheSet.Add(paycache);
             payCacheSet.Update();
 
-
+            UserHelper.AddMouthCardMail(user, paycache);
             return user;
         }
 

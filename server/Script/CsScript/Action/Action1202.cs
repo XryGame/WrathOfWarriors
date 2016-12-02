@@ -52,41 +52,38 @@ namespace GameServer.CsScript.Action
             int classlv = ContextUser.UserLv / 2 + 1;
             List<ClassDataCache> classeslist = new ShareCacheStruct<ClassDataCache>().FindAll(t => (t.Lv == classlv));
             ClassDataCache newcalss = classeslist.Find(t => (t.ClassID == ClassId));
-            if (newcalss == null)
+            if (newcalss == null || ContextUser.ClassData.ClassID != 0)
             {
-                ErrorInfo = ErrorInfo = string.Format(Language.Instance.RequestIDError, ClassId);
+                ErrorInfo = string.Format(Language.Instance.RequestIDError, ClassId);
                 return true;
             }
 
-            if (newcalss.MemberList.Find(t => (t == UserId)) != 0
+            if (newcalss.MemberList.Find(t => (t == ContextUser.UserID)) != 0
                 || newcalss.MemberList.Count >= ConfigEnvSet.GetInt("Class.MaxNum"))
             {
-                ErrorInfo = ErrorInfo = Language.Instance.ClassMemberFullError;
+                ErrorInfo = Language.Instance.ClassMemberFullError;
                 return true;
             }
             // 将用户从原有班级中剔除
-            if (ContextUser.ClassData.ClassID != 0)
+            var classlist = new ShareCacheStruct<ClassDataCache>().FindAll();
+            foreach (var cl in classeslist)
             {
-                ClassDataCache oldclass = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
-                if (oldclass != null)
+                if (cl.MemberList.Find(t => (t == ContextUser.UserID)) != 0)
                 {
-                    if (oldclass.MemberList.Find(t => (t == UserId)) != 0)
+                    cl.MemberList.Remove(ContextUser.UserID);
+                    if (cl.Monitor == ContextUser.UserID)
                     {
-                        oldclass.MemberList.Remove(UserId);
-                        if (oldclass.Monitor == UserId)
-                        {
-                            oldclass.Monitor = oldclass.MemberList.Count > 0 ? oldclass.MemberList[0] : 0;
-                        }
+                        cl.Monitor = cl.MemberList.Count > 0 ? cl.MemberList[0] : 0;
                     }
-
                 }
             }
+
             // 将用户加入到新班级中
             ContextUser.ClassData.ClassID = ClassId;
-            newcalss.MemberList.Add(UserId);
+            newcalss.MemberList.Add(ContextUser.UserID);
             if (newcalss.MemberList.Count == 1 || newcalss.Monitor == 0)
             {// 设置班长
-                newcalss.Monitor = UserId;
+                newcalss.Monitor = ContextUser.UserID;
             }
 
 

@@ -60,8 +60,12 @@ namespace GameServer.CsScript.Action
             receipt.Result = EventStatus.Bad;
         
             Config_Role role = new ShareCacheStruct<Config_Role>().FindKey(monsterId);
-
             if (role == null || count <= 0)
+            {
+                return true;
+            }
+            var payCacheSet = UserHelper.FindUserPay(ContextUser.UserID);
+            if (payCacheSet == null || (payCacheSet.WeekCardDays <= 0 && payCacheSet.MonthCardDays <= 0))
             {
                 return true;
             }
@@ -70,6 +74,7 @@ namespace GameServer.CsScript.Action
             {
                 return true;
             }
+            
 
             ContextUser.Vit = MathUtils.Subtraction(ContextUser.Vit, role.Time * count, 0);
             ContextUser.SweepingRoleId = monsterId;

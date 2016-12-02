@@ -197,6 +197,7 @@
     <Compile Include="Script\CsScript\Action\Action6000.cs" />
     <Compile Include="Script\CsScript\Action\Action6001.cs" />
     <Compile Include="Script\CsScript\Action\Action6002.cs" />
+    <Compile Include="Script\CsScript\Action\Action6003.cs" />
     <Compile Include="Script\CsScript\Action\Action7000.cs" />
     <Compile Include="Script\CsScript\Action\Action7001.cs" />
     <Compile Include="Script\CsScript\Action\Action8000.cs" />
