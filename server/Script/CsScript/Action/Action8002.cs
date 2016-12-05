@@ -36,7 +36,7 @@ namespace GameServer.CsScript.Action
             ContextUser.InviteFightDestUid = 0;
             GameSession session = GameSession.Get(destuid);
             GameUser dest = UserHelper.FindUser(destuid);
-            if (session == null || dest == null || !dest.IsOnline
+            if (session == null || dest == null
                 || dest.UserStatus != UserStatus.Inviteing)
             {
                 return true;

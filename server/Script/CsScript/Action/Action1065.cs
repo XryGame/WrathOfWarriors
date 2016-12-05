@@ -4,6 +4,7 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 
@@ -85,7 +86,7 @@ namespace GameServer.CsScript.Action
             }
             receipt.RivalData.UserStage = dest.UserStage;
             receipt.RivalData.FightValue = dest.FightingValue;
-            receipt.RivalData.IsOnline = dest.IsOnline;
+            receipt.RivalData.IsOnline = GameSession.Get(dest.UserID) != null;
             receipt.RivalData.ItemList = dest.ItemDataList;
             receipt.RivalData.SkillList = dest.SkillDataList;
             receipt.RivalData.SkillCarryList = dest.SkillCarryList;

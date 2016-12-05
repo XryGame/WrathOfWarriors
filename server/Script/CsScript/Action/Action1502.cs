@@ -96,16 +96,17 @@ namespace GameServer.CsScript.Action
                     receipt.Data.UserLv = dest.UserLv;
                     receipt.Data.FightValue = dest.FightingValue;
                     receipt.Data.VipLv = dest.VipLv;
-                    receipt.Data.IsOnline = dest.IsOnline;
+                    receipt.Data.IsOnline = GameSession.Get(dest.UserID) != null;
 
 
                     dest.AddFriend(ContextUser.UserID);
-                    if (dest.IsOnline)
+                    var session = GameSession.Get(destuid);
+                    if (session != null)
                     {
                         var parameters = new Parameters();
                         parameters["Uid"] = ContextUser.UserID;
                         var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1055, GameSession.Get(destuid), parameters, OpCode.Text, null);
-                        ActionFactory.SendAction(GameSession.Get(destuid), ActionIDDefine.Cst_Action1055, packet, (session, asyncResult) => { }, 0);
+                        ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1055, packet, (sessions, asyncResult) => { }, 0);
                     }
                 }
             }

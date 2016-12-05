@@ -62,7 +62,7 @@ namespace GameServer.CsScript.Action
                     UserID = ContextUser.UserID,
                     NickName = ContextUser.NickName,
                     UserLv = ContextUser.UserLv,
-                    IsOnline = ContextUser.IsOnline,
+                    IsOnline = true,
                     RankId = int.MaxValue,
                     FightingValue = ContextUser.FightingValue,
                     RankDate = DateTime.Now,

@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.DataModel;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -54,7 +55,7 @@ namespace GameServer.CsScript.Action
             receipt.UserLv = dest.UserLv;
             receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
-            receipt.IsOnline = dest.IsOnline;
+            receipt.IsOnline = GameSession.Get(dest.UserID) != null;
 
             return true;
         }

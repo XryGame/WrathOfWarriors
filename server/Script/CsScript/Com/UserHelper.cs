@@ -155,6 +155,17 @@ namespace GameServer.Script.Model.DataModel
 
             gameUser.BuyVitCount = 0;
 
+
+            // 切磋钻石处理
+            System.Globalization.GregorianCalendar gc = new System.Globalization.GregorianCalendar();
+            int lastWeekOfYear = gc.GetWeekOfYear(gameUser.ResetInviteFightDiamondDate, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            int nowWeekOfYear = gc.GetWeekOfYear(DateTime.Now, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            if (lastWeekOfYear != nowWeekOfYear)
+            {
+                gameUser.InviteFightDiamondNum = 0;
+                gameUser.ResetInviteFightDiamondDate = DateTime.Now;
+            }
+
             // 设置新的恢复时间
             gameUser.RestoreDate = DateTime.Now;
         }

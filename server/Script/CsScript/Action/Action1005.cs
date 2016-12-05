@@ -116,6 +116,8 @@ namespace GameServer.CsScript.Action
             user.EventAwardData.OnlineStartTime = DateTime.Now;
             user.PlotId = 0;
             user.IsOnline = true;
+            user.InviteFightDiamondNum = 0;
+            user.ResetInviteFightDiamondDate = DateTime.Now;
             //user.FriendsData = new UserFriendsData();
             user.RefreshFightValue();
 
@@ -148,10 +150,10 @@ namespace GameServer.CsScript.Action
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "欢迎进入学生战纪",
+                Title = "恭喜您已获得月卡免费体验资格",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = "送您月卡3天，快去体验吧！",
+                Context = "恭喜您已获得月卡免费体验资格，月卡有效期为3天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
                 ApppendDiamond = 0
             };
 
@@ -175,7 +177,7 @@ namespace GameServer.CsScript.Action
                 NickName = user.NickName,
                 LooksId = user.LooksId,
                 UserLv = user.UserLv,
-                IsOnline = user.IsOnline,
+                IsOnline = true,
                 RankId = int.MaxValue,
                 Exp = user.TotalExp,
                 FightingValue = user.FightingValue,

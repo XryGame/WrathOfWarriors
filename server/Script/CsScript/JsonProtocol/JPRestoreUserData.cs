@@ -31,5 +31,7 @@ namespace GameServer.CsScript.JsonProtocol
         public LotteryAwardType LotteryAwardType { get; set; }
 
         public int LotteryId { get; set; }
+
+        public int InviteFightDiamondNum { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.Enum.Enum;
 using ZyGames.Framework.Game.Com.Rank;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -85,7 +86,7 @@ namespace GameServer.CsScript.Action
                     LooksId = data.LooksId,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
-                    IsOnline = data.IsOnline,
+                    IsOnline = GameSession.Get(data.UserID) != null,
                     Exp = data.Exp,
                     FightingValue = data.FightingValue
                 };

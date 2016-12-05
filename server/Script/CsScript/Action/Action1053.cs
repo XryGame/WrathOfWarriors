@@ -65,6 +65,7 @@ namespace GameServer.CsScript.Action
                 receipt.LotteryAwardType = lottery.Type;
                 receipt.LotteryId = lottery.Content;
             }
+            receipt.InviteFightDiamondNum = ContextUser.InviteFightDiamondNum;
             return true;
         }
     }

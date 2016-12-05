@@ -134,5 +134,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int VipGiftProgress { get; set; }
 
+        public int InviteFightDiamondNum { get; set; }
+
     }
 }

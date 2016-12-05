@@ -41,7 +41,7 @@ namespace GameServer.CsScript.Action
             receipt = RequestInviteFightResult.OK;
             GameSession session = GameSession.Get(destuid);
             GameUser dest = UserHelper.FindUser(destuid);
-            if (session == null || dest == null || !dest.IsOnline)
+            if (session == null || dest == null)
             {
                 receipt = RequestInviteFightResult.Offine;
                 return true;

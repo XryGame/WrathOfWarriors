@@ -63,12 +63,13 @@ namespace GameServer.CsScript.Action
                 dest.RemoveFriend(ContextUser.UserID);
             }
 
-            if (dest.IsOnline)
+            var session = GameSession.Get(destuid);
+            if (session != null)
             {
                 var parameters = new Parameters();
                 parameters["Uid"] = ContextUser.UserID;
                 var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1056, GameSession.Get(destuid), parameters, OpCode.Text, null);
-                ActionFactory.SendAction(GameSession.Get(destuid), ActionIDDefine.Cst_Action1056, packet, (session, asyncResult) => { }, 0);
+                ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1056, packet, (sessions, asyncResult) => { }, 0);
             }
             
             receipt = destuid;

@@ -3,6 +3,7 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Service;
 
@@ -55,7 +56,7 @@ namespace GameServer.CsScript.Action
                 UserId = user.UserID,
                 NickName = user.NickName,
                 LooksId = user.LooksId,
-                IsOnline = user.IsOnline,
+                IsOnline = GameSession.Get(user.UserID) != null,
                 FightValue = user.FightingValue,
                 Attack = user.Attack,
                 Defense = user.Defense,

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Com.Rank;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -53,7 +54,7 @@ namespace GameServer.CsScript.Action
                 return true;
             
             int pagecout;
-            var list = ranking.GetRange(0, 20, out pagecout);
+            var list = ranking.GetRange(0, 50, out pagecout);
             foreach (var data in list)
             {
                 JPRankUserData jpdata = new JPRankUserData()
@@ -63,7 +64,7 @@ namespace GameServer.CsScript.Action
                     LooksId = data.LooksId,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
-                    IsOnline = data.IsOnline,
+                    IsOnline = GameSession.Get(data.UserID) != null,
                     Exp = data.Exp,
                     FightingValue = data.FightingValue
                 };

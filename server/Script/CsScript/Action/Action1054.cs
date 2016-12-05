@@ -3,6 +3,7 @@ using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -60,7 +61,7 @@ namespace GameServer.CsScript.Action
             receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
             receipt.ApplyTime = Util.ConvertDateTimeStamp(apply.ApplyDate);
-            receipt.IsOnline = dest.IsOnline;
+            receipt.IsOnline = GameSession.Get(dest.UserID) != null;
 
             return true;
         }

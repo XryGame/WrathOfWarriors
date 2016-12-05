@@ -86,7 +86,8 @@ namespace GameServer.CsScript.Action
                 HP = ContextUser.Hp,
                 ClassID = ContextUser.ClassData.ClassID,
                 FightValue = ContextUser.FightingValue,
-                ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes
+                ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes,
+                InviteFightDiamondNum = ContextUser.InviteFightDiamondNum
             };
             
 
@@ -180,7 +181,7 @@ namespace GameServer.CsScript.Action
                     jpfd.UserLv = friend.UserLv;
                     jpfd.VipLv = friend.VipLv;
                     jpfd.FightValue = friend.FightingValue;
-                    jpfd.IsOnline = friend.IsOnline;
+                    jpfd.IsOnline = GameSession.Get(friend.UserID) != null;
                     jpfd.IsGiveAway = fd.IsGiveAway;
                     jpfd.IsByGiveAway = fd.IsByGiveAway;
                     jpfd.IsReceiveGiveAway = fd.IsReceiveGiveAway;
@@ -199,7 +200,7 @@ namespace GameServer.CsScript.Action
                     data.UserLv = applyuser.UserLv;
                     data.VipLv = applyuser.VipLv;
                     data.FightValue = applyuser.FightingValue;
-                    data.IsOnline = applyuser.IsOnline;
+                    data.IsOnline = GameSession.Get(applyuser.UserID) != null;
                     receipt.FriendApplyList.Add(data);
                 }
             }

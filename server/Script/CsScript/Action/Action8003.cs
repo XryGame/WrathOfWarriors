@@ -1,6 +1,8 @@
 ﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -33,9 +35,13 @@ namespace GameServer.CsScript.Action
             ContextUser.UserStatus = UserStatus.MainUi;
             ContextUser.InviteFightDestUid = 0;
 
-            if (Result == EventStatus.Good)
+
+            if (Result == EventStatus.Good && ContextUser.InviteFightDiamondNum < DataHelper.InviteFightDiamondWeekMax)
             {
-                UserHelper.GiveAwayDiamond(ContextUser.UserID, DataHelper.InviteFightAwardDiamond);
+                int diamond = MathUtils.Subtraction(DataHelper.InviteFightDiamondWeekMax, ContextUser.InviteFightDiamondNum);
+                diamond = Math.Min(diamond, DataHelper.InviteFightAwardDiamond);
+                ContextUser.InviteFightDiamondNum += diamond;
+                UserHelper.GiveAwayDiamond(ContextUser.UserID, diamond);
             }
             return true;
         }

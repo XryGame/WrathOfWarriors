@@ -1000,6 +1000,41 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 每周切磋获得钻石数量
+        /// </summary>
+        private int _InviteFightDiamondNum;
+        [ProtoMember(56)]
+        [EntityField("InviteFightDiamondNum")]
+        public int InviteFightDiamondNum
+        {
+            get
+            {
+                return _InviteFightDiamondNum;
+            }
+            set
+            {
+                SetChange("InviteFightDiamondNum", value);
+            }
+        }
+        /// <summary>
+        /// 充值切磋钻石数量日期
+        /// </summary>
+        private DateTime _ResetInviteFightDiamondDate;
+        [ProtoMember(57)]
+        [EntityField("ResetInviteFightDiamondDate")]
+        public DateTime ResetInviteFightDiamondDate
+        {
+            get
+            {
+                return _ResetInviteFightDiamondDate;
+            }
+            set
+            {
+                SetChange("ResetInviteFightDiamondDate", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -1253,6 +1288,8 @@ namespace GameServer.Script.Model.DataModel
                     case "AccumulatePayList": return AccumulatePayList;
                     case "VipGiftProgress": return VipGiftProgress;
                     case "CanvassDate": return CanvassDate;
+                    case "InviteFightDiamondNum": return InviteFightDiamondNum;
+                    case "ResetInviteFightDiamondDate": return ResetInviteFightDiamondDate;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1426,6 +1463,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "CanvassDate":
                         _CanvassDate = value.ToDateTime();
+                        break;
+                    case "InviteFightDiamondNum":
+                        _InviteFightDiamondNum = value.ToInt();
+                        break;
+                    case "ResetInviteFightDiamondDate":
+                        _ResetInviteFightDiamondDate = value.ToDateTime();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }

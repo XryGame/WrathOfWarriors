@@ -85,6 +85,10 @@ namespace GameServer.Script.Model.DataModel
         /// 邀请切磋成功获得钻石数量
         /// </summary>
         static public int InviteFightAwardDiamond;
+        /// <summary>
+        /// 每周切磋获得钻石最大数量
+        /// </summary>
+        static public int InviteFightDiamondWeekMax;
 
 
         static DataHelper()
@@ -118,6 +122,7 @@ namespace GameServer.Script.Model.DataModel
             ChallengeTheMonitorAwardDiamond = ConfigEnvSet.GetInt("User.ChallengeTheMonitorAwardDiamond");
             OccupyAwardDiamond = ConfigEnvSet.GetInt("User.OccupyAwardDiamond");
             InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
+            InviteFightDiamondWeekMax = ConfigEnvSet.GetInt("User.InviteFightDiamondWeekMax");
 
             var classcache = new ShareCacheStruct<ClassDataCache>();
             if (classcache.IsEmpty)
