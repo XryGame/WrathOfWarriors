@@ -69,7 +69,7 @@ namespace GameServer.CsScript.Action
             var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(cud.ClassId);
             if (classdata != null)
             {
-                string context = string.Format("{0}{1} 正在参加 {2} 的竞选，支持一下吧！", classdata.Name, ContextUser.NickName, fdnow.Title);
+                string context = string.Format("{0} {1} 正在参加{2}的竞选，支持一下吧！", classdata.Name, ContextUser.NickName, fdnow.Title);
                 var chatService = new TryXChatService();
                 chatService.SystemRedundantSend(context, ContextUser.UserID, ChatChildType.Canvass);
                 PushMessageHelper.SendSystemChatToOnlineUser();

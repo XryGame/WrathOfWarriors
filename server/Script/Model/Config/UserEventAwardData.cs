@@ -86,22 +86,22 @@ namespace GameServer.Script.Model.Config
             }
         }
 
-        /// <summary>
-        /// 在线时间计数(秒)
-        /// </summary>
-        private int _TodayOnlineTime;
-        [ProtoMember(5)]
-        public int TodayOnlineTime
-        {
-            get
-            {
-                return _TodayOnlineTime;
-            }
-            set
-            {
-                _TodayOnlineTime = value;
-            }
-        }
+        ///// <summary>
+        ///// 在线时间计数(秒)
+        ///// </summary>
+        //private int _TodayOnlineTime;
+        //[ProtoMember(5)]
+        //public int TodayOnlineTime
+        //{
+        //    get
+        //    {
+        //        return _TodayOnlineTime;
+        //    }
+        //    set
+        //    {
+        //        _TodayOnlineTime = value;
+        //    }
+        //}
 
         /// <summary>
         /// 在线时间奖励阶段
@@ -151,6 +151,23 @@ namespace GameServer.Script.Model.Config
             set
             {
                 _LastOnlineAwayReceiveTime = value;
+            }
+        }
+
+        /// <summary>
+        ///  是否已经开始在线计时
+        /// </summary>
+        private bool _IsStartedOnlineTime;
+        [ProtoMember(9)]
+        public bool IsStartedOnlineTime
+        {
+            get
+            {
+                return _IsStartedOnlineTime;
+            }
+            set
+            {
+                _IsStartedOnlineTime = value;
             }
         }
     }

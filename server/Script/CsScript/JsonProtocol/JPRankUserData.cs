@@ -19,5 +19,7 @@ namespace GameServer.CsScript.JsonProtocol
         public int Exp { get; set; }
 
         public int FightingValue { get; set; }
+
+        public int VipLv { get; set; }
     }
 }

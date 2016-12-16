@@ -43,6 +43,9 @@ namespace GameServer.CsScript.Action
                 ContextUser.InviteFightDiamondNum += diamond;
                 UserHelper.GiveAwayDiamond(ContextUser.UserID, diamond);
             }
+
+            // 成就
+            UserHelper.AchievementProcess(ContextUser.UserID, 1, AchievementType.InviteFightCount);
             return true;
         }
     }

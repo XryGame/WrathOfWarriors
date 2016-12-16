@@ -65,7 +65,12 @@ namespace GameServer.CsScript.Action
                 return true;
             }
             var payCacheSet = UserHelper.FindUserPay(ContextUser.UserID);
-            if (payCacheSet == null || (payCacheSet.WeekCardDays <= 0 && payCacheSet.MonthCardDays <= 0))
+            if (payCacheSet == null)
+            {
+                return true;
+            }
+
+            if (count > 1 && payCacheSet.WeekCardDays < 0 && payCacheSet.MonthCardDays < 0)
             {
                 return true;
             }

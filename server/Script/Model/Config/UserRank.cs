@@ -108,5 +108,11 @@ namespace GameServer.Script.Model.Config
         [ProtoMember(12)]
         public int FightDestUid { get; set; }
 
+        /// <summary>
+        /// VIP等级
+        /// </summary>
+        [ProtoMember(13)]
+        public int VipLv { get; set; }
+
     }
 }

@@ -20,10 +20,15 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="context"></param>
         public static void SendNoticeToOnlineUser(NoticeType type, string context)
         {
-            var parameter = new Parameters();
-            parameter["NoticeType"] = type;
-            parameter["Context"] = context;
-            ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action3003, parameter, (s, r) => { }, OpCode.Text, 0);
+            var list = UserHelper.GetOnlinesList();
+            if (list.Count > 0)
+            {
+                var parameter = new Parameters();
+                parameter["NoticeType"] = type;
+                parameter["Context"] = context;
+                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3003, parameter, (s, r) => { }, OpCode.Text, 0);
+            }
+
         }
         /// <summary>
         /// 发送公告消息到用户通知
@@ -33,7 +38,7 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="context"></param>
         public static void SendNoticeToUser(GameSession session, NoticeType type, string context)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameter = new Parameters();
             parameter["NoticeType"] = type;
@@ -46,9 +51,14 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void SendWorldChatToOnlineUser()
         {
-            var parameters = new Parameters();
-            parameters["ChatType"] = ChatType.World;
-            ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
+            var list = UserHelper.GetOnlinesList();
+            if (list.Count > 0)
+            {
+                var parameters = new Parameters();
+                parameters["ChatType"] = ChatType.World;
+                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
+            }
+
         }
         /// <summary>
         /// 发送聊天消息到指定班级成员通知
@@ -61,7 +71,8 @@ namespace GameServer.Script.CsScript.Com
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null && GameSession.Get(memuid) != null)
+                var session = GameSession.Get(memuid);
+                if (mem != null && session != null && session.Connected)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -77,7 +88,7 @@ namespace GameServer.Script.CsScript.Com
         public static void SendWhisperChatToUser(int fromuid, int whisperuid)
         {
             var wsession = GameSession.Get(whisperuid);
-            if (wsession != null)
+            if (wsession != null && wsession.Connected)
             {
                 var parameters = new Parameters();
                 parameters["ChatType"] = ChatType.Whisper;
@@ -85,7 +96,7 @@ namespace GameServer.Script.CsScript.Com
                 ActionFactory.SendAction(wsession, ActionIDDefine.Cst_Action3002, packet, (session, asyncResult) => { }, 0);
             }
             wsession = GameSession.Get(fromuid);
-            if (wsession != null)
+            if (wsession != null && wsession.Connected)
             {
                 var parameters = new Parameters();
                 parameters["ChatType"] = ChatType.Whisper;
@@ -98,9 +109,13 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void SendSystemChatToOnlineUser()
         {
-            var parameters = new Parameters();
-            parameters["ChatType"] = ChatType.System;
-            ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
+            var list = UserHelper.GetOnlinesList();
+            if (list.Count > 0)
+            {
+                var parameters = new Parameters();
+                parameters["ChatType"] = ChatType.System;
+                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
+            }
         }
 
         /// <summary>
@@ -108,7 +123,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void SendSystemChatToUser(GameSession session)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["ChatType"] = ChatType.System;
@@ -123,9 +138,9 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void RestoreUserNotification()
         {
-            var onlinelist = GameSession.GetOnlineAll();
-            if (onlinelist.Count > 0)
-                ActionFactory.SendAction(GameSession.GetOnlineAll(), ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
+            var list = UserHelper.GetOnlinesList();
+            if (list.Count > 0)
+                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
         }
 
         /// <summary>
@@ -141,7 +156,8 @@ namespace GameServer.Script.CsScript.Com
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null && GameSession.Get(memuid) != null)
+                var session = GameSession.Get(memuid);
+                if (mem != null && session != null && session.Connected)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -156,7 +172,7 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="classid"></param>
         public static void DailyQuestFinishNotification(GameSession session)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1060, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1060, packet, (rsession, asyncResult) => { }, 0);
@@ -167,7 +183,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void AchievementFinishNotification(GameSession session, int id)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["ID"] = id;
@@ -181,7 +197,7 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="session"></param>
         public static void UserFightValueChangedNotification(GameSession session)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1050, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1050, packet, (rsession, asyncResult) => { }, 0);
@@ -192,7 +208,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void UserLevelUpNotification(GameSession session, bool ischangeclass)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["IsChangeClass"] = ischangeclass;
@@ -206,7 +222,7 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="session"></param>
         public static void UserDiamondChangedNotification(GameSession session)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
@@ -218,7 +234,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void InviteFightNotification(GameSession session, int inviteuid)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["InviterUid"] = inviteuid;
@@ -232,7 +248,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void CancelInviteFightNotification(GameSession session, string nickname)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["NickName"] = nickname;
@@ -245,7 +261,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void RefuseInviteFightNotification(GameSession session, string nickname)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["NickName"] = nickname;
@@ -258,7 +274,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void StartInviteFightNotification(GameSession session, int destUserId, EventStatus result)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["DestUid"] = destUserId;
@@ -272,7 +288,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void NewMailNotification(GameSession session, string mailid)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["NewMailId"] = mailid;
@@ -291,7 +307,8 @@ namespace GameServer.Script.CsScript.Com
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null && GameSession.Get(memuid) != null)
+                var session = GameSession.Get(memuid);
+                if (mem != null && session != null && session.Connected)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -312,7 +329,8 @@ namespace GameServer.Script.CsScript.Com
             foreach (int memuid in classes.MemberList)
             {
                 var mem = UserHelper.FindUser(memuid);
-                if (mem != null && GameSession.Get(memuid) != null)
+                var session = GameSession.Get(memuid);
+                if (mem != null && session != null && session.Connected)
                 {
                     userList.Add(new SessionUser(mem));
                 }
@@ -327,7 +345,7 @@ namespace GameServer.Script.CsScript.Com
         /// <param name="session"></param>
         public static void UserJobTitleAddChangedNotification(GameSession session)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1068, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1068, packet, (rsession, asyncResult) => { }, 0);
@@ -338,7 +356,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void FriendOnlineNotification(GameSession session, int friendUid)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["FriendUid"] = friendUid;
@@ -350,7 +368,7 @@ namespace GameServer.Script.CsScript.Com
         /// </summary>
         public static void FriendOffineNotification(GameSession session, int friendUid)
         {
-            if (session == null)
+            if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
             parameters["FriendUid"] = friendUid;

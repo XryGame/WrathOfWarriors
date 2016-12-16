@@ -15,7 +15,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1401_名人榜前20名
+    /// 1401_名人榜前50名
     /// </summary>
     public class Action1406 : BaseAction
     {
@@ -64,10 +64,14 @@ namespace GameServer.CsScript.Action
                     LooksId = data.LooksId,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
-                    IsOnline = GameSession.Get(data.UserID) != null,
                     Exp = data.Exp,
-                    FightingValue = data.FightingValue
+                    FightingValue = data.FightingValue,
+                    VipLv = data.VipLv
                 };
+                GameSession session = GameSession.Get(data.UserID);
+                if (session != null && session.Connected)
+                    jpdata.IsOnline = true;
+
                 receipt.Add(jpdata);
             }
             return true;

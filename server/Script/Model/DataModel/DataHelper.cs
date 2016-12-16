@@ -70,7 +70,7 @@ namespace GameServer.Script.Model.DataModel
         static public int OpenRankSystemUserLevel;
 
         static public string[] JobTitles = {
-            "学生会会长", "秘书部部长", "学习部部长", "宣传部部长", "艺术部部长", "体育部部长", "班级委员会"
+            "班级委员会", "体育部部长", "艺术部部长", "宣传部部长", "学习部部长", "秘书部部长", "学生会会长"
         };
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace GameServer.Script.Model.DataModel
             RepairSignNeedDiamond = ConfigEnvSet.GetInt("User.RepairSignNeedDiamond");
             MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
             OpenTaskSystemUserLevel = ConfigEnvSet.GetInt("System.OpenTaskSystemUserLevel");
-            OpenRankSystemUserLevel = ConfigEnvSet.GetInt("System.OpenRankSystemUserLevel");
+            OpenRankSystemUserLevel = ConfigEnvSet.GetInt("System.OpenRankSystemLevel");
             ChallengeTheMonitorAwardDiamond = ConfigEnvSet.GetInt("User.ChallengeTheMonitorAwardDiamond");
             OccupyAwardDiamond = ConfigEnvSet.GetInt("User.OccupyAwardDiamond");
             InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
@@ -137,23 +137,23 @@ namespace GameServer.Script.Model.DataModel
                             ClassID = 1000 * (i + 1) + j,
                             Lv = i + 1
                         };
-                        if (i == 0) tmp.Name = string.Format("学前（{0}）班", j + 1);
-                        else if (i == 1) tmp.Name = string.Format("一年（{0}）班", j + 1);
-                        else if (i == 2) tmp.Name = string.Format("二年（{0}）班", j + 1);
-                        else if (i == 3) tmp.Name = string.Format("三年（{0}）班", j + 1);
-                        else if (i == 4) tmp.Name = string.Format("四年（{0}）班", j + 1);
-                        else if (i == 5) tmp.Name = string.Format("五年（{0}）班", j + 1);
-                        else if (i == 6) tmp.Name = string.Format("六年（{0}）班", j + 1);
-                        else if (i == 7) tmp.Name = string.Format("七年（{0}）班", j + 1);
-                        else if (i == 8) tmp.Name = string.Format("八年（{0}）班", j + 1);
-                        else if (i == 9) tmp.Name = string.Format("九年（{0}）班", j + 1);
-                        else if (i == 10) tmp.Name = string.Format("高一（{0}）班", j + 1);
-                        else if (i == 11) tmp.Name = string.Format("高二（{0}）班", j + 1);
-                        else if (i == 12) tmp.Name = string.Format("高三（{0}）班", j + 1);
-                        else if (i == 13) tmp.Name = string.Format("大一（{0}）班", j + 1);
-                        else if (i == 14) tmp.Name = string.Format("大二（{0}）班", j + 1);
-                        else if (i == 15) tmp.Name = string.Format("大三（{0}）班", j + 1);
-                        else if (i == 16) tmp.Name = string.Format("大四（{0}）班", j + 1);
+                        if (i == 0) tmp.Name = string.Format("学前{0}班", j + 1);
+                        else if (i == 1) tmp.Name = string.Format("一年{0}班", j + 1);
+                        else if (i == 2) tmp.Name = string.Format("二年{0}班", j + 1);
+                        else if (i == 3) tmp.Name = string.Format("三年{0}班", j + 1);
+                        else if (i == 4) tmp.Name = string.Format("四年{0}班", j + 1);
+                        else if (i == 5) tmp.Name = string.Format("五年{0}班", j + 1);
+                        else if (i == 6) tmp.Name = string.Format("六年{0}班", j + 1);
+                        else if (i == 7) tmp.Name = string.Format("七年{0}班", j + 1);
+                        else if (i == 8) tmp.Name = string.Format("八年{0}班", j + 1);
+                        else if (i == 9) tmp.Name = string.Format("九年{0}班", j + 1);
+                        else if (i == 10) tmp.Name = string.Format("高一{0}班", j + 1);
+                        else if (i == 11) tmp.Name = string.Format("高二{0}班", j + 1);
+                        else if (i == 12) tmp.Name = string.Format("高三{0}班", j + 1);
+                        else if (i == 13) tmp.Name = string.Format("大一{0}班", j + 1);
+                        else if (i == 14) tmp.Name = string.Format("大二{0}班", j + 1);
+                        else if (i == 15) tmp.Name = string.Format("大三{0}班", j + 1);
+                        else if (i == 16) tmp.Name = string.Format("大四{0}班", j + 1);
                         classcache.Add(tmp);
                     }
                 }

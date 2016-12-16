@@ -102,9 +102,9 @@ namespace GameServer.CsScript.JsonProtocol
 
         public bool IsTodayLottery { get; set; }
 
-        public LotteryAwardType LotteryAwardType { get; set; }
+        //public LotteryAwardType LotteryAwardType { get; set; }
 
-        public int LotteryId { get; set; }
+        //public int LotteryId { get; set; }
 
         public bool IsCanReceiveFirstPay { get; set; }
 

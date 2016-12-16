@@ -45,7 +45,7 @@ namespace GameServer.CsScript.Action
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-           
+
             //DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
             //TimeSpan timeSpan = DateTime.Now.Subtract(startDate);
             //int sec = (int)Math.Floor(timeSpan.TotalSeconds);
@@ -56,8 +56,8 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
 
-
-            ContextUser.EventAwardData.TodayOnlineTime = surface.Time;
+            //ContextUser.EventAwardData.OnlineStartTime = DateTime.Now;
+            //ContextUser.EventAwardData.TodayOnlineTime = surface.Time;
             ContextUser.EventAwardData.OnlineAwardId++;
             ContextUser.EventAwardData.LastOnlineAwayReceiveTime = DateTime.Now;
 

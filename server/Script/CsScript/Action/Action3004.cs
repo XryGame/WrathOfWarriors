@@ -86,10 +86,13 @@ namespace GameServer.CsScript.Action
                     LooksId = data.LooksId,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
-                    IsOnline = GameSession.Get(data.UserID) != null,
                     Exp = data.Exp,
-                    FightingValue = data.FightingValue
+                    FightingValue = data.FightingValue,
+                    VipLv = data.VipLv
                 };
+                GameSession session = GameSession.Get(data.UserID);
+                if (session != null && session.Connected)
+                    jpdata.IsOnline = true;
                 receipt.List.Add(jpdata);
             }
             return true;

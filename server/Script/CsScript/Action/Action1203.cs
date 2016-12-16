@@ -63,6 +63,7 @@ namespace GameServer.CsScript.Action
                         UserLv = MUser.UserLv,
                         LooksId = MUser.LooksId,
                         FightValue = MUser.FightingValue,
+                        VipLv = MUser.VipLv,
                         SkillCarryList = MUser.SkillCarryList
                     };
                     receipt.Add(data);

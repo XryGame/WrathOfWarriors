@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GameServer</RootNamespace>
     <AssemblyName>server</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -122,6 +122,7 @@
     <Compile Include="Script\CsScript\Action\Action1005.cs" />
     <Compile Include="Script\CsScript\Action\Action1008.cs" />
     <Compile Include="Script\CsScript\Action\Action10100.cs" />
+    <Compile Include="Script\CsScript\Action\Action10101.cs" />
     <Compile Include="Script\CsScript\Action\Action10200.cs" />
     <Compile Include="Script\CsScript\Action\Action10300.cs" />
     <Compile Include="Script\CsScript\Action\Action10301.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Script\CsScript\Action\Action1404.cs" />
     <Compile Include="Script\CsScript\Action\Action1405.cs" />
     <Compile Include="Script\CsScript\Action\Action1406.cs" />
+    <Compile Include="Script\CsScript\Action\Action1500.cs" />
     <Compile Include="Script\CsScript\Action\Action1501.cs" />
     <Compile Include="Script\CsScript\Action\Action1502.cs" />
     <Compile Include="Script\CsScript\Action\Action1503.cs" />
@@ -252,6 +254,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPFriendApplyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPFriendApplyReceipt.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPFriendData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPFriendOnlineData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPGiveUpTaskData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPInviteFightRivalData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPInviterData.cs" />
@@ -277,6 +280,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCdKeyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestDeleteMailData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestFightData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRequestLotteryData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestOccupyData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestRankData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestSFOData.cs" />

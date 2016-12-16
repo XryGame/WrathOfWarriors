@@ -2,6 +2,7 @@
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
@@ -68,6 +69,45 @@ namespace GameServer.CsScript.Action
             ContextUser.NickName = newName;
             receipt.CurrDiamond = ContextUser.DiamondNum;
             receipt.NewNickName = newName;
+
+            // 占领改名
+            var occupylist = new ShareCacheStruct<OccupyDataCache>().FindAll();
+            foreach (var v in occupylist)
+            {
+                if (v.UserId == ContextUser.UserID)
+                {
+                    v.NickName = ContextUser.NickName;
+                    break;
+                }
+            }
+            // 排行
+            var combatuser = UserHelper.FindCombatRankUser(ContextUser.UserID);
+            if (combatuser != null)
+            {
+                combatuser.NickName = ContextUser.NickName;
+            }
+            var leveluser = UserHelper.FindLevelRankUser(ContextUser.UserID);
+            if (leveluser != null)
+            {
+                leveluser.NickName = ContextUser.NickName;
+            }
+
+            // 竞选
+            var jobcache = new ShareCacheStruct<JobTitleDataCache>().FindAll();
+            foreach (var v in jobcache)
+            {
+                if (v.UserId == ContextUser.UserID)
+                {
+                    v.NickName = ContextUser.NickName;
+                }
+                foreach(var v2 in v.CampaignUserList)
+                {
+                    if (v2.UserId == ContextUser.UserID)
+                    {
+                        v2.NickName = ContextUser.NickName;
+                    }
+                }
+            }
             return true;
         }
     }

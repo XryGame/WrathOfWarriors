@@ -1035,6 +1035,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 随机的抽奖id
+        /// </summary>
+        private int _LastLotteryId;
+        [ProtoMember(58)]
+        [EntityField("LastLotteryId")]
+        public int LastLotteryId
+        {
+            get
+            {
+                return _LastLotteryId;
+            }
+            set
+            {
+                SetChange("LastLotteryId", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -1290,6 +1308,7 @@ namespace GameServer.Script.Model.DataModel
                     case "CanvassDate": return CanvassDate;
                     case "InviteFightDiamondNum": return InviteFightDiamondNum;
                     case "ResetInviteFightDiamondDate": return ResetInviteFightDiamondDate;
+                    case "LastLotteryId": return LastLotteryId;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1469,6 +1488,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "ResetInviteFightDiamondDate":
                         _ResetInviteFightDiamondDate = value.ToDateTime();
+                        break;
+                    case "LastLotteryId":
+                        _LastLotteryId = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
@@ -2216,22 +2238,22 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
 
-            // 成就
-            AchievementData achdata = AchievementList.Find(t => (t.Type == AchievementType.SkillLevelMax));
-            if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
-            {
-                if (skill.Lv > achdata.Count)
-                    achdata.Count = skill.Lv;
-                var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
-                if (achdata.Count >= achconfig.ObjectiveNum)
-                {
-                    achdata.IsFinish = true;
-                    if (Callback != null && !IsRefreshing)
-                    {
-                        Callback.BeginInvoke("SkillLevelAchievement", UserID, 0, achdata.ID, null, this);
-                    }
-                }
-            }
+            //// 成就
+            //AchievementData achdata = AchievementList.Find(t => (t.Type == AchievementType.SkillLevelMax));
+            //if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+            //{
+            //    if (skill.Lv > achdata.Count)
+            //        achdata.Count = skill.Lv;
+            //    var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
+            //    if (achdata.Count >= achconfig.ObjectiveNum)
+            //    {
+            //        achdata.IsFinish = true;
+            //        if (Callback != null && !IsRefreshing)
+            //        {
+            //            Callback.BeginInvoke("SkillLevelAchievement", UserID, 0, achdata.ID, null, this);
+            //        }
+            //    }
+            //}
 
             return true;
         }
@@ -2239,9 +2261,9 @@ namespace GameServer.Script.Model.DataModel
 
         public bool CheckAddSkillBook(int itemId, int num)
         {
-            ItemData itemdata = findItem(itemId);
+            var item = new ShareCacheStruct<Config_Item>().FindKey(itemId);
             Config_SkillGrade sg = new ShareCacheStruct<Config_SkillGrade>().Find(t => (t.Condition == itemId));
-            if (sg != null && itemdata != null)
+            if (sg != null && item != null)
             {
                 return UserAddSkill(sg.SkillID, num);
             }
@@ -2302,7 +2324,7 @@ namespace GameServer.Script.Model.DataModel
             fpredictaddexpv = MathUtils.Addition(fpredictaddexpv, fpredictaddexpv / 100 * baseaddv);
             return fpredictaddexpv.ToInt();
         }
-        public void PushCombatLog(ref CombatLogData log)
+        public void PushCombatLog(CombatLogData log)
         {
             if (CombatLogList.Count >= DataHelper.CombatLogCountMax)
             {

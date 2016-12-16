@@ -12,7 +12,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 4011_请求参加竞选
+    /// 4015_请求参加竞选
     /// </summary>
     public class Action4011 : BaseAction
     {
@@ -27,7 +27,14 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            body = receipt;
+            if (receipt != null)
+            {
+                body = receipt;
+            }
+            else
+            {
+                ErrorCode = ActionIDDefine.Cst_Action4011;
+            }
             return base.BuildJsonPack();
         }
 

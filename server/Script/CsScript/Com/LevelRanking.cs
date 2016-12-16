@@ -45,10 +45,14 @@ namespace GameServer.CsScript.Com
             result = y.UserLv.CompareTo(x.UserLv);
             if (result == 0)
             {
-                result = x.Exp.CompareTo(y.Exp);
+                result = x.FightingValue.CompareTo(y.FightingValue);
                 if (result == 0)
                 {
-                    result = x.UserID.CompareTo(y.UserID);
+                    result = x.Exp.CompareTo(y.Exp);
+                    if (result == 0)
+                    {
+                        result = x.UserID.CompareTo(y.UserID);
+                    }
                 }
             }
 
@@ -75,6 +79,7 @@ namespace GameServer.CsScript.Com
                     rankInfo.NickName = reader["NickName"].ToString();
                     rankInfo.LooksId = reader["LooksId"].ToInt();
                     rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
+                    rankInfo.VipLv = reader["VipLv"].ToInt();
                     int BaseExp = reader["BaseExp"].ToInt();
                     int FightExp = reader["FightExp"].ToInt();
                     rankInfo.Exp = MathUtils.Addition(BaseExp, FightExp, int.MaxValue);

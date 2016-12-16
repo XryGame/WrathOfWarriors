@@ -93,6 +93,9 @@ namespace GameServer.CsScript.Action
             }
 
             ContextUser.IsTodayLottery = true;
+            //ContextUser.RandomLotteryId = 0;
+            ContextUser.LastLotteryId = ContextUser.RandomLotteryId;
+
             receipt.Result = RequestLotteryResult.OK;
             receipt.ItemList = ContextUser.ItemDataList;
             receipt.SkillList = ContextUser.SkillDataList;

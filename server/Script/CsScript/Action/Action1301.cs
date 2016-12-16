@@ -86,7 +86,7 @@ namespace GameServer.CsScript.Action
                             UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.RandItem, 1);
 
                             // 成就
-                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
+                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.OpenItemBoxCount);
                         }
 
                     }
@@ -118,7 +118,7 @@ namespace GameServer.CsScript.Action
 
 
                             // 成就
-                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.AwardItemCount);
+                            UserHelper.AchievementProcess(ContextUser.UserID, receipt.IDList.Count, AchievementType.OpenSkillBoxCount);
                         }
 
                     }

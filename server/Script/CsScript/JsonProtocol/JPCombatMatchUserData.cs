@@ -14,6 +14,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int UserLv { get; set; }
 
+        public int VipLv { get; set; }
+
         public int FightingValue { get; set; }
 
         public CacheList<int> SkillCarryList { get; set; }

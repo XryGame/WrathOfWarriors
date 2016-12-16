@@ -124,19 +124,19 @@ namespace GameServer.CsScript.Action
             log.Status = result;
             log.RankIdDiff = rankrise;
             log.RankId = rankinfo.RankId;
-            ContextUser.PushCombatLog(ref log);
+            ContextUser.PushCombatLog(log);
 
             GameUser rival = UserHelper.FindUser(rankinfo.FightDestUid);
             if (rival != null)
             {
-                log = new CombatLogData();
-                log.UserId = ContextUser.UserID;
-                log.LogTime = DateTime.Now;
-                log.Type = EventType.PassiveChallenge;
-                log.Status = result;
-                log.RankIdDiff = rankrise;
-                log.RankId = rivalrankinfo.RankId;
-                rival.PushCombatLog(ref log);
+                CombatLogData rivallog = new CombatLogData();
+                rivallog.UserId = ContextUser.UserID;
+                rivallog.LogTime = DateTime.Now;
+                rivallog.Type = EventType.PassiveChallenge;
+                rivallog.Status = result;
+                rivallog.RankIdDiff = rankrise;
+                rivallog.RankId = rivalrankinfo.RankId;
+                rival.PushCombatLog(rivallog);
             }
             
             rankinfo.IsFighting = false;

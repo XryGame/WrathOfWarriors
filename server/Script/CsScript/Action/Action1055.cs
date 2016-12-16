@@ -55,7 +55,9 @@ namespace GameServer.CsScript.Action
             receipt.UserLv = dest.UserLv;
             receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
-            receipt.IsOnline = GameSession.Get(dest.UserID) != null;
+            GameSession fsession = GameSession.Get(dest.UserID);
+            if (fsession != null && fsession.Connected)
+                receipt.IsOnline = true;
 
             return true;
         }

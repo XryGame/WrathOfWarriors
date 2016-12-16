@@ -35,6 +35,19 @@ namespace GameServer.CsScript.GM
                 return;
 
             userpay.PayMoney += money;
+            user.VipLv = userpay.ConvertPayVipLevel();
+
+            // 这里刷新排行榜数据
+            var combatuser = UserHelper.FindCombatRankUser(userId);
+            if (combatuser != null)
+            {
+                combatuser.VipLv = user.VipLv;
+            }
+            var leveluser = UserHelper.FindLevelRankUser(userId);
+            if (leveluser != null)
+            {
+                leveluser.VipLv = user.VipLv;
+            }
         }
     }
 }

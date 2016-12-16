@@ -16,7 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
         public bool IsTodayReceiveFirstWeek { get; set; }
 
 
-        public int TodayOnlineTime { get; set; }
+        public long OnlineStartTime { get; set; }
 
         public int OnlineAwardId { get; set; }
     }

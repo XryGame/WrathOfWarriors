@@ -51,6 +51,17 @@ namespace GameServer.Script.Model.DataModel
             return new PersonalCacheStruct<UserPayCache>().FindKey(userid.ToString());
         }
 
+        public static List<GameSession> GetOnlinesList()
+        {
+            var onlines = GameSession.GetOnlineAll();
+            List<GameSession> onlinelist = new List<GameSession>();
+            foreach (var on in onlines)
+            {
+                onlinelist.Add(on);
+            }
+            return onlinelist;
+        }
+
         public static void RestoreUserData(int uid, bool islogin = true)
         {
             GameUser gameUser = FindUser(uid);
@@ -96,25 +107,28 @@ namespace GameServer.Script.Model.DataModel
             {// 下个月签到次数要清零
                 gameUser.EventAwardData.SignCount = 0;
             }
+
             gameUser.EventAwardData.IsTodaySign = false;
             gameUser.EventAwardData.IsTodayReceiveFirstWeek = false;
-            gameUser.EventAwardData.TodayOnlineTime = 0;
+            gameUser.EventAwardData.IsStartedOnlineTime = false;
+            //gameUser.EventAwardData.TodayOnlineTime = 0;
             gameUser.EventAwardData.OnlineAwardId = 1;
-            if (!islogin)
-            {
-                gameUser.EventAwardData.OnlineStartTime = DateTime.Now;
-            }
+            gameUser.EventAwardData.OnlineStartTime = DateTime.Now;
+
+            gameUser.ReceiveVitStatus = ReceiveVitStatus.No;
+
             // 周卡月卡处理
             UserPayCache paycache = FindUserPay(uid);
             if (paycache != null)
             {
-                if (paycache.WeekCardDays > 0)
+                if (paycache.WeekCardDays >= 0)
                 {
+                    int realDays = paycache.WeekCardDays + 1;
                     TimeSpan timeSpan = DateTime.Now.Subtract(paycache.WeekCardAwardDate);
                     int days = (int)Math.Floor(timeSpan.TotalDays);
                     if (days > 0)
                     {
-                        int count = days > paycache.WeekCardDays ? paycache.WeekCardDays : days;
+                        int count = days > realDays ? realDays : days;
                         while (count > 0)
                         {
                             count--;
@@ -125,13 +139,14 @@ namespace GameServer.Script.Model.DataModel
                         }
                     }
                 }
-                if (paycache.MonthCardDays > 0)
+                if (paycache.MonthCardDays >= 0)
                 {
+                    int realDays = paycache.MonthCardDays + 1;
                     TimeSpan timeSpan = DateTime.Now.Subtract(paycache.MonthCardAwardDate);
                     int days = (int)Math.Floor(timeSpan.TotalDays);
                     if (days > 0)
                     {
-                        int count = days > paycache.MonthCardDays ? paycache.MonthCardDays : days;
+                        int count = days > realDays ? realDays : days;
                         while (count > 0)
                         {
                             count--;
@@ -146,12 +161,12 @@ namespace GameServer.Script.Model.DataModel
 
             
             gameUser.IsTodayLottery = false;
-            gameUser.RandomLotteryId = 0;
-            var lottery = RandomLottery(gameUser.UserID, gameUser.UserLv);
-            if (lottery != null)
-            {
-                gameUser.RandomLotteryId = lottery.ID;
-            }
+            //gameUser.RandomLotteryId = 0;
+            //var lottery = RandomLottery(gameUser.UserID, gameUser.UserLv);
+            //if (lottery != null)
+            //{
+            //    gameUser.RandomLotteryId = lottery.ID;
+            //}
 
             gameUser.BuyVitCount = 0;
 
@@ -205,29 +220,6 @@ namespace GameServer.Script.Model.DataModel
             {
                 return;
             }
-            if (gameUser.OfflineDate > gameUser.LoginDate)
-            {
-                gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
-            }
-            else
-            {// 离线时间比登录时间小，说明当前用户未下线
-                gameUser.OfflineDate = DateTime.Now;
-                gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
-            }
-
-            if (gameUser.EventAwardData.OnlineStartTime < gameUser.EventAwardData.LastOnlineAwayReceiveTime)
-            {
-                if (gameUser.OfflineDate > gameUser.EventAwardData.LastOnlineAwayReceiveTime)
-                {
-                    gameUser.EventAwardData.OnlineStartTime = gameUser.EventAwardData.LastOnlineAwayReceiveTime;
-                }
-                else
-                {
-                    gameUser.EventAwardData.OnlineStartTime = gameUser.OfflineDate;
-                }
-              
-            }
-
 
             gameUser.LoginDate = DateTime.Now;
             gameUser.IsOnline = true;
@@ -237,16 +229,7 @@ namespace GameServer.Script.Model.DataModel
             gameUser.UserStatus = UserStatus.MainUi;
             gameUser.InviteFightDestUid = 0;
             //gameUser.RandomLotteryId = 0;
-            // 名人榜处理
-            CombatProcess(uid);
 
-            DateTime startDate = gameUser.EventAwardData.OnlineStartTime;
-
-            TimeSpan timeSpan = gameUser.OfflineDate.Subtract(startDate);
-            int sec = (int)Math.Floor(timeSpan.TotalSeconds);
-
-            gameUser.EventAwardData.TodayOnlineTime += sec;
-            
 
             // 计算上线时间，刷新数据
             var nowTime = DateTime.Now;
@@ -254,12 +237,21 @@ namespace GameServer.Script.Model.DataModel
             if (gameUser.RestoreDate != DateTime.MinValue)
             {
                 //TimeSpan timeSpan = nowTime.Date - gameUser.OfflineDate.Date;
-                timeSpan = DateTime.Now.Subtract(gameUser.RestoreDate);
-                int day = (int)Math.Floor(timeSpan.TotalDays);
-                if (day > 0 || (day == 0 && nowTime.Hour >= 5 && gameUser.RestoreDate.Hour < 5))
+                TimeSpan timeSpans = DateTime.Now.Subtract(gameUser.RestoreDate);
+                int day = (int)Math.Floor(timeSpans.TotalDays);
+                if (day > 0)
                 {
                     isRefresh = true;
                 }
+                else if (day == 0 && nowTime.Hour >= 5)
+                {
+                    if ((nowTime.Day == gameUser.RestoreDate.Day && gameUser.RestoreDate.Hour < 5)
+                        || (nowTime.Day != gameUser.RestoreDate.Day))
+                    {
+                        isRefresh = true;
+                    }
+                }
+
             }
 
             if (isRefresh)
@@ -267,7 +259,46 @@ namespace GameServer.Script.Model.DataModel
                 RestoreUserData(uid);
             }
 
+            // 名人榜处理
+            CombatProcess(uid);
+
+            // 在线时间处理
+            //if (gameUser.OfflineDate > gameUser.LoginDate)
+            //{
+            //    gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            //}
+            //else
+            //{// 离线时间比登录时间小，说明当前用户未下线
+            //    gameUser.OfflineDate = DateTime.Now;
+            //    //gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+            //}
+
+            if (!gameUser.EventAwardData.IsStartedOnlineTime)
+            {
+                gameUser.EventAwardData.IsStartedOnlineTime = true;
+                gameUser.EventAwardData.OnlineStartTime = gameUser.LoginDate;
+                //gameUser.EventAwardData.TodayOnlineTime = 0;
+            }
+
+            //if (gameUser.EventAwardData.OnlineStartTime < gameUser.EventAwardData.LastOnlineAwayReceiveTime)
+            //{
+            //    if (gameUser.OfflineDate > gameUser.EventAwardData.LastOnlineAwayReceiveTime)
+            //    {
+            //        gameUser.EventAwardData.OnlineStartTime = gameUser.EventAwardData.LastOnlineAwayReceiveTime;
+            //    }
+            //    else
+            //    {
+            //        gameUser.EventAwardData.OnlineStartTime = gameUser.OfflineDate;
+            //    }
+
+            //}
             
+
+            //TimeSpan timeSpan = DateTime.Now.Subtract(gameUser.EventAwardData.OnlineStartTime);
+            //int sec = (int)Math.Floor(timeSpan.TotalSeconds);
+
+            //gameUser.EventAwardData.TodayOnlineTime = sec;
+
         }
         /// <summary>
         /// 用户下线处理
@@ -313,14 +344,14 @@ namespace GameServer.Script.Model.DataModel
             }
 
             // 通知好友下线
-            foreach (FriendData fd in gameUser.FriendsData.FriendsList)
-            {
-                GameSession session = GameSession.Get(fd.UserId);
-                if (session != null)
-                {
-                    PushMessageHelper.FriendOffineNotification(session, gameUser.UserID);
-                }
-            }
+            //foreach (FriendData fd in gameUser.FriendsData.FriendsList)
+            //{
+            //    GameSession session = GameSession.Get(fd.UserId);
+            //    if (session != null)
+            //    {
+            //        PushMessageHelper.FriendOffineNotification(session, gameUser.UserID);
+            //    }
+            //}
 
         }
    
@@ -443,7 +474,7 @@ namespace GameServer.Script.Model.DataModel
                 string tmp = "";
                 if (logdata.Status == EventStatus.Good)
                 {
-                    tmp = string.Format("成功，排名上升至 {0} 位。", logdata.RankId);
+                    tmp = string.Format("成功，排名上升至第{0}位。", logdata.RankId);
                 }
                 else
                 {
@@ -460,7 +491,7 @@ namespace GameServer.Script.Model.DataModel
                 string tmp = "";
                 if (logdata.Status == EventStatus.Good)
                 {
-                    tmp = string.Format("成功，排名下降至 {0} 位。", logdata.RankId);
+                    tmp = string.Format("成功，排名下降至第{0}位。", logdata.RankId);
                 }
                 else
                 {
@@ -562,8 +593,7 @@ namespace GameServer.Script.Model.DataModel
                     {
                         achdata.Count++;
                         var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
-                        if ((electionfd.TypeId == JobTitleType.Class && achconfig.ObjectiveNum == 1)
-                            || (electionfd.TypeId == JobTitleType.Sports && achconfig.ObjectiveNum == 2))
+                        if (achconfig.ObjectiveNum == electionfd.TypeId.ToInt())
                         {
                             achdata.IsFinish = true;
                             GameSession session = GameSession.Get(electionfd.UserId);
@@ -735,7 +765,7 @@ namespace GameServer.Script.Model.DataModel
                 {
                     achdata.IsFinish = true;
                     GameSession session = GameSession.Get(uid);
-                    if (session != null)
+                    if (session != null && session.Connected)
                         PushMessageHelper.AchievementFinishNotification(session, achdata.ID);
                 }
             }
@@ -778,20 +808,31 @@ namespace GameServer.Script.Model.DataModel
             if (property == "DiamondChange")
             {
                 GameSession session = GameSession.Get(userId);
-                if (session != null)
+                if (session != null && session.Connected)
                     PushMessageHelper.UserDiamondChangedNotification(session);
             }
             else if (property == "FightValueChange")
             {
+                GameUser user = FindUser(userId);
+                // 这里刷新排行榜数据
+                var combatuser = FindCombatRankUser(userId);
+                if (combatuser != null)
+                {
+                    combatuser.UserLv = user.UserLv;
+                    combatuser.Exp = user.TotalExp;
+                    combatuser.FightingValue = user.FightingValue;
+                }
+                var leveluser = FindLevelRankUser(userId);
+                if (leveluser != null)
+                {
+                    leveluser.UserLv = user.UserLv;
+                    leveluser.Exp = user.TotalExp;
+                    leveluser.FightingValue = user.FightingValue;
+                }
+
                 GameSession session = GameSession.Get(userId);
-                if (session != null)
+                if (session != null && session.Connected)
                     PushMessageHelper.UserFightValueChangedNotification(session);
-            }
-            else if (property == "SkillLevelAchievement")
-            {
-                GameSession session = GameSession.Get(userId);
-                if (session != null)
-                    PushMessageHelper.AchievementFinishNotification(session, value.ToInt());
             }
             else if (property == "LevelUp")
             {
@@ -806,7 +847,7 @@ namespace GameServer.Script.Model.DataModel
                     {
                         achdata.IsFinish = true;
                         GameSession session = GameSession.Get(userId);
-                        if (session != null)
+                        if (session != null && session.Connected)
                             PushMessageHelper.AchievementFinishNotification(session, achdata.ID);
                     }
                 }
@@ -857,13 +898,13 @@ namespace GameServer.Script.Model.DataModel
                     }
                 }
                 GameSession usession = GameSession.Get(userId);
-                if (usession != null)
+                if (usession != null && usession.Connected)
                     PushMessageHelper.UserLevelUpNotification(usession, ischangeclass);
             }
             else if (property == "NewMail")
             {
                 GameSession session = GameSession.Get(userId);
-                if (session != null)
+                if (session != null && session.Connected)
                     PushMessageHelper.NewMailNotification(session, value.ToString());
             }
             else if (property == "GetCombatItem")
@@ -877,62 +918,22 @@ namespace GameServer.Script.Model.DataModel
         public static void EveryDayTaskProcess(int UserId, TaskType type, int count)
         {
             GameUser user = FindUser(UserId);
-            if (user == null)
+            if (user == null || user.DailyQuestData.ID != type)
                 return;
             if (user.UserLv < DataHelper.OpenTaskSystemUserLevel || user.DailyQuestData.IsFinish != false)
                 return;
-
-            if (user.DailyQuestData.ID == TaskType.FightTeacher)
+            
+            var task = new ShareCacheStruct<Config_Task>().FindKey(type);
+            user.DailyQuestData.Count += count;
+            if (user.DailyQuestData.Count >= task.ObjectiveNum)
             {
                 user.DailyQuestData.IsFinish = true;
             }
-            else if (user.DailyQuestData.ID == TaskType.Study)
-            {
-                user.DailyQuestData.Count += count;
-                if (user.DailyQuestData.Count > 45)
-                {
-                    user.DailyQuestData.IsFinish = true;
-                }
-            }
-            else if (user.DailyQuestData.ID == TaskType.Exercise)
-            {
-                user.DailyQuestData.Count += count;
-                if (user.DailyQuestData.Count >= 20)
-                {
-                    user.DailyQuestData.IsFinish = true;
-                }
-
-            }
-            else if (user.DailyQuestData.ID == TaskType.RandItem)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-            else if (user.DailyQuestData.ID == TaskType.RandSkillBook)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-            else if (user.DailyQuestData.ID == TaskType.CombatFight)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-            else if (user.DailyQuestData.ID == TaskType.GiveAwayFriend)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-            else if (user.DailyQuestData.ID == TaskType.Vote)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-            else if (user.DailyQuestData.ID == TaskType.BuyTime)
-            {
-                user.DailyQuestData.IsFinish = true;
-            }
-
 
             if (user.DailyQuestData.IsFinish == true)
             {
                 GameSession session = GameSession.Get(UserId);
-                if (session != null)
+                if (session != null && session.Connected)
                     PushMessageHelper.DailyQuestFinishNotification(session);
             }
 
@@ -1022,7 +1023,7 @@ namespace GameServer.Script.Model.DataModel
                 if (monitor == null)
                     return;
                 string context = string.Format(
-                    "恭喜 {0} 的 {1} 当选为新的【{2}】，该班级全体成员7天内在所有场景进行学习与劳动均可获得经验加成！",
+                    "恭喜{0} {1} 当选为新的【{2}】，该班级全体成员7天内在所有场景进行学习与劳动均可获得经验加成！          ",
                     classdata.Name,
                     monitor.NickName,
                     DataHelper.JobTitles[jtt.ToInt()]
@@ -1052,7 +1053,7 @@ namespace GameServer.Script.Model.DataModel
                 if (classdata == null)
                     return;
                 string context = string.Format(
-                    "恭喜 {0} 的 {1} 占领【{2}】，在占领期间，班级所有成员学习和劳动均可获得120%经验加成！",
+                    "恭喜{0} {1} 占领【{2}】,在占领期间班级所有成员学习和劳动均可获得150%经验加成！",
                     classdata.Name,
                     user.NickName,
                     new ShareCacheStruct<Config_Scene>().FindKey(st).Name
@@ -1098,7 +1099,7 @@ namespace GameServer.Script.Model.DataModel
                 GameUser monitor = FindUser(classdata.Monitor);
                 if (monitor == null)
                     return;
-                string context = string.Format("恭喜 {0} 挑战班长成功，成为 {1} 的新任班长！", monitor.NickName, classdata.Name);
+                string context = string.Format("恭喜 {0} 挑战班长成功，成为{1}新任班长！", monitor.NickName, classdata.Name);
 
                 PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
 

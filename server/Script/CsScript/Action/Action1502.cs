@@ -96,12 +96,13 @@ namespace GameServer.CsScript.Action
                     receipt.Data.UserLv = dest.UserLv;
                     receipt.Data.FightValue = dest.FightingValue;
                     receipt.Data.VipLv = dest.VipLv;
-                    receipt.Data.IsOnline = GameSession.Get(dest.UserID) != null;
-
+                    GameSession fsession = GameSession.Get(dest.UserID);
+                    if (fsession != null && fsession.Connected)
+                        receipt.Data.IsOnline = true;
 
                     dest.AddFriend(ContextUser.UserID);
                     var session = GameSession.Get(destuid);
-                    if (session != null)
+                    if (session != null && session.Connected)
                     {
                         var parameters = new Parameters();
                         parameters["Uid"] = ContextUser.UserID;

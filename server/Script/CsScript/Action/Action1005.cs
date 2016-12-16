@@ -8,6 +8,7 @@ using GameServer.Script.Model.LogModel;
 using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Context;
 using ZyGames.Framework.Game.Contract;
@@ -60,6 +61,8 @@ namespace GameServer.CsScript.Action
                     return false;
                 }
                 gameUser = CreateRole();
+                if (gameUser == null)
+                    return false;
                 roleFunc.OnCreateAfter(gameUser);
             }
             else
@@ -89,6 +92,19 @@ namespace GameServer.CsScript.Action
 
         private GameUser CreateRole()
         {
+            Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            var combat = combatranking as CombatRanking;
+            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var level = levelranking as LevelRanking;
+            //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            if (combat == null || level == null)
+            {
+                new BaseLog().SaveLog("排行榜错误!!!");
+                return null;
+            }
+               
+
+
             GameUser user = new GameUser(UserId);
             user.IsRefreshing = true;
             user.SessionID = Sid;
@@ -113,7 +129,7 @@ namespace GameServer.CsScript.Action
             //user.CombatData = new UserCombatData();
             user.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
-            user.EventAwardData.OnlineStartTime = DateTime.Now;
+            //user.EventAwardData.OnlineStartTime = DateTime.Now;
             user.PlotId = 0;
             user.IsOnline = true;
             user.InviteFightDiamondNum = 0;
@@ -168,25 +184,23 @@ namespace GameServer.CsScript.Action
 
 
             // 加入排行榜
-            Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            //Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-            //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
             UserRank rankInfo = new UserRank()
             {
                 UserID = user.UserID,
                 NickName = user.NickName,
                 LooksId = user.LooksId,
                 UserLv = user.UserLv,
+                VipLv = user.VipLv,
                 IsOnline = true,
                 RankId = int.MaxValue,
                 Exp = user.TotalExp,
                 FightingValue = user.FightingValue,
                 RankDate = DateTime.Now,
             };
-            combatranking.TryAppend(rankInfo);
-            var combat = combatranking as CombatRanking;
+            combat.TryAppend(rankInfo);
+            level.TryAppend(rankInfo);
             combat.rankList.Add(rankInfo);
-            //levelranking.TryAppend(rankInfo);
+            level.rankList.Add(rankInfo);
             //fightvalueranking.TryAppend(rankInfo);
 
 
@@ -198,8 +212,8 @@ namespace GameServer.CsScript.Action
                 IsReceiveFirstPay = false,
                 WeekCardDays = 2,
                 MonthCardDays = 2,
-                WeekCardAwardDate = DateTime.MinValue,
-                MonthCardAwardDate = DateTime.MinValue,
+                WeekCardAwardDate = DateTime.Now,
+                MonthCardAwardDate = DateTime.Now,
             };
             var payCacheSet = new PersonalCacheStruct<UserPayCache>();
             payCacheSet.Add(paycache);

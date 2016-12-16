@@ -54,6 +54,7 @@ namespace Game.Script
         public override void Stop()
         {
             SystemGlobal.Stop();
+            base.Stop();
         }
 
 
@@ -88,8 +89,7 @@ namespace Game.Script
 
 
             UserHelper.UserOffline(session.UserId);
-
-
+            
             base.OnDisconnected(session);
         }
 

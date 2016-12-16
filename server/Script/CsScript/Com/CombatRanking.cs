@@ -125,6 +125,7 @@ namespace GameServer.CsScript.Com
                         rankInfo.NickName = reader["NickName"].ToString();
                         rankInfo.LooksId = reader["LooksId"].ToInt();
                         rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
+                        rankInfo.VipLv = reader["VipLv"].ToInt();
                         rankInfo.FightingValue = reader["FightingValue"].ToInt();
                         rankInfo.RankId = combat.RankID;
                         rankList.Add(rankInfo);

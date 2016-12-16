@@ -66,7 +66,13 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
             //ContextUser.RefreshFightValue();
-
+            short convertlv = ContextUser.ConvertExp2Level();
+            if (convertlv != ContextUser.UserLv)
+            {
+                ContextUser.UserLv = convertlv;
+                ContextUser.RefreshFightValue();
+            }
+                
             receipt = new JPUserDetailsData()
             {
                 UserId = ContextUser.UserID,
@@ -181,7 +187,9 @@ namespace GameServer.CsScript.Action
                     jpfd.UserLv = friend.UserLv;
                     jpfd.VipLv = friend.VipLv;
                     jpfd.FightValue = friend.FightingValue;
-                    jpfd.IsOnline = GameSession.Get(friend.UserID) != null;
+                    GameSession fsession = GameSession.Get(friend.UserID);
+                    if (fsession != null && fsession.Connected)
+                        jpfd.IsOnline = true;
                     jpfd.IsGiveAway = fd.IsGiveAway;
                     jpfd.IsByGiveAway = fd.IsByGiveAway;
                     jpfd.IsReceiveGiveAway = fd.IsReceiveGiveAway;
@@ -200,7 +208,9 @@ namespace GameServer.CsScript.Action
                     data.UserLv = applyuser.UserLv;
                     data.VipLv = applyuser.VipLv;
                     data.FightValue = applyuser.FightingValue;
-                    data.IsOnline = GameSession.Get(applyuser.UserID) != null;
+                    GameSession asession = GameSession.Get(applyuser.UserID);
+                    if (asession != null && asession.Connected)
+                        data.IsOnline = true;
                     receipt.FriendApplyList.Add(data);
                 }
             }
@@ -278,7 +288,7 @@ namespace GameServer.CsScript.Action
             
             foreach (var ach in ContextUser.AchievementList)
             {
-                if (ach.IsFinish)
+                if (ach.IsFinish && !ach.IsReceive)
                 {
                     receipt.IsCanReceiveAchievement = true;
                     break;
@@ -294,33 +304,33 @@ namespace GameServer.CsScript.Action
             receipt.EventAwardData.IsTodaySign = ContextUser.EventAwardData.IsTodaySign;
             receipt.EventAwardData.FirstWeekCount = ContextUser.EventAwardData.FirstWeekCount;
             receipt.EventAwardData.IsTodayReceiveFirstWeek = ContextUser.EventAwardData.IsTodayReceiveFirstWeek;
-            receipt.EventAwardData.TodayOnlineTime = ContextUser.EventAwardData.TodayOnlineTime;
+            receipt.EventAwardData.OnlineStartTime = Util.ConvertDateTimeStamp(ContextUser.EventAwardData.OnlineStartTime);
             receipt.EventAwardData.OnlineAwardId = ContextUser.EventAwardData.OnlineAwardId;
 
 
             receipt.MailBox = ContextUser.MailBox;
 
             receipt.IsTodayLottery = ContextUser.IsTodayLottery;
-            if (!ContextUser.IsTodayLottery && ContextUser.RandomLotteryId == 0)
-            {
-                var lottery = UserHelper.RandomLottery(ContextUser.UserID, ContextUser.UserLv);
-                if (lottery != null)
-                {
-                    ContextUser.RandomLotteryId = lottery.ID;
-                    receipt.LotteryAwardType = lottery.Type;
-                    receipt.LotteryId = lottery.Content;
-                }
-            }
-            else
-            {
-                var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
-                if (lottery != null)
-                {
-                    receipt.LotteryAwardType = lottery.Type;
-                    receipt.LotteryId = lottery.Content;
-                }
+            //if (!ContextUser.IsTodayLottery && ContextUser.RandomLotteryId == 0)
+            //{
+            //    var lottery = UserHelper.RandomLottery(ContextUser.UserID, ContextUser.UserLv);
+            //    if (lottery != null)
+            //    {
+            //        ContextUser.RandomLotteryId = lottery.ID;
+            //        receipt.LotteryAwardType = lottery.Type;
+            //        receipt.LotteryId = lottery.Content;
+            //    }
+            //}
+            //else
+            //{
+            //    var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
+            //    if (lottery != null)
+            //    {
+            //        receipt.LotteryAwardType = lottery.Type;
+            //        receipt.LotteryId = lottery.Content;
+            //    }
 
-            }
+            //}
             
 
             // 支付模块
@@ -332,10 +342,10 @@ namespace GameServer.CsScript.Action
                     UserID = ContextUser.UserID,
                     PayMoney = 0,
                     IsReceiveFirstPay = false,
-                    WeekCardDays = 0,
-                    MonthCardDays = 0,
-                    WeekCardAwardDate = DateTime.MinValue,
-                    MonthCardAwardDate = DateTime.MinValue,
+                    WeekCardDays = -1,
+                    MonthCardDays = -1,
+                    WeekCardAwardDate = DateTime.Now,
+                    MonthCardAwardDate = DateTime.Now,
                 };
                 var payCacheSet = new PersonalCacheStruct<UserPayCache>();
                 payCacheSet.Add(userpay);
@@ -346,8 +356,8 @@ namespace GameServer.CsScript.Action
             {
                 receipt.IsCanReceiveFirstPay = true;
             }
-
-            ContextUser.VipLv = userpay.ConvertPayVipLevel();
+             
+            //ContextUser.VipLv = userpay.ConvertPayVipLevel();
             receipt.VipLv = ContextUser.VipLv;
             receipt.PayMoney = userpay.PayMoney;
 
@@ -423,10 +433,10 @@ namespace GameServer.CsScript.Action
                 switch (ranktype)
                 {
                     case RankType.Combat:
-                        context = string.Format("名人榜排名第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
+                        context = string.Format("名人榜排名第{0}名的 {1} 上线了！", rankid, ContextUser.NickName);
                         break;
                     case RankType.Level:
-                        context = string.Format("排行榜排名第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
+                        context = string.Format("排行榜排名第{0}名的 {1} 上线了！", rankid, ContextUser.NickName);
                         break;
                     //case RankType.FightValue:
                     //    context = string.Format("战斗力排行第 {0} 名的 {1} 上线了！", rankid, ContextUser.NickName);
@@ -445,14 +455,14 @@ namespace GameServer.CsScript.Action
             }
 
             // 通知好友上线
-            foreach (FriendData fd in ContextUser.FriendsData.FriendsList)
-            {
-                GameSession session = GameSession.Get(fd.UserId);
-                if (session != null)
-                {
-                    PushMessageHelper.FriendOnlineNotification(session, ContextUser.UserID);
-                }
-            }
+            //foreach (FriendData fd in ContextUser.FriendsData.FriendsList)
+            //{
+            //    GameSession session = GameSession.Get(fd.UserId);
+            //    if (session != null)
+            //    {
+            //        PushMessageHelper.FriendOnlineNotification(session, ContextUser.UserID);
+            //    }
+            //}
             context = "欢迎进入创想学院！";
             var chatServices = new TryXChatService();
             chatServices.SystemSendWhisper(ContextUser, context);

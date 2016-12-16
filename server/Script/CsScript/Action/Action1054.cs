@@ -61,7 +61,10 @@ namespace GameServer.CsScript.Action
             receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
             receipt.ApplyTime = Util.ConvertDateTimeStamp(apply.ApplyDate);
-            receipt.IsOnline = GameSession.Get(dest.UserID) != null;
+
+            GameSession fsession = GameSession.Get(dest.UserID);
+            if (fsession != null && fsession.Connected)
+                receipt.IsOnline = true;
 
             return true;
         }

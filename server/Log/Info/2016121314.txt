@@ -1,0 +1,92 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+14:32:05 Server is starting...
+14:32:05 Redis server connect successfully.
+14:32:08 DB server connect successfully.
+14:32:11 Start checking table schema, please wait.
+14:32:11 Check table schema successfully.
+14:32:11 script compiled successfully.
+14:32:11 CacheFactory listen has started...
+14:32:11 WebSocket service 168.254.0.254:9001 is started.
+Time:2016-12-13 14:32:11:609-消息：系统加载单服配置开始...
+
+
+Time:2016-12-13 14:32:12:307-消息：系统加载单服配置所需时间:697.3353ms
+
+
+Time:2016-12-13 14:32:12:310-消息：系统加载当天用户数:2/最大:100
+
+
+Time:2016-12-13 14:32:12:325-消息：系统加载当天用户所需时间:16.4109ms
+
+
+Time:2016-12-13 14:32:12:335-The ranking refresh is start...
+
+
+Time:2016-12-13 14:32:12:351-Trace>>The CombatRanking has be loaded, count:2
+
+
+Time:2016-12-13 14:32:12:354-Trace>>The LevelRanking has be loaded, count:2
+
+
+Time:2016-12-13 14:32:12:355-The ranking refresh is end.
+
+
+Time:2016-12-13 14:32:12:356-消息：系统全局运行环境加载所需时间:749.4967ms
+
+
+14:32:12 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+14:37:25 Server is starting...
+14:37:25 Redis server connect successfully.
+14:37:28 DB server connect successfully.
+14:37:31 Start checking table schema, please wait.
+14:37:31 Check table schema successfully.
+14:37:31 script compiled successfully.
+14:37:31 CacheFactory listen has started...
+14:37:31 WebSocket service 168.254.0.254:9001 is started.
+Time:2016-12-13 14:37:31:761-消息：系统加载单服配置开始...
+
+
+Time:2016-12-13 14:37:32:440-消息：系统加载单服配置所需时间:677.9283ms
+
+
+Time:2016-12-13 14:37:32:443-消息：系统加载当天用户数:2/最大:100
+
+
+Time:2016-12-13 14:37:32:460-消息：系统加载当天用户所需时间:18.3118ms
+
+
+Time:2016-12-13 14:37:32:467-The ranking refresh is start...
+
+
+Time:2016-12-13 14:37:32:483-Trace>>The CombatRanking has be loaded, count:2
+
+
+Time:2016-12-13 14:37:32:487-Trace>>The LevelRanking has be loaded, count:2
+
+
+Time:2016-12-13 14:37:32:487-The ranking refresh is end.
+
+
+Time:2016-12-13 14:37:32:489-消息：系统全局运行环境加载所需时间:730.1902ms
+
+
+14:37:32 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".

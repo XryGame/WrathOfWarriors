@@ -25,13 +25,13 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         ChallengeCount,
         /// <summary>
-        /// 累积获得道具数量
+        /// 在道具商店中累积开宝箱
         /// </summary>
-        AwardItemCount,
+        OpenItemBoxCount,
         /// <summary>
-        /// 技能等级达到
+        /// 在技能商店中累积开宝箱
         /// </summary>
-        SkillLevelMax,
+        OpenSkillBoxCount,
         /// <summary>
         /// 在投票系统中投票数量
         /// </summary>

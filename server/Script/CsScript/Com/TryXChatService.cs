@@ -21,7 +21,7 @@ namespace GameServer.CsScript.Com
     public class TryXChatService : ChatService
     {
         private readonly GameUser _user;
-        private const int MsgTimeOut = 30;//分钟
+        private const int MsgTimeOut = 1;//分钟
         private const int IntervalSend = 5;
         private ChatType ChatType;
         public static List<Config_ChatKeyWord> ChatKeyWordList

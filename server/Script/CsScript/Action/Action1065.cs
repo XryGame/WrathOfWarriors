@@ -86,7 +86,9 @@ namespace GameServer.CsScript.Action
             }
             receipt.RivalData.UserStage = dest.UserStage;
             receipt.RivalData.FightValue = dest.FightingValue;
-            receipt.RivalData.IsOnline = GameSession.Get(dest.UserID) != null;
+            GameSession fsession = GameSession.Get(dest.UserID);
+            if (fsession != null && fsession.Connected)
+                receipt.RivalData.IsOnline = true;
             receipt.RivalData.ItemList = dest.ItemDataList;
             receipt.RivalData.SkillList = dest.SkillDataList;
             receipt.RivalData.SkillCarryList = dest.SkillCarryList;

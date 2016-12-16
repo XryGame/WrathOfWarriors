@@ -58,6 +58,23 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
+        /// 目标数量
+        /// </summary>
+        private int _ObjectiveNum;
+        [EntityField("ObjectiveNum")]
+        public int ObjectiveNum
+        {
+            get
+            {
+                return _ObjectiveNum;
+            }
+            set
+            {
+                SetChange("ObjectiveNum", value);
+            }
+        }
+
+        /// <summary>
         /// 任务奖励类型
         /// </summary>
         private TaskAwardType _RewardsType;
@@ -100,6 +117,7 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "id": return id;
                     case "Objective": return Objective;
+                    case "ObjectiveNum": return ObjectiveNum;
                     case "RewardsType": return RewardsType;
                     case "RewardsNum": return RewardsNum;
                     default: throw new ArgumentException(string.Format("Config_Task index[{0}] isn't exist.", index));
@@ -116,6 +134,9 @@ namespace GameServer.Script.Model.ConfigModel
                         break; 
                     case "Objective":
                         _Objective = value.ToNotNullString(); 
+                        break;
+                    case "ObjectiveNum":
+                        _ObjectiveNum = value.ToInt(); 
                         break;
                     case "RewardsType":
                         _RewardsType = value.ToEnum<TaskAwardType>();

@@ -114,8 +114,8 @@ namespace GameServer.CsScript.Action
             {
                 achievement.IsReceive = true;
             }
-            
-            achievement.Count = 0;
+
+            //achievement.Count = 0;
             if (achievement.Type == AchievementType.LevelCount)
                 achievement.Count = ContextUser.UserLv;
 
@@ -130,16 +130,20 @@ namespace GameServer.CsScript.Action
         public override void TakeActionAffter(bool state)
         {
             // 等级成就检测完成
-            AchievementData achdata = ContextUser.AchievementList.Find(t => (t.Type == AchievementType.LevelCount));
-            if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+            var list = ContextUser.AchievementList.ToList();
+            foreach (var v in list)
             {
-                var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
-                if (achdata.Count >= achconfig.ObjectiveNum)
+                if (v != null && v.ID != 0 && !v.IsFinish)
                 {
-                    achdata.IsFinish = true;
-                    PushMessageHelper.AchievementFinishNotification(Current, achdata.ID);
+                    var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(v.ID);
+                    if (v.Count >= achconfig.ObjectiveNum)
+                    {
+                        v.IsFinish = true;
+                        PushMessageHelper.AchievementFinishNotification(Current, v.ID);
+                    }
                 }
             }
+
             base.TakeActionAffter(state);
         }
     }

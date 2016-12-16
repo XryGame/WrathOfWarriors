@@ -50,13 +50,12 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            
+
             receipt = new JPQueryUserData()
             {
                 UserId = user.UserID,
                 NickName = user.NickName,
                 LooksId = user.LooksId,
-                IsOnline = GameSession.Get(user.UserID) != null,
                 FightValue = user.FightingValue,
                 Attack = user.Attack,
                 Defense = user.Defense,
@@ -64,8 +63,12 @@ namespace GameServer.CsScript.Action
                 UserStage = user.UserStage,
                 CombatRankId = rank.RankId,
                 SkillList = user.SkillDataList,
-                SkillCarryList = user.SkillCarryList
+                SkillCarryList = user.SkillCarryList,
+                VipLv = user.VipLv
             };
+            GameSession session = GameSession.Get(user.UserID);
+            if (session != null && session.Connected)
+                receipt.IsOnline = true;
 
             if (user.ClassData.ClassID != 0)
             {

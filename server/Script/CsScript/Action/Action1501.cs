@@ -86,11 +86,11 @@ namespace GameServer.CsScript.Action
             {
                 dest.AddFriendApply(ContextUser.UserID);
                 var session = GameSession.Get(destuid);
-                if (session != null)
+                if (session != null && session.Connected)
                 {
                     var parameters = new Parameters();
                     parameters["Uid"] = ContextUser.UserID;
-                    var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1054, GameSession.Get(destuid), parameters, OpCode.Text, null);
+                    var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1054, session, parameters, OpCode.Text, null);
                     ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1054, packet, (sessions, asyncResult) => {}, 0);
                 }
 

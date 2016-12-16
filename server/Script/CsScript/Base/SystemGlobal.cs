@@ -73,12 +73,12 @@ namespace GameServer.CsScript.Base
 
             GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
-            //TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
             //TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "00:00"));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 600));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 60));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
             // 每周二，周五名人榜奖励
@@ -89,6 +89,8 @@ namespace GameServer.CsScript.Base
             InitRanking();
             stopwatch.Stop();
             new BaseLog().SaveLog("系统全局运行环境加载所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
+
+            SendServerStatus(ServerStatus.Unhindered, 0);
 
             lock (thisLock)
             {
@@ -189,7 +191,7 @@ namespace GameServer.CsScript.Base
         
         public static void Stop()
         {
-            //SendServerStatus(ServerStatus.Close, 0);
+            SendServerStatus(ServerStatus.Close, 0);
 
             var onlines = GameSession.GetOnlineAll();
             foreach (var sess in onlines)
@@ -200,7 +202,7 @@ namespace GameServer.CsScript.Base
                 user.OfflineDate = DateTime.Now;
             }
 
-            Thread.Sleep(5000);
+            Thread.Sleep(50000);
         }
 
 
@@ -212,12 +214,17 @@ namespace GameServer.CsScript.Base
             }
             //do something
             var onlines = GameSession.GetOnlineAll();
-            if (onlines.Count < 2)
-                SendServerStatus(ServerStatus.Unhindered, onlines.Count);
-            else if (onlines.Count < 100)
-                SendServerStatus(ServerStatus.Crowd, onlines.Count);
+            int count = 0;
+            foreach (var dd in onlines)
+            {
+                count++;
+            }
+            if (count < 20)
+                SendServerStatus(ServerStatus.Unhindered, count);
+            else if (count < 100)
+                SendServerStatus(ServerStatus.Crowd, count);
             else
-                SendServerStatus(ServerStatus.Full, onlines.Count);
+                SendServerStatus(ServerStatus.Full, count);
         }
 
         public static void SendServerStatus(ServerStatus status, int activeNum)
@@ -248,6 +255,10 @@ namespace GameServer.CsScript.Base
                 {
                     TraceLog.ReleaseWrite("Submit server status fail result:{0}, request url:{1}", result, getUrlData);
                     return;
+                }
+                else
+                {
+                    TraceLog.WriteLine("Submit server status successful:{0},{1},{2}", addr, status, activeNum);
                 }
             }
             catch (Exception ex)

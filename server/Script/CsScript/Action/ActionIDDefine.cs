@@ -291,6 +291,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1406 = 1406;
 
         ///<summary>
+        ///请求好友在线状态
+        ///</summary>
+        public const short Cst_Action1500 = 1500;
+
+        ///<summary>
         ///请求添加好友
         ///</summary>
         public const short Cst_Action1501 = 1501;
@@ -475,6 +480,11 @@ namespace GameServer.CsScript.Action
         ///请求抽奖
         ///</summary>
         public const short Cst_Action10100 = 10100;
+
+        ///<summary>
+        ///请求抽奖数据
+        ///</summary>
+        public const short Cst_Action10101 = 10101;
 
         ///<summary>
         ///领取首充奖励

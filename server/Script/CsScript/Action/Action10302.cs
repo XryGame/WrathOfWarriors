@@ -67,16 +67,16 @@ namespace GameServer.CsScript.Action
             }
             int needDiamond = Math.Ceiling(mins).ToInt();
 
-            if (mins == 0)
+            if (needDiamond == 0)
                 return false;
 
-            if (ContextUser.DiamondNum < mins)
+            if (ContextUser.DiamondNum < needDiamond)
                 return false;
 
             ContextUser.StartSweepTime = DateTime.MinValue;
             receipt = EventStatus.Good;
 
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, (int)mins);
+            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
             return true;
         }
 
