@@ -2478,12 +2478,11 @@ namespace GameServer.Script.Model.DataModel
             Attack = 0;
             Defense = 0;
             Hp = 0;
-
-            var list = ItemDataList.FindAll(t => (t.ID >= 10001 && t.ID <= 10006));
-            foreach (var item in list)
+            
+            foreach (var item in DataHelper.CombatItemList)
             {
-                Config_Item cfgitem = new ShareCacheStruct<Config_Item>().Find(t => (t.ID == item.ID));
-                if (cfgitem.Type == ItemType.Item)
+                var itemdata = findItem(item.ID);
+                if (itemdata != null)
                 {
                     List<Config_ItemGrade> itemgradelist = new ShareCacheStruct<Config_ItemGrade>().FindAll(t => (t.ID == item.ID));
                     if (itemgradelist.Count > 0)

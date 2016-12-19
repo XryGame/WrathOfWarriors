@@ -24,7 +24,7 @@ namespace GameServer.Script.Model.DataModel
     {
         static private Random random = new Random();
 
-        static int scount = 0;
+        //static int scount = 0;
         static UserHelper()
         {
 
@@ -121,9 +121,9 @@ namespace GameServer.Script.Model.DataModel
             UserPayCache paycache = FindUserPay(uid);
             if (paycache != null)
             {
-                if (paycache.WeekCardDays >= 0)
+                if (paycache.WeekCardDays > 0)
                 {
-                    int realDays = paycache.WeekCardDays + 1;
+                    int realDays = paycache.WeekCardDays;
                     TimeSpan timeSpan = DateTime.Now.Subtract(paycache.WeekCardAwardDate);
                     int days = (int)Math.Floor(timeSpan.TotalDays);
                     if (days > 0)
@@ -139,9 +139,14 @@ namespace GameServer.Script.Model.DataModel
                         }
                     }
                 }
-                if (paycache.MonthCardDays >= 0)
+                else if (paycache.WeekCardDays == 0)
                 {
-                    int realDays = paycache.MonthCardDays + 1;
+                    paycache.WeekCardDays = -1;
+                }
+
+                if (paycache.MonthCardDays > 0)
+                {
+                    int realDays = paycache.MonthCardDays;
                     TimeSpan timeSpan = DateTime.Now.Subtract(paycache.MonthCardAwardDate);
                     int days = (int)Math.Floor(timeSpan.TotalDays);
                     if (days > 0)
@@ -156,6 +161,10 @@ namespace GameServer.Script.Model.DataModel
                             AddMouthCardMail(gameUser, paycache);
                         }
                     }
+                }
+                else if (paycache.MonthCardDays == 0)
+                {
+                    paycache.MonthCardDays = -1;
                 }
             }
 
@@ -607,12 +616,12 @@ namespace GameServer.Script.Model.DataModel
 
 
 
-            if (scount == 7)
-                scount = 0;
-            var fdnow = jobcache.FindKey((JobTitleType)scount);
-            scount++;
+            //if (scount == 7)
+            //    scount = 0;
+            //var fdnow = jobcache.FindKey((JobTitleType)scount);
+            //scount++;
 
-            //var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
+            var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
             if (fdnow != null)
             {
                 // 取消加成

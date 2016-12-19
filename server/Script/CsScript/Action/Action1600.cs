@@ -66,6 +66,19 @@ namespace GameServer.CsScript.Action
                 SkillCarryList = user.SkillCarryList,
                 VipLv = user.VipLv
             };
+            foreach (var item in DataHelper.CombatItemList)
+            {
+                ItemData data = new ItemData();
+                data.ID = item.ID;
+                data.Num = 0;
+                receipt.CombatItemList.Add(data);
+                var itemdata = user.findItem(item.ID);
+                if (itemdata != null)
+                {
+                    data.Num = itemdata.Num;
+                }
+            }
+
             GameSession session = GameSession.Get(user.UserID);
             if (session != null && session.Connected)
                 receipt.IsOnline = true;

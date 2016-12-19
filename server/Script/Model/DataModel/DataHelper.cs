@@ -10,6 +10,7 @@ namespace GameServer.Script.Model.DataModel
     {
         static public List<Config_SubjectExp> StudyExplist;
         static public List<Config_SubjectExp> ExerciseExplist;
+        static public List<Config_Item> CombatItemList;
         /// <summary>
         /// 用户初始体力
         /// </summary>
@@ -103,6 +104,7 @@ namespace GameServer.Script.Model.DataModel
 
             StudyExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Study));
             ExerciseExplist = new ShareCacheStruct<Config_SubjectExp>().FindAll(t => (t.Type == SubjectType.Exercise));
+            CombatItemList = new ShareCacheStruct<Config_Item>().FindAll(t => (t.Type == ItemType.Item && t.Map == 0));
 
             InitVit = ConfigEnvSet.GetInt("User.InitVit");
             OpenItemBoxOnceNeedDiamond = ConfigEnvSet.GetInt("User.OpenItemBoxDiamond");
