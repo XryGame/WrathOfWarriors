@@ -130,17 +130,12 @@
             </summary>
             <exception cref="T:System.NullReferenceException"></exception>
         </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigManager.Intialize">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:ZyGames.Framework.Common.Configuration.ConfigManager.Intialize(System.String)">
             <summary>
             
             </summary>
-            <param name="sectionName">custom cection node name</param>
+            <param name="sectionName"></param>
+            <exception cref="T:System.ArgumentException"></exception>
             <exception cref="T:System.Exception"></exception>
             <returns></returns>
         </member>
@@ -158,30 +153,167 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
-        <member name="T:ZyGames.Framework.Common.Configuration.ConfigNode">
+        <member name="T:ZyGames.Framework.Common.Configuration.DefaultDataConfigger">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigNode.#ctor">
+        <member name="M:ZyGames.Framework.Common.Configuration.DefaultDataConfigger.LoadConfigData">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigNode.#ctor(System.String,System.String)">
+        <member name="T:ZyGames.Framework.Common.Configuration.IConfigger">
             <summary>
             
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConfigNode.Key">
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.Install">
             <summary>
             
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConfigNode.Value">
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.Reload">
             <summary>
             
             </summary>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstConfig``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstOrAddConfig``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstOrAddConfig``1(System.Lazy{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="createFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetConfig``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetAllConfig">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetConnetion``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZyGames.Framework.Common.Configuration.ConnectionSection">
+            <summary>
+            Sql connection config
+            </summary>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConnectionSection.#ctor(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConnectionSection.Load(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.ProviderName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.ConnectionString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZyGames.Framework.Common.Configuration.ConfigUtils">
+            <summary>
+            操作Web.config文档
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Configuration.ConfigUtils.SettingsCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Int32)">
+            <summary>
+            读取Config配置文件的Add结点键int配置值
+            </summary>
+            <param name="key">键值Key</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Decimal)">
+            <summary>
+            读取Config配置文件的Add结点键decimal配置值
+            </summary>
+            <param name="key">键值Key</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Boolean)">
+            <summary>
+            读取Config配置文件的Add结点键bool配置值
+            </summary>
+            <param name="key">键值Key</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.String)">
+            <summary>
+            读取Config配置文件的Add结点键配置值
+            </summary>
+            <param name="key">键值Key</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String)">
+            <summary>
+            读取Config配置文件的Add结点键值
+            </summary>
+            <param name="key">键值Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetConnectionString(System.String,System.String)">
+            <summary>
+            获取连接字符串
+            </summary>
+            <param name="connName">键值Key</param>
+            <param name="mKey">解密密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetConnectionString(System.String)">
+            <summary>
+            获取连接字符串
+            </summary>
+            <param name="connName"></param>
+            <returns></returns>
         </member>
         <member name="T:ZyGames.Framework.Common.Configuration.ConfigSection">
             <summary>
@@ -307,96 +439,27 @@
             
             </summary>
         </member>
-        <member name="T:ZyGames.Framework.Common.Configuration.ConfigUtils">
-            <summary>
-            操作Web.config文档
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConfigUtils.SettingsCollection">
+        <member name="T:ZyGames.Framework.Common.Configuration.ConfigNode">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Int32)">
-            <summary>
-            读取Config配置文件的Add结点键int配置值
-            </summary>
-            <param name="key">键值Key</param>
-            <param name="defaultValue">默认值</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Decimal)">
-            <summary>
-            读取Config配置文件的Add结点键decimal配置值
-            </summary>
-            <param name="key">键值Key</param>
-            <param name="defaultValue">默认值</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.Boolean)">
-            <summary>
-            读取Config配置文件的Add结点键bool配置值
-            </summary>
-            <param name="key">键值Key</param>
-            <param name="defaultValue">默认值</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String,System.String)">
-            <summary>
-            读取Config配置文件的Add结点键配置值
-            </summary>
-            <param name="key">键值Key</param>
-            <param name="defaultValue">默认值</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetSetting(System.String)">
-            <summary>
-            读取Config配置文件的Add结点键值
-            </summary>
-            <param name="key">键值Key</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetConnectionString(System.String,System.String)">
-            <summary>
-            获取连接字符串
-            </summary>
-            <param name="connName">键值Key</param>
-            <param name="mKey">解密密钥</param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConfigUtils.GetConnectionString(System.String)">
-            <summary>
-            获取连接字符串
-            </summary>
-            <param name="connName"></param>
-            <returns></returns>
-        </member>
-        <member name="T:ZyGames.Framework.Common.Configuration.ConnectionSection">
-            <summary>
-            Sql connection config
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConnectionSection.#ctor(System.String,System.String,System.String)">
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigNode.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.ConnectionSection.Load(System.String,System.String,System.String)">
+        <member name="M:ZyGames.Framework.Common.Configuration.ConfigNode.#ctor(System.String,System.String)">
             <summary>
             
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.Name">
+        <member name="P:ZyGames.Framework.Common.Configuration.ConfigNode.Key">
             <summary>
             
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.ProviderName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Configuration.ConnectionSection.ConnectionString">
+        <member name="P:ZyGames.Framework.Common.Configuration.ConfigNode.Value">
             <summary>
             
             </summary>
@@ -505,74 +568,6 @@
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="T:ZyGames.Framework.Common.Configuration.DefaultDataConfigger">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.DefaultDataConfigger.LoadConfigData">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:ZyGames.Framework.Common.Configuration.IConfigger">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.Install">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.Reload">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstConfig``1">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstOrAddConfig``1">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetFirstOrAddConfig``1(System.Lazy{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="createFactory"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetConfig``1">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetAllConfig">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Configuration.IConfigger.GetConnetion``1(System.String)">
-            <summary>
-            
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
         <member name="T:ZyGames.Framework.Common.Event.CustomEventHandle`1">
             <summary>
             自定义事件处理委托
@@ -637,35 +632,27 @@
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="T:ZyGames.Framework.Common.Event.EventNotifier">
+        <member name="T:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs">
             <summary>
-            Event notifier
+            Time out notify event args
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.TimerNum">
+        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.#ctor(System.Int32)">
             <summary>
-            process time
+            init
+            </summary>
+            <param name="secTimeout"></param>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.#ctor(System.TimeSpan)">
+            <summary>
+            init
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Event.EventNotifier.Dispose">
-            <summary>
-            Dispose
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.WaitEventCount">
-            <summary>
-            Not process time
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.ActiveThreadCount">
+        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.Check">
             <summary>
             
             </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Event.EventNotifier.Put(ZyGames.Framework.Common.Event.NotifyEventArgs)">
-            <summary>
-            
-            </summary>
+            <returns></returns>
         </member>
         <member name="T:ZyGames.Framework.Common.Event.NotifyCallback">
             <summary>
@@ -708,27 +695,35 @@
             
             </summary>
         </member>
-        <member name="T:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs">
+        <member name="T:ZyGames.Framework.Common.Event.EventNotifier">
             <summary>
-            Time out notify event args
+            Event notifier
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.#ctor(System.Int32)">
+        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.TimerNum">
             <summary>
-            init
-            </summary>
-            <param name="secTimeout"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.#ctor(System.TimeSpan)">
-            <summary>
-            init
+            process time
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Event.TimeoutNotifyEventArgs.Check">
+        <member name="M:ZyGames.Framework.Common.Event.EventNotifier.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.WaitEventCount">
+            <summary>
+            Not process time
+            </summary>
+        </member>
+        <member name="P:ZyGames.Framework.Common.Event.EventNotifier.ActiveThreadCount">
             <summary>
             
             </summary>
-            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Event.EventNotifier.Put(ZyGames.Framework.Common.Event.NotifyEventArgs)">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:ZyGames.Framework.Common.HttpUtils">
             <summary>
@@ -759,15 +754,6 @@
             Get request
             </summary>
             <param name="url"></param>
-            <param name="contentType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.HttpUtils.GetStringAsync(System.String,System.Text.Encoding,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="url"></param>
-            <param name="encoding"></param>
             <param name="contentType"></param>
             <returns></returns>
         </member>
@@ -803,16 +789,6 @@
             <param name="contentType"></param>
             <returns></returns>
         </member>
-        <member name="M:ZyGames.Framework.Common.HttpUtils.PostStringAsync(System.String,System.String,System.Text.Encoding,System.String)">
-            <summary>
-            Post request
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="encoding"></param>
-            <param name="contentType"></param>
-            <returns></returns>
-        </member>
         <member name="M:ZyGames.Framework.Common.HttpUtils.BuildPostParams(System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Post request
@@ -830,31 +806,6 @@
             <param name="contentType"></param>
             <returns></returns>
         </member>
-        <member name="M:ZyGames.Framework.Common.HttpUtils.Post(System.String,System.String,System.Nullable{System.Int32},System.String,System.Text.Encoding,System.String,System.Net.CookieCollection)">
-            <summary>  
-            Post request 
-            </summary>  
-            <param name="url">请求的URL</param>  
-            <param name="parameters">随同请求POST的参数</param>
-            <param name="timeout">请求的超时时间</param>  
-            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>  
-            <param name="encoding">发送HTTP请求时所用的编码</param>  
-            <param name="contentType"></param>
-            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>  
-            <returns></returns>  
-        </member>
-        <member name="M:ZyGames.Framework.Common.HttpUtils.Post(System.String,System.Byte[],System.Nullable{System.Int32},System.String,System.String,System.Net.CookieCollection)">
-            <summary>
-            
-            </summary>
-            <param name="url"></param>
-            <param name="inputBytes"></param>
-            <param name="timeout"></param>
-            <param name="userAgent"></param>
-            <param name="contentType"></param>
-            <param name="cookies"></param>
-            <returns></returns>
-        </member>
         <member name="M:ZyGames.Framework.Common.HttpUtils.PostAsync(System.String,System.String,System.Nullable{System.Int32},System.String,System.Text.Encoding,System.String,System.Net.CookieCollection)">
             <summary>
             
@@ -869,6 +820,31 @@
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.HttpUtils.PostAsync(System.String,System.Byte[],System.Nullable{System.Int32},System.String,System.String,System.Net.CookieCollection)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="inputBytes"></param>
+            <param name="timeout"></param>
+            <param name="userAgent"></param>
+            <param name="contentType"></param>
+            <param name="cookies"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.HttpUtils.Post(System.String,System.String,System.Nullable{System.Int32},System.String,System.Text.Encoding,System.String,System.Net.CookieCollection)">
+            <summary>  
+            Post request 
+            </summary>  
+            <param name="url">请求的URL</param>  
+            <param name="parameters">随同请求POST的参数</param>
+            <param name="timeout">请求的超时时间</param>  
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>  
+            <param name="encoding">发送HTTP请求时所用的编码</param>  
+            <param name="contentType"></param>
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:ZyGames.Framework.Common.HttpUtils.Post(System.String,System.Byte[],System.Nullable{System.Int32},System.String,System.String,System.Net.CookieCollection)">
             <summary>
             
             </summary>
@@ -936,11 +912,6 @@
             <param name="expireTime">ms</param>
             <param name="checkTime">ms</param>
         </member>
-        <member name="P:ZyGames.Framework.Common.Locking.LockCachePool.WaitTimeoutMaxNum">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="P:ZyGames.Framework.Common.Locking.LockCachePool.Count">
             <summary>
             
@@ -957,24 +928,12 @@
             </summary>
             <param name="key"></param>
         </member>
-        <member name="M:ZyGames.Framework.Common.Locking.LockCachePool.TryEnter(System.Int64,System.Int32,System.Int64@)">
+        <member name="M:ZyGames.Framework.Common.Locking.LockCachePool.TryEnter(System.Int64,System.Int32)">
             <summary>
             
             </summary>
             <param name="key"></param>
             <param name="timeout"></param>
-            <param name="waitTimeOutNum"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Locking.LockCachePool.TryEnter(System.Int64,System.Int32,System.Object,System.Object@,System.Int64@)">
-            <summary>
-            
-            </summary>
-            <param name="key"></param>
-            <param name="timeout"></param>
-            <param name="wait">wait get lock object</param>
-            <param name="enter">enter lock object</param>
-            <param name="waitTimeOutNum"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.Locking.LockCachePool.Enter(System.Int64)">
@@ -1139,22 +1098,7 @@
         </member>
         <member name="M:ZyGames.Framework.Common.Log.TraceLog.Write(System.String,System.Object[])">
             <summary>
-            Write to debug
-            </summary>
-            <param name="message"></param>
-            <param name="args"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Log.TraceLog.Write(System.String,System.Boolean,System.Object[])">
-            <summary>
             只在编译器的DEBUG下输出到Debug目录
-            </summary>
-            <param name="message"></param>
-            <param name="includStackTrace"></param>
-            <param name="args"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Log.TraceLog.WriteDebug(System.String,System.Object[])">
-            <summary>
-            
             </summary>
             <param name="message"></param>
             <param name="args"></param>
@@ -1183,13 +1127,6 @@
         <member name="M:ZyGames.Framework.Common.Log.TraceLog.WriteComplement(System.String,System.Object[])">
             <summary>
             记录出错日志到Complement目录下
-            </summary>
-            <param name="message"></param>
-            <param name="args"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Log.TraceLog.WriteFatal(System.String,System.Object[])">
-            <summary>
-            
             </summary>
             <param name="message"></param>
             <param name="args"></param>
@@ -1261,25 +1198,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.MathUtils.UnixEpochTimeSpan">
-            <summary>
-            Use Utc time
-            </summary>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.GetUnixEpochTimeSpan(System.DateTime)">
-            <summary>
-            
-            </summary>
-            <param name="date"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.ToTimeFromUnixEpoch(System.TimeSpan)">
-            <summary>
-            
-            </summary>
-            <param name="ts"></param>
-            <returns></returns>
         </member>
         <member name="P:ZyGames.Framework.Common.MathUtils.WeekOfYear">
             <summary>
@@ -1452,78 +1370,38 @@
         </member>
         <member name="M:ZyGames.Framework.Common.MathUtils.TryAdd(System.UInt32,System.UInt32,System.Action{System.UInt32})">
             <summary>
-            
-            </summary>
-            <param name="a"></param>
-            <param name="b"></param>
-            <param name="success"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.TryAdd(System.UInt32,System.UInt32,System.Action{System.UInt32},System.UInt32@)">
-            <summary>
             尝试相加,防止溢出
             </summary>
             <param name="a"></param>
             <param name="b"></param>
             <param name="success"></param>
-            <param name="increment"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.MathUtils.TryAdd(System.UInt16,System.UInt16,System.Action{System.UInt16})">
             <summary>
-            
-            </summary>
-            <param name="a"></param>
-            <param name="b"></param>
-            <param name="success"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.TryAdd(System.UInt16,System.UInt16,System.Action{System.UInt16},System.UInt16@)">
-            <summary>
             尝试相加,防止溢出
             </summary>
             <param name="a"></param>
             <param name="b"></param>
             <param name="success"></param>
-            <param name="increment"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.MathUtils.TrySub(System.UInt32,System.UInt32,System.Action{System.UInt32})">
             <summary>
-            
-            </summary>
-            <param name="a"></param>
-            <param name="b"></param>
-            <param name="success"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.TrySub(System.UInt32,System.UInt32,System.Action{System.UInt32},System.UInt32@)">
-            <summary>
             尝试相减,防止溢出
             </summary>
             <param name="a"></param>
             <param name="b"></param>
             <param name="success"></param>
-            <param name="decrement"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.MathUtils.TrySub(System.UInt16,System.UInt16,System.Action{System.UInt32})">
             <summary>
-            
-            </summary>
-            <param name="a"></param>
-            <param name="b"></param>
-            <param name="success"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.MathUtils.TrySub(System.UInt16,System.UInt16,System.Action{System.UInt32},System.UInt16@)">
-            <summary>
             尝试相减,防止溢出
             </summary>
             <param name="a"></param>
             <param name="b"></param>
             <param name="success"></param>
-            <param name="decrement"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.MathUtils.Addition(System.Int64,System.Int64)">
@@ -2014,7 +1892,7 @@
         </member>
         <member name="M:ZyGames.Framework.Common.ObjectCloner.Clone(System.Object)">
             <summary>
-            Depth copy property and field of object.
+            
             </summary>
             <param name="model"></param>
             <returns></returns>
@@ -2421,17 +2299,6 @@
             get item 
             </summary>
             <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.ObjectPoolWithExpire`1.Create">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.ObjectPoolWithExpire`1.Put">
-            <summary>
-            Use default factory create.
-            </summary>
         </member>
         <member name="M:ZyGames.Framework.Common.ObjectPoolWithExpire`1.Put(`0)">
             <summary>
@@ -3274,13 +3141,12 @@
             <param name="data">二进字节数据</param>
             <returns></returns>
         </member>
-        <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.Deserialize(System.Byte[],System.Type,System.Boolean)">
+        <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.Deserialize(System.Byte[],System.Type)">
             <summary>
             使用protobuf反序列化二进制数组为对象
             </summary>
             <param name="data">二进字节数据</param>
             <param name="type">反序列化的类型.</param>
-            <param name="isGzip"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(System.Object,System.Boolean)">
@@ -3298,13 +3164,12 @@
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(System.Byte[],System.Type,System.Boolean)">
+        <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(System.Byte[],System.Type)">
             <summary>
             反序列化二进制数组为对象,并gzip压缩
             </summary>
             <param name="data"></param>
             <param name="type"></param>
-            <param name="isGzip"></param>
             <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.Serialization.ProtoBufUtils.LoadProtobufType(System.Reflection.Assembly)">
@@ -3341,16 +3206,6 @@
             重载Tostring方法
             </summary>
             <returns></returns>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Serialization.ProtoObject.IsValueType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Serialization.ProtoObject.HasStringValue">
-            <summary>
-            
-            </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Serialization.ProtoObject.Value">
             <summary>
@@ -6379,77 +6234,37 @@
         </member>
         <member name="T:ZyGames.Framework.Common.Timing.PlanConfig">
             <summary>
-            Plan config
+            计划配置信息
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.OncePlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String,System.Object)">
-            <summary>
-            Only run once
-            </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="beginTime">equal this time, format:"2015/01/01 09:00:00", or "09:00:00"  is today time</param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryMinutePlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String,System.String,System.Int32,System.Object)">
-            <summary>
-            Every minute run
-            </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="beginTime">more than or equal this time, format: "2015/01/01 09:00:00", or "09:00:00" is today time</param>
-            <param name="endTime">less than this time, format: "2015/01/02 00:00:00", or "00:00:00" or "null" is tomorrow time</param>
-            <param name="secondInterval">interval run times</param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryDayPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String,System.Object)">
-            <summary>
-            Every day run
-            </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="beginTime">more than or equal this time, format: "2015/01/01 09:00:00", or "09:00:00" is today time</param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryWeekPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.DayOfWeek,System.String,System.Object)">
-            <summary>
-            Every week run
-            </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="week">DayOfWeek</param>
-            <param name="beginTime">more than or equal this time, format: "2015/01/01 09:00:00", or "09:00:00" is today time</param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryWeekPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.DayOfWeek,System.String,System.String,System.Int32,System.Object)">
-            <summary>
-            Every week run
-            </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="week">DayOfWeek</param>
-            <param name="beginTime">more than or equal this time, format: "2015/01/01 09:00:00", or "09:00:00" is today time</param>
-            <param name="endTime">less than this time, format: "2015/01/02 00:00:00", or "00:00:00" or "null" is tomorrow time</param>
-            <param name="secondInterval">interval run times</param>
-            <param name="target"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.CreatePlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,ZyGames.Framework.Common.Timing.PlanCycle,System.String,System.String,System.Boolean,System.Int32,System.Object)">
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.OncePlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String)">
             <summary>
             
             </summary>
-            <param name="callback"></param>
-            <param name="name"></param>
-            <param name="planCycle">PlanCycle</param>
-            <param name="beginTime">more than or equal this time, format: "2015/01/01 09:00:00", or "09:00:00" is today time</param>
-            <param name="endTime">less than this time, format: "2015/01/02 00:00:00", or "00:00:00" or "null" is tomorrow time</param>
-            <param name="isCycle">is cycle run</param>
-            <param name="secondInterval">interval run times</param>
-            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryMinutePlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryDayPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryWeekPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.DayOfWeek,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.EveryWeekPlan(ZyGames.Framework.Common.Timing.PlanCallback,System.String,System.DayOfWeek,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
             <returns></returns>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.PlanState.IsExpired">
@@ -6460,11 +6275,6 @@
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.PlanState.IsEnd">
             <summary>
             是否当天结束
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.ExcutingNum">
-            <summary>
-            Gets plan is excuting num.
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.PlanWeek">
@@ -6489,7 +6299,7 @@
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.Name">
             <summary>
-            Gets plan name
+            名称
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.Callback">
@@ -6499,7 +6309,7 @@
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.Target">
             <summary>
-            Gets or sets target
+            
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.IsCycle">
@@ -6514,27 +6324,22 @@
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.ExpiredTime">
             <summary>
-            Gets or sets expired time
+            Expired time
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.IsExpired">
             <summary>
-            Gets expired exit run.
+            
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.IsEnd">
             <summary>
-            Gets today is end run
+            
             </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.PreviousExecuteTime">
             <summary>
-            Gets pre excute time
-            </summary>
-        </member>
-        <member name="P:ZyGames.Framework.Common.Timing.PlanConfig.NexExcutetDate">
-            <summary>
-            Gets next excute time
+            
             </summary>
         </member>
         <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.AutoStart(System.DateTime)">
@@ -6543,35 +6348,21 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:ZyGames.Framework.Common.Timing.RunTimeWatch">
+        <member name="M:ZyGames.Framework.Common.Timing.PlanConfig.SetDiffInterval(System.Double)">
             <summary>
-            Watch code process run time.
+            设置误差间隔
             </summary>
         </member>
-        <member name="M:ZyGames.Framework.Common.Timing.RunTimeWatch.StartNew(System.String)">
+        <member name="T:ZyGames.Framework.Common.Timing.RunTimeWatch">
             <summary>
             
             </summary>
-            <param name="message"></param>
-            <returns></returns>
         </member>
         <member name="M:ZyGames.Framework.Common.Timing.RunTimeWatch.#ctor(System.String)">
             <summary>
             
             </summary>
             <param name="message"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.RunTimeWatch.Check(System.String,System.Int32)">
-            <summary>
-            Check of tag use time.
-            </summary>
-            <param name="tag"></param>
-            <param name="timeout"></param>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.RunTimeWatch.Flush(System.Boolean,System.Int32)">
-            <summary>
-            Write to log.
-            </summary>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.RunTimeWatch.Elapsed">
             <summary>
@@ -6644,11 +6435,6 @@
             </summary>
             <param name="task"></param>
         </member>
-        <member name="M:ZyGames.Framework.Common.Timing.TaskDispatch.Clear">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="M:ZyGames.Framework.Common.Timing.TaskDispatch.Start">
             <summary>
             
@@ -6670,16 +6456,18 @@
             使用场合:对间隔时间比较精确
             </summary>
         </member>
-        <member name="P:ZyGames.Framework.Common.Timing.TimeListener.OffsetMillisecond">
-            <summary>
-            Thread run interval time
-            </summary>
-        </member>
         <member name="M:ZyGames.Framework.Common.Timing.TimeListener.SetTimer(System.Int32)">
             <summary>
             设置定时器
             </summary>
             <param name="msInterval"></param>
+        </member>
+        <member name="M:ZyGames.Framework.Common.Timing.TimeListener.SetTimer(System.Int32,System.Int32)">
+            <summary>
+            设置定时器
+            </summary>
+            <param name="msInterval"></param>
+            <param name="dueTime"></param>
         </member>
         <member name="P:ZyGames.Framework.Common.Timing.TimeListener.HasWaitPlan">
             <summary>
@@ -6708,11 +6496,6 @@
             </summary>
             <param name="match"></param>
             <returns></returns>
-        </member>
-        <member name="M:ZyGames.Framework.Common.Timing.TimeListener.Clear">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:ZyGames.Framework.Common.VersionConfig">
             <summary>

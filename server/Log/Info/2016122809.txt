@@ -1,0 +1,238 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 1   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+09:40:46 Server is starting...
+09:40:46 Redis server connect successfully.
+09:40:49 DB server connect successfully.
+09:40:52 Start checking table schema, please wait.
+09:40:52 Check table schema successfully.
+09:40:52 script compiled successfully.
+09:40:52 CacheFactory listen has started...
+09:40:52 WebSocket service 168.254.0.254:9001 is started.
+09:40:52 Http service:http://168.254.0.254:8091/Service.aspx is started.
+Time:2016-12-28 09:40:52:640-消息：系统加载单服配置开始...
+
+
+Time:2016-12-28 09:40:53:117-消息：系统加载单服配置所需时间:476.5968ms
+
+
+Time:2016-12-28 09:40:53:332-The ranking refresh is start...
+
+
+Time:2016-12-28 09:40:53:415-Trace>>The CombatRanking has be loaded, count:56
+
+
+Time:2016-12-28 09:40:53:436-Trace>>The LevelRanking has be loaded, count:56
+
+
+Time:2016-12-28 09:40:53:437-The ranking refresh is end.
+
+
+Time:2016-12-28 09:40:53:439-消息：系统全局运行环境加载所需时间:801.4385ms
+
+
+Time:2016-12-28 09:41:04:795-Trace>>Submit server status fail result:, request url:http://www.imsgame.com:81/Service.aspx?d=MsgId%3d0%26Sid%3d0%26Uid%3d0%26St%3d0%26ActionId%3d1002%26GameID%3d1%26ServerID%3d1%26Status%3d1%26ActiveNum%3d0%26ServerUrl%3d168.254.0.254%3a9001%26Sign%3d3f261d4f2f8941ea90552cf7507f021b
+
+
+09:41:04 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2016-12-28 09:41:04:820-Trace>>Submit server status fail result:, request url:http://www.imsgame.com:81/Service.aspx?d=MsgId%3d0%26Sid%3d0%26Uid%3d0%26St%3d0%26ActionId%3d1002%26GameID%3d1%26ServerID%3d1%26Status%3d1%26ActiveNum%3d1%26ServerUrl%3d168.254.0.254%3a9001%26Sign%3d3f261d4f2f8941ea90552cf7507f021b
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Time:2016-12-28 09:42:00:015-The ranking refresh is start...
+
+
+Time:2016-12-28 09:42:00:016-Trace>>The LevelRanking has be loaded, count:56
+
+
+Time:2016-12-28 09:42:00:021-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Time:2016-12-28 09:43:00:028-The ranking refresh is start...
+
+
+Time:2016-12-28 09:43:00:029-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:43:00:032-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Time:2016-12-28 09:44:20:043-The ranking refresh is start...
+
+
+Time:2016-12-28 09:44:20:045-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:44:20:048-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:45:40:044-The ranking refresh is start...
+
+
+Time:2016-12-28 09:45:40:045-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:45:40:046-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:46:40:078-The ranking refresh is start...
+
+
+Time:2016-12-28 09:46:40:080-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:46:40:083-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:47:40:106-The ranking refresh is start...
+
+
+Time:2016-12-28 09:47:40:107-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:47:40:110-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:48:40:121-The ranking refresh is start...
+
+
+Time:2016-12-28 09:48:40:122-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:48:40:123-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:50:00:125-The ranking refresh is start...
+
+
+Time:2016-12-28 09:50:00:127-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:50:00:129-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:51:00:152-The ranking refresh is start...
+
+
+Time:2016-12-28 09:51:00:154-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:51:00:157-The ranking refresh is end.
+
+
+09:51:00 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:52:00:169-The ranking refresh is start...
+
+
+Time:2016-12-28 09:52:00:170-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:52:00:172-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:53:20:183-The ranking refresh is start...
+
+
+Time:2016-12-28 09:53:20:185-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:53:20:187-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:54:20:201-The ranking refresh is start...
+
+
+Time:2016-12-28 09:54:20:202-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:54:20:206-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:55:20:215-The ranking refresh is start...
+
+
+Time:2016-12-28 09:55:20:217-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:55:20:219-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:56:40:218-The ranking refresh is start...
+
+
+Time:2016-12-28 09:56:40:219-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:56:40:221-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:57:40:232-The ranking refresh is start...
+
+
+Time:2016-12-28 09:57:40:233-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:57:40:236-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:58:40:248-The ranking refresh is start...
+
+
+Time:2016-12-28 09:58:40:249-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:58:40:253-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Time:2016-12-28 09:59:40:262-The ranking refresh is start...
+
+
+Time:2016-12-28 09:59:40:264-Trace>>The LevelRanking has be loaded, count:57
+
+
+Time:2016-12-28 09:59:40:266-The ranking refresh is end.
+
+
