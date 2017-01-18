@@ -155,6 +155,7 @@
     <Compile Include="Script\CsScript\Action\Action10700.cs" />
     <Compile Include="Script\CsScript\Action\Action10800.cs" />
     <Compile Include="Script\CsScript\Action\Action10900.cs" />
+    <Compile Include="Script\CsScript\Action\Action1099.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action11000.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
@@ -269,6 +270,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPOccupySceneData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPOpenBoxData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPPassData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPPaySucceedData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPQueryClassMonitorData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPQueryUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRankUserData.cs" />

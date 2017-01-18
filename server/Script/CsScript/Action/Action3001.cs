@@ -75,7 +75,7 @@ namespace GameServer.CsScript.Action
 
 
 
-            bool IsGmCommand = true;
+            bool IsGmCommand = false;
             var section = ConfigManager.Configger.GetFirstOrAddConfig<MiddlewareSection>();
             if (section.EnableGM)
             {
@@ -126,11 +126,7 @@ namespace GameServer.CsScript.Action
                             command.Parse(ContextUser.UserID, _message);
                             command.ProcessCmd();
                         }
-                            
-                    }
-                    else
-                    {
-                        IsGmCommand = false;
+                        IsGmCommand = true;
                     }
                     
                 }

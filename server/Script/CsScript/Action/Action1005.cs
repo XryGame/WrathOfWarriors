@@ -213,7 +213,7 @@ namespace GameServer.CsScript.Action
                 UserID = user.UserID,
                 PayMoney = 0,
                 IsReceiveFirstPay = false,
-                WeekCardDays = 0,
+                WeekCardDays = -1,
                 MonthCardDays = 2,
                 WeekCardAwardDate = DateTime.Now,
                 MonthCardAwardDate = DateTime.Now,

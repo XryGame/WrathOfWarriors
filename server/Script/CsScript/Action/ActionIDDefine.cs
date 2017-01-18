@@ -196,7 +196,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1070= 1070;
 
         ///<summary>
-        ///服务器状态通知
+        ///充值成功通知
         ///</summary>
         public const short Cst_Action1099 = 1099;
 

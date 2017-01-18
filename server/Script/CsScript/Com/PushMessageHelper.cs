@@ -376,6 +376,17 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1070, packet, (rsession, asyncResult) => { }, 0);
         }
 
+        /// <summary>
+        /// 充值成功通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void UserPaySucceedNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1099, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1099, packet, (rsession, asyncResult) => { }, 0);
+        }
 
     }
 }

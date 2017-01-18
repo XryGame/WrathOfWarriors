@@ -229,7 +229,7 @@ namespace GameServer.Script.Model.DataModel
                 Title = "周卡奖励",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", pay.WeekCardDays),
+                Context = string.Format("这是今天您的周卡奖励，您的周卡 {0} 天后到期！", pay.WeekCardDays + 1),
                 ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
             };
 
@@ -243,7 +243,7 @@ namespace GameServer.Script.Model.DataModel
                 Title = "月卡奖励",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", pay.MonthCardDays),
+                Context = string.Format("这是今天您的月卡奖励，您的月卡 {0} 天后到期！", pay.MonthCardDays + 1),
                 ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
             };
 

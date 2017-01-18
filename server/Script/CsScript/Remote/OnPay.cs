@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.GM;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using System;
@@ -10,6 +11,7 @@ using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Common.Security;
+using ZyGames.Framework.Game.Contract;
 
 namespace GameServer.CsScript.Remote
 {
@@ -174,8 +176,7 @@ namespace GameServer.CsScript.Remote
                     new PayMonthCardCommand().PayMonthCard(user.UserID);
                 }
                     
-                receipt.ResultCode = 1;
-                receipt.ResultString = "SUCCEED";
+
 
                 OrderInfoCache newOrderInfo = new OrderInfoCache()
                 {
@@ -193,6 +194,11 @@ namespace GameServer.CsScript.Remote
                 };
                 orderInfoCache.Add(newOrderInfo);
                 orderInfoCache.Update();
+
+                PushMessageHelper.UserPaySucceedNotification(GameSession.Get(user.UserID));
+
+                receipt.ResultCode = 1;
+                receipt.ResultString = "SUCCEED";
 
             }
             catch (Exception e)

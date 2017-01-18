@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.GM;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using System;
@@ -10,6 +11,7 @@ using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Common.Security;
+using ZyGames.Framework.Game.Contract;
 
 namespace GameServer.CsScript.Remote
 {
@@ -124,7 +126,8 @@ namespace GameServer.CsScript.Remote
                     {// 是否月卡
                         new PayMonthCardCommand().PayMonthCard(user.UserID);
                     }
-                    
+
+                    PushMessageHelper.UserPaySucceedNotification(GameSession.Get(user.UserID));
                     receipt.ResultCode = 1;
                     receipt.ResultString = "SUCCEED";
 
