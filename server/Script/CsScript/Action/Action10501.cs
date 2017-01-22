@@ -42,7 +42,7 @@ namespace GameServer.CsScript.Action
             receipt = new JPBuyData();
             receipt.Result = EventStatus.Good;
             DateTime now = DateTime.Now;
-            if (ContextUser.ReceiveVitStatus == ReceiveVitStatus.TwentyOne)
+            if (ContextUser.ReceiveVitStatus == ReceiveVitStatus.Eighteen)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
@@ -62,7 +62,7 @@ namespace GameServer.CsScript.Action
             }
             else if (now.Hour >= 18 && now.Hour <= 23)
             {
-                ContextUser.ReceiveVitStatus = ReceiveVitStatus.TwentyOne;
+                ContextUser.ReceiveVitStatus = ReceiveVitStatus.Eighteen;
             }
             else
             {

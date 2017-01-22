@@ -691,6 +691,7 @@ namespace GameServer.Script.Model.DataModel
                 fdnow.LooksId = 0;
                 fdnow.CampaignUserList.Clear();
             }
+
         }
         /// <summary>
         /// 每天整点刷新（5）
@@ -710,6 +711,9 @@ namespace GameServer.Script.Model.DataModel
                     RestoreUserData(session.UserId);
             }
             PushMessageHelper.RestoreUserNotification();
+
+            // 机器人自动参加竞选
+            Bots.Campaign();
         }
         /// <summary>
         /// 每周二周五名人榜奖励任务
@@ -1130,6 +1134,24 @@ namespace GameServer.Script.Model.DataModel
                     return;
                 string context = string.Format("恭喜 {0} 挑战班长成功，成为{1}新任班长！", monitor.NickName, classdata.Name);
 
+                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+
+                var chatService = new TryXChatService();
+                chatService.SystemSend(context);
+                PushMessageHelper.SendSystemChatToOnlineUser();
+            }
+        }
+
+        /// <summary>
+        /// 充值成功vip等级改变通知
+        /// </summary>
+        /// <param name="classId"></param>
+        public static void VipLvChangeNotification(int userId)
+        {
+            GameUser user = FindUser(userId);
+            if (user != null)
+            {
+                string context = string.Format("恭喜 {0} 成为VIP{1}，引来众人羡煞的目光！", user.NickName, user.VipLv);
                 PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
 
                 var chatService = new TryXChatService();

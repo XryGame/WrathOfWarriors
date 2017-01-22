@@ -212,6 +212,7 @@
     <Compile Include="Script\CsScript\Action\Action9020.cs" />
     <Compile Include="Script\CsScript\Action\ActionIDDefine.cs" />
     <Compile Include="Script\CsScript\Action\BaseAction.cs" />
+    <Compile Include="Script\CsScript\Base\Bots.cs" />
     <Compile Include="Script\CsScript\Base\HttpMessageInterface.cs" />
     <Compile Include="Script\CsScript\Base\NewHttpResponse.cs" />
     <Compile Include="Script\CsScript\Base\SystemGlobal.cs" />
@@ -307,6 +308,8 @@
     <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_AccumulatePay.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Achievement.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_BotsChat.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_BotsName.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_CdKey.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />

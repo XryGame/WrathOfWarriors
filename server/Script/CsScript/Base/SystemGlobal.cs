@@ -87,14 +87,15 @@ namespace GameServer.CsScript.Base
                 var names = httpName.Split(',');
                 new NewHttpListener(httpHost, httpPort, new HashSet<string>(names));
             }
-            
 
+            
             LoadGlobalData();
             //LoadUser();
 
             GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
-            TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "CombatAwardTask", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "submitServerStatus", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
+            TimeListener.Append(PlanConfig.EveryMinutePlan(BotsAction, "BotsAction", "00:00", "23:59", 3));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
@@ -108,7 +109,10 @@ namespace GameServer.CsScript.Base
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
 
             DataHelper.InitData();
+            
             InitRanking();
+
+            Bots.InitBots();
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统全局运行环境加载所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
@@ -215,6 +219,8 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_AccumulatePay>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_CdKey>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_ChatKeyWord>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_BotsName>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_BotsChat>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
@@ -268,6 +274,7 @@ namespace GameServer.CsScript.Base
                 return;
             }
             //do something
+
             var sessions = GameSession.GetAll();
             int count = 0;
             foreach (var s in sessions)
@@ -323,5 +330,29 @@ namespace GameServer.CsScript.Base
                 return;
             }
         }
+
+        public static void BotsAction(PlanConfig planconfig)
+        {
+            if (ScriptEngines.IsCompiling)
+            {
+                return;
+            }
+            //do something
+            /// 这里处理Bot的聊天
+            Bots.Chat();
+            /// 处理Bot切磋响应
+            Bots.FightResponse();
+            /// 处理Bot上线公告
+            Bots.OnlineNotification();
+            /// 处理Bot充值公告
+            Bots.PayVipNotification();
+            /// 处理Bot竞技道具公告
+            Bots.CombatItemNotification();
+            /// 处理Bot占领
+            Bots.Occupy();
+            //// 机器人自动参加竞选(测试)
+            //Bots.Campaign();
+        }
+
     }
 }

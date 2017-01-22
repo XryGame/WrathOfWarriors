@@ -1,7 +1,9 @@
-﻿using GameServer.Script.CsScript.Action;
+﻿using GameServer.CsScript.Base;
+using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
@@ -41,11 +43,20 @@ namespace GameServer.CsScript.Action
             receipt = RequestInviteFightResult.OK;
             GameSession session = GameSession.Get(destuid);
             GameUser dest = UserHelper.FindUser(destuid);
-            if (session == null || !session.Connected || dest == null)
+            if (dest == null)
             {
                 receipt = RequestInviteFightResult.Offine;
                 return true;
             }
+            if (dest.EnterServerId != 0)
+            {
+                if (session == null || !session.Connected)
+                {
+                    receipt = RequestInviteFightResult.Offine;
+                    return true;
+                }
+            }
+
             else if (dest.UserStatus == UserStatus.Inviteing)
             {
                 receipt = RequestInviteFightResult.HadInvite;
@@ -60,10 +71,25 @@ namespace GameServer.CsScript.Action
             ContextUser.UserStatus = UserStatus.Inviteing;
             ContextUser.InviteFightDestUid = destuid;
 
-            // 发送切磋邀请
-            dest.UserStatus = UserStatus.Inviteing;
-            PushMessageHelper.InviteFightNotification(session, ContextUser.UserID);
 
+
+            //  如果目标是机器人
+            if (dest.EnterServerId == 0)
+            {
+                Bots.FightBot fbot = new Bots.FightBot()
+                {
+                    UserId = dest.UserID,
+                    InviteTime = DateTime.Now,
+                    PlayerUserId = ContextUser.UserID
+                };
+                Bots.AddFightBot(fbot);
+            }
+            else
+            {
+                // 发送切磋邀请
+                dest.UserStatus = UserStatus.Inviteing;
+                PushMessageHelper.InviteFightNotification(session, ContextUser.UserID);
+            }
             return true;
         }
     }

@@ -246,6 +246,55 @@ namespace GameServer.Script.Model.DataModel
             occupycache.Update();
         }
 
-        
+        /// <summary>
+        /// 扩展班级
+        /// </summary>
+        /// <param name="classLv"></param>
+        /// <returns>扩展的班级ID</returns>
+        public static int ExtendClass(int classLv)
+        {
+            int retClassID = 0;
+            List<ClassDataCache> classeslist = new ShareCacheStruct<ClassDataCache>().FindAll(t => (t.Lv == classLv));
+            List<ClassDataCache> findclasseslist = new ShareCacheStruct<ClassDataCache>().FindAll(
+                                t => (t.Lv == classLv) && t.MemberList.Count < ConfigEnvSet.GetInt("Class.OpenNum")
+                            );
+            if (findclasseslist.Count == 0)
+            {
+                var classcache = new ShareCacheStruct<ClassDataCache>();
+
+                ClassDataCache tmpcache = new ClassDataCache()
+                {
+                    ClassID = 1000 * classLv + classeslist.Count,
+                    Lv = classLv
+                };
+                if (tmpcache.Lv == 1) tmpcache.Name = string.Format("学前{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 2) tmpcache.Name = string.Format("一年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 3) tmpcache.Name = string.Format("二年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 4) tmpcache.Name = string.Format("三年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 5) tmpcache.Name = string.Format("四年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 6) tmpcache.Name = string.Format("五年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 7) tmpcache.Name = string.Format("六年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 8) tmpcache.Name = string.Format("七年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 9) tmpcache.Name = string.Format("八年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 10) tmpcache.Name = string.Format("九年{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 11) tmpcache.Name = string.Format("高一{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 12) tmpcache.Name = string.Format("高二{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 13) tmpcache.Name = string.Format("高三{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 14) tmpcache.Name = string.Format("大一{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 15) tmpcache.Name = string.Format("大二{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 16) tmpcache.Name = string.Format("大三{0}班", classeslist.Count + 1);
+                else if (tmpcache.Lv == 17) tmpcache.Name = string.Format("大四{0}班", classeslist.Count + 1);
+
+                retClassID = tmpcache.ClassID;
+
+                classcache.Add(tmpcache);
+                classcache.Update();
+                
+            }
+
+            return retClassID;
+        }
+
+
     }
 }

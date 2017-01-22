@@ -13,8 +13,8 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Twelve,
         /// <summary>
-        /// 21点领取了
+        /// 18点领取了
         /// </summary>
-        TwentyOne,
+        Eighteen,
     }
 }

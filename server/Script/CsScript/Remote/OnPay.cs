@@ -154,7 +154,7 @@ namespace GameServer.CsScript.Remote
                 }
 
                 int deliverNum = paycfg.AcquisitionDiamond + paycfg.PresentedDiamond;
-
+                int oldVipLv = user.VipLv;
                 if (!new PayMoneyCommand().PayMoney(user.UserID, paycfg.PaySum))
                 {
                     receipt.ResultString = "发货Money失败";
@@ -196,6 +196,12 @@ namespace GameServer.CsScript.Remote
                 orderInfoCache.Update();
 
                 PushMessageHelper.UserPaySucceedNotification(GameSession.Get(user.UserID));
+
+                if (oldVipLv != user.VipLv)
+                {
+                    UserHelper.VipLvChangeNotification(user.UserID);
+                }
+                
 
                 receipt.ResultCode = 1;
                 receipt.ResultString = "SUCCEED";

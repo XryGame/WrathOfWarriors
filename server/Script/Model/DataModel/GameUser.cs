@@ -2641,7 +2641,7 @@ namespace GameServer.Script.Model.DataModel
         public bool IsHaveFriendGiveAway(int uid)
         {
             FriendData fd = FindFriend(uid);
-            return fd != null && FindFriend(uid).IsByGiveAway;
+            return fd != null && fd.IsByGiveAway;
         }
 
 

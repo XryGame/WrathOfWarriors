@@ -70,8 +70,7 @@ namespace GameServer.CsScript.Action
             {
                 return false;
             }
-            user = new SessionUser(gameUser);
-            //Current.Bind(user);
+
             UserLoginLog userLoginLog = new UserLoginLog();
             userLoginLog.UserId = UserId.ToString();
             userLoginLog.SessionID = Sid;
@@ -87,6 +86,9 @@ namespace GameServer.CsScript.Action
             userLoginLog.UserLv = gameUser.UserLv;
             var sender = DataSyncManager.GetDataSender();
             sender.Send(new[] { userLoginLog });
+
+            user = new SessionUser(gameUser);
+            //Current.Bind(user);
 
             return true;
         }
