@@ -1072,6 +1072,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 春节红包
+        /// </summary>
+        private bool _IsReceivedRedPacket;
+        [ProtoMember(60)]
+        [EntityField("IsReceivedRedPacket")]
+        public bool IsReceivedRedPacket
+        {
+            get
+            {
+                return _IsReceivedRedPacket;
+            }
+            set
+            {
+                SetChange("IsReceivedRedPacket", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -1329,6 +1347,7 @@ namespace GameServer.Script.Model.DataModel
                     case "ResetInviteFightDiamondDate": return ResetInviteFightDiamondDate;
                     case "LastLotteryId": return LastLotteryId;
                     case "ShareData": return ShareData;
+                    case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -1514,6 +1533,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "ShareData":
                         _ShareData = ConvertCustomField<UserShareData>(value, index);
+                        break;
+                    case "IsReceivedRedPacket":
+                        _IsReceivedRedPacket = value.ToBool();
                         break;
                     default: throw new ArgumentException(string.Format("GameUser index[{0}] isn't exist.", index));
                 }

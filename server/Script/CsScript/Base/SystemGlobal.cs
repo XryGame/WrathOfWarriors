@@ -225,7 +225,8 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<OccupyDataCache>().AutoLoad(dbFilter);
-            
+            new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
+
             stopwatch.Stop();
             new BaseLog().SaveLog("系统加载单服配置所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
 
@@ -264,7 +265,9 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<OrderInfoCache>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<UserCenterPassport>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<UserCenterUser>().TryRecoverFromDb(ddf);
+            new ShareCacheStruct<CompetitionApply>().TryRecoverFromDb(ddf);
             new PersonalCacheStruct<UserPayCache>().TryRecoverFromDb(ddf);
+
         }
 
         public static void submitServerStatus(PlanConfig planconfig)

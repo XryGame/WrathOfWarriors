@@ -164,6 +164,8 @@
     <Compile Include="Script\CsScript\Action\Action1110.cs" />
     <Compile Include="Script\CsScript\Action\Action1111.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
+    <Compile Include="Script\CsScript\Action\Action11200.cs" />
+    <Compile Include="Script\CsScript\Action\Action11300.cs" />
     <Compile Include="Script\CsScript\Action\Action1201.cs" />
     <Compile Include="Script\CsScript\Action\Action1202.cs" />
     <Compile Include="Script\CsScript\Action\Action1203.cs" />
@@ -351,6 +353,7 @@
     <Compile Include="Script\Model\Config\UserStudyTaskData.cs" />
     <Compile Include="Script\Model\DataModel\CDKeyCache.cs" />
     <Compile Include="Script\Model\DataModel\ClassDataCache.cs" />
+    <Compile Include="Script\Model\DataModel\CompetitionApply.cs" />
     <Compile Include="Script\Model\DataModel\GameUser.cs" />
     <Compile Include="Script\Model\DataModel\JobTitleDataCache.cs" />
     <Compile Include="Script\Model\DataModel\OccupyDataCache.cs" />

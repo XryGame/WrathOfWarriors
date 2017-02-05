@@ -136,7 +136,11 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int InviteFightDiamondNum { get; set; }
 
-        
+        public bool IsCompetitionAply { get; set; }
+
+        public bool IsReceivedRedPacket { get; set; }
+
+
 
     }
 }

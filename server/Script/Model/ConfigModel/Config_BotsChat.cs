@@ -38,7 +38,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
         private string _Word;
         /// <summary>
-        /// 技能名称
+        /// 内容
         /// </summary>
         [EntityField("Word")]
         public string Word
@@ -52,8 +52,24 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("Word", value);
             }
         }
+        private string _Reply;
+        /// <summary>
+        /// 回复
+        /// </summary>
+        [EntityField("Reply")]
+        public string Reply
+        {
+            get
+            {
+                return _Reply;
+            }
+            private set
+            {
+                SetChange("Reply", value);
+            }
+        }
 
-   
+
         protected override object this[string index]
 		{
 			get
@@ -63,6 +79,7 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "ID": return ID;
                     case "Word": return Word;
+                    case "Reply": return Reply;
                     default: throw new ArgumentException(string.Format("Config_BotsChat index[{0}] isn't exist.", index));
 				}
                 #endregion
@@ -77,6 +94,9 @@ namespace GameServer.Script.Model.ConfigModel
                         break; 
                     case "Word":
                         _Word = value.ToNotNullString(); 
+                        break;
+                    case "Reply":
+                        _Reply = value.ToNotNullString();
                         break;
                     default: throw new ArgumentException(string.Format("Config_BotsChat index[{0}] isn't exist.", index));
 				}

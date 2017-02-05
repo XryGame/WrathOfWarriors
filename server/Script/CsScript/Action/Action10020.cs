@@ -45,6 +45,14 @@ namespace GameServer.CsScript.Action
 
         }
 
+        private class JsonXiaoHuoBan : JsonBaseData
+        {
+            public string PassportId{ get; set; }
+
+            public string Password { get; set; }
+
+        }
+
 
 
         public Action10020(ActionGetter actionGetter)
@@ -85,7 +93,12 @@ namespace GameServer.CsScript.Action
         {
             try
             {
+                UserCenterPassport UCP = null;
                 JsonBaseData data = JsonUtils.Deserialize<JsonBaseData>(logindata);
+                if (data.openid.IsEmpty())
+                {
+                    return false;
+                }
 
                 if (data.RetailID == "WeiXin")
                 {
@@ -96,17 +109,44 @@ namespace GameServer.CsScript.Action
                         return false;
                     }
                 }
+                else if (data.RetailID == "XiaoHuoBan")
+                {
+                    JsonXiaoHuoBan xiaohuoban = JsonUtils.Deserialize<JsonXiaoHuoBan>(logindata);
 
-                var ucpcache = new ShareCacheStruct<UserCenterPassport>();
-                var ucp = ucpcache.Find(t => (t.OpenId == data.openid));
-                if (ucp == null)
+                    UCP = Util.FindAccountByOpenId(data.openid, data.RetailID);
+                    if (UCP == null)
+                    {
+                        UCP = new ShareCacheStruct<UserCenterPassport>().FindKey(xiaohuoban.PassportId);
+                        if (UCP != null)
+                        {
+                            if (UCP.Password.CompareTo(xiaohuoban.Password) != 0)
+                            {
+                                return false;
+                            }
+
+                            // 绑定正式账号
+                            if (UCP.BindOpenId.IsEmpty() && UCP.OpenId != xiaohuoban.openid)
+                            {
+                                UCP.BindOpenId = xiaohuoban.openid;
+                            }
+                            UCP = null;
+                        }
+                    }
+
+                }
+                if (UCP == null)
+                {
+                    UCP = Util.FindAccountByOpenId(data.openid, data.RetailID);
+                }
+                
+                if (UCP == null)
                 {
                     Util.CrateAccountByOpenId(data.openid, data.RetailID, out passport, out password);
                 }
                 else
                 {
-                    passport = ucp.PassportID;
-                    password = ucp.Password;
+                    passport = UCP.PassportID;
+                    password = UCP.Password;
                 }
                 return true;
             }

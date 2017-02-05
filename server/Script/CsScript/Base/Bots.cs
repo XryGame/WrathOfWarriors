@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using GameServer.Script.CsScript.Com;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Model;
+using System.Configuration;
 
 namespace GameServer.CsScript.Base
 {
@@ -24,6 +25,8 @@ namespace GameServer.CsScript.Base
             public int UserId;
             public int chatCount;
             public int maxChatCount;
+
+            public string chatContext;
 
         }
 
@@ -83,9 +86,23 @@ namespace GameServer.CsScript.Base
             Random random = new Random();
             foreach (var v in BotsList)
             {
+
                 if (v.UserLv == 1)
                 {
-                    v.UserLv = (random.Next(7) + 8).ToShort();
+                    int minlv = ConfigurationManager.AppSettings["BotLevelMin"].ToInt();
+                    int maxlv = ConfigurationManager.AppSettings["BotLevelMax"].ToInt();
+                    int minviplv = ConfigurationManager.AppSettings["BotVipLvMin"].ToInt();
+                    int maxviplv = ConfigurationManager.AppSettings["BotVipLvMax"].ToInt();
+                    if (minlv != 0 && maxlv != 0)
+                    {
+                        v.UserLv = (random.Next(maxlv - minlv + 1) + minlv).ToShort();
+                    }
+
+                    if (minviplv != 0 && maxviplv != 0)
+                    {
+                        v.VipLv = random.Next(maxviplv - minviplv + 1) + minviplv;
+                    }
+                    
                 }
                 var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
 
@@ -199,7 +216,7 @@ namespace GameServer.CsScript.Base
                     gameUser.UserStage = SubjectStage.PreschoolSchool;
                     gameUser.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
                     gameUser.Vit = DataHelper.InitVit;
-                    gameUser.VipLv = random.Next(4) + 3;
+                    gameUser.VipLv = ConfigEnvSet.GetInt("User.VipLv");
                     gameUser.LooksId = random.Next(4);
                     gameUser.UserStatus = UserStatus.MainUi;
                     gameUser.LoginDate = DateTime.Now;
@@ -298,35 +315,50 @@ namespace GameServer.CsScript.Base
             {
                 return;
             }
-            
-            if (ChatList.Count < 3)
+           
+            if (ChatList.Count <= 0)
             {
-                if (random.Next(1000) < 800)
+                var list = new ShareCacheStruct<Config_BotsChat>().FindAll();
+                var chat = list[random.Next(list.Count)];
+
+                GameUser bot = BotsList[random.Next(BotsList.Count)];
+                ChatBot cb = new ChatBot()
                 {
-                    GameUser bot = BotsList[random.Next(BotsList.Count)];
-                    ChatBot cb = new ChatBot()
+                    UserId = bot.UserID,
+                    chatCount = 0,
+                    maxChatCount = 1,//random.Next(3) + 2
+                    chatContext = chat.Word
+                };
+                ChatList.Add(cb);
+
+                if (!chat.Reply.IsEmpty())
+                {
+                    GameUser rbot = BotsList[random.Next(BotsList.Count)];
+                    ChatBot rcb = new ChatBot()
                     {
-                        UserId = bot.UserID,
+                        UserId = rbot.UserID,
                         chatCount = 0,
-                        maxChatCount = 1//random.Next(3) + 2
+                        maxChatCount = 1,//random.Next(3) + 2
+                        chatContext = chat.Reply
                     };
-                    ChatList.Add(cb);
+                    ChatList.Add(rcb);
                 }
+
             }
 
 
             if (ChatList.Count <= 0)
                 return;
 
-            ChatBot chatbot = ChatList[random.Next(ChatList.Count)];
+            ChatBot chatbot = ChatList[0];
             GameUser gbot = BotsList.Find(t => (t.UserID == chatbot.UserId));
             if (gbot == null)
                 return;
 
-            var list = new ShareCacheStruct<Config_BotsChat>().FindAll();
+            
             
             var chatService = new TryXChatService(gbot);
-            chatService.Send(ChatType.World, list[random.Next(list.Count)].Word);
+            chatService.Send(ChatType.World, chatbot.chatContext);
             PushMessageHelper.SendWorldChatToOnlineUser();
 
             chatbot.chatCount++;
@@ -581,10 +613,9 @@ namespace GameServer.CsScript.Base
             {
                 return;
             }
-
+            Random random = new Random();
             for (int i = 0; i < 5; ++i)
             {
-                Random random = new Random();
                 var bot = BotsList[random.Next(BotsList.Count)];
                 
                 if (fdnow.CampaignUserList.Find(t => (t.UserId == bot.UserID)) != null)
@@ -598,7 +629,7 @@ namespace GameServer.CsScript.Base
                     UserId = bot.UserID,
                     NickName = bot.NickName,
                     ClassId = bot.ClassData.ClassID,
-                    VoteCount = random.Next(30) + 10,
+                    VoteCount = (random.Next(4) + 1) * 10,
                     LooksId = bot.LooksId
                 };
                 fdnow.CampaignUserList.Add(campaignuserdata);

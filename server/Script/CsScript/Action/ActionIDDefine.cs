@@ -557,5 +557,16 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action11101 = 11101;
 
+
+        ///<summary>
+        ///争霸赛报名
+        ///</summary>
+        public const short Cst_Action11200 = 11200;
+
+        ///<summary>
+        ///红包
+        ///</summary>
+        public const short Cst_Action11300 = 11300;
+
     }
 }

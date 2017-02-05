@@ -217,6 +217,9 @@ namespace GameServer.Script.Model.DataModel
                 gameUser.ResetInviteFightDiamondDate = DateTime.Now;
             }
 
+            // 红包重置
+            gameUser.IsReceivedRedPacket = false;
+
             // 设置新的恢复时间
             gameUser.RestoreDate = DateTime.Now;
         }

@@ -379,6 +379,14 @@ namespace GameServer.CsScript.Action
             receipt.CombatData = ContextUser.CombatData;
 
             receipt.VipGiftProgress = ContextUser.VipGiftProgress;
+
+            var cacache = new ShareCacheStruct<CompetitionApply>();
+            var findv = cacache.FindKey(ContextUser.UserID);
+            if (findv != null)
+            {
+                receipt.IsCompetitionAply = true;
+            }
+            receipt.IsReceivedRedPacket = ContextUser.IsReceivedRedPacket;
             return true;
         }
 

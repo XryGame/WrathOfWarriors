@@ -27,6 +27,10 @@ namespace GameServer.Script.Model.DataModel
         [EntityField]
         public string OpenId { get; set; }
 
+        [ProtoMember(6)]
+        [EntityField]
+        public string BindOpenId { get; set; }
+
 
     }
 }

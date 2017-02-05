@@ -176,5 +176,19 @@ namespace GameServer.CsScript.Base
 
             return ucu;
         }
+
+        static public UserCenterPassport FindAccountByOpenId(string openid, string retailId)
+        {
+            UserCenterPassport UCP = new ShareCacheStruct<UserCenterPassport>().Find(
+                t => (t.BindOpenId == openid && t.RetailId == retailId)
+                );
+            if (UCP == null)
+            {
+                UCP = new ShareCacheStruct<UserCenterPassport>().Find(
+                    t => (t.OpenId == openid && t.RetailId == retailId)
+                    );
+            }
+            return UCP;
+        }
     }
 }
