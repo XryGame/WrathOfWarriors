@@ -564,6 +564,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action11200 = 11200;
 
         ///<summary>
+        ///争霸赛信息
+        ///</summary>
+        public const short Cst_Action11210 = 11210;
+
+        ///<summary>
         ///红包
         ///</summary>
         public const short Cst_Action11300 = 11300;

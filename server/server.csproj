@@ -165,6 +165,7 @@
     <Compile Include="Script\CsScript\Action\Action1111.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
     <Compile Include="Script\CsScript\Action\Action11200.cs" />
+    <Compile Include="Script\CsScript\Action\Action11210.cs" />
     <Compile Include="Script\CsScript\Action\Action11300.cs" />
     <Compile Include="Script\CsScript\Action\Action1201.cs" />
     <Compile Include="Script\CsScript\Action\Action1202.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Script\CsScript\Base\SystemGlobal.cs" />
     <Compile Include="Script\CsScript\Base\NewHttpListener.cs" />
     <Compile Include="Script\CsScript\Base\Util.cs" />
+    <Compile Include="Script\CsScript\Com\Competition64.cs" />
     <Compile Include="Script\CsScript\Com\CombatRanking.cs" />
     <Compile Include="Script\CsScript\Com\FightValueRanking.cs" />
     <Compile Include="Script\CsScript\GM\PayMoneyCommand.cs" />
@@ -251,6 +253,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatMatchUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatRivalData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCombatSimpleUserData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCompetition64Data.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPDailyQuestData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPEventAwardData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPExerciseData.cs" />
@@ -353,6 +356,7 @@
     <Compile Include="Script\Model\Config\UserStudyTaskData.cs" />
     <Compile Include="Script\Model\DataModel\CDKeyCache.cs" />
     <Compile Include="Script\Model\DataModel\ClassDataCache.cs" />
+    <Compile Include="Script\Model\DataModel\Competition64Cache.cs" />
     <Compile Include="Script\Model\DataModel\CompetitionApply.cs" />
     <Compile Include="Script\Model\DataModel\GameUser.cs" />
     <Compile Include="Script\Model\DataModel\JobTitleDataCache.cs" />

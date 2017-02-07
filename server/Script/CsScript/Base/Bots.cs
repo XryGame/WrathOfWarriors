@@ -69,6 +69,14 @@ namespace GameServer.CsScript.Base
 
         //private static int TempCount = 0;
 
+        public static List<GameUser> getBots
+        {
+            get
+            {
+                return BotsList;
+            }  
+        }
+
         public static void InitBots()
         {
             new PersonalCacheStruct<GameUser>().LoadFrom(t => (t.EnterServerId == 0));

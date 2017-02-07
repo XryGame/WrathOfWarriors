@@ -42,7 +42,7 @@ namespace GameServer.CsScript.Base
         public static int userPassprotCount = 0;
         public static int userRoleCount = 0;
 
-
+        public static Competition64 competition64;
         public static bool IsRunning
         {
             get { return _isRunning; }
@@ -94,8 +94,10 @@ namespace GameServer.CsScript.Base
 
             GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
+            // 上传该服务器的状态
             TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "submitServerStatus", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
-            TimeListener.Append(PlanConfig.EveryMinutePlan(BotsAction, "BotsAction", "00:00", "23:59", 3));
+            // 自动机器人，64校园争霸赛
+            TimeListener.Append(PlanConfig.EveryMinutePlan(LoopAction, "LoopAction", "00:00", "23:59", 3));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
             //每天执行用于整点刷新
@@ -113,6 +115,15 @@ namespace GameServer.CsScript.Base
             InitRanking();
 
             Bots.InitBots();
+
+            if (competition64 == null)
+            {
+                competition64 = new Competition64();
+                competition64.Initialize();
+            }
+            
+
+
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统全局运行环境加载所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
@@ -226,6 +237,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<OccupyDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
+            new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统加载单服配置所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
@@ -267,6 +279,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<UserCenterUser>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<CompetitionApply>().TryRecoverFromDb(ddf);
             new PersonalCacheStruct<UserPayCache>().TryRecoverFromDb(ddf);
+            new ShareCacheStruct<GameCache>().TryRecoverFromDb(ddf);
 
         }
 
@@ -334,7 +347,7 @@ namespace GameServer.CsScript.Base
             }
         }
 
-        public static void BotsAction(PlanConfig planconfig)
+        public static void LoopAction(PlanConfig planconfig)
         {
             if (ScriptEngines.IsCompiling)
             {
@@ -355,6 +368,8 @@ namespace GameServer.CsScript.Base
             Bots.Occupy();
             //// 机器人自动参加竞选(测试)
             //Bots.Campaign();
+
+            competition64.Run();
         }
 
     }

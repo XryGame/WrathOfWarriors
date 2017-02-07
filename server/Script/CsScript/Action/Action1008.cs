@@ -90,7 +90,6 @@ namespace GameServer.CsScript.Action
                 Attack = ContextUser.Attack,
                 Defense = ContextUser.Defense,
                 HP = ContextUser.Hp,
-                ClassID = ContextUser.ClassData.ClassID,
                 FightValue = ContextUser.FightingValue,
                 ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes,
                 InviteFightDiamondNum = ContextUser.InviteFightDiamondNum
@@ -220,6 +219,16 @@ namespace GameServer.CsScript.Action
             if (ContextUser.ClassData.ClassID != 0)
             {
                 var classdata = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
+                if (classdata == null || classdata.MemberList.Find(t => (t == ContextUser.UserID)) == 0)
+                {
+                    ContextUser.ClassData.ClassID = 0;
+                }
+            }
+            receipt.ClassID = ContextUser.ClassData.ClassID;
+
+            if (ContextUser.ClassData.ClassID != 0)
+            {
+                var classdata = new ShareCacheStruct<ClassDataCache>().Find(t => (t.ClassID == ContextUser.ClassData.ClassID));
                 if (classdata != null)
                 {
                     GameUser monitor = UserHelper.FindUser(classdata.Monitor);
@@ -250,6 +259,7 @@ namespace GameServer.CsScript.Action
                 }
             }
 
+
             //if (ContextUser.AditionJobTitle != JobTitleType.No)
             //{
                 receipt.JobTitleAddValue = ContextUser.JobTitleAdditionValue();
@@ -276,6 +286,7 @@ namespace GameServer.CsScript.Action
                     }
                 }
             }
+            
             receipt.OccupyAddList = ContextUser.OccupyAddList;
 
             receipt.DailyQuestData.ID = ContextUser.DailyQuestData.ID;
