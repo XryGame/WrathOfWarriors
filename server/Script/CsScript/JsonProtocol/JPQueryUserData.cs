@@ -9,13 +9,13 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPQueryUserData()
         {
-            CombatItemList = new List<ItemData>();
+
         }
         public int UserId { get; set; }
         
         public string NickName { get; set; }
 
-        public int LooksId { get; set; }
+        public int Profession { get; set; }
 
         public string ClassName { get; set; }
 
@@ -30,13 +30,10 @@ namespace GameServer.CsScript.JsonProtocol
         public int Defense { get; set; }
 
         public int Hp { get; set; }
-
-        public SubjectStage UserStage { get; set; }
+        
 
         public int CombatRankId { get; set; }
-
-        public List<ItemData> CombatItemList { get; set; }
-
+        
         public CacheList<SkillData> SkillList { get; set; }
 
         public CacheList<int> SkillCarryList { get; set; }

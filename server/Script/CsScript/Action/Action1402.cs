@@ -56,20 +56,14 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            Config_SceneMap scenemap = new ShareCacheStruct<Config_SceneMap>().FindKey(mapid);
-            if (scenemap == null || ContextUser.UnlockSceneMapList.Find(t => (t == mapid)) == 0)
-            {
-                ErrorInfo = Language.Instance.RequestIDError;
-                return false;
-            }
 
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             int rankID = 0;
             UserRank rankinfo = null;
             UserRank rivalrankinfo = null;
-            if (ranking.TryGetRankNo(m => m.UserID == ContextUser.UserID, out rankID))
+            if (ranking.TryGetRankNo(m => m.UserID == GetBasis.UserID, out rankID))
             {
-                rankinfo = ranking.Find(s => s.UserID == ContextUser.UserID);
+                rankinfo = ranking.Find(s => s.UserID == GetBasis.UserID);
             }
             if (ranking.TryGetRankNo(m => m.UserID == rivaluid, out rankID))
             {
@@ -77,7 +71,7 @@ namespace GameServer.CsScript.Action
             }
             if (rankinfo == null || rivalrankinfo == null)
             {
-                int erroruid = rankinfo == null ? ContextUser.UserID : rivaluid;
+                int erroruid = rankinfo == null ? GetBasis.UserID : rivaluid;
                 new BaseLog("Action1402").SaveLog(string.Format("Not found user combat rank. UserId={0}", erroruid));
                 ErrorInfo = Language.Instance.CombatRankDataException;
                 return true;
@@ -100,13 +94,13 @@ namespace GameServer.CsScript.Action
                 receipt.Result = CombatReqRivalResult.SelfIsFinging;
                 return true;
             }
-            if (ContextUser.CombatData.CombatTimes <= 0)
+            if (GetCombat.CombatTimes <= 0)
             {
                 receipt.Result = CombatReqRivalResult.NoTimes;
                 return true;
             }
             
-            GameUser rival = UserHelper.FindUser(rivaluid);
+            UserBasisCache rival = UserHelper.FindUserBasis(rivaluid);
             if (rival == null)
             {
                 ErrorInfo = Language.Instance.NoFoundUser;
@@ -119,36 +113,22 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
 
-            ContextUser.UserStatus = UserStatus.Fighting;
-            ContextUser.SelectedSceneMapId = mapid;
-            ContextUser.CombatData.CombatTimes = MathUtils.Subtraction(ContextUser.CombatData.CombatTimes, 1, 0);
+            GetBasis.UserStatus = UserStatus.Fighting;
+            GetCombat.CombatTimes = MathUtils.Subtraction(GetCombat.CombatTimes, 1, 0);
             rankinfo.IsFighting = true;
             rankinfo.FightDestUid = rivaluid;
             rivalrankinfo.IsFighting = true;
-            /////rivalrankinfo.FightDestUid = ContextUser.UserID;
+            /////rivalrankinfo.FightDestUid = GetBasis.UserID;
 
             receipt.UserId = rivaluid;
             receipt.NickName = rivalrankinfo.NickName;
-            receipt.LooksId = rivalrankinfo.LooksId;
+            receipt.Profession = rivalrankinfo.Profession;
             receipt.RankId = rivalrankinfo.RankId;
             receipt.UserLv = rivalrankinfo.UserLv;
-            receipt.FightingValue = rivalrankinfo.FightingValue;
-            receipt.Attack = rival.Attack;
-            receipt.Defense = rival.Defense;
-            receipt.HP = rival.Hp;
-            receipt.ItemList = rival.ItemDataList;
-            foreach (int skid in rival.SkillCarryList)
-            {
-                SkillData sd = rival.SkillDataList.Find(t => (t.ID == skid));
-                if (sd != null)
-                {
-                    receipt.SkillList.Add(sd);
-                }
-            }
-            if (rival.UnlockSceneMapList.Find(t => (t == ContextUser.SelectedSceneMapId)) != 0)
-            {
-                receipt.IsUnlockSelectMap = true;
-            }
+            //receipt.FightingValue = rivalrankinfo.FightingValue;
+            //receipt.Attack = rival.Attack;
+            //receipt.Defense = rival.Defense;
+            //receipt.HP = rival.Hp;
 
             return true;
         }

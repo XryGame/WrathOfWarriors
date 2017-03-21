@@ -1,0 +1,59 @@
+Time:2017-03-15 10:42:05:591-Trace>>The GameServer.Script.Model.DataModel.UserPayCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:42:05:593-Trace>>The GameServer.Script.Model.DataModel.UserAttributeCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:42:05:595-Trace>>The GameServer.Script.Model.DataModel.UserFriendsCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:47:13:454-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_467c6eaafe8b4639a18b0925d7aab93b%7C2%7C1%26Uid%3D1000005%26St%3Dst%26ActionId%3D1008%26sign%3D4e9e7c73bf4f238a0b73ff5af24b7ec5, Uid:1000005, Pid:user1488246422000
+Host:168.254.0.101:51205
+
+
+Time:2017-03-15 10:47:22:145-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_9ceb8d4c9a62402e8682e19903c5254e%7C2%7C1%26Uid%3D1000005%26St%3Dst%26ActionId%3D1008%26sign%3D03347f322a05a21670483f0e354e521a, Uid:1000005, Pid:user1488246422000
+Host:168.254.0.101:51218
+
+
+Time:2017-03-15 10:49:23:660-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_98a35e8035744bf7920bb384e4c44640%7C2%7C1%26Uid%3D1000005%26St%3Dst%26ActionId%3D1008%26sign%3Dfc6a6941a77736867b294d193d715651, Uid:1000005, Pid:user1488246422000
+Host:168.254.0.101:51236
+
+
+Time:2017-03-15 10:52:15:715-Trace>>The GameServer.Script.Model.DataModel.UserPayCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:52:15:729-Trace>>The GameServer.Script.Model.DataModel.UserAttributeCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:52:15:741-Trace>>The GameServer.Script.Model.DataModel.UserFriendsCache property "PersonalId" is empty.
+
+
+Time:2017-03-15 10:56:17:500-Trace>>FindEntityFromRedis GameServer.Script.Model.DataModel.UserSkillCache keys:15
+Error:System.Exception: get SkillList column val error. ---> System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 ProtoBuf.NetObjectCache.SetKeyedObject(Int32 key, Object value)
+   在 ProtoBuf.ProtoWriter.SetRootObject(Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.Serialize(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.CovertDataValue(SchemaColumn schemaColumn, Object& value)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GetPropertyValue[T](T data, SchemaColumn column)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.GenerateSqlFrom(SqlDataSender sender, RedisClient client, Byte[][] keys, Byte[][] values)
+
+

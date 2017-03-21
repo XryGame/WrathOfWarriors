@@ -44,28 +44,22 @@ namespace GameServer.CsScript.Action
 
             receipt = new JPRestoreUserData();
 
-            receipt.Vit = ContextUser.Vit;
-            receipt.CombatTimes = ContextUser.CombatData.CombatTimes;
-            receipt.CampaignTicketNum = ContextUser.CampaignTicketNum;
-            receipt.GiveAwayCount = ContextUser.FriendsData.GiveAwayCount;
-            receipt.ChallengeMonitorTimes = ContextUser.ChallengeMonitorTimes;
+            //receipt.Vit = GetBasis.Vit;
+            receipt.CombatTimes = GetCombat.CombatTimes;
+            receipt.GiveAwayCount = GetFriends.GiveAwayCount;
 
-            receipt.DailyQuestData.ID = ContextUser.DailyQuestData.ID;
-            receipt.DailyQuestData.IsFinish = ContextUser.DailyQuestData.IsFinish;
-            receipt.DailyQuestData.RefreshCount = ContextUser.DailyQuestData.RefreshCount;
-            receipt.DailyQuestData.FinishCount = ContextUser.DailyQuestData.FinishCount;
-            receipt.DailyQuestData.Count = ContextUser.DailyQuestData.Count;
+            receipt.Task = GetTask;
 
             receipt.IsTodayLottery = false;
-            var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(ContextUser.RandomLotteryId);
+            var lottery = new ShareCacheStruct<Config_Lottery>().FindKey(GetBasis.RandomLotteryId);
             if (lottery != null)
             {
                 receipt.LotteryAwardType = lottery.Type;
                 receipt.LotteryId = lottery.Content;
             }
-            receipt.InviteFightDiamondNum = ContextUser.InviteFightDiamondNum;
+            receipt.InviteFightDiamondNum = GetBasis.InviteFightDiamondNum;
 
-            UserPayCache userpay = UserHelper.FindUserPay(ContextUser.UserID);
+            UserPayCache userpay = UserHelper.FindUserPay(GetBasis.UserID);
             if (userpay != null)
             {
                 receipt.WeekCardDays = userpay.WeekCardDays;

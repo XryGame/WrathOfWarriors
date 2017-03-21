@@ -127,10 +127,10 @@ namespace GameServer.CsScript.Remote
                     return receipt;
                 }
 
-                GameUser user = UserHelper.FindUserOfRetail(jsoncustom.RetailID, jsonorder.OpenId, jsoncustom.ServerID);
+                UserBasisCache user = UserHelper.FindUserBasisOfRetail(jsoncustom.RetailID, jsonorder.OpenId, jsoncustom.ServerID);
                 if (user == null)
                 {// 优先使用OpenId + RetailID + ServerID来获取充值角色
-                    user = UserHelper.FindUser(jsonorder.UserId);
+                    user = UserHelper.FindUserBasis(jsonorder.UserId);
                     if (user == null)
                     {
                         receipt.ResultString = "没有找到该玩家";
@@ -186,7 +186,7 @@ namespace GameServer.CsScript.Remote
                     PayId = jsoncustom.PayId,
                     Amount = jsonorder.Amount,
                     PassportID = user.Pid,
-                    ServerID = user.EnterServerId,
+                    ServerID = user.ServerID,
                     GameCoins = deliverNum,
                     CreateDate = DateTime.Now,
                     RetailID = jsoncustom.RetailID,

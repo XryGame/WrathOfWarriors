@@ -30,7 +30,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = ContextUser.DiamondNum;
+            receipt = GetBasis.DiamondNum;
             return true;
         }
     }

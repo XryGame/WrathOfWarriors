@@ -1,5 +1,6 @@
 ﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Common;
@@ -34,23 +35,23 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            if (DateTime.Now < ContextUser.CombatData.LastFailedDate)
+            if (DateTime.Now < GetCombat.LastFailedDate)
             {
                 return false;
 
             }
 
-            TimeSpan timeSpan = DateTime.Now.Subtract(ContextUser.CombatData.LastFailedDate);
+            TimeSpan timeSpan = DateTime.Now.Subtract(GetCombat.LastFailedDate);
             float mins = timeSpan.TotalMinutes.ToFloat();
             float surplus = MathUtils.Subtraction(ConfigEnvSet.GetInt("User.CombatFailedCD").ToFloat(), mins, 1.0f);
             int needDiamond = Math.Ceiling(surplus).ToInt();
-            if (ContextUser.DiamondNum < needDiamond)
+            if (GetBasis.DiamondNum < needDiamond)
                 return false;
 
-            ContextUser.CombatData.LastFailedDate = DateTime.MinValue;
+            GetCombat.LastFailedDate = DateTime.MinValue;
             receipt = EventStatus.Good;
-
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
+            
+            UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
             return true;
         }
 

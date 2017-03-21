@@ -1,0 +1,158 @@
+﻿using gm_tool.Source;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace gm_tool
+{
+    /// <summary>
+    /// MainWindow.xaml 的交互逻辑
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            Log._listBox = listBoxLog;
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox_PreviewTextInputLimitNumber(object sender, TextCompositionEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.Text))
+                return;
+            foreach (char c in e.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+
+        private void textBox_PreviewTextInputLimitAll(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void QueryRoleInfo(bool islog = true)
+        {
+            HttpRequest request = new HttpRequest();
+            request.AddPostParam("ID", "Query");
+            request.AddPostParam("UserID", textBoxInputUserID.Text);
+            request.AddPostParam("UserName", textBoxInputUserName.Text);
+            request.IsWriteLog = islog;
+            if (request.HttpPostRequest())
+            {
+                QueryUserID.Text = request.GetReceiveValue("UserID");
+                QueryUserName.Text = request.GetReceiveValue("UserName");
+                QueryUserLv.Text = request.GetReceiveValue("UserLv");
+                QueryVipLv.Text = request.GetReceiveValue("VipLv");
+                QueryPayAmount.Text = request.GetReceiveValue("PayAmount");
+                QueryRetailID.Text = request.GetReceiveValue("RetailID");
+                QueryCreateDate.Text = request.GetReceiveValue("CreateDate");
+                QueryLastLoginDate.Text = request.GetReceiveValue("LastLoginDate");
+                QueryLoginNum.Text = request.GetReceiveValue("LoginNum");
+                QueryFightValue.Text = request.GetReceiveValue("FightValue");
+                QueryCombatRankID.Text = request.GetReceiveValue("CombatRankID");
+                QueryGuildName.Text = request.GetReceiveValue("GuildName");
+                QueryFriendNum.Text = request.GetReceiveValue("FriendNum");
+            }
+        }
+
+        private void QueryButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (textBoxInputUserID.Text == "0" && textBoxInputUserName.Text == "null")
+                return;
+
+            QueryRoleInfo();
+            ResetResetCheckBox();
+        }
+
+        private void ResetButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (QueryUserID.Text == "0")
+                return;
+            HttpRequest request = new HttpRequest();
+            request.AddPostParam("ID", "Reset");
+            request.AddPostParam("UserID", QueryUserID.Text);
+            request.AddPostParam("IsResetEquip", checkBoxEquip.IsChecked.ToString());
+            request.AddPostParam("IsResetPackage", checkBoxPackage.IsChecked.ToString());
+            request.AddPostParam("IsResetSoul", checkBoxSoul.IsChecked.ToString());
+            request.AddPostParam("IsResetPay", checkBoxPay.IsChecked.ToString());
+            request.AddPostParam("IsResetEventAward", checkBoxEventAward.IsChecked.ToString());
+            request.AddPostParam("IsResetSkill", checkBoxSkill.IsChecked.ToString());
+            request.AddPostParam("IsResetAchievement", checkAchievement.IsChecked.ToString());
+            request.AddPostParam("IsResetTask", checkBoxTask.IsChecked.ToString());
+            request.AddPostParam("IsResetCombat", checkBoxCombat.IsChecked.ToString());
+            if (request.HttpPostRequest())
+            {
+                QueryRoleInfo(false);
+            }
+            ResetResetCheckBox();
+            ResetSetText();
+        }
+
+        private void SetButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (QueryUserID.Text == "0")
+                return;
+            HttpRequest request = new HttpRequest();
+            request.AddPostParam("ID", "Set");
+            request.AddPostParam("UserID", QueryUserID.Text);
+            request.AddPostParam("UserName", SetUserName.Text);
+            request.AddPostParam("UserLv", SetUserLv.Text);
+            request.AddPostParam("GoldNum", SetGoldNum.Text);
+            request.AddPostParam("DiamondNum", SetDiamondNum.Text);
+            request.AddPostParam("AddItemID", SetAddItemID.Text);
+            request.AddPostParam("AddItemNum", SetAddItemNum.Text);
+            if (request.HttpPostRequest())
+            {
+                QueryRoleInfo(false);
+            }
+            ResetSetText();
+        }
+
+        private void ResetResetCheckBox()
+        {
+            checkBoxEquip.IsChecked = false;
+            checkBoxPackage.IsChecked = false;
+            checkBoxSoul.IsChecked = false;
+            checkBoxPay.IsChecked = false;
+            checkBoxEventAward.IsChecked = false;
+            checkBoxSkill.IsChecked = false;
+            checkAchievement.IsChecked = false;
+            checkBoxTask.IsChecked = false;
+            checkBoxCombat.IsChecked = false;
+        }
+
+        private void ResetSetText()
+        {
+            SetUserName.Text = string.Empty;
+            SetUserLv.Text = string.Empty;
+            SetGoldNum.Text = string.Empty;
+            SetDiamondNum.Text = string.Empty;
+            SetAddItemID.Text = string.Empty;
+            SetAddItemNum.Text = string.Empty;
+        }
+    }
+}

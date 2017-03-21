@@ -27,7 +27,7 @@ namespace GameServer.Script.Model.DataModel
         /// 
         /// </summary>        
         [ProtoMember(2)]
-        [EntityField(true, ColumnDbType.LongText)]
+        [EntityField(true, ColumnDbType.LongBlob)]
         public string Value { get; set; }
 
     }

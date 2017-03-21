@@ -53,9 +53,8 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(destuid);
-            if (dest == null)
-                return false;
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
+
             //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(dest.UserLv);
             //if (rolegrade == null)
             //{
@@ -67,29 +66,18 @@ namespace GameServer.CsScript.Action
             receipt.AppointResult = fightresult;
             receipt.RivalData.UserId = dest.UserID;
             receipt.RivalData.NickName = dest.NickName;
-            receipt.RivalData.LooksId = dest.LooksId;
+            receipt.RivalData.Profession = dest.Profession;
             receipt.RivalData.UserLv = dest.UserLv;
             receipt.RivalData.VipLv = dest.VipLv;
-            receipt.RivalData.Attack = dest.Attack;
-            receipt.RivalData.Defense = dest.Defense;
-            receipt.RivalData.HP = dest.Hp;
-            receipt.RivalData.RankId = dest.CombatData.RankID;
-            if (dest.ClassData.ClassID > 0)
-            {
-                var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(dest.ClassData.ClassID);
-                if (classdata != null)
-                {
-                    receipt.RivalData.ClassName = classdata.Name;
-                }
-            }
-            receipt.RivalData.UserStage = dest.UserStage;
-            receipt.RivalData.FightValue = dest.FightingValue;
+            //receipt.RivalData.Attack = dest.Attack;
+            //receipt.RivalData.Defense = dest.Defense;
+            //receipt.RivalData.HP = dest.Hp;
+            receipt.RivalData.RankId = dest.CombatRankID;
+
+            //receipt.RivalData.FightValue = dest.FightingValue;
             GameSession fsession = GameSession.Get(dest.UserID);
             if (fsession != null && fsession.Connected)
                 receipt.RivalData.IsOnline = true;
-            receipt.RivalData.ItemList = dest.ItemDataList;
-            receipt.RivalData.SkillList = dest.SkillDataList;
-            receipt.RivalData.SkillCarryList = dest.SkillCarryList;
 
             return true;
         }

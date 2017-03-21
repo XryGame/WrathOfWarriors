@@ -49,33 +49,31 @@ namespace GameServer.CsScript.Action
             int rankID = 0;
             UserRank rankInfo = null;
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            if (ranking.TryGetRankNo(m => (m.UserID == ContextUser.UserID), out rankID))
+            if (ranking.TryGetRankNo(m => (m.UserID == GetBasis.UserID), out rankID))
             {
-                rankInfo = ranking.Find(s => (s.UserID == ContextUser.UserID));
+                rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
             }
             
             if (rankInfo == null)
             {
                 rankInfo = new UserRank()
                 {
-                    UserID = ContextUser.UserID,
-                    NickName = ContextUser.NickName,
-                    UserLv = ContextUser.UserLv,
-                    VipLv = ContextUser.VipLv,
-                    IsOnline = true,
+                    UserID = GetBasis.UserID,
+                    NickName = GetBasis.NickName,
+                    UserLv = GetBasis.UserLv,
+                    VipLv = GetBasis.VipLv,
                     RankId = int.MaxValue,
-                    FightingValue = ContextUser.FightingValue,
                     RankDate = DateTime.Now,
                 };
                 ranking.TryAppend(rankInfo);
-                rankInfo = ranking.Find(s => (s.UserID == ContextUser.UserID));
+                rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
             }
 
             receipt = new JPCombatMatchData();
-            receipt.RankId = ContextUser.CombatData.RankID;
-            receipt.CombatTimes = ContextUser.CombatData.CombatTimes;
-            if (ContextUser.CombatData.LastFailedDate != DateTime.MinValue)
-                receipt.LastFailedTime = Util.ConvertDateTimeStamp(ContextUser.CombatData.LastFailedDate);
+            receipt.RankId = GetBasis.CombatRankID;
+            receipt.CombatTimes = GetCombat.CombatTimes;
+            if (GetCombat.LastFailedDate != DateTime.MinValue)
+                receipt.LastFailedTime = Util.ConvertDateTimeStamp(GetCombat.LastFailedDate);
             //UserRank info = null;
             CacheList <int> MachList = new CacheList<int>();
 
@@ -229,19 +227,19 @@ namespace GameServer.CsScript.Action
                 
                 if (machinfo != null)
                 {
-                    GameUser user = UserHelper.FindUser(machinfo.UserID);
+                    UserBasisCache user = UserHelper.FindUserBasis(machinfo.UserID);
                     if (user == null)
                         continue;
                     JPCombatMatchUserData data = new JPCombatMatchUserData()
                     {
                         UserId = machinfo.UserID,
                         NickName = machinfo.NickName,
-                        LooksId = machinfo.LooksId,
+                        Profession = machinfo.Profession,
                         RankId = machinfo.RankId,
                         UserLv = machinfo.UserLv,
                         VipLv = machinfo.VipLv,
-                        FightingValue = machinfo.FightingValue,
-                        SkillCarryList = user.SkillCarryList
+                        //FightingValue = machinfo.FightingValue,
+                       // SkillCarryList = user.SkillCarryList
                     };
 
                     receipt.RivalList.Add(data);
@@ -251,23 +249,23 @@ namespace GameServer.CsScript.Action
 
 
             // 日志
-            foreach (CombatLogData data in ContextUser.CombatLogList)
-            {
-                UserRank info = null;
-                if (ranking.TryGetRankNo(m => (m.UserID == data.UserId), out rankID))
-                {
-                    info = ranking.Find(s => (s.UserID == data.UserId));
-                }
+            //foreach (CombatLogData data in GetCombat.LogList)
+            //{
+            //    UserRank info = null;
+            //    if (ranking.TryGetRankNo(m => (m.UserID == data.UserId), out rankID))
+            //    {
+            //        info = ranking.Find(s => (s.UserID == data.UserId));
+            //    }
 
-                JPCombatLogData cld = new JPCombatLogData();
-                cld.UserId = data.UserId;
-                if (info != null)
-                    cld.RivalCurrRankId = info.RankId;
-                cld.Type = data.Type;
-                cld.FightResult = data.Status;
-                cld.Log = UserHelper.FormatCombatLog(data);
-                receipt.LogList.Add(cld);
-            }
+            //    JPCombatLogData cld = new JPCombatLogData();
+            //    cld.UserId = data.UserId;
+            //    if (info != null)
+            //        cld.RivalCurrRankId = info.RankId;
+            //    cld.Type = data.Type;
+            //    cld.FightResult = data.Status;
+            //    cld.Log = UserHelper.FormatCombatLog(data);
+            //    receipt.LogList.Add(cld);
+            //}
 
             return true;
         }

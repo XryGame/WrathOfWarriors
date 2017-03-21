@@ -28,7 +28,7 @@ namespace GameServer.CsScript.GM
         /// <param name="userId"></param>
         public bool PayMoney(int userId, int money)
         {
-            GameUser user = UserHelper.FindUser(userId);
+            UserBasisCache user = UserHelper.FindUserBasis(userId);
             UserPayCache userpay = UserHelper.FindUserPay(userId);
             
             if (userpay == null || user == null)
@@ -43,11 +43,11 @@ namespace GameServer.CsScript.GM
             {
                 combatuser.VipLv = user.VipLv;
             }
-            var leveluser = UserHelper.FindLevelRankUser(userId);
-            if (leveluser != null)
-            {
-                leveluser.VipLv = user.VipLv;
-            }
+            //var leveluser = UserHelper.FindLevelRankUser(userId);
+            //if (leveluser != null)
+            //{
+            //    leveluser.VipLv = user.VipLv;
+            //}
 
             return true;
         }

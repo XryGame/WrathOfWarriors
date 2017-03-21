@@ -1,8 +1,11 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.CsScript.Remote;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,13 +14,15 @@ using ZyGames.Framework.Common.Serialization;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Message;
+using ZyGames.Framework.Game.Model;
 
 namespace GameServer.CsScript.Com
 {
     public enum CompetitionStage
     {
         No,
-        Apply,
+        ApplyStart,
+        ApplyEnd,
         F64,
         F32,
         F16,
@@ -74,6 +79,20 @@ namespace GameServer.CsScript.Com
         public Group group = new Group();
         public DateTime time;
     }
+
+    public class BetInfo
+    {
+        public int UserId;
+        public int Diamond;     // 下注金额
+        public int Dest;        // 下注目标
+    }
+    public class BetData
+    {
+        public List<BetInfo> list = new List<BetInfo>();
+    }
+
+
+
     /// <summary>
     /// 64强争霸赛
     /// </summary>
@@ -81,6 +100,7 @@ namespace GameServer.CsScript.Com
     {
         private const int F64LoserAwardDiamond = 500;
         private const int F32LoserAwardDiamond = 1000;
+        private const int ChampionNotificationInterval = 200; //10分钟
 
         private const string StageKey = "Competition64Stage";
         private const string Group64Key = "Competition64_64";
@@ -90,9 +110,11 @@ namespace GameServer.CsScript.Com
         private const string Group4Key = "Competition64_4";
         private const string Group2Key = "Competition64_2";
         private const string Group1Key = "Competition64_1";
+        private const string BetKey = "Competition64_Bet";
 
         private CompetitionStage _Stage;
         private DateTime StartApplyDate;
+        private DateTime EndApplyDate;
         private DateTime StartDate;
         private GroupX4 _Group64;
         private GroupX4 _Group32;
@@ -101,11 +123,14 @@ namespace GameServer.CsScript.Com
         private GroupX4 _Group4;
         private GroupX2 _Group2;
         private GroupX1 _Group1;
+        private BetData _BetData;
 
         private JPCompetition64Data receipt;
 
         // 间隔（分钟）
-        private int AllocationIntervalMin = 5;
+        private int AllocationIntervalMin = 20;
+
+        private int ChampionNotificationTime = 0;
 
         public Competition64()
         {
@@ -128,7 +153,12 @@ namespace GameServer.CsScript.Com
 
         public GroupX1 Group1 { get { return _Group1; } }
 
+        public BetData BetData { get { return _BetData; } }
 
+
+        /// <summary>
+        /// 初始化争霸赛数据
+        /// </summary>
         public void Initialize()
         {
             _Stage = CompetitionStage.No;
@@ -141,8 +171,10 @@ namespace GameServer.CsScript.Com
             //var applyCache = new ShareCacheStruct<CompetitionApply>();
 
             string startApplyDateStr = ConfigEnvSet.GetString("System.Competition64ApplyDate");
+            string endApplyDateStr = ConfigEnvSet.GetString("System.Competition64ApplyEndDate");
             string startDateStr = ConfigEnvSet.GetString("System.Competition64Date");
             StartApplyDate = Convert.ToDateTime(startApplyDateStr);
+            EndApplyDate = Convert.ToDateTime(endApplyDateStr);
             StartDate = Convert.ToDateTime(startDateStr);
 
             var gameCache = new ShareCacheStruct<GameCache>();
@@ -249,20 +281,38 @@ namespace GameServer.CsScript.Com
             if (_Group1 == null)
                 _Group1 = new GroupX1();
 
-
+            GameCache bet = gameCache.FindKey(BetKey);
+            if (bet == null)
+            {
+                bet = new GameCache();
+                bet.Key = BetKey;
+                bet.Value = "";
+                gameCache.Add(bet);
+                gameCache.Update();
+            }
+            _BetData = JsonUtils.Deserialize<BetData>(bet.Value);
+            if (_BetData == null)
+                _BetData = new BetData();
         }
 
         public void Run()
         {
             DateTime NowDate = DateTime.Now;
-            if (_Stage == CompetitionStage.No && NowDate >= StartApplyDate && NowDate < StartDate)
+            if ((_Stage == CompetitionStage.No || _Stage == CompetitionStage.End)
+                && NowDate >= StartApplyDate && NowDate < EndApplyDate)
             {
                 ResetStart();
-                _Stage = CompetitionStage.Apply;
+                _Stage = CompetitionStage.ApplyStart;
                 UpdateStage();
                 return;
             }
-            if (_Stage == CompetitionStage.Apply && NowDate >= StartDate)
+            else if (_Stage == CompetitionStage.ApplyStart && NowDate >= EndApplyDate)
+            {
+                _Stage = CompetitionStage.ApplyEnd;
+                UpdateStage();
+                return;
+            }
+            else if (_Stage == CompetitionStage.ApplyEnd && NowDate >= StartDate)
             {
                 _Stage = CompetitionStage.F64;
                 Allocation64();
@@ -293,6 +343,7 @@ namespace GameServer.CsScript.Com
                     Allocation16();
                     UpdateStage();
                     UpdateF16();
+                    
                 }
             }
             else if (_Stage == CompetitionStage.F16)
@@ -324,15 +375,15 @@ namespace GameServer.CsScript.Com
                 DateTime startTime = StartDate.AddDays(1);
                 if (NowDate >= startTime)
                 {
-                    TimeSpan timeSpan = DateTime.Now.Subtract(startTime);
-                    int min = (int)timeSpan.TotalMinutes;
-                    if (min >= AllocationIntervalMin)
-                    {
+                    //TimeSpan timeSpan = DateTime.Now.Subtract(startTime);
+                    //int min = (int)timeSpan.TotalMinutes;
+                    //if (min >= AllocationIntervalMin)
+                    //{
                         _Stage = CompetitionStage.F2;
                         Allocation2();
                         UpdateStage();
                         UpdateF2();
-                    }
+                    //}
                 }
             }
             else if (_Stage == CompetitionStage.F2)
@@ -345,6 +396,8 @@ namespace GameServer.CsScript.Com
                     Allocation1();
                     UpdateStage();
                     UpdateF1();
+
+                    AwardBetWinner();
                 }
             }
             else if (_Stage == CompetitionStage.F1)
@@ -355,21 +408,36 @@ namespace GameServer.CsScript.Com
                 {
                     _Stage = CompetitionStage.End;
                     UpdateStage();
+                   ClearCompetitionApply();
                 }
             }
-
+            else if (_Stage == CompetitionStage.End)
+            {
+                ChampionNotificationTime++;
+                if (ChampionNotificationTime >= ChampionNotificationInterval)
+                {
+                    ChampionNotificationTime = 0;
+                    ChampionNotification();
+                    
+                }
+            }
             //if (NowDate <= StartDate.AddDays(1))
         }
 
-
+        /// <summary>
+        /// 比较两个对手的胜负关系
+        /// </summary>
+        /// <param name="m1"></param>
+        /// <param name="m2"></param>
+        /// <returns></returns>
         private Member CheckWinner(Member m1, Member m2)
         {
             Member winner = null;
             if (m1.type == GroupMemberType.Insider && m2.type == GroupMemberType.Insider)
             {
-                GameUser g1 = UserHelper.FindUser(m1.id);
-                GameUser g2 = UserHelper.FindUser(m2.id);
-                winner = g1.FightingValue > g2.FightingValue ? m1 : m2;
+                UserBasisCache g1 = UserHelper.FindUserBasis(m1.id);
+                UserBasisCache g2 = UserHelper.FindUserBasis(m2.id);
+                //winner = g1.FightingValue > g2.FightingValue ? m1 : m2;
             }
             else if (m1.type == GroupMemberType.Insider)
             {
@@ -378,6 +446,12 @@ namespace GameServer.CsScript.Com
             else if (m2.type == GroupMemberType.Insider)
             {
                 winner = m2;
+            }
+            else if (m1.type == GroupMemberType.Bot && m2.type == GroupMemberType.Bot)
+            {
+                UserBasisCache g1 = UserHelper.FindUserBasis(m1.id);
+                UserBasisCache g2 = UserHelper.FindUserBasis(m2.id);
+                //winner = g1.FightingValue > g2.FightingValue ? m1 : m2;
             }
             else if (m1.type == GroupMemberType.Bot)
             {
@@ -389,9 +463,9 @@ namespace GameServer.CsScript.Com
             }
             else
             {
-                GameUser g1 = UserHelper.FindUser(m1.id);
-                GameUser g2 = UserHelper.FindUser(m2.id);
-                winner = g1.FightingValue > g2.FightingValue ? m1 : m2;
+                UserBasisCache g1 = UserHelper.FindUserBasis(m1.id);
+                UserBasisCache g2 = UserHelper.FindUserBasis(m2.id);
+                //winner = g1.FightingValue > g2.FightingValue ? m1 : m2;
 
             }
 
@@ -407,13 +481,13 @@ namespace GameServer.CsScript.Com
             _Group64.time = DateTime.Now;
 
             var applyCache = new ShareCacheStruct<CompetitionApply>();
-            var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
 
             //int rankID = 0;
             //UserRank rankInfo = null;
-            //if (ranking.TryGetRankNo(m => (m.UserID == ContextUser.UserID), out rankID))
+            //if (ranking.TryGetRankNo(m => (m.UserID == GetBasis.UserID), out rankID))
             //{
-            //    rankInfo = ranking.Find(s => (s.UserID == ContextUser.UserID));
+            //    rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
             //}
             Random random = new Random();
             int pagecout;
@@ -433,12 +507,16 @@ namespace GameServer.CsScript.Com
                     index = indexs[ranv];
                     if (_Group64.groups[indexs[ranv]].member.Count < 16)
                     {
-                        Member mem = new Member()
+                        if (!SearchMember(_Group64, data.UserID))
                         {
-                            id = data.UserID,
-                            type = data.RankId > 2 ? GroupMemberType.Player : GroupMemberType.Insider
-                        };
-                        _Group64.groups[indexs[ranv]].member.Add(mem);
+                            Member mem = new Member()
+                            {
+                                id = data.UserID,
+                                type = data.RankId > 2 ? GroupMemberType.Player : GroupMemberType.Insider
+                            };
+                            _Group64.groups[indexs[ranv]].member.Add(mem);
+                        }
+
                         break;
                     }
                     else
@@ -461,7 +539,7 @@ namespace GameServer.CsScript.Com
 
                 if (_Group64.groups[index].member.Count < 12)
                 {
-                    if (_Group64.groups[index].member.Find(t => (t.id == v.UserId)) == null)
+                    if (!SearchMember(_Group64, v.UserId))
                     {
                         Member mem = new Member()
                         {
@@ -491,7 +569,7 @@ namespace GameServer.CsScript.Com
 
                 if (_Group64.groups[index].member.Count < 16)
                 {
-                    if (_Group64.groups[index].member.Find(t => (t.id == v.UserID)) == null)
+                    if (!SearchMember(_Group64, v.UserID))
                     {
                         Member mem = new Member()
                         {
@@ -512,6 +590,22 @@ namespace GameServer.CsScript.Com
             }
             
             
+        }
+
+        /// <summary>
+        /// 搜索GroupX4的成员
+        /// </summary>
+        /// <param name="gx4"></param>
+        /// <param name="findId"></param>
+        /// <returns></returns>
+        public bool SearchMember(GroupX4 gx4, int findId)
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                if (gx4.groups[i].member.Find(t => (t.id == findId)) != null)
+                    return true;
+            }
+            return false;
         }
 
         private void Allocation32()
@@ -643,7 +737,7 @@ namespace GameServer.CsScript.Com
             _Group2.time = DateTime.Now;
 
             int index = 0;
-            for (int i = 0; i < 2; i += 2)
+            for (int i = 0; i <= 2; i += 2)
             {
                 Member m1 = _Group4.groups[i].member[0];
                 Member m2 = _Group4.groups[i + 1].member[0];
@@ -665,9 +759,7 @@ namespace GameServer.CsScript.Com
 
             _Group1.group.member.Clear();
             _Group1.time = DateTime.Now;
-
-            int index = 0;
-
+            
             Member m1 = _Group2.groups[0].member[0];
             Member m2 = _Group2.groups[1].member[0];
 
@@ -678,7 +770,7 @@ namespace GameServer.CsScript.Com
                 id = winner.id,
                 type = winner.type
             };
-            _Group2.groups[index++].member.Add(mem);
+            _Group1.group.member.Add(mem);
         }
 
         private void UpdateStage()
@@ -737,6 +829,13 @@ namespace GameServer.CsScript.Com
             CompetStage.Value = JsonUtils.Serialize(_Group1);
         }
 
+        private void UpdateBet()
+        {
+            var gameCache = new ShareCacheStruct<GameCache>();
+            GameCache CompetStage = gameCache.FindKey(BetKey);
+            CompetStage.Value = JsonUtils.Serialize(_BetData);
+        }
+
         public JPCompetition64Data getReceipt()
         {
             if (receipt == null)
@@ -752,6 +851,9 @@ namespace GameServer.CsScript.Com
             return receipt;
         }
 
+        /// <summary>
+        /// 构建客户端显示数据
+        /// </summary>
         public void BuildReceipt()
         {
             receipt = null;
@@ -762,14 +864,14 @@ namespace GameServer.CsScript.Com
             {
                 foreach (var v in _Group64.groups[i].member)
                 {
-                    GameUser user = UserHelper.FindUser(v.id);
+                    UserBasisCache user = UserHelper.FindUserBasis(v.id);
                     if (user == null)
                         continue;
                     JPComp64Role cr = new JPComp64Role()
                     {
                         UserId = v.id,
                         NickName = user.NickName,
-                        LooksId = user.LooksId,
+                        Profession = user.Profession,
                         VipLv = user.VipLv
                     };
                     receipt.Comp64RoleList.Add(cr);
@@ -823,6 +925,7 @@ namespace GameServer.CsScript.Com
             _Group4 = new GroupX4();
             _Group2 = new GroupX2();
             _Group1 = new GroupX1();
+            _BetData = new BetData();
             receipt = null;
 
             UpdateF64();
@@ -832,13 +935,36 @@ namespace GameServer.CsScript.Com
             UpdateF4();
             UpdateF2();
             UpdateF1();
+            UpdateBet();
+
         }
 
+        public void ClearCompetitionApply()
+        {
+            var compapply = new ShareCacheStruct<CompetitionApply>();
+            List<int> applyUserIdList = new List<int>();
+            var applylist = compapply.FindAll();
+            foreach (var v in applylist)
+            {
+                applyUserIdList.Add(v.UserId);
+            }
+            foreach (var v in applyUserIdList)
+            {
+                var findv = compapply.FindKey(v);
+                if (findv != null)
+                {
+                    compapply.Delete(findv);
+                }
+            }
+            compapply.Update();
+        }
+
+        /// <summary>
+        /// 64强奖励
+        /// </summary>
+        /// <param name="UserId"></param>
         public void AwardF64Loser(int UserId)
         {
-            GameUser user = UserHelper.FindUser(UserId);
-            if (user == null)
-                return;
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
@@ -850,14 +976,18 @@ namespace GameServer.CsScript.Com
                 ApppendDiamond = F64LoserAwardDiamond
             };
 
-            user.AddNewMail(ref mail);
+            UserHelper.AddNewMail(UserId, mail);
         }
-
+        /// <summary>
+        /// 32强奖励
+        /// </summary>
+        /// <param name="UserId"></param>
         public void AwardF32Loser(int UserId)
         {
-            GameUser user = UserHelper.FindUser(UserId);
-            if (user == null)
+            if (UserId == 1000054)
+            {
                 return;
+            }
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
@@ -869,7 +999,92 @@ namespace GameServer.CsScript.Com
                 ApppendDiamond = F32LoserAwardDiamond
             };
 
-            user.AddNewMail(ref mail);
+            UserHelper.AddNewMail(UserId, mail);
+        }
+
+        /// <summary>
+        /// 下注奖励
+        /// </summary>
+        /// <param name="UserId"></param>
+        public void AwardBetWinner()
+        {
+            int championUserId = _Group1.group.member[0].id;
+            UserBasisCache championUser = UserHelper.FindUserBasis(championUserId);
+            if (championUser == null)
+                return;
+            foreach (var betinfo in _BetData.list)
+            {
+                if (betinfo.Dest == championUserId)
+                {
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "校园争霸赛投注结果",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = string.Format("恭喜您本次校园争霸赛竞猜的玩家{0}获得冠军，竞猜成功，获得{1}钻石奖励，请查收！",
+                                                championUser.NickName, betinfo.Diamond * 2),
+                        ApppendDiamond = betinfo.Diamond * 2
+                    };
+
+                    UserHelper.AddNewMail(betinfo.UserId, mail);
+                }
+                else
+                { 
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "校园争霸赛投注结果",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = string.Format("您本次校园争霸赛竞猜失败，系统返还{0}竞猜钻石，请查收！",
+                                                betinfo.Diamond / 2),
+                        ApppendDiamond = betinfo.Diamond / 2
+                    };
+
+                    UserHelper.AddNewMail(betinfo.UserId, mail);
+                }
+            }
+
+        }
+
+        public BetInfo findBetData(int userId)
+        {
+            return _BetData.list.Find(t => (t.UserId == userId));
+        }
+
+        /// <summary>
+        /// 下注
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="diamond"></param>
+        public void NewBetData(int userId, int diamond, int dest)
+        {
+            BetInfo info = new BetInfo()
+            {
+                UserId = userId,
+                Diamond = diamond,
+                Dest = dest
+            };
+            BetData.list.Add(info);
+
+            UpdateBet();
+        }
+
+        public void ChampionNotification()
+        {
+            if (_Group1.group.member.Count == 0)
+                return;
+            UserBasisCache championUser = UserHelper.FindUserBasis(_Group1.group.member[0].id);
+            if (championUser == null)
+                return;
+            string context = string.Format("恭喜 {0} 获得本次校园争霸赛冠军，奖励iPhone 7 Plus一部！", championUser.NickName);
+            // PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
+            ChatRemoteService.SendNotice(NoticeMode.World, context);
+
+            //var chatService = new TryXChatService();
+            //chatService.SystemSend(context);
+            //PushMessageHelper.SendSystemChatToOnlineUser();
         }
     }
 }

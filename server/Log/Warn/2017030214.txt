@@ -1,0 +1,48 @@
+Time:2017-03-02 14:37:27:013-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:39:00:411-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:04:696-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:10:417-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:14:140-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:37:261-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:48:735-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+
+Time:2017-03-02 14:40:51:077-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\server\temp error:System.UnauthorizedAccessException: 对路径“1cdnpdvv.dll”的访问被拒绝。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+

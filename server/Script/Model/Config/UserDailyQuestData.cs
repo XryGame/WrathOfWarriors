@@ -25,29 +25,24 @@ namespace GameServer.Script.Model.Config
         [ProtoMember(1)]
         public TaskType ID { get; set; }
 
-        /// <summary>
-        /// 是否完成
-        /// </summary>
-        [ProtoMember(2)]
-        public bool IsFinish { get; set; }
-
-        /// <summary>
-        /// 刷新计数
-        /// </summary>
-        [ProtoMember(3)]
-        public int RefreshCount { get; set; }
-
-        /// <summary>
-        /// 完成计数
-        /// </summary>
-        [ProtoMember(4)]
-        public int FinishCount { get; set; }
 
         /// <summary>
         /// 进度计数
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(2)]
         public int Count { get; set; }
+
+        /// <summary>
+        /// 是否完成
+        /// </summary>
+        [ProtoMember(3)]
+        public bool IsFinished { get; set; }
+
+        /// <summary>
+        /// 是否领取
+        /// </summary>
+        [ProtoMember(4)]
+        public bool IsReceived { get; set; }
 
     }
 }

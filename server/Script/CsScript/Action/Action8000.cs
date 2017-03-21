@@ -42,13 +42,13 @@ namespace GameServer.CsScript.Action
         {
             receipt = RequestInviteFightResult.OK;
             GameSession session = GameSession.Get(destuid);
-            GameUser dest = UserHelper.FindUser(destuid);
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
             if (dest == null)
             {
                 receipt = RequestInviteFightResult.Offine;
                 return true;
             }
-            if (dest.EnterServerId != 0)
+            if (dest.ServerID != 0)
             {
                 if (session == null || !session.Connected)
                 {
@@ -68,19 +68,19 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            ContextUser.UserStatus = UserStatus.Inviteing;
-            ContextUser.InviteFightDestUid = destuid;
+            GetBasis.UserStatus = UserStatus.Inviteing;
+            GetBasis.InviteFightDestUid = destuid;
 
 
 
             //  如果目标是机器人
-            if (dest.EnterServerId == 0)
+            if (dest.ServerID == 0)
             {
                 Bots.FightBot fbot = new Bots.FightBot()
                 {
                     UserId = dest.UserID,
                     InviteTime = DateTime.Now,
-                    PlayerUserId = ContextUser.UserID
+                    PlayerUserId = GetBasis.UserID
                 };
                 Bots.AddFightBot(fbot);
             }
@@ -88,7 +88,7 @@ namespace GameServer.CsScript.Action
             {
                 // 发送切磋邀请
                 dest.UserStatus = UserStatus.Inviteing;
-                PushMessageHelper.InviteFightNotification(session, ContextUser.UserID);
+                PushMessageHelper.InviteFightNotification(session, GetBasis.UserID);
             }
             return true;
         }

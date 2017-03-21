@@ -1,6 +1,8 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Service;
 
@@ -12,8 +14,8 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1061 : BaseAction
     {
-        private object receipt;
-        private int id;
+        private AchievementData receipt;
+        private AchievementType type;
 
         public Action1061(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1061, actionGetter)
@@ -23,20 +25,13 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1061;
-            }
+            body = receipt;
             return base.BuildJsonPack();
         }
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("ID", ref id))
+            if (httpGet.GetEnum("ID", ref type))
             {
                 return true;
             }
@@ -45,7 +40,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = id;
+            receipt = GetAchievement.FindAchievement(type);
             return true;
         }
     }

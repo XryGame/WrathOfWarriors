@@ -14,10 +14,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int AwardNum { get; set; }
 
-        public CacheList<ItemData> ItemList { get; set; }
-
-        public CacheList<SkillData> SkillList { get; set; }
-
+        
         public LotteryAwardType LotteryAwardType { get; set; }
 
         public int LotteryId { get; set; }

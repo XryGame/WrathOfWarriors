@@ -46,19 +46,19 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(Uid);
+            UserBasisCache dest = UserHelper.FindUserBasis(Uid);
             if (dest == null)
                 return true;
-            FriendApplyData apply = ContextUser.FindFriendApply(Uid);
+            FriendApplyData apply = GetFriends.FindFriendApply(Uid);
             if (apply == null)
                 return true;
 
             receipt = new JPFriendApplyData();
             receipt.UserId = Uid;
             receipt.NickName = dest.NickName;
-            receipt.LooksId = dest.LooksId;
+            receipt.Profession = dest.Profession;
             receipt.UserLv = dest.UserLv;
-            receipt.FightValue = dest.FightingValue;
+            //receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
             receipt.ApplyTime = Util.ConvertDateTimeStamp(apply.ApplyDate);
 

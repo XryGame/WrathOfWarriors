@@ -47,15 +47,15 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(destuid);
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
             if (dest == null)
             {
                 ErrorInfo = Language.Instance.NoFoundUser;
                 return true;
             }
-            FriendData fd = ContextUser.FindFriend(destuid);
-            if (!ContextUser.IsHaveFriend(destuid)
-                || !ContextUser.IsHaveFriendGiveAway(destuid)
+            FriendData fd = GetFriends.FindFriend(destuid);
+            if (!GetFriends.IsHaveFriend(destuid)
+                || !GetFriends.IsHaveFriendGiveAway(destuid)
                 || fd == null
                 || fd.IsReceiveGiveAway)
             {
@@ -63,14 +63,12 @@ namespace GameServer.CsScript.Action
                 return true;
             }
             
-            ContextUser.Vit = MathUtils.Addition(ContextUser.Vit, DataHelper.FriendGiveAwayVitValue, int.MaxValue);
             fd.IsReceiveGiveAway = true;
 
             receipt = new JPReceiveFriendGiveAwayData()
             {
                 UserId = destuid,
                 AwayVit = DataHelper.FriendGiveAwayVitValue,
-                CurrVit = ContextUser.Vit,
                 NickName = dest.NickName
             };
             

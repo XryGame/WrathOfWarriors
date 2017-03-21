@@ -105,11 +105,28 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
+        /// 成就目标等级
+        /// </summary>
+        private int _ObjectiveGrade;
+        [EntityField("ObjectiveGrade")]
+        public int ObjectiveGrade
+        {
+            get
+            {
+                return _ObjectiveGrade;
+            }
+            set
+            {
+                SetChange("ObjectiveGrade", value);
+            }
+        }
+
+        /// <summary>
         /// 成就奖励类型
         /// </summary>
-        private AwardType _RewardsType;
+        private TaskAwardType _RewardsType;
         [EntityField("RewardsType")]
-        public AwardType RewardsType
+        public TaskAwardType RewardsType
         {
             get
             {
@@ -124,34 +141,34 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 成就奖励id
         /// </summary>
-        private int _RewardsID;
-        [EntityField("RewardsID")]
-        public int RewardsID
+        private int _RewardsItemID;
+        [EntityField("RewardsItemID")]
+        public int RewardsItemID
         {
             get
             {
-                return _RewardsID;
+                return _RewardsItemID;
             }
             set
             {
-                SetChange("RewardsID", value);
+                SetChange("RewardsItemID", value);
             }
         }
 
         /// <summary>
         /// 成就奖励数量
         /// </summary>
-        private int _RewardsNum;
-        [EntityField("RewardsNum")]
-        public int RewardsNum
+        private string _RewardsItemNum;
+        [EntityField("RewardsItemNum")]
+        public string RewardsItemNum
         {
             get
             {
-                return _RewardsNum;
+                return _RewardsItemNum;
             }
             set
             {
-                SetChange("RewardsNum", value);
+                SetChange("RewardsItemNum", value);
             }
         }
 
@@ -167,9 +184,10 @@ namespace GameServer.Script.Model.ConfigModel
                     case "Achievement": return Achievement;
                     case "Objective": return Objective;
                     case "ObjectiveNum": return ObjectiveNum;
+                    case "ObjectiveGrade": return ObjectiveGrade;
                     case "RewardsType": return RewardsType;
-                    case "RewardsID": return RewardsID;
-                    case "RewardsNum": return RewardsNum;
+                    case "RewardsItemID": return RewardsItemID;
+                    case "RewardsItemNum": return RewardsItemNum;
                     default: throw new ArgumentException(string.Format("Config_Achievement index[{0}] isn't exist.", index));
 				}
                 #endregion
@@ -194,14 +212,17 @@ namespace GameServer.Script.Model.ConfigModel
                     case "ObjectiveNum":
                         _ObjectiveNum = value.ToInt();
                         break;
+                    case "ObjectiveGrade":
+                        _ObjectiveGrade = value.ToInt();
+                        break;
                     case "RewardsType":
-                        _RewardsType = value.ToEnum<AwardType>();
+                        _RewardsType = value.ToEnum<TaskAwardType>();
                         break;
-                    case "RewardsID":
-                        _RewardsID = value.ToInt();
+                    case "RewardsItemID":
+                        _RewardsItemID = value.ToInt();
                         break;
-                    case "RewardsNum":
-                        _RewardsNum = value.ToInt();
+                    case "RewardsItemNum":
+                        _RewardsItemNum = value.ToNotNullString();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Achievement index[{0}] isn't exist.", index));
 				}

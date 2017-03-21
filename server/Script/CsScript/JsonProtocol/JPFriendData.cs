@@ -6,7 +6,7 @@
 
         public string NickName { get; set; }
 
-        public int LooksId { get; set; }
+        public int Profession { get; set; }
 
         public int UserLv { get; set; }
 

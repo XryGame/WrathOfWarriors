@@ -36,7 +36,7 @@ namespace GameServer.CsScript.Com
         /// 获取前5名玩家
         /// </summary>
         /// <returns></returns>
-        public List<UserRank> GetRanking(GameUser user)
+        public List<UserRank> GetRanking(UserBasisCache user)
         {
             List<UserRank> userRankList = new List<UserRank>();
             int currRankId;
@@ -87,24 +87,19 @@ namespace GameServer.CsScript.Com
             if (rankList.Count == 0)
             {
                 var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
-                string sql = "SELECT UserID,NickName,LooksId,UserLv,VipLv,FightingValue,CombatData FROM GameUser";
+                string sql = "SELECT UserID,NickName,Profession,UserLv,VipLv,CombatRankID FROM UserBasisCache";
                 using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
                 {
                     while (reader.Read())
                     {
-                        UserCombatData combat = (UserCombatData)JsonConvert.DeserializeObject(reader["CombatData"].ToString(), typeof(UserCombatData));
-                        if (combat.RankID > 0)
-                        {
-                            UserRank rankInfo = new UserRank();
-                            rankInfo.UserID = reader["UserID"].ToInt();
-                            rankInfo.NickName = reader["NickName"].ToString();
-                            rankInfo.LooksId = reader["LooksId"].ToInt();
-                            rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
-                            rankInfo.VipLv = reader["VipLv"].ToInt();
-                            rankInfo.FightingValue = reader["FightingValue"].ToInt();
-                            rankInfo.RankId = combat.RankID;
-                            rankList.Add(rankInfo);
-                        }
+                        UserRank rankInfo = new UserRank();
+                        rankInfo.UserID = reader["UserID"].ToInt();
+                        rankInfo.NickName = reader["NickName"].ToString();
+                        rankInfo.Profession = reader["Profession"].ToInt();
+                        rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
+                        rankInfo.VipLv = reader["VipLv"].ToInt();
+                        rankInfo.RankId = reader["CombatRankID"].ToInt();
+                        rankList.Add(rankInfo);
                     }
                 }
             }
@@ -114,18 +109,14 @@ namespace GameServer.CsScript.Com
         }
         protected override void ChangeRankNo(UserRank item)
         {
-            var findrank = rankList.Find(t => (t.UserID == item.UserID));
-            if (findrank != null)
-            {
-                findrank.RankId = item.RankId;
-            }
-            var gameUser = UserHelper.FindUser(item.UserID);
-            if (gameUser == null)
-            {
-                return;
-            }
-            gameUser.CombatData.RankID = item.RankId;
-
+            //var findrank = rankList.Find(t => (t.UserID == item.UserID));
+            //if (findrank != null)
+            //{
+            //    findrank.RankId = item.RankId;
+            //}
+            var basis = UserHelper.FindUserBasis(item.UserID);
+            basis.CombatRankID = item.RankId;
+            
         }
 
         private void SortOfRankId()

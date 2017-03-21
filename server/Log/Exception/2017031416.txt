@@ -1,0 +1,158 @@
+Time:2017-03-14 16:40:42:731-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:207
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:209
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:211
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:213
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:215
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:217
+Message:当前上下文中不存在名称“isResetTask”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:225
+Message:当前上下文中不存在名称“isResetEquip”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:231
+Message:当前上下文中不存在名称“isResetPackage”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:236
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:242
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:247
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:252
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:258
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:263
+Message:当前上下文中不存在名称“isResetTask”
+
+
+Time:2017-03-14 16:40:42:756-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 16:40:52:895-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:209
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:211
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:213
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:215
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:217
+Message:当前上下文中不存在名称“isResetTask”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:225
+Message:当前上下文中不存在名称“isResetEquip”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:231
+Message:当前上下文中不存在名称“isResetPackage”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:236
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:242
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:247
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:252
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:258
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:263
+Message:当前上下文中不存在名称“isResetTask”
+
+
+Time:2017-03-14 16:40:52:900-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 16:41:17:907-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:222
+Message:当前上下文中不存在名称“isResetEquip”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:228
+Message:当前上下文中不存在名称“isResetPackage”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:233
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:239
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:244
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:249
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:255
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:260
+Message:当前上下文中不存在名称“isResetTask”
+
+
+Time:2017-03-14 16:41:17:913-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 16:42:16:713-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:228
+Message:当前上下文中不存在名称“isResetEquip”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:234
+Message:当前上下文中不存在名称“isResetPackage”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:239
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:245
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:250
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:255
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:261
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:266
+Message:当前上下文中不存在名称“isResetTask”
+
+
+Time:2017-03-14 16:42:16:721-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 16:42:24:857-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:229
+Message:当前上下文中不存在名称“isResetEquip”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:235
+Message:当前上下文中不存在名称“isResetPackage”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:240
+Message:当前上下文中不存在名称“isResetSoul”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:246
+Message:当前上下文中不存在名称“isResetPay”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:251
+Message:当前上下文中不存在名称“isResetEventAward”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:256
+Message:当前上下文中不存在名称“isResetSkill”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:262
+Message:当前上下文中不存在名称“isResetAchievement”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:267
+Message:当前上下文中不存在名称“isResetTask”
+
+
+Time:2017-03-14 16:42:24:863-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 16:44:04:171-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:236
+Message:应输入 ;
+
+
+Time:2017-03-14 16:44:04:173-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

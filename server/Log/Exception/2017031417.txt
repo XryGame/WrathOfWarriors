@@ -1,0 +1,108 @@
+Time:2017-03-14 17:03:47:222-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:245
+Message:无效的表达式项“)”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:245
+Message:应输入 )
+
+
+Time:2017-03-14 17:03:47:254-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 17:06:08:358-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:251
+Message:无效的表达式项“)”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:251
+Message:应输入 )
+
+
+Time:2017-03-14 17:06:08:361-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 17:16:56:607-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:280
+Message:无法将类型“string”隐式转换为“int”
+
+
+Time:2017-03-14 17:16:56:610-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 17:19:09:477-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:85
+Message:无法将类型“string”隐式转换为“GameServer.CsScript.Remote.PostParameter”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:107
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:151
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:219
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:239
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:262
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:278
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:280
+Message:当前上下文中不存在名称“TempStr”
+
+
+Time:2017-03-14 17:19:09:483-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 17:19:15:535-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:107
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:151
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:219
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:239
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:262
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:278
+Message:当前上下文中不存在名称“TempStr”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:280
+Message:当前上下文中不存在名称“TempStr”
+
+
+Time:2017-03-14 17:19:15:540-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-14 17:31:39:617-Trace>>AppandBaseAttribute: No found grade config! code=50
+
+
+Time:2017-03-14 17:31:39:643-Trace>>AppandBaseAttribute: No found grade config! code=50
+
+
+Time:2017-03-14 17:32:38:306-Trace>>FindEntityFromRedis GameServer.Script.Model.DataModel.UserSkillCache keys:8
+Error:System.Exception: get SkillList column val error. ---> System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 ProtoBuf.NetObjectCache.SetKeyedObject(Int32 key, Object value)
+   在 ProtoBuf.ProtoWriter.SetRootObject(Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.Serialize(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.CovertDataValue(SchemaColumn schemaColumn, Object& value)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GetPropertyValue[T](T data, SchemaColumn column)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.GenerateSqlFrom(SqlDataSender sender, RedisClient client, Byte[][] keys, Byte[][] values)
+
+

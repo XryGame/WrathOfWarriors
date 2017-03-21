@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
@@ -38,7 +39,7 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPBuyData();
             receipt.Result = EventStatus.Good;
-            var vip = new ShareCacheStruct<Config_Vip>().FindKey(ContextUser.VipLv == 0 ? 1 : ContextUser.VipLv);
+            var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv == 0 ? 1 : GetBasis.VipLv);
             if (vip == null)
             {
                 ErrorInfo = string.Format(Language.Instance.DBTableError, "Config_Vip");
@@ -46,27 +47,27 @@ namespace GameServer.CsScript.Action
             }
 
             int canBuyTimes = vip.BuyAthletics;
-            if (ContextUser.VipLv == 0)
+            if (GetBasis.VipLv == 0)
                 canBuyTimes -= 1;
             
-            if (ContextUser.CombatData.ButTimes >= canBuyTimes)
+            if (GetCombat.ButTimes >= canBuyTimes)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
             int needDiamond = ConfigEnvSet.GetInt("User.BuyCombatTimesNeedDiamond");
             
-            if (ContextUser.DiamondNum < needDiamond)
+            if (GetBasis.DiamondNum < needDiamond)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, needDiamond);
-            ContextUser.CombatData.CombatTimes = MathUtils.Addition(ContextUser.CombatData.CombatTimes, 1);
-            ContextUser.CombatData.ButTimes++;
-            receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.Extend1 = ContextUser.CombatData.CombatTimes;
+            
+            UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
+            GetCombat.CombatTimes = MathUtils.Addition(GetCombat.CombatTimes, 1);
+            GetCombat.ButTimes++;
+            receipt.CurrDiamond = GetBasis.DiamondNum;
+            receipt.Extend1 = GetCombat.CombatTimes;
             return true;
         }
     }

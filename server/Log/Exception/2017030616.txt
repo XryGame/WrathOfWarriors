@@ -1,0 +1,180 @@
+Time:2017-03-06 16:19:40:294-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:144
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:161
+Message:当前上下文中不存在名称“_ID”
+
+
+Time:2017-03-06 16:19:40:317-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:19:48:842-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:144
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:145
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:161
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:164
+Message:当前上下文中不存在名称“_Name”
+
+
+Time:2017-03-06 16:19:48:845-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:19:58:766-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:146
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:147
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:163
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:166
+Message:当前上下文中不存在名称“_Name”
+
+
+Time:2017-03-06 16:19:58:768-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:20:23:312-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:146
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:147
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:148
+Message:“System.Type”是“类型”，但此处被当做“变量”来使用
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:163
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:166
+Message:当前上下文中不存在名称“_Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:169
+Message:当前上下文中不存在名称“_Type”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:无法将 lambda 表达式 转换为类型“bool”，原因是它不是委托类型
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Type”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Type”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-03-06 16:20:23:315-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:20:44:993-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:146
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:147
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:148
+Message:“System.Type”是“类型”，但此处被当做“变量”来使用
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:163
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:166
+Message:当前上下文中不存在名称“_Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:169
+Message:当前上下文中不存在名称“_Type”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:无法将 lambda 表达式 转换为类型“bool”，原因是它不是委托类型
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Type”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Type”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-03-06 16:20:44:998-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:21:08:521-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:146
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:147
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:148
+Message:“System.Type”是“类型”，但此处被当做“变量”来使用
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:149
+Message:当前上下文中不存在名称“Map”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:163
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:166
+Message:当前上下文中不存在名称“_Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:169
+Message:当前上下文中不存在名称“_Type”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:172
+Message:当前上下文中不存在名称“_Map”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:无法将 lambda 表达式 转换为类型“bool”，原因是它不是委托类型
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Type”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Type”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Map”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Map”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-03-06 16:21:08:525-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-06 16:21:55:064-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:148
+Message:当前上下文中不存在名称“ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:149
+Message:当前上下文中不存在名称“Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:150
+Message:“System.Type”是“类型”，但此处被当做“变量”来使用
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:151
+Message:当前上下文中不存在名称“Map”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:165
+Message:当前上下文中不存在名称“_ID”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:168
+Message:当前上下文中不存在名称“_Name”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:171
+Message:当前上下文中不存在名称“_Type”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Item.cs, Line:174
+Message:当前上下文中不存在名称“_Map”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:无法将 lambda 表达式 转换为类型“bool”，原因是它不是委托类型
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Type”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Type”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\DataModel\DataHelper.cs, Line:107
+Message:“GameServer.Script.Model.ConfigModel.Config_Item”不包含“Map”的定义，并且找不到可接受类型为“GameServer.Script.Model.ConfigModel.Config_Item”的第一个参数的扩展方法“Map”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-03-06 16:21:55:068-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

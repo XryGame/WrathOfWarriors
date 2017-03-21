@@ -1,4 +1,5 @@
-﻿using GameServer.Script.Model.Enum;
+﻿using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 
 namespace GameServer.CsScript.JsonProtocol
 {
@@ -6,7 +7,7 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPRestoreUserData()
         {
-            DailyQuestData = new JPDailyQuestData();
+            //DailyQuestData = new JPDailyQuestData();
             EventAwardData = new JPEventAwardData();
         }
 
@@ -14,15 +15,10 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int CombatTimes { get; set; }
 
-        public int CampaignTicketNum { get; set; }
-
-        public int BuyCampaignTicketNum { get; set; }
-
         public int GiveAwayCount { get; set; }
-
-        public int ChallengeMonitorTimes { get; set; }
-
-        public JPDailyQuestData DailyQuestData { get; set; }
+        
+        //public JPDailyQuestData DailyQuestData { get; set; }
+        public UserTaskCache Task { get; set; }
 
         public JPEventAwardData EventAwardData { get; set; }
 

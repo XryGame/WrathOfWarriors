@@ -11,12 +11,13 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
     /// <summary>
-    /// 1060_每日任务计数通知
+    /// 1060_每日任务刷新
     /// </summary>
     public class Action1060 : BaseAction
     {
 
-        private JPDailyQuestData receipt;
+        private UserDailyQuestData receipt;
+        private TaskType type;
         public Action1060(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1060, actionGetter)
         {
@@ -32,19 +33,16 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            return true;
+            if (httpGet.GetEnum("ID", ref type))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override bool TakeAction()
         {
-            receipt = new JPDailyQuestData()
-            {
-                ID = ContextUser.DailyQuestData.ID,
-                IsFinish = ContextUser.DailyQuestData.IsFinish,
-                RefreshCount = ContextUser.DailyQuestData.RefreshCount,
-                FinishCount = ContextUser.DailyQuestData.FinishCount,
-                Count = ContextUser.DailyQuestData.Count,
-            };
+            receipt = GetTask.FindTask(type);
             return true;
         }
     }

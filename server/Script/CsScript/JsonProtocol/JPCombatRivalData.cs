@@ -9,7 +9,6 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPCombatRivalData()
         {
-            ItemList = new CacheList<ItemData>();
             SkillList = new List<SkillData>();
         }
         public CombatReqRivalResult Result { get; set; }
@@ -18,7 +17,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public string NickName { get; set; }
 
-        public int LooksId { get; set; }
+        public int Profession { get; set; }
 
         public int RankId { get; set; }
 
@@ -31,9 +30,7 @@ namespace GameServer.CsScript.JsonProtocol
         public int Defense { get; set; }
 
         public int HP { get; set; }
-
-        public CacheList<ItemData> ItemList { get; set; }
-
+        
         public List<SkillData> SkillList { get; set; }
 
         public bool IsUnlockSelectMap { get; set; }

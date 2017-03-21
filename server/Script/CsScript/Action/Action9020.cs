@@ -39,77 +39,70 @@ namespace GameServer.CsScript.Action
             receipt.Result = EventStatus.Good;
 
 
-            var surface = new ShareCacheStruct<Config_OnlineReward>().FindKey(ContextUser.EventAwardData.OnlineAwardId);
+            var surface = new ShareCacheStruct<Config_OnlineReward>().FindKey(GetEventAward.OnlineAwardId);
             if (surface == null)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
 
-            //DateTime startDate = ContextUser.EventAwardData.OnlineStartTime;
+            //DateTime startDate = GetEventAward.OnlineStartTime;
             //TimeSpan timeSpan = DateTime.Now.Subtract(startDate);
             //int sec = (int)Math.Floor(timeSpan.TotalSeconds);
-            //int passsec = MathUtils.Addition(ContextUser.EventAwardData.TodayOnlineTime, sec, int.MaxValue);
+            //int passsec = MathUtils.Addition(GetEventAward.TodayOnlineTime, sec, int.MaxValue);
             //if (passsec < surface.Time)
             //{
             //    receipt.Result = EventStatus.Bad;
             //    return true;
             //}
 
-            //ContextUser.EventAwardData.OnlineStartTime = DateTime.Now;
-            //ContextUser.EventAwardData.TodayOnlineTime = surface.Time;
-            ContextUser.EventAwardData.OnlineAwardId++;
-            ContextUser.EventAwardData.LastOnlineAwayReceiveTime = DateTime.Now;
+            //GetEventAward.OnlineStartTime = DateTime.Now;
+            //GetEventAward.TodayOnlineTime = surface.Time;
+            GetEventAward.OnlineAwardId++;
+            GetEventAward.LastOnlineAwayReceiveTime = DateTime.Now;
 
             
 
             switch (surface.AwardType)
             {
-                case AwardType.Diamond:
+                case TaskAwardType.Diamond:
                     {
-                        UserHelper.GiveAwayDiamond(ContextUser.UserID, surface.AwardNum);
+                        UserHelper.RewardsDiamond(GetBasis.UserID, surface.AwardNum);
                         receipt.AwardDiamondNum = surface.AwardNum;
-                        receipt.CurrDiamond = ContextUser.DiamondNum;
+                        receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
-                case AwardType.ItemSkillBook:
-                    {
-                        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(surface.AwardID);
-                        if (item != null)
-                        {
-                            ContextUser.UserAddItem(surface.AwardID, surface.AwardNum);
+                //case AwardType.ItemSkillBook:
+                //    {
+                //        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(surface.AwardID);
+                //        if (item != null)
+                //        {
+                //            GetPackage.AddItem(surface.AwardID, surface.AwardNum);
+                //            receipt.AwardItemList.Add(surface.AwardID);
+                //        }
+                //    }
+                //    break;
+                //case AwardType.RandItemSkillBook:
+                //    {
+                //        int count = surface.AwardNum;
+                //        while (count > 0)
+                //        {
+                //            count--;
+                //            if (random.Next(1000) < 750)
+                //            {// 道具
+                //                receipt.AwardItemList.AddRange(GetBasis.RandItem(surface.AwardNum));
+                //            }
+                //            else
+                //            {// 技能
+                //                receipt.AwardItemList.AddRange(GetBasis.RandSkillBook(surface.AwardNum));
+                //            }
+                //        }
 
-                            if (item.Type == ItemType.Skill)
-                            {
-                                ContextUser.CheckAddSkillBook(surface.AwardID, surface.AwardNum);
-                            }
-                            receipt.AwardItemList.Add(surface.AwardID);
-                        }
-                    }
-                    break;
-                case AwardType.RandItemSkillBook:
-                    {
-                        int count = surface.AwardNum;
-                        while (count > 0)
-                        {
-                            count--;
-                            if (random.Next(1000) < 750)
-                            {// 道具
-                                receipt.AwardItemList.AddRange(ContextUser.RandItem(surface.AwardNum));
-                            }
-                            else
-                            {// 技能
-                                receipt.AwardItemList.AddRange(ContextUser.RandSkillBook(surface.AwardNum));
-                            }
-                        }
-
-                    }
-                    break;
+                //    }
+                //    break;
             }
 
-            receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.ItemList = ContextUser.ItemDataList;
-            receipt.SkillList = ContextUser.SkillDataList;
+            receipt.CurrDiamond = GetBasis.DiamondNum;
 
             return true;
         }

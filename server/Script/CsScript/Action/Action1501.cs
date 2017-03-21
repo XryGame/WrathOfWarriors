@@ -49,22 +49,18 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(destuid);
-            if (dest == null)
-            {
-                ErrorInfo = Language.Instance.NoFoundUser;
-                return true;
-            }
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
+            UserFriendsCache destFriends = UserHelper.FindUserFriends(destuid);
 
             receipt = new JPRequestAddFriendData();
             receipt.DestUid = destuid;
             receipt.Nickname = dest.NickName;
 
-            if (ContextUser.IsFriendNumFull())
+            if (GetFriends.IsFriendNumFull())
             {
                 receipt.Result = RequestFriendResult.FriendNumFull;
             }
-            else if (ContextUser.IsHaveFriend(destuid))
+            else if (GetFriends.IsHaveFriend(destuid))
             {
                 receipt.Result = RequestFriendResult.HadFriend;
             }
@@ -72,7 +68,7 @@ namespace GameServer.CsScript.Action
             //{
             //    receipt.Result = RequestFriendResult.DestFriendNumFull;
             //}
-            else if (dest.IsHaveFriendApply(ContextUser.UserID))
+            else if (destFriends.IsHaveFriendApply(GetBasis.UserID))
             {
                 receipt.Result = RequestFriendResult.HadApply;
             }
@@ -84,12 +80,12 @@ namespace GameServer.CsScript.Action
 
             if (receipt.Result == RequestFriendResult.OK)
             {
-                dest.AddFriendApply(ContextUser.UserID);
+                destFriends.AddFriendApply(GetBasis.UserID);
                 var session = GameSession.Get(destuid);
                 if (session != null && session.Connected)
                 {
                     var parameters = new Parameters();
-                    parameters["Uid"] = ContextUser.UserID;
+                    parameters["Uid"] = GetBasis.UserID;
                     var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1054, session, parameters, OpCode.Text, null);
                     ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1054, packet, (sessions, asyncResult) => {}, 0);
                 }

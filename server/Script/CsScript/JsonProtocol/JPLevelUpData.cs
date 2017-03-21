@@ -11,10 +11,7 @@ namespace GameServer.CsScript.JsonProtocol
         public int HP { get; set; }
 
         public int CurrLevel { get; set; }
-
-        public int CurrVit { get; set; }
-
-        public bool IsChangeClass { get; set; }
+        
 
     }
 }

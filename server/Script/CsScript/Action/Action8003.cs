@@ -32,23 +32,23 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            ContextUser.UserStatus = UserStatus.MainUi;
-            ContextUser.InviteFightDestUid = 0;
+            GetBasis.UserStatus = UserStatus.MainUi;
+            GetBasis.InviteFightDestUid = 0;
 
 
-            if (Result == EventStatus.Good && ContextUser.InviteFightDiamondNum < DataHelper.InviteFightDiamondWeekMax)
+            if (Result == EventStatus.Good && GetBasis.InviteFightDiamondNum < DataHelper.InviteFightDiamondWeekMax)
             {
-                int diamond = MathUtils.Subtraction(DataHelper.InviteFightDiamondWeekMax, ContextUser.InviteFightDiamondNum);
+                int diamond = MathUtils.Subtraction(DataHelper.InviteFightDiamondWeekMax, GetBasis.InviteFightDiamondNum);
                 diamond = Math.Min(diamond, DataHelper.InviteFightAwardDiamond);
-                ContextUser.InviteFightDiamondNum += diamond;
-                UserHelper.GiveAwayDiamond(ContextUser.UserID, diamond);
+                GetBasis.InviteFightDiamondNum += diamond;
+                UserHelper.RewardsDiamond(GetBasis.UserID, diamond);
             }
 
             // 每日
-            UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.InviteFight, 1);
+            UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.FriendCompare, 1);
 
             // 成就
-            UserHelper.AchievementProcess(ContextUser.UserID, 1, AchievementType.InviteFightCount);
+            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.FriendCompare, 1);
             return true;
         }
     }

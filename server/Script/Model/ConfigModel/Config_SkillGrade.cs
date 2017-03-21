@@ -1,15 +1,14 @@
 ﻿
 using System;
 using ProtoBuf;
-using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Model;
-using GameServer.Script.Model;
+using GameServer.Script.Model.Enum;
 
 namespace GameServer.Script.Model.ConfigModel
 {
     /// <summary>
-    /// 
+    /// 技能等级
     /// </summary>
     [Serializable, ProtoContract]
     [EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
@@ -20,13 +19,13 @@ namespace GameServer.Script.Model.ConfigModel
             : base(AccessLevel.ReadOnly)
         {
         }
-        
+
         #region auto-generated Property
-        private int _ID;
 
         /// <summary>
-        /// ID
+        /// 唯一ID
         /// </summary>
+        private int _ID;
         [EntityField("ID", IsKey = true)]
         public int ID
         {
@@ -39,134 +38,75 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("ID", value);
             }
         }
-        private int _SkillID;
+
         /// <summary>
         /// 技能id
         /// </summary>
-        [EntityField("SkillID")]
-        public int SkillID
+        private int _SkillId;
+        [EntityField("SkillId")]
+        public int SkillId
         {
             get
             {
-                return _SkillID;
+                return _SkillId;
             }
             private set
             {
-                SetChange("SkillID", value);
+                SetChange("SkillId", value);
             }
         }
-        private int _SkillLv;
+
         /// <summary>
         /// 技能等级
         /// </summary>
-        [EntityField("SkillLv")]
-        public int SkillLv
+        private int _SkillGrade;
+        [EntityField("SkillGrade")]
+        public int SkillGrade
         {
             get
             {
-                return _SkillLv;
+                return _SkillGrade;
             }
             private set
             {
-                SetChange("SkillLv", value);
+                SetChange("SkillGrade", value);
             }
         }
-        private int _Attack;
+
         /// <summary>
-        /// 攻击加成
+        /// 升级消耗货币类型
         /// </summary>
-        [EntityField("Attack")]
-        public int Attack
+        private ConsumeType _ConsumeType;
+        [EntityField("ConsumeType")]
+        public ConsumeType ConsumeType
         {
             get
             {
-                return _Attack;
+                return _ConsumeType;
             }
             private set
             {
-                SetChange("Attack", value);
+                SetChange("ConsumeType", value);
             }
         }
-        private int _Defense;
+
         /// <summary>
-        /// 防御加成
+        /// 升级消耗货币数量
         /// </summary>
-        [EntityField("Defense")]
-        public int Defense
+        private string _ConsumeNumber;
+        [EntityField("ConsumeNumber")]
+        public string ConsumeNumber
         {
             get
             {
-                return _Defense;
+                return _ConsumeNumber;
             }
             private set
             {
-                SetChange("Defense", value);
+                SetChange("ConsumeNumber", value);
             }
         }
-        private int _HP;
-        /// <summary>
-        /// 生命加成
-        /// </summary>
-        [EntityField("HP")]
-        public int HP
-        {
-            get
-            {
-                return _HP;
-            }
-            private set
-            {
-                SetChange("HP", value);
-            }
-        }
-        private int _Hurt;
-        /// <summary>
-        /// 伤害加成
-        /// </summary>
-        [EntityField("Hurt")]
-        public int Hurt
-        {
-            get
-            {
-                return _Hurt;
-            }
-            private set
-            {
-                SetChange("Hurt", value);
-            }
-        }
-        private int _Condition;
-        /// <summary>
-        /// 升级需要道具
-        /// </summary>
-        [EntityField("Condition")]
-        public int Condition
-        {
-            get
-            {
-                return _Condition;
-            }
-            private set
-            {
-                SetChange("Condition", value);
-            }
-        }
-        private int _Number;
-        /// <summary>
-        /// 升级需要道具数量
-        /// </summary>
-        [EntityField("Number")]
-        public int Number
-        {
-            get
-            {
-                return _Number;
-            }
-            private set
-            {
-                SetChange("Number", value);
-            }
-        }
+
         protected override object this[string index]
 		{
 			get
@@ -175,14 +115,10 @@ namespace GameServer.Script.Model.ConfigModel
 				switch (index)
 				{
                     case "ID": return ID;
-                    case "SkillID": return SkillID;
-                    case "SkillLv": return SkillLv;
-                    case "Attack": return Attack;
-                    case "Defense": return Defense;
-                    case "HP": return HP;
-                    case "Hurt": return Hurt;
-                    case "Condition": return Condition;
-                    case "Number": return Number;
+                    case "SkillId": return SkillId;
+                    case "SkillGrade": return SkillGrade;
+                    case "ConsumeType": return ConsumeType;
+                    case "ConsumeNumber": return ConsumeNumber;
                     default: throw new ArgumentException(string.Format("Config_SkillGrade index[{0}] isn't exist.", index));
 				}
                 #endregion
@@ -195,29 +131,17 @@ namespace GameServer.Script.Model.ConfigModel
                     case "ID":
                         _ID = value.ToInt();
                         break;
-                    case "SkillID":
-                        _SkillID = value.ToInt(); 
-                        break; 
-                    case "SkillLv":
-                        _SkillLv = value.ToInt();
+                    case "SkillId":
+                        _SkillId = value.ToInt();
                         break;
-                    case "Attack":
-                        _Attack = value.ToInt();
+                    case "SkillGrade":
+                        _SkillGrade = value.ToInt();
                         break;
-                    case "Defense":
-                        _Defense = value.ToInt(); 
-                        break; 
-                    case "HP":
-                        _HP = value.ToInt();
+                    case "ConsumeType":
+                        _ConsumeType = value.ToEnum<ConsumeType>();
                         break;
-                    case "Hurt":
-                        _Hurt = value.ToInt();
-                        break;
-                    case "Condition":
-                        _Condition = value.ToInt();
-                        break;
-                    case "Number":
-                        _Number = value.ToInt();
+                    case "ConsumeNumber":
+                        _ConsumeNumber = value.ToNotNullString();
                         break;
                     default: throw new ArgumentException(string.Format("Config_SkillGrade index[{0}] isn't exist.", index));
 				}
@@ -226,11 +150,6 @@ namespace GameServer.Script.Model.ConfigModel
 		}
         
         #endregion
-                
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
+
 	}
 }

@@ -47,27 +47,22 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(destuid);
-            if (dest == null)
-            {
-                ErrorInfo = Language.Instance.NoFoundUser;
-                return true;
-            }
+            UserFriendsCache destFriends = UserHelper.FindUserFriends(destuid);
 
-            if (ContextUser.IsHaveFriend(destuid))
+            if (GetFriends.IsHaveFriend(destuid))
             {
-                ContextUser.RemoveFriend(destuid);
+                GetFriends.RemoveFriend(destuid);
             }
-            if (dest.IsHaveFriend(ContextUser.UserID))
+            if (destFriends.IsHaveFriend(GetBasis.UserID))
             {
-                dest.RemoveFriend(ContextUser.UserID);
+                destFriends.RemoveFriend(GetBasis.UserID);
             }
 
             var session = GameSession.Get(destuid);
             if (session != null && session.Connected)
             {
                 var parameters = new Parameters();
-                parameters["Uid"] = ContextUser.UserID;
+                parameters["Uid"] = GetBasis.UserID;
                 var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1056, session, parameters, OpCode.Text, null);
                 ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1056, packet, (sessions, asyncResult) => { }, 0);
             }

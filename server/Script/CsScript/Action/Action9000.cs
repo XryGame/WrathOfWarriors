@@ -45,17 +45,17 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPRequestSFOData();
             receipt.Result = EventStatus.Good;
-            if (ContextUser.EventAwardData.IsTodaySign && !isrepair)
+            if (GetEventAward.IsTodaySign && !isrepair)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-            if (!ContextUser.EventAwardData.IsTodaySign && isrepair)
+            if (!GetEventAward.IsTodaySign && isrepair)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
             }
-            if (isrepair && ContextUser.DiamondNum < DataHelper.RepairSignNeedDiamond)
+            if (isrepair && GetBasis.DiamondNum < DataHelper.RepairSignNeedDiamond)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
@@ -71,7 +71,7 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            if (ContextUser.EventAwardData.SignCount >= choose.Count)
+            if (GetEventAward.SignCount >= choose.Count)
             {
                 receipt.Result = EventStatus.Bad;
                 return true;
@@ -79,7 +79,7 @@ namespace GameServer.CsScript.Action
 
             var signsurface = new ShareCacheStruct<Config_Signin>().Find(t => (
                 t.DateYear == DateTime.Now.Year && t.DateMonth == DateTime.Now.Month
-                && t.DateDay == ContextUser.EventAwardData.SignCount + 1
+                && t.DateDay == GetEventAward.SignCount + 1
             ));
             if (signsurface == null)
             {
@@ -87,62 +87,55 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            ContextUser.EventAwardData.IsTodaySign = true;
-            ContextUser.EventAwardData.SignCount++;
+            GetEventAward.IsTodaySign = true;
+            GetEventAward.SignCount++;
 
             if (isrepair)
             {
-                ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, DataHelper.RepairSignNeedDiamond);
+                UserHelper.ConsumeDiamond(Current.UserId, DataHelper.RepairSignNeedDiamond);
             }
 
             
             
             switch (signsurface.AwardType)
             {
-                case AwardType.Diamond:
+                case TaskAwardType.Diamond:
                     {
-                        UserHelper.GiveAwayDiamond(ContextUser.UserID, signsurface.AwardNum);
+                        UserHelper.RewardsDiamond(GetBasis.UserID, signsurface.AwardNum);
                         receipt.AwardDiamondNum = signsurface.AwardNum;
-                        receipt.CurrDiamond = ContextUser.DiamondNum;
+                        receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
-                case AwardType.ItemSkillBook:
-                    {
-                        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(signsurface.AwardID);
-                        if (item != null)
-                        {
-                            ContextUser.UserAddItem(signsurface.AwardID, signsurface.AwardNum);
+                //case TaskAwardType.ItemSkillBook:
+                //    {
+                //        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(signsurface.AwardID);
+                //        if (item != null)
+                //        {
+                //            GetPackage.AddItem(signsurface.AwardID, signsurface.AwardNum);
+                //            receipt.AwardItemList.Add(signsurface.AwardID);
+                //        }
+                //    }
+                //    break;
+                //case AwardType.RandItemSkillBook:
+                //    {
+                //        int count = signsurface.AwardNum;
+                //        while (count > 0)
+                //        {
+                //            count--;
+                //            if (random.Next(1000) < 750)
+                //            {// 道具
+                //                receipt.AwardItemList.AddRange(GetBasis.RandItem(1));
+                //            }
+                //            else
+                //            {// 技能
+                //                receipt.AwardItemList.AddRange(GetBasis.RandSkillBook(1));
+                //            }
+                //        }
 
-                            if (item.Type == ItemType.Skill)
-                            {
-                                ContextUser.CheckAddSkillBook(signsurface.AwardID, signsurface.AwardNum);
-                            }
-                            receipt.AwardItemList.Add(signsurface.AwardID);
-                        }
-                    }
-                    break;
-                case AwardType.RandItemSkillBook:
-                    {
-                        int count = signsurface.AwardNum;
-                        while (count > 0)
-                        {
-                            count--;
-                            if (random.Next(1000) < 750)
-                            {// 道具
-                                receipt.AwardItemList.AddRange(ContextUser.RandItem(1));
-                            }
-                            else
-                            {// 技能
-                                receipt.AwardItemList.AddRange(ContextUser.RandSkillBook(1));
-                            }
-                        }
-
-                    }
-                    break;
+                //    }
+                //    break;
             }
-            receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.ItemList = ContextUser.ItemDataList;
-            receipt.SkillList = ContextUser.SkillDataList;
+            receipt.CurrDiamond = GetBasis.DiamondNum;
             return true;
         }
     }

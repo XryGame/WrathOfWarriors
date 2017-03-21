@@ -6,11 +6,10 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1050_战斗力改变通知接口
+    /// 1050_属性改变通知接口
     /// </summary>
     public class Action1050 : BaseAction
     {
-        private int receipt;
         public Action1050(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1050, actionGetter)
         {
@@ -19,7 +18,7 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            body = receipt;
+            body = GetAttribute;
             return base.BuildJsonPack();
         }
 
@@ -30,7 +29,6 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = ContextUser.FightingValue;
             return true;
         }
     }

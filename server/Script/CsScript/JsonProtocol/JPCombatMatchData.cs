@@ -7,7 +7,7 @@ namespace GameServer.CsScript.JsonProtocol
         public JPCombatMatchData()
         {
             RivalList = new CacheList<JPCombatMatchUserData>();
-            LogList = new CacheList<JPCombatLogData>();
+            //LogList = new CacheList<JPCombatLogData>();
         }
         public int RankId { get; set; }
 
@@ -17,7 +17,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public CacheList<JPCombatMatchUserData> RivalList { get; set; }
 
-        public CacheList<JPCombatLogData> LogList { get; set; }
+       // public CacheList<JPCombatLogData> LogList { get; set; }
 
 
     }

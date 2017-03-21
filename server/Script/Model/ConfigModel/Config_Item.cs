@@ -19,119 +19,278 @@ namespace GameServer.Script.Model.ConfigModel
             : base(AccessLevel.ReadOnly)
         {
         }
-        
+
         #region auto-generated Property
-        private int _ID;
+
         /// <summary>
-        /// id
+        /// 物品id
         /// </summary>
-        [EntityField("ID", IsKey = true)]
-        public int ID
+        private int _ItemID;
+        [EntityField("ItemID", IsKey = true)]
+        public int ItemID
         {
             get
             {
-                return _ID;
+                return _ItemID;
             }
             private set
             {
-                SetChange("ID", value);
-            }
-        }
-        private string _Name;
-        /// <summary>
-        /// 名称
-        /// </summary>
-        [EntityField("Name")]
-        public string Name
-        {
-            get
-            {
-                return _Name;
-            }
-            private set
-            {
-                SetChange("Name", value);
-            }
-        }
-        private ItemType _Type;
-        /// <summary>
-        /// 道具类型
-        /// </summary>
-        [EntityField("Type")]
-        public ItemType Type
-        {
-            get
-            {
-                return _Type;
-            }
-            private set
-            {
-                SetChange("Type", value);
-            }
-        }
-        private int _Map;
-        /// <summary>
-        /// 场景
-        /// </summary>
-        [EntityField("Map")]
-        public int Map
-        {
-            get
-            {
-                return _Map;
-            }
-            private set
-            {
-                SetChange("Map", value);
-            }
-        }
-        private string _Resource;
-        /// <summary>
-        /// 资源
-        /// </summary>
-        [EntityField("Resource")]
-        public string Resource
-        {
-            get
-            {
-                return _Resource;
-            }
-            private set
-            {
-                SetChange("Resource", value);
-            }
-        }
-        private int _GainProbability;
-        /// <summary>
-        /// 获得概率
-        /// </summary>
-        [EntityField("GainProbability")]
-        public int GainProbability
-        {
-            get
-            {
-                return _GainProbability;
-            }
-            private set
-            {
-                SetChange("GainProbability", value);
+                SetChange("ItemID", value);
             }
         }
 
-        private string _Des;
         /// <summary>
-        /// 描述
+        /// 物品名称
         /// </summary>
-        [EntityField("Des")]
-        public string Des
+        private string _ItemName;
+        [EntityField("ItemName")]
+        public string ItemName
         {
             get
             {
-                return _Des;
+                return _ItemName;
             }
             private set
             {
-                SetChange("Des", value);
+                SetChange("ItemName", value);
+            }
+        }
+
+        /// <summary>
+        /// 物品类型
+        /// </summary>
+        private ItemType _ItemType;
+        [EntityField("ItemType")]
+        public ItemType ItemType
+        {
+            get
+            {
+                return _ItemType;
+            }
+            private set
+            {
+                SetChange("ItemType", value);
+            }
+        }
+
+        /// <summary>
+        /// 物品子类型
+        /// </summary>
+        private int _Species;
+        [EntityField("Species")]
+        public int Species
+        {
+            get
+            {
+                return _Species;
+            }
+            private set
+            {
+                SetChange("Species", value);
+            }
+        }
+
+        /// <summary>
+        /// 物品初始品质
+        /// </summary>
+        private ItemQuality _Quality;
+        [EntityField("Quality")]
+        public ItemQuality Quality
+        {
+            get
+            {
+                return _Quality;
+            }
+            private set
+            {
+                SetChange("Quality", value);
+            }
+        }
+
+        /// <summary>
+        /// 使用获得资源类型
+        /// </summary>
+        private ResourceType _ResourceType;
+        [EntityField("ResourceType")]
+        public ResourceType ResourceType
+        {
+            get
+            {
+                return _ResourceType;
+            }
+            private set
+            {
+                SetChange("ResourceType", value);
+            }
+        }
+
+        /// <summary>
+        /// 获得资源数量
+        /// </summary>
+        private string _ResourceNum;
+        [EntityField("ResourceNum")]
+        public string ResourceNum
+        {
+            get
+            {
+                return _ResourceNum;
+            }
+            private set
+            {
+                SetChange("ResourceNum", value);
+            }
+        }
+
+        /// <summary>
+        /// 是否可出售
+        /// </summary>
+        private bool _IfSell;
+        [EntityField("IfSell")]
+        public bool IfSell
+        {
+            get
+            {
+                return _IfSell;
+            }
+            private set
+            {
+                SetChange("IfSell", value);
+            }
+        }
+
+        /// <summary>
+        /// 出售获得金钱
+        /// </summary>
+        private string _SellGold;
+        [EntityField("SellGold")]
+        public string SellGold
+        {
+            get
+            {
+                return _SellGold;
+            }
+            private set
+            {
+                SetChange("SellGold", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始生命
+        /// </summary>
+        private int _hp;
+        [EntityField("hp")]
+        public int hp
+        {
+            get
+            {
+                return _hp;
+            }
+            private set
+            {
+                SetChange("hp", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始攻击
+        /// </summary>
+        private int _attack;
+        [EntityField("attack")]
+        public int attack
+        {
+            get
+            {
+                return _attack;
+            }
+            private set
+            {
+                SetChange("attack", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始防御
+        /// </summary>
+        private int _defense;
+        [EntityField("defense")]
+        public int defense
+        {
+            get
+            {
+                return _defense;
+            }
+            private set
+            {
+                SetChange("defense", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始闪避
+        /// </summary>
+        private int _dodge;
+        [EntityField("dodge")]
+        public int dodge
+        {
+            get
+            {
+                return _dodge;
+            }
+            private set
+            {
+                SetChange("dodge", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始暴击
+        /// </summary>
+        private int _crit;
+        [EntityField("crit")]
+        public int crit
+        {
+            get
+            {
+                return _crit;
+            }
+            private set
+            {
+                SetChange("crit", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始命中
+        /// </summary>
+        private int _hit;
+        [EntityField("hit")]
+        public int hit
+        {
+            get
+            {
+                return _hit;
+            }
+            private set
+            {
+                SetChange("hit", value);
+            }
+        }
+
+        /// <summary>
+        /// 初始韧性
+        /// </summary>
+        private int _tenacity;
+        [EntityField("tenacity")]
+        public int tenacity
+        {
+            get
+            {
+                return _tenacity;
+            }
+            private set
+            {
+                SetChange("tenacity", value);
             }
         }
         protected override object this[string index]
@@ -141,13 +300,22 @@ namespace GameServer.Script.Model.ConfigModel
                 #region
 				switch (index)
 				{
-                    case "ID": return ID;
-                    case "Name": return Name;
-                    case "Type": return Type;
-                    case "Map": return Map;
-                    case "Resource": return Resource;
-                    case "GainProbability": return GainProbability;
-                    case "Des": return Des;
+                    case "ItemID": return ItemID;
+                    case "ItemName": return ItemName;
+                    case "ItemType": return ItemType;
+                    case "Species": return Species;
+                    case "Quality": return Quality;
+                    case "ResourceType": return ResourceType;
+                    case "ResourceNum": return ResourceNum;
+                    case "IfSell": return IfSell;
+                    case "SellGold": return SellGold;
+                    case "hp": return hp;
+                    case "attack": return attack;
+                    case "defense": return defense;
+                    case "dodge": return dodge;
+                    case "crit": return crit;
+                    case "hit": return hit;
+                    case "tenacity": return tenacity;
                     default: throw new ArgumentException(string.Format("Config_Item index[{0}] isn't exist.", index));
 				}
                 #endregion
@@ -157,26 +325,53 @@ namespace GameServer.Script.Model.ConfigModel
                 #region
 				switch (index)
 				{
-                    case "ID":
-                        _ID = value.ToInt(); 
+                    case "ItemID":
+                        _ItemID = value.ToInt(); 
                         break; 
-                    case "Name":
-                        _Name = value.ToNotNullString(); 
+                    case "ItemName":
+                        _ItemName = value.ToNotNullString(); 
                         break;
-                    case "Type":
-                        _Type = value.ToEnum<ItemType>();
+                    case "ItemType":
+                        _ItemType = value.ToEnum<ItemType>();
                         break;
-                    case "Map":
-                        _Map = value.ToInt(); 
+                    case "Species":
+                        _Species = value.ToInt(); 
                         break; 
-                    case "Resource":
-                        _Resource = value.ToNotNullString();
+                    case "Quality":
+                        _Quality = value.ToEnum<ItemQuality>();
+                        break; 
+                    case "ResourceType":
+                        _ResourceType = value.ToEnum<ResourceType>();
                         break;
-                    case "GainProbability":
-                        _GainProbability = value.ToInt();
+                    case "ResourceNum":
+                        _ResourceNum = value.ToNotNullString();
                         break;
-                    case "Des":
-                        _Des = value.ToNotNullString();
+                    case "IfSell":
+                        _IfSell = value.ToBool();
+                        break;
+                    case "SellGold":
+                        _SellGold = value.ToNotNullString();
+                        break;
+                    case "hp":
+                        _hp = value.ToInt();
+                        break;
+                    case "attack":
+                        _attack = value.ToInt();
+                        break;
+                    case "defense":
+                        _defense = value.ToInt();
+                        break;
+                    case "dodge":
+                        _dodge = value.ToInt();
+                        break;
+                    case "crit":
+                        _crit = value.ToInt();
+                        break;
+                    case "hit":
+                        _hit = value.ToInt();
+                        break;
+                    case "tenacity":
+                        _tenacity = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Item index[{0}] isn't exist.", index));
 				}
@@ -186,10 +381,10 @@ namespace GameServer.Script.Model.ConfigModel
         
         #endregion
                 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
+        //protected override int GetIdentityId()
+        //{
+        //    //allow modify return value
+        //    return DefIdentityId;
+        //}
 	}
 }

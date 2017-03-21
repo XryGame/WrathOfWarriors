@@ -24,6 +24,8 @@ using GameServer.Script.Model.Enum;
 using System.Configuration;
 using System.Threading;
 using GameServer.Script.Model.Config;
+using ZyGames.Framework.Game.Runtime;
+using GameServer.CsScript.Remote;
 
 namespace GameServer.CsScript.Base
 {
@@ -38,11 +40,11 @@ namespace GameServer.CsScript.Base
 
         private static int cacheOverdueTime = ConfigUtils.GetSetting("CacheOverdueTime", "4").ToInt();
         private static bool _isRunning;
-
-        public static int userPassprotCount = 0;
-        public static int userRoleCount = 0;
+        
+        public static int UserCenterUserCount = 0;
 
         public static Competition64 competition64;
+        
         public static bool IsRunning
         {
             get { return _isRunning; }
@@ -92,7 +94,7 @@ namespace GameServer.CsScript.Base
             LoadGlobalData();
             //LoadUser();
 
-            GameUser.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
+            //UserBasisCache.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
             // 上传该服务器的状态
             TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "submitServerStatus", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
@@ -114,16 +116,15 @@ namespace GameServer.CsScript.Base
             
             InitRanking();
 
-            Bots.InitBots();
+            //Bots.InitBots();
 
-            if (competition64 == null)
-            {
-                competition64 = new Competition64();
-                competition64.Initialize();
-            }
-            
+            //if (competition64 == null)
+            //{
+            //    competition64 = new Competition64();
+            //    competition64.Initialize();
+            //}
 
-
+            ChatRemoteService.Reuest();
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统全局运行环境加载所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
@@ -145,7 +146,6 @@ namespace GameServer.CsScript.Base
             int timeOut = ConfigUtils.GetSetting("Ranking.timeout", "60").ToInt();
 
             RankingFactory.Add(new CombatRanking());
-            RankingFactory.Add(new LevelRanking());
             RankingFactory.Start(timeOut);
 
             // 设置竞技场不刷新
@@ -171,7 +171,7 @@ namespace GameServer.CsScript.Base
         //{
         //    var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
 
-        //    var command = dbProvider.CreateCommandStruct("GameUser", CommandMode.Inquiry, "UserID");
+        //    var command = dbProvider.CreateCommandStruct("UserBasisCache", CommandMode.Inquiry, "UserID");
         //    command.OrderBy = "LoginDate desc";
         //    command.Filter = dbProvider.CreateCommandFilter();
         //    command.Filter.Condition = command.Filter.FormatExpression("LoginDate", ">");
@@ -200,23 +200,21 @@ namespace GameServer.CsScript.Base
 
             //RestoreRedisFromDB(dbFilter);
 
-            var userCenterPassport = new ShareCacheStruct<UserCenterPassport>();
-            userCenterPassport.AutoLoad(dbFilter);
-            userPassprotCount = userCenterPassport.Count;
             var userCenterUser = new ShareCacheStruct<UserCenterUser>();
             userCenterUser.AutoLoad(dbFilter);
-            userRoleCount = userCenterUser.Count;
+            UserCenterUserCount = userCenterUser.Count;
 
 
-            new ShareCacheStruct<Config_RoleGrade>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_Role>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_SceneMap>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_Scene>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_SubjectExp>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_RoleInitial>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Soulstrong>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Giftbag>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Gem>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Item>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_ItemGrade>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Equip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Skill>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_SkillGrade>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_TeneralTranscript>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Monster>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Task>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Achievement>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Signin>().AutoLoad(dbFilter);
@@ -233,9 +231,6 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_BotsName>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_BotsChat>().AutoLoad(dbFilter);
 
-            new ShareCacheStruct<ClassDataCache>().AutoLoad(dbFilter);
-            new ShareCacheStruct<JobTitleDataCache>().AutoLoad(dbFilter);
-            new ShareCacheStruct<OccupyDataCache>().AutoLoad(dbFilter);
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
 
@@ -254,7 +249,7 @@ namespace GameServer.CsScript.Base
             {
                 if (sess.Connected)
                 {
-                    GameUser user = UserHelper.FindUser(sess.UserId);
+                    UserBasisCache user = UserHelper.FindUserBasis(sess.UserId);
                     if (user == null)
                         continue;
                     user.OfflineDate = DateTime.Now;
@@ -268,17 +263,16 @@ namespace GameServer.CsScript.Base
 
         public static void RestoreRedisFromDB(DbDataFilter ddf)
         {
+
+            new PersonalCacheStruct<UserBasisCache>().TryRecoverFromDb(ddf);
+            new PersonalCacheStruct<UserAttributeCache>().TryRecoverFromDb(ddf);
+            //new PersonalCacheStruct<UserAttributeCache>().TryRecoverFromDb(ddf);
+            new PersonalCacheStruct<UserPayCache>().TryRecoverFromDb(ddf);
+
             new ShareCacheStruct<CDKeyCache>().TryRecoverFromDb(ddf);
-            new ShareCacheStruct<ClassDataCache>().TryRecoverFromDb(ddf);
-            new PersonalCacheStruct<GameUser>().TryRecoverFromDb(ddf);
-            new ShareCacheStruct<JobTitleDataCache>().TryRecoverFromDb(ddf);
-            new ShareCacheStruct<NickNameCache>().TryRecoverFromDb(ddf);
-            new ShareCacheStruct<OccupyDataCache>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<OrderInfoCache>().TryRecoverFromDb(ddf);
-            new ShareCacheStruct<UserCenterPassport>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<UserCenterUser>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<CompetitionApply>().TryRecoverFromDb(ddf);
-            new PersonalCacheStruct<UserPayCache>().TryRecoverFromDb(ddf);
             new ShareCacheStruct<GameCache>().TryRecoverFromDb(ddf);
 
         }
@@ -318,8 +312,8 @@ namespace GameServer.CsScript.Base
                 0,
                 0,
                 1002,
-                1,
-                ConfigManager.Configger.GetFirstOrAddConfig<AppServerSection>().ProductServerId,
+                2,
+                GameEnvironment.ProductServerId,
                 status.ToInt(),
                 activeNum,
                 ConfigUtils.GetSetting("Game.IpAddress") + ":" + ConfigUtils.GetSetting("Game.Port"),
@@ -354,22 +348,23 @@ namespace GameServer.CsScript.Base
                 return;
             }
             //do something
-            /// 这里处理Bot的聊天
-            Bots.Chat();
-            /// 处理Bot切磋响应
-            Bots.FightResponse();
-            /// 处理Bot上线公告
-            Bots.OnlineNotification();
-            /// 处理Bot充值公告
-            Bots.PayVipNotification();
-            /// 处理Bot竞技道具公告
-            Bots.CombatItemNotification();
-            /// 处理Bot占领
-            Bots.Occupy();
-            //// 机器人自动参加竞选(测试)
-            //Bots.Campaign();
+            if (Bots.IsInitEnd)
+            {
+                /// 这里处理Bot的聊天
+                Bots.Chat();
+                /// 处理Bot切磋响应
+                Bots.FightResponse();
+                /// 处理Bot上线公告
+                Bots.OnlineNotification();
+                /// 处理Bot充值公告
+                Bots.PayVipNotification();
+            }
 
-            competition64.Run();
+
+            if (competition64 != null)
+                competition64.Run();
+
+            //CombineZone.Run();
         }
 
     }

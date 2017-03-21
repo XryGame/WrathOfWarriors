@@ -1,27 +1,22 @@
-﻿using GameServer.CsScript.Com;
-using GameServer.CsScript.GM;
+﻿using ZyGames.Framework.Game.Service;
 using GameServer.Script.CsScript.Action;
-using GameServer.Script.CsScript.Com;
-using GameServer.Script.Model.DataModel;
+using GameServer.CsScript.JsonProtocol;
+using ZyGames.Framework.Game.Model;
 using GameServer.Script.Model.Enum;
-using System;
-using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Common.Configuration;
-using ZyGames.Framework.Game.Config;
-using ZyGames.Framework.Game.Lang;
-using ZyGames.Framework.Game.Service;
+using GameServer.CsScript.Remote;
+using GameServer.Script.Model.DataModel;
 
 namespace GameServer.CsScript.Action
 {
     /// <summary>
-    /// Send chat
+    /// 聊天消息
     /// </summary>
     public class Action3001 : BaseAction
     {
-        private ChatType _chattype;
-        private string _message;
-        private int _whisperuid;
-        private bool IsSendSucceed = false;
+        private ChatType _chatType;
+        private string _content;
+        private int _whisperUserID;
+
         public Action3001(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action3001, actionGetter)
         {
@@ -34,13 +29,11 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool GetUrlElement()
         {
-            if (httpGet.GetString("Message", ref _message)
-                && !string.IsNullOrEmpty(_message)
-                && httpGet.GetEnum("ChatType", ref _chattype)
-                && httpGet.GetInt("WhisperUid", ref _whisperuid))
+            if (httpGet.GetEnum("ChatType", ref _chatType)
+                && httpGet.GetString("Content", ref _content)
+                && httpGet.GetInt("WhisperUserID", ref _whisperUserID))
             {
-                if (_chattype != ChatType.System)
-                    return true;
+                return true;
             }
             return false;
         }
@@ -51,158 +44,34 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool TakeAction()
         {
-            
-            if (_chattype == ChatType.Class && ContextUser.ClassData.ClassID == 0)
+            switch (_chatType)
             {
-                ErrorCode = Language.Instance.ErrorCode;
-                ErrorInfo = Language.Instance.St3001_ChaTypeNotGuildMember;
-                return false;
-            }
-
-            if (_message.Trim().Length == 0)
-            {
-                ErrorCode = Language.Instance.ErrorCode;
-                ErrorInfo = Language.Instance.St3001_ContentNotEmpty;
-                return false;
-            }
-
-            if (!TryXChatService.IsAllow(ContextUser, _chattype))
-            {
-                ErrorCode = Language.Instance.ErrorCode;
-                ErrorInfo = Language.Instance.St3001_ChatNotSend;
-                return false;
-            }
-
-
-
-            bool IsGmCommand = false;
-            var section = ConfigManager.Configger.GetFirstOrAddConfig<MiddlewareSection>();
-            if (section.EnableGM)
-            {
-                try
-                {
-                    string lower = _message.ToLower();
-                    if (_message.Trim() != "" && lower.StartsWith("gm ", StringComparison.OrdinalIgnoreCase))
+                case ChatType.AllService:
                     {
-                        TryXGMCommand command = null; 
-                        if ("gm cache".StartsWith(lower))
-                        {
-                            CacheFactory.UpdateNotify(true);
-                        }
-                        else if (lower.StartsWith("gm setlv"))
-                        {
-                            command = new SetLevelCommand();
-                        }
-                        else if (lower.StartsWith("gm vit"))
-                        {
-                            command = new VitCommand();
-                        }
-                        else if (lower.StartsWith("gm diamond"))
-                        {
-                            command = new DiamondCommand();
-                        }
-                        else if (lower.StartsWith("gm pay"))
-                        {
-                            command = new PayMoneyCommand();
-                        }
-                        else if (lower.StartsWith("gm weekcard"))
-                        {
-                            command = new PayWeekCardCommand();
-                        }
-                        else if (lower.StartsWith("gm monthcard"))
-                        {
-                            command = new PayMonthCardCommand();
-                        }
-                        else
-                        {
-                            var chatService = new TryXChatService(ContextUser);
-                            chatService.SystemSendWhisper(ContextUser, string.Format(TryXGMCommand.CmdError, _message));
-
-                            _chattype = ChatType.Whisper;
-                            IsSendSucceed = true;
-                        }
-                        if (command != null)
-                        {
-                            command.Parse(ContextUser.UserID, _message);
-                            command.ProcessCmd();
-                        }
-                        IsGmCommand = true;
+                        ChatRemoteService.SendAllServerChat(GetBasis.UserID, _content);
                     }
-                    
-                }
-                catch (Exception ex)
-                {
-                    SaveLog(ex);
-                    ErrorCode = Language.Instance.ErrorCode;
-                    ErrorInfo = ex.Message;
-                    return false;
-                }
+                    break;
+                case ChatType.World:
+                    {
+                        ChatRemoteService.SendWorldChat(GetBasis.UserID, _content);
+                        // 每日
+                        UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.WorldChat, 1);
+                    }
+                    break;
+                case ChatType.Whisper:
+                    {
+                        ChatRemoteService.SendWhisperChat(GetBasis.UserID, _whisperUserID, _content);
+                    }
+                    break;
+                case ChatType.Guild:
+                    {
+                        ChatRemoteService.SendGuildChat(GetBasis.UserID, _content);
+                    }
+                    break;
             }
-
-            if (IsGmCommand)
-            {
-                var chatService = new TryXChatService(ContextUser);
-                chatService.SystemSendWhisper(ContextUser, _message);
-
-                _chattype = ChatType.Whisper;
-                IsSendSucceed = true;
-            }
-            else
-            {
-                //NoviceHelper.WingFestival(ContextUser.UserID, _content);
-                //NoviceHelper.WingZhongYuanFestival(ContextUser, _content);
-                //使用聊天道具
-                //UserItemHelper.UseUserItem(ContextUser.UserID, chatItemId, 1);
-                var chatService = new TryXChatService(ContextUser);
-                if (_chattype == ChatType.Whisper)
-                {
-                    GameUser whisper = UserHelper.FindUser(_whisperuid);
-                    if (whisper != null)
-                        chatService.SendWhisper(whisper, _message);
-                }
-                else
-                {
-                    chatService.Send(_chattype, _message);
-                }
-                IsSendSucceed = true;
-            }
-
             return true;
         }
 
-        protected override string BuildJsonPack()
-        {
-            body = true;
-            return base.BuildJsonPack();
-        }
-
-
-        public override void TakeActionAffter(bool state)
-        {
-            if (IsSendSucceed)
-            {
-                switch (_chattype)
-                {
-                    case ChatType.World:
-                        {
-                            PushMessageHelper.SendWorldChatToOnlineUser();
-                        }
-                        break;
-                    case ChatType.Class:
-                        {
-                            PushMessageHelper.SendClassChatToClassMember(ContextUser.ClassData.ClassID);
-                        }
-                        break;
-                    case ChatType.Whisper:
-                        {
-                            PushMessageHelper.SendWhisperChatToUser(ContextUser.UserID, _whisperuid);
-                        }
-                        break;
-                }
-            }
-
-            
-            base.TakeActionAffter(state);
-        }
     }
 }
+

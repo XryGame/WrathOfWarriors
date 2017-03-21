@@ -1,0 +1,237 @@
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+13:04:01 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+13:14:01 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+13:24:01 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+13:25:05 Server is starting...
+13:25:05 Redis server connect successfully.
+13:25:09 DB server connect successfully.
+13:25:11 Start checking table schema, please wait.
+13:25:13 Check table schema successfully.
+13:25:13 script compiled successfully.
+13:25:13 CacheFactory listen has started...
+13:25:13 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-03-02 13:25:13:171-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-03-02 13:25:13:171-Trace>>Http service:168.254.0.254:8091/GM.aspx is started.
+
+
+Time:2017-03-02 13:25:13:177-消息：系统加载单服配置开始...
+
+
+Time:2017-03-02 13:25:13:990-消息：系统加载单服配置所需时间:812.4116ms
+
+
+Time:2017-03-02 13:25:14:039-The ranking refresh is start...
+
+
+Time:2017-03-02 13:25:14:069-Trace>>The CombatRanking has be loaded, count:3
+
+
+Time:2017-03-02 13:25:14:069-The ranking refresh is end.
+
+
+Time:2017-03-02 13:25:14:083-消息：Connect to ChatService is successfully
+
+
+Time:2017-03-02 13:25:14:084-消息：系统全局运行环境加载所需时间:914.1318ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+13:25:14 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+13:26:07 Server is starting...
+13:26:08 Redis server connect successfully.
+13:26:11 DB server connect successfully.
+13:26:14 Start checking table schema, please wait.
+13:26:15 Check table schema successfully.
+13:26:15 script compiled successfully.
+13:26:15 CacheFactory listen has started...
+13:26:15 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-03-02 13:26:15:792-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-03-02 13:26:15:793-Trace>>Http service:168.254.0.254:8091/GM.aspx is started.
+
+
+Time:2017-03-02 13:26:15:799-消息：系统加载单服配置开始...
+
+
+Time:2017-03-02 13:26:16:643-消息：系统加载单服配置所需时间:842.4072ms
+
+
+Time:2017-03-02 13:26:16:696-The ranking refresh is start...
+
+
+Time:2017-03-02 13:26:16:715-Trace>>The CombatRanking has be loaded, count:3
+
+
+Time:2017-03-02 13:26:16:715-The ranking refresh is end.
+
+
+Time:2017-03-02 13:26:16:728-消息：Connect to ChatService is successfully
+
+
+Time:2017-03-02 13:26:16:729-消息：系统全局运行环境加载所需时间:937.1375ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+13:26:17 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+13:36:20 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+13:58:19 Server is starting...
+13:58:19 Redis server connect successfully.
+13:58:23 DB server connect successfully.
+13:58:26 Start checking table schema, please wait.
+13:58:27 Check table schema successfully.
+13:58:27 script compiled successfully.
+13:58:27 CacheFactory listen has started...
+13:58:27 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-03-02 13:58:27:429-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-03-02 13:58:27:430-Trace>>Http service:168.254.0.254:8091/GM.aspx is started.
+
+
+Time:2017-03-02 13:58:27:436-消息：系统加载单服配置开始...
+
+
+Time:2017-03-02 13:58:28:230-消息：系统加载单服配置所需时间:794.167ms
+
+
+Time:2017-03-02 13:58:28:278-The ranking refresh is start...
+
+
+Time:2017-03-02 13:58:28:310-Trace>>The CombatRanking has be loaded, count:3
+
+
+Time:2017-03-02 13:58:28:311-The ranking refresh is end.
+
+
+Time:2017-03-02 13:58:28:322-消息：Connect to ChatService is successfully
+
+
+Time:2017-03-02 13:58:28:323-消息：系统全局运行环境加载所需时间:894.5984ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+13:58:28 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1

@@ -50,35 +50,31 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser dest = UserHelper.FindUser(destuid);
-            if (dest == null)
-            {
-                ErrorInfo = Language.Instance.NoFoundUser;
-                return true;
-            }
-
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
+            UserFriendsCache destFriends = UserHelper.FindUserFriends(destuid);
+            
            
-            if (!ContextUser.IsHaveFriend(destuid))
+            if (!GetFriends.IsHaveFriend(destuid))
             {
                 ErrorInfo = Language.Instance.RequestIDError;
                 return true;
             }
 
-            if (ContextUser.FriendsData.GiveAwayCount >= DataHelper.FriendGiveAwayCountMax)
+            if (GetFriends.GiveAwayCount >= DataHelper.FriendGiveAwayCountMax)
             {
                 ErrorInfo = Language.Instance.NoValidTimes;
                 return true;
             }
 
-            FriendData fd = ContextUser.FindFriend(destuid);
-            FriendData byfd = dest.FindFriend(ContextUser.UserID);
+            FriendData fd = GetFriends.FindFriend(destuid);
+            FriendData byfd = destFriends.FindFriend(GetBasis.UserID);
             if (fd.IsGiveAway || byfd == null)
             {
                 ErrorInfo = Language.Instance.RequestIDError;
                 return true;
             }
 
-            ContextUser.FriendsData.GiveAwayCount++;
+            GetFriends.GiveAwayCount++;
             fd.IsGiveAway = true;
             byfd.IsByGiveAway = true;
             byfd.IsReceiveGiveAway = false;
@@ -87,15 +83,13 @@ namespace GameServer.CsScript.Action
             if (session != null && session.Connected)
             {
                 var parameters = new Parameters();
-                parameters["Uid"] = ContextUser.UserID;
+                parameters["Uid"] = GetBasis.UserID;
                 var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1057, session, parameters, OpCode.Text, null);
                 ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1057, packet, (sessions, asyncResult) => { }, 0);
             }
             
             receipt = destuid;
 
-            // 每日
-            UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.GiveAwayFriend, 1);
 
             return true;
         }

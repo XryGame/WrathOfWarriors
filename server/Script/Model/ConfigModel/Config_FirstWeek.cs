@@ -42,9 +42,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 奖励类型
         /// </summary>
-        private AwardType _AwardType;
+        private TaskAwardType _AwardType;
         [EntityField("AwardType")]
-        public AwardType AwardType
+        public TaskAwardType AwardType
         {
             get
             {
@@ -113,7 +113,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _ID = value.ToInt(); 
                         break; 
                     case "AwardType":
-                        _AwardType = value.ToEnum<AwardType>();
+                        _AwardType = value.ToEnum<TaskAwardType>();
                         break;
                     case "AwardID":
                         _AwardID = value.ToInt();

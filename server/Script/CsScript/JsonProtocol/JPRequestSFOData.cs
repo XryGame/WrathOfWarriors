@@ -20,10 +20,7 @@ namespace GameServer.CsScript.JsonProtocol
         public int CurrDiamond { get; set; }
 
         public List<int> AwardItemList { get; set; }
-
-        public CacheList<ItemData> ItemList { get; set; }
-
-        public CacheList<SkillData> SkillList { get; set; }
+        
         
     }
 }

@@ -28,14 +28,14 @@ namespace GameServer.CsScript.GM
         /// <param name="userId"></param>
         private void SetLevel(int userId, int lv)
         {
-            GameUser user = UserHelper.FindUser(userId);
+            UserBasisCache user = UserHelper.FindUserBasis(userId);
             if (user == null)
                 return;
 
             if (user.UserLv >= lv)
                 return;
 
-            var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
+            var roleGradeCache = new ShareCacheStruct<Config_RoleInitial>();
             if (lv > roleGradeCache.FindAll().Count)
                 return;
 
@@ -43,13 +43,13 @@ namespace GameServer.CsScript.GM
             for (int i = 0; i < count; ++i)
             {
                 user.UserLv++;
-                user.UserLevelUp();
+                UserHelper.UserLevelUp(userId);
             }
             var grade = roleGradeCache.FindKey(user.UserLv - 1);
             if (grade != null)
             {
-                user.BaseExp = grade.BaseExp;
-                user.FightExp = grade.FightExp;
+                //user.BaseExp = grade.BaseExp;
+                //user.FightExp = grade.FightExp;
             }
                 
 

@@ -1,0 +1,15 @@
+Time:2017-03-14 10:15:53:222-Trace>>Not found DB connection key "PayCenter" of the SensitiveWord entity.
+
+
+Time:2017-03-14 10:15:53:899-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 148
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 117
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

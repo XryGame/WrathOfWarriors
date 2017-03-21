@@ -1,22 +1,28 @@
-﻿using GameServer.CsScript.JsonProtocol;
+﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.Com;
+using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Log;
+using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1112_购买解锁场景地图
+    /// 1112_再次挑战
     /// </summary>
     public class Action1112 : BaseAction
     {
-        private JPBuyData receipt;
-        private int mapid;
+        private bool receipt = false;
 
+        private int _Diamond;
         public Action1112(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1112, actionGetter)
         {
@@ -31,7 +37,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("MapId", ref mapid))
+            if (httpGet.GetInt("Diamond", ref _Diamond))
             {
                 return true;
             }
@@ -40,22 +46,14 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPBuyData();
-            receipt.Result = EventStatus.Good;
-            Config_SceneMap scenemap = new ShareCacheStruct<Config_SceneMap>().FindKey(mapid);
-            if (scenemap == null
-                || ContextUser.UnlockSceneMapList.Find(t => (t == mapid)) != 0
-                || ContextUser.DiamondNum < scenemap.UnLockPay)
+            if (GetBasis.DiamondNum < _Diamond)
             {
-                receipt.Result = EventStatus.Bad;
-                return true;
+                return false;
             }
+            UserHelper.ConsumeDiamond(Current.UserId, _Diamond);
 
-            ContextUser.UnlockSceneMapList.Add(mapid);
-            ContextUser.SelectedSceneMapId = mapid;
-            ContextUser.UsedDiamond = MathUtils.Addition(ContextUser.UsedDiamond, scenemap.UnLockPay);
-            receipt.CurrDiamond = ContextUser.DiamondNum;
-            receipt.Extend1 = mapid;
+            receipt = true;
+
             return true;
         }
     }

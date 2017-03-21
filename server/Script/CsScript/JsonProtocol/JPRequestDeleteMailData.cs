@@ -8,13 +8,13 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPRequestDeleteMailData()
         {
-            MailBox = new CacheList<MailData>();
+            MailList = new CacheList<MailData>();
         }
 
         public bool IsAll { get; set; }
 
         public EventStatus Result { get; set; }
 
-        public CacheList<MailData> MailBox { get; set; }
+        public CacheList<MailData> MailList { get; set; }
     }
 }

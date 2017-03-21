@@ -25,11 +25,105 @@ namespace GameServer.Script.CsScript.Action
         /// <summary>
         /// 上下文玩家
         /// </summary>
-        public GameUser ContextUser
+        public UserBasisCache GetBasis
         {
             get
             {
-                return PersonalCacheStruct.Get<GameUser>(Current.UserId.ToString());
+                return UserHelper.FindUserBasis(Current.UserId);
+            }
+        }
+
+        public UserAttributeCache GetAttribute
+        {
+            get
+            {
+                return UserHelper.FindUserAttribute(Current.UserId);
+            }
+        }
+
+        public UserEquipsCache GetEquips
+        {
+            get
+            {
+                return UserHelper.FindUserEquips(Current.UserId);
+            }
+        }
+
+        public UserPackageCache GetPackage
+        {
+            get
+            {
+                return UserHelper.FindUserPackage(Current.UserId);
+            }
+        }
+
+        public UserSoulCache GetSoul
+        {
+            get
+            {
+                return UserHelper.FindUserSoul(Current.UserId);
+            }
+        }
+        public UserSkillCache GetSkill
+        {
+            get
+            {
+                return UserHelper.FindUserSkill(Current.UserId);
+            }
+        }
+        public UserFriendsCache GetFriends
+        {
+            get
+            {
+                return UserHelper.FindUserFriends(Current.UserId);
+            }
+        }
+
+        public UserAchievementCache GetAchievement
+        {
+            get
+            {
+                return UserHelper.FindUserAchievement(Current.UserId);
+            }
+        }
+
+        public UserMailBoxCache GetMailBox
+        {
+            get
+            {
+                return UserHelper.FindUserMailBox(Current.UserId);
+            }
+        }
+
+        public UserTaskCache GetTask
+        {
+            get
+            {
+                return UserHelper.FindUserTask(Current.UserId);
+            }
+        }
+
+        public UserPayCache GetPay
+        {
+            get
+            {
+                return UserHelper.FindUserPay(Current.UserId);
+            }
+        }
+
+        public UserCombatCache GetCombat
+        {
+            get
+            {
+                return UserHelper.FindUserCombat(Current.UserId);
+            }
+        }
+
+        public UserEventAwardCache GetEventAward
+        {
+            get
+            {
+                return UserHelper.FindUserEventAward(Current.UserId);
             }
         }
 
@@ -52,7 +146,8 @@ namespace GameServer.Script.CsScript.Action
         protected override string BuildJsonPack()
         {
             _resultData.intend(ErrorCode, ErrorInfo);
-            return MathUtils.ToJson(_resultData);
+            string retString = MathUtils.ToJson(_resultData);
+            return retString;
         }
     }
 }

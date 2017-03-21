@@ -75,6 +75,23 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
+        /// 活跃度
+        /// </summary>
+        private int _Liveness;
+        [EntityField("Liveness")]
+        public int Liveness
+        {
+            get
+            {
+                return _Liveness;
+            }
+            set
+            {
+                SetChange("Liveness", value);
+            }
+        }
+
+        /// <summary>
         /// 任务奖励类型
         /// </summary>
         private TaskAwardType _RewardsType;
@@ -94,9 +111,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 任务奖励数量
         /// </summary>
-        private int _RewardsNum;
+        private string _RewardsNum;
         [EntityField("RewardsNum")]
-        public int RewardsNum
+        public string RewardsNum
         {
             get
             {
@@ -118,6 +135,7 @@ namespace GameServer.Script.Model.ConfigModel
                     case "id": return id;
                     case "Objective": return Objective;
                     case "ObjectiveNum": return ObjectiveNum;
+                    case "Liveness": return Liveness;
                     case "RewardsType": return RewardsType;
                     case "RewardsNum": return RewardsNum;
                     default: throw new ArgumentException(string.Format("Config_Task index[{0}] isn't exist.", index));
@@ -138,11 +156,14 @@ namespace GameServer.Script.Model.ConfigModel
                     case "ObjectiveNum":
                         _ObjectiveNum = value.ToInt(); 
                         break;
+                    case "Liveness":
+                        _Liveness = value.ToInt();
+                        break;
                     case "RewardsType":
                         _RewardsType = value.ToEnum<TaskAwardType>();
                         break;
                     case "RewardsNum":
-                        _RewardsNum = value.ToInt();
+                        _RewardsNum = value.ToNotNullString();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Task index[{0}] isn't exist.", index));
 				}

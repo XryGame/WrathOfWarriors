@@ -13,126 +13,7 @@ namespace GameServer.Script.CsScript.Com
 {
     class PushMessageHelper
     {
-        /// <summary>
-        /// 发送公告消息到在线用户通知
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="context"></param>
-        public static void SendNoticeToOnlineUser(NoticeType type, string context)
-        {
-            var list = UserHelper.GetOnlinesList();
-            if (list.Count > 0)
-            {
-                var parameter = new Parameters();
-                parameter["NoticeType"] = type;
-                parameter["Context"] = context;
-                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3003, parameter, (s, r) => { }, OpCode.Text, 0);
-            }
-
-        }
-        /// <summary>
-        /// 发送公告消息到用户通知
-        /// </summary>
-        /// <param name="session"></param>
-        /// <param name="type"></param>
-        /// <param name="context"></param>
-        public static void SendNoticeToUser(GameSession session, NoticeType type, string context)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var parameter = new Parameters();
-            parameter["NoticeType"] = type;
-            parameter["Context"] = context;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action3002, session, parameter, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action3002, packet, (sessionUser, asyncResult) => { }, 0);
-        }
-        /// <summary>
-        /// 发送世界消息通知
-        /// </summary>
-        public static void SendWorldChatToOnlineUser()
-        {
-            var list = UserHelper.GetOnlinesList();
-            if (list.Count > 0)
-            {
-                var parameters = new Parameters();
-                parameters["ChatType"] = ChatType.World;
-                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
-            }
-
-        }
-        /// <summary>
-        /// 发送聊天消息到指定班级成员通知
-        /// </summary>
-        /// <param name="classid"></param>
-        public static void SendClassChatToClassMember(int classid)
-        {
-            var userList = new List<IUser>();
-            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
-            foreach (int memuid in classes.MemberList)
-            {
-                var mem = UserHelper.FindUser(memuid);
-                var session = GameSession.Get(memuid);
-                if (mem != null && session != null && session.Connected)
-                {
-                    userList.Add(new SessionUser(mem));
-                }
-            }
-            var parameters = new Parameters();
-            parameters["ChatType"] = ChatType.Class;
-            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action3002, parameters, (asyncResult) => { }, OpCode.Text, 0);
-        }
-        /// <summary>
-        /// 发送私聊消息通知
-        /// </summary>
-        /// <param name="whisperuid"></param>
-        public static void SendWhisperChatToUser(int fromuid, int whisperuid)
-        {
-            var wsession = GameSession.Get(whisperuid);
-            if (wsession != null && wsession.Connected)
-            {
-                var parameters = new Parameters();
-                parameters["ChatType"] = ChatType.Whisper;
-                var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action3002, wsession, parameters, OpCode.Text, null);
-                ActionFactory.SendAction(wsession, ActionIDDefine.Cst_Action3002, packet, (session, asyncResult) => { }, 0);
-            }
-            wsession = GameSession.Get(fromuid);
-            if (wsession != null && wsession.Connected)
-            {
-                var parameters = new Parameters();
-                parameters["ChatType"] = ChatType.Whisper;
-                var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action3002, wsession, parameters, OpCode.Text, null);
-                ActionFactory.SendAction(wsession, ActionIDDefine.Cst_Action3002, packet, (session, asyncResult) => { }, 0);
-            }
-        }
-        /// <summary>
-        /// 发送系统消息到在线用户通知
-        /// </summary>
-        public static void SendSystemChatToOnlineUser()
-        {
-            var list = UserHelper.GetOnlinesList();
-            if (list.Count > 0)
-            {
-                var parameters = new Parameters();
-                parameters["ChatType"] = ChatType.System;
-                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action3002, parameters, (s, r) => { }, OpCode.Text, 0);
-            }
-        }
-
-        /// <summary>
-        /// 发送系统消息到指定用户通知
-        /// </summary>
-        public static void SendSystemChatToUser(GameSession session)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var parameters = new Parameters();
-            parameters["ChatType"] = ChatType.System;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action3002, session, parameters, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action3002, packet, (rsession, asyncResult) => { }, 0);
-        }
-
-
-
+  
         /// <summary>
         /// 第二天在
         /// </summary>
@@ -143,59 +24,39 @@ namespace GameServer.Script.CsScript.Com
                 ActionFactory.SendAction(list, ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
         }
 
+
         /// <summary>
-        /// 班级班长更换通知
+        /// 每日任务更新通知
         /// </summary>
         /// <param name="classid"></param>
-        public static void ClassMonitorChangeNotification(int classid)
-        {
-            var userList = new List<IUser>();
-            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
-            if (classes == null)
-                return;
-            foreach (int memuid in classes.MemberList)
-            {
-                var mem = UserHelper.FindUser(memuid);
-                var session = GameSession.Get(memuid);
-                if (mem != null && session != null && session.Connected)
-                {
-                    userList.Add(new SessionUser(mem));
-                }
-            }
-
-            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action1059, null, (asyncResult) => { }, OpCode.Text, 0);
-        }
-
-        /// <summary>
-        /// 每日任务计数改变通知
-        /// </summary>
-        /// <param name="classid"></param>
-        public static void DailyQuestFinishNotification(GameSession session)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1060, session, null, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1060, packet, (rsession, asyncResult) => { }, 0);
-        }
-
-        /// <summary>
-        /// 成就完成通知
-        /// </summary>
-        public static void AchievementFinishNotification(GameSession session, int id)
+        public static void DailyQuestUpdateNotification(GameSession session, TaskType type)
         {
             if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
-            parameters["ID"] = id;
+            parameters["ID"] = type;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1060, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1060, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 成就更新通知
+        /// </summary>
+        public static void AchievementUpdateNotification(GameSession session, AchievementType type)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["ID"] = type;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1061, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1061, packet, (rsession, asyncResult) => { }, 0);
         }
 
         /// <summary>
-        /// 战斗力改变通知
+        /// 属性改变通知
         /// </summary>
         /// <param name="session"></param>
-        public static void UserFightValueChangedNotification(GameSession session)
+        public static void UserAttributeChangedNotification(GameSession session)
         {
             if (session == null || !session.Connected)
                 return;
@@ -206,13 +67,12 @@ namespace GameServer.Script.CsScript.Com
         /// <summary>
         /// 升级通知
         /// </summary>
-        public static void UserLevelUpNotification(GameSession session, bool ischangeclass)
+        public static void UserLevelUpNotification(GameSession session)
         {
             if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
-            parameters["IsChangeClass"] = ischangeclass;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, parameters, OpCode.Text, null);
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
         }
 
@@ -228,6 +88,29 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
         }
 
+        /// <summary>
+        /// 金币改变通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void UserGoldChangedNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1049, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1049, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新物品通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void UserNewItemNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1058, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1058, packet, (rsession, asyncResult) => { }, 0);
+        }
 
         /// <summary>
         /// 切磋邀请通知
@@ -296,61 +179,7 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1066, packet, (rsession, asyncResult) => { }, 0);
         }
 
-        /// <summary>
-        /// 班级 占领加成改变通知
-        /// </summary>
-        /// <param name="classid"></param>
-        public static void ClassOccupyAddChangeNotification(int classid)
-        {
-            var userList = new List<IUser>();
-            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
-            foreach (int memuid in classes.MemberList)
-            {
-                var mem = UserHelper.FindUser(memuid);
-                var session = GameSession.Get(memuid);
-                if (mem != null && session != null && session.Connected)
-                {
-                    userList.Add(new SessionUser(mem));
-                }
-            }
-
-            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action1067, null, (asyncResult) => { }, OpCode.Text, 0);
-        }
-
-
-        /// <summary>
-        /// 班级 竞选加成改变通知
-        /// </summary>
-        /// <param name="classid"></param>
-        public static void ClassJobTitleAddChangeNotification(int classid)
-        {
-            var userList = new List<IUser>();
-            ClassDataCache classes = new ShareCacheStruct<ClassDataCache>().FindKey(classid);
-            foreach (int memuid in classes.MemberList)
-            {
-                var mem = UserHelper.FindUser(memuid);
-                var session = GameSession.Get(memuid);
-                if (mem != null && session != null && session.Connected)
-                {
-                    userList.Add(new SessionUser(mem));
-                }
-            }
-
-            ActionFactory.SendAction(userList, ActionIDDefine.Cst_Action1068, null, (asyncResult) => { }, OpCode.Text, 0);
-        }
-
-        /// <summary>
-        /// 个人竞选加成改变通知
-        /// </summary>
-        /// <param name="session"></param>
-        public static void UserJobTitleAddChangedNotification(GameSession session)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1068, session, null, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1068, packet, (rsession, asyncResult) => { }, 0);
-        }
-
+        
         /// <summary>
         /// 好友上线通知
         /// </summary>

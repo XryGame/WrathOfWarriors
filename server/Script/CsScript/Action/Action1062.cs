@@ -49,7 +49,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            GameUser inviter = UserHelper.FindUser(inviteruid);
+            UserBasisCache inviter = UserHelper.FindUserBasis(inviteruid);
             if (inviter == null)
                 return false;
 
@@ -57,7 +57,7 @@ namespace GameServer.CsScript.Action
             {
                 UserId = inviter.UserID,
                 NickName = inviter.NickName,
-                FightValue = inviter.FightingValue,
+                //FightValue = inviter.FightingValue,
                 VipLv = inviter.VipLv
             };
             //receipt = id;

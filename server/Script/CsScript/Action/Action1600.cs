@@ -42,54 +42,36 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool TakeAction()
         {
-            GameUser user = UserHelper.FindUser(_queryuserid);
-            if (user == null)
-            {
-                ErrorInfo = Language.Instance.NoFoundUser;
-                return true;
-            }
-
+            UserBasisCache basis = UserHelper.FindUserBasis(_queryuserid);
+            
 
             receipt = new JPQueryUserData()
             {
-                UserId = user.UserID,
-                NickName = user.NickName,
-                LooksId = user.LooksId,
-                FightValue = user.FightingValue,
-                Attack = user.Attack,
-                Defense = user.Defense,
-                Hp = user.Hp,
-                UserStage = user.UserStage,
-                CombatRankId = user.CombatData.RankID,
-                SkillList = user.SkillDataList,
-                SkillCarryList = user.SkillCarryList,
-                VipLv = user.VipLv
+                UserId = basis.UserID,
+                NickName = basis.NickName,
+                Profession = basis.Profession,
+                //FightValue = user.FightingValue,
+                //Attack = user.Attack,
+                //Defense = user.Defense,
+                //Hp = user.Hp,
+                //UserStage = user.UserStage,
+                CombatRankId = basis.CombatRankID,
+                VipLv = basis.VipLv
             };
-            foreach (var item in DataHelper.CombatItemList)
-            {
-                ItemData data = new ItemData();
-                data.ID = item.ID;
-                data.Num = 0;
-                receipt.CombatItemList.Add(data);
-                var itemdata = user.findItem(item.ID);
-                if (itemdata != null)
-                {
-                    data.Num = itemdata.Num;
-                }
-            }
 
-            GameSession session = GameSession.Get(user.UserID);
+
+            GameSession session = GameSession.Get(basis.UserID);
             if (session != null && session.Connected)
                 receipt.IsOnline = true;
 
-            if (user.ClassData.ClassID != 0)
-            {
-                var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
-                if (classdata != null)
-                {
-                    receipt.ClassName = classdata.Name;
-                }
-            }
+            //if (user.ClassData.ClassID != 0)
+            //{
+            //    var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
+            //    if (classdata != null)
+            //    {
+            //        receipt.ClassName = classdata.Name;
+            //    }
+            //}
 
             return true;
         }

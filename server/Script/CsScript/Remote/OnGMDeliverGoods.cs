@@ -18,8 +18,6 @@ namespace GameServer.CsScript.Remote
 
     public class OnGMDeliverGoods : HttpMessageInterface
     {
-        public static readonly OnGMDeliverGoods instance = new OnGMDeliverGoods();
-
         private string _data;
         private JsonResult receipt;
 
@@ -83,8 +81,8 @@ namespace GameServer.CsScript.Remote
                         break;
                     }
 
-                    GameUser user = UserHelper.FindUser(jsoninfo.UserId);
-                    if (user == null || user.EnterServerId != jsoninfo.ServerID)
+                    UserBasisCache user = UserHelper.FindUserBasis(jsoninfo.UserId);
+                    if (user == null || user.ServerID != jsoninfo.ServerID)
                     {
                         receipt.ResultString = "没有找到该玩家";
                         break;

@@ -109,7 +109,7 @@ namespace GameServer.CsScript.Base
         }
         #endregion
 
-        #region 读取Get数据 private Dictionary<string, string> GetRequestExec()
+        #region 读取Get数据 public Dictionary<string, string> GetRequestExec()
         /// <summary>
         /// 读取Get数据
         /// </summary>
@@ -129,11 +129,11 @@ namespace GameServer.CsScript.Base
         }
         #endregion
 
-        #region 读取提交的数据 private void handlePOSTRequest()
+        #region 读取提交的数据 public void handlePOSTRequest()
         /// <summary>
         /// 读取提交的数据
         /// </summary>
-        private Dictionary<string, string> PostRequestExec()
+        public Dictionary<string, string> PostRequestExec()
         {
             int content_len = 0;
             MemoryStream ms = new MemoryStream();
@@ -196,6 +196,8 @@ namespace GameServer.CsScript.Base
         private static Dictionary<string, string> getData(string rawData)
         {
             var rets = new Dictionary<string, string>();
+            if (rawData == string.Empty)
+                return rets;
             string[] rawParams = rawData.Split('&');
             foreach (string param in rawParams)
             {
@@ -219,6 +221,7 @@ namespace GameServer.CsScript.Base
         {
             return http_method.Equals("POST");
         }
+
     }
 
 

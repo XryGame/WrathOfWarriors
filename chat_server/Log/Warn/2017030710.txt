@@ -1,0 +1,6 @@
+Time:2017-03-07 10:25:51:549-Trace>>ClearTemp dir E:\ServerTools\code\Wrath of warriors\server\chat_server\ScriptRuntimeDomain error:System.IO.IOException: 文件“protobuf-net.DLL”正由另一进程使用，因此该进程无法访问此文件。
+   在 System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   在 System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   在 ZyGames.Framework.Script.ScriptCompiler.ClearTemp(String dirName)
+
+

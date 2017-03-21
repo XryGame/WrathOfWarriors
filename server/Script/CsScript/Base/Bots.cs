@@ -51,7 +51,9 @@ namespace GameServer.CsScript.Base
             }
         }
 
-        private static List<GameUser> BotsList = new List<GameUser>();
+        public static bool IsInitEnd = false;
+
+        private static List<UserBasisCache> BotsList = new List<UserBasisCache>();
 
         private static List<ChatBot> ChatList = new List<ChatBot>();
 
@@ -59,17 +61,12 @@ namespace GameServer.CsScript.Base
 
         private static List<FightBot> FightList = new List<FightBot>();
 
-        private static int OnlineIntervalCount = 0;
+        //private static int OnlineIntervalCount = 0;
 
         private static int PayVipIntervalCount = 0;
 
-        private static int CombatItemIntervalCount = 0;
 
-        private static int OccupyIntervalCount = 0;
-
-        //private static int TempCount = 0;
-
-        public static List<GameUser> getBots
+        public static List<UserBasisCache> getBots
         {
             get
             {
@@ -79,7 +76,7 @@ namespace GameServer.CsScript.Base
 
         public static void InitBots()
         {
-            new PersonalCacheStruct<GameUser>().LoadFrom(t => (t.EnterServerId == 0));
+            new PersonalCacheStruct<UserBasisCache>().LoadFrom(t => (t.ServerID == 0));
 
             int maxBotNum = 20;
             int currBotNum = 0;
@@ -110,199 +107,171 @@ namespace GameServer.CsScript.Base
                     {
                         v.VipLv = random.Next(maxviplv - minviplv + 1) + minviplv;
                     }
-                    
+
+
                 }
-                var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
+                var roleGradeCache = new ShareCacheStruct<Config_RoleInitial>();
 
                 var grade = roleGradeCache.FindKey(v.UserLv - 1);
                 if (grade != null)
                 {
-                    v.BaseExp = grade.BaseExp;
-                    v.FightExp = grade.FightExp;
+                    //v.BaseExp = grade.BaseExp;
+                    //v.FightExp = grade.FightExp;
                 }
-                v.RefreshFightValue();
+                //v.RefreshFightValue();
 
-                if (v.ClassData.ClassID == 0)
-                {
-                    int classlv = v.UserLv / 2 + 1;
-                    List<ClassDataCache> classeslist = new ShareCacheStruct<ClassDataCache>().FindAll(t => (t.Lv == classlv));
-                    List<ClassDataCache> findclasseslist = new ShareCacheStruct<ClassDataCache>().FindAll(
-                                        t => (t.Lv == classlv) && t.MemberList.Count < ConfigEnvSet.GetInt("Class.OpenNum")
-                                    );
-
-                    ClassDataCache classdata = null;
-                    int extClassID = DataHelper.ExtendClass(classlv);
-                    if (extClassID == 0)
-                    {
-                        classdata = findclasseslist[0];
-                    }
-                    else
-                    {
-                        classdata = new ShareCacheStruct<ClassDataCache>().FindKey(extClassID);
-                    }
-                    
-                    v.ClassData.ClassID = classdata.ClassID;
-                    v.ChallengeMonitorTimes = 0;
-                    classdata.MemberList.Add(v.UserID);
-                    if (classdata.MemberList.Count == 1 || classdata.Monitor == 0)
-                    {// 设置班长
-                        classdata.Monitor = v.UserID;
-                    }
-                }
+      
             }
 
+            IsInitEnd = true;
         } 
 
-        public static List<GameUser> FindBots()
+        public static List<UserBasisCache> FindBots()
         {
-            return new PersonalCacheStruct<GameUser>().FindGlobal(t => (t.EnterServerId == 0));
+            return new PersonalCacheStruct<UserBasisCache>().FindGlobal(t => (t.ServerID == 0));
         }
         private static void CreateBots(int count)
         {
-            Random random = new Random();
-            for (int i = 0; i < count; ++i)
-            {
-                string passport = string.Empty;
-                string password = string.Empty;
-                Util.CrateAccount(out passport, out password);
+            //Random random = new Random();
+            //for (int i = 0; i < count; ++i)
+            //{
+            //    // 机器人的区服ID为0
+            //    int serverId = 0;
+            //    var cache = new ShareCacheStruct<UserCenterUser>();
+            //    var ucu = cache.Find(t => (t.PassportID == passport && t.ServerID == serverId));
+            //    if (ucu == null)
+            //    {
+            //        //not user create it.
+            //        ucu = Util.CreateUserCenterUser(passport, serverId);
+            //    }
+            //    ucu.AccessTime = DateTime.Now;
+            //    ucu.LoginNum++;
 
-                // 机器人的区服ID为0
-                int serverId = 0;
-                var cache = new ShareCacheStruct<UserCenterUser>();
-                var ucu = cache.Find(t => (t.PassportID == passport && t.ServerId == serverId));
-                if (ucu == null)
-                {
-                    //not user create it.
-                    ucu = Util.CreateUserCenterUser(passport, serverId);
-                }
-                ucu.AccessTime = DateTime.Now;
-                ucu.LoginNum++;
+            //    UserBasisCache basis = UserHelper.FindUserBasis(ucu.UserId);
+            //    if (basis == null)
+            //    {
+            //        var botsName = new ShareCacheStruct<Config_BotsName>().FindAll();
+            //        string nickName, lastName, firstName;
+            //        int randValue = random.Next(botsName.Count);
+            //        lastName = botsName[randValue].String;
+            //        randValue = random.Next(botsName.Count);
+            //        firstName = botsName[randValue].Value;
+            //        nickName = lastName + firstName;
 
-                GameUser gameUser = UserHelper.FindUser(ucu.UserId);
-                if (gameUser == null)
-                {
-                    var botsName = new ShareCacheStruct<Config_BotsName>().FindAll();
-                    string nickName, lastName, firstName;
-                    int randValue = random.Next(botsName.Count);
-                    lastName = botsName[randValue].String;
-                    randValue = random.Next(botsName.Count);
-                    firstName = botsName[randValue].Value;
-                    nickName = lastName + firstName;
+            //        var roleFunc = new RoleFunc();
+            //        string msg;
 
-                    var roleFunc = new RoleFunc();
-                    string msg;
-
-                    if (roleFunc.VerifyRange(nickName, out msg) ||
-                        roleFunc.VerifyKeyword(nickName, out msg) ||
-                        roleFunc.IsExistNickName(nickName, out msg))
-                    {
-                        continue;
-                    }
+            //        if (roleFunc.VerifyRange(nickName, out msg) ||
+            //            roleFunc.VerifyKeyword(nickName, out msg) ||
+            //            roleFunc.IsExistNickName(nickName, out msg))
+            //        {
+            //            continue;
+            //        }
 
 
-                    Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-                    Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-                    var combat = combatranking as CombatRanking;
-                    var level = levelranking as LevelRanking;
+            //        Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            //        Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            //        var combat = combatranking as CombatRanking;
+            //        var level = levelranking as LevelRanking;
 
-                    //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
-                    if (combat == null || level == null)
-                    {
-                        continue;
-                    }
+            //        //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            //        if (combat == null || level == null)
+            //        {
+            //            continue;
+            //        }
 
 
 
-                    gameUser = new GameUser(ucu.UserId);
-                    gameUser.IsRefreshing = true;
-                    gameUser.SessionID = "";
-                    gameUser.EnterServerId = serverId;
-                    gameUser.Pid = passport;
-                    gameUser.RetailID = "0000";
-                    gameUser.NickName = nickName;
-                    gameUser.UserLv = 1;
-                    gameUser.UserStage = SubjectStage.PreschoolSchool;
-                    gameUser.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
-                    gameUser.Vit = DataHelper.InitVit;
-                    gameUser.VipLv = ConfigEnvSet.GetInt("User.VipLv");
-                    gameUser.LooksId = random.Next(4);
-                    gameUser.UserStatus = UserStatus.MainUi;
-                    gameUser.LoginDate = DateTime.Now;
-                    gameUser.CreateDate = DateTime.Now;
-                    gameUser.OfflineDate = DateTime.Now;
-                    //user.ClassData = new UserClassData();
-                    //user.StudyTaskData = new UserStudyTaskData();
-                    //user.ExerciseTaskData = new UserExerciseTaskData();
-                    //user.ExpData = new UserExpData();
-                    //user.CombatData = new UserCombatData();
-                    gameUser.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
-                    gameUser.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
-                    //user.EventAwardData.OnlineStartTime = DateTime.Now;
-                    gameUser.PlotId = 0;
-                    gameUser.IsOnline = true;
-                    gameUser.InviteFightDiamondNum = 0;
-                    gameUser.ResetInviteFightDiamondDate = DateTime.Now;
-                    //user.FriendsData = new UserFriendsData();
-                    gameUser.RefreshFightValue();
+            //        basis = new UserBasisCache(ucu.UserId);
+            //        basis.IsRefreshing = true;
+            //        basis.SessionID = "";
+            //        basis.EnterServerId = serverId;
+            //        basis.Pid = passport;
+            //        basis.RetailID = "0000";
+            //        basis.NickName = nickName;
+            //        basis.UserLv = 1;
+            //        basis.UserStage = SubjectStage.PreschoolSchool;
+            //        basis.RewardsDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
+            //        basis.Vit = DataHelper.InitVit;
+            //        basis.VipLv = ConfigEnvSet.GetInt("User.VipLv");
+            //        basis.Profession = random.Next(4);
+            //        basis.UserStatus = UserStatus.MainUi;
+            //        basis.LoginDate = DateTime.Now;
+            //        basis.CreateDate = DateTime.Now;
+            //        basis.OfflineDate = DateTime.Now;
+            //        //user.ClassData = new UserClassData();
+            //        //user.StudyTaskData = new UserStudyTaskData();
+            //        //user.ExerciseTaskData = new UserExerciseTaskData();
+            //        //user.ExpData = new UserExpData();
+            //        //user.CombatData = new UserCombatData();
+            //        basis.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
+            //        basis.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
+            //        //user.EventAwardData.OnlineStartTime = DateTime.Now;
+            //        basis.PlotId = 0;
+            //        basis.IsOnline = true;
+            //        basis.InviteFightDiamondNum = 0;
+            //        basis.ResetInviteFightDiamondDate = DateTime.Now;
+            //        //user.FriendsData = new UserFriendsData();
+            //        basis.RefreshFightValue();
                     
 
-                    var cacheSet = new PersonalCacheStruct<GameUser>();
-                    cacheSet.Add(gameUser);
-                    cacheSet.Update();
+            //        var cacheSet = new PersonalCacheStruct<UserBasisCache>();
+            //        cacheSet.Add(basis);
+            //        cacheSet.Update();
 
-                    UserHelper.RestoreUserData(ucu.UserId);
-
-
-                    // 加入排行榜
-                    UserRank rankInfo = new UserRank()
-                    {
-                        UserID = gameUser.UserID,
-                        NickName = gameUser.NickName,
-                        LooksId = gameUser.LooksId,
-                        UserLv = gameUser.UserLv,
-                        VipLv = gameUser.VipLv,
-                        IsOnline = true,
-                        RankId = int.MaxValue,
-                        Exp = gameUser.TotalExp,
-                        FightingValue = gameUser.FightingValue,
-                        RankDate = DateTime.Now,
-                    };
-                    combat.TryAppend(rankInfo);
-                    combat.rankList.Add(rankInfo);
-                    UserRank lvUserRank = new UserRank(rankInfo);
-                    level.TryAppend(lvUserRank);
-                    level.rankList.Add(lvUserRank);
-                    //fightvalueranking.TryAppend(rankInfo);
+            //        UserHelper.RestoreUserData(ucu.UserId);
 
 
-                    // 充值数据
-                    UserPayCache paycache = new UserPayCache()
-                    {
-                        UserID = gameUser.UserID,
-                        PayMoney = 0,
-                        IsReceiveFirstPay = false,
-                        WeekCardDays = -1,
-                        MonthCardDays = 2,
-                        WeekCardAwardDate = DateTime.Now,
-                        MonthCardAwardDate = DateTime.Now,
-                    };
-                    var payCacheSet = new PersonalCacheStruct<UserPayCache>();
-                    payCacheSet.Add(paycache);
-                    payCacheSet.Update();
+            //        // 加入排行榜
+            //        UserRank rankInfo = new UserRank()
+            //        {
+            //            UserID = basis.UserID,
+            //            NickName = basis.NickName,
+            //            Profession = basis.Profession,
+            //            UserLv = basis.UserLv,
+            //            VipLv = basis.VipLv,
+            //            IsOnline = true,
+            //            RankId = int.MaxValue,
+            //            Exp = basis.TotalExp,
+            //            FightingValue = basis.FightingValue,
+            //            RankDate = DateTime.Now,
+            //        };
+            //        combat.TryAppend(rankInfo);
+            //        combat.rankList.Add(rankInfo);
+            //        UserRank lvUserRank = new UserRank(rankInfo);
+            //        level.TryAppend(lvUserRank);
+            //        level.rankList.Add(lvUserRank);
+            //        //fightvalueranking.TryAppend(rankInfo);
 
-                    gameUser.RandItem(random.Next(5) + 15);
-                    gameUser.RandSkillBook(random.Next(8) + 10);
+
+            //        // 充值数据
+            //        UserPayCache paycache = new UserPayCache()
+            //        {
+            //            UserID = basis.UserID,
+            //            PayMoney = 0,
+            //            IsReceiveFirstPay = false,
+            //            WeekCardDays = -1,
+            //            MonthCardDays = 2,
+            //            WeekCardAwardDate = DateTime.Now,
+            //            MonthCardAwardDate = DateTime.Now,
+            //        };
+            //        var payCacheSet = new PersonalCacheStruct<UserPayCache>();
+            //        payCacheSet.Add(paycache);
+            //        payCacheSet.Update();
+
+            //        basis.RandItem(random.Next(5) + 15);
+            //        basis.RandSkillBook(random.Next(8) + 10);
 
                     
-                    if (gameUser == null)
-                        continue;
-                    roleFunc.OnCreateAfter(gameUser);
-                }
-                else
-                {
-                    continue;
-                }
-            }
+            //        if (basis == null)
+            //            continue;
+            //        roleFunc.OnCreateAfter(basis);
+            //    }
+            //    else
+            //    {
+            //        continue;
+            //    }
+            //}
    
         }
 
@@ -329,7 +298,7 @@ namespace GameServer.CsScript.Base
                 var list = new ShareCacheStruct<Config_BotsChat>().FindAll();
                 var chat = list[random.Next(list.Count)];
 
-                GameUser bot = BotsList[random.Next(BotsList.Count)];
+                UserBasisCache bot = BotsList[random.Next(BotsList.Count)];
                 ChatBot cb = new ChatBot()
                 {
                     UserId = bot.UserID,
@@ -341,7 +310,7 @@ namespace GameServer.CsScript.Base
 
                 if (!chat.Reply.IsEmpty())
                 {
-                    GameUser rbot = BotsList[random.Next(BotsList.Count)];
+                    UserBasisCache rbot = BotsList[random.Next(BotsList.Count)];
                     ChatBot rcb = new ChatBot()
                     {
                         UserId = rbot.UserID,
@@ -359,15 +328,15 @@ namespace GameServer.CsScript.Base
                 return;
 
             ChatBot chatbot = ChatList[0];
-            GameUser gbot = BotsList.Find(t => (t.UserID == chatbot.UserId));
+            UserBasisCache gbot = BotsList.Find(t => (t.UserID == chatbot.UserId));
             if (gbot == null)
                 return;
 
             
             
-            var chatService = new TryXChatService(gbot);
-            chatService.Send(ChatType.World, chatbot.chatContext);
-            PushMessageHelper.SendWorldChatToOnlineUser();
+            //var chatService = new TryXChatService(gbot);
+            //chatService.Send(ChatType.World, chatbot.chatContext);
+            //PushMessageHelper.SendWorldChatToOnlineUser();
 
             chatbot.chatCount++;
             if (chatbot.chatCount >= chatbot.maxChatCount)
@@ -388,73 +357,73 @@ namespace GameServer.CsScript.Base
 
         public static void FightResponse()
         {
-            if (BotsList.Count <= 0)
-                return;
+            //if (BotsList.Count <= 0)
+            //    return;
 
-            var list = FightList.FindAll(t => (t.IsCanFight()));
-            foreach (var v in list)
-            {
-                GameUser bot = BotsList.Find(t => (t.UserID == v.UserId));
-                GameUser player = UserHelper.FindUser(v.PlayerUserId);
-                if (bot == null || player == null)
-                    continue;
-                player.UserStatus = UserStatus.Fighting;
-                //bot.UserStatus = UserStatus.Fighting;
+            //var list = FightList.FindAll(t => (t.IsCanFight()));
+            //foreach (var v in list)
+            //{
+            //    UserBasisCache bot = BotsList.Find(t => (t.UserID == v.UserId));
+            //    UserBasisCache player = UserHelper.FindUserBasis(v.PlayerUserId);
+            //    if (bot == null || player == null)
+            //        continue;
+            //    player.UserStatus = UserStatus.Fighting;
+            //    //bot.UserStatus = UserStatus.Fighting;
 
-                EventStatus retresult = EventStatus.Good;
-                //float diff = (float)ContextUser.GetCombatFightValue() / dest.GetCombatFightValue();
-                float diff = (float)player.FightingValue / bot.FightingValue;
-                if (diff > 1.1f)
-                {
-                    retresult = EventStatus.Good;
-                }
-                else if (diff < 0.9f)
-                {
-                    retresult = EventStatus.Bad;
-                }
-                else
-                {
-                    int skilllv = 0, skilllv2 = 0;
-                    if (player.SkillCarryList.Count > 0)
-                    {
-                        var skdata = player.findSkill(player.SkillCarryList[0]);
-                        if (skdata != null)
-                            skilllv = skdata.Lv;
-                    }
-                    if (bot.SkillCarryList.Count > 0)
-                    {
-                        var skdata = bot.findSkill(bot.SkillCarryList[0]);
-                        if (skdata != null)
-                            skilllv2 = skdata.Lv;
-                    }
+            //    EventStatus retresult = EventStatus.Good;
+            //    //float diff = (float)GetBasis.GetCombatFightValue() / dest.GetCombatFightValue();
+            //    float diff = (float)player.FightingValue / bot.FightingValue;
+            //    if (diff > 1.1f)
+            //    {
+            //        retresult = EventStatus.Good;
+            //    }
+            //    else if (diff < 0.9f)
+            //    {
+            //        retresult = EventStatus.Bad;
+            //    }
+            //    else
+            //    {
+            //        int skilllv = 0, skilllv2 = 0;
+            //        if (player.SkillCarryList.Count > 0)
+            //        {
+            //            var skdata = player.findSkill(player.SkillCarryList[0]);
+            //            if (skdata != null)
+            //                skilllv = skdata.Lv;
+            //        }
+            //        if (bot.SkillCarryList.Count > 0)
+            //        {
+            //            var skdata = bot.findSkill(bot.SkillCarryList[0]);
+            //            if (skdata != null)
+            //                skilllv2 = skdata.Lv;
+            //        }
 
-                    if (diff >= 1.0f)
-                    {
-                        if (skilllv - skilllv2 > -2)
-                            retresult = EventStatus.Good;
-                        else
-                            retresult = EventStatus.Bad;
-                    }
-                    else
-                    {
-                        if (skilllv - skilllv2 > 2)
-                            retresult = EventStatus.Good;
-                        else
-                            retresult = EventStatus.Bad;
-                    }
-                }
+            //        if (diff >= 1.0f)
+            //        {
+            //            if (skilllv - skilllv2 > -2)
+            //                retresult = EventStatus.Good;
+            //            else
+            //                retresult = EventStatus.Bad;
+            //        }
+            //        else
+            //        {
+            //            if (skilllv - skilllv2 > 2)
+            //                retresult = EventStatus.Good;
+            //            else
+            //                retresult = EventStatus.Bad;
+            //        }
+            //    }
 
 
-                PushMessageHelper.StartInviteFightNotification(GameSession.Get(player.UserID), bot.UserID, retresult);
-            }
+            //    PushMessageHelper.StartInviteFightNotification(GameSession.Get(player.UserID), bot.UserID, retresult);
+            //}
 
-            lock (FightList)
-            {
-                foreach (var v in list)
-                {
-                    FightList.Remove(v);
-                }
-            }
+            //lock (FightList)
+            //{
+            //    foreach (var v in list)
+            //    {
+            //        FightList.Remove(v);
+            //    }
+            //}
         }
 
         /// <summary>
@@ -462,56 +431,55 @@ namespace GameServer.CsScript.Base
         /// </summary>
         public static void OnlineNotification()
         {
-            if (BotsList.Count <= 0)
-                return;
+            //if (BotsList.Count <= 0)
+            //    return;
 
-            OnlineIntervalCount++;
-            if (OnlineIntervalCount < 200)
-                return;
+            //OnlineIntervalCount++;
+            //if (OnlineIntervalCount < 200)
+            //    return;
 
-            OnlineIntervalCount = 0;
+            //OnlineIntervalCount = 0;
 
-            Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            //Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
 
-            int pageCount;
-            var combatlist = combatranking.GetRange(0, 10, out pageCount);
-            var levellist = levelranking.GetRange(0, 10, out pageCount);
+            //int pageCount;
+            //var combatlist = combatranking.GetRange(0, 10, out pageCount);
+            //var levellist = levelranking.GetRange(0, 10, out pageCount);
 
-            List<int> combattemp = new List<int>();
-            List<int> leveltemp = new List<int>();
-            foreach (var v in combatlist)
-            {
-                var bot = BotsList.Find(t => (t.UserID == v.UserID));
-                if (bot == null)
-                    continue;
-                combattemp.Add(v.UserID);
-            }
-            foreach (var v in levellist)
-            {
-                var bot = BotsList.Find(t => (t.UserID == v.UserID));
-                if (bot == null)
-                    continue;
-                leveltemp.Add(v.UserID);
-            }
+            //List<int> combattemp = new List<int>();
+            //List<int> leveltemp = new List<int>();
+            //foreach (var v in combatlist)
+            //{
+            //    var bot = BotsList.Find(t => (t.UserID == v.UserID));
+            //    if (bot == null)
+            //        continue;
+            //    combattemp.Add(v.UserID);
+            //}
+            //foreach (var v in levellist)
+            //{
+            //    var bot = BotsList.Find(t => (t.UserID == v.UserID));
+            //    if (bot == null)
+            //        continue;
+            //    leveltemp.Add(v.UserID);
+            //}
 
-            int uid = 0;
-            Random random = new Random();
+            //int uid = 0;
+            //Random random = new Random();
 
-            if (leveltemp.Count > 0)
-            {
-                uid = leveltemp[random.Next(leveltemp.Count)];
+            //if (leveltemp.Count > 0)
+            //{
+            //    uid = leveltemp[random.Next(leveltemp.Count)];
 
-                UserRank levelrank = UserHelper.FindLevelRankUser(uid);
-                var finalbot = BotsList.Find(t => (t.UserID == uid));
-                string context = string.Format("排行榜排名第{0}名的 {1} 上线了！", levelrank.RankId, finalbot.NickName);
+            //    UserRank levelrank = UserHelper.FindLevelRankUser(uid);
+            //    var finalbot = BotsList.Find(t => (t.UserID == uid));
+            //    string context = string.Format("排行榜排名第{0}名的 {1} 上线了！", levelrank.RankId, finalbot.NickName);
 
-                PushMessageHelper.SendNoticeToOnlineUser(NoticeType.Game, context);
+            //    PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
-                var chatService = new TryXChatService();
-                chatService.SystemSend(context);
-                PushMessageHelper.SendSystemChatToOnlineUser();
-            }
+            //    var chatService = new TryXChatService();
+            //    chatService.SystemSend(context);
+            //    PushMessageHelper.SendSystemChatToOnlineUser();
+            //}
 
         }
 
@@ -534,118 +502,8 @@ namespace GameServer.CsScript.Base
             UserHelper.VipLvChangeNotification(bot.UserID);
         }
 
-        /// <summary>
-        /// 获得竞技道具
-        /// </summary>
-        public static void CombatItemNotification()
-        {
-            if (BotsList.Count <= 0)
-                return;
 
-            CombatItemIntervalCount++;
-            if (CombatItemIntervalCount < 300)
-                return;
-
-            CombatItemIntervalCount = 0;
-            Random random = new Random();
-            var bot = BotsList[random.Next(BotsList.Count)];
-            int randv = random.Next(6) + 1;
-            UserHelper.CombatItemNotification(bot.UserID, 10000 + randv);
-        }
-
-        /// <summary>
-        /// 占领
-        /// </summary>
-        public static void Occupy()
-        {
-            if (BotsList.Count <= 0)
-                return;
-
-            OccupyIntervalCount++;
-            if (OccupyIntervalCount < 1200)
-                return;
-
-            OccupyIntervalCount = 0;
-
-            var occupycache = new ShareCacheStruct<OccupyDataCache>();
-            var findnull = occupycache.Find(t => (t.UserId == 0 && t.ChallengerId == 0));
-            if (findnull == null)
-                return;
-
-
-            CombatItemIntervalCount = 0;
-            Random random = new Random();
-            var bot = BotsList[random.Next(BotsList.Count)];
-
-            var findlist = occupycache.FindAll(t => (t.UserId == bot.UserID));
-            foreach (var fv in findlist)
-            {
-                fv.ResetOccupy();
-            }
-
-            findnull.UserId = bot.UserID;
-            findnull.NickName = bot.NickName;
-
-            bot.OccupySceneList.Add(findnull.SceneId);
-
-            ClassDataCache classdata = new ShareCacheStruct<ClassDataCache>().FindKey(bot.ClassData.ClassID);
-            if (classdata != null)
-            {
-                PushMessageHelper.ClassOccupyAddChangeNotification(bot.ClassData.ClassID);
-            }
-
-            UserHelper.OccupySucceedNotification(findnull.SceneId);
-
-        }
-
-        /// <summary>
-        /// 参加竞选
-        /// </summary>
-        public static void Campaign()
-        {
-            //if (TempCount > 0)
-            //    return;
-            //TempCount++;
-            if (BotsList.Count <= 0)
-                return;
-
-            var jobcache = new ShareCacheStruct<JobTitleDataCache>();
-            var fdnow = jobcache.FindKey((JobTitleType)DateTime.Now.DayOfWeek);
-            if (fdnow == null)
-                return;
-            if (fdnow.Status == CampaignStatus.NotStarted)
-            {
-                return;
-            }
-            if (fdnow.Status == CampaignStatus.Over)
-            {
-                return;
-            }
-            Random random = new Random();
-            for (int i = 0; i < 5; ++i)
-            {
-                var bot = BotsList[random.Next(BotsList.Count)];
-                
-                if (fdnow.CampaignUserList.Find(t => (t.UserId == bot.UserID)) != null)
-                {
-                    continue;
-                }
-
-                // 到这里就表示成功了
-                CampaignUserData campaignuserdata = new CampaignUserData()
-                {
-                    UserId = bot.UserID,
-                    NickName = bot.NickName,
-                    ClassId = bot.ClassData.ClassID,
-                    VoteCount = (random.Next(4) + 1) * 10,
-                    LooksId = bot.LooksId
-                };
-                fdnow.CampaignUserList.Add(campaignuserdata);
-
-
-            }
-  
-        }
+        
 
     }
 }

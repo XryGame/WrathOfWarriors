@@ -46,7 +46,7 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             receipt = new List<JPFriendOnlineData>();
-            foreach (var fd in ContextUser.FriendsData.FriendsList)
+            foreach (var fd in GetFriends.FriendsList)
             {
                 JPFriendOnlineData fod = new JPFriendOnlineData();
                 fod.UserId = fd.UserId;

@@ -5,13 +5,13 @@ namespace GameServer.Script.Model.Enum
     public enum ItemType
     {
         /// <summary>
-        /// 道具
+        /// 宝石
         /// </summary>
-        Item = 1,
+        Gem = 1,
         /// <summary>
-        /// 技能书
+        /// 礼包
         /// </summary>
-        Skill,
+        Gift,
 
     }
 }

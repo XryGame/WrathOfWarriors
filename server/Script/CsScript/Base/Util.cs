@@ -1,13 +1,14 @@
-﻿using GameServer.Script.Model.Config;
-using GameServer.Script.Model.DataModel;
+﻿using GameServer.Script.Model.DataModel;
 using System;
+using System.Collections.Generic;
+using System.Numerics;
 using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Common.Security;
+using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Lang;
-using ZyGames.Framework.Redis;
+using ZyGames.Framework.Game.Runtime;
 
 namespace GameServer.CsScript.Base
 {
@@ -17,9 +18,22 @@ namespace GameServer.CsScript.Base
     public static class Util
     {
 
+        private static List<string> CoinUnits = new List<string> () { "K", "M", "B", "T" };
+
+        private static List<string> Letter = new List<string>() {
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+        };
+
         static Util()
         {
-
+            CoinUnits.AddRange(Letter);
+            for (int i = 0; i < 26; ++i)
+            {
+                for (int j = 0; j < 26; ++j)
+                {
+                    CoinUnits.Add(Letter[i] + Letter[j]);
+                }
+            }
         }
 
         /// <summary>  
@@ -118,58 +132,19 @@ namespace GameServer.CsScript.Base
             return Guid.NewGuid().ToString("N");
         }
 
-        static public void CrateAccount(out string passport, out string password)
-        {
-            var ucpcache = new ShareCacheStruct<UserCenterPassport>();
-            //passport = "x" + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterPassport).FullName);
-            Interlocked.Increment(ref SystemGlobal.userPassprotCount);
-            passport = "x" + SystemGlobal.userPassprotCount;
-            password = CryptoHelper.MD5_Encrypt(GetRandomPwd(), Encoding.UTF8).ToLower();
-
-            UserCenterPassport ucp = new UserCenterPassport()
-            {
-                PassportID = passport,
-                Password = password,
-                CreateTime = DateTime.Now,
-                RetailId = "0000",
-                OpenId = "",
-            };
-            ucpcache.Add(ucp);
-            ucpcache.Update();
-        }
-
-        static public void CrateAccountByOpenId(string openId, string retailId, out string passport, out string password)
-        {
-            var ucpcache = new ShareCacheStruct<UserCenterPassport>();
-            //passport = "x" + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterPassport).FullName);
-            Interlocked.Increment(ref SystemGlobal.userPassprotCount);
-            passport = "x" + SystemGlobal.userPassprotCount;
-            password = CryptoHelper.MD5_Encrypt(GetRandomPwd(), Encoding.UTF8).ToLower();
-
-            UserCenterPassport ucp = new UserCenterPassport()
-            {
-                PassportID = passport,
-                Password = password,
-                CreateTime = DateTime.Now,
-                RetailId = retailId,
-                OpenId = openId,
-            };
-            ucpcache.Add(ucp);
-            ucpcache.Update();
-        }
-
-        static public UserCenterUser CreateUserCenterUser(string passprotId, int serverId)
+        static public UserCenterUser CreateUserCenterUser(string openid, string retailId, int serverId)
         {
             var cache = new ShareCacheStruct<UserCenterUser>();
-            Interlocked.Increment(ref SystemGlobal.userRoleCount);
+            Interlocked.Increment(ref SystemGlobal.UserCenterUserCount);
             var ucu = new UserCenterUser()
             {
-                //UserId = 1000000 + (int)RedisConnectionPool.GetNextNo(typeof(UserCenterUser).FullName),
-                UserId = 1000000 + SystemGlobal.userRoleCount,
-                PassportID = passprotId,
-                ServerId = serverId,
+                UserID = GameEnvironment.ProductServerId * 1000000 + SystemGlobal.UserCenterUserCount,
+                NickName = string.Empty,
+                OpenID = openid,
+                ServerID = serverId,
                 AccessTime = DateTime.Now,
-                LoginNum = 0
+                LoginNum = 0,
+                RetailID = retailId
             };
             cache.Add(ucu);
             cache.Update();
@@ -177,18 +152,82 @@ namespace GameServer.CsScript.Base
             return ucu;
         }
 
-        static public UserCenterPassport FindAccountByOpenId(string openid, string retailId)
+
+        static public List<UserCenterUser> FindUserCenterUser(string openid, string retailId, int serverId)
         {
-            UserCenterPassport UCP = new ShareCacheStruct<UserCenterPassport>().Find(
-                t => (t.BindOpenId == openid && t.RetailId == retailId)
-                );
-            if (UCP == null)
-            {
-                UCP = new ShareCacheStruct<UserCenterPassport>().Find(
-                    t => (t.OpenId == openid && t.RetailId == retailId)
-                    );
-            }
-            return UCP;
+            var cache = new ShareCacheStruct<UserCenterUser>();
+            return cache.FindAll(t => (t.OpenID == openid && t.RetailID == retailId && t.ServerID == serverId));
         }
+
+
+        static public string ConvertGameCoinUnits(string strValue)
+        {
+            try
+            {
+                BigInteger tmp = 0;
+                BigInteger bi = BigInteger.Parse(strValue);
+                int count = strValue.Length / 3;
+                string units = string.Empty;
+                if (count > 0)
+                {
+                    units = CoinUnits[count - 1];
+                }
+
+                for (int i = 0; i < count; ++i)
+                {
+                    bi /= 1000;
+                }
+
+                return bi.ToString() + units;
+            }
+            catch (Exception e)
+            {
+                TraceLog.WriteError("ConvertGameCoinUnits Error:{0}", e);
+            }
+            
+            return "0";
+        }
+
+        static public string ConvertGameCoinString(string unitsValue)
+        {
+
+            try
+            {
+                string tmp = unitsValue;
+                while (!tmp.IsEmpty())
+                {
+                    if (tmp[0] >= '0' && tmp[0] <= '9')
+                        tmp = tmp.Substring(1);
+                    else
+                        break;
+                }
+                if (tmp.IsEmpty())
+                {
+                    return unitsValue;
+                }
+                int index = unitsValue.IndexOf(tmp);
+                unitsValue = unitsValue.Substring(0, index);
+                index = CoinUnits.IndexOf(tmp);
+                for (int i = 0; i < index + 1; ++i)
+                {
+                    unitsValue += "000";
+                }
+                
+                return unitsValue;
+            }
+            catch (Exception e)
+            {
+                TraceLog.WriteError("ConvertGameCoinString Error:{0}", e);
+            }
+            
+            return "0";
+        }
+
+        static public BigInteger ConvertGameCoin(string unitsValue)
+        {
+            string strValue = ConvertGameCoinString(unitsValue);
+            return BigInteger.Parse(strValue);
+        }
+
     }
 }

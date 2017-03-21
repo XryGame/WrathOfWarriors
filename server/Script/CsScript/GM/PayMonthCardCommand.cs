@@ -24,12 +24,8 @@ namespace GameServer.CsScript.GM
         /// <param name="userId"></param>
         public bool PayMonthCard(int userId)
         {
-            GameUser user = UserHelper.FindUser(userId);
             UserPayCache userpay = UserHelper.FindUserPay(userId);
             
-            if (userpay == null || user == null)
-                return false;
-
             bool isAward = false;
             if (userpay.MonthCardDays < 0)
             {
@@ -52,7 +48,7 @@ namespace GameServer.CsScript.GM
                             ConfigEnvSet.GetInt("System.MonthCardDiamond")),
             };
 
-            user.AddNewMail(ref mail);
+            UserHelper.AddNewMail(userId, mail);
 
             if (isAward)
             {
@@ -66,7 +62,7 @@ namespace GameServer.CsScript.GM
                     ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
                 };
 
-                user.AddNewMail(ref mail);
+                UserHelper.AddNewMail(userId, mail);
             }
             return true;
         }

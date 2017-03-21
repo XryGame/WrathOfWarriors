@@ -53,18 +53,14 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
 
-            GameUser dest = UserHelper.FindUser(destuid);
-            if (dest == null)
-            {
-                ErrorInfo = Language.Instance.NoFoundUser;
-                return true;
-            }
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
+            UserFriendsCache destFriends = UserHelper.FindUserFriends(destuid);
 
             receipt = new JPFriendApplyReceiptData();
             receipt.Data.UserId = destuid;
             receipt.Data.NickName = dest.NickName;
-            receipt.Data.LooksId = dest.LooksId;
-            FriendApplyData apply = ContextUser.FindFriendApply(destuid);
+            receipt.Data.Profession = dest.Profession;
+            FriendApplyData apply = GetFriends.FindFriendApply(destuid);
             if (apply == null)
             {
                 receipt.Result = RequestFriendResult.NoApply;
@@ -73,15 +69,15 @@ namespace GameServer.CsScript.Action
             
             if (result == EventStatus.Good)
             {
-                if (ContextUser.IsFriendNumFull())
+                if (GetFriends.IsFriendNumFull())
                 {
                     receipt.Result = RequestFriendResult.FriendNumFull;
                 }
-                else if (ContextUser.IsHaveFriend(destuid))
+                else if (GetFriends.IsHaveFriend(destuid))
                 {
                     receipt.Result = RequestFriendResult.HadFriend;
                 }
-                else if (dest.IsFriendNumFull())
+                else if (destFriends.IsFriendNumFull())
                 {
                     receipt.Result = RequestFriendResult.DestFriendNumFull;
                 }
@@ -92,26 +88,26 @@ namespace GameServer.CsScript.Action
 
                 if (receipt.Result == RequestFriendResult.OK)
                 {
-                    ContextUser.AddFriend(destuid);
+                    GetFriends.AddFriend(destuid);
                     receipt.Data.UserLv = dest.UserLv;
-                    receipt.Data.FightValue = dest.FightingValue;
+                    //receipt.Data.FightValue = dest.FightingValue;
                     receipt.Data.VipLv = dest.VipLv;
                     GameSession fsession = GameSession.Get(dest.UserID);
                     if (fsession != null && fsession.Connected)
                         receipt.Data.IsOnline = true;
 
-                    dest.AddFriend(ContextUser.UserID);
+                    destFriends.AddFriend(GetBasis.UserID);
                     var session = GameSession.Get(destuid);
                     if (session != null && session.Connected)
                     {
                         var parameters = new Parameters();
-                        parameters["Uid"] = ContextUser.UserID;
+                        parameters["Uid"] = GetBasis.UserID;
                         var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1055, GameSession.Get(destuid), parameters, OpCode.Text, null);
                         ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1055, packet, (sessions, asyncResult) => { }, 0);
                     }
                 }
             }
-            ContextUser.FriendsData.ApplyList.Remove(apply);
+            GetFriends.ApplyList.Remove(apply);
             
 
             return true;

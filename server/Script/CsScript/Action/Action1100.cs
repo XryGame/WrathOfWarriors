@@ -1,28 +1,30 @@
 ﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Common;
-using ZyGames.Framework.Game.Lang;
+using ZyGames.Framework.Common.Log;
+using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1100_请求学习/劳动任务
+    /// 1100_使用背包物品
     /// </summary>
     public class Action1100 : BaseAction
     {
-        private JPRequestTaskData receipt;
-        private SubjectType subjectType;
-        private SceneType sceneId;
-        private SubjectID subjectId;
-        private int count;
+        private JPUsedItemReceipt receipt;
+
+        private int itemId;
+        private int useNum;
 
         public Action1100(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1100, actionGetter)
@@ -38,19 +40,15 @@ namespace GameServer.CsScript.Action
             }
             else
             {
-                ErrorCode = ActionIDDefine.Cst_Action1100;
+                ErrorCode = ActionIDDefine.Cst_Action1401;
             }
-                
             return base.BuildJsonPack();
         }
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetEnum("SubjectType", ref subjectType)
-                && httpGet.GetEnum("SceneId", ref sceneId)
-                && httpGet.GetEnum("SubjectId", ref subjectId)
-                && httpGet.GetInt("Count", ref count)
-                && count > 0)
+            if (httpGet.GetInt("ItemID", ref itemId)
+                && httpGet.GetInt("UseNum", ref useNum))
             {
                 return true;
             }
@@ -59,132 +57,65 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            
-            //var roleGradeCache = new ShareCacheStruct<Config_RoleGrade>();
-            //Config_RoleGrade rolegrade = roleGradeCache.FindKey(ContextUser.UserLv);
-            //if (rolegrade == null)
-            //{
-            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-            //    return true;
-            //}
-            var sceneCache = new ShareCacheStruct<Config_Scene>();
-            Config_Scene scene = sceneCache.FindKey(sceneId);
-            if (scene == null)
+            receipt = new JPUsedItemReceipt();
+            receipt.Result = UsedItemResult.Successfully;
+
+            var itemconfig = new ShareCacheStruct<Config_Item>().FindKey(itemId);
+            if (itemconfig == null)
             {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "Scene");
+                new BaseLog().SaveLog(string.Format("No found item config. ID={0}", itemId));
+                return false;
+            }
+            
+            var itemdata = GetPackage.FindItem(itemId);
+            if (itemdata == null)
+            {
+                receipt.Result = UsedItemResult.NoItem;
+                return true;
+                
+            }
+            if (itemdata.Num < useNum)
+            {
+                receipt.Result = UsedItemResult.ItemNumError;
                 return true;
             }
-            var subjectExpCache = new ShareCacheStruct<Config_SubjectExp>();
-            Config_SubjectExp subjectExp = subjectExpCache.FindKey(subjectId);
-            if (subjectExp == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "SubjectExp");
-                return true;
-            }
-            if (ContextUser.UserStage != SubjectStage.PreschoolSchool)
-            {
-                if (ContextUser.UserLv < scene.ClearGrade || ContextUser.UserStage != subjectExp.Stage)
-                {
-                    ErrorInfo = Language.Instance.RequestIDError;
-                    return true;
-                }
-            }
 
-
-            switch (subjectType)
+            BigInteger resourceNum = Util.ConvertGameCoin(itemconfig.ResourceNum);
+            switch (itemconfig.ResourceType)
             {
-                case SubjectType.Study:
+                case ResourceType.Gold:
                     {
-                        if (subjectExp.Type != SubjectType.Study)
-                        {
-                            ErrorInfo = Language.Instance.RequestIDError;
-                            return true;
-                        }
-                        
-                        if (ContextUser.StudyTaskData != null && ContextUser.StudyTaskData.SubjectID != 0)
-                        {
-                            ErrorInfo = Language.Instance.CanNotOperationOfNow;
-                            return true;
-                        }
-
-                        
-                        int needTime = subjectExp.UnitTime * count;
-                        if (ContextUser.Vit < needTime)
-                        {
-                            ErrorInfo = Language.Instance.NoVitError;
-                            return true;
-                        }
-
-                        ContextUser.Vit = MathUtils.Subtraction(ContextUser.Vit, needTime, 0);
-                        DateTime starttime = DateTime.Now;
-
-                        if (ContextUser.StudyTaskData == null)
-                        {
-                            ContextUser.StudyTaskData = new UserStudyTaskData();
-                        }
-                        ContextUser.StudyTaskData.SubjectID = subjectId;
-                        ContextUser.StudyTaskData.StartTime = starttime;
-                        ContextUser.StudyTaskData.Count = count;
-                        ContextUser.StudyTaskData.SceneId = sceneId;
-
-                        receipt = new JPRequestTaskData()
-                        {
-                            SubjectT = subjectType,
-                            SceneId = sceneId,
-                            SubjectId = subjectId,
-                            StartTime = Util.GetTimeStamp(),
-                            Count = count
-                        };
+                        UserHelper.RewardsGold(Current.UserId, resourceNum * useNum);
+                        //receipt.GainGold = resourceNum;
                     }
                     break;
-                case SubjectType.Exercise:
+                case ResourceType.Diamond:
                     {
-                        if (subjectExp.Type != SubjectType.Exercise)
-                        {
-                            ErrorInfo = Language.Instance.RequestIDError;
-                            return true;
-                        }
-                        
-                        if (ContextUser.ExerciseTaskData != null && ContextUser.ExerciseTaskData.SubjectID != 0)
-                        {
-                            ErrorInfo = Language.Instance.CanNotOperationOfNow;
-                            return true;
-                        }
-
-                        int needTime = subjectExp.UnitTime * count;
-                        if (ContextUser.Vit < needTime)
-                        {
-                            ErrorInfo = Language.Instance.NoVitError;
-                            return true;
-                        }
-
-                        ContextUser.Vit = MathUtils.Subtraction(ContextUser.Vit, needTime, 0);
-
-                        DateTime starttime = DateTime.Now;
-
-                        if (ContextUser.ExerciseTaskData == null)
-                        {
-                            ContextUser.ExerciseTaskData = new UserExerciseTaskData();
-                        }
-                        ContextUser.ExerciseTaskData.SubjectID = subjectId;
-                        ContextUser.ExerciseTaskData.StartTime = starttime;
-                        ContextUser.ExerciseTaskData.Count = count;
-                        ContextUser.ExerciseTaskData.SceneId = sceneId;
-
-                        receipt = new JPRequestTaskData()
-                        {
-                            SubjectT = subjectType,
-                            SceneId = sceneId,
-                            SubjectId = subjectId,
-                            StartTime = Util.GetTimeStamp(),
-                            Count = count
-                        };
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(resourceNum * useNum));
+                        //receipt.GainDiamond = resourceNum * useNum;
                     }
                     break;
-                default: throw new ArgumentException(string.Format("SubjectType Error[{0}] isn't exist.", subjectType));
+                case ResourceType.Gift:
+                    {
+                        var giftconfig = new ShareCacheStruct<Config_Giftbag>().FindKey(itemconfig.ItemID);
+                        if (giftconfig == null)
+                        {
+                            new BaseLog().SaveLog(string.Format("No found gift config. ID={0}", itemconfig.ResourceNum));
+                            return false;
+                        }
+
+                        //receipt.GainItem = giftconfig.GetRewardsItem();
+                        UserHelper.RewardsItems(Current.UserId, giftconfig.GetRewardsItem());
+                    }
+                    break;
+                default:
+                    {
+                        receipt.Result = UsedItemResult.Cannot;
+                        return true;
+                    }
             }
-  
-            
+
+            GetPackage.RemoveItem(itemId, useNum);
             return true;
         }
     }

@@ -6,44 +6,52 @@ namespace GameServer.Script.Model.Enum
     {
         No = 0,
         /// <summary>
-        /// 学习至少45分钟
+        /// 登录一次
         /// </summary>
-        Study = 1,
+        Login = 1,
         /// <summary>
-        /// 劳动至少20分钟
+        /// 签到一次
         /// </summary>
-        Exercise,
+        SignIn,
         /// <summary>
-        /// 挑战老师
+        /// 闯关1关
         /// </summary>
-        FightTeacher,
+        PassStage,
         /// <summary>
-        /// 道具宝箱开启1次
+        /// 闯关1关（BOSS关）
         /// </summary>
-        RandItem,
+        PassStageBoss,
         /// <summary>
-        /// 技能宝箱开启1次
+        /// 战魂1次
         /// </summary>
-        RandSkillBook,
+        OpenSoul,
         /// <summary>
-        /// 名人榜中挑战同学1次
+        /// 装备升级1次
         /// </summary>
-        CombatFight,
+        UpgradeEquip,
         /// <summary>
-        /// 邀请同学实时对战1次
+        /// 技能升级1次
         /// </summary>
-        InviteFight,
+        UpgradeSkill,
         /// <summary>
-        /// 竞选系统中投票
+        /// 公会签到1次
         /// </summary>
-        Vote,
+        GuildSignIn,
         /// <summary>
-        /// 购买1次时间
+        /// 竞技场1次
         /// </summary>
-        BuyTime,
+        Combat,
         /// <summary>
-        /// 赠送好友体力1次
+        /// 好友切磋1次
         /// </summary>
-        GiveAwayFriend,
+        FriendCompare,
+        /// <summary>
+        /// 购买金币1次
+        /// </summary>
+        BuyGold,
+        /// <summary>
+        /// 世界发言1次
+        /// </summary>
+        WorldChat,
     }
 }

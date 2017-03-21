@@ -1,25 +1,28 @@
-﻿using GameServer.CsScript.JsonProtocol;
+﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.Com;
+using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
-using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Game.Lang;
+using ZyGames.Framework.Common.Log;
+using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1111_挑战结果
+    /// 1111_通关关卡
     /// </summary>
     public class Action1111 : BaseAction
     {
-        private JPReceiveTaskAwardData receipt;
-        private int monsterId;
-        private EventStatus result;
+        private UserAttributeCache receipt = null;
 
+        private int _ID;
         public Action1111(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1111, actionGetter)
         {
@@ -34,8 +37,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("MonsterId", ref monsterId)
-                && httpGet.GetEnum("Result", ref result))
+            if (httpGet.GetInt("ID", ref _ID))
             {
                 return true;
             }
@@ -44,55 +46,32 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            Config_Role role = new ShareCacheStruct<Config_Role>().FindKey(monsterId);
-            if (role == null)
+            if (new ShareCacheStruct<Config_RoleInitial>().FindKey(_ID) == null)
+                return false;
+            var transcriptCfg = new ShareCacheStruct<Config_TeneralTranscript>().FindKey(_ID);
+            if (transcriptCfg == null)
+                return false;
+
+            if (_ID == GetBasis.UserLv + 1)
             {
-                ErrorInfo = Language.Instance.RequestIDError;
-                return true;
-            }
-
-            ContextUser.UserStatus = UserStatus.MainUi;
-            if (result == EventStatus.Good)
-            {
-
-
-                if (ContextUser.ChallengeRoleList.Find(t => (t == monsterId)) == 0)
-                {
-                    ContextUser.ChallengeRoleList.Add(monsterId);
-                }
-
-                //ContextUser.AdditionFightExpValue(role.Exp);
-
-                int addvalue = ContextUser.AdditionFightExpValue(role.Exp);
-                if (addvalue > 0)
-                {
-                    ContextUser.RefreshFightValue();
-                }
-                    
-                
-                receipt = new JPReceiveTaskAwardData()
-                {
-                    AwardExp = addvalue,
-                    CurrFightExp = ContextUser.FightExp,
-                    CurrLv = ContextUser.UserLv,
-                    CurrFightValue = ContextUser.FightingValue,
-                    Attack = ContextUser.Attack,
-                    Defense = ContextUser.Defense,
-                    HP = ContextUser.Hp,
-                };
-                object outexpdata;
-                UserHelper.buildBaseExpData(ContextUser, out outexpdata);
-                receipt.CurrBaseExp = outexpdata;
-                receipt.ChallengeRoleList = ContextUser.ChallengeRoleList;
+                GetBasis.UserLv = _ID;
+                UserHelper.UserLevelUp(Current.UserId);
 
                 // 每日
-                UserHelper.EveryDayTaskProcess(ContextUser.UserID, TaskType.FightTeacher, 1);
+                if (transcriptCfg.limitTime > 0)
+                {
+                    UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.PassStageBoss, 1);
+                }
+                else
+                {
+                    UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.PassStage, 1);
+                }
 
                 // 成就
-                UserHelper.AchievementProcess(ContextUser.UserID, 1, AchievementType.ChallengeCount);
+                UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.LevelCount);
             }
 
- 
+            receipt = GetAttribute;
             return true;
         }
     }

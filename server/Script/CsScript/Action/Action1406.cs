@@ -56,19 +56,18 @@ namespace GameServer.CsScript.Action
             var list = ranking.GetRange(0, 50, out pagecout);
             foreach (var data in list)
             {
-                GameUser user = UserHelper.FindUser(data.UserID);
-                if (user == null)
-                    continue;
+                UserBasisCache basis = UserHelper.FindUserBasis(data.UserID);
+
                 JPRankUserData jpdata = new JPRankUserData()
                 {
-                    UserId = user.UserID,
-                    NickName = user.NickName,
-                    LooksId = user.LooksId,
-                    RankId = user.CombatData.RankID,
-                    UserLv = user.UserLv,
-                    Exp = user.TotalExp,
-                    FightingValue = user.FightingValue,
-                    VipLv = user.VipLv
+                    UserId = basis.UserID,
+                    NickName = basis.NickName,
+                    Profession = basis.Profession,
+                    RankId = basis.CombatRankID,
+                    UserLv = basis.UserLv,
+                    Exp = basis.Exp,
+                    //FightingValue = user.FightingValue,
+                    VipLv = basis.VipLv
                 };
                 GameSession session = GameSession.Get(data.UserID);
                 if (session != null && session.Connected)

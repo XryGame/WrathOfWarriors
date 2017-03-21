@@ -74,16 +74,14 @@ namespace GameServer.CsScript.Base
                                 {
                                     new OnPay().ActiveHttp(response, response.GetRequestExec());
                                 }
-                                else if (item.Equals("GM.aspx"))
-                                {
-                                    new OnGMDeliverGoods().ActiveHttp(response, response.GetRequestExec());
-                                }
                             }
                             else if (response.isPost())
                             {
-
+                                if (item.Equals("GMCommon.aspx"))
+                                {
+                                    new OnGMCommon().ActiveHttp(response, response.PostRequestExec());
+                                }
                             }
-                            return;
                         }
                         catch { break; }
                     }

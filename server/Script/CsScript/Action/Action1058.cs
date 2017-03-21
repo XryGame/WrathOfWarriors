@@ -1,16 +1,17 @@
 ﻿using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.Config;
+using System.Collections.Generic;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1058_竞选结果通知接口
+    /// 1058_获得新物品
     /// </summary>
     public class Action1058 : BaseAction
     {
-        private object receipt;
-        private int Uid;
+        private List<ItemData> receipt;
         public Action1058(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1058, actionGetter)
         {
@@ -32,16 +33,13 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("Uid", ref Uid))
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
 
         public override bool TakeAction()
         {
-            receipt = Uid;
+            receipt = GetPackage.NewItemCache.ToList();
+            GetPackage.NewItemCache.Clear();
 
             return true;
         }

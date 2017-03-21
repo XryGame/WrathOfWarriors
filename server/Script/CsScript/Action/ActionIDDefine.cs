@@ -31,6 +31,10 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class ActionIDDefine
     {
+        /////<summary>
+        /////用户上次登录信息
+        /////</summary>
+        //public const short Cst_Action100 = 100;
         ///<summary>
         ///订单发货接口
         ///</summary>
@@ -40,15 +44,15 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1001 = 1001;
 
-        ///<summary>
-        ///注册通行证ID获取接口
-        ///</summary>
-        public const short Cst_Action1002 = 1002;
+        /////<summary>
+        /////注册通行证ID获取接口
+        /////</summary>
+        //public const short Cst_Action1002 = 1002;
 
-        ///<summary>
-        ///微信公众号登录ID获取接口
-        ///</summary>
-        public const short Cst_Action10020 = 10020;
+        /////<summary>
+        /////微信公众号登录ID获取接口
+        /////</summary>
+        //public const short Cst_Action10020 = 10020;
 
         /////<summary>
         /////用户注册
@@ -70,15 +74,15 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1005 = 1005;
 
-        ///<summary>
-        ///密码更新接口
-        ///</summary>
-        public const short Cst_Action1006 = 1006;
+        /////<summary>
+        /////密码更新接口
+        /////</summary>
+        //public const short Cst_Action1006 = 1006;
 
-        ///<summary>
-        ///用户检测接口
-        ///</summary>
-        public const short Cst_Action1007 = 1007;
+        /////<summary>
+        /////用户检测接口
+        /////</summary>
+        //public const short Cst_Action1007 = 1007;
 
         ///<summary>
         ///用户角色详情接口
@@ -86,12 +90,17 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1008 = 1008;
 
         ///<summary>
-        ///公众号微信登录
+        ///客户端连接到聊天服接口
         ///</summary>
-        public const short Cst_Action1020 = 1020;
+        public const short Cst_Action1009 = 1009;
 
         ///<summary>
-        ///战斗力改变通知接口
+        ///金币改变通知接口
+        ///</summary>
+        public const short Cst_Action1049 = 1049;
+
+        ///<summary>
+        ///属性改变通知接口
         ///</summary>
         public const short Cst_Action1050 = 1050;
 
@@ -131,7 +140,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1057 = 1057;
 
         ///<summary>
-        ///竞选结果通知
+        ///获得新物品
         ///</summary>
         public const short Cst_Action1058 = 1058;
 
@@ -141,12 +150,12 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1059 = 1059;
 
         ///<summary>
-        ///每日任务计数改变通知
+        ///每日任务更新通知
         ///</summary>
         public const short Cst_Action1060 = 1060;
 
         ///<summary>
-        ///成就完成通知
+        ///成就更新通知
         ///</summary>
         public const short Cst_Action1061 = 1061;
 
@@ -174,17 +183,7 @@ namespace GameServer.CsScript.Action
         ///新的邮件通知
         ///</summary>
         public const short Cst_Action1066 = 1066;
-
-        ///<summary>
-        ///占领加成改变
-        ///</summary>
-        public const short Cst_Action1067 = 1067;
-
-        ///<summary>
-        ///竞选加成改变
-        ///</summary>
-        public const short Cst_Action1068 = 1068;
-
+       
         ///<summary>
         ///好友上线通知
         ///</summary>
@@ -201,64 +200,87 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1099 = 1099;
 
         ///<summary>
-        ///请求学习/劳动任务
+        ///使用背包物品
         ///</summary>
         public const short Cst_Action1100 = 1100;
 
-        ///<summary>
-        ///请求领取任务奖励
-        ///</summary>
-        public const short Cst_Action1101 = 1101;
 
         ///<summary>
-        ///请求放弃任务
-        ///</summary>
-        public const short Cst_Action1102 = 1102;
-
-        ///<summary>
-        ///请求加速任务
-        ///</summary>
-        public const short Cst_Action1103 = 1103;
-
-        ///<summary>
-        ///请求挑战
+        ///掉落金币
         ///</summary>
         public const short Cst_Action1110 = 1110;
 
         ///<summary>
-        ///挑战结果
+        ///通关关卡
         ///</summary>
         public const short Cst_Action1111 = 1111;
 
         ///<summary>
-        ///购买解锁场景地图
+        ///再次挑战
         ///</summary>
         public const short Cst_Action1112 = 1112;
 
         ///<summary>
-        ///查询本年级所有班级
+        ///进入关卡
         ///</summary>
-        public const short Cst_Action1201 = 1201;
+        public const short Cst_Action1113 = 1113;
 
         ///<summary>
-        ///加入指定班级
+        ///领取离线收益
         ///</summary>
-        public const short Cst_Action1202 = 1202;
+        public const short Cst_Action1114 = 1114;
 
         ///<summary>
-        ///查询同班同学
+        ///宝石镶嵌
         ///</summary>
-        public const short Cst_Action1203 = 1203;
+        public const short Cst_Action1120 = 1120;
 
         ///<summary>
-        ///开宝箱
+        ///宝石拆卸
         ///</summary>
-        public const short Cst_Action1301 = 1301;
+        public const short Cst_Action1121 = 1121;
 
         ///<summary>
-        ///携带技能
+        ///一键宝石镶嵌
         ///</summary>
-        public const short Cst_Action1310 = 1310;
+        public const short Cst_Action1122 = 1122;
+
+        ///<summary>
+        ///一键宝石拆卸
+        ///</summary>
+        public const short Cst_Action1123 = 1123;
+
+        ///<summary>
+        ///装备升级
+        ///</summary>
+        public const short Cst_Action1124 = 1124;
+
+        ///<summary>
+        ///宝石合成
+        ///</summary>
+        public const short Cst_Action1125 = 1125;
+
+        /// <summary>
+        /// 开启战魂
+        /// </summary>
+        public const short Cst_Action1130 = 1130;
+
+        /// <summary>
+        /// 升级技能
+        /// </summary>
+        public const short Cst_Action1140 = 1140;
+
+
+        ///<summary>
+        ///领取每日任务奖励
+        ///</summary>
+        public const short Cst_Action1150 = 1150;
+
+        ///<summary>
+        ///请求领取成就奖励
+        ///</summary>
+        public const short Cst_Action1160 = 1160;
+
 
         ///<summary>
         ///名人榜入口
@@ -331,100 +353,10 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action3001 = 3001;
 
         ///<summary>
-        ///聊天列表
-        ///</summary>
-        public const short Cst_Action3002 = 3002;
-
-        ///<summary>
-        ///公告列表
-        ///</summary>
-        public const short Cst_Action3003 = 3003;
-
-        ///<summary>
         ///请求排行榜数据
         ///</summary>
         public const short Cst_Action3004 = 3004;
-
-        ///<summary>
-        ///查询班长信息
-        ///</summary>
-        public const short Cst_Action4000 = 4000;
-
-        ///<summary>
-        ///请求挑战班长
-        ///</summary>
-        public const short Cst_Action4001 = 4001;
-
-        ///<summary>
-        ///请求挑战班长结果 
-        ///</summary>
-        public const short Cst_Action4002 = 4002;
-
-        ///<summary>
-        ///购买挑战班长资格 
-        ///</summary>
-        public const short Cst_Action4003 = 4003;
-
-        ///<summary>
-        ///请求竞选列表
-        ///</summary>
-        public const short Cst_Action4010 = 4010;
-
-        ///<summary>
-        ///请求竞选
-        ///</summary>
-        public const short Cst_Action4011 = 4011;
-
-        ///<summary>
-        ///请求竞选投票
-        ///</summary>
-        public const short Cst_Action4012 = 4012;
-
-        ///<summary>
-        ///购买选票
-        ///</summary>
-        public const short Cst_Action4013 = 4013;
-
-        ///<summary>
-        ///请求更换每日任务
-        ///</summary>
-        public const short Cst_Action5000 = 5000;
-
-        ///<summary>
-        ///领取每日任务奖励
-        ///</summary>
-        public const short Cst_Action5001 = 5001;
-
-        ///<summary>
-        ///请求占领数据
-        ///</summary>
-        public const short Cst_Action6000 = 6000;
-
-        ///<summary>
-        ///请求占领
-        ///</summary>
-        public const short Cst_Action6001 = 6001;
-
-        ///<summary>
-        ///请求占领结果
-        ///</summary>
-        public const short Cst_Action6002 = 6002;
-
-        ///<summary>
-        ///购买占领资格
-        ///</summary>
-        public const short Cst_Action6003 = 6003;
-
-        ///<summary>
-        ///请求成就数据
-        ///</summary>
-        public const short Cst_Action7000 = 7000;
-
-        ///<summary>
-        ///请求领取成就奖励
-        ///</summary>
-        public const short Cst_Action7001 = 7001;
-
+        
 
         ///<summary>
         ///请求邀请切磋
@@ -464,114 +396,119 @@ namespace GameServer.CsScript.Action
         ///<summary>
         ///请求读取邮件
         ///</summary>
-        public const short Cst_Action10000 = 10000;
+        public const short Cst_Action20000 = 20000;
 
         ///<summary>
         ///请求领取邮件附件
         ///</summary>
-        public const short Cst_Action10001 = 10001;
+        public const short Cst_Action20001 = 20001;
 
         ///<summary>
         ///请求删除邮件
         ///</summary>
-        public const short Cst_Action10002 = 10002;
+        public const short Cst_Action20002 = 20002;
 
         ///<summary>
         ///请求抽奖
         ///</summary>
-        public const short Cst_Action10100 = 10100;
+        public const short Cst_Action20100 = 20100;
 
         ///<summary>
         ///请求抽奖数据
         ///</summary>
-        public const short Cst_Action10101 = 10101;
+        public const short Cst_Action20101 = 20101;
 
         ///<summary>
         ///领取首充奖励
         ///</summary>
-        public const short Cst_Action10200 = 10200;
+        public const short Cst_Action20200 = 20200;
 
         ///<summary>
         ///请求扫荡
         ///</summary>
-        public const short Cst_Action10300 = 10300;
+        public const short Cst_Action20300 = 20300;
 
         ///<summary>
         ///领取扫荡
         ///</summary>
-        public const short Cst_Action10301 = 10301;
+        public const short Cst_Action20301 = 20301;
 
         ///<summary>
         ///扫荡减CD
         ///</summary>
-        public const short Cst_Action10302 = 10302;
+        public const short Cst_Action20302 = 20302;
 
         ///<summary>
         ///剧情
         ///</summary>
-        public const short Cst_Action10400 = 10400;
+        public const short Cst_Action20400 = 20400;
 
 
         ///<summary>
         ///购买体力
         ///</summary>
-        public const short Cst_Action10500 = 10500; 
+        public const short Cst_Action20500 = 20500; 
         
         ///<summary>
         ///领取体力
         ///</summary>
-        public const short Cst_Action10501 = 10501;
+        public const short Cst_Action20501 = 20501;
 
         ///<summary>
         ///改名
         ///</summary>
-        public const short Cst_Action10600 = 10600;
+        public const short Cst_Action20600 = 20600;
 
         ///<summary>
         ///领取累充
         ///</summary>
-        public const short Cst_Action10700 = 10700;
+        public const short Cst_Action20700 = 20700;
 
         ///<summary>
         ///一键拉票
         ///</summary>
-        public const short Cst_Action10800 = 10800;
+        public const short Cst_Action20800 = 20800;
 
         ///<summary>
         ///领取VIP礼包
         ///</summary>
-        public const short Cst_Action10900 = 10900;
+        public const short Cst_Action20900 = 20900;
 
         ///<summary>
         ///兑换CDK
         ///</summary>
-        public const short Cst_Action11000 = 11000;
+        public const short Cst_Action21000 = 21000;
 
         ///<summary>
         ///分享
         ///</summary>
-        public const short Cst_Action11100 = 11100;
+        public const short Cst_Action21100 = 21100;
 
         ///<summary>
         ///领取分享奖励
         ///</summary>
-        public const short Cst_Action11101 = 11101;
+        public const short Cst_Action21101 = 21101;
 
 
         ///<summary>
         ///争霸赛报名
         ///</summary>
-        public const short Cst_Action11200 = 11200;
+        public const short Cst_Action21200 = 21200;
 
         ///<summary>
         ///争霸赛信息
         ///</summary>
-        public const short Cst_Action11210 = 11210;
+        public const short Cst_Action21210 = 21210;
+
+        ///<summary>
+        ///争霸赛下注
+        ///</summary>
+        public const short Cst_Action21220 = 21220;
 
         ///<summary>
         ///红包
         ///</summary>
-        public const short Cst_Action11300 = 11300;
+        public const short Cst_Action21300 = 21300;
 
     }
 }

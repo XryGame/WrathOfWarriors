@@ -27,7 +27,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1005 : RegisterAction
     {
-        private int looksid;
+        private int profession;
         public Action1005(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1005, actionGetter)
         {
@@ -37,7 +37,7 @@ namespace GameServer.CsScript.Action
 
         protected override bool GetActionParam()
         {
-            if (httpGet.GetInt("LooksId", ref looksid))
+            if (httpGet.GetInt("Profession", ref profession))
             {
                 return true;
             }
@@ -47,24 +47,25 @@ namespace GameServer.CsScript.Action
         protected override bool CreateUserRole(out IUser user)
         {
             user = null;
-            GameUser gameUser = UserHelper.FindUser(UserId);
-            if (gameUser == null)
+            UserBasisCache basis = UserHelper.FindUserBasis(UserId);
+            if (basis == null)
             {
-                var roleFunc = new RoleFunc();
+                var nickNameCheck = new NickNameCheck();
+                var KeyWordCheck = new KeyWordCheck();
                 string msg;
 
-                if (roleFunc.VerifyRange(UserName, out msg) ||
-                    roleFunc.VerifyKeyword(UserName, out msg) ||
-                    roleFunc.IsExistNickName(UserName, out msg))
+                if (nickNameCheck.VerifyRange(UserName, out msg) ||
+                    KeyWordCheck.VerifyKeyword(UserName, out msg) ||
+                    nickNameCheck.IsExistNickName(UserName, out msg))
                 {
                     ErrorCode = Language.Instance.ErrorCode;
                     ErrorInfo = msg;
                     return false;
                 }
-                gameUser = CreateRole();
-                if (gameUser == null)
+                basis = CreateRole();
+                if (basis == null)
                     return false;
-                roleFunc.OnCreateAfter(gameUser);
+                nickNameCheck.OnCreateAfter(basis);
             }
             else
             {
@@ -82,91 +83,117 @@ namespace GameServer.CsScript.Action
             userLoginLog.State = LoginStatus.Logined;
             userLoginLog.DeviceID = DeviceID;
             userLoginLog.Ip = GetRealIP();
-            userLoginLog.Pid = gameUser.Pid;
-            userLoginLog.UserLv = gameUser.UserLv;
+            userLoginLog.Pid = basis.Pid;
+            userLoginLog.UserLv = basis.UserLv;
             var sender = DataSyncManager.GetDataSender();
             sender.Send(new[] { userLoginLog });
 
-            user = new SessionUser(gameUser);
+            user = new SessionUser(basis);
             //Current.Bind(user);
 
             return true;
         }
 
-        private GameUser CreateRole()
+        private UserBasisCache CreateRole()
         {
-            Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-            var combat = combatranking as CombatRanking;
-            var level = levelranking as LevelRanking;
-            
-            //Ranking<UserRank> fightvalueranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
-            if (combat == null || level == null)
-            {
-                new BaseLog().SaveLog("排行榜错误!!!");
-                return null;
-            }
-               
+            // Basis初始化
+            UserBasisCache basis = new UserBasisCache(UserId);
+            basis.IsRefreshing = true;
+            basis.SessionID = Sid;
+            basis.ServerID = ServerID;
+            basis.Pid = Pid;
+            basis.RetailID = RetailID;
+            basis.NickName = UserName;
+            basis.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
+            basis.RewardsDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
+            //bisis.Vit = DataHelper.InitVit;
+            basis.VipLv = ConfigEnvSet.GetInt("User.VipLv");
+            basis.Profession = profession;
+            basis.UserStatus = UserStatus.MainUi;
+            basis.LoginDate = DateTime.Now;
+            basis.CreateDate = DateTime.Now;
+            basis.OfflineDate = DateTime.Now;
+            basis.IsOnline = true;
+            basis.InviteFightDiamondNum = 0;
+            basis.ResetInviteFightDiamondDate = DateTime.Now;
+            basis.Gold = "10000";
+            basis.OfflineEarnings = "0";
 
+            var cacheSet = new PersonalCacheStruct<UserBasisCache>();
+            cacheSet.Add(basis);
+            cacheSet.Update();
 
-            GameUser user = new GameUser(UserId);
-            user.IsRefreshing = true;
-            user.SessionID = Sid;
-            user.EnterServerId = ServerID;
-            user.Pid = Pid;
-            user.RetailID = RetailID;
-            user.NickName = UserName;
-            user.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
-            user.UserStage = SubjectStage.PreschoolSchool;
-            user.GiveAwayDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
-            user.Vit = DataHelper.InitVit;
-            user.VipLv = ConfigEnvSet.GetInt("User.VipLv");
-            user.LooksId = looksid;
-            user.UserStatus = UserStatus.MainUi;
-            user.LoginDate = DateTime.Now;
-            user.CreateDate = DateTime.Now;
-            user.OfflineDate = DateTime.Now;
-            //user.ClassData = new UserClassData();
-            //user.StudyTaskData = new UserStudyTaskData();
-            //user.ExerciseTaskData = new UserExerciseTaskData();
-            //user.ExpData = new UserExpData();
-            //user.CombatData = new UserCombatData();
-            user.CombatData.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
-            user.CampaignTicketNum = ConfigEnvSet.GetInt("User.RestoreCampaignTicketNum");
-            //user.EventAwardData.OnlineStartTime = DateTime.Now;
-            user.PlotId = 0;
-            user.IsOnline = true;
-            user.InviteFightDiamondNum = 0;
-            user.ResetInviteFightDiamondDate = DateTime.Now;
-            //user.FriendsData = new UserFriendsData();
-            user.RefreshFightValue();
+            // 属性初始化
+            UserAttributeCache attcache = new UserAttributeCache();
+            attcache.UserID = basis.UserID;
+            var attributeSet = new PersonalCacheStruct<UserAttributeCache>();
+            attributeSet.Add(attcache);
+            attributeSet.Update();
 
+            // 装备初始化
+            UserEquipsCache equipcache = new UserEquipsCache();
+            equipcache.UserID = basis.UserID;
+            var equipsSet = new PersonalCacheStruct<UserEquipsCache>();
+            equipsSet.Add(equipcache);
+            equipsSet.Update();
 
-            // 默认场景地图
-            var scelemaps = new ShareCacheStruct<Config_SceneMap>().FindAll();
-            foreach (var scenecfg in scelemaps)
-            {
-                if (scenecfg.IfLock)
-                    user.UnlockSceneMapList.Add(scenecfg.ID);
-            }
-            if (user.UnlockSceneMapList.Count > 0)
-                user.SelectedSceneMapId = user.UnlockSceneMapList[0];
+            UserHelper.RefreshUserFightValue(basis.UserID, false);
 
-            // 构建个人成就系统
-            for (AchievementType type = AchievementType.LevelCount; type <= AchievementType.AwardDiamondCount; ++type)
-            {
-                var achievement = new ShareCacheStruct<Config_Achievement>().Find(t => (t.AchievementType == type));
-                if (achievement == null)
-                    continue;
-                AchievementData achdata = new AchievementData();
-                achdata.Type = achievement.AchievementType;
-                achdata.ID = achievement.id;
-                if (type == AchievementType.LevelCount)
-                    achdata.Count = user.UserLv;
-                user.AchievementList.Add(achdata);
-            }
+            // 背包初始化
+            UserPackageCache packagecache = new UserPackageCache();
+            packagecache.UserID = basis.UserID;
+            var packageSet = new PersonalCacheStruct<UserPackageCache>();
 
-            // 邮箱
+            packagecache.AddItem(10001, 99);
+            packagecache.AddItem(10006, 99);
+            for (int i = 10011; i < 10017; ++i)
+                packagecache.AddItem(i, 999);
+            for (int i = 10053; i < 10097; ++i)
+                packagecache.AddItem(i, 1);
+
+            packageSet.Add(packagecache);
+            packageSet.Update();
+
+            // 战魂初始化
+            UserSoulCache soulcache = new UserSoulCache();
+            soulcache.UserID = basis.UserID;
+            var soulSet = new PersonalCacheStruct<UserSoulCache>();
+            soulSet.Add(soulcache);
+            soulSet.Update();
+
+            // 技能初始化
+            UserSkillCache skillcache = new UserSkillCache();
+            skillcache.UserID = basis.UserID;
+            skillcache.ResetCache(profession);
+            var skillSet = new PersonalCacheStruct<UserSkillCache>();
+            skillSet.Add(skillcache);
+            skillSet.Update();
+
+            // 好友初始化
+            UserFriendsCache friendscache = new UserFriendsCache();
+            friendscache.UserID = basis.UserID;
+            var friendsSet = new PersonalCacheStruct<UserFriendsCache>();
+            friendsSet.Add(friendscache);
+            friendsSet.Update();
+
+            // 成就初始化
+            UserAchievementCache achievecache = new UserAchievementCache();
+            achievecache.UserID = basis.UserID;
+            var achieveSet = new PersonalCacheStruct<UserAchievementCache>();
+            achieveSet.Add(achievecache);
+            achieveSet.Update();
+
+            // 充值初始化
+            UserPayCache paycache = new UserPayCache();
+            paycache.UserID = basis.UserID;
+            var paySet = new PersonalCacheStruct<UserPayCache>();
+            paySet.Add(paycache);
+            paySet.Update();
+
+            // 邮箱初始化
+            UserMailBoxCache mailcache = new UserMailBoxCache();
+            mailcache.UserID = basis.UserID;
+            var mailSet = new PersonalCacheStruct<UserMailBoxCache>();
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
@@ -176,56 +203,50 @@ namespace GameServer.CsScript.Action
                 Context = "恭喜您已获得月卡免费体验资格，月卡有效期为3天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
                 ApppendDiamond = 0
             };
+            UserHelper.AddNewMail(basis.UserID, mail);
+            mailSet.Add(mailcache);
+            mailSet.Update();
 
-            user.AddNewMail(ref mail);
-            
+            // 任务初始化
+            UserTaskCache taskcache = new UserTaskCache();
+            taskcache.UserID = basis.UserID;
+            var taskSet = new PersonalCacheStruct<UserTaskCache>();
+            taskSet.Add(taskcache);
+            taskSet.Update();
 
-            var cacheSet = new PersonalCacheStruct<GameUser>();
-            cacheSet.Add(user);
-            cacheSet.Update();
+            // 竞技场初始化
+            UserCombatCache combatcache = new UserCombatCache();
+            combatcache.UserID = basis.UserID;
+            var combatSet = new PersonalCacheStruct<UserCombatCache>();
+            combatSet.Add(combatcache);
+            combatSet.Update();
 
-            UserHelper.RestoreUserData(UserId);
+            // 活动相关初始化
+            UserEventAwardCache eventawardcache = new UserEventAwardCache();
+            eventawardcache.UserID = basis.UserID;
+            var eventAwardSet = new PersonalCacheStruct<UserEventAwardCache>();
+            eventAwardSet.Add(eventawardcache);
+            eventAwardSet.Update();
 
-
-            // 加入排行榜
+            // 排行榜初始化
             UserRank rankInfo = new UserRank()
             {
-                UserID = user.UserID,
-                NickName = user.NickName,
-                LooksId = user.LooksId,
-                UserLv = user.UserLv,
-                VipLv = user.VipLv,
-                IsOnline = true,
+                UserID = basis.UserID,
+                NickName = basis.NickName,
+                Profession = basis.Profession,
+                UserLv = basis.UserLv,
+                VipLv = basis.VipLv,
                 RankId = int.MaxValue,
-                Exp = user.TotalExp,
-                FightingValue = user.FightingValue,
                 RankDate = DateTime.Now,
             };
+            Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            var combat = combatranking as CombatRanking;
             combat.TryAppend(rankInfo);
             combat.rankList.Add(rankInfo);
-            UserRank lvUserRank = new UserRank(rankInfo);
-            level.TryAppend(lvUserRank);
-            level.rankList.Add(lvUserRank);
-            //fightvalueranking.TryAppend(rankInfo);
 
-
-            // 充值数据
-            UserPayCache paycache = new UserPayCache()
-            {
-                UserID = user.UserID,
-                PayMoney = 0,
-                IsReceiveFirstPay = false,
-                WeekCardDays = -1,
-                MonthCardDays = 2,
-                WeekCardAwardDate = DateTime.Now,
-                MonthCardAwardDate = DateTime.Now,
-            };
-            var payCacheSet = new PersonalCacheStruct<UserPayCache>();
-            payCacheSet.Add(paycache);
-            payCacheSet.Update();
-
-            UserHelper.AddMouthCardMail(user, paycache);
-            return user;
+            UserHelper.RestoreUserData(basis.UserID);
+            UserHelper.AddMouthCardMail(basis.UserID);
+            return basis;
         }
 
         protected override string BuildJsonPack()

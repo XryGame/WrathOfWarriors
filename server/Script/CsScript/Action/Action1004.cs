@@ -1,23 +1,15 @@
 ﻿using System;
 using ZyGames.Framework.Cache.Generic;
-using ZyGames.Framework.Game.Context;
-using ZyGames.Framework.Game.Contract.Action;
 using ZyGames.Framework.Game.Service;
-using ZyGames.Framework.Game.Sns;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.LogModel;
 using ZyGames.Framework.Net;
 using ZyGames.Framework.Game.Lang;
 using GameServer.Script.Model.Enum;
-using ZyGames.Framework.Redis;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.RPC.Sockets;
 using GameServer.CsScript.JsonProtocol;
 using ZyGames.Framework.Game.Contract;
-using ZyGames.Framework.Common.Log;
-using GameServer.Script.CsScript.Action;
-using ZyGames.Framework.Common.Security;
-using System.Text;
 using GameServer.CsScript.Base;
 
 namespace GameServer.CsScript.Action
@@ -27,11 +19,16 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1004 : BaseStruct
     {
+
         private bool isCreated = false;
-        //private MobileType MobileType;
-        private string PassportId;
-        private string Password;
-        private int ServerID;
+
+        private string logindata = string.Empty;
+       // private string md5key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXdPs18RFj4XBEzbPNZ+58CsPC7AeVhZ3zWxVKPfozuwVCR1kDhYp/5e2tMVoleayDpAq/2FJUNTbTu5eYkow11Cho2RRGuMRRhl0RJ0lqItuwbe4a8/D2cgqsw+BxrZLcWO0xpnE7NGTkMc7sRz60Muq5izhLYrDUn/KUd7qi/QIDAQAB";
+
+        private string OpenID = string.Empty;
+        private string RetailID = string.Empty;
+        public int ServerID = 0;
+
         public Action1004(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1004, actionGetter)
         {
@@ -41,9 +38,11 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (actionGetter.GetString("Pid", ref PassportId) &&
-                actionGetter.GetString("Pwd", ref Password) &&
-                actionGetter.GetInt("ServerID", ref ServerID))
+            if (actionGetter.GetString("OpenID", ref OpenID)
+                && !string.IsNullOrEmpty(OpenID)
+                && actionGetter.GetString("RetailID", ref RetailID)
+                && !string.IsNullOrEmpty(RetailID)
+                && actionGetter.GetInt("ServerID", ref ServerID))
             {
                 return true;
             }
@@ -68,85 +67,72 @@ namespace GameServer.CsScript.Action
             return MathUtils.ToJson(resultData);
         }
 
-
-
-
+        
         public override bool TakeAction()
         {
-            var ucpcache = new ShareCacheStruct<UserCenterPassport>();
-            var ucp = ucpcache.FindKey(PassportId);
-            if (ucp == null)
-            {
-                ErrorCode = Language.Instance.ErrorCode;
-                ErrorInfo = Language.Instance.PasswordError;
-                return false;
-            }
-
+            SessionUser user = null;
             try
             {
-                if (ucp.Password.CompareTo(Password) != 0)
+
+                var cache = new ShareCacheStruct<UserCenterUser>();
+                var uculist = Util.FindUserCenterUser(OpenID, RetailID, ServerID);
+
+                if (uculist.Count <= 0)
                 {
-                    ErrorCode = Language.Instance.ErrorCode;
-                    ErrorInfo = Language.Instance.PasswordError;
+                    UserCenterUser ucu = Util.CreateUserCenterUser(OpenID, RetailID, ServerID);
+                    user = new SessionUser() { PassportId = OpenID, UserId = ucu.UserID };
+                    Current.Bind(user);
+                    return true;
+                }
+                
+                UserBasisCache basis = UserHelper.FindUserBasis(uculist[0].UserID);
+                if (basis == null)
+                {
+                    user = new SessionUser() { PassportId = OpenID, UserId = uculist[0].UserID };
+                    Current.Bind(user);
+                    return true;
+                }
+                uculist[0].LoginNum++;
+                isCreated = true;
+
+                user = new SessionUser(basis);
+                Current.Bind(user);
+                if (basis.UserStatus == UserStatus.Lock)
+                {
+                    ErrorCode = Language.Instance.TimeoutCode;
+                    ErrorInfo = Language.Instance.AcountIsLocked;
                     return false;
                 }
+                basis.SessionID = Sid;
+                //basis.ServerID = this.ServerID;
+
+                UserHelper.UserOnline(basis.UserID);
+
+
+                System.Threading.Tasks.Task.Factory.StartNew(() =>
+                {
+                    //登录日志
+                    UserLoginLog userLoginLog = new UserLoginLog();
+                    userLoginLog.UserId = basis.UserID.ToString();
+                    userLoginLog.SessionID = Sid;
+                    userLoginLog.AddTime = DateTime.Now;
+                    userLoginLog.State = LoginStatus.Logined;
+                    userLoginLog.Ip = this.GetRealIP();
+                    userLoginLog.Pid = basis.Pid;
+                    userLoginLog.UserLv = basis.UserLv;
+                    var sender = DataSyncManager.GetDataSender();
+                    sender.Send(new[] { userLoginLog });
+                });
+
+                return true;
             }
             catch (Exception ex)
             {
-                new BaseLog().SaveLog(ex);
+                SaveLog(ex);
+                ErrorCode = Language.Instance.ErrorCode;
+                ErrorInfo = Language.Instance.ValidateError;
                 return false;
             }
-
-            
-            var cache = new ShareCacheStruct<UserCenterUser>();
-            var ucu = cache.Find(t => (t.PassportID == PassportId && t.ServerId == ServerID));
-            if (ucu == null)
-            {
-                //not user create it.
-                ucu = Util.CreateUserCenterUser(PassportId, ServerID);
-            }
-            ucu.AccessTime = DateTime.Now;
-            ucu.LoginNum++;
-
-            GameUser gameUser = UserHelper.FindUser(ucu.UserId);
-
-            SessionUser user = null;
-            if (gameUser == null)
-            {
-                user = new SessionUser() { PassportId = PassportId, UserId = ucu.UserId };
-                Current.Bind(user);
-                return true;
-            }
-            isCreated = true;
-            user = new SessionUser(gameUser);
-            Current.Bind(user);
-            if (gameUser.UserStatus == UserStatus.Lock)
-            {
-                ErrorCode = Language.Instance.TimeoutCode;
-                ErrorInfo = Language.Instance.AcountIsLocked;
-                return false;
-            }
-            gameUser.SessionID = Sid;
-            gameUser.ServerId = this.ServerID;
-            
-            UserHelper.UserOnline(ucu.UserId);
-            
-
-            System.Threading.Tasks.Task.Factory.StartNew(() =>
-            {
-                //登录日志
-                UserLoginLog userLoginLog = new UserLoginLog();
-                userLoginLog.UserId = gameUser.UserID.ToString();
-                userLoginLog.SessionID = Sid;
-                userLoginLog.AddTime = DateTime.Now;
-                userLoginLog.State = LoginStatus.Logined;
-                userLoginLog.Ip = this.GetRealIP();
-                userLoginLog.Pid = gameUser.Pid;
-                userLoginLog.UserLv = gameUser.UserLv;
-                var sender = DataSyncManager.GetDataSender();
-                sender.Send(new[] { userLoginLog });
-            });
-            return true;
         }
 
 

@@ -32,10 +32,10 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            ContextUser.UserStatus = UserStatus.MainUi;
-            ContextUser.InviteFightDestUid = 0;
+            GetBasis.UserStatus = UserStatus.MainUi;
+            GetBasis.InviteFightDestUid = 0;
             GameSession session = GameSession.Get(destuid);
-            GameUser dest = UserHelper.FindUser(destuid);
+            UserBasisCache dest = UserHelper.FindUserBasis(destuid);
             if (session == null || !session.Connected || dest == null
                 || dest.UserStatus != UserStatus.Inviteing)
             {
@@ -43,7 +43,7 @@ namespace GameServer.CsScript.Action
             }
 
             dest.UserStatus = UserStatus.MainUi;
-            PushMessageHelper.CancelInviteFightNotification(session, ContextUser.NickName);
+            PushMessageHelper.CancelInviteFightNotification(session, GetBasis.NickName);
             return true;
         }
     }

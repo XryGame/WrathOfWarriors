@@ -1,0 +1,313 @@
+Time:2017-03-13 17:24:14:724-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入标识符；“static”是关键字
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入 class、delegate、enum、interface 或 struct
+
+
+Time:2017-03-13 17:24:14:774-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:24:21:732-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入标识符；“static”是关键字
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入 class、delegate、enum、interface 或 struct
+
+
+Time:2017-03-13 17:24:21:735-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:24:24:391-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入标识符；“static”是关键字
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:9
+Message:应输入 class、delegate、enum、interface 或 struct
+
+
+Time:2017-03-13 17:24:24:393-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:25:39:310-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_2ac382196d434f6d873c848c9e55fe0e%7C2%7C1%26Uid%3D1000007%26St%3Dst%26ActionId%3D1008%26sign%3D6d25dd3ec2a850e1c659cf1c7333a9e7, Uid:1000007, Pid:user1488246422000
+Host:168.254.0.101:55057
+
+
+Time:2017-03-13 17:25:41:989-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1125.cs, Line:21
+Message:未能找到类型或命名空间名称“Random”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-03-13 17:25:41:990-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:25:58:308-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_fa1f73c502e94223a7b136a4657d06a7%7C2%7C1%26Uid%3D1000007%26St%3Dst%26ActionId%3D1008%26sign%3D14100926b7102c2d8600951ac126945c, Uid:1000007, Pid:user1488246422000
+Host:168.254.0.101:55071
+
+
+Time:2017-03-13 17:28:22:409-Trace>>Action1008 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendNotice(NoticeMode type, String content, Int32 sender) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 108
+   在 GameServer.CsScript.Action.Action1008.TakeActionAffter(Boolean state) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1008.cs:行号 111
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_294de5e2090642b6ac20d200bc994566%7C2%7C1%26Uid%3D1000007%26St%3Dst%26ActionId%3D1008%26sign%3D71098a896944c6dcf5343e49ce3018af, Uid:1000007, Pid:user1488246422000
+Host:168.254.0.101:55094
+
+
+Time:2017-03-13 17:37:42:267-Trace>>Not found DB connection key "PayCenter" of the SensitiveWord entity.
+
+
+Time:2017-03-13 17:37:43:171-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 148
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 117
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:37:45:861-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+
+
+Time:2017-03-13 17:37:46:033-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:38:04:429-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+
+
+Time:2017-03-13 17:38:04:432-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:38:16:734-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+
+
+Time:2017-03-13 17:38:16:736-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:38:48:399-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:38:48:403-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:39:35:110-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\Enum\TaskType.cs, Line:55
+Message:类型“GameServer.Script.Model.Enum.TaskType”已经包含“FriendCompare”的定义
+
+
+Time:2017-03-13 17:39:35:116-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:39:49:077-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:39:49:095-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:40:33:336-Compile assembly:DynamicScripts.Model error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Task.cs, Line:80
+Message:类型“GameServer.Script.Model.ConfigModel.Config_Task”已经包含“_ObjectiveNum”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\Model\ConfigModel\Config_Task.cs, Line:82
+Message:类型“GameServer.Script.Model.ConfigModel.Config_Task”已经包含“ObjectiveNum”的定义
+
+
+Time:2017-03-13 17:40:33:338-Trace>>DoWatcherChanged error:System.Exception: The model script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileModel()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:40:45:226-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:40:45:229-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:41:16:268-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:41:16:272-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:42:26:558-Trace>>SendAsync 168.254.0.103:64599 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.TryDequeueAndPostSend(ExSocket socket, SocketAsyncEventArgs ioEventArgs)
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.<SendAsync>d__61.MoveNext()
+
+
+Time:2017-03-13 17:42:26:562-Trace>>SendAsync 168.254.0.103:64599 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.TryDequeueAndPostSend(ExSocket socket, SocketAsyncEventArgs ioEventArgs)
+   在 ZyGames.Framework.RPC.Sockets.SocketListener.<SendAsync>d__61.MoveNext()
+
+
+Time:2017-03-13 17:43:15:068-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:43:15:072-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:43:15:119-Trace>>Disconnected error:System.InvalidCastException: [A]GameServer.Script.Model.DataModel.UserBasisCache 无法强制转换为 [B]GameServer.Script.Model.DataModel.UserBasisCache。类型 A 源自“t5gcd2iz, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\Wrath of warriors\server\server\temp\t5gcd2iz.dll”位置处)。类型 B 源自“nx0pvxn5, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null”(在上下文“Default”中的“E:\ServerTools\code\Wrath of warriors\server\server\temp\nx0pvxn5.dll”位置处)。
+   在 ZyGames.Framework.Cache.Generic.CacheCollection.TryGetValue[T](String key, T& data)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.TryFindKey(String personalId, T& data, Object[] keys)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.FindKey(String personalId, Object[] keys)
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUserBasis(Int32 userid)
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOffline(Int32 uid)
+   在 Game.Script.MainClass.OnDisconnected(GameSession session)
+   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
+
+
+Time:2017-03-13 17:43:19:294-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:43:19:296-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-13 17:43:58:087-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs, Line:174
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“CombatFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action8003.cs, Line:48
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“InviteFight”的定义
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1504.cs, Line:94
+Message:“GameServer.Script.Model.Enum.TaskType”并不包含“GiveAwayFriend”的定义
+
+
+Time:2017-03-13 17:43:58:089-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Load()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.Init()
+   在 ZyGames.Framework.Script.ScriptRuntimeDomain.CreateScope(ScriptSettupInfo settupInfo)
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

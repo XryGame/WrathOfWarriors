@@ -12,7 +12,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int UserLv { get; set; }
 
-        public int LooksId { get; set; }
+        public int Profession { get; set; }
 
         public string ClassName { get; set; }
 
@@ -29,15 +29,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int HP { get; set; }
 
         public int RankId { get; set; }
-
-        public SubjectStage UserStage { get; set; }
-
-        public CacheList<ItemData> ItemList { get; set; }
         
-        public CacheList<SkillData> SkillList { get; set; }
-
-        public CacheList<int> SkillCarryList { get; set; }
-
-        public bool IsUnlockSelectMap { get; set; }
+        
+       
     }
 }

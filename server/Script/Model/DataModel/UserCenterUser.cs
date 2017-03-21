@@ -9,23 +9,31 @@ namespace GameServer.Script.Model.DataModel
     {
         [ProtoMember(1)]
         [EntityField(true)]
-        public int UserId { get; set; }
+        public int UserID { get; set; }
 
         [ProtoMember(2)]
         [EntityField]
-        public string PassportID { get; set; }
+        public string NickName { get; set; }
 
         [ProtoMember(3)]
         [EntityField]
-        public int ServerId { get; set; }
+        public string OpenID { get; set; }
 
         [ProtoMember(4)]
         [EntityField]
-        public DateTime AccessTime { get; set; }
+        public int ServerID { get; set; }
 
         [ProtoMember(5)]
         [EntityField]
+        public DateTime AccessTime { get; set; }
+
+        [ProtoMember(6)]
+        [EntityField]
         public int LoginNum { get; set; }
+
+        [ProtoMember(7)]
+        [EntityField]
+        public string RetailID { get; set; }
 
 
 

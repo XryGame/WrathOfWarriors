@@ -1,0 +1,144 @@
+Time:2017-03-01 15:39:52:231-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:53:018-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:54:019-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:55:020-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:56:021-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:57:022-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:58:088-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:39:59:065-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:00:042-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:01:019-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:02:105-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:03:082-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:04:059-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:05:037-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:06:014-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:07:053-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:08:031-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+
+Time:2017-03-01 15:40:09:007-Trace>>TimeListener notify error:System.ArgumentException: 偏移量和长度超出数组的界限，或者计数大于从索引到源集合结尾处的元素数量。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   在 ZyGames.Framework.Cache.Generic.CacheList`1.GetListRange(Int32 index, Int32 count)
+   在 GameServer.CsScript.Base.MsgDispatcher.Dispatcher(PlanConfig planconfig) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Base\MsgDispatcher.cs:行号 43
+   在 ZyGames.Framework.Common.Timing.TimeListener.<>c__DisplayClass22_0.<DoNotify>b__0(Object obj)
+
+

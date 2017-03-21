@@ -24,11 +24,8 @@ namespace GameServer.CsScript.GM
         /// <param name="userId"></param>
         public bool PayWeekCard(int userId)
         {
-            GameUser user = UserHelper.FindUser(userId);
             UserPayCache userpay = UserHelper.FindUserPay(userId);
             
-            if (userpay == null || user == null)
-                return false;
 
             bool isAward = false;
             if (userpay.WeekCardDays < 0)
@@ -51,7 +48,7 @@ namespace GameServer.CsScript.GM
                             ConfigEnvSet.GetInt("System.WeekCardDiamond")),
             };
 
-            user.AddNewMail(ref mail);
+            UserHelper.AddNewMail(userId, mail);
 
             if (isAward)
             {
@@ -64,7 +61,7 @@ namespace GameServer.CsScript.GM
                     Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", userpay.WeekCardDays),
                     ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
                 };
-                user.AddNewMail(ref mail);
+                UserHelper.AddNewMail(userId, mail);
             }
 
             return true;

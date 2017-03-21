@@ -45,13 +45,13 @@ namespace GameServer.CsScript.Action
         {
             receipt = new JPRequestRankData();
             receipt.Type = _ranktype;
-            var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
 
             int rankID = 0;
             UserRank rankInfo = null;
-            if (ranking.TryGetRankNo(m => (m.UserID == ContextUser.UserID), out rankID))
+            if (ranking.TryGetRankNo(m => (m.UserID == GetBasis.UserID), out rankID))
             {
-                rankInfo = ranking.Find(s => (s.UserID == ContextUser.UserID));
+                rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
             }
 
             if (rankInfo != null)
@@ -67,11 +67,11 @@ namespace GameServer.CsScript.Action
                 {
                     UserId = data.UserID,
                     NickName = data.NickName,
-                    LooksId = data.LooksId,
+                    Profession = data.Profession,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
-                    Exp = data.Exp,
-                    FightingValue = data.FightingValue,
+                    //Exp = data.Exp,
+                    //FightingValue = data.FightingValue,
                     VipLv = data.VipLv
                 };
                 GameSession session = GameSession.Get(data.UserID);

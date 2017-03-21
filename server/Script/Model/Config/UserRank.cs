@@ -17,12 +17,9 @@ namespace GameServer.Script.Model.Config
         {
             UserID = ur.UserID;
             NickName = ur.NickName;
-            LooksId = ur.LooksId;
+            Profession = ur.Profession;
             RankId = ur.RankId;
             UserLv = ur.UserLv;
-            IsOnline = ur.IsOnline;
-            Exp = ur.Exp;
-            FightingValue = ur.FightingValue;
             RankDate = ur.RankDate;
             HaveRankNum = ur.HaveRankNum;
             IsFighting = ur.IsFighting;
@@ -51,7 +48,7 @@ namespace GameServer.Script.Model.Config
         /// 形象ID
         /// </summary>
         [ProtoMember(3)]
-        public int LooksId
+        public int Profession
         {
             get;
             set;
@@ -78,34 +75,11 @@ namespace GameServer.Script.Model.Config
         /// 等级
         /// </summary>
         [ProtoMember(5)]
-        public short UserLv
+        public int UserLv
         {
             get;
             set;
         }
-
-        /// <summary>
-        /// 是否在线
-        /// </summary>
-        [ProtoMember(6)]
-        public bool IsOnline
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 总经验
-        /// </summary>
-        [ProtoMember(7)]
-        public int Exp { get; set; }
-
-        /// <summary>
-        /// 战力
-        /// </summary>
-        [ProtoMember(8)]
-        public int FightingValue { get; set; }
-
 
         /// <summary>
         /// 排名时间

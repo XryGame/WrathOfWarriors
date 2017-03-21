@@ -277,12 +277,12 @@ namespace GameServer.Script.Model.LogModel
             }
         }
 
-        private Int16 _UserLv;
+        private int _UserLv;
         /// <summary>
         /// 
         /// </summary>
         [EntityField("UserLv")]
-        public Int16 UserLv
+        public int UserLv
         {
             private get
             {
@@ -294,12 +294,12 @@ namespace GameServer.Script.Model.LogModel
             }
         }
 
-        private Int32 _PlotID;
+        private int _PlotID;
         /// <summary>
         /// 
         /// </summary>
         [EntityField("PlotID")]
-        public Int32 PlotID
+        public int PlotID
         {
             private get
             {
@@ -404,7 +404,7 @@ namespace GameServer.Script.Model.LogModel
                         _Pid = value.ToNotNullString();
                         break;
                     case "UserLv":
-                        _UserLv = value.ToShort();
+                        _UserLv = value.ToInt();
                         break;
                     case "PlotID":
                         _PlotID = value.ToInt();

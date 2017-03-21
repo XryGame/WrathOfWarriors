@@ -51,7 +51,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = ContextUser.findMail(newid);
+            receipt = GetMailBox.findMail(newid);
             if (receipt == null)
                 return false;
             

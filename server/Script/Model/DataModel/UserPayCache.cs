@@ -20,7 +20,8 @@ namespace GameServer.Script.Model.DataModel
         public UserPayCache()
             : base(AccessLevel.ReadWrite)
         {
-
+            AccumulatePayList = new CacheList<int>();
+            ResetCache();
         }
         
         private int _UserID;
@@ -143,6 +144,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 领取累充记录
+        /// </summary>
+        private CacheList<int> _AccumulatePayList;
+        [ProtoMember(8)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> AccumulatePayList
+        {
+            get
+            {
+                return _AccumulatePayList;
+            }
+            set
+            {
+                SetChange("AccumulatePayList", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -163,6 +182,7 @@ namespace GameServer.Script.Model.DataModel
                     case "MonthCardDays": return MonthCardDays;
                     case "WeekCardAwardDate": return WeekCardAwardDate;
                     case "MonthCardAwardDate": return MonthCardAwardDate;
+                    case "AccumulatePayList": return AccumulatePayList;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -193,6 +213,9 @@ namespace GameServer.Script.Model.DataModel
                     case "MonthCardAwardDate":
                         _MonthCardAwardDate = value.ToDateTime();
                         break;
+                    case "AccumulatePayList":
+                        _AccumulatePayList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -215,6 +238,17 @@ namespace GameServer.Script.Model.DataModel
             {
                 return 0;
             }
+        }
+
+        public void ResetCache()
+        {
+            PayMoney = 0;
+            IsReceiveFirstPay = false;
+            WeekCardDays = -1;
+            MonthCardDays = 2;
+            WeekCardAwardDate = DateTime.Now;
+            MonthCardAwardDate = DateTime.Now;
+            AccumulatePayList.Clear();
         }
     }
 }

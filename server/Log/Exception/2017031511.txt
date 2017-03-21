@@ -1,0 +1,17 @@
+Time:2017-03-15 11:11:17:566-Trace>>FindEntityFromRedis GameServer.Script.Model.DataModel.UserSkillCache keys:9
+Error:System.Exception: get SkillList column val error. ---> System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 ProtoBuf.NetObjectCache.SetKeyedObject(Int32 key, Object value)
+   在 ProtoBuf.ProtoWriter.SetRootObject(Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.Serialize(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.CovertDataValue(SchemaColumn schemaColumn, Object& value)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GetPropertyValue[T](T data, SchemaColumn column)
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Net.Sql.SqlDataSender.GenerateCommand[T](DbBaseProvider dbProvider, T data, SchemaTable schemaTable, EntityPropertyGetFunc`1 getFunc, EnttiyPostColumnFunc`1 postColumnFunc)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.GenerateSqlFrom(SqlDataSender sender, RedisClient client, Byte[][] keys, Byte[][] values)
+
+

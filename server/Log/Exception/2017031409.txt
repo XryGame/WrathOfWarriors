@@ -1,0 +1,5 @@
+Time:2017-03-14 09:56:14:833-Trace>>Try load cache data:GameServer.Script.Model.DataModel.UserAttributeCache-1000003 320ms
+>>received count:1 time:298ms run:298ms
+>>Init cache: time:320ms run:22ms
+
+

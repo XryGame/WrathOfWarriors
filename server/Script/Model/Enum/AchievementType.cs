@@ -9,40 +9,37 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         LevelCount = 1,
         /// <summary>
-        /// 学习时间达到
+        /// 技能升级
         /// </summary>
-        StudyTime,
+        UpgradeSkill,
         /// <summary>
-        /// 劳动时间达到
+        /// 装备升级
         /// </summary>
-        ExerciseTime,
+        UpgradeEquip,
         /// <summary>
-        /// 累计邀请同学对战数量
+        /// 镶嵌宝石
         /// </summary>
-        InviteFightCount,
+        InlayGem,
         /// <summary>
-        /// 累积挑战且胜利
+        /// 开启战魂
         /// </summary>
-        ChallengeCount,
+        OpenSoul,
         /// <summary>
-        /// 在道具商店中累积开宝箱
+        /// 竞技名次
         /// </summary>
-        OpenItemBoxCount,
+        CombatRandID,
         /// <summary>
-        /// 在技能商店中累积开宝箱
+        /// 好友切磋
         /// </summary>
-        OpenSkillBoxCount,
+        FriendCompare,
         /// <summary>
-        /// 在投票系统中投票数量
+        /// 获取金币
         /// </summary>
-        VoitCount,
+        Gold,
         /// <summary>
-        /// 至少当选1次/竞选
+        /// 钻石
         /// </summary>
-        CompaignsCount,
-        /// <summary>
-        /// 在游戏中获得钻石数量
-        /// </summary>
-        AwardDiamondCount,
+        Diamond,
+
     }
 }
