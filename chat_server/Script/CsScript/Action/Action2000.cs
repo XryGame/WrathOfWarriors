@@ -54,11 +54,14 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+
             receipt = new ChatData()
             {
                 Type = _type,
                 Sender = _sender,
                 SenderName = _senderName,
+                VipLv = ContextUser.VipLv,
+                Profession = ContextUser.Profession,
                 ServerID = _serverID,
                 SendDate = _sendDate,
                 Content = _content,

@@ -143,11 +143,7 @@ namespace GameServer.CsScript.Action
         ///获得新物品
         ///</summary>
         public const short Cst_Action1058 = 1058;
-
-        ///<summary>
-        ///班长更换通知
-        ///</summary>
-        public const short Cst_Action1059 = 1059;
+        
 
         ///<summary>
         ///每日任务更新通知
@@ -193,6 +189,62 @@ namespace GameServer.CsScript.Action
         ///好友下线通知
         ///</summary>
         public const short Cst_Action1070= 1070;
+
+        ///<summary>
+        ///新的加入公会邀请通知
+        ///</summary>
+        public const short Cst_Action1071 = 1071;
+
+        ///<summary>
+        ///新成员加入公会通知
+        ///</summary>
+        public const short Cst_Action1072 = 1072;
+
+        ///<summary>
+        ///更新公会成员信息
+        ///</summary>
+        public const short Cst_Action1073 = 1073;
+
+        ///<summary>
+        ///新公会日志通知
+        ///</summary>
+        public const short Cst_Action1074 = 1074;
+
+        ///<summary>
+        ///公会公告修改通知
+        ///</summary>
+        public const short Cst_Action1075 = 1075;
+
+        ///<summary>
+        ///加入公会通知
+        ///</summary>
+        public const short Cst_Action1076 = 1076;
+
+        ///<summary>
+        ///更新公会属性通知
+        ///</summary>
+        public const short Cst_Action1077 = 1077;
+
+
+        ///<summary>
+        ///公会会员上线通知
+        ///</summary>
+        public const short Cst_Action1078 = 1078;
+
+        ///<summary>
+        ///公会会员下线通知
+        ///</summary>
+        public const short Cst_Action1079 = 1079;
+
+        ///<summary>
+        ///一个公会成员移除通知
+        ///</summary>
+        public const short Cst_Action1080 = 1080;
+
+        ///<summary>
+        ///一个请求入会申请移除
+        ///</summary>
+        public const short Cst_Action1081 = 1081;
 
         ///<summary>
         ///充值成功通知
@@ -277,6 +329,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1150 = 1150;
 
         ///<summary>
+        ///领取活跃度宝箱
+        ///</summary>
+        public const short Cst_Action1151 = 1151;
+
+        ///<summary>
         ///请求领取成就奖励
         ///</summary>
         public const short Cst_Action1160 = 1160;
@@ -346,6 +403,51 @@ namespace GameServer.CsScript.Action
         ///请求查看用户数据
         ///</summary>
         public const short Cst_Action1600 = 1600;
+
+        ///<summary>
+        ///查看公会列表
+        ///</summary>
+        public const short Cst_Action1700 = 1700;
+
+        ///<summary>
+        ///请求加入公会
+        ///</summary>
+        public const short Cst_Action1701 = 1701;
+
+        ///<summary>
+        ///请求创建公会
+        ///</summary>
+        public const short Cst_Action1702 = 1702;
+
+        ///<summary>
+        ///设置职位
+        ///</summary>
+        public const short Cst_Action1703 = 1703;
+
+        ///<summary>
+        ///公会签到
+        ///</summary>
+        public const short Cst_Action1704 = 1704;
+
+        ///<summary>
+        ///设置公会公告
+        ///</summary>
+        public const short Cst_Action1705 = 1705;
+
+        ///<summary>
+        ///购买公会商店物品
+        ///</summary>
+        public const short Cst_Action1706 = 1706;
+
+        ///<summary>
+        ///回复加入公会请求
+        ///</summary>
+        public const short Cst_Action1707 = 1707;
+
+        ///<summary>
+        ///移除公会成员
+        ///</summary>
+        public const short Cst_Action1708 = 1708;
 
         ///<summary>
         ///发送聊天

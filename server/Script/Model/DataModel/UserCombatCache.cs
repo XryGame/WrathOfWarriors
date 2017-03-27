@@ -24,7 +24,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             LogList = new CacheList<CombatLogData>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

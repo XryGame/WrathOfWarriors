@@ -17,7 +17,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1504 : BaseAction
     {
-        private object receipt;
+        private int receipt;
         private int destuid;
 
         public Action1504(ActionGetter actionGetter)
@@ -28,14 +28,8 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1504;
-            }
+
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -79,14 +73,7 @@ namespace GameServer.CsScript.Action
             byfd.IsByGiveAway = true;
             byfd.IsReceiveGiveAway = false;
 
-            var session = GameSession.Get(destuid);
-            if (session != null && session.Connected)
-            {
-                var parameters = new Parameters();
-                parameters["Uid"] = GetBasis.UserID;
-                var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1057, session, parameters, OpCode.Text, null);
-                ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1057, packet, (sessions, asyncResult) => { }, 0);
-            }
+            PushMessageHelper.FriendGiveAwayNotification(GameSession.Get(destuid), Current.UserId);
             
             receipt = destuid;
 

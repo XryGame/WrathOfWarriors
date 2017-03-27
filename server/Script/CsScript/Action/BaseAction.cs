@@ -127,6 +127,14 @@ namespace GameServer.Script.CsScript.Action
             }
         }
 
+        public UserGuildCache GetGuild
+        {
+            get
+            {
+                return UserHelper.FindUserGuild(Current.UserId);
+            }
+        }
+
         public void setErrorCode(int errorcode)
         {
             _resultData.ErrorCode = errorcode;

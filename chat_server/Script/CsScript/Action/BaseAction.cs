@@ -1,4 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.Model;
+using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Contract.Action;
 using ZyGames.Framework.Game.Service;
@@ -18,6 +20,14 @@ namespace GameServer.CsScript.Action
                 ActionId = actionGetter.GetActionId(),
                 ErrorInfo = "",
             };
+        }
+
+        public ChatUser ContextUser
+        {
+            get
+            {
+                return new MemoryCacheStruct<ChatUser>().Find(t => t.UserId == Current.UserId);
+            }
         }
        
 

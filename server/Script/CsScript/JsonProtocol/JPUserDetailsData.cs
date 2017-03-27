@@ -11,14 +11,8 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPUserDetailsData()
         {
-            //FriendList = new CacheList<JPFriendData>();
-            //FriendApplyList = new CacheList<JPFriendApplyData>();
-            //ClassMonitorData = new JPQueryClassMonitorData();
-            //DailyQuestData = new JPDailyQuestData();
-            //StudyData = new JPStudyData();
-            //ExerciseData = new JPExerciseData();
-            //EventAwardData = new JPEventAwardData();
-            //OccupyAddList = new CacheList<SceneType>();
+            Friends = new JPFriendsData();
+            GuildData = new JPGuildData();
         }
         public int UserId { get; set; }
 
@@ -35,6 +29,7 @@ namespace GameServer.CsScript.JsonProtocol
         public string Gold { get; set; }
 
         public int VipLv { get; set; }
+        
 
 
         public UserAttributeCache Attribute { get; set; }
@@ -50,6 +45,12 @@ namespace GameServer.CsScript.JsonProtocol
         public UserTaskCache Task { get; set; }
 
         public UserAchievementCache Achievement { get; set; }
+
+        public UserGuildCache Guild { get; set; }
+
+        public JPGuildData GuildData { get; set; }
+
+        public JPFriendsData Friends { get; set; }
 
         //public JPStudyData StudyData { get; set; }
 
@@ -70,7 +71,7 @@ namespace GameServer.CsScript.JsonProtocol
         //public CacheList<JPFriendData> FriendList { get; set; }
 
         //public CacheList<JPFriendApplyData> FriendApplyList { get; set; }
-        
+
         //public int GiveAwayCount { get; set; }
 
         //public int ChallengeMonitorTimes { get; set; }

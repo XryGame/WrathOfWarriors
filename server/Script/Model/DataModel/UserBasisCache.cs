@@ -248,6 +248,9 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("VipLv", value);
             }
         }
+
+
+
         private UserStatus _UserStatus;
         [ProtoMember(20)]
         [EntityField("UserStatus")]
@@ -485,6 +488,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 离线收益时间计数
+        /// </summary>
+        private long _OfflineTimeSec;
+        [ProtoMember(39)]
+        [EntityField("OfflineTimeSec")]
+        public long OfflineTimeSec
+        {
+            get
+            {
+                return _OfflineTimeSec;
+            }
+            set
+            {
+                SetChange("OfflineTimeSec", value);
+            }
+        }
+
         #endregion
 
         protected override int GetIdentityId()
@@ -638,6 +659,7 @@ namespace GameServer.Script.Model.DataModel
                     case "LastLotteryId": return LastLotteryId;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     case "OfflineEarnings": return OfflineEarnings;
+                    case "OfflineTimeSec": return OfflineTimeSec;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -727,6 +749,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "OfflineEarnings":
                         _OfflineEarnings = value.ToNotNullString();
+                        break;
+                    case "OfflineTimeSec":
+                        _OfflineTimeSec = value.ToLong();
                         break;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }

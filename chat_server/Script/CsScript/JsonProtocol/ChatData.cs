@@ -12,7 +12,11 @@ namespace GameServer.CsScript.JsonProtocol
         public int Sender { get; set; }
 
         public string SenderName { get; set; }
-        
+
+        public int VipLv { get; set; }
+
+        public int Profession { get; set; }
+
         public int ServerID { get; set; }
 
         public long SendDate { get; set; }

@@ -34,7 +34,9 @@ namespace GameServer.Script.Model
         [EntityField]
         public int GuildID { get; set; }
 
-
+        [ProtoMember(10)]
+        [EntityField]
+        public string SessionId { get; set; }
 
     }
 }

@@ -24,7 +24,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             OpenList = new CacheList<int>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

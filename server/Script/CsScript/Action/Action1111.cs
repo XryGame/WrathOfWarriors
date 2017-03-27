@@ -46,16 +46,22 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            if (new ShareCacheStruct<Config_RoleInitial>().FindKey(_ID) == null)
+            var roleInitialSet = new ShareCacheStruct<Config_RoleInitial>();
+            if (roleInitialSet.FindKey(_ID) == null)
                 return false;
-            var transcriptCfg = new ShareCacheStruct<Config_TeneralTranscript>().FindKey(_ID);
+            var transcriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
+            var transcriptCfg = transcriptSet.FindKey(_ID);
             if (transcriptCfg == null)
                 return false;
 
-            if (_ID == GetBasis.UserLv + 1)
+            if (_ID == GetBasis.UserLv)
             {
-                GetBasis.UserLv = _ID;
-                UserHelper.UserLevelUp(Current.UserId);
+                if (roleInitialSet.FindKey(_ID + 1) != null
+                    && transcriptSet.FindKey(_ID + 1) != null)
+                {
+                    GetBasis.UserLv = _ID + 1;
+                    UserHelper.UserLevelUp(Current.UserId);
+                }
 
                 // 每日
                 if (transcriptCfg.limitTime > 0)

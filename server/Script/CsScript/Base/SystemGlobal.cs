@@ -230,9 +230,12 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_ChatKeyWord>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_BotsName>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_BotsChat>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Liveness>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
+            new ShareCacheStruct<GuildsCache>().AutoLoad(dbFilter);
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统加载单服配置所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");

@@ -29,6 +29,8 @@ using GameServer.Script.CsScript;
 using ZyGames.Framework.RPC.Sockets;
 using ZyGames.Framework.Common.Timing;
 using GameServer.CsScript.Base;
+using ZyGames.Framework.Cache.Generic;
+using GameServer.Script.Model;
 
 namespace Game.Script
 {
@@ -78,6 +80,16 @@ namespace Game.Script
         protected override void OnDisconnected(GameSession session)
         {
             var user = session.User as SessionUser;
+            if (user != null)
+            {
+                var cache = new MemoryCacheStruct<ChatUser>();
+                ChatUser chatUser = cache.Find(t => t.UserId == user.UserId);
+                if (chatUser != null && session.SessionId == chatUser.SessionId)
+                {
+                    cache.TryRemove(user.UserId.ToString());
+                }
+            }
+
             base.OnDisconnected(session);
         }
 

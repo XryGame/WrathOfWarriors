@@ -48,7 +48,7 @@ namespace GameServer.CsScript.Action
             UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.FriendCompare, 1);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.FriendCompare, 1);
+            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.FriendCompare, "1");
             return true;
         }
     }

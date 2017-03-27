@@ -101,6 +101,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserEquipsCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -115,6 +116,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserPackageCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -129,6 +131,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserSoulCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -158,6 +161,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserFriendsCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -172,6 +176,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserAchievementCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -186,6 +191,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserMailBoxCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -201,6 +207,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserTaskCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -215,6 +222,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserPayCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -229,6 +237,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserCombatCache();
                 ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -243,6 +252,22 @@ namespace GameServer.Script.Model.DataModel
             {
                 ret = new UserEventAwardCache();
                 ret.UserID = userid;
+                ret.ResetCache();
+                cacheset.Add(ret);
+                cacheset.Update();
+            }
+            return ret;
+        }
+
+        public static UserGuildCache FindUserGuild(int userid)
+        {
+            var cacheset = new PersonalCacheStruct<UserGuildCache>();
+            var ret = cacheset.FindKey(userid.ToString());
+            if (ret == null)
+            {
+                ret = new UserGuildCache();
+                ret.UserID = userid;
+                ret.ResetCache();
                 cacheset.Add(ret);
                 cacheset.Update();
             }
@@ -390,7 +415,10 @@ namespace GameServer.Script.Model.DataModel
 
         public static void UserOnline(int uid)
         {
+            if (uid == 0)
+                return;
             UserBasisCache basis = FindUserBasis(uid);
+            UserPackageCache package = FindUserPackage(uid);
             UserMailBoxCache mailbox = FindUserMailBox(uid);
             UserEventAwardCache eventaward = FindUserEventAward(uid);
             if (basis == null)
@@ -406,7 +434,7 @@ namespace GameServer.Script.Model.DataModel
             basis.InviteFightDestUid = 0;
             basis.IsReceiveOfflineEarnings = false;
             //basis.RandomLotteryId = 0;
-
+            package.NewItemCache.Clear();
 
             // 计算上线时间，刷新数据
             int restoreCount = 1;
@@ -442,45 +470,19 @@ namespace GameServer.Script.Model.DataModel
             // 名人榜处理
             CombatProcess(uid);
 
-            // 在线时间处理
-            //if (basis.OfflineDate > basis.LoginDate)
-            //{
-            //    basis.EventAwardData.OnlineStartTime = basis.LoginDate;
-            //}
-            //else
-            //{// 离线时间比登录时间小，说明当前用户未下线
-            //    basis.OfflineDate = DateTime.Now;
-            //    //basis.EventAwardData.OnlineStartTime = basis.LoginDate;
-            //}
-
             if (!eventaward.IsStartedOnlineTime)
             {
                 eventaward.IsStartedOnlineTime = true;
                 eventaward.OnlineStartTime = basis.LoginDate;
-                //basis.EventAwardData.TodayOnlineTime = 0;
             }
 
             // 每日
-            UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1);
+            EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
 
-            //if (basis.EventAwardData.OnlineStartTime < basis.EventAwardData.LastOnlineAwayReceiveTime)
-            //{
-            //    if (basis.OfflineDate > basis.EventAwardData.LastOnlineAwayReceiveTime)
-            //    {
-            //        basis.EventAwardData.OnlineStartTime = basis.EventAwardData.LastOnlineAwayReceiveTime;
-            //    }
-            //    else
-            //    {
-            //        basis.EventAwardData.OnlineStartTime = basis.OfflineDate;
-            //    }
+            // 离线收益时间
+            TimeSpan ts = DateTime.Now.Subtract(basis.OfflineDate);
+            basis.OfflineTimeSec += (int)Math.Floor(ts.TotalSeconds);
 
-            //}
-
-
-            //TimeSpan timeSpan = DateTime.Now.Subtract(basis.EventAwardData.OnlineStartTime);
-            //int sec = (int)Math.Floor(timeSpan.TotalSeconds);
-
-            //basis.EventAwardData.TodayOnlineTime = sec;
 
         }
         /// <summary>
@@ -489,7 +491,13 @@ namespace GameServer.Script.Model.DataModel
         /// <param name="uid"></param>
         public static void UserOffline(int uid)
         {
+            if (uid == 0)
+            {
+                return;
+            }
             UserBasisCache basis = FindUserBasis(uid);
+            UserFriendsCache friend = FindUserFriends(uid);
+            UserGuildCache guild = FindUserGuild(uid);
             if (basis == null)
             {
                 return;
@@ -503,15 +511,87 @@ namespace GameServer.Script.Model.DataModel
 
 
             // 通知好友下线
-            //foreach (FriendData fd in basis.FriendsData.FriendsList)
-            //{
-            //    GameSession session = GameSession.Get(fd.UserId);
-            //    if (session != null)
-            //    {
-            //        PushMessageHelper.FriendOffineNotification(session, basis.UserID);
-            //    }
-            //}
+            foreach (FriendData fd in friend.FriendsList)
+            {
+                PushMessageHelper.FriendOffineNotification(GameSession.Get(fd.UserId), basis.UserID);
+            }
 
+            // 通知公会成员下线
+            if (!guild.GuildID.IsEmpty())
+            {
+                var guildData = new ShareCacheStruct<GuildsCache>().FindKey(guild.GuildID);
+                foreach (var v in guildData.MemberList)
+                {
+                    if (v.UserID != uid)
+                        PushMessageHelper.FriendOffineNotification(GameSession.Get(v.UserID), uid);
+                }
+            }
+
+
+        }
+
+        public static void BulidJPGuildData(string guildId, JPGuildData outData)
+        {
+            if (guildId.IsEmpty())
+            {
+                return;
+            }
+            var guildData = new ShareCacheStruct<GuildsCache>().FindKey(guildId);
+            if (guildData != null)
+            {
+                outData.GuildID = guildData.GuildID;
+                outData.GuildName = guildData.GuildName;
+                outData.Liveness = guildData.Liveness;
+                outData.Notice = guildData.Notice;
+                outData.RankID = guildData.RankID;
+                outData.CreateDate = guildData.CreateDate;
+
+                foreach (var v in guildData.MemberList)
+                {
+                    var basis = FindUserBasis(v.UserID);
+                    JPGuildMemberData member = new JPGuildMemberData()
+                    {
+                        UserID = v.UserID,
+                        NickName = basis.NickName,
+                        Profession = basis.Profession,
+                        UserLv = basis.UserLv,
+                        CombatRankID = basis.CombatRankID,
+                        JobTitle = v.JobTitle,
+                        Liveness = v.Liveness,
+                    };
+                    var gameSession = GameSession.Get(v.UserID);
+                    member.IsOnline = gameSession != null && gameSession.Connected;
+                    outData.MemberList.Add(member);
+                }
+                foreach (var v in guildData.ApplyList)
+                {
+                    var basis = FindUserBasis(v.UserID);
+                    JPGuildApplyData apply = new JPGuildApplyData()
+                    {
+                        UserID = v.UserID,
+                        NickName = basis.NickName,
+                        Profession = basis.Profession,
+                        UserLv = basis.UserLv,
+                        CombatRankID = basis.CombatRankID,
+                        ApplyTime = v.Date
+                    };
+                    var gameSession = GameSession.Get(v.UserID);
+                    apply.IsOnline = gameSession != null && gameSession.Connected;
+                    outData.ApplyList.Add(apply);
+                }
+                foreach (var v in guildData.LogList)
+                {
+                    JPGuildLogData log = new JPGuildLogData()
+                    {
+                        LogTime = v.LogTime,
+                        UserId = v.UserId,
+                        UserName = v.UserName,
+                        Content = v.Content,
+                    };
+                    outData.LogList.Add(log);
+                }
+
+            }
         }
    
         public static void CombatProcess(int uid)
@@ -689,12 +769,12 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-        public static void AchievementProcess(int uid, AchievementType type, int addcount = 0, int addId = 0, bool isNotification = true)
+        public static void AchievementProcess(int uid, AchievementType type, string addcount = "0", int addId = 0, bool isNotification = true)
         {
             UserAchievementCache userachieve = FindUserAchievement(uid);
 
             var achdata = userachieve.AchievementList.Find(t => (t.Type == type));
-            if (achdata != null && achdata.ID != 0 && !achdata.IsFinish)
+            if (achdata != null && achdata.ID != 0 && achdata.Status == TaskStatus.No)
             {
                 
                 var achconfig = new ShareCacheStruct<Config_Achievement>().FindKey(achdata.ID);
@@ -703,21 +783,34 @@ namespace GameServer.Script.Model.DataModel
                     case AchievementType.LevelCount:
                         {
                             UserBasisCache basis = FindUserBasis(uid);
-                            achdata.Count = basis.UserLv;
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            achdata.Count = basis.UserLv.ToString();
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
                     case AchievementType.FriendCompare:
-                    case AchievementType.Gold:
                     case AchievementType.Diamond:
                         {
-                            achdata.Count += addcount;
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            int count = achdata.Count.ToInt() + addcount.ToInt();
+                            achdata.Count = count == 0 ? "0" : count.ToString();
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
+                            }
+                        }
+                        break;
+                    case AchievementType.Gold:
+                        {
+                            BigInteger count, old, add;
+                            old = BigInteger.Parse(achdata.Count);
+                            add = BigInteger.Parse(addcount);
+                            count = old + add;
+                            achdata.Count = count == 0 ? "0" : count.ToString();
+                            if (count >= Util.ConvertGameCoin(achconfig.ObjectiveNum))
+                            {
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
@@ -725,10 +818,11 @@ namespace GameServer.Script.Model.DataModel
                         {
                             UserSkillCache userSkill = FindUserSkill(uid);
                             var findlist = userSkill.SkillList.FindAll(t => (t.Lv >= achconfig.ObjectiveGrade));
-                            achdata.Count = findlist.Count;
-                            if (findlist.Count >= achconfig.ObjectiveNum)
+                            int count = achdata.Count.ToInt() + findlist.Count;
+                            achdata.Count = count == 0 ? "0" : count.ToString();
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
@@ -740,13 +834,14 @@ namespace GameServer.Script.Model.DataModel
                                 var equip = userEquip.FindEquipData(id);
                                 if (equip.Lv >= achconfig.ObjectiveGrade)
                                 {
-                                    achdata.Count++;
+                                    int count = achdata.Count.ToInt() + 1;
+                                    achdata.Count = count == 0 ? "0" : count.ToString();
                                 }
                             }
                             
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
@@ -758,12 +853,13 @@ namespace GameServer.Script.Model.DataModel
                             {
                                 if ((int)itemcfg.Quality >= achconfig.ObjectiveGrade)
                                 {
-                                    achdata.Count += addcount;
+                                    int count = achdata.Count.ToInt() + addcount.ToInt();
+                                    achdata.Count = count == 0 ? "0" : count.ToString();
                                 }
                             }
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
@@ -773,25 +869,25 @@ namespace GameServer.Script.Model.DataModel
                             int soullv = addId != 0 ? addId % 10000 : 0;
                             if (soullv == achconfig.ObjectiveGrade)
                             {
-                                achdata.Count = userSoul.OpenList.Count;
+                                achdata.Count = userSoul.OpenList.Count.ToString();
                             }
                             else if (soullv > achconfig.ObjectiveGrade)
                             {
                                 achdata.Count = achconfig.ObjectiveNum;
                             }
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
                     case AchievementType.CombatRandID:
                         {
                             UserBasisCache basis = FindUserBasis(uid);
-                            achdata.Count = basis.CombatRankID;
-                            if (achdata.Count >= achconfig.ObjectiveNum)
+                            achdata.Count = basis.CombatRankID.ToString();
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
-                                achdata.IsFinish = true;
+                                achdata.Status = TaskStatus.Finished;
                             }
                         }
                         break;
@@ -817,7 +913,7 @@ namespace GameServer.Script.Model.DataModel
 
             PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid));
             // 成就
-            AchievementProcess(uid, AchievementType.Diamond, count);
+            AchievementProcess(uid, AchievementType.Diamond, count.ToString());
         }
 
         public static void ConsumeDiamond(int uid, int count)
@@ -841,7 +937,7 @@ namespace GameServer.Script.Model.DataModel
             PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid));
 
             // 成就
-            AchievementProcess(uid, AchievementType.Diamond, count);
+            AchievementProcess(uid, AchievementType.Diamond, count.ToString());
 
             return true;
         }
@@ -855,6 +951,9 @@ namespace GameServer.Script.Model.DataModel
             //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
 
             PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+
+            // 成就
+            AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
         public static void RewardsGold(int uid, string unitsValue)
@@ -862,11 +961,14 @@ namespace GameServer.Script.Model.DataModel
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
-            BigInteger bi = Util.ConvertGameCoin(unitsValue);
-            basis.AddGold(bi);
+            BigInteger count = Util.ConvertGameCoin(unitsValue);
+            basis.AddGold(count);
             //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
 
             PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+
+            // 成就
+            AchievementProcess(uid, AchievementType.Diamond, count.ToString());
         }
 
         public static void ConsumeGold(int uid, BigInteger count)
@@ -951,9 +1053,6 @@ namespace GameServer.Script.Model.DataModel
         public static void RewardsItem(int uid, int itemId, int itemNum)
         {
             UserPackageCache package = FindUserPackage(uid);
-            if (package == null)
-                return;
-
             if (package.AddItem(itemId, itemNum))
             {
                 PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
@@ -1069,26 +1168,30 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-        public static void EveryDayTaskProcess(int UserId, TaskType id, int count)
+        public static void EveryDayTaskProcess(int UserId, TaskType id, int count, bool isNotification = true)
         {
             UserBasisCache basis = FindUserBasis(UserId);
             UserTaskCache task = FindUserTask(UserId);
             UserDailyQuestData dailyQuest = task.FindTask(id);
             if (dailyQuest == null)
                 return;
-            if (basis.UserLv < DataHelper.OpenTaskSystemUserLevel || dailyQuest.IsFinished)
+            if (dailyQuest.Status != TaskStatus.No)
                 return;
 
             var taskconfig = new ShareCacheStruct<Config_Task>().FindKey(id);
             dailyQuest.Count += count;
             if (dailyQuest.Count >= taskconfig.ObjectiveNum)
             {
-                dailyQuest.IsFinished = true;
+                dailyQuest.Status = TaskStatus.Finished;
             }
 
-            GameSession session = GameSession.Get(UserId);
-            if (session != null && session.Connected)
-                PushMessageHelper.DailyQuestUpdateNotification(session, id);
+            if (isNotification)
+            {
+                GameSession session = GameSession.Get(UserId);
+                if (session != null && session.Connected)
+                    PushMessageHelper.DailyQuestUpdateNotification(session, id);
+            }
+
 
         }
         public static Config_Lottery RandomLottery(int userId, int userlv)

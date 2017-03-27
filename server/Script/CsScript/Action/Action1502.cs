@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
@@ -97,14 +98,8 @@ namespace GameServer.CsScript.Action
                         receipt.Data.IsOnline = true;
 
                     destFriends.AddFriend(GetBasis.UserID);
-                    var session = GameSession.Get(destuid);
-                    if (session != null && session.Connected)
-                    {
-                        var parameters = new Parameters();
-                        parameters["Uid"] = GetBasis.UserID;
-                        var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1055, GameSession.Get(destuid), parameters, OpCode.Text, null);
-                        ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1055, packet, (sessions, asyncResult) => { }, 0);
-                    }
+
+                    PushMessageHelper.NewFriendNotification(GameSession.Get(destuid), Current.UserId);
                 }
             }
             GetFriends.ApplyList.Remove(apply);

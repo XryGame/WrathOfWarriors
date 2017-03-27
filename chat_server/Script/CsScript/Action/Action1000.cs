@@ -53,6 +53,7 @@ namespace GameServer.CsScript.Action
                     chatUser = new ChatUser()
                     {
                         UserId = _userId,
+                        SessionId = Current.SessionId
                     };
                     cache.TryAdd(_userId.ToString(), chatUser);
                 }

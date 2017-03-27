@@ -24,14 +24,7 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1054;
-            }
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -60,12 +53,10 @@ namespace GameServer.CsScript.Action
             receipt.UserLv = dest.UserLv;
             //receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;
-            receipt.ApplyTime = Util.ConvertDateTimeStamp(apply.ApplyDate);
+            receipt.ApplyTime = apply.ApplyDate;
 
             GameSession fsession = GameSession.Get(dest.UserID);
-            if (fsession != null && fsession.Connected)
-                receipt.IsOnline = true;
-
+            receipt.IsOnline = fsession != null && fsession.Connected;
             return true;
         }
     }

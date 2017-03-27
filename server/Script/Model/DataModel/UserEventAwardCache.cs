@@ -23,7 +23,7 @@ namespace GameServer.Script.Model.DataModel
         public UserEventAwardCache()
             : base(AccessLevel.ReadWrite)
         {
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

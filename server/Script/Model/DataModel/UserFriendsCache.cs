@@ -23,7 +23,7 @@ namespace GameServer.Script.Model.DataModel
         {
             FriendsList = new CacheList<FriendData>();
             ApplyList = new CacheList<FriendApplyData>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

@@ -25,7 +25,7 @@ namespace GameServer.Script.Model.DataModel
         {
             ItemList = new CacheList<ItemData>();
             NewItemCache = new CacheList<ItemData>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;
@@ -111,7 +111,7 @@ namespace GameServer.Script.Model.DataModel
         /// 用户获得道具
         /// </summary>  
         /// <returns></returns>  
-        public bool AddItem(int id, int num)
+        public bool AddItem(int id, int num, bool isNew = true)
         {
             if (id == 0)
                 return false;
@@ -133,18 +133,22 @@ namespace GameServer.Script.Model.DataModel
                 item.Num = MathUtils.Addition(item.Num, num);
             }
 
-            item = NewItemCache.Find(t => (t.ID == id));
-            if (item == null)
+            if (isNew)
             {
-                item = new ItemData();
-                item.ID = id;
-                item.Num = MathUtils.Addition(item.Num, num);
-                NewItemCache.Add(item);
+                item = NewItemCache.Find(t => (t.ID == id));
+                if (item == null)
+                {
+                    item = new ItemData();
+                    item.ID = id;
+                    item.Num = MathUtils.Addition(item.Num, num);
+                    NewItemCache.Add(item);
+                }
+                else
+                {
+                    item.Num = MathUtils.Addition(item.Num, num);
+                }
             }
-            else
-            {
-                item.Num = MathUtils.Addition(item.Num, num);
-            }
+
             return true;
         }
 

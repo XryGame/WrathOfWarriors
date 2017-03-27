@@ -47,7 +47,7 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             UserDailyQuestData dailyQuest = GetTask.FindTask(id);
-            if (!dailyQuest.IsFinished)
+            if (dailyQuest.Status != TaskStatus.Finished)
             {
                 return false;
             }
@@ -58,8 +58,8 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
-            dailyQuest.IsReceived = true;
-
+            dailyQuest.Status = TaskStatus.Received;
+            GetTask.Liveness += taskcfg.Liveness;
 
             switch (taskcfg.RewardsType)
             {
@@ -74,7 +74,7 @@ namespace GameServer.CsScript.Action
                         UserHelper.RewardsDiamond(GetBasis.UserID, Convert.ToInt32(taskcfg.RewardsNum));
                     }
                     break;
-                case TaskAwardType.RandItem:
+                case TaskAwardType.Item:
                     {
 
                     }

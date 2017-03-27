@@ -133,6 +133,7 @@ namespace GameServer.CsScript.Action
             // 装备初始化
             UserEquipsCache equipcache = new UserEquipsCache();
             equipcache.UserID = basis.UserID;
+            equipcache.ResetCache();
             var equipsSet = new PersonalCacheStruct<UserEquipsCache>();
             equipsSet.Add(equipcache);
             equipsSet.Update();
@@ -142,14 +143,15 @@ namespace GameServer.CsScript.Action
             // 背包初始化
             UserPackageCache packagecache = new UserPackageCache();
             packagecache.UserID = basis.UserID;
+            packagecache.ResetCache();
             var packageSet = new PersonalCacheStruct<UserPackageCache>();
 
-            packagecache.AddItem(10001, 99);
-            packagecache.AddItem(10006, 99);
+            packagecache.AddItem(10001, 99, false);
+            packagecache.AddItem(10006, 99, false);
             for (int i = 10011; i < 10017; ++i)
-                packagecache.AddItem(i, 999);
+                packagecache.AddItem(i, 999, false);
             for (int i = 10053; i < 10097; ++i)
-                packagecache.AddItem(i, 1);
+                packagecache.AddItem(i, 10, false);
 
             packageSet.Add(packagecache);
             packageSet.Update();
@@ -157,6 +159,7 @@ namespace GameServer.CsScript.Action
             // 战魂初始化
             UserSoulCache soulcache = new UserSoulCache();
             soulcache.UserID = basis.UserID;
+            soulcache.ResetCache();
             var soulSet = new PersonalCacheStruct<UserSoulCache>();
             soulSet.Add(soulcache);
             soulSet.Update();
@@ -172,6 +175,7 @@ namespace GameServer.CsScript.Action
             // 好友初始化
             UserFriendsCache friendscache = new UserFriendsCache();
             friendscache.UserID = basis.UserID;
+            friendscache.ResetCache();
             var friendsSet = new PersonalCacheStruct<UserFriendsCache>();
             friendsSet.Add(friendscache);
             friendsSet.Update();
@@ -179,6 +183,7 @@ namespace GameServer.CsScript.Action
             // 成就初始化
             UserAchievementCache achievecache = new UserAchievementCache();
             achievecache.UserID = basis.UserID;
+            achievecache.ResetCache();
             var achieveSet = new PersonalCacheStruct<UserAchievementCache>();
             achieveSet.Add(achievecache);
             achieveSet.Update();
@@ -186,6 +191,7 @@ namespace GameServer.CsScript.Action
             // 充值初始化
             UserPayCache paycache = new UserPayCache();
             paycache.UserID = basis.UserID;
+            paycache.ResetCache();
             var paySet = new PersonalCacheStruct<UserPayCache>();
             paySet.Add(paycache);
             paySet.Update();
@@ -193,6 +199,7 @@ namespace GameServer.CsScript.Action
             // 邮箱初始化
             UserMailBoxCache mailcache = new UserMailBoxCache();
             mailcache.UserID = basis.UserID;
+            mailcache.ResetCache();
             var mailSet = new PersonalCacheStruct<UserMailBoxCache>();
             MailData mail = new MailData()
             {
@@ -210,13 +217,16 @@ namespace GameServer.CsScript.Action
             // 任务初始化
             UserTaskCache taskcache = new UserTaskCache();
             taskcache.UserID = basis.UserID;
+            taskcache.ResetCache();
             var taskSet = new PersonalCacheStruct<UserTaskCache>();
             taskSet.Add(taskcache);
             taskSet.Update();
+            UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
 
             // 竞技场初始化
             UserCombatCache combatcache = new UserCombatCache();
             combatcache.UserID = basis.UserID;
+            combatcache.ResetCache();
             var combatSet = new PersonalCacheStruct<UserCombatCache>();
             combatSet.Add(combatcache);
             combatSet.Update();
@@ -224,9 +234,18 @@ namespace GameServer.CsScript.Action
             // 活动相关初始化
             UserEventAwardCache eventawardcache = new UserEventAwardCache();
             eventawardcache.UserID = basis.UserID;
+            eventawardcache.ResetCache();
             var eventAwardSet = new PersonalCacheStruct<UserEventAwardCache>();
             eventAwardSet.Add(eventawardcache);
             eventAwardSet.Update();
+
+            // 公会初始化
+            UserGuildCache guildcache = new UserGuildCache();
+            guildcache.UserID = basis.UserID;
+            guildcache.ResetCache();
+            var guildSet = new PersonalCacheStruct<UserGuildCache>();
+            guildSet.Add(guildcache);
+            guildSet.Update();
 
             // 排行榜初始化
             UserRank rankInfo = new UserRank()

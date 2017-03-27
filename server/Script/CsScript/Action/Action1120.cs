@@ -125,7 +125,7 @@ namespace GameServer.CsScript.Action
             UserHelper.RefreshUserFightValue(Current.UserId);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.InlayGem, 1, gemID);
+            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.InlayGem, "1", gemID);
 
             receipt = true;
             return true;

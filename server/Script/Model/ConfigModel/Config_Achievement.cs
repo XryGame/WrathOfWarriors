@@ -90,9 +90,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 成就目标数量
         /// </summary>
-        private int _ObjectiveNum;
+        private string _ObjectiveNum;
         [EntityField("ObjectiveNum")]
-        public int ObjectiveNum
+        public string ObjectiveNum
         {
             get
             {
@@ -210,7 +210,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _Objective = value.ToNotNullString();
                         break;
                     case "ObjectiveNum":
-                        _ObjectiveNum = value.ToInt();
+                        _ObjectiveNum = value.ToNotNullString();
                         break;
                     case "ObjectiveGrade":
                         _ObjectiveGrade = value.ToInt();

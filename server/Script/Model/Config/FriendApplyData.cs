@@ -24,6 +24,7 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(1)]
         public int UserId { get; set; }
+  
         /// <summary>
         /// 时间
         /// </summary>

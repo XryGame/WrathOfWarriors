@@ -14,7 +14,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1505 : BaseAction
     {
-        private JPReceiveFriendGiveAwayData receipt;
+        private bool receipt;
         private int destuid;
 
         public Action1505(ActionGetter actionGetter)
@@ -25,14 +25,8 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1504;
-            }
+
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -65,12 +59,7 @@ namespace GameServer.CsScript.Action
             
             fd.IsReceiveGiveAway = true;
 
-            receipt = new JPReceiveFriendGiveAwayData()
-            {
-                UserId = destuid,
-                AwayVit = DataHelper.FriendGiveAwayVitValue,
-                NickName = dest.NickName
-            };
+            receipt = true;
             
 
             return true;

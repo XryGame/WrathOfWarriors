@@ -13,8 +13,8 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Diamond,
         /// <summary>
-        /// 随机道具
+        /// 道具
         /// </summary>
-        RandItem,
+        Item,
     }
 }

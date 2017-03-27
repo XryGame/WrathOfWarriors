@@ -27,7 +27,7 @@ namespace GameServer.CsScript.Action
         public Action1110(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1110, actionGetter)
         {
-
+            IsNotRespond = true;
         }
 
         protected override string BuildJsonPack()

@@ -23,7 +23,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             AchievementList = new CacheList<AchievementData>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;
@@ -106,10 +106,8 @@ namespace GameServer.Script.Model.DataModel
                 AchievementData achdata = new AchievementData();
                 achdata.Type = achievement.AchievementType;
                 achdata.ID = achievement.id;
-                if (type == AchievementType.LevelCount)
-                {
-                    achdata.Count = ConfigEnvSet.GetInt("User.Level");
-                }
+                achdata.Status = TaskStatus.No;
+                achdata.Count = "0";
                 AchievementList.Add(achdata);
             }
         }

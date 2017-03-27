@@ -22,7 +22,7 @@ namespace GameServer.Script.Model.DataModel
         public UserEquipsCache()
             : base(AccessLevel.ReadWrite)
         {
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

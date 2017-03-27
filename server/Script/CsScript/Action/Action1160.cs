@@ -20,7 +20,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1160 : BaseAction
     {
-        private JPReceiveAchievementData receipt;
+        private AchievementData receipt;
         private int id;
         private AchievementType type;
         private Random random = new Random();
@@ -55,37 +55,33 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPReceiveAchievementData();
-            receipt.Result = EventStatus.Good;
             var achievement = GetAchievement.AchievementList.Find(t => (t.ID == id));
             var config = new ShareCacheStruct<Config_Achievement>().FindKey(id);
             if (achievement == null || config == null
-                || achievement.ID == 0 || !achievement.IsFinish || achievement.IsReceive)
+                || achievement.ID == 0 || achievement.Status != TaskStatus.Finished)
             {
-                receipt.Result = EventStatus.Bad;
-                return true;
+                return false;
             }
             type = achievement.Type;
 
-            switch (config.RewardsItemID)
+            switch (config.RewardsType)
             {
-                case 1:
+                case TaskAwardType.Gold:
                     {
                         BigInteger bi = Util.ConvertGameCoin(config.RewardsItemNum);
                         UserHelper.RewardsGold(Current.UserId, bi);
                     }
                     break;
-                case 2:
+                case TaskAwardType.Diamond:
                     {
                         UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(config.RewardsItemNum));
                     }
                     break;
-                default:
+                case TaskAwardType.Item:
                     {
                         UserHelper.RewardsItem(Current.UserId, config.RewardsItemID, Convert.ToInt32(config.RewardsItemNum));
                     }
                     break;
-
             }
 
 
@@ -95,23 +91,21 @@ namespace GameServer.CsScript.Action
             if (select != null)
             {
                 achievement.ID = select.id;
-                achievement.IsFinish = false;
-                achievement.IsReceive = false;
+                achievement.Status = TaskStatus.No;
                 
             }
             else
             {
-                achievement.IsReceive = true;
+                achievement.Status = TaskStatus.Received;
             }
 
             //achievement.Count = 0;
             if (type == AchievementType.InlayGem)
-                achievement.Count = 0;
+                achievement.Count = "0";
             else if (type == AchievementType.OpenSoul)
-                achievement.Count = 0;
-
-            receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt.NewAchievement = achievement;
+                achievement.Count = "0";
+           
+            receipt = achievement;
             return true;
         }
 

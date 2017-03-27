@@ -1,0 +1,996 @@
+Time:2017-03-27 16:18:33:931-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 13600 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:33:931-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 13415 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:33:931-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 13417 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:35:040-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:35:040-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:35:040-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:36:133-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:36:133-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:36:135-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:37:227-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:37:227-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:37:227-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:38:320-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:38:321-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:38:321-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:39:420-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:39:425-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:39:425-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:40:506-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:40:507-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:18:40:507-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:28:755-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 16730 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:28:756-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 16887 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:28:865-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: Unable to Connect: sPort: 16728 ---> System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Send(IList`1 buffers, SocketFlags socketFlags)
+   在 ServiceStack.Redis.RedisNativeClient.FlushSendBuffer()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.CreateConnectionError()
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:29:762-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:29:867-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:29:971-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:30:856-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:30:963-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:31:082-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:31:947-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:32:054-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:32:162-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:33:037-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:33:156-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:33:261-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:34:143-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:34:246-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:34:353-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:35:226-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:35:339-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:35:446-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:36:323-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:36:432-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:36:542-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:37:417-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:37:522-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:37:636-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:38:511-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:38:619-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:38:727-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:39:603-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:39:711-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:39:822-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:40:699-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:40:807-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:40:914-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:41:792-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:41:898-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:42:011-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:42:886-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:43:000-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:43:104-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:43:980-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:44:092-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:44:201-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:45:069-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:45:175-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:45:292-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:46:174-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:46:275-Trace>>OnCheckSqlSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Data.SqlStatementManager.<>c__DisplayClass17_0.<OnCheckSqlSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Data.SqlStatementManager.OnCheckSqlSyncQueue(Object state)
+
+
+Time:2017-03-27 16:24:46:392-Trace>>OnCheckRedisSyncQueue error:ServiceStack.Redis.RedisException: could not connect to redis Instance at 127.0.0.1:6379 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6379
+   在 System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   在 System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ServiceStack.Redis.RedisNativeClient.Connect()
+   在 ServiceStack.Redis.RedisNativeClient.AssertConnectedSocket()
+   在 ServiceStack.Redis.RedisNativeClient.SendCommand(Byte[][] cmdWithBinaryArgs)
+   在 ServiceStack.Redis.RedisNativeClient.SendExpectLong(Byte[][] cmdWithBinaryArgs)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.<>c__DisplayClass46_0.<OnCheckRedisSyncQueue>b__0(RedisClient client)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.ProcessReadOnly(Action`1 func, RedisPoolSetting setting)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.OnCheckRedisSyncQueue(Object state)
+
+

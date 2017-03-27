@@ -179,7 +179,57 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1066, packet, (rsession, asyncResult) => { }, 0);
         }
 
-        
+        /// <summary>
+        /// 新的好友请求
+        /// </summary>
+        public static void NewFriendRequestNotification(GameSession session, int friendUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["Uid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1054, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1054, packet, (sessions, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新好友通知
+        /// </summary>
+        public static void NewFriendNotification(GameSession session, int friendUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["Uid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1055, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1055, packet, (sessions, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 删除好友通知
+        /// </summary>
+        public static void FriendRemoveNotification(GameSession session, int friendUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["Uid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1056, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1056, packet, (sessions, asyncResult) => { }, 0);
+        }
+        /// <summary>
+        /// 好友赠送通知
+        /// </summary>
+        public static void FriendGiveAwayNotification(GameSession session, int friendUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["Uid"] = friendUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1057, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1057, packet, (sessions, asyncResult) => { }, 0);
+        }
+
         /// <summary>
         /// 好友上线通知
         /// </summary>
@@ -203,6 +253,139 @@ namespace GameServer.Script.CsScript.Com
             parameters["FriendUid"] = friendUid;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1070, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1070, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新的公会加入请求通知
+        /// </summary>
+        public static void NewGuildRequestNotification(GameSession session, int userId)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["UserId"] = userId;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1071, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1071, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新成员加入公会通知
+        /// </summary>
+        public static void NewGuildMemberNotification(GameSession session, int userId)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["UserId"] = userId;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1072, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1072, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 更新公会成员信息
+        /// </summary>
+        public static void GuildMemberChangeNotification(GameSession session, int userId)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["UserId"] = userId;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1073, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1073, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新公会日志通知
+        /// </summary>
+        public static void NewGuildLogNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1074, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1074, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 公会公告修改通知
+        /// </summary>
+        public static void GuildNoticeChangeNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1075, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1075, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 加入公会通知
+        /// </summary>
+        public static void JoinGuildNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1076, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1076, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 更新公会属性通知
+        /// </summary>
+        public static void GuildBasisChangeNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1077, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1077, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 公会成员上线通知
+        /// </summary>
+        public static void GuildMemberOnlineNotification(GameSession session, int memberUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["MemberUid"] = memberUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1078, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1078, packet, (rsession, asyncResult) => { }, 0);
+        }
+        /// <summary>
+        /// 公会成员下线通知
+        /// </summary>
+        public static void GuildMemberOffineNotification(GameSession session, int memberUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["MemberUid"] = memberUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1079, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1079, packet, (rsession, asyncResult) => { }, 0);
+        }
+        /// <summary>
+        /// 一个公会成员移除通知
+        /// </summary>
+        public static void GuildMemberRemoveNotification(GameSession session, int memberUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["MemberUid"] = memberUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1080, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1080, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 一个请求入会申请移除
+        /// </summary>
+        public static void GuildApplyRemoveNotification(GameSession session, int applyUid)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["ApplyUid"] = applyUid;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1081, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1081, packet, (rsession, asyncResult) => { }, 0);
         }
 
         /// <summary>

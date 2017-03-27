@@ -166,8 +166,14 @@ namespace GameServer.CsScript.Base
             {
                 BigInteger tmp = 0;
                 BigInteger bi = BigInteger.Parse(strValue);
-                int count = strValue.Length / 3;
+
+                int count = strValue.Length / 3 - 1;
                 string units = string.Empty;
+                if (strValue.Length <= 5)
+                {
+                    count = 0;
+                }
+
                 if (count > 0)
                 {
                     units = CoinUnits[count - 1];

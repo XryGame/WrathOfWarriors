@@ -33,16 +33,11 @@ namespace GameServer.Script.Model.Config
         public int Count { get; set; }
 
         /// <summary>
-        /// 是否完成
+        /// 状态
         /// </summary>
         [ProtoMember(3)]
-        public bool IsFinished { get; set; }
-
-        /// <summary>
-        /// 是否领取
-        /// </summary>
-        [ProtoMember(4)]
-        public bool IsReceived { get; set; }
+        public TaskStatus Status { get; set; }
+        
 
     }
 }

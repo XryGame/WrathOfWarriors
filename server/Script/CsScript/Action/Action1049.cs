@@ -1,4 +1,5 @@
-﻿using GameServer.CsScript.JsonProtocol;
+﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using ZyGames.Framework.Game.Service;
 

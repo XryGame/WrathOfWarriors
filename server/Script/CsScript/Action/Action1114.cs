@@ -51,6 +51,7 @@ namespace GameServer.CsScript.Action
             UserHelper.RewardsGold(Current.UserId, bi);
             GetBasis.OfflineEarnings = "0";
             GetBasis.IsReceiveOfflineEarnings = true;
+            GetBasis.OfflineTimeSec = 0;
             receipt = true;
             return true;
         }

@@ -21,7 +21,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             AccumulatePayList = new CacheList<int>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

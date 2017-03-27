@@ -21,7 +21,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             MailList = new CacheList<MailData>();
-            ResetCache();
+            //ResetCache();
         }
         
         private int _UserID;

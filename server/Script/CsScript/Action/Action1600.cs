@@ -9,18 +9,58 @@ using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
+
+    public class QueryUserData
+    {
+        public QueryUserData()
+        {
+
+        }
+        public int UserId { get; set; }
+
+        public string NickName { get; set; }
+
+        public int Profession { get; set; }
+
+        public int UserLv { get; set; }
+        
+        public int VipLv { get; set; }
+
+        public int CombatRankId { get; set; }
+
+        public UserAttributeCache Attribute { get; set; }
+
+        public UserEquipsCache Equips { get; set; }
+
+        public UserSoulCache Soul { get; set; }
+
+    }
+
     /// <summary>
     /// 请求查看用户数据
     /// </summary>
     public class Action1600 : BaseAction
     {
-        private JPQueryUserData receipt;
+        private QueryUserData receipt;
         private int _queryuserid;
 
         public Action1600(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1600, actionGetter)
         {
 
+        }
+
+        protected override string BuildJsonPack()
+        {
+            if (receipt != null)
+            {
+                body = receipt;
+            }
+            else
+            {
+                ErrorCode = ActionIDDefine.Cst_Action1600;
+            }
+            return base.BuildJsonPack();
         }
 
         /// <summary>
@@ -45,51 +85,22 @@ namespace GameServer.CsScript.Action
             UserBasisCache basis = UserHelper.FindUserBasis(_queryuserid);
             
 
-            receipt = new JPQueryUserData()
+            receipt = new QueryUserData()
             {
                 UserId = basis.UserID,
                 NickName = basis.NickName,
                 Profession = basis.Profession,
-                //FightValue = user.FightingValue,
-                //Attack = user.Attack,
-                //Defense = user.Defense,
-                //Hp = user.Hp,
-                //UserStage = user.UserStage,
                 CombatRankId = basis.CombatRankID,
-                VipLv = basis.VipLv
+                VipLv = basis.VipLv,
+                UserLv = basis.UserLv
             };
-
-
-            GameSession session = GameSession.Get(basis.UserID);
-            if (session != null && session.Connected)
-                receipt.IsOnline = true;
-
-            //if (user.ClassData.ClassID != 0)
-            //{
-            //    var classdata = new ShareCacheStruct<ClassDataCache>().FindKey(user.ClassData.ClassID);
-            //    if (classdata != null)
-            //    {
-            //        receipt.ClassName = classdata.Name;
-            //    }
-            //}
+            receipt.Attribute = UserHelper.FindUserAttribute(_queryuserid);
+            receipt.Equips = UserHelper.FindUserEquips(_queryuserid);
+            receipt.Soul = UserHelper.FindUserSoul(_queryuserid);
 
             return true;
         }
-
-        protected override string BuildJsonPack()
-        {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1600;
-            }
-            return base.BuildJsonPack();
-        }
-
-
+        
   
     }
 }

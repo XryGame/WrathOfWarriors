@@ -57,8 +57,6 @@ namespace GameServer.CsScript.Action
             else
             {
                 // 离线收益
-                TimeSpan timeSpans = DateTime.Now.Subtract(GetBasis.OfflineDate);
-                receipt.OfflineTimeSec = (int)Math.Floor(timeSpans.TotalSeconds);
                 var transscriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
                 var transscriptCfg = transscriptSet.FindKey(GetBasis.UserLv);
                 if (transscriptCfg.limitTime > 0)
@@ -66,16 +64,14 @@ namespace GameServer.CsScript.Action
                 if (transscriptCfg != null)
                 {
                     BigInteger transscriptEarnings = 0;
-                    var monsterList = new ShareCacheStruct<Config_Monster>().FindAll(t => t.Grade == transscriptCfg.ID);
-                    foreach (var v in monsterList)
-                    {
-                        BigInteger bi = Util.ConvertGameCoin(v.DropoutGold);
-                        transscriptEarnings += bi;
-                    }
+                    var monster = new ShareCacheStruct<Config_Monster>().Find(t => t.Grade == transscriptCfg.ID);
 
-                    double rate = Convert.ToDouble(receipt.OfflineTimeSec / 600.0);
+                    BigInteger bi = Util.ConvertGameCoin(monster.DropoutGold) * 30;
+                    transscriptEarnings += bi;
 
-                    GetBasis.OfflineEarnings = transscriptEarnings.ToNotNullString();
+                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 600.0);
+                    int tmp = Convert.ToInt32(rate * 100);
+                    GetBasis.OfflineEarnings = (transscriptEarnings * tmp / 100).ToNotNullString();
                 }
 
                 receipt.OfflineEarnings = GetBasis.OfflineEarnings;
