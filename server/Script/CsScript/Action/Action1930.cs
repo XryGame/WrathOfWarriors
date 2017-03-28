@@ -12,15 +12,15 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 21000_兑换CDK
+    /// 兑换CDK
     /// </summary>
-    public class Action21000 : BaseAction
+    public class Action1930 : BaseAction
     {
         private JPRequestCdKeyData receipt;
         private Random random = new Random();
         private string _CDKey;
-        public Action21000(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action21000, actionGetter)
+        public Action1930(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1930, actionGetter)
         {
 
         }

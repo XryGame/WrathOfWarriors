@@ -498,98 +498,59 @@ namespace GameServer.CsScript.Action
         ///<summary>
         ///请求读取邮件
         ///</summary>
-        public const short Cst_Action20000 = 20000;
+        public const short Cst_Action1800 = 1800;
 
         ///<summary>
         ///请求领取邮件附件
         ///</summary>
-        public const short Cst_Action20001 = 20001;
+        public const short Cst_Action1801 = 1801;
 
         ///<summary>
         ///请求删除邮件
         ///</summary>
-        public const short Cst_Action20002 = 20002;
+        public const short Cst_Action1802 = 1802;
 
         ///<summary>
         ///请求抽奖
         ///</summary>
-        public const short Cst_Action20100 = 20100;
+        public const short Cst_Action1810 = 1810;
 
         ///<summary>
         ///请求抽奖数据
         ///</summary>
-        public const short Cst_Action20101 = 20101;
+        public const short Cst_Action1811 = 1811;
 
         ///<summary>
         ///领取首充奖励
         ///</summary>
-        public const short Cst_Action20200 = 20200;
+        public const short Cst_Action1820 = 1820;
 
-        ///<summary>
-        ///请求扫荡
-        ///</summary>
-        public const short Cst_Action20300 = 20300;
-
-        ///<summary>
-        ///领取扫荡
-        ///</summary>
-        public const short Cst_Action20301 = 20301;
-
-        ///<summary>
-        ///扫荡减CD
-        ///</summary>
-        public const short Cst_Action20302 = 20302;
 
         ///<summary>
         ///剧情
         ///</summary>
-        public const short Cst_Action20400 = 20400;
+        public const short Cst_Action1830 = 1830;
 
-
-        ///<summary>
-        ///购买体力
-        ///</summary>
-        public const short Cst_Action20500 = 20500; 
-        
-        ///<summary>
-        ///领取体力
-        ///</summary>
-        public const short Cst_Action20501 = 20501;
 
         ///<summary>
         ///改名
         ///</summary>
-        public const short Cst_Action20600 = 20600;
+        public const short Cst_Action1900 = 1900;
 
         ///<summary>
         ///领取累充
         ///</summary>
-        public const short Cst_Action20700 = 20700;
-
-        ///<summary>
-        ///一键拉票
-        ///</summary>
-        public const short Cst_Action20800 = 20800;
+        public const short Cst_Action1910 = 1910;
 
         ///<summary>
         ///领取VIP礼包
         ///</summary>
-        public const short Cst_Action20900 = 20900;
+        public const short Cst_Action1920 = 1920;
 
         ///<summary>
         ///兑换CDK
         ///</summary>
-        public const short Cst_Action21000 = 21000;
-
-        ///<summary>
-        ///分享
-        ///</summary>
-        public const short Cst_Action21100 = 21100;
-
-        ///<summary>
-        ///领取分享奖励
-        ///</summary>
-        public const short Cst_Action21101 = 21101;
+        public const short Cst_Action1930 = 1930;
 
 
         ///<summary>

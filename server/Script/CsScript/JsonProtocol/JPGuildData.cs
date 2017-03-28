@@ -72,6 +72,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Liveness { get; set; }
 
+        public int Lv { get; set; }
+
         public string Notice { get; set; }
 
         public int RankID { get; set; }

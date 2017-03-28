@@ -12,15 +12,15 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20700_领取累充
+    /// 领取累充
     /// </summary>
-    public class Action20700 : BaseAction
+    public class Action1910 : BaseAction
     {
         private JPRequestAccumulatePay receipt;
         private Random random = new Random();
         private int receiveId;
-        public Action20700(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20700, actionGetter)
+        public Action1910(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1910, actionGetter)
         {
 
         }

@@ -14,16 +14,16 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20002_请求删除邮件
+    /// 请求删除邮件
     /// </summary>
-    public class Action20002 : BaseAction
+    public class Action1802 : BaseAction
     {
         private string mailid;
         private bool isall;
         private JPRequestDeleteMailData receipt;
 
-        public Action20002(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20002, actionGetter)
+        public Action1802(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1802, actionGetter)
         {
 
         }

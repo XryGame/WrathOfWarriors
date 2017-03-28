@@ -6,14 +6,14 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20000_请求读取邮件
+    /// 请求读取邮件
     /// </summary>
-    public class Action20000 : BaseAction
+    public class Action1800 : BaseAction
     {
         private string mailid;
 
-        public Action20000(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20000, actionGetter)
+        public Action1800(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1800, actionGetter)
         {
             IsNotRespond = true;
         }

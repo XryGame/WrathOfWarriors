@@ -12,14 +12,14 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20900_领取VIP礼包
+    /// 领取VIP礼包
     /// </summary>
-    public class Action20900 : BaseAction
+    public class Action1920 : BaseAction
     {
         private JPRequestSFOData receipt;
         private Random random = new Random();
-        public Action20900(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20900, actionGetter)
+        public Action1920(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1920, actionGetter)
         {
 
         }

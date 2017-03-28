@@ -17,7 +17,7 @@ namespace GameServer.CsScript.Action
     public class Action1074 : BaseAction
     {
 
-        private GuildLogData receipt;
+        private JPGuildLogData receipt;
         public Action1074(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1074, actionGetter)
         {
@@ -41,8 +41,8 @@ namespace GameServer.CsScript.Action
             var guild = new ShareCacheStruct<GuildsCache>().FindKey(GetGuild.GuildID);
             if (guild == null)
                 return false;
-            var newlog = guild.LogList.Find(t => true);
-            receipt = new GuildLogData()
+            var newlog = guild.LogList[guild.LogList.Count - 1];
+            receipt = new JPGuildLogData()
             {
                 LogTime = newlog.LogTime,
                 UserId = newlog.UserId,

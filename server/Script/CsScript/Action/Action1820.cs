@@ -12,13 +12,13 @@ namespace GameServer.CsScript.Action
     /// <summary>
     /// 20200_领取首充奖励
     /// </summary>
-    public class Action20200 : BaseAction
+    public class Action1820 : BaseAction
     {
         private JPRequestSFOData receipt;
         private int AwardDiamondNum = ConfigEnvSet.GetInt("System.FirstPayAwardDiamondNum");
         private int AwardItemId = ConfigEnvSet.GetInt("System.FirstPayAwardItemID");
-        public Action20200(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20200, actionGetter)
+        public Action1820(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1820, actionGetter)
         {
 
         }
@@ -30,14 +30,7 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action20200;
-            }
+            body = receipt;
             return base.BuildJsonPack();
         }
 

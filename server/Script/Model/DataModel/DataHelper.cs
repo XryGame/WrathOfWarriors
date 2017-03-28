@@ -84,7 +84,12 @@ namespace GameServer.Script.Model.DataModel
             InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
             InviteFightDiamondWeekMax = ConfigEnvSet.GetInt("User.InviteFightDiamondWeekMax");
 
-    
+
+            var guildlist = new ShareCacheStruct<GuildsCache>().FindAll();
+            foreach (var v in guildlist)
+            {
+                v.Lv = v.ConvertLevel();
+            }
            
         }
         

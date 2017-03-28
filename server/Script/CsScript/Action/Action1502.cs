@@ -18,7 +18,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1502 : BaseAction
     {
-        private JPFriendApplyReceiptData receipt;
+        private RequestFriendResult receipt;
         private int destuid;
         private EventStatus result;
 
@@ -30,14 +30,8 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1502;
-            }
+
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -56,15 +50,11 @@ namespace GameServer.CsScript.Action
 
             UserBasisCache dest = UserHelper.FindUserBasis(destuid);
             UserFriendsCache destFriends = UserHelper.FindUserFriends(destuid);
-
-            receipt = new JPFriendApplyReceiptData();
-            receipt.Data.UserId = destuid;
-            receipt.Data.NickName = dest.NickName;
-            receipt.Data.Profession = dest.Profession;
+            
             FriendApplyData apply = GetFriends.FindFriendApply(destuid);
             if (apply == null)
             {
-                receipt.Result = RequestFriendResult.NoApply;
+                receipt = RequestFriendResult.NoApply;
                 return true;
             }
             
@@ -72,34 +62,26 @@ namespace GameServer.CsScript.Action
             {
                 if (GetFriends.IsFriendNumFull())
                 {
-                    receipt.Result = RequestFriendResult.FriendNumFull;
+                    receipt = RequestFriendResult.FriendNumFull;
                 }
                 else if (GetFriends.IsHaveFriend(destuid))
                 {
-                    receipt.Result = RequestFriendResult.HadFriend;
+                    receipt = RequestFriendResult.HadFriend;
                 }
                 else if (destFriends.IsFriendNumFull())
                 {
-                    receipt.Result = RequestFriendResult.DestFriendNumFull;
+                    receipt = RequestFriendResult.DestFriendNumFull;
                 }
                 else
                 {
-                    receipt.Result = RequestFriendResult.OK;
-                }
+                    receipt = RequestFriendResult.OK;
 
-                if (receipt.Result == RequestFriendResult.OK)
-                {
                     GetFriends.AddFriend(destuid);
-                    receipt.Data.UserLv = dest.UserLv;
-                    //receipt.Data.FightValue = dest.FightingValue;
-                    receipt.Data.VipLv = dest.VipLv;
-                    GameSession fsession = GameSession.Get(dest.UserID);
-                    if (fsession != null && fsession.Connected)
-                        receipt.Data.IsOnline = true;
 
                     destFriends.AddFriend(GetBasis.UserID);
 
                     PushMessageHelper.NewFriendNotification(GameSession.Get(destuid), Current.UserId);
+                    PushMessageHelper.NewFriendNotification(Current, destuid);
                 }
             }
             GetFriends.ApplyList.Remove(apply);

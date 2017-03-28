@@ -542,6 +542,7 @@ namespace GameServer.Script.Model.DataModel
                 outData.GuildID = guildData.GuildID;
                 outData.GuildName = guildData.GuildName;
                 outData.Liveness = guildData.Liveness;
+                outData.Lv = guildData.Lv;
                 outData.Notice = guildData.Notice;
                 outData.RankID = guildData.RankID;
                 outData.CreateDate = guildData.CreateDate;

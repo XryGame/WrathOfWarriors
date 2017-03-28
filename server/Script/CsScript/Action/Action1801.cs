@@ -12,16 +12,16 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20001_请求领取邮件附件
+    /// 请求领取邮件附件
     /// </summary>
-    public class Action20001 : BaseAction
+    public class Action1801 : BaseAction
     {
         private string mailid;
         private bool isall;
         private JPRequestSFOData receipt;
 
-        public Action20001(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20001, actionGetter)
+        public Action1801(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1801, actionGetter)
         {
 
         }

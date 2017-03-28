@@ -59,7 +59,7 @@ namespace GameServer.CsScript.Action
                 receipt = RequestGuildResult.HadSignIn;  
                 return true;
             }
-            int addLiveness = ConfigEnvSet.GetInt("Guild.SignInLiveness");
+            int addLiveness = ConfigEnvSet.GetInt("Guild.SignInLiveness") * 500;
             member.Liveness = MathUtils.Addition(member.Liveness, addLiveness, int.MaxValue);
             guild.Liveness = MathUtils.Addition(guild.Liveness, addLiveness, int.MaxValue);
 

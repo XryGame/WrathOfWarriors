@@ -11,14 +11,14 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20100_请求抽奖
+    /// 请求抽奖
     /// </summary>
-    public class Action20100 : BaseAction
+    public class Action1810 : BaseAction
     {
         private JPLotteryData receipt;
         
-        public Action20100(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20100, actionGetter)
+        public Action1810(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1810, actionGetter)
         {
 
         }
@@ -30,14 +30,7 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action20100;
-            }
+            body = receipt;
             return base.BuildJsonPack();
         }
 

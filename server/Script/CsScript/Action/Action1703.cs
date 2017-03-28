@@ -37,7 +37,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("DestUId", ref _destUid)
+            if (httpGet.GetInt("DestUid", ref _destUid)
                 && httpGet.GetEnum("JobTitle", ref _jobTitle))
             {
                 return true;

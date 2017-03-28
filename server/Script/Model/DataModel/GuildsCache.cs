@@ -337,12 +337,9 @@ namespace GameServer.Script.Model.DataModel
         public int ConvertLevel()
         {
             var societySet = new ShareCacheStruct<Config_Society>();
-            var socitycfg = societySet.Find(t => t.Liveness > Liveness);
-            if (socitycfg != null)
-            {
-                return socitycfg.ID;
-            }
-            return 0;
+            var socitylist = societySet.FindAll(t => t.Liveness <= Liveness);
+
+            return socitylist[socitylist.Count - 1].ID;
         }
 
         public void NewLog(GuildLogData log)
@@ -350,7 +347,7 @@ namespace GameServer.Script.Model.DataModel
             LogList.Add(log);
             if (LogList.Count > ConfigEnvSet.GetInt("Guild.GuildLogCountMax"))
             {
-                LogList.RemoveAt(LogList.Count - 1);
+                LogList.RemoveAt(0);
             }
         }
     }

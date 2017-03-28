@@ -13,15 +13,15 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 20600_改名
+    /// 改名
     /// </summary>
-    public class Action20600 : BaseAction
+    public class Action1900 : BaseAction
     {
         private JPChangeNickNameData receipt;
         private string newName;
 
-        public Action20600(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action20600, actionGetter)
+        public Action1900(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1900, actionGetter)
         {
 
         }
