@@ -32,7 +32,7 @@ namespace GameServer.Script.Model
 
         [ProtoMember(6)]
         [EntityField]
-        public int GuildID { get; set; }
+        public string GuildID { get; set; }
 
         [ProtoMember(10)]
         [EntityField]

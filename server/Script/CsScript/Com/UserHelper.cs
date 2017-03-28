@@ -523,7 +523,7 @@ namespace GameServer.Script.Model.DataModel
                 foreach (var v in guildData.MemberList)
                 {
                     if (v.UserID != uid)
-                        PushMessageHelper.FriendOffineNotification(GameSession.Get(v.UserID), uid);
+                        PushMessageHelper.GuildMemberOffineNotification(GameSession.Get(v.UserID), uid);
                 }
             }
 

@@ -4,6 +4,7 @@ using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
@@ -97,7 +98,7 @@ namespace GameServer.CsScript.Remote
                             foreach (var v in list)
                             {
                                 var session = GameSession.Get(v.UserId);
-                                if (session.Connected && !session.IsRemote)
+                                if (session != null && session.Connected && !session.IsRemote)
                                 {
                                     MsgData data = new MsgData();
                                     data.Type = MsgType.Chat;
@@ -125,7 +126,7 @@ namespace GameServer.CsScript.Remote
                         if (Sender != null && Receiver != null)
                         {
                             var session = GameSession.Get(_reveiver);
-                            if (session.Connected && !session.IsRemote)
+                            if (session != null && session.Connected && !session.IsRemote)
                             {
                                 MsgData data = new MsgData();
                                 data.Type = MsgType.Chat;
@@ -150,11 +151,15 @@ namespace GameServer.CsScript.Remote
                         var Sender = cache.Find(t => (t.UserId == _sender));
                         if (Sender != null)
                         {
+                            if (Sender.GuildID.IsEmpty())
+                            {
+                                return;
+                            }
                             var list = cache.FindAll(t => t.GuildID == Sender.GuildID);
                             foreach (var v in list)
                             {
                                 var session = GameSession.Get(v.UserId);
-                                if (session.Connected && !session.IsRemote)
+                                if (session != null && session.Connected && !session.IsRemote)
                                 {
                                     MsgData data = new MsgData();
                                     data.Type = MsgType.Chat;
@@ -181,7 +186,7 @@ namespace GameServer.CsScript.Remote
                         if (Receiver != null)
                         {
                             var session = GameSession.Get(_reveiver);
-                            if (session.Connected && !session.IsRemote)
+                            if (session != null && session.Connected && !session.IsRemote)
                             {
                                 MsgData data = new MsgData();
                                 data.Type = MsgType.Chat;

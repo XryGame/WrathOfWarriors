@@ -56,7 +56,7 @@ namespace GameServer.CsScript.Action
                 UserLv = basis.UserLv,
                 CombatRankID = basis.CombatRankID,
                 JobTitle = member.JobTitle,
-                Liveness = 0,
+                Liveness = member.Liveness,
             };
             var session = GameSession.Get(_userId);
             receipt.IsOnline = session != null && session.Connected;

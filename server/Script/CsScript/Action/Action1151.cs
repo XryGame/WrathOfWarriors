@@ -37,7 +37,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetEnum("ID", ref id))
+            if (httpGet.GetInt("ID", ref id))
             {
                 return true;
             }

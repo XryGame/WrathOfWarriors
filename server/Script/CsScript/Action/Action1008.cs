@@ -185,7 +185,7 @@ namespace GameServer.CsScript.Action
                 foreach (var v in guildData.MemberList)
                 {
                     if (v.UserID != Current.UserId)
-                        PushMessageHelper.FriendOffineNotification(GameSession.Get(v.UserID), Current.UserId);
+                        PushMessageHelper.GuildMemberOnlineNotification(GameSession.Get(v.UserID), Current.UserId);
                 }
             }
 

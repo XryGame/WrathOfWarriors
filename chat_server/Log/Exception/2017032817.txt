@@ -1,0 +1,43 @@
+Time:2017-03-28 17:04:34:342-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Remote\ChatService.cs, Line:155
+Message:嵌入的语句不能是声明或标记语句
+
+
+Time:2017-03-28 17:04:34:351-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-28 17:05:23:939-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Remote\ChatService.cs, Line:155
+Message:嵌入的语句不能是声明或标记语句
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Action\Action1000.cs, Line:56
+Message:语法错误，应输入“,”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Action\Action1000.cs, Line:57
+Message:语法错误，应输入“,”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Action\Action1000.cs, Line:62
+Message:应输入 catch 或 finally
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Action\Action1000.cs, Line:65
+Message:应输入 {
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Action\Action1000.cs, Line:66
+Message:语法错误，应输入“try”
+
+
+Time:2017-03-28 17:05:23:945-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-03-28 17:05:28:079-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\Remote\ChatService.cs, Line:155
+Message:嵌入的语句不能是声明或标记语句
+
+
+Time:2017-03-28 17:05:28:079-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

@@ -53,7 +53,8 @@ namespace GameServer.CsScript.Action
                     chatUser = new ChatUser()
                     {
                         UserId = _userId,
-                        SessionId = Current.SessionId
+                        SessionId = Current.SessionId,
+                        GuildID = string.Empty
                     };
                     cache.TryAdd(_userId.ToString(), chatUser);
                 }

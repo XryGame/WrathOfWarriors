@@ -18,6 +18,8 @@ namespace GameServer.CsScript.Action
 
         public int RankID { get; set; }
 
+        public int MemberCount { get; set; }
+
         public int Atevent { get; set; }
 
         public string AteventName { get; set; }
@@ -60,6 +62,7 @@ namespace GameServer.CsScript.Action
                     Name = v.GuildName,
                     Lv = v.Lv,
                     RankID = v.RankID,
+                    MemberCount = v.MemberList.Count
                 };
                 var atevent = v.FindAtevent();
                 info.Atevent = atevent.UserID;

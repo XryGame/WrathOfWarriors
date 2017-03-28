@@ -14,7 +14,7 @@ namespace GameServer.CsScript.Remote
         private int _vipLv;
         private int _profession;
         private int _serverID;
-        private int _guildID;
+        private string _guildID;
 
         public UpdateUserDataService(ActionGetter paramGetter, MessageStructure response)
             : base(paramGetter, response)
@@ -30,7 +30,7 @@ namespace GameServer.CsScript.Remote
                 && paramGetter.GetInt("VipLv", ref _vipLv)
                 && paramGetter.GetInt("Profession", ref _profession)
                 && paramGetter.GetInt("ServerID", ref _serverID)
-                && paramGetter.GetInt("GuildID", ref _guildID))
+                && paramGetter.GetString("GuildID", ref _guildID))
             {
 
                 return true;

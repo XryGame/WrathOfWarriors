@@ -108,7 +108,7 @@ namespace GameServer.CsScript.Remote
             remote.Call("NoticeService", param, successCallback);
         }
 
-        public static void SendUserData(UserBasisCache basis)
+        public static void SendUserData(UserBasisCache basis, string guildId)
         {
             var param = new RequestParam();
             param.Add("UserId", basis.UserID);
@@ -116,7 +116,7 @@ namespace GameServer.CsScript.Remote
             param.Add("VipLv", basis.VipLv);
             param.Add("Profession", basis.Profession);
             param.Add("ServerID", basis.ServerID);
-            param.Add("GuildID", basis.GuildID);
+            param.Add("GuildID", guildId);
             remote.Call("UpdateUserDataService", param, successCallback);
         }
 

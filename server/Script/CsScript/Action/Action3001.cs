@@ -5,6 +5,7 @@ using ZyGames.Framework.Game.Model;
 using GameServer.Script.Model.Enum;
 using GameServer.CsScript.Remote;
 using GameServer.Script.Model.DataModel;
+using ZyGames.Framework.Common;
 
 namespace GameServer.CsScript.Action
 {
@@ -65,7 +66,10 @@ namespace GameServer.CsScript.Action
                     break;
                 case ChatType.Guild:
                     {
-                        ChatRemoteService.SendGuildChat(GetBasis.UserID, _content);
+                        if (!GetGuild.GuildID.IsEmpty())
+                        {
+                            ChatRemoteService.SendGuildChat(GetBasis.UserID, _content);
+                        }
                     }
                     break;
             }

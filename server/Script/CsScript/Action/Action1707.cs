@@ -1,4 +1,5 @@
-﻿using GameServer.Script.CsScript.Action;
+﻿using GameServer.CsScript.Remote;
+using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
@@ -118,6 +119,8 @@ namespace GameServer.CsScript.Action
 
                     // 通知新成员公会信息
                     PushMessageHelper.JoinGuildNotification(GameSession.Get(_DestUid));
+
+                    ChatRemoteService.SendUserData(basis, guild.GuildID);
 
                     receipt = RequestGuildResult.Successfully;
                 }

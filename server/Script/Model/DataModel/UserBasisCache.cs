@@ -329,22 +329,6 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-
-        private int _GuildID;
-        [ProtoMember(30)]
-        [EntityField("GuildID")]
-        public int GuildID
-        {
-            get
-            {
-                return _GuildID;
-            }
-            set
-            {
-                SetChange("GuildID", value);
-            }
-        }
-
         private int _CombatRankID;
         [ProtoMember(31)]
         [EntityField("CombatRankID")]
@@ -650,7 +634,6 @@ namespace GameServer.Script.Model.DataModel
                     case "OfflineDate": return OfflineDate;
                     case "SessionID": return SessionID;
                     case "RestoreDate": return RestoreDate;
-                    case "GuildID": return GuildID;
                     case "CombatRankID": return CombatRankID;
                     case "IsTodayLottery": return IsTodayLottery;
                     case "VipGiftProgress": return VipGiftProgress;
@@ -722,9 +705,6 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "RestoreDate":
                         _RestoreDate = value.ToDateTime();
-                        break;
-                    case "GuildID":
-                        _GuildID = value.ToInt();
                         break;
                     case "CombatRankID":
                         _CombatRankID = value.ToInt();
