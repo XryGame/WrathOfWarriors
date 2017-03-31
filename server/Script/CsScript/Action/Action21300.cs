@@ -16,7 +16,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action21300 : BaseAction
     {
-        private JPBuyData receipt;
+        private int receipt;
 
         public Action21300(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action21300, actionGetter)
@@ -36,11 +36,9 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPBuyData();
 
             if (GetBasis.IsReceivedRedPacket)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -149,10 +147,9 @@ namespace GameServer.CsScript.Action
                 diamondNum = 666;
             }
             //GetBasis.IsReceivedRedPacket = true;
-            UserHelper.RewardsDiamond(GetBasis.UserID, diamondNum);
-            receipt.Result = EventStatus.Good;
-            receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt.Extend1 = diamondNum;
+            UserHelper.RewardsDiamond(Current.UserId, diamondNum);
+
+            receipt = diamondNum;
             return true;
         }
     }

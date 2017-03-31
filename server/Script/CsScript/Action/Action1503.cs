@@ -48,9 +48,9 @@ namespace GameServer.CsScript.Action
             {
                 GetFriends.RemoveFriend(destuid);
             }
-            if (destFriends.IsHaveFriend(GetBasis.UserID))
+            if (destFriends.IsHaveFriend(Current.UserId))
             {
-                destFriends.RemoveFriend(GetBasis.UserID);
+                destFriends.RemoveFriend(Current.UserId);
             }
 
             PushMessageHelper.FriendRemoveNotification(GameSession.Get(destuid), Current.UserId);

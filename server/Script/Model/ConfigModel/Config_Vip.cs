@@ -75,7 +75,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 购买名人榜挑战次数
+        /// 购买竞技场挑战次数
         /// </summary>
         private int _BuyAthletics;
         [EntityField("BuyAthletics")]

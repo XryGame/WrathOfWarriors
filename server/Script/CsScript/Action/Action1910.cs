@@ -97,7 +97,7 @@ namespace GameServer.CsScript.Action
 
             //if (diamond > 0)
             //{
-            //    UserHelper.RewardsDiamond(GetBasis.UserID, diamond);
+            //    UserHelper.RewardsDiamond(Current.UserId, diamond);
             //    receipt.AwardDiamondNum = diamond;
                 
             //}

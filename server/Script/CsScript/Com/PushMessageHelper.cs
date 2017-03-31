@@ -389,6 +389,18 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
+        /// 竞技场新日志通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void NewCombatLogNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1082, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1082, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
         /// 充值成功通知
         /// </summary>
         /// <param name="session"></param>

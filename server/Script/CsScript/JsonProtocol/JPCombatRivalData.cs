@@ -1,4 +1,5 @@
 ﻿using GameServer.Script.Model.Config;
+using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
@@ -9,7 +10,7 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPCombatRivalData()
         {
-            SkillList = new List<SkillData>();
+
         }
         public CombatReqRivalResult Result { get; set; }
 
@@ -22,18 +23,14 @@ namespace GameServer.CsScript.JsonProtocol
         public int RankId { get; set; }
 
         public int UserLv { get; set; }
-
-        public int FightingValue { get; set; }
         
-        public int Attack { get; set; }
+        public UserAttributeCache Attribute { get; set; }
 
-        public int Defense { get; set; }
+        public UserEquipsCache Equips { get; set; }
 
-        public int HP { get; set; }
+        public UserSkillCache Skill { get; set; }
         
-        public List<SkillData> SkillList { get; set; }
 
-        public bool IsUnlockSelectMap { get; set; }
 
     }
 }

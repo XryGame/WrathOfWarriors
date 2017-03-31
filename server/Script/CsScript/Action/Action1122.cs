@@ -135,7 +135,7 @@ namespace GameServer.CsScript.Action
                 }
 
                 // 成就
-                UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.InlayGem, "1", v);
+                UserHelper.AchievementProcess(Current.UserId, AchievementType.InlayGem, "1", v);
 
                 GetPackage.RemoveItem(v, 1);
             }

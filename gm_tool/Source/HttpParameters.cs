@@ -2,7 +2,6 @@
 using System.Net;
 using System.IO;
 using System.Web;
-using ZyGames.Framework.Common;
 
 namespace gm_tool.Source
 {
@@ -32,7 +31,7 @@ namespace gm_tool.Source
         private static Dictionary<string, string> GetData(string rawData)
         {
             var rets = new Dictionary<string, string>();
-            if (rawData.IsEmpty())
+            if (rawData == null || rawData == "")
                 return rets;
             string[] rawParams = rawData.Split('&');
             foreach (string param in rawParams)

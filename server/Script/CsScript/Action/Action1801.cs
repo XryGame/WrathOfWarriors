@@ -18,7 +18,7 @@ namespace GameServer.CsScript.Action
     {
         private string mailid;
         private bool isall;
-        private JPRequestSFOData receipt;
+        private bool receipt;
 
         public Action1801(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1801, actionGetter)
@@ -65,37 +65,22 @@ namespace GameServer.CsScript.Action
                 
                 foreach (var item in mail.AppendItem)
                 {
-                    if (receipt == null)
-                    {
-                        receipt = new JPRequestSFOData();
-                    }
                     var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(item.ID);
                     if (itemcfg == null)
                         continue;
-
-                    GetPackage.AddItem(item.ID, item.Num);
-                    receipt.AwardItemList.Add(item.ID);
+                    UserHelper.RewardsItem(Current.UserId, item.ID, item.Num);
                 }
                 mail.AppendItem.Clear();
 
                 if (mail.ApppendDiamond > 0)
                 {
-                    if (receipt == null)
-                    {
-                        receipt = new JPRequestSFOData();
-                    }
-                    UserHelper.RewardsDiamond(GetBasis.UserID, mail.ApppendDiamond);
-
-                    receipt.AwardDiamondNum = mail.ApppendDiamond;
+                    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond);
+                    
                     mail.ApppendDiamond = 0;
                 }
             }
- 
 
-            if (receipt!= null)
-            {
-                receipt.CurrDiamond = GetBasis.DiamondNum;
-            }
+            receipt = true;
             return true;
         }
     }

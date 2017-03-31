@@ -82,6 +82,16 @@ namespace GameServer.Script.Model.Config
         }
 
         /// <summary>
+        /// 战斗力
+        /// </summary>
+        [ProtoMember(5)]
+        public int FightValue
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// 排名时间
         /// </summary>
         [ProtoMember(9)]

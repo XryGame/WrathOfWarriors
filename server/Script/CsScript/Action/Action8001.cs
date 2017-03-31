@@ -41,7 +41,7 @@ namespace GameServer.CsScript.Action
             UserBasisCache destBasis = UserHelper.FindUserBasis(destuid);
             UserAttributeCache destAttribute = UserHelper.FindUserAttribute(destuid);
             if (destSession == null || !destSession.Connected || destBasis == null
-                || destBasis.UserStatus != UserStatus.Inviteing || destBasis.InviteFightDestUid != GetBasis.UserID)
+                || destBasis.UserStatus != UserStatus.Inviteing || destBasis.InviteFightDestUid != Current.UserId)
             {
                 return true;
             }
@@ -81,12 +81,12 @@ namespace GameServer.CsScript.Action
                 if (retresult == EventStatus.Bad)
                 {
                     PushMessageHelper.StartInviteFightNotification(Current, destuid, EventStatus.Bad);
-                    PushMessageHelper.StartInviteFightNotification(destSession, GetBasis.UserID, EventStatus.Good);
+                    PushMessageHelper.StartInviteFightNotification(destSession, Current.UserId, EventStatus.Good);
                 }
                 else
                 {
                     PushMessageHelper.StartInviteFightNotification(Current, destuid, EventStatus.Good);
-                    PushMessageHelper.StartInviteFightNotification(destSession, GetBasis.UserID, EventStatus.Bad);
+                    PushMessageHelper.StartInviteFightNotification(destSession, Current.UserId, EventStatus.Bad);
                 }
 
             }

@@ -73,7 +73,7 @@ namespace GameServer.CsScript.Action
                     int tmp = Convert.ToInt32(rate * 100);
                     GetBasis.OfflineEarnings = (transscriptEarnings * tmp / 100).ToNotNullString();
                 }
-
+                receipt.OfflineTimeSec = GetBasis.OfflineTimeSec;
                 receipt.OfflineEarnings = GetBasis.OfflineEarnings;
             }
             

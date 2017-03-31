@@ -16,7 +16,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1920 : BaseAction
     {
-        private JPRequestSFOData receipt;
+        private bool receipt;
         private Random random = new Random();
         public Action1920(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1920, actionGetter)
@@ -36,35 +36,25 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestSFOData();
             if (GetBasis.VipGiftProgress >= GetBasis.VipLv)
             {
-                receipt.ReturnId = GetBasis.VipLv;
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
-
-
-
-
+            
             var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipGiftProgress + 1);
             if (vip == null)
             {
-                receipt.ReturnId = GetBasis.VipLv;
-                receipt.Result = EventStatus.Bad;
                 return false;
             }
 
             GetBasis.VipGiftProgress++;
-            receipt.ReturnId = GetBasis.VipGiftProgress;
-            receipt.Result = EventStatus.Good;
 
 
             //switch (vip.ObtainType)
             //{
             //    case VipObtainType.Diamond:
             //        {
-            //            UserHelper.RewardsDiamond(GetBasis.UserID, vip.ObtainNum);
+            //            UserHelper.RewardsDiamond(Current.UserId, vip.ObtainNum);
             //            receipt.AwardDiamondNum = vip.ObtainNum;
             //            receipt.CurrDiamond = GetBasis.DiamondNum;
             //        }
@@ -105,6 +95,7 @@ namespace GameServer.CsScript.Action
             //}
 
             //receipt.CurrDiamond = GetBasis.DiamondNum;
+            receipt = true;
             return true;
         }
     }

@@ -10,8 +10,6 @@ namespace GameServer.CsScript.JsonProtocol
         {
             List = new List<JPRankUserData>();
         }
-        public RankType Type { get; set; }
-
         public int SelfRank { get; set; }
 
         public List<JPRankUserData> List;

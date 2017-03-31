@@ -18,7 +18,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action9000 : BaseAction
     {
-        private JPRequestSFOData receipt;
+        private bool receipt;
         private Random random = new Random();
         private bool isrepair; // 是否补签
         public Action9000(ActionGetter actionGetter)
@@ -43,21 +43,17 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestSFOData();
-            receipt.Result = EventStatus.Good;
+
             if (GetEventAward.IsTodaySign && !isrepair)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
             if (!GetEventAward.IsTodaySign && isrepair)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
             if (isrepair && GetBasis.DiamondNum < DataHelper.RepairSignNeedDiamond)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -73,7 +69,6 @@ namespace GameServer.CsScript.Action
 
             if (GetEventAward.SignCount >= choose.Count)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -83,7 +78,6 @@ namespace GameServer.CsScript.Action
             ));
             if (signsurface == null)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -101,9 +95,9 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(GetBasis.UserID, signsurface.AwardNum);
-                        receipt.AwardDiamondNum = signsurface.AwardNum;
-                        receipt.CurrDiamond = GetBasis.DiamondNum;
+                        UserHelper.RewardsDiamond(Current.UserId, signsurface.AwardNum);
+                        //receipt.AwardDiamondNum = signsurface.AwardNum;
+                        //receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
                 //case TaskAwardType.ItemSkillBook:
@@ -135,7 +129,9 @@ namespace GameServer.CsScript.Action
                 //    }
                 //    break;
             }
-            receipt.CurrDiamond = GetBasis.DiamondNum;
+            //receipt.CurrDiamond = GetBasis.DiamondNum;
+
+            receipt = true;
             return true;
         }
     }

@@ -66,15 +66,15 @@ namespace GameServer.CsScript.Action
                 // 每日
                 if (transcriptCfg.limitTime > 0)
                 {
-                    UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.PassStageBoss, 1);
+                    UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.PassStageBoss, 1);
                 }
                 else
                 {
-                    UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.PassStage, 1);
+                    UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.PassStage, 1);
                 }
 
                 // 成就
-                UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.LevelCount);
+                UserHelper.AchievementProcess(Current.UserId, AchievementType.LevelCount);
             }
 
             receipt = GetAttribute;

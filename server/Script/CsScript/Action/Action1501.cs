@@ -56,7 +56,7 @@ namespace GameServer.CsScript.Action
             {
                 receipt = RequestFriendResult.HadFriend;
             }
-            else if (destFriends.IsHaveFriendApply(GetBasis.UserID))
+            else if (destFriends.IsHaveFriendApply(Current.UserId))
             {
                 receipt = RequestFriendResult.HadApply;
             }
@@ -64,7 +64,7 @@ namespace GameServer.CsScript.Action
             {
                 receipt = RequestFriendResult.OK;
 
-                destFriends.AddFriendApply(GetBasis.UserID);
+                destFriends.AddFriendApply(Current.UserId);
                 var session = GameSession.Get(destuid);
                 PushMessageHelper.NewFriendRequestNotification(GameSession.Get(destuid), Current.UserId);
 

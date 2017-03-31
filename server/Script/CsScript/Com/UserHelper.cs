@@ -19,6 +19,7 @@ using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Model;
 using GameServer.CsScript.Remote;
 using System.Numerics;
+using GameServer.Script.Model.Enum.Enum;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -299,7 +300,7 @@ namespace GameServer.Script.Model.DataModel
                 return;
             }
 
-            // 名人榜挑战次数
+            // 竞技场挑战次数
             combat.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             combat.ButTimes = 0;
             // 好友
@@ -467,7 +468,7 @@ namespace GameServer.Script.Model.DataModel
                 RestoreUserData(uid, restoreCount);
             }
 
-            // 名人榜处理
+            // 竞技场处理
             CombatProcess(uid);
 
             if (!eventaward.IsStartedOnlineTime)
@@ -481,7 +482,7 @@ namespace GameServer.Script.Model.DataModel
 
             // 离线收益时间
             TimeSpan ts = DateTime.Now.Subtract(basis.OfflineDate);
-            basis.OfflineTimeSec += (int)Math.Floor(ts.TotalSeconds);
+            basis.OfflineTimeSec += (long)Math.Floor(ts.TotalSeconds);
 
 
         }
@@ -506,7 +507,7 @@ namespace GameServer.Script.Model.DataModel
             basis.OfflineDate = DateTime.Now;
             basis.UserStatus = UserStatus.MainUi;
 
-            // 名人榜处理
+            // 竞技场处理
             CombatProcess(uid);
 
 
@@ -597,7 +598,7 @@ namespace GameServer.Script.Model.DataModel
    
         public static void CombatProcess(int uid)
         {
-            // 名人榜处理
+            // 竞技场处理
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             int rankID = 0;
             UserRank rankinfo = null;
@@ -623,25 +624,21 @@ namespace GameServer.Script.Model.DataModel
         }
         
         /// <summary>
-        /// 格式化输出名人榜日志
+        /// 格式化输出竞技场日志
         /// </summary>
         /// <param name="logdata"></param>
         /// <returns></returns>
         public static string FormatCombatLog(CombatLogData logdata)
         {
-            UserBasisCache basis = FindUserBasis(logdata.UserId);
-            if (basis == null)
-            {
-                return "";
-            }
+
             string ret = "";
-            string date = Util.FormatDate(logdata.LogTime);
-            ret = date + "，";
+            //string date = Util.FormatDate(logdata.LogTime);
+            //ret = date + "，";
             if (logdata.Type == EventType.Challenge)
             {
                 ret += "你挑战";
                 ret += " ";
-                ret += basis.NickName;
+                ret += logdata.RivalName;
                 ret += " ";
                 string tmp = "";
                 if (logdata.Status == EventStatus.Good)
@@ -657,7 +654,7 @@ namespace GameServer.Script.Model.DataModel
             else
             {
                 ret += " ";
-                ret += basis.NickName;
+                ret += logdata.RivalName;
                 ret += " ";
                 ret += "挑战你";
                 string tmp = "";
@@ -711,10 +708,25 @@ namespace GameServer.Script.Model.DataModel
 
         }
         /// <summary>
-        /// 每周二周五名人榜奖励任务
+        /// 每周二刷新任务
         /// </summary>
         /// <param name="planconfig"></param>
-        public static void DoCombatAwardTask(PlanConfig planconfig)
+        public static void DoTuesdayRefreshTask(PlanConfig planconfig)
+        {
+            if (ScriptEngines.IsCompiling)
+            {
+                return;
+            }
+            //do something
+            Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
+            guildRanking.ForceRefresh();
+            ProgressCombatAward();
+        }
+        /// <summary>
+        /// 每周五刷新任务
+        /// </summary>
+        /// <param name="planconfig"></param>
+        public static void DoFridayRefreshTask(PlanConfig planconfig)
         {
             if (ScriptEngines.IsCompiling)
             {
@@ -724,9 +736,8 @@ namespace GameServer.Script.Model.DataModel
             ProgressCombatAward();
         }
 
-
         /// <summary>
-        /// 进行发放名人榜奖励
+        /// 进行发放竞技场奖励
         /// </summary>
         private static void ProgressCombatAward()
         {
@@ -745,10 +756,10 @@ namespace GameServer.Script.Model.DataModel
                     MailData mail = new MailData()
                     {
                         ID = Guid.NewGuid().ToString(),
-                        Title = "名人榜奖励",
+                        Title = "竞技场奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = string.Format("截止当前时间，您获得名人榜第{0}名，奖励如下，请查收！", ur.RankId),
+                        Context = string.Format("截止当前时间，您获得竞技场第{0}名，奖励如下，请查收！", ur.RankId),
                         ApppendDiamond = cr.AwardNum
                     };
                     AddNewMail(ur.UserID, mail);
@@ -756,9 +767,22 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        public static UserRank FindCombatRankUser(int userid)
+        public static UserRank FindRankUser(int userid, RankType type)
         {
-            var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+            Ranking<UserRank> ranking = null;
+            switch (type)
+            {
+                case RankType.Combat:
+                    ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+                    break;
+                case RankType.Level:
+                    ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+                    break;
+                case RankType.FightValue:
+                    ranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+                    break;
+
+            }
             UserRank rankInfo = null;
             int rankID = 0;
             if (ranking.TryGetRankNo(m => (m.UserID == userid), out rankID))
@@ -768,7 +792,7 @@ namespace GameServer.Script.Model.DataModel
 
             return rankInfo;
         }
-
+        
 
         public static void AchievementProcess(int uid, AchievementType type, string addcount = "0", int addId = 0, bool isNotification = true)
         {
@@ -1015,7 +1039,16 @@ namespace GameServer.Script.Model.DataModel
             {
                 PushMessageHelper.UserAttributeChangedNotification(GameSession.Get(uid));
             }
-            
+
+            // 这里刷新排行榜数据
+            var combat = FindRankUser(uid, RankType.Combat);
+            if (combat != null) combat.FightValue = attribute.FightValue;
+            var level = FindRankUser(uid, RankType.Level);
+            if (level != null) level.FightValue = attribute.FightValue;
+            var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            if (fightvaluer != null) fightvaluer.FightValue = attribute.FightValue;
+
+
         }
 
         /// <summary>  
@@ -1032,8 +1065,16 @@ namespace GameServer.Script.Model.DataModel
             UserAchievementCache achieve = FindUserAchievement(uid);
 
 
-            PushMessageHelper.UserLevelUpNotification(GameSession.Get(uid));
+            //PushMessageHelper.UserLevelUpNotification(GameSession.Get(uid));
 
+
+            // 这里刷新排行榜数据
+            var combat = FindRankUser(uid, RankType.Combat);
+            combat.UserLv = basis.UserLv;
+            var level = FindRankUser(uid, RankType.Level);
+            level.UserLv = basis.UserLv;
+            var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            fightvaluer.UserLv = basis.UserLv;
         }
 
 

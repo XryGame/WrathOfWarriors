@@ -43,7 +43,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            UserPayCache userpay = UserHelper.FindUserPay(GetBasis.UserID);
+            UserPayCache userpay = UserHelper.FindUserPay(Current.UserId);
 
             receipt = new JPPaySucceedData();
             receipt.VipLv = GetBasis.VipLv;

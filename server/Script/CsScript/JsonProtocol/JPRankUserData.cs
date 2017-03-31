@@ -14,11 +14,9 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int UserLv { get; set; }
 
-        public bool IsOnline { get; set; }
+        ///public bool IsOnline { get; set; }
 
-        public int Exp { get; set; }
-
-        public int FightingValue { get; set; }
+        public int FightValue { get; set; }
 
         public int VipLv { get; set; }
     }

@@ -96,10 +96,10 @@ namespace GameServer.CsScript.Action
             skill.Lv = skillGradeCfg.SkillGrade;
 
             // 每日
-            UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.UpgradeSkill, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.UpgradeSkill, 1);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.UpgradeSkill);
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.UpgradeSkill);
 
             receipt = true;
             return true;

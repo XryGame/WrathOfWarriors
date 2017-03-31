@@ -30,7 +30,7 @@ namespace GameServer.Script.Model.Enum.Enum
         /// </summary>
         No = 0,
         /// <summary>
-        /// 名人榜排行
+        /// 竞技场排行
         /// </summary>
         Combat = 1,
 
@@ -38,10 +38,10 @@ namespace GameServer.Script.Model.Enum.Enum
         /// 等级
         /// </summary>
         Level,
-
         /// <summary>
         /// 战力
         /// </summary>
-        FightValue
+        FightValue,
+
     }
 }

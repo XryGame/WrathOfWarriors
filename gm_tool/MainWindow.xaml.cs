@@ -54,6 +54,7 @@ namespace gm_tool
             e.Handled = true;
         }
 
+
         private void QueryRoleInfo(bool islog = true)
         {
             HttpRequest request = new HttpRequest();
@@ -90,7 +91,7 @@ namespace gm_tool
 
         private void ResetButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (QueryUserID.Text == "0")
+            if (QueryUserID.Text.Length == 0)
                 return;
             HttpRequest request = new HttpRequest();
             request.AddPostParam("ID", "Reset");
@@ -114,7 +115,7 @@ namespace gm_tool
 
         private void SetButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (QueryUserID.Text == "0")
+            if (QueryUserID.Text.Length == 0)
                 return;
             HttpRequest request = new HttpRequest();
             request.AddPostParam("ID", "Set");
@@ -154,5 +155,48 @@ namespace gm_tool
             SetAddItemID.Text = string.Empty;
             SetAddItemNum.Text = string.Empty;
         }
+
+        private void ResetMailText()
+        {
+            MailTitle.Text = string.Empty;
+            MailContent.Text = string.Empty;
+            MailItem1ID.Text = string.Empty;
+            MailItem1Num.Text = string.Empty;
+            MailItem1ID.Text = string.Empty;
+            MailItem1Num.Text = string.Empty;
+            MailItem2ID.Text = string.Empty;
+            MailItem2Num.Text = string.Empty;
+            MailItem3ID.Text = string.Empty;
+            MailItem3Num.Text = string.Empty;
+            MailItem4ID.Text = string.Empty;
+            MailItem4Num.Text = string.Empty;
+            MailDiamond.Text = string.Empty;
+
+        }
+
+        private void SendMailButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (QueryUserID.Text.Length == 0 || MailTitle.Text.Length == 0 || MailContent.Text.Length == 0)
+                return;
+            HttpRequest request = new HttpRequest();
+            request.AddPostParam("ID", "NewMail");
+            request.AddPostParam("UserID", QueryUserID.Text);
+            request.AddPostParam("MailTitle", MailTitle.Text);
+            request.AddPostParam("MailContent", MailContent.Text);
+            request.AddPostParam("MailDiamond", MailDiamond.Text);
+            request.AddPostParam("AddItem1ID", MailItem1ID.Text);
+            request.AddPostParam("AddItem1Num", MailItem1Num.Text);
+            request.AddPostParam("AddItem2ID", MailItem2ID.Text);
+            request.AddPostParam("AddItem2Num", MailItem2Num.Text);
+            request.AddPostParam("AddItem3ID", MailItem3ID.Text);
+            request.AddPostParam("AddItem3Num", MailItem3Num.Text);
+            request.AddPostParam("AddItem4ID", MailItem4ID.Text);
+            request.AddPostParam("AddItem4Num", MailItem4Num.Text);
+            if (request.HttpPostRequest())
+            {
+                ResetMailText();
+            }
+        }
+
     }
 }

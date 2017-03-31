@@ -41,14 +41,14 @@ namespace GameServer.CsScript.Action
                 int diamond = MathUtils.Subtraction(DataHelper.InviteFightDiamondWeekMax, GetBasis.InviteFightDiamondNum);
                 diamond = Math.Min(diamond, DataHelper.InviteFightAwardDiamond);
                 GetBasis.InviteFightDiamondNum += diamond;
-                UserHelper.RewardsDiamond(GetBasis.UserID, diamond);
+                UserHelper.RewardsDiamond(Current.UserId, diamond);
             }
 
             // 每日
-            UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.FriendCompare, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.FriendCompare, 1);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.FriendCompare, "1");
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.FriendCompare, "1");
             return true;
         }
     }

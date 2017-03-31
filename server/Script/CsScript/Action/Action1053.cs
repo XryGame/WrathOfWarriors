@@ -59,7 +59,7 @@ namespace GameServer.CsScript.Action
             }
             receipt.InviteFightDiamondNum = GetBasis.InviteFightDiamondNum;
 
-            UserPayCache userpay = UserHelper.FindUserPay(GetBasis.UserID);
+            UserPayCache userpay = UserHelper.FindUserPay(Current.UserId);
             if (userpay != null)
             {
                 receipt.WeekCardDays = userpay.WeekCardDays;

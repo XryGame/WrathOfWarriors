@@ -61,7 +61,7 @@ namespace GameServer.CsScript.Action
             }
 
             FriendData fd = GetFriends.FindFriend(destuid);
-            FriendData byfd = destFriends.FindFriend(GetBasis.UserID);
+            FriendData byfd = destFriends.FindFriend(Current.UserId);
             if (fd.IsGiveAway || byfd == null)
             {
                 ErrorInfo = Language.Instance.RequestIDError;

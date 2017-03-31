@@ -132,7 +132,7 @@ namespace GameServer.CsScript.Locale
 
         public string NoReachScheduleTime = "没有达到时间要求";
 
-        public string CombatRankDataException = "名人榜排名数据异常";
+        public string CombatRankDataException = "竞技场排名数据异常";
 
         public string St3001_ChaTypeNotGuildMember = "未加入公会，不能发言";
 

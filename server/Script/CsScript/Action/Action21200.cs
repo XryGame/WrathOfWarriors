@@ -45,14 +45,14 @@ namespace GameServer.CsScript.Action
             }
 
             var cacache = new ShareCacheStruct<CompetitionApply>();
-            var findv = cacache.FindKey(GetBasis.UserID);
+            var findv = cacache.FindKey(Current.UserId);
             if (findv != null)
             {
                 return true;
             }
             CompetitionApply apply = new CompetitionApply()
             {
-                UserId = GetBasis.UserID,
+                UserId = Current.UserId,
                 NickName = GetBasis.NickName,
                 ApplyDate = DateTime.Now
             };

@@ -59,7 +59,7 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            if (SystemGlobal.competition64.findBetData(GetBasis.UserID) != null)
+            if (SystemGlobal.competition64.findBetData(Current.UserId) != null)
             {
                 receipt.result = Competition64BetReset.HadBet;
                 return true;
@@ -67,10 +67,10 @@ namespace GameServer.CsScript.Action
             
             UserHelper.ConsumeDiamond(Current.UserId, diamond);
 
-            SystemGlobal.competition64.NewBetData(GetBasis.UserID, diamond, destUserId);
+            SystemGlobal.competition64.NewBetData(Current.UserId, diamond, destUserId);
 
             receipt.result = Competition64BetReset.OK;
-            receipt.info = SystemGlobal.competition64.findBetData(GetBasis.UserID);
+            receipt.info = SystemGlobal.competition64.findBetData(Current.UserId);
             return true;
         }
     }

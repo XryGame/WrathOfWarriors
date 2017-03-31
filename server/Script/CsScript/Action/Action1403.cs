@@ -12,6 +12,7 @@ using System;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Lang;
 using ZyGames.Framework.Game.Model;
 using ZyGames.Framework.Game.Service;
@@ -20,12 +21,13 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1403_名人榜挑战结果
+    /// 1403_竞技场挑战结果
     /// </summary>
     public class Action1403 : BaseAction
     {
         private JPCombatFightEndData receipt;
         private EventStatus result;
+        
 
         public Action1403(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1403, actionGetter)
@@ -61,13 +63,13 @@ namespace GameServer.CsScript.Action
             UserRank rankinfo = null;
             UserRank rivalrankinfo = null;
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            if (ranking.TryGetRankNo(m => m.UserID == GetBasis.UserID, out rankID))
+            if (ranking.TryGetRankNo(m => m.UserID == Current.UserId, out rankID))
             {
-                rankinfo = ranking.Find(s => s.UserID == GetBasis.UserID);
+                rankinfo = ranking.Find(s => s.UserID == Current.UserId);
             }
             if (rankinfo == null)
             {
-                new BaseLog("Action1403").SaveLog(string.Format("Not found user combat rank. UserId={0}", GetBasis.UserID));
+                new BaseLog("Action1403").SaveLog(string.Format("Not found user combat rank. UserId={0}", Current.UserId));
                 ErrorInfo = Language.Instance.CombatRankDataException;
                 return true;
             }
@@ -101,19 +103,20 @@ namespace GameServer.CsScript.Action
             }
 
 
-            int fromid = GetBasis.CombatRankID;
-            int toid = rival.CombatRankID;
+            
+            int fromRankId = GetBasis.CombatRankID;
+            int toRankId = rival.CombatRankID;
             //TraceLog.WriteLine(string.Format("#BEGIN srcId:[{0}] destId:[{1}]", fromid, toid));
             GetBasis.UserStatus = UserStatus.MainUi;
             if (result == EventStatus.Good)
             {
-                ranking.TryMove(fromid, toid);
-                GetBasis.CombatRankID = toid;
-                rival.CombatRankID = fromid;
+                ranking.TryMove(fromRankId, toRankId);
+                GetBasis.CombatRankID = toRankId;
+                rival.CombatRankID = fromRankId;
 
                 if (GetBasis.CombatRankID <= 10)
                 {
-                    string context = string.Format("恭喜 {0} 成为名人榜排名第{1}名，引来众人羡煞的目光！", GetBasis.NickName, rankinfo.RankId);
+                    string context = string.Format("恭喜 {0} 成为竞技场排名第{1}名，引来众人羡煞的目光！", GetBasis.NickName, rankinfo.RankId);
                     ChatRemoteService.SendNotice(NoticeMode.World, context);
                     //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
@@ -128,13 +131,14 @@ namespace GameServer.CsScript.Action
                 GetCombat.LastFailedDate = DateTime.Now;
             }
 
-            int rankrise = result == EventStatus.Good ? MathUtils.Subtraction(fromid, toid, 0) : 0;
+            int rankrise = result == EventStatus.Good ? MathUtils.Subtraction(fromRankId, toRankId, 0) : 0;
 
             //TraceLog.WriteLine(string.Format("###END srcId:[{0}] destId:[{1}]", GetBasis.CombatData.RankID, rival.CombatData.RankID));
 
             // 日志
             CombatLogData log = new CombatLogData();
-            log.UserId = rankinfo.FightDestUid;
+            log.RivalUid = rankinfo.FightDestUid;
+            log.RivalName = rival.NickName;
             log.LogTime = DateTime.Now;
             log.Type = EventType.Challenge;
             log.Status = result;
@@ -142,9 +146,13 @@ namespace GameServer.CsScript.Action
             log.RankId = GetBasis.CombatRankID;
             GetCombat.PushCombatLog(log);
 
+            string content = UserHelper.FormatCombatLog(log);
+            ChatRemoteService.SendSystemChat(Current.UserId, content);
+
 
             CombatLogData rivallog = new CombatLogData();
-            rivallog.UserId = GetBasis.UserID;
+            rivallog.RivalUid = Current.UserId;
+            rivallog.RivalName = GetBasis.NickName;
             rivallog.LogTime = DateTime.Now;
             rivallog.Type = EventType.PassiveChallenge;
             rivallog.Status = result;
@@ -152,6 +160,8 @@ namespace GameServer.CsScript.Action
             rivallog.RankId = rival.CombatRankID;
             UserHelper.FindUserCombat(rival.UserID).PushCombatLog(rivallog);
 
+            content = UserHelper.FormatCombatLog(rivallog);
+            ChatRemoteService.SendSystemChat(rival.UserID, content);
 
             rankinfo.IsFighting = false;
             rankinfo.FightDestUid = 0;
@@ -165,19 +175,22 @@ namespace GameServer.CsScript.Action
             if (result == EventStatus.Good)
             {
                 receipt.AwardDiamond = ConfigEnvSet.GetInt("User.CombatWinAward");
-                UserHelper.RewardsDiamond(GetBasis.UserID, receipt.AwardDiamond);
+                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond);
             }
             receipt.CurrDiamond = GetBasis.DiamondNum;
 
 
             // 每日
-            UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.Combat, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Combat, 1);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.CombatRandID);
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID);
 
+            PushMessageHelper.NewCombatLogNotification(Current);
+            PushMessageHelper.NewCombatLogNotification(GameSession.Get(rival.UserID));
             return true;
         }
+        
 
     }
 }

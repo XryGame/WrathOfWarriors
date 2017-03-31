@@ -485,9 +485,9 @@ namespace GameServer.CsScript.Com
 
             //int rankID = 0;
             //UserRank rankInfo = null;
-            //if (ranking.TryGetRankNo(m => (m.UserID == GetBasis.UserID), out rankID))
+            //if (ranking.TryGetRankNo(m => (m.UserID == Current.UserId), out rankID))
             //{
-            //    rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
+            //    rankInfo = ranking.Find(s => (s.UserID == Current.UserId));
             //}
             Random random = new Random();
             int pagecout;

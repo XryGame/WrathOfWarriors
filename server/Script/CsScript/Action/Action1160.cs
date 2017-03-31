@@ -113,7 +113,7 @@ namespace GameServer.CsScript.Action
         public override void TakeActionAffter(bool state)
         {
             // 成就检测
-            UserHelper.AchievementProcess(GetBasis.UserID, type);
+            UserHelper.AchievementProcess(Current.UserId, type);
 
             base.TakeActionAffter(state);
         }

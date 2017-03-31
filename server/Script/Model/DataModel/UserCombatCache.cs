@@ -79,7 +79,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 购买名人榜挑战次数
+        /// 购买竞技场挑战次数
         /// </summary>
         private int _ButTimes;
         [ProtoMember(4)]

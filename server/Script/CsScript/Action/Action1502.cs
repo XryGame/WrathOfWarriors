@@ -78,7 +78,7 @@ namespace GameServer.CsScript.Action
 
                     GetFriends.AddFriend(destuid);
 
-                    destFriends.AddFriend(GetBasis.UserID);
+                    destFriends.AddFriend(Current.UserId);
 
                     PushMessageHelper.NewFriendNotification(GameSession.Get(destuid), Current.UserId);
                     PushMessageHelper.NewFriendNotification(Current, destuid);

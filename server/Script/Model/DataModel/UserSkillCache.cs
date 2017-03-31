@@ -24,6 +24,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             SkillList = new CacheList<SkillData>();
+            CarryList = new CacheList<int>();
         }
         
         private int _UserID;
@@ -59,6 +60,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 技能携带列表
+        /// </summary>
+        private CacheList<int> _CarryList;
+        [ProtoMember(3)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> CarryList
+        {
+            get
+            {
+                return _CarryList;
+            }
+            set
+            {
+                SetChange("CarryList", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -74,6 +93,7 @@ namespace GameServer.Script.Model.DataModel
                 {
                     case "UserID": return UserID;
                     case "SkillList": return SkillList;
+                    case "CarryList": return CarryList;
                     default: throw new ArgumentException(string.Format("UserSkillCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -88,6 +108,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "SkillList":
                         _SkillList = ConvertCustomField<CacheList<SkillData>>(value, index);
+                        break;
+                    case "CarryList":
+                        _CarryList = ConvertCustomField<CacheList<int>>(value, index);
                         break;
                     default: throw new ArgumentException(string.Format("UserSkillCache index[{0}] isn't exist.", index));
                 }

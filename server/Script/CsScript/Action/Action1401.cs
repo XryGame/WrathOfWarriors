@@ -13,12 +13,13 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1401_名人榜入口
+    /// 1401_竞技场入口
     /// </summary>
     public class Action1401 : BaseAction
     {
         private JPCombatMatchData receipt;
         private Random random = new Random();
+        private const int MaxCount = 5;
 
         public Action1401(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1401, actionGetter)
@@ -49,16 +50,16 @@ namespace GameServer.CsScript.Action
             int rankID = 0;
             UserRank rankInfo = null;
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            if (ranking.TryGetRankNo(m => (m.UserID == GetBasis.UserID), out rankID))
+            if (ranking.TryGetRankNo(m => (m.UserID == Current.UserId), out rankID))
             {
-                rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
+                rankInfo = ranking.Find(s => (s.UserID == Current.UserId));
             }
             
             if (rankInfo == null)
             {
                 rankInfo = new UserRank()
                 {
-                    UserID = GetBasis.UserID,
+                    UserID = Current.UserId,
                     NickName = GetBasis.NickName,
                     UserLv = GetBasis.UserLv,
                     VipLv = GetBasis.VipLv,
@@ -66,7 +67,7 @@ namespace GameServer.CsScript.Action
                     RankDate = DateTime.Now,
                 };
                 ranking.TryAppend(rankInfo);
-                rankInfo = ranking.Find(s => (s.UserID == GetBasis.UserID));
+                rankInfo = ranking.Find(s => (s.UserID == Current.UserId));
             }
 
             receipt = new JPCombatMatchData();
@@ -77,17 +78,17 @@ namespace GameServer.CsScript.Action
             //UserRank info = null;
             CacheList <int> MachList = new CacheList<int>();
 
-            if (rankInfo.RankId <= 4)
+            if (rankInfo.RankId <= MaxCount)
             {
-                for (int i = 4; i > 0; --i)
+                for (int i = MaxCount; i > 0; --i)
                 {
                     MachList.Add(i);
                 }
             }
             else if (rankInfo.RankId <= 30)
-            {// 前30名去前4位
+            {// 前30名去前5位
                 int num = 0;
-                for (int i = rankInfo.RankId - 1; i > 0 && num < 4; --i)
+                for (int i = rankInfo.RankId - 1; i > 0 && num < MaxCount; --i)
                 {
                     MachList.Add(i);
                     num++;
@@ -95,14 +96,14 @@ namespace GameServer.CsScript.Action
             }
             else if (rankInfo.RankId <= 100)
             {// 前100名去前10位
-                if (rankInfo.RankId <= 34)
+                if (rankInfo.RankId <= 30 + MaxCount)
                 {
                     for (int i = rankInfo.RankId - 1; i > 30; --i)
                     {
                         MachList.Add(i);
                     }
                     int currcount = MachList.Count;
-                    for (int i = 30; i > 30 - (4 - currcount); --i)
+                    for (int i = 30; i > 30 - (MaxCount - currcount); --i)
                     {
                         MachList.Add(i);
                     }
@@ -119,7 +120,7 @@ namespace GameServer.CsScript.Action
             }
             else if (rankInfo.RankId <= 500)
             {// 前500名去前30位
-                if (rankInfo.RankId <= 104)
+                if (rankInfo.RankId <= 100 + MaxCount)
                 {
                     for (int i = rankInfo.RankId - 1; i > 100; --i)
                     {
@@ -132,7 +133,7 @@ namespace GameServer.CsScript.Action
                     }
                     int mach;
                     int currcount = MachList.Count;
-                    for (int i = 0; i < 4 - currcount; ++i)
+                    for (int i = 0; i < MaxCount - currcount; ++i)
                     {
                         RandMach(ref temp, out mach);
                         MachList.Add(mach);
@@ -150,7 +151,7 @@ namespace GameServer.CsScript.Action
             }
             else if (rankInfo.RankId <= 1000)
             {
-                if (rankInfo.RankId <= 504)
+                if (rankInfo.RankId <= 500 + MaxCount)
                 {
                     for (int i = rankInfo.RankId - 1; i > 500; --i)
                     {
@@ -163,7 +164,7 @@ namespace GameServer.CsScript.Action
                     }
                     int mach;
                     int currcount = MachList.Count;
-                    for (int i = 0; i < 4 - currcount; ++i)
+                    for (int i = 0; i < MaxCount - currcount; ++i)
                     {
                         RandMach(ref temp, out mach);
                         MachList.Add(mach);
@@ -183,7 +184,7 @@ namespace GameServer.CsScript.Action
             }
             else
             {
-                if (rankInfo.RankId <= 1004)
+                if (rankInfo.RankId <= 1000 + MaxCount)
                 {
                     for (int i = rankInfo.RankId - 1; i > 1000; --i)
                     {
@@ -196,7 +197,7 @@ namespace GameServer.CsScript.Action
                     }
                     int mach;
                     int currcount = MachList.Count;
-                    for (int i = 0; i < 4 - currcount; ++i)
+                    for (int i = 0; i < MaxCount - currcount; ++i)
                     {
                         RandMach(ref temp, out mach);
                         MachList.Add(mach);
@@ -215,7 +216,7 @@ namespace GameServer.CsScript.Action
             }
             int mach_tops;
             int rid;
-            for (int i = 0; MachList.Count > 0 && i < 4; ++i)
+            for (int i = 0; MachList.Count > 0 && i < MaxCount; ++i)
             {
                 RandMach(ref MachList, out mach_tops);
 

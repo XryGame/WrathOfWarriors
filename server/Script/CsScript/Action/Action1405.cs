@@ -12,11 +12,11 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1405_购买名人榜挑战次数
+    /// 1405_购买竞技场挑战次数
     /// </summary>
     public class Action1405 : BaseAction
     {
-        private JPBuyData receipt;
+        private bool receipt;
 
         public Action1405(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1405, actionGetter)
@@ -37,8 +37,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPBuyData();
-            receipt.Result = EventStatus.Good;
+
             var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv == 0 ? 1 : GetBasis.VipLv);
             if (vip == null)
             {
@@ -52,22 +51,20 @@ namespace GameServer.CsScript.Action
             
             if (GetCombat.ButTimes >= canBuyTimes)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
             int needDiamond = ConfigEnvSet.GetInt("User.BuyCombatTimesNeedDiamond");
             
             if (GetBasis.DiamondNum < needDiamond)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
             
             UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
             GetCombat.CombatTimes = MathUtils.Addition(GetCombat.CombatTimes, 1);
             GetCombat.ButTimes++;
-            receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt.Extend1 = GetCombat.CombatTimes;
+
+            receipt = true;
             return true;
         }
     }

@@ -4,6 +4,7 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using GameServer.Script.Model.Enum.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Lang;
@@ -17,7 +18,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1900 : BaseAction
     {
-        private JPChangeNickNameData receipt;
+        private bool receipt;
         private string newName;
 
         public Action1900(ActionGetter actionGetter)
@@ -43,13 +44,10 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPChangeNickNameData();
-            
 
             int needDiamond = ConfigEnvSet.GetInt("System.ChangeNicknameNeedDiamond");
             if (GetBasis.DiamondNum < needDiamond)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
             var nickNameCheck = new NickNameCheck();
@@ -64,26 +62,20 @@ namespace GameServer.CsScript.Action
                 ErrorInfo = msg;
                 return false;
             }
-
-            receipt.Result = EventStatus.Good;
+            
             UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
             GetBasis.NickName = newName;
-            receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt.NewNickName = newName;
 
 
-            // 排行
-            var combatuser = UserHelper.FindCombatRankUser(GetBasis.UserID);
-            if (combatuser != null)
-            {
-                combatuser.NickName = GetBasis.NickName;
-            }
-            //var leveluser = UserHelper.FindLevelRankUser(GetBasis.UserID);
-            //if (leveluser != null)
-            //{
-            //    leveluser.NickName = GetBasis.NickName;
-            //}
+            // 这里刷新排行榜数据
+            var combat = UserHelper.FindRankUser(Current.UserId, RankType.Combat);
+            combat.NickName = newName;
+            var level = UserHelper.FindRankUser(Current.UserId, RankType.Level);
+            level.NickName = newName;
+            var fightvaluer = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
+            fightvaluer.NickName = newName;
 
+            receipt = true;
             return true;
         }
     }

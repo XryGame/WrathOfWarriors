@@ -107,9 +107,9 @@ namespace GameServer.CsScript.Base
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 60));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
-            // 每周二，周五名人榜奖励
-            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "TuesdayCombatAwardTask", DayOfWeek.Tuesday, "04:00"));
-            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoCombatAwardTask, "FridayCombatAwardTask", DayOfWeek.Friday, "04:00"));
+            // 每周二，周五竞技场奖励
+            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoTuesdayRefreshTask, "TuesdayRefreshTask", DayOfWeek.Tuesday, "04:00"));
+            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoFridayRefreshTask, "FridayRefreshTask", DayOfWeek.Friday, "04:00"));
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
 
             DataHelper.InitData();
@@ -135,9 +135,6 @@ namespace GameServer.CsScript.Base
             {
                 _isRunning = true;
             }
-
-            
-
             
         }
 
@@ -146,11 +143,18 @@ namespace GameServer.CsScript.Base
             int timeOut = ConfigUtils.GetSetting("Ranking.timeout", "60").ToInt();
 
             RankingFactory.Add(new CombatRanking());
+            RankingFactory.Add(new LevelRanking());
+            RankingFactory.Add(new FightValueRanking());
+            RankingFactory.Add(new GuildRanking());
             RankingFactory.Start(timeOut);
 
-            // 设置竞技场不刷新
+            // 设置竞技场排行不刷新
             Ranking<UserRank> combatRanking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             combatRanking.SetIntervalTimes(int.MaxValue);
+
+            // 设置公会排行不刷新
+            Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
+            guildRanking.SetIntervalTimes(int.MaxValue);
         }
         
         //private static void LoadUser()
@@ -363,6 +367,8 @@ namespace GameServer.CsScript.Base
                 Bots.PayVipNotification();
             }
 
+            //Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
+            //guildRanking.ForceRefresh();
 
             if (competition64 != null)
                 competition64.Run();

@@ -17,13 +17,12 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1402_名人榜请求挑战
+    /// 1402_竞技场请求挑战
     /// </summary>
     public class Action1402 : BaseAction
     {
         private JPCombatRivalData receipt;
         private int rivaluid;
-        private int mapid;
 
         public Action1402(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1402, actionGetter)
@@ -46,8 +45,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("RivalUid", ref rivaluid)
-                && httpGet.GetInt("MapId", ref mapid))
+            if (httpGet.GetInt("RivalUid", ref rivaluid))
             {
                 return true;
             }
@@ -61,9 +59,9 @@ namespace GameServer.CsScript.Action
             int rankID = 0;
             UserRank rankinfo = null;
             UserRank rivalrankinfo = null;
-            if (ranking.TryGetRankNo(m => m.UserID == GetBasis.UserID, out rankID))
+            if (ranking.TryGetRankNo(m => m.UserID == Current.UserId, out rankID))
             {
-                rankinfo = ranking.Find(s => s.UserID == GetBasis.UserID);
+                rankinfo = ranking.Find(s => s.UserID == Current.UserId);
             }
             if (ranking.TryGetRankNo(m => m.UserID == rivaluid, out rankID))
             {
@@ -71,7 +69,7 @@ namespace GameServer.CsScript.Action
             }
             if (rankinfo == null || rivalrankinfo == null)
             {
-                int erroruid = rankinfo == null ? GetBasis.UserID : rivaluid;
+                int erroruid = rankinfo == null ? Current.UserId : rivaluid;
                 new BaseLog("Action1402").SaveLog(string.Format("Not found user combat rank. UserId={0}", erroruid));
                 ErrorInfo = Language.Instance.CombatRankDataException;
                 return true;
@@ -106,30 +104,23 @@ namespace GameServer.CsScript.Action
                 ErrorInfo = Language.Instance.NoFoundUser;
                 return true;
             }
-            //Config_RoleGrade rolegrade = new ShareCacheStruct<Config_RoleGrade>().FindKey(rivalrankinfo.UserLv);
-            //if (rolegrade == null)
-            //{
-            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "RoleGrade");
-            //    return true;
-            //}
+
 
             GetBasis.UserStatus = UserStatus.Fighting;
             GetCombat.CombatTimes = MathUtils.Subtraction(GetCombat.CombatTimes, 1, 0);
             rankinfo.IsFighting = true;
             rankinfo.FightDestUid = rivaluid;
             rivalrankinfo.IsFighting = true;
-            /////rivalrankinfo.FightDestUid = GetBasis.UserID;
+            /////rivalrankinfo.FightDestUid = Current.UserId;
 
             receipt.UserId = rivaluid;
             receipt.NickName = rivalrankinfo.NickName;
             receipt.Profession = rivalrankinfo.Profession;
             receipt.RankId = rivalrankinfo.RankId;
             receipt.UserLv = rivalrankinfo.UserLv;
-            //receipt.FightingValue = rivalrankinfo.FightingValue;
-            //receipt.Attack = rival.Attack;
-            //receipt.Defense = rival.Defense;
-            //receipt.HP = rival.Hp;
-
+            receipt.Equips = UserHelper.FindUserEquips(rivaluid);
+            receipt.Attribute = UserHelper.FindUserAttribute(rivaluid);
+            receipt.Skill = UserHelper.FindUserSkill(rivaluid);
             return true;
         }
 

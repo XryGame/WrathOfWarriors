@@ -42,7 +42,7 @@ namespace GameServer.CsScript.Action
             ChatRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
 
             string content = "欢迎进入勇者之怒！";
-            ChatRemoteService.SendSystemChat(GetBasis.UserID, content);
+            ChatRemoteService.SendSystemChat(Current.UserId, content);
             return true;
         }
 

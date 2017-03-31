@@ -80,7 +80,7 @@ namespace GameServer.CsScript.Action
                 {
                     UserId = dest.UserID,
                     InviteTime = DateTime.Now,
-                    PlayerUserId = GetBasis.UserID
+                    PlayerUserId = Current.UserId
                 };
                 Bots.AddFightBot(fbot);
             }
@@ -88,7 +88,7 @@ namespace GameServer.CsScript.Action
             {
                 // 发送切磋邀请
                 dest.UserStatus = UserStatus.Inviteing;
-                PushMessageHelper.InviteFightNotification(session, GetBasis.UserID);
+                PushMessageHelper.InviteFightNotification(session, Current.UserId);
             }
             return true;
         }

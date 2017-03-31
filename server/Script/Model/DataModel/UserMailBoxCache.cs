@@ -40,7 +40,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 背包物品列表
+        /// 邮件列表
         /// </summary>
         private CacheList<MailData> _MailList;
         [ProtoMember(2)]

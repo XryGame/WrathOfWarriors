@@ -328,6 +328,36 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        private int _FightValueRankID;
+        [ProtoMember(29)]
+        [EntityField("FightValueRankID")]
+        public int FightValueRankID
+        {
+            get
+            {
+                return _FightValueRankID;
+            }
+            set
+            {
+                SetChange("FightValueRankID", value);
+            }
+        }
+
+        private int _LevelRankID;
+        [ProtoMember(30)]
+        [EntityField("LevelRankID")]
+        public int LevelRankID
+        {
+            get
+            {
+                return _LevelRankID;
+            }
+            set
+            {
+                SetChange("LevelRankID", value);
+            }
+        }
+
 
         private int _CombatRankID;
         [ProtoMember(31)]
@@ -634,6 +664,8 @@ namespace GameServer.Script.Model.DataModel
                     case "OfflineDate": return OfflineDate;
                     case "SessionID": return SessionID;
                     case "RestoreDate": return RestoreDate;
+                    case "FightValueRankID": return FightValueRankID;
+                    case "LevelRankID": return LevelRankID;
                     case "CombatRankID": return CombatRankID;
                     case "IsTodayLottery": return IsTodayLottery;
                     case "VipGiftProgress": return VipGiftProgress;
@@ -705,6 +737,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "RestoreDate":
                         _RestoreDate = value.ToDateTime();
+                        break;
+                    case "FightValueRankID":
+                        _FightValueRankID = value.ToInt();
+                        break;
+                    case "LevelRankID":
+                        _LevelRankID = value.ToInt();
                         break;
                     case "CombatRankID":
                         _CombatRankID = value.ToInt();

@@ -40,7 +40,7 @@ namespace GameServer.CsScript.Action
             receipt.IsTodayLottery = GetBasis.IsTodayLottery;
 
 
-            var lottery = UserHelper.RandomLottery(GetBasis.UserID, GetBasis.UserLv);
+            var lottery = UserHelper.RandomLottery(Current.UserId, GetBasis.UserLv);
             if (lottery != null)
             {
                 GetBasis.RandomLotteryId = lottery.ID;

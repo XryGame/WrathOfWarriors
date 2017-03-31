@@ -15,7 +15,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action9010 : BaseAction
     {
-        private JPRequestSFOData receipt;
+        private bool receipt;
         private Random random = new Random();
         public Action9010(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action9010, actionGetter)
@@ -35,12 +35,10 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestSFOData();
-            receipt.Result = EventStatus.Good;
+
             var list = new ShareCacheStruct<Config_FirstWeek>().FindAll();
             if (GetEventAward.IsTodayReceiveFirstWeek || GetEventAward.FirstWeekCount >= list.Count)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -49,7 +47,6 @@ namespace GameServer.CsScript.Action
             ));
             if (surface == null)
             {
-                receipt.Result = EventStatus.Bad;
                 return true;
             }
 
@@ -62,9 +59,9 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(GetBasis.UserID, surface.AwardNum);
-                        receipt.AwardDiamondNum = surface.AwardNum;
-                        receipt.CurrDiamond = GetBasis.DiamondNum;
+                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum);
+                        //receipt.AwardDiamondNum = surface.AwardNum;
+                        //receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
                 //case AwardType.ItemSkillBook:
@@ -96,7 +93,8 @@ namespace GameServer.CsScript.Action
                 //    }
                 //    break;
             }
-            receipt.CurrDiamond = GetBasis.DiamondNum;
+            //receipt.CurrDiamond = GetBasis.DiamondNum;
+            receipt = true;
             return true;
         }
     }

@@ -52,6 +52,14 @@ namespace GameServer.CsScript.JsonProtocol
 
         public JPFriendsData Friends { get; set; }
 
+        public UserMailBoxCache MailBox { get; set; }
+
+        public UserEventAwardCache EventAward { get; set; }
+
+        public UserPayCache Pay { get; set; }
+
+        public UserCombatCache Combat { get; set; }
+
         //public JPStudyData StudyData { get; set; }
 
         //public JPExerciseData ExerciseData { get; set; }

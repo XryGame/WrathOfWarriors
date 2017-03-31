@@ -14,7 +14,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1820 : BaseAction
     {
-        private JPRequestSFOData receipt;
+        private bool receipt;
         private int AwardDiamondNum = ConfigEnvSet.GetInt("System.FirstPayAwardDiamondNum");
         private int AwardItemId = ConfigEnvSet.GetInt("System.FirstPayAwardItemID");
         public Action1820(ActionGetter actionGetter)
@@ -36,27 +36,28 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            UserPayCache usepay = UserHelper.FindUserPay(GetBasis.UserID);
+            UserPayCache usepay = UserHelper.FindUserPay(Current.UserId);
             if (usepay == null || usepay.PayMoney == 0)
                 return false;
-            receipt = new JPRequestSFOData();
-            receipt.Result = EventStatus.Bad;
+            //receipt = new JPRequestSFOData();
+            //receipt.Result = EventStatus.Bad;
             if (usepay.IsReceiveFirstPay)
                 return true;
             usepay.IsReceiveFirstPay = true;
-            receipt.Result = EventStatus.Good;
+            
 
-            UserHelper.RewardsDiamond(GetBasis.UserID, AwardDiamondNum);
+            UserHelper.RewardsDiamond(Current.UserId, AwardDiamondNum);
             Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(AwardItemId);
             if (item != null)
             {
-                GetPackage.AddItem(AwardItemId, 1);
+                UserHelper.RewardsItem(Current.UserId, AwardItemId, 1);
+                //GetPackage.AddItem(AwardItemId, 1);
             }
 
-            receipt.AwardDiamondNum = AwardDiamondNum;
-            receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt.AwardItemList.Add(AwardItemId);
-
+            //receipt.AwardDiamondNum = AwardDiamondNum;
+            //receipt.CurrDiamond = GetBasis.DiamondNum;
+            //receipt.AwardItemList.Add(AwardItemId);
+            receipt = true;
             return true;
         }
     }

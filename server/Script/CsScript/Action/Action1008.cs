@@ -58,7 +58,7 @@ namespace GameServer.CsScript.Action
 
             receipt = new JPUserDetailsData()
             {
-                UserId = GetBasis.UserID,
+                UserId = Current.UserId,
                 NickName = GetBasis.NickName,
                 Profession = GetBasis.Profession,
                 UserLv = GetBasis.UserLv,
@@ -75,7 +75,10 @@ namespace GameServer.CsScript.Action
             receipt.Task = GetTask;
             receipt.Achievement = GetAchievement;
             receipt.Guild = GetGuild;
-
+            receipt.MailBox = GetMailBox;
+            receipt.EventAward = GetEventAward;
+            receipt.Pay = GetPay;
+            receipt.Combat = GetCombat;
             /// 好友
             {
                 receipt.Friends.GiveAwayCount = GetFriends.GiveAwayCount;
@@ -174,7 +177,7 @@ namespace GameServer.CsScript.Action
             // 通知好友上线
             foreach (FriendData fd in GetFriends.FriendsList)
             {
-                PushMessageHelper.FriendOnlineNotification(GameSession.Get(fd.UserId), GetBasis.UserID);
+                PushMessageHelper.FriendOnlineNotification(GameSession.Get(fd.UserId), Current.UserId);
             }
 
 
@@ -190,7 +193,7 @@ namespace GameServer.CsScript.Action
             }
 
             //context = "欢迎进入创想学院！";
-            //RemoteClient.SendSystemChat(GetBasis.UserID, context);
+            //RemoteClient.SendSystemChat(Current.UserId, context);
 
 
             GetBasis.IsRefreshing = false;

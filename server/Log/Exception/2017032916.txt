@@ -1,0 +1,8 @@
+Time:2017-03-29 16:49:29:046-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1067
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D49%26Sid%3Ds_226ab3e4543d4122bb628ac763c08864%7C2%7C1%26Uid%3D1000023%26St%3Dst%26ActionId%3D1111%26ID%3D1%26sign%3Dac5243e6c5051e49d3fe97636570aa70, Uid:1000023, Pid:user1490777205000
+Host:168.254.0.112:56420
+
+

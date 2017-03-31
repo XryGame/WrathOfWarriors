@@ -245,7 +245,7 @@ namespace GameServer.Script.Model.DataModel
             PayMoney = 0;
             IsReceiveFirstPay = false;
             WeekCardDays = -1;
-            MonthCardDays = 2;
+            MonthCardDays = 3;
             WeekCardAwardDate = DateTime.Now;
             MonthCardAwardDate = DateTime.Now;
             AccumulatePayList.Clear();

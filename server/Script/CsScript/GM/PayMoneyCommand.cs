@@ -3,6 +3,7 @@ using GameServer.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
@@ -38,16 +39,12 @@ namespace GameServer.CsScript.GM
             user.VipLv = userpay.ConvertPayVipLevel();
 
             // 这里刷新排行榜数据
-            var combatuser = UserHelper.FindCombatRankUser(userId);
-            if (combatuser != null)
-            {
-                combatuser.VipLv = user.VipLv;
-            }
-            //var leveluser = UserHelper.FindLevelRankUser(userId);
-            //if (leveluser != null)
-            //{
-            //    leveluser.VipLv = user.VipLv;
-            //}
+            var combat = UserHelper.FindRankUser(userId, RankType.Combat);
+            combat.VipLv = user.VipLv;
+            var level = UserHelper.FindRankUser(userId, RankType.Level);
+            level.VipLv = user.VipLv;
+            var fightvaluer = UserHelper.FindRankUser(userId, RankType.FightValue);
+            fightvaluer.VipLv = user.VipLv;
 
             return true;
         }

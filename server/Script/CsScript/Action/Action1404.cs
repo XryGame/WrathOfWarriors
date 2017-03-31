@@ -10,7 +10,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1404_名人榜CD
+    /// 1404_竞技场CD
     /// </summary>
     public class Action1404 : BaseAction
     {

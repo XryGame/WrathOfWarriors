@@ -2,6 +2,7 @@
 using GameServer.CsScript.Com;
 using GameServer.CsScript.GM;
 using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using System;
@@ -311,7 +312,102 @@ namespace GameServer.CsScript.Remote
                             }
                         }
                     }
+                    else if (_OperateName == "NewMail")
+                    {
+                        string MailTitle, MailContent;
+                        int MailDiamond, AddItem1ID, AddItem1Num, AddItem2ID, AddItem2Num, AddItem3ID, AddItem3Num, AddItem4ID, AddItem4Num;
+                        parms.TryGetValue("UserID", out _value);
+                        int UserId = _value.ToInt();
+                        parms.TryGetValue("MailTitle", out MailTitle);
+                        parms.TryGetValue("MailContent", out MailContent);
+                        parms.TryGetValue("MailDiamond", out _value);
+                        MailDiamond = _value.ToInt();
+                        parms.TryGetValue("AddItem1ID", out _value);
+                        AddItem1ID = _value.ToInt();
+                        parms.TryGetValue("AddItem1Num", out _value);
+                        AddItem1Num = _value.ToInt();
+                        parms.TryGetValue("AddItem2ID", out _value);
+                        AddItem2ID = _value.ToInt();
+                        parms.TryGetValue("AddItem2Num", out _value);
+                        AddItem2Num = _value.ToInt();
+                        parms.TryGetValue("AddItem3ID", out _value);
+                        AddItem3ID = _value.ToInt();
+                        parms.TryGetValue("AddItem3Num", out _value);
+                        AddItem3Num = _value.ToInt();
+                        parms.TryGetValue("AddItem4ID", out _value);
+                        AddItem4ID = _value.ToInt();
+                        parms.TryGetValue("AddItem4Num", out _value);
+                        AddItem4Num = _value.ToInt();
 
+                        var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
+                        if (user == null)
+                        {
+                            bone.AddStrBone("没有找到该用户");
+                            break;
+                        }
+                        var mailbox = UserHelper.FindUserMailBox(UserId);
+                        MailData mail = new MailData()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            Title = MailTitle,
+                            Sender = "系统",
+                            Date = DateTime.Now,
+                            Context = MailContent,
+                            ApppendDiamond = MailDiamond
+                        };
+                        if (AddItem1ID > 0 && AddItem1Num > 0)
+                        {
+                            ItemData item = new ItemData()
+                            {
+                                ID = AddItem1ID,
+                                Num = AddItem1Num,
+                            };
+                            mail.AppendItem.Add(item);
+                        }
+                        if (AddItem2ID > 0 && AddItem2Num > 0)
+                        {
+                            ItemData item = new ItemData()
+                            {
+                                ID = AddItem2ID,
+                                Num = AddItem2Num,
+                            };
+                            mail.AppendItem.Add(item);
+                        }
+                        if (AddItem3ID > 0 && AddItem3Num > 0)
+                        {
+                            ItemData item = new ItemData()
+                            {
+                                ID = AddItem3ID,
+                                Num = AddItem3Num,
+                            };
+                            mail.AppendItem.Add(item);
+                        }
+                        if (AddItem4ID > 0 && AddItem4Num > 0)
+                        {
+                            ItemData item = new ItemData()
+                            {
+                                ID = AddItem4ID,
+                                Num = AddItem4Num,
+                            };
+                            mail.AppendItem.Add(item);
+                        }
+
+                        bool IsSucceed = true;
+                        foreach (var v in mail.AppendItem)
+                        {
+                            var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(v.ID);
+                            if (itemcfg == null)
+                            {
+                                bone.AddStrBone("邮件附加道具错误");
+                                IsSucceed = false;
+                                break;
+                            }
+                        }
+                        if (IsSucceed)
+                        {
+                            UserHelper.AddNewMail(UserId, mail);
+                        }
+                    }
                     break;
                 }
 

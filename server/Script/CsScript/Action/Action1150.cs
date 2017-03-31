@@ -66,12 +66,12 @@ namespace GameServer.CsScript.Action
                 case TaskAwardType.Gold:
                     {
                         BigInteger bi = Util.ConvertGameCoin(taskcfg.RewardsNum);
-                        UserHelper.RewardsGold(GetBasis.UserID, bi);
+                        UserHelper.RewardsGold(Current.UserId, bi);
                     }
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(GetBasis.UserID, Convert.ToInt32(taskcfg.RewardsNum));
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(taskcfg.RewardsNum));
                     }
                     break;
                 case TaskAwardType.Item:

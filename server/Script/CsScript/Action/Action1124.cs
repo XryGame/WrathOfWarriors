@@ -75,10 +75,10 @@ namespace GameServer.CsScript.Action
             UserHelper.RefreshUserFightValue(Current.UserId);
 
             // 每日
-            UserHelper.EveryDayTaskProcess(GetBasis.UserID, TaskType.UpgradeEquip, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.UpgradeEquip, 1);
 
             // 成就
-            UserHelper.AchievementProcess(GetBasis.UserID, AchievementType.UpgradeEquip);
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.UpgradeEquip);
 
             receipt = true;
             return true;

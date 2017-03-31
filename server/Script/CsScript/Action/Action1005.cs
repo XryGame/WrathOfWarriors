@@ -137,9 +137,7 @@ namespace GameServer.CsScript.Action
             var equipsSet = new PersonalCacheStruct<UserEquipsCache>();
             equipsSet.Add(equipcache);
             equipsSet.Update();
-
-            UserHelper.RefreshUserFightValue(basis.UserID, false);
-
+            
             // 背包初始化
             UserPackageCache packagecache = new UserPackageCache();
             packagecache.UserID = basis.UserID;
@@ -163,6 +161,8 @@ namespace GameServer.CsScript.Action
             var soulSet = new PersonalCacheStruct<UserSoulCache>();
             soulSet.Add(soulcache);
             soulSet.Update();
+
+            UserHelper.RefreshUserFightValue(basis.UserID, false);
 
             // 技能初始化
             UserSkillCache skillcache = new UserSkillCache();
@@ -248,7 +248,7 @@ namespace GameServer.CsScript.Action
             guildSet.Update();
 
             // 排行榜初始化
-            UserRank rankInfo = new UserRank()
+            UserRank combatRank = new UserRank()
             {
                 UserID = basis.UserID,
                 NickName = basis.NickName,
@@ -260,11 +260,24 @@ namespace GameServer.CsScript.Action
             };
             Ranking<UserRank> combatranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             var combat = combatranking as CombatRanking;
-            combat.TryAppend(rankInfo);
-            combat.rankList.Add(rankInfo);
+            combat.TryAppend(combatRank);
+            combat.rankList.Add(combatRank);
+
+            UserRank levelRank = new UserRank(combatRank);
+            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var level = levelranking as LevelRanking;
+            level.TryAppend(levelRank);
+            level.rankList.Add(levelRank);
+
+            UserRank fightRank = new UserRank(combatRank);
+            Ranking<UserRank> fightranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            var fight = fightranking as FightValueRanking;
+            fight.TryAppend(fightRank);
+            fight.rankList.Add(fightRank);
+
 
             UserHelper.RestoreUserData(basis.UserID);
-            UserHelper.AddMouthCardMail(basis.UserID);
+            //UserHelper.AddMouthCardMail(basis.UserID);
             return basis;
         }
 

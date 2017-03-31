@@ -22,7 +22,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1100 : BaseAction
     {
-        private JPUsedItemReceipt receipt;
+        private UsedItemResult receipt;
 
         private int itemId;
         private int useNum;
@@ -35,14 +35,8 @@ namespace GameServer.CsScript.Action
 
         protected override string BuildJsonPack()
         {
-            if (receipt != null)
-            {
-                body = receipt;
-            }
-            else
-            {
-                ErrorCode = ActionIDDefine.Cst_Action1401;
-            }
+
+            body = receipt;
             return base.BuildJsonPack();
         }
 
@@ -58,8 +52,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPUsedItemReceipt();
-            receipt.Result = UsedItemResult.Successfully;
+            receipt = UsedItemResult.Successfully;
 
             var itemconfig = new ShareCacheStruct<Config_Item>().FindKey(itemId);
             if (itemconfig == null)
@@ -71,13 +64,13 @@ namespace GameServer.CsScript.Action
             var itemdata = GetPackage.FindItem(itemId);
             if (itemdata == null)
             {
-                receipt.Result = UsedItemResult.NoItem;
+                receipt = UsedItemResult.NoItem;
                 return true;
                 
             }
             if (itemdata.Num < useNum)
             {
-                receipt.Result = UsedItemResult.ItemNumError;
+                receipt = UsedItemResult.ItemNumError;
                 return true;
             }
             
@@ -111,7 +104,7 @@ namespace GameServer.CsScript.Action
                     break;
                 default:
                     {
-                        receipt.Result = UsedItemResult.Cannot;
+                        receipt = UsedItemResult.Cannot;
                         return true;
                     }
             }

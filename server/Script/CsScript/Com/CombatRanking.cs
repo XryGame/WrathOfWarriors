@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace GameServer.CsScript.Com
 {
     /// <summary>
-    /// 名人榜排行
+    /// 竞技场排行
     /// </summary>
     public class CombatRanking : Ranking<UserRank>
     {
@@ -109,11 +109,7 @@ namespace GameServer.CsScript.Com
         }
         protected override void ChangeRankNo(UserRank item)
         {
-            //var findrank = rankList.Find(t => (t.UserID == item.UserID));
-            //if (findrank != null)
-            //{
-            //    findrank.RankId = item.RankId;
-            //}
+
             var basis = UserHelper.FindUserBasis(item.UserID);
             basis.CombatRankID = item.RankId;
             
@@ -121,6 +117,7 @@ namespace GameServer.CsScript.Com
 
         private void SortOfRankId()
         {
+
             int count = 1;
             List<UserRank> tmp = new List<UserRank>();
             while (count <= rankList.Count)
@@ -132,6 +129,8 @@ namespace GameServer.CsScript.Com
                 }
                 count++;
             }
+            var list = rankList.FindAll(t => (t.RankId == 0));
+            tmp.AddRange(list);
 
             rankList = tmp;
         }

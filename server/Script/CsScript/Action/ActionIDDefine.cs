@@ -247,6 +247,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1081 = 1081;
 
         ///<summary>
+        ///竞技场新日志通知
+        ///</summary>
+        public const short Cst_Action1082 = 1082;
+
+        ///<summary>
         ///充值成功通知
         ///</summary>
         public const short Cst_Action1099 = 1099;
@@ -322,6 +327,15 @@ namespace GameServer.CsScript.Action
         /// </summary>
         public const short Cst_Action1140 = 1140;
 
+        /// <summary>
+        /// 技能装载
+        /// </summary>
+        public const short Cst_Action1141 = 1141;
+
+        /// <summary>
+        /// 技能卸载
+        /// </summary>
+        public const short Cst_Action1142 = 1142;
 
         ///<summary>
         ///领取每日任务奖励
@@ -340,34 +354,30 @@ namespace GameServer.CsScript.Action
 
 
         ///<summary>
-        ///名人榜入口
+        ///竞技场入口
         ///</summary>
         public const short Cst_Action1401 = 1401;
 
         ///<summary>
-        ///名人榜请求挑战
+        ///竞技场请求挑战
         ///</summary>
         public const short Cst_Action1402 = 1402;
 
         ///<summary>
-        ///名人榜挑战结果
+        ///竞技场挑战结果
         ///</summary>
         public const short Cst_Action1403 = 1403;
 
         ///<summary>
-        ///名人榜减CD
+        ///竞技场减CD
         ///</summary>
         public const short Cst_Action1404 = 1404;
 
         ///<summary>
-        ///名人榜购买挑战次数
+        ///竞技场购买挑战次数
         ///</summary>
         public const short Cst_Action1405 = 1405;
-
-        ///<summary>
-        ///名人榜前20
-        ///</summary>
-        public const short Cst_Action1406 = 1406;
+       
 
         ///<summary>
         ///请求好友在线状态
@@ -450,14 +460,31 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1708 = 1708;
 
         ///<summary>
+        ///请求竞技场排行数据
+        ///</summary>
+        public const short Cst_Action2000 = 2000;
+
+        ///<summary>
+        ///请求等级排行榜排行数据
+        ///</summary>
+        public const short Cst_Action2001 = 2001;
+
+        ///<summary>
+        ///请求战斗力排行榜排行数据
+        ///</summary>
+        public const short Cst_Action2002 = 2002;
+
+        ///<summary>
+        ///请求公会排行榜排行数据
+        ///</summary>
+        public const short Cst_Action2003 = 2003;
+
+        ///<summary>
         ///发送聊天
         ///</summary>
         public const short Cst_Action3001 = 3001;
 
-        ///<summary>
-        ///请求排行榜数据
-        ///</summary>
-        public const short Cst_Action3004 = 3004;
+
         
 
         ///<summary>

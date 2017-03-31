@@ -13,7 +13,7 @@ namespace GameServer.Script.Model.DataModel
         /// </summary>
         static public int InitVit;
         /// <summary>
-        /// 名人榜日志最大数量
+        /// 竞技场日志最大数量
         /// </summary>
         static public int CombatLogCountMax;
 

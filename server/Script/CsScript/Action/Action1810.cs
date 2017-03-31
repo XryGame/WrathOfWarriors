@@ -60,7 +60,7 @@ namespace GameServer.CsScript.Action
             //{
             //    case LotteryAwardType.Diamond:
             //        {
-            //            UserHelper.RewardsDiamond(GetBasis.UserID, lott.Content);
+            //            UserHelper.RewardsDiamond(Current.UserId, lott.Content);
             //            receipt.AwardNum = lott.Content;
             //        }
             //        break;
@@ -88,7 +88,7 @@ namespace GameServer.CsScript.Action
             ////GetBasis.RandomLotteryId = 0;
             //GetBasis.LastLotteryId = GetBasis.RandomLotteryId;
 
-            //var lottery = UserHelper.RandomLottery(GetBasis.UserID, GetBasis.UserLv);
+            //var lottery = UserHelper.RandomLottery(Current.UserId, GetBasis.UserLv);
             //if (lottery != null)
             //{
             //    GetBasis.RandomLotteryId = lottery.ID;
