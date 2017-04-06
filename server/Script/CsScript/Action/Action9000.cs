@@ -57,9 +57,7 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            var choose = new ShareCacheStruct<Config_Signin>().FindAll(
-                t => (t.DateYear == DateTime.Now.Year && t.DateMonth == DateTime.Now.Month)
-                );
+            var choose = new ShareCacheStruct<Config_Signin>().FindAll();
             if (choose.Count == 0)
             {
                 ErrorInfo = string.Format(Language.Instance.DBTableError, "Sign");
@@ -73,8 +71,7 @@ namespace GameServer.CsScript.Action
             }
 
             var signsurface = new ShareCacheStruct<Config_Signin>().Find(t => (
-                t.DateYear == DateTime.Now.Year && t.DateMonth == DateTime.Now.Month
-                && t.DateDay == GetEventAward.SignCount + 1
+                    t.ID == GetEventAward.SignCount + 1
             ));
             if (signsurface == null)
             {
@@ -93,43 +90,22 @@ namespace GameServer.CsScript.Action
             
             switch (signsurface.AwardType)
             {
+                case TaskAwardType.Gold:
+                    {
+                        UserHelper.RewardsGold(Current.UserId, signsurface.AwardNum);
+                    }
+                    break;
                 case TaskAwardType.Diamond:
                     {
                         UserHelper.RewardsDiamond(Current.UserId, signsurface.AwardNum);
-                        //receipt.AwardDiamondNum = signsurface.AwardNum;
-                        //receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
-                //case TaskAwardType.ItemSkillBook:
-                //    {
-                //        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(signsurface.AwardID);
-                //        if (item != null)
-                //        {
-                //            GetPackage.AddItem(signsurface.AwardID, signsurface.AwardNum);
-                //            receipt.AwardItemList.Add(signsurface.AwardID);
-                //        }
-                //    }
-                //    break;
-                //case AwardType.RandItemSkillBook:
-                //    {
-                //        int count = signsurface.AwardNum;
-                //        while (count > 0)
-                //        {
-                //            count--;
-                //            if (random.Next(1000) < 750)
-                //            {// 道具
-                //                receipt.AwardItemList.AddRange(GetBasis.RandItem(1));
-                //            }
-                //            else
-                //            {// 技能
-                //                receipt.AwardItemList.AddRange(GetBasis.RandSkillBook(1));
-                //            }
-                //        }
-
-                //    }
-                //    break;
+                case TaskAwardType.Item:
+                    {
+                        UserHelper.RewardsItem(Current.UserId, signsurface.AwardID, signsurface.AwardNum);
+                    }
+                    break;
             }
-            //receipt.CurrDiamond = GetBasis.DiamondNum;
 
             receipt = true;
             return true;

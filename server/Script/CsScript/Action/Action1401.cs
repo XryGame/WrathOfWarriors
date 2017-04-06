@@ -4,6 +4,7 @@ using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Game.Com.Rank;
@@ -47,13 +48,9 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            int rankID = 0;
             UserRank rankInfo = null;
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            if (ranking.TryGetRankNo(m => (m.UserID == Current.UserId), out rankID))
-            {
-                rankInfo = ranking.Find(s => (s.UserID == Current.UserId));
-            }
+            rankInfo = UserHelper.FindRankUser(Current.UserId, RankType.Combat);
             
             if (rankInfo == null)
             {
@@ -215,17 +212,17 @@ namespace GameServer.CsScript.Action
                 }
             }
             int mach_tops;
-            int rid;
             for (int i = 0; MachList.Count > 0 && i < MaxCount; ++i)
             {
                 RandMach(ref MachList, out mach_tops);
 
+                int rankID = 0;
                 UserRank machinfo = null;
-                if (ranking.TryGetRankNo(m => (m.RankId == mach_tops), out rid))
+                if (ranking.TryGetRankNo(m => (m.RankId == mach_tops), out rankID))
                 {
                     machinfo = ranking.Find(s => (s.RankId == mach_tops));
                 }
-                
+
                 if (machinfo != null)
                 {
                     UserBasisCache user = UserHelper.FindUserBasis(machinfo.UserID);

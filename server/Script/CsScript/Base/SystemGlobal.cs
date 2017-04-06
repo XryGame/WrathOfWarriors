@@ -223,7 +223,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Achievement>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Signin>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_FirstWeek>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_OnlineReward>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Online>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Lottery>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Purchase>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Vip>().AutoLoad(dbFilter);
@@ -236,6 +236,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_BotsChat>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Liveness>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Shop>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);

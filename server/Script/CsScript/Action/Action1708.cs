@@ -1,4 +1,5 @@
-﻿using GameServer.Script.CsScript.Action;
+﻿using GameServer.CsScript.Remote;
+using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
@@ -85,6 +86,7 @@ namespace GameServer.CsScript.Action
 
             guildData.RemoveMember(member);
             guild.GuildID = string.Empty;
+            ChatRemoteService.SendUserData(basis, guild.GuildID);
 
             receipt = RequestGuildResult.Successfully;
             return true;

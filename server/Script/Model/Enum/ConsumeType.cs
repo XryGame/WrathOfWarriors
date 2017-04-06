@@ -15,6 +15,14 @@ namespace GameServer.Script.Model.Enum
         /// 钻石
         /// </summary>
         Diamond,
+        /// <summary>
+        /// 竞技币
+        /// </summary>
+        CombatCoin,
+        /// <summary>
+        /// 公会币
+        /// </summary>
+        GuildCoin,
 
     }
 }

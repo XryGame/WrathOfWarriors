@@ -6,6 +6,7 @@ using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using GameServer.Script.Model.Enum.Enum;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
@@ -56,17 +57,13 @@ namespace GameServer.CsScript.Action
         {
 
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            int rankID = 0;
+
             UserRank rankinfo = null;
             UserRank rivalrankinfo = null;
-            if (ranking.TryGetRankNo(m => m.UserID == Current.UserId, out rankID))
-            {
-                rankinfo = ranking.Find(s => s.UserID == Current.UserId);
-            }
-            if (ranking.TryGetRankNo(m => m.UserID == rivaluid, out rankID))
-            {
-                rivalrankinfo = ranking.Find(s => s.UserID == rivaluid);
-            }
+
+            rankinfo = UserHelper.FindRankUser(Current.UserId, RankType.Combat);
+            rivalrankinfo = UserHelper.FindRankUser(rivaluid, RankType.Combat);
+
             if (rankinfo == null || rivalrankinfo == null)
             {
                 int erroruid = rankinfo == null ? Current.UserId : rivaluid;

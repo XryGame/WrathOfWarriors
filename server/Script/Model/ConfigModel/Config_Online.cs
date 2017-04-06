@@ -11,11 +11,11 @@ namespace GameServer.Script.Model.ConfigModel
     /// 
     /// </summary>
     [Serializable, ProtoContract, EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
-    public class Config_OnlineReward : ShareEntity
+    public class Config_Online : ShareEntity
     {
 
         
-        public Config_OnlineReward()
+        public Config_Online()
             : base(AccessLevel.ReadOnly)
         {
         }

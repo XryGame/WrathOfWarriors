@@ -56,6 +56,8 @@ namespace GameServer.CsScript.Action
             var list = new ShareCacheStruct<GuildsCache>().FindAll();
             foreach (var v in list)
             {
+                if (v.MemberList.Count == 0)
+                    continue;
                 GuildInfo info = new GuildInfo()
                 {
                     ID = v.GuildID,

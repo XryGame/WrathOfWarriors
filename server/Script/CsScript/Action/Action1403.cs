@@ -8,6 +8,7 @@ using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using GameServer.Script.Model.Enum.Enum;
 using System;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
@@ -59,14 +60,11 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            int rankID = 0;
             UserRank rankinfo = null;
             UserRank rivalrankinfo = null;
-            var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            if (ranking.TryGetRankNo(m => m.UserID == Current.UserId, out rankID))
-            {
-                rankinfo = ranking.Find(s => s.UserID == Current.UserId);
-            }
+            
+
+            rankinfo = UserHelper.FindRankUser(Current.UserId, RankType.Combat);
             if (rankinfo == null)
             {
                 new BaseLog("Action1403").SaveLog(string.Format("Not found user combat rank. UserId={0}", Current.UserId));
@@ -80,10 +78,7 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            if (ranking.TryGetRankNo(m => m.UserID == rankinfo.FightDestUid, out rankID))
-            {
-                rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
-            }
+            rivalrankinfo = UserHelper.FindRankUser(rankinfo.FightDestUid, RankType.Combat);
             if (rivalrankinfo == null)
             {
                 new BaseLog("Action1403").SaveLog(string.Format("Not found user combat rank. UserId={0}", rankinfo.FightDestUid));
@@ -110,6 +105,7 @@ namespace GameServer.CsScript.Action
             GetBasis.UserStatus = UserStatus.MainUi;
             if (result == EventStatus.Good)
             {
+                var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
                 ranking.TryMove(fromRankId, toRankId);
                 GetBasis.CombatRankID = toRankId;
                 rival.CombatRankID = fromRankId;

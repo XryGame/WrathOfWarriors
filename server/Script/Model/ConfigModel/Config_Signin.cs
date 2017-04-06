@@ -40,57 +40,6 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 日期年
-        /// </summary>
-        private int _DateYear;
-        [EntityField("DateYear")]
-        public int DateYear
-        {
-            get
-            {
-                return _DateYear;
-            }
-            set
-            {
-                SetChange("DateYear", value);
-            }
-        }
-
-        /// <summary>
-        /// 日期月
-        /// </summary>
-        private int _DateMonth;
-        [EntityField("DateMonth")]
-        public int DateMonth
-        {
-            get
-            {
-                return _DateMonth;
-            }
-            set
-            {
-                SetChange("DateMonth", value);
-            }
-        }
-
-        /// <summary>
-        /// 日期日
-        /// </summary>
-        private int _DateDay;
-        [EntityField("DateDay")]
-        public int DateDay
-        {
-            get
-            {
-                return _DateDay;
-            }
-            set
-            {
-                SetChange("DateDay", value);
-            }
-        }
-
-        /// <summary>
         /// 奖励类型
         /// </summary>
         private TaskAwardType _AwardType;
@@ -106,6 +55,7 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("AwardType", value);
             }
         }
+
         /// <summary>
         /// 奖励ID
         /// </summary>
@@ -139,6 +89,7 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("AwardNum", value);
             }
         }
+        
 
         protected override object this[string index]
 		{
@@ -148,9 +99,6 @@ namespace GameServer.Script.Model.ConfigModel
 				switch (index)
 				{
                     case "ID": return ID;
-                    case "DateYear": return DateYear;
-                    case "DateMonth": return DateMonth;
-                    case "DateDay": return DateDay;
                     case "AwardType": return AwardType;
                     case "AwardID": return AwardID;
                     case "AwardNum": return AwardNum;
@@ -166,17 +114,8 @@ namespace GameServer.Script.Model.ConfigModel
                     case "ID":
                         _ID = value.ToInt(); 
                         break; 
-                    case "DateYear":
-                        _DateYear = value.ToInt(); 
-                        break;
-                    case "DateMonth":
-                        _DateMonth = value.ToInt();
-                        break;
-                    case "DateDay":
-                        _DateDay = value.ToInt();
-                        break;
                     case "AwardType":
-                        _AwardType = value.ToEnum<TaskAwardType>();
+                        _AwardType = value.ToEnum<TaskAwardType>(); 
                         break;
                     case "AwardID":
                         _AwardID = value.ToInt();
@@ -191,11 +130,6 @@ namespace GameServer.Script.Model.ConfigModel
 		}
         
         #endregion
-                
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
+
 	}
 }

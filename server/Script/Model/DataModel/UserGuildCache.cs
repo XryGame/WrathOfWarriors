@@ -77,6 +77,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 公会币
+        /// </summary>
+        private int _GuildCoin;
+        [ProtoMember(4)]
+        [EntityField("GuildCoin")]
+        public int GuildCoin
+        {
+            get
+            {
+                return _GuildCoin;
+            }
+            set
+            {
+                SetChange("GuildCoin", value);
+            }
+        }
+
 
         protected override int GetIdentityId()
         {
@@ -94,6 +112,7 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "IsSignIn": return IsSignIn;
                     case "GuildID": return GuildID;
+                    case "GuildCoin": return GuildCoin;
                     default: throw new ArgumentException(string.Format("UserGuildCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -111,6 +130,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "GuildID":
                         _GuildID = value.ToNotNullString();
+                        break;
+                    case "GuildCoin":
+                        _GuildCoin = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("UserGuildCache index[{0}] isn't exist.", index));
                 }

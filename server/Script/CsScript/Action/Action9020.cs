@@ -36,7 +36,7 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             
-            var surface = new ShareCacheStruct<Config_OnlineReward>().FindKey(GetEventAward.OnlineAwardId);
+            var surface = new ShareCacheStruct<Config_Online>().FindKey(GetEventAward.OnlineAwardId);
             if (surface == null)
             {
                 return true;
@@ -61,41 +61,21 @@ namespace GameServer.CsScript.Action
 
             switch (surface.AwardType)
             {
+                case TaskAwardType.Gold:
+                    {
+                        UserHelper.RewardsGold(Current.UserId, surface.AwardNum);
+                    }
+                    break;
                 case TaskAwardType.Diamond:
                     {
                         UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum);
-                        //receipt.AwardDiamondNum = surface.AwardNum;
-                        //receipt.CurrDiamond = GetBasis.DiamondNum;
                     }
                     break;
-                //case AwardType.ItemSkillBook:
-                //    {
-                //        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(surface.AwardID);
-                //        if (item != null)
-                //        {
-                //            GetPackage.AddItem(surface.AwardID, surface.AwardNum);
-                //            receipt.AwardItemList.Add(surface.AwardID);
-                //        }
-                //    }
-                //    break;
-                //case AwardType.RandItemSkillBook:
-                //    {
-                //        int count = surface.AwardNum;
-                //        while (count > 0)
-                //        {
-                //            count--;
-                //            if (random.Next(1000) < 750)
-                //            {// 道具
-                //                receipt.AwardItemList.AddRange(GetBasis.RandItem(surface.AwardNum));
-                //            }
-                //            else
-                //            {// 技能
-                //                receipt.AwardItemList.AddRange(GetBasis.RandSkillBook(surface.AwardNum));
-                //            }
-                //        }
-
-                //    }
-                //    break;
+                case TaskAwardType.Item:
+                    {
+                        UserHelper.RewardsItem(Current.UserId, surface.AwardID, surface.AwardNum);
+                    }
+                    break;
             }
 
             //receipt.CurrDiamond = GetBasis.DiamondNum;

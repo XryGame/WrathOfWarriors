@@ -58,6 +58,8 @@ namespace GameServer.CsScript.Com
             var list = new ShareCacheStruct<GuildsCache>().FindAll();
             foreach (var v in list)
             {
+                if (v.MemberList.Count == 0)
+                    continue;
                 GuildRank rank = new GuildRank()
                 {
                     GuildID = v.GuildID,

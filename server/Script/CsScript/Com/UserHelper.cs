@@ -295,6 +295,7 @@ namespace GameServer.Script.Model.DataModel
             UserTaskCache task = FindUserTask(uid);
             UserCombatCache combat = FindUserCombat(uid);
             UserEventAwardCache eventaward = FindUserEventAward(uid);
+            UserGuildCache guild = FindUserGuild(uid);
             if (basis == null)
             {
                 return;
@@ -317,13 +318,16 @@ namespace GameServer.Script.Model.DataModel
             task.ResetCache();
 
             // 签到，首周，在线
-            if (basis.RestoreDate != DateTime.MinValue && basis.RestoreDate.Month != DateTime.Now.Month)
-            {// 下个月签到次数要清零
+            if (basis.RestoreDate != DateTime.MinValue && basis.RestoreDate.DayOfWeek == DayOfWeek.Monday)
+            {// 签到次数要清零
                 eventaward.SignCount = 0;
             }
 
+            // 公会
+            guild.IsSignIn = false;
+
             eventaward.IsTodaySign = false;
-            eventaward.IsTodayReceiveFirstWeek = false;
+            //eventaward.IsTodayReceiveFirstWeek = false;
             eventaward.IsStartedOnlineTime = false;
             //eventaward.TodayOnlineTime = 0;
             eventaward.OnlineAwardId = 1;
@@ -600,21 +604,15 @@ namespace GameServer.Script.Model.DataModel
         {
             // 竞技场处理
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-            int rankID = 0;
-            UserRank rankinfo = null;
+
+            UserRank rankinfo = FindRankUser(uid, RankType.Combat);
             UserRank rivalrankinfo = null;
-            if (ranking.TryGetRankNo(m => m.UserID == uid, out rankID))
-            {
-                rankinfo = ranking.Find(s => s.UserID == uid);
-            }
+
             if (rankinfo != null && rankinfo.FightDestUid != 0)
             {
                 rankinfo.IsFighting = false;
 
-                if (ranking.TryGetRankNo(m => m.UserID == rankinfo.FightDestUid, out rankID))
-                {
-                    rivalrankinfo = ranking.Find(s => s.UserID == rankinfo.FightDestUid);
-                }
+                rivalrankinfo = FindRankUser(rankinfo.FightDestUid, RankType.Combat);
                 if (rivalrankinfo != null && rivalrankinfo.IsFighting)
                 {
                     rivalrankinfo.IsFighting = false;

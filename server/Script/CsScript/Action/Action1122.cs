@@ -66,6 +66,8 @@ namespace GameServer.CsScript.Action
                 var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(v);
                 if (itemcfg.ItemType != ItemType.Gem)
                     return false;
+                if (GetPackage.FindItem(v) == null)
+                    return false;
 
                 switch ((GemType)itemcfg.Species)
                 {

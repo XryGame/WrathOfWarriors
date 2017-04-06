@@ -42,7 +42,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 本月签到计数
+        /// 签到计数
         /// </summary>
         private int _SignCount;
         [ProtoMember(2)]
@@ -77,41 +77,41 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        /// <summary>
-        /// 首周领取计数
-        /// </summary>
-        private int _FirstWeekCount;
-        [ProtoMember(4)]
-        [EntityField("FirstWeekCount")]
-        public int FirstWeekCount
-        {
-            get
-            {
-                return _FirstWeekCount;
-            }
-            set
-            {
-                SetChange("FirstWeekCount", value);
-            }
-        }
+        ///// <summary>
+        ///// 首周领取计数
+        ///// </summary>
+        //private int _FirstWeekCount;
+        //[ProtoMember(4)]
+        //[EntityField("FirstWeekCount")]
+        //public int FirstWeekCount
+        //{
+        //    get
+        //    {
+        //        return _FirstWeekCount;
+        //    }
+        //    set
+        //    {
+        //        SetChange("FirstWeekCount", value);
+        //    }
+        //}
 
-        /// <summary>
-        /// 今天是否领取首周奖励
-        /// </summary>
-        private bool _IsTodayReceiveFirstWeek;
-        [ProtoMember(5)]
-        [EntityField("IsTodayReceiveFirstWeek")]
-        public bool IsTodayReceiveFirstWeek
-        {
-            get
-            {
-                return _IsTodayReceiveFirstWeek;
-            }
-            set
-            {
-                SetChange("IsTodayReceiveFirstWeek", value);
-            }
-        }
+        ///// <summary>
+        ///// 今天是否领取首周奖励
+        ///// </summary>
+        //private bool _IsTodayReceiveFirstWeek;
+        //[ProtoMember(5)]
+        //[EntityField("IsTodayReceiveFirstWeek")]
+        //public bool IsTodayReceiveFirstWeek
+        //{
+        //    get
+        //    {
+        //        return _IsTodayReceiveFirstWeek;
+        //    }
+        //    set
+        //    {
+        //        SetChange("IsTodayReceiveFirstWeek", value);
+        //    }
+        //}
 
         /// <summary>
         /// 在线时间奖励阶段
@@ -201,8 +201,8 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "SignCount": return SignCount;
                     case "IsTodaySign": return IsTodaySign;
-                    case "FirstWeekCount": return FirstWeekCount;
-                    case "IsTodayReceiveFirstWeek": return IsTodayReceiveFirstWeek;
+                    //case "FirstWeekCount": return FirstWeekCount;
+                    //case "IsTodayReceiveFirstWeek": return IsTodayReceiveFirstWeek;
                     case "OnlineAwardId": return OnlineAwardId;
                     case "OnlineStartTime": return OnlineStartTime;
                     case "LastOnlineAwayReceiveTime": return LastOnlineAwayReceiveTime;
@@ -225,12 +225,12 @@ namespace GameServer.Script.Model.DataModel
                     case "IsTodaySign":
                         _IsTodaySign = value.ToBool();
                         break;
-                    case "FirstWeekCount":
-                        _FirstWeekCount = value.ToInt();
-                        break;
-                    case "IsTodayReceiveFirstWeek":
-                        _IsTodayReceiveFirstWeek = value.ToBool();
-                        break;
+                    //case "FirstWeekCount":
+                    //    _FirstWeekCount = value.ToInt();
+                    //    break;
+                    //case "IsTodayReceiveFirstWeek":
+                    //    _IsTodayReceiveFirstWeek = value.ToBool();
+                    //    break;
                     case "OnlineAwardId":
                         _OnlineAwardId = value.ToInt();
                         break;
@@ -253,8 +253,8 @@ namespace GameServer.Script.Model.DataModel
         {
             SignCount = 0;
             IsTodaySign = false;
-            FirstWeekCount = 0;
-            IsTodayReceiveFirstWeek = false;
+            //FirstWeekCount = 0;
+            //IsTodayReceiveFirstWeek = false;
             OnlineAwardId = 0;
             LastOnlineAwayReceiveTime = DateTime.Now;
             IsStartedOnlineTime = false;

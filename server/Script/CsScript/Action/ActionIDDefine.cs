@@ -444,10 +444,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1705 = 1705;
 
-        ///<summary>
-        ///购买公会商店物品
-        ///</summary>
-        public const short Cst_Action1706 = 1706;
+        /////<summary>
+        /////购买公会商店物品
+        /////</summary>
+        //public const short Cst_Action1706 = 1706;
 
         ///<summary>
         ///回复加入公会请求
@@ -458,6 +458,11 @@ namespace GameServer.CsScript.Action
         ///移除公会成员
         ///</summary>
         public const short Cst_Action1708 = 1708;
+
+        ///<summary>
+        // 请求退出公会
+        ///</summary>
+        public const short Cst_Action1709 = 1709;
 
         ///<summary>
         ///请求竞技场排行数据
@@ -557,6 +562,12 @@ namespace GameServer.CsScript.Action
         ///剧情
         ///</summary>
         public const short Cst_Action1830 = 1830;
+
+        ///<summary>
+        ///商城购买物品
+        ///</summary>
+        public const short Cst_Action1840 = 1840;
+
 
 
         ///<summary>

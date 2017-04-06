@@ -142,6 +142,7 @@
     <Compile Include="Script\CsScript\Action\Action1705.cs" />
     <Compile Include="Script\CsScript\Action\Action1707.cs" />
     <Compile Include="Script\CsScript\Action\Action1708.cs" />
+    <Compile Include="Script\CsScript\Action\Action1709.cs" />
     <Compile Include="Script\CsScript\Action\Action1800.cs" />
     <Compile Include="Script\CsScript\Action\Action1801.cs" />
     <Compile Include="Script\CsScript\Action\Action1802.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Script\CsScript\Action\Action1057.cs" />
     <Compile Include="Script\CsScript\Action\Action1058.cs" />
     <Compile Include="Script\CsScript\Action\Action1060.cs" />
+    <Compile Include="Script\CsScript\Action\Action1840.cs" />
     <Compile Include="Script\CsScript\Action\Action1900.cs" />
     <Compile Include="Script\CsScript\Action\Action1061.cs" />
     <Compile Include="Script\CsScript\Action\Action1062.cs" />
@@ -286,12 +288,13 @@
     <Compile Include="Script\Model\ConfigModel\Config_Liveness.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Monster.cs" />
-    <Compile Include="Script\Model\ConfigModel\Config_OnlineReward.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Online.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Pay.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Purchase.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Giftbag.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_RoleInitial.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Gem.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Shop.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Signin.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Skill.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_SkillGrade.cs" />
@@ -335,6 +338,7 @@
     <Compile Include="Script\Model\DataModel\UserSoulCache.cs" />
     <Compile Include="Script\Model\DataModel\UserTaskCache.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
+    <Compile Include="Script\Model\Enum\BuyItemResult.cs" />
     <Compile Include="Script\Model\Enum\RequestGuildResult.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />
@@ -365,6 +369,7 @@
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\ResourceType.cs" />
     <Compile Include="Script\Model\Enum\ServerStatus.cs" />
+    <Compile Include="Script\Model\Enum\ShopType.cs" />
     <Compile Include="Script\Model\Enum\SoulAddType.cs" />
     <Compile Include="Script\Model\Enum\TaskAwardType.cs" />
     <Compile Include="Script\Model\Enum\TaskStatus.cs" />

@@ -350,5 +350,36 @@ namespace GameServer.Script.Model.DataModel
                 LogList.RemoveAt(0);
             }
         }
+
+        /// <summary>
+        /// 查找会长候选人
+        /// </summary>
+        public GuildCharacter FindAteventCandidate()
+        {
+            GuildCharacter character = null;
+            var vices = FindVice();
+            if (vices.Count > 0)
+            {
+                foreach (var v in vices)
+                {
+                    if (character == null || character.Liveness < v.Liveness)
+                    {
+                        character = v;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var v in MemberList)
+                {
+                    if (character == null || character.Liveness < v.Liveness)
+                    {
+                        character = v;
+                    }
+                }
+            }
+
+            return character;
+        }
     }
 }

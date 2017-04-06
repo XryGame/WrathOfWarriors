@@ -15,7 +15,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action9010 : BaseAction
     {
-        private bool receipt;
+        private bool receipt = false;
         private Random random = new Random();
         public Action9010(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action9010, actionGetter)
@@ -36,65 +36,45 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
 
-            var list = new ShareCacheStruct<Config_FirstWeek>().FindAll();
-            if (GetEventAward.IsTodayReceiveFirstWeek || GetEventAward.FirstWeekCount >= list.Count)
-            {
-                return true;
-            }
+            //var list = new ShareCacheStruct<Config_FirstWeek>().FindAll();
+            //if (GetEventAward.IsTodayReceiveFirstWeek || GetEventAward.FirstWeekCount >= list.Count)
+            //{
+            //    return true;
+            //}
 
-            var surface = list.Find(t => (
-                t.ID == GetEventAward.FirstWeekCount + 1
-            ));
-            if (surface == null)
-            {
-                return true;
-            }
+            //var surface = list.Find(t => (
+            //    t.ID == GetEventAward.FirstWeekCount + 1
+            //));
+            //if (surface == null)
+            //{
+            //    return true;
+            //}
 
-            GetEventAward.IsTodayReceiveFirstWeek = true;
-            GetEventAward.FirstWeekCount++;
+            //GetEventAward.IsTodayReceiveFirstWeek = true;
+            //GetEventAward.FirstWeekCount++;
 
             
             
-            switch (surface.AwardType)
-            {
-                case TaskAwardType.Diamond:
-                    {
-                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum);
-                        //receipt.AwardDiamondNum = surface.AwardNum;
-                        //receipt.CurrDiamond = GetBasis.DiamondNum;
-                    }
-                    break;
-                //case AwardType.ItemSkillBook:
-                //    {
-                //        Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(surface.AwardID);
-                //        if (item != null)
-                //        {
-                //            GetPackage.AddItem(surface.AwardID, surface.AwardNum);
-                            
-                //            receipt.AwardItemList.Add(surface.AwardID);
-                //        }
-                //    }
-                //    break;
-                //case AwardType.RandItemSkillBook:
-                //    {
-                //        int count = surface.AwardNum;
-                //        while (count > 0)
-                //        {
-                //            count--;
-                //            if (random.Next(1000) < 750)
-                //            {// 道具
-                //                receipt.AwardItemList.AddRange(GetBasis.RandItem(1));
-                //            }
-                //            else
-                //            {// 技能
-                //                receipt.AwardItemList.AddRange(GetBasis.RandSkillBook(1));
-                //            }
-                //        }
-                //    }
-                //    break;
-            }
-            //receipt.CurrDiamond = GetBasis.DiamondNum;
-            receipt = true;
+            //switch (surface.AwardType)
+            //{
+            //    case TaskAwardType.Gold:
+            //        {
+            //            UserHelper.RewardsGold(Current.UserId, surface.AwardNum);
+            //        }
+            //        break;
+            //    case TaskAwardType.Diamond:
+            //        {
+            //            UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum);
+            //        }
+            //        break;
+            //    case TaskAwardType.Item:
+            //        {
+            //            UserHelper.RewardsItem(Current.UserId, surface.AwardID, surface.AwardNum);
+            //        }
+            //        break;
+            //}
+            ////receipt.CurrDiamond = GetBasis.DiamondNum;
+            //receipt = true;
             return true;
         }
     }
