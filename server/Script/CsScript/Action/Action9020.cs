@@ -55,7 +55,7 @@ namespace GameServer.CsScript.Action
             //GetEventAward.OnlineStartTime = DateTime.Now;
             //GetEventAward.TodayOnlineTime = surface.Time;
             GetEventAward.OnlineAwardId++;
-            GetEventAward.LastOnlineAwayReceiveTime = DateTime.Now;
+            //GetEventAward.LastOnlineAwayReceiveTime = DateTime.Now;
 
             
 

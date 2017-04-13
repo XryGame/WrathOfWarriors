@@ -9,8 +9,6 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public NoticeMode Type { get; set; }
 
-        public int Sender { get; set; }
-
         public int ServerID { get; set; }
 
         public string Content { get; set; }

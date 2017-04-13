@@ -43,13 +43,11 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            UserPayCache userpay = UserHelper.FindUserPay(Current.UserId);
-
             receipt = new JPPaySucceedData();
             receipt.VipLv = GetBasis.VipLv;
             receipt.Diamond = GetBasis.DiamondNum;
             receipt.BuyDiamond = GetBasis.BuyDiamond;
-            receipt.PayMoney = userpay.PayMoney;
+            receipt.PayMoney = GetPay.PayMoney;
             return true;
         }
     }

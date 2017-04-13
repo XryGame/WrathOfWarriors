@@ -62,14 +62,8 @@ namespace GameServer.CsScript.Action
                 MailData mail = GetMailBox.findMail(list[i]);
                 if (mail == null)
                     continue;
-                
-                foreach (var item in mail.AppendItem)
-                {
-                    var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(item.ID);
-                    if (itemcfg == null)
-                        continue;
-                    UserHelper.RewardsItem(Current.UserId, item.ID, item.Num);
-                }
+
+                UserHelper.RewardsItems(Current.UserId, mail.AppendItem.ToList());
                 mail.AppendItem.Clear();
 
                 if (mail.ApppendDiamond > 0)

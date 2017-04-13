@@ -219,20 +219,20 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        private int _Exp;
-        [ProtoMember(12)]
-        [EntityField("Exp")]
-        public int Exp
-        {
-            get
-            {
-                return _Exp;
-            }
-            set
-            {
-                SetChange("Exp", value);
-            }
-        }
+        //private int _Exp;
+        //[ProtoMember(12)]
+        //[EntityField("Exp")]
+        //public int Exp
+        //{
+        //    get
+        //    {
+        //        return _Exp;
+        //    }
+        //    set
+        //    {
+        //        SetChange("Exp", value);
+        //    }
+        //}
 
         private int _VipLv;
         [ProtoMember(13)]
@@ -413,40 +413,6 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        /// <summary>
-        /// 每周切磋获得钻石数量
-        /// </summary>
-        private int _InviteFightDiamondNum;
-        [ProtoMember(34)]
-        [EntityField("InviteFightDiamondNum")]
-        public int InviteFightDiamondNum
-        {
-            get
-            {
-                return _InviteFightDiamondNum;
-            }
-            set
-            {
-                SetChange("InviteFightDiamondNum", value);
-            }
-        }
-        /// <summary>
-        /// 充值切磋钻石数量日期
-        /// </summary>
-        private DateTime _ResetInviteFightDiamondDate;
-        [ProtoMember(35)]
-        [EntityField("ResetInviteFightDiamondDate")]
-        public DateTime ResetInviteFightDiamondDate
-        {
-            get
-            {
-                return _ResetInviteFightDiamondDate;
-            }
-            set
-            {
-                SetChange("ResetInviteFightDiamondDate", value);
-            }
-        }
 
         /// <summary>
         /// 随机的抽奖id
@@ -656,7 +622,7 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyDiamond": return BuyDiamond;
                     case "UsedDiamond": return UsedDiamond;
                     case "Gold": return Gold;
-                    case "Exp": return Exp;
+                    //case "Exp": return Exp;
                     case "VipLv": return VipLv;
                     case "UserStatus": return UserStatus;
                     case "CreateDate": return CreateDate;
@@ -669,8 +635,6 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatRankID": return CombatRankID;
                     case "IsTodayLottery": return IsTodayLottery;
                     case "VipGiftProgress": return VipGiftProgress;
-                    case "InviteFightDiamondNum": return InviteFightDiamondNum;
-                    case "ResetInviteFightDiamondDate": return ResetInviteFightDiamondDate;
                     case "LastLotteryId": return LastLotteryId;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     case "OfflineEarnings": return OfflineEarnings;
@@ -717,9 +681,9 @@ namespace GameServer.Script.Model.DataModel
                     case "Gold":
                         _Gold = value.ToNotNullString();
                         break;
-                    case "Exp":
-                        _Exp = value.ToInt();
-                        break;
+                    //case "Exp":
+                    //    _Exp = value.ToInt();
+                    //    break;
                     case "VipLv":
                         _VipLv = value.ToInt();
                         break;
@@ -752,12 +716,6 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "VipGiftProgress":
                         _VipGiftProgress = value.ToInt();
-                        break;
-                    case "InviteFightDiamondNum":
-                        _InviteFightDiamondNum = value.ToInt();
-                        break;
-                    case "ResetInviteFightDiamondDate":
-                        _ResetInviteFightDiamondDate = value.ToDateTime();
                         break;
                     case "LastLotteryId":
                         _LastLotteryId = value.ToInt();

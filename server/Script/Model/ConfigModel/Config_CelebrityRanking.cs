@@ -57,6 +57,23 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
+        /// 奖励道具ID
+        /// </summary>
+        private int _AwardItemID;
+        [EntityField("AwardItemID")]
+        public int AwardItemID
+        {
+            get
+            {
+                return _AwardItemID;
+            }
+            set
+            {
+                SetChange("AwardItemID", value);
+            }
+        }
+
+        /// <summary>
         /// 奖励数量
         /// </summary>
         private int _AwardNum;
@@ -82,6 +99,7 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "ID": return ID;
                     case "Ranking": return Ranking;
+                    case "AwardItemID": return AwardItemID;
                     case "AwardNum": return AwardNum;
                     default: throw new ArgumentException(string.Format("Config_CelebrityRanking index[{0}] isn't exist.", index));
 				}
@@ -97,6 +115,9 @@ namespace GameServer.Script.Model.ConfigModel
                         break;
                     case "Ranking":
                         _Ranking = value.ToInt();
+                        break;
+                    case "AwardItemID":
+                        _AwardItemID = value.ToInt();
                         break;
                     case "AwardNum":
                         _AwardNum = value.ToInt();

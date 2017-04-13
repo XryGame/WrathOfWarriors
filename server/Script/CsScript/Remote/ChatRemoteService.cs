@@ -5,6 +5,7 @@ using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Contract;
+using ZyGames.Framework.Game.Runtime;
 using ZyGames.Framework.RPC.IO;
 
 namespace GameServer.CsScript.Remote
@@ -99,11 +100,11 @@ namespace GameServer.CsScript.Remote
             SendChat(param, content);
         }
 
-        public static void SendNotice(NoticeMode type, string content, int sender = 0)
+        public static void SendNotice(NoticeMode type, string content)
         {
             var param = new RequestParam();
             param.Add("Type", type);
-            param.Add("Sender", sender);
+            param.Add("ServerID", GameEnvironment.ProductServerId);
             param.Add("Content", content);
             remote.Call("NoticeService", param, successCallback);
         }

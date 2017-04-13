@@ -194,10 +194,5 @@ namespace GameServer.Script.Model.ConfigModel
         
         #endregion
                 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
 	}
 }

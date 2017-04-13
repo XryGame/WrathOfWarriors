@@ -12,7 +12,6 @@ namespace GameServer.CsScript.Action
     {
         private NoticeData receipt = null;
         private NoticeMode _type;
-        private int _sender;
         private int _serverID;
         private string _content;
 
@@ -38,7 +37,6 @@ namespace GameServer.CsScript.Action
         public override bool GetUrlElement()
         {
             if (httpGet.GetEnum("Type", ref _type)
-                && httpGet.GetInt("Sender", ref _sender)
                 && httpGet.GetInt("ServerID", ref _serverID)
                 && httpGet.GetString("Content", ref _content))
             {
@@ -53,7 +51,6 @@ namespace GameServer.CsScript.Action
             receipt = new NoticeData()
             {
                 Type = _type,
-                Sender = _sender,
                 ServerID = _serverID,
                 Content = _content,
             };

@@ -53,9 +53,9 @@ namespace GameServer.Script.Model.DataModel
 
 
         /// <summary>
-        /// 邀请切磋成功获得钻石数量
+        /// 邀请切磋成功获得金币数量
         /// </summary>
-        static public int InviteFightAwardDiamond;
+        static public int InviteFightAwardGold;
         /// <summary>
         /// 每周切磋获得钻石最大数量
         /// </summary>
@@ -81,7 +81,7 @@ namespace GameServer.Script.Model.DataModel
             MaxMailNum = ConfigEnvSet.GetInt("User.MaxMailNum");
             OpenTaskSystemUserLevel = ConfigEnvSet.GetInt("System.OpenTaskSystemUserLevel");
             OpenRankSystemUserLevel = ConfigEnvSet.GetInt("System.OpenRankSystemLevel");
-            InviteFightAwardDiamond = ConfigEnvSet.GetInt("User.InviteFightAwardDiamond");
+            InviteFightAwardGold = ConfigEnvSet.GetInt("User.InviteFightAwardGold");
             InviteFightDiamondWeekMax = ConfigEnvSet.GetInt("User.InviteFightDiamondWeekMax");
 
 

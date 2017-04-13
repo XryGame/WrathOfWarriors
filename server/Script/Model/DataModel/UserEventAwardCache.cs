@@ -149,41 +149,41 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-        /// <summary>
-        /// 上次领取在线奖时间
-        /// </summary>
-        private DateTime _LastOnlineAwayReceiveTime;
-        [ProtoMember(8)]
-        [EntityField("LastOnlineAwayReceiveTime")]
-        public DateTime LastOnlineAwayReceiveTime
-        {
-            get
-            {
-                return _LastOnlineAwayReceiveTime;
-            }
-            set
-            {
-                SetChange("LastOnlineAwayReceiveTime", value);
-            }
-        }
+        ///// <summary>
+        ///// 上次领取在线奖时间
+        ///// </summary>
+        //private DateTime _LastOnlineAwayReceiveTime;
+        //[ProtoMember(8)]
+        //[EntityField("LastOnlineAwayReceiveTime")]
+        //public DateTime LastOnlineAwayReceiveTime
+        //{
+        //    get
+        //    {
+        //        return _LastOnlineAwayReceiveTime;
+        //    }
+        //    set
+        //    {
+        //        SetChange("LastOnlineAwayReceiveTime", value);
+        //    }
+        //}
 
-        /// <summary>
-        /// 是否已经开始在线计时
-        /// </summary>
-        private bool _IsStartedOnlineTime;
-        [ProtoMember(9)]
-        [EntityField("IsStartedOnlineTime")]
-        public bool IsStartedOnlineTime
-        {
-            get
-            {
-                return _IsStartedOnlineTime;
-            }
-            set
-            {
-                SetChange("IsStartedOnlineTime", value);
-            }
-        }
+        ///// <summary>
+        ///// 是否已经开始在线计时
+        ///// </summary>
+        //private bool _IsStartedOnlineTime;
+        //[ProtoMember(9)]
+        //[EntityField("IsStartedOnlineTime")]
+        //public bool IsStartedOnlineTime
+        //{
+        //    get
+        //    {
+        //        return _IsStartedOnlineTime;
+        //    }
+        //    set
+        //    {
+        //        SetChange("IsStartedOnlineTime", value);
+        //    }
+        //}
 
         protected override int GetIdentityId()
         {
@@ -205,8 +205,8 @@ namespace GameServer.Script.Model.DataModel
                     //case "IsTodayReceiveFirstWeek": return IsTodayReceiveFirstWeek;
                     case "OnlineAwardId": return OnlineAwardId;
                     case "OnlineStartTime": return OnlineStartTime;
-                    case "LastOnlineAwayReceiveTime": return LastOnlineAwayReceiveTime;
-                    case "IsStartedOnlineTime": return IsStartedOnlineTime;
+                    //case "LastOnlineAwayReceiveTime": return LastOnlineAwayReceiveTime;
+                    //case "IsStartedOnlineTime": return IsStartedOnlineTime;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -237,12 +237,12 @@ namespace GameServer.Script.Model.DataModel
                     case "OnlineStartTime":
                         _OnlineStartTime = value.ToDateTime();
                         break;
-                    case "LastOnlineAwayReceiveTime":
-                        _LastOnlineAwayReceiveTime = value.ToDateTime();
-                        break;
-                    case "IsStartedOnlineTime":
-                        _IsStartedOnlineTime = value.ToBool();
-                        break;
+                    //case "LastOnlineAwayReceiveTime":
+                    //    _LastOnlineAwayReceiveTime = value.ToDateTime();
+                    //    break;
+                    //case "IsStartedOnlineTime":
+                    //    _IsStartedOnlineTime = value.ToBool();
+                    //    break;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -256,8 +256,9 @@ namespace GameServer.Script.Model.DataModel
             //FirstWeekCount = 0;
             //IsTodayReceiveFirstWeek = false;
             OnlineAwardId = 0;
-            LastOnlineAwayReceiveTime = DateTime.Now;
-            IsStartedOnlineTime = false;
+            //LastOnlineAwayReceiveTime = DateTime.Now;
+            //IsStartedOnlineTime = true;
+            OnlineStartTime = DateTime.Now;
         }
 
     }

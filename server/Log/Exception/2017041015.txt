@@ -1,0 +1,130 @@
+Time:2017-04-10 15:17:15:585-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_b02365af4f30402cb775521b7cb1807e%7C2%7C1%26Uid%3D1000102%26St%3Dst%26ActionId%3D1009%26sign%3Dd993099ee1cdd40f6b7cef6561ae22a9, Uid:1000102, Pid:user1491794233000
+Host:168.254.0.101:54328
+
+
+Time:2017-04-10 15:17:17:513-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\OnGMCommon.cs, Line:322
+Message:new 表达式要求在类型后有 ()、[] 或 {}
+
+
+Time:2017-04-10 15:17:17:515-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-04-10 15:17:19:672-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_6b66fd95bc4540b8bbb5d2b6c2459e08%7C2%7C1%26Uid%3D1000053%26St%3Dst%26ActionId%3D1009%26sign%3Db15b991543b54afd30ecc13a03543fe9, Uid:1000053, Pid:user1491032588000
+Host:168.254.0.101:54330
+
+
+Time:2017-04-10 15:19:28:494-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_52c8c9c85a754063858b2ff6be8e9b61%7C2%7C1%26Uid%3D1000102%26St%3Dst%26ActionId%3D1009%26sign%3D3661fe86904ffa5f7d91986a1935c9d9, Uid:1000102, Pid:user1491794233000
+Host:168.254.0.101:54378
+
+
+Time:2017-04-10 15:19:31:462-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_3d74c436cd8d46689f2ad13a38aff01b%7C2%7C1%26Uid%3D1000053%26St%3Dst%26ActionId%3D1009%26sign%3D069d236bda56915d830b26e62be35184, Uid:1000053, Pid:user1491032588000
+Host:168.254.0.101:54380
+
+
+Time:2017-04-10 15:21:14:556-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs, Line:968
+Message:“OnPay”: 不能在静态类中声明实例成员
+
+
+Time:2017-04-10 15:21:14:557-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-04-10 15:21:52:876-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs, Line:968
+Message:“OnPay”: 不能在静态类中声明实例成员
+
+
+Time:2017-04-10 15:21:52:877-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-04-10 15:22:22:781-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_ce09f65d852a412ab8e1cdc7bb505c94%7C2%7C1%26Uid%3D1000001%26St%3Dst%26ActionId%3D1009%26sign%3D7257c2930aa1b2f58bb44df577de3e3f, Uid:1000001, Pid:user1490170142000
+Host:168.254.0.234:5088
+
+
+Time:2017-04-10 15:22:46:785-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs, Line:968
+Message:“OnPay”: 不能在静态类中声明实例成员
+
+
+Time:2017-04-10 15:22:46:786-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-04-10 15:23:51:965-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_7344ca7fe37a454b932caddc3282bfa4%7C2%7C1%26Uid%3D1000053%26St%3Dst%26ActionId%3D1009%26sign%3Db140bf8bc197be7acf3391a3b28ea19d, Uid:1000053, Pid:user1491032588000
+Host:168.254.0.101:54436
+
+
+Time:2017-04-10 15:24:05:907-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_646fe436a5304aabbf274fdc48105949%7C2%7C1%26Uid%3D1000102%26St%3Dst%26ActionId%3D1009%26sign%3D19e61b8298259921fb64e93f722401cd, Uid:1000102, Pid:user1491794233000
+Host:168.254.0.101:54438
+
+
+Time:2017-04-10 15:25:03:323-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs, Line:968
+Message:“OnPay”: 不能在静态类中声明实例成员
+
+
+Time:2017-04-10 15:25:03:323-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-04-10 15:25:11:582-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
+   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D4%26Sid%3Ds_00b22e90276148a989bf12c2e968c365%7C2%7C1%26Uid%3D1000102%26St%3Dst%26ActionId%3D1009%26sign%3D732b51c1d0c30af7fcf2a5c773bc8c09, Uid:1000102, Pid:user1491794233000
+Host:168.254.0.101:54463
+
+
+Time:2017-04-10 15:26:03:636-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs, Line:968
+Message:“OnPay”: 不能在静态类中声明实例成员
+
+
+Time:2017-04-10 15:26:03:637-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

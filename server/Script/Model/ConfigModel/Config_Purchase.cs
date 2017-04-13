@@ -9,7 +9,7 @@ using GameServer.Script.Model.Enum;
 namespace GameServer.Script.Model.ConfigModel
 {
     /// <summary>
-    /// 
+    /// 购买金币
     /// </summary>
     [Serializable, ProtoContract, EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
     public class Config_Purchase : ShareEntity
@@ -41,19 +41,19 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 体力
+        /// 金币
         /// </summary>
-        private int _Stamina;
-        [EntityField("Stamina")]
-        public int Stamina
+        private string _Gold;
+        [EntityField("Gold")]
+        public string Gold
         {
             get
             {
-                return _Stamina;
+                return _Gold;
             }
             set
             {
-                SetChange("Stamina", value);
+                SetChange("Gold", value);
             }
         }
 
@@ -82,7 +82,7 @@ namespace GameServer.Script.Model.ConfigModel
 				switch (index)
 				{
                     case "id": return id;
-                    case "Stamina": return Stamina;
+                    case "Gold": return Gold;
                     case "SpendDiamond": return SpendDiamond;
                     default: throw new ArgumentException(string.Format("Config_Purchase index[{0}] isn't exist.", index));
 				}
@@ -96,8 +96,8 @@ namespace GameServer.Script.Model.ConfigModel
                     case "id":
                         _id = value.ToInt(); 
                         break; 
-                    case "Stamina":
-                        _Stamina = value.ToInt(); 
+                    case "Gold":
+                        _Gold = value.ToNotNullString("0"); 
                         break;
                     case "SpendDiamond":
                         _SpendDiamond = value.ToInt();
@@ -110,10 +110,5 @@ namespace GameServer.Script.Model.ConfigModel
         
         #endregion
                 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
 	}
 }

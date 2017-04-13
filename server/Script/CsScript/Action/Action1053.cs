@@ -57,7 +57,6 @@ namespace GameServer.CsScript.Action
                 receipt.LotteryAwardType = lottery.Type;
                 receipt.LotteryId = lottery.Content;
             }
-            receipt.InviteFightDiamondNum = GetBasis.InviteFightDiamondNum;
 
             UserPayCache userpay = UserHelper.FindUserPay(Current.UserId);
             if (userpay != null)

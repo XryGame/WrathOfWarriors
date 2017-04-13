@@ -568,6 +568,11 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1840 = 1840;
 
+        ///<summary>
+        ///购买金币
+        ///</summary>
+        public const short Cst_Action1850 = 1850;
+
 
 
         ///<summary>

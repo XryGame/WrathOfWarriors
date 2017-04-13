@@ -38,7 +38,7 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
 
-            var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv == 0 ? 1 : GetBasis.VipLv);
+            var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
             if (vip == null)
             {
                 ErrorInfo = string.Format(Language.Instance.DBTableError, "Config_Vip");
@@ -49,7 +49,7 @@ namespace GameServer.CsScript.Action
             if (GetBasis.VipLv == 0)
                 canBuyTimes -= 1;
             
-            if (GetCombat.ButTimes >= canBuyTimes)
+            if (GetCombat.BuyTimes >= canBuyTimes)
             {
                 return true;
             }
@@ -62,7 +62,7 @@ namespace GameServer.CsScript.Action
             
             UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
             GetCombat.CombatTimes = MathUtils.Addition(GetCombat.CombatTimes, 1);
-            GetCombat.ButTimes++;
+            GetCombat.BuyTimes++;
 
             receipt = true;
             return true;

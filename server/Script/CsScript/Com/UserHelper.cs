@@ -303,7 +303,7 @@ namespace GameServer.Script.Model.DataModel
 
             // 竞技场挑战次数
             combat.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
-            combat.ButTimes = 0;
+            combat.BuyTimes = 0;
             // 好友
             friends.GiveAwayCount = 0;
             foreach (var fl in friends.FriendsList)
@@ -328,7 +328,7 @@ namespace GameServer.Script.Model.DataModel
 
             eventaward.IsTodaySign = false;
             //eventaward.IsTodayReceiveFirstWeek = false;
-            eventaward.IsStartedOnlineTime = false;
+            //eventaward.IsStartedOnlineTime = true;
             //eventaward.TodayOnlineTime = 0;
             eventaward.OnlineAwardId = 1;
             eventaward.OnlineStartTime = DateTime.Now;
@@ -400,15 +400,15 @@ namespace GameServer.Script.Model.DataModel
             //}
             
 
-            // 切磋钻石处理
-            System.Globalization.GregorianCalendar gc = new System.Globalization.GregorianCalendar();
-            int lastWeekOfYear = gc.GetWeekOfYear(basis.ResetInviteFightDiamondDate, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            int nowWeekOfYear = gc.GetWeekOfYear(DateTime.Now, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            if (lastWeekOfYear != nowWeekOfYear)
-            {
-                basis.InviteFightDiamondNum = 0;
-                basis.ResetInviteFightDiamondDate = DateTime.Now;
-            }
+            //// 切磋钻石处理
+            //System.Globalization.GregorianCalendar gc = new System.Globalization.GregorianCalendar();
+            //int lastWeekOfYear = gc.GetWeekOfYear(basis.ResetInviteFightDiamondDate, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            //int nowWeekOfYear = gc.GetWeekOfYear(DateTime.Now, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            //if (lastWeekOfYear != nowWeekOfYear)
+            //{
+            //    basis.InviteFightDiamondNum = 0;
+            //    basis.ResetInviteFightDiamondDate = DateTime.Now;
+            //}
 
             // 红包重置
             basis.IsReceivedRedPacket = false;
@@ -475,11 +475,11 @@ namespace GameServer.Script.Model.DataModel
             // 竞技场处理
             CombatProcess(uid);
 
-            if (!eventaward.IsStartedOnlineTime)
-            {
-                eventaward.IsStartedOnlineTime = true;
-                eventaward.OnlineStartTime = basis.LoginDate;
-            }
+            //if (!eventaward.IsStartedOnlineTime)
+            //{
+            //    eventaward.IsStartedOnlineTime = true;
+            //    eventaward.OnlineStartTime = basis.LoginDate;
+            //}
 
             // 每日
             EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
@@ -758,8 +758,8 @@ namespace GameServer.Script.Model.DataModel
                         Sender = "系统",
                         Date = DateTime.Now,
                         Context = string.Format("截止当前时间，您获得竞技场第{0}名，奖励如下，请查收！", ur.RankId),
-                        ApppendDiamond = cr.AwardNum
                     };
+                    mail.AppendItem.Add(new ItemData() { ID = cr.AwardItemID, Num = cr.AwardNum });
                     AddNewMail(ur.UserID, mail);
                 }
             }
@@ -962,6 +962,155 @@ namespace GameServer.Script.Model.DataModel
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
 
+            return true;
+        }
+
+        public static bool OnPay(int uid, int payId)
+        {
+            var basis = UserHelper.FindUserBasis(uid);
+            var paycfg = new ShareCacheStruct<Config_Pay>().FindKey(payId);
+            if (paycfg == null)
+            {
+                return false;
+            }
+
+            int deliverNum = paycfg.AcquisitionDiamond + paycfg.PresentedDiamond;
+            int oldVipLv = basis.VipLv;
+
+            UserPayCache userpay = UserHelper.FindUserPay(uid);
+
+            userpay.PayMoney += paycfg.PaySum;
+            basis.VipLv = userpay.ConvertPayVipLevel();
+
+            // 这里刷新排行榜数据
+            var combat = FindRankUser(uid, RankType.Combat);
+            combat.VipLv = basis.VipLv;
+            var level = FindRankUser(uid, RankType.Level);
+            level.VipLv = basis.VipLv;
+            var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            fightvaluer.VipLv = basis.VipLv;
+
+
+            if (!PayDiamond(uid, deliverNum))
+            {
+                return false;
+            }
+
+            if (paycfg.id == 101)
+            {// 是否周卡
+                PayWeekCard(uid);
+            }
+            else if (paycfg.id == 102)
+            {// 是否月卡
+                PayMonthCard(uid);
+            }
+
+            if (oldVipLv != basis.VipLv)
+            {
+                VipLvChangeNotification(uid);
+            }
+
+            PushMessageHelper.UserPaySucceedNotification(GameSession.Get(uid));
+
+            return true;
+        }
+
+        /// <summary>
+        /// 添加周卡
+        /// </summary>
+        /// <param name="userId"></param>
+        public static bool PayWeekCard(int userId)
+        {
+            UserPayCache userpay = UserHelper.FindUserPay(userId);
+
+
+            bool isAward = false;
+            if (userpay.WeekCardDays < 0)
+            {
+                isAward = true;
+                userpay.WeekCardDays = 6;
+            }
+            else
+            {
+                userpay.WeekCardDays += 7;
+            }
+            userpay.WeekCardAwardDate = DateTime.Now;
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "恭喜您成功充值周卡",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = string.Format("周卡有效期间，每天都会发送给您 {0} 钻石奖励哦！ ",
+                            ConfigEnvSet.GetInt("System.WeekCardDiamond")),
+            };
+
+            AddNewMail(userId, mail);
+
+            if (isAward)
+            {
+                mail = new MailData()
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    Title = "周卡奖励",
+                    Sender = "系统",
+                    Date = DateTime.Now,
+                    Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", userpay.WeekCardDays),
+                    ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
+                };
+                AddNewMail(userId, mail);
+            }
+
+            return true;
+
+        }
+
+        /// <summary>
+        /// 添加月卡
+        /// </summary>
+        /// <param name="userId"></param>
+        public static bool PayMonthCard(int userId)
+        {
+            UserPayCache userpay = UserHelper.FindUserPay(userId);
+
+            bool isAward = false;
+            if (userpay.MonthCardDays < 0)
+            {
+                isAward = true;
+                userpay.MonthCardDays = 29;
+            }
+            else
+            {
+                userpay.MonthCardDays += 30;
+            }
+
+            userpay.MonthCardAwardDate = DateTime.Now;
+            MailData mail = new MailData()
+            {
+                ID = Guid.NewGuid().ToString(),
+                Title = "恭喜您成功充值月卡",
+                Sender = "系统",
+                Date = DateTime.Now,
+                Context = string.Format("月卡有效期间，每天都会发送给您 {0} 钻石奖励哦！ ",
+                            ConfigEnvSet.GetInt("System.MonthCardDiamond")),
+            };
+
+            AddNewMail(userId, mail);
+
+            if (isAward)
+            {
+                mail = new MailData()
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    Title = "月卡奖励",
+                    Sender = "系统",
+                    Date = DateTime.Now,
+                    Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", userpay.MonthCardDays),
+                    ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
+                };
+
+                AddNewMail(userId, mail);
+            }
             return true;
         }
 

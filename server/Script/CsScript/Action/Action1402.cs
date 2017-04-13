@@ -17,12 +17,41 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+
+    public class CombatRivalData
+    {
+        public CombatRivalData()
+        {
+
+        }
+        public CombatReqRivalResult Result { get; set; }
+
+        public int UserId { get; set; }
+
+        public string NickName { get; set; }
+
+        public int Profession { get; set; }
+
+        public int RankId { get; set; }
+
+        public int UserLv { get; set; }
+
+        public UserAttributeCache Attribute { get; set; }
+
+        public UserEquipsCache Equips { get; set; }
+
+        public UserSkillCache Skill { get; set; }
+
+
+
+    }
+
     /// <summary>
     /// 1402_竞技场请求挑战
     /// </summary>
     public class Action1402 : BaseAction
     {
-        private JPCombatRivalData receipt;
+        private CombatRivalData receipt;
         private int rivaluid;
 
         public Action1402(ActionGetter actionGetter)
@@ -72,7 +101,7 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            receipt = new JPCombatRivalData();
+            receipt = new CombatRivalData();
             receipt.Result = CombatReqRivalResult.OK;
             if (rankinfo.RankId <= rivalrankinfo.RankId)
             {

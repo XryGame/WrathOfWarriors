@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
@@ -11,12 +12,29 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+    public class RequestAccumulatePay
+    {
+        public RequestAccumulatePay()
+        {
+            AwardItemList = new List<ItemData>();
+        }
+
+        public int ReceiveId { get; set; }
+
+        public ReceiveAccumulatePayResult Result { get; set; }
+
+
+        public List<ItemData> AwardItemList { get; set; }
+
+
+    }
+
     /// <summary>
     /// 领取累充
     /// </summary>
     public class Action1910 : BaseAction
     {
-        private JPRequestAccumulatePay receipt;
+        private RequestAccumulatePay receipt;
         private Random random = new Random();
         private int receiveId;
         public Action1910(ActionGetter actionGetter)
@@ -41,7 +59,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestAccumulatePay();
+            receipt = new RequestAccumulatePay();
             receipt.ReceiveId = receiveId;
             receipt.Result = ReceiveAccumulatePayResult.Ok;
 
@@ -63,47 +81,26 @@ namespace GameServer.CsScript.Action
             }
 
             GetPay.AccumulatePayList.Add(receiveId);
-            int randcount = 0;
-            List<int> itemlist = new List<int>();
-            int diamond = 0;
-            if (acc.AwardA == 1) randcount++;
-            else if (acc.AwardA >= 10000) itemlist.Add(acc.AwardA);
-            else diamond += acc.AwardA;
-            if (acc.AwardB == 1) randcount++;
-            else if (acc.AwardB >= 10000) itemlist.Add(acc.AwardB);
-            else diamond += acc.AwardB;
-            if (acc.AwardC == 1) randcount++;
-            else if (acc.AwardC >= 10000) itemlist.Add(acc.AwardC);
-            else diamond += acc.AwardC;
-            if (acc.AwardD == 1) randcount++;
-            else if (acc.AwardD >= 10000) itemlist.Add(acc.AwardD);
-            else diamond += acc.AwardD;
 
-            //for (int i = 0; i < randcount; ++i)
-            //{
-            //    receipt.AwardItemList.AddRange(GetBasis.RandItem(1));
-            //}
 
-            //foreach (var it in itemlist)
-            //{
-            //    Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(it);
-            //    if (item != null)
-            //    {
-            //        GetPackage.AddItem(it, 1);
+            if (acc.AAwardID > 0 && acc.AAwardN > 0)
+                receipt.AwardItemList.Add(new ItemData() { ID = acc.AAwardID, Num = acc.AAwardN });
+            if (acc.BAwardID > 0 && acc.BAwardN > 0)
+                receipt.AwardItemList.Add(new ItemData() { ID = acc.BAwardID, Num = acc.BAwardN });
+            if (acc.CAwardID > 0 && acc.CAwardN > 0)
+                receipt.AwardItemList.Add(new ItemData() { ID = acc.CAwardID, Num = acc.CAwardN });
+            if (acc.DAwardID > 0 && acc.DAwardN > 0)
+                receipt.AwardItemList.Add(new ItemData() { ID = acc.DAwardID, Num = acc.DAwardN });
 
-            //        receipt.AwardItemList.Add(it);
-            //    }
-            //}
 
-            //if (diamond > 0)
-            //{
-            //    UserHelper.RewardsDiamond(Current.UserId, diamond);
-            //    receipt.AwardDiamondNum = diamond;
-                
-            //}
-            //receipt.CurrDiamond = GetBasis.DiamondNum;
-            //receipt.ItemList = GetBasis.ItemDataList;
-            //receipt.SkillList = GetBasis.SkillDataList;
+            foreach (var it in receipt.AwardItemList)
+            {
+                Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(it.ID);
+                if (item != null)
+                {
+                    GetPackage.AddItem(it.ID, it.Num);
+                }
+            }
 
             return true;
         }

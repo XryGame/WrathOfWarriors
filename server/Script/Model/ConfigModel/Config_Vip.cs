@@ -58,7 +58,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 购买体力次数
+        /// 购买金币次数
         /// </summary>
         private int _BuyStamina;
         [EntityField("BuyStamina")]
@@ -91,37 +91,21 @@ namespace GameServer.Script.Model.ConfigModel
             }
         }
 
-        /// <summary>
-        /// vip累冲奖励类型
-        /// </summary>
-        private VipObtainType _ObtainType;
-        [EntityField("ObtainType")]
-        public VipObtainType ObtainType
-        {
-            get
-            {
-                return _ObtainType;
-            }
-            set
-            {
-                SetChange("ObtainType", value);
-            }
-        }
 
         /// <summary>
-        /// vip累冲奖励ID或者数量
+        /// 是否离线收益加倍
         /// </summary>
-        private int _ObtainNum;
-        [EntityField("ObtainNum")]
-        public int ObtainNum
+        private int _Multiple;
+        [EntityField("Multiple")]
+        public int Multiple
         {
             get
             {
-                return _ObtainNum;
+                return _Multiple;
             }
             set
             {
-                SetChange("ObtainNum", value);
+                SetChange("Multiple", value);
             }
         }
 
@@ -136,8 +120,7 @@ namespace GameServer.Script.Model.ConfigModel
                     case "PaySum": return PaySum;
                     case "BuyStamina": return BuyStamina;
                     case "BuyAthletics": return BuyAthletics;
-                    case "ObtainType": return ObtainType;
-                    case "ObtainNum": return ObtainNum;
+                    case "Multiple": return Multiple;
                     default: throw new ArgumentException(string.Format("Config_Vip index[{0}] isn't exist.", index));
 				}
                 #endregion
@@ -159,11 +142,8 @@ namespace GameServer.Script.Model.ConfigModel
                     case "BuyAthletics":
                         _BuyAthletics = value.ToInt();
                         break;
-                    case "ObtainType":
-                        _ObtainType = value.ToEnum<VipObtainType>();
-                        break;
-                    case "ObtainNum":
-                        _ObtainNum = value.ToInt();
+                    case "Multiple":
+                        _Multiple = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Vip index[{0}] isn't exist.", index));
 				}
@@ -172,11 +152,6 @@ namespace GameServer.Script.Model.ConfigModel
 		}
         
         #endregion
-                
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
+               
 	}
 }

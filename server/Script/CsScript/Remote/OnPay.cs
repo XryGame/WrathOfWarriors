@@ -1,6 +1,4 @@
 ﻿using GameServer.CsScript.Base;
-using GameServer.CsScript.GM;
-using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using System;
@@ -11,7 +9,6 @@ using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Common.Security;
-using ZyGames.Framework.Game.Contract;
 
 namespace GameServer.CsScript.Remote
 {
@@ -154,28 +151,13 @@ namespace GameServer.CsScript.Remote
                 }
 
                 int deliverNum = paycfg.AcquisitionDiamond + paycfg.PresentedDiamond;
-                int oldVipLv = user.VipLv;
-                if (!new PayMoneyCommand().PayMoney(user.UserID, paycfg.PaySum))
+
+
+                if (!UserHelper.OnPay(user.UserID, jsoncustom.PayId))
                 {
-                    receipt.ResultString = "发货Money失败";
+                    receipt.ResultString = "发货失败";
                     return receipt;
                 }
-
-                if (!new DiamondCommand().AddUserDiamond(deliverNum, user.UserID))
-                {
-                    receipt.ResultString = "发货Diamond失败";
-                    return receipt;
-                }
-
-                if (paycfg.id == 101)
-                {// 是否周卡
-                    new PayWeekCardCommand().PayWeekCard(user.UserID);
-                }
-                else if (paycfg.id == 102)
-                {// 是否月卡
-                    new PayMonthCardCommand().PayMonthCard(user.UserID);
-                }
-                    
 
 
                 OrderInfoCache newOrderInfo = new OrderInfoCache()
@@ -194,13 +176,6 @@ namespace GameServer.CsScript.Remote
                 };
                 orderInfoCache.Add(newOrderInfo);
                 orderInfoCache.Update();
-
-                PushMessageHelper.UserPaySucceedNotification(GameSession.Get(user.UserID));
-
-                if (oldVipLv != user.VipLv)
-                {
-                    UserHelper.VipLvChangeNotification(user.UserID);
-                }
                 
 
                 receipt.ResultCode = 1;

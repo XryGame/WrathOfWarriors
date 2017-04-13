@@ -20,6 +20,7 @@ namespace gm_tool.Source
         {
             return true; //总是接受     
         }
+        
 
         private HttpParameters _PostParameters = new HttpParameters();
         private HttpParameters _ReceiveParameters = null;
@@ -83,6 +84,29 @@ namespace gm_tool.Source
             return resultCode == 0;
         }
 
+        public bool HttpGetRequest(string url)
+        {
+            try
+            {
+                Encoding charset = Encoding.GetEncoding("utf-8");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Timeout = 2000;
+                request.Method = "GET";
+                WebResponse webresponse = request.GetResponse();
+                HttpWebResponse httpResponse = (HttpWebResponse)webresponse;
+                _ReceiveParameters = new HttpParameters(httpResponse, true);
+                int status = (int)httpResponse.StatusCode;
+
+            }
+            catch (Exception e)
+            {
+                Log.Write(e.Message);
+                return false;
+            }
+
+            return true;
+        }
+
         public void AddPostParam(string key, string value)
         {
             _PostParameters.AddParam(key, value);
@@ -98,9 +122,10 @@ namespace gm_tool.Source
             get { return _ReceiveParameters; }
         }
 
-        public string GetReceiveValue(string key)
+        public string GetReceiveValue(string key = "GetValue")
         {
-            return _ReceiveParameters.GetValue(key);
+            return  _ReceiveParameters.GetValue(key);
         }
+
     }
 }

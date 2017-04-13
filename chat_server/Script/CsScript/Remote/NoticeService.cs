@@ -1,5 +1,10 @@
-﻿using GameServer.Script.Model.Enum;
+﻿using GameServer.CsScript.Base;
+using GameServer.Script.Model;
+using GameServer.Script.Model.Enum;
+using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
+using ZyGames.Framework.Net;
 using ZyGames.Framework.RPC.IO;
 
 namespace GameServer.CsScript.Remote
@@ -7,8 +12,7 @@ namespace GameServer.CsScript.Remote
 
     public class NoticeService : RemoteStruct
     {
-        private ChatType _chatType;
-        private int _sender;
+        private NoticeMode _type;
         private int _serverID;
         private string _content;
         
@@ -21,8 +25,7 @@ namespace GameServer.CsScript.Remote
 
         protected override bool Check()
         {
-            if (paramGetter.GetEnum("Type", ref _chatType)
-                && paramGetter.GetInt("Sender", ref _sender)
+            if (paramGetter.GetEnum("Type", ref _type)
                 && paramGetter.GetInt("ServerID", ref _serverID)
                 && paramGetter.GetString("Content", ref _content))
             {
@@ -42,9 +45,53 @@ namespace GameServer.CsScript.Remote
                 return;
             }
 
-            ////Here to do something
-            //_gold = 100;
-            //_items.Add(1001);
+            switch (_type)
+            {
+                case NoticeMode.AllService:
+                    {
+                        var sessionlist = GameSession.GetAll();
+                        foreach (var on in sessionlist)
+                        {
+                            if (on.Connected && !on.IsRemote)
+                            {
+                                MsgData data = new MsgData();
+                                data.Type = MsgType.Notice;
+                                data.UserId = on.UserId;
+
+                                var parameters = new Parameters();
+                                parameters["Type"] = NoticeMode.AllService;
+                                parameters["ServerID"] = _serverID;
+                                parameters["Content"] = _content;
+                                data.Param = parameters;
+                                MsgDispatcher.Push(data);
+                            }
+                        }
+                    }
+                    break;
+                case NoticeMode.World:
+                    {
+                        var cache = new MemoryCacheStruct<ChatUser>();
+                        var list = cache.FindAll(t => t.ServerID == _serverID);
+                        foreach (var v in list)
+                        {
+                            var sess = GameSession.Get(v.UserId);
+                            if (sess != null && sess.Connected && !sess.IsRemote)
+                            {
+                                MsgData data = new MsgData();
+                                data.Type = MsgType.Notice;
+                                data.UserId = sess.UserId;
+
+                                var parameters = new Parameters();
+                                parameters["Type"] = NoticeMode.World;
+                                parameters["ServerID"] = _serverID;
+                                parameters["Content"] = _content;
+                                data.Param = parameters;
+                                MsgDispatcher.Push(data);
+                            }
+                        }
+                    }
+                    break;
+            }
         }
 
         protected override void BuildPacket()

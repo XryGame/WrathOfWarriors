@@ -36,12 +36,10 @@ namespace GameServer.CsScript.Action
             GetBasis.InviteFightDestUid = 0;
 
 
-            if (Result == EventStatus.Good && GetBasis.InviteFightDiamondNum < DataHelper.InviteFightDiamondWeekMax)
+            if (Result == EventStatus.Good)
             {
-                int diamond = MathUtils.Subtraction(DataHelper.InviteFightDiamondWeekMax, GetBasis.InviteFightDiamondNum);
-                diamond = Math.Min(diamond, DataHelper.InviteFightAwardDiamond);
-                GetBasis.InviteFightDiamondNum += diamond;
-                UserHelper.RewardsDiamond(Current.UserId, diamond);
+                int gold = DataHelper.InviteFightAwardGold;
+                UserHelper.RewardsGold(Current.UserId, gold);
             }
 
             // 每日

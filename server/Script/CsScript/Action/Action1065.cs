@@ -10,6 +10,36 @@ using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
+
+    public class InviteFightRivalData
+    {
+        public InviteFightRivalData()
+        {
+
+        }
+
+        public EventStatus FightResult { get; set; }
+
+        public int UserId { get; set; }
+
+        public string NickName { get; set; }
+
+        public int Profession { get; set; }
+
+        public int RankId { get; set; }
+
+        public int UserLv { get; set; }
+
+        public UserAttributeCache Attribute { get; set; }
+
+        public UserEquipsCache Equips { get; set; }
+
+        public UserSkillCache Skill { get; set; }
+
+
+    }
+
+
     /// <summary>
     /// 1065_开始切磋通知
     /// </summary>
@@ -20,7 +50,7 @@ namespace GameServer.CsScript.Action
         /// </summary>
         private int destuid;
         private EventStatus fightresult;
-        private JPInviteFightRivalData receipt;
+        private InviteFightRivalData receipt;
 
         public Action1065(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1065, actionGetter)
@@ -62,22 +92,22 @@ namespace GameServer.CsScript.Action
             //    return true;
             //}
 
-            receipt = new JPInviteFightRivalData();
-            receipt.AppointResult = fightresult;
-            receipt.RivalData.UserId = dest.UserID;
-            receipt.RivalData.NickName = dest.NickName;
-            receipt.RivalData.Profession = dest.Profession;
-            receipt.RivalData.UserLv = dest.UserLv;
-            receipt.RivalData.VipLv = dest.VipLv;
-            //receipt.RivalData.Attack = dest.Attack;
-            //receipt.RivalData.Defense = dest.Defense;
-            //receipt.RivalData.HP = dest.Hp;
-            receipt.RivalData.RankId = dest.CombatRankID;
+            receipt = new InviteFightRivalData();
+            receipt.FightResult = fightresult;
+            receipt.UserId = dest.UserID;
+            receipt.NickName = dest.NickName;
+            receipt.Profession = dest.Profession;
+            receipt.UserLv = dest.UserLv;
+            //receipt.VipLv = dest.VipLv;
+            receipt.Equips = UserHelper.FindUserEquips(destuid);
+            receipt.Attribute = UserHelper.FindUserAttribute(destuid);
+            receipt.Skill = UserHelper.FindUserSkill(destuid);
+            //receipt.RivalData.RankId = dest.CombatRankID;
 
             //receipt.RivalData.FightValue = dest.FightingValue;
-            GameSession fsession = GameSession.Get(dest.UserID);
-            if (fsession != null && fsession.Connected)
-                receipt.RivalData.IsOnline = true;
+            //GameSession fsession = GameSession.Get(dest.UserID);
+            //if (fsession != null && fsession.Connected)
+            //    receipt.RivalData.IsOnline = true;
 
             return true;
         }

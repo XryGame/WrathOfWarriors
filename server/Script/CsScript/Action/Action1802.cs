@@ -12,7 +12,19 @@ using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
+    public class RequestDeleteMailData
+    {
+        public RequestDeleteMailData()
+        {
+            MailList = new CacheList<MailData>();
+        }
 
+        public bool IsAll { get; set; }
+
+        public EventStatus Result { get; set; }
+
+        public CacheList<MailData> MailList { get; set; }
+    }
     /// <summary>
     /// 请求删除邮件
     /// </summary>
@@ -20,7 +32,7 @@ namespace GameServer.CsScript.Action
     {
         private string mailid;
         private bool isall;
-        private JPRequestDeleteMailData receipt;
+        private RequestDeleteMailData receipt;
 
         public Action1802(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1802, actionGetter)
@@ -46,7 +58,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestDeleteMailData();
+            receipt = new RequestDeleteMailData();
             receipt.IsAll = isall;
             receipt.Result = EventStatus.Good;
             if (isall)

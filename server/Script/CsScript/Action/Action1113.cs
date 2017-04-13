@@ -71,7 +71,13 @@ namespace GameServer.CsScript.Action
 
                     double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 600.0);
                     int tmp = Convert.ToInt32(rate * 100);
-                    GetBasis.OfflineEarnings = (transscriptEarnings * tmp / 100).ToNotNullString();
+
+                    var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
+                    if (vipcfg != null)
+                    {
+                        GetBasis.OfflineEarnings = (transscriptEarnings * tmp / 100 * vipcfg.Multiple).ToNotNullString();
+                    }
+                    
                 }
                 receipt.OfflineTimeSec = GetBasis.OfflineTimeSec;
                 receipt.OfflineEarnings = GetBasis.OfflineEarnings;

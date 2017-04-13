@@ -1,0 +1,126 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+09:35:46 Server is starting...
+09:35:46 Redis server connect successfully.
+09:35:51 DB server connect successfully.
+09:35:54 Start checking table schema, please wait.
+09:35:59 Check table schema successfully.
+09:35:59 script compiled successfully.
+09:35:59 CacheFactory listen has started...
+09:35:59 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-13 09:35:59:811-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-13 09:35:59:811-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-13 09:35:59:826-消息：系统加载单服配置开始...
+
+
+Time:2017-04-13 09:36:00:804-消息：系统加载单服配置所需时间:975.5974ms
+
+
+Time:2017-04-13 09:36:00:889-The ranking refresh is start...
+
+
+Time:2017-04-13 09:36:00:925-Trace>>The CombatRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:36:01:005-Trace>>The LevelRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:36:01:005-Trace>>The FightValueRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:36:01:025-Trace>>The GuildRanking has be loaded, count:13
+
+
+Time:2017-04-13 09:36:01:026-The ranking refresh is end.
+
+
+Time:2017-04-13 09:36:01:074-消息：系统全局运行环境加载所需时间:1264.7104ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+09:36:02 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+09:46:00 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Time:2017-04-13 09:46:20:239-The ranking refresh is start...
+
+
+Time:2017-04-13 09:46:20:239-Trace>>The LevelRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:46:20:239-Trace>>The FightValueRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:46:20:239-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+09:56:00 Clear expired cache end.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Time:2017-04-13 09:56:20:493-The ranking refresh is start...
+
+
+Time:2017-04-13 09:56:20:494-Trace>>The LevelRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:56:20:497-Trace>>The FightValueRanking has be loaded, count:124
+
+
+Time:2017-04-13 09:56:20:498-The ranking refresh is end.
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2

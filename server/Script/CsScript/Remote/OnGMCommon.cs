@@ -1,20 +1,15 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.Com;
-using GameServer.CsScript.GM;
-using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Web;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
-using ZyGames.Framework.Common.Security;
-using ZyGames.Framework.Game.Contract;
-using ZyGames.Framework.Game.Lang;
 
 namespace GameServer.CsScript.Remote
 {
@@ -233,7 +228,7 @@ namespace GameServer.CsScript.Remote
                     else if (_OperateName == "Set")
                     {
                         string UserName;
-                        int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum;
+                        int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum, PayID;
                         parms.TryGetValue("UserID", out _value);
                         int UserId = _value.ToInt();
                         parms.TryGetValue("UserName", out UserName);
@@ -247,7 +242,9 @@ namespace GameServer.CsScript.Remote
                         AddItemID = _value.ToInt();
                         parms.TryGetValue("AddItemNum", out _value);
                         AddItemNum = _value.ToInt();
-                        
+                        parms.TryGetValue("PayID", out _value);
+                        PayID = _value.ToInt();
+
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
                         if (user == null)
                         {
@@ -309,6 +306,21 @@ namespace GameServer.CsScript.Remote
                             else
                             {
                                 bone.AddStrBone("无此物品");
+                            }
+                        }
+                        if (PayID > 0)
+                        {
+                            var paycfg = new ShareCacheStruct<Config_Pay>().FindKey(PayID);
+                            if (paycfg != null)
+                            {
+                                if (!UserHelper.OnPay(UserId, PayID))
+                                {
+                                    bone.AddStrBone("发货失败");
+                                }
+                            }
+                            else
+                            {
+                                bone.AddStrBone("充值ID错误");
                             }
                         }
                     }
@@ -407,6 +419,22 @@ namespace GameServer.CsScript.Remote
                         {
                             UserHelper.AddNewMail(UserId, mail);
                         }
+                    }
+                    else if (_OperateName == "NewNotice")
+                    {
+                        string Content;
+                        NoticeMode Mode;
+                        parms.TryGetValue("Mode", out _value);
+                        Mode = (NoticeMode)_value.ToInt();
+                        parms.TryGetValue("Content", out Content);
+                        if (!string.IsNullOrEmpty(Content))
+                        {
+                            ChatRemoteService.SendNotice(Mode, Content);
+                        }
+                    }
+                    else
+                    {
+                        bone.AddStrBone("该功能暂未实现");
                     }
                     break;
                 }

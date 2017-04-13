@@ -1,5 +1,4 @@
 ﻿using GameServer.CsScript.Base;
-using GameServer.CsScript.GM;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -102,34 +101,10 @@ namespace GameServer.CsScript.Remote
                         break;
                     }
 
-                    int deliverNum = paycfg.AcquisitionDiamond + paycfg.PresentedDiamond;
-                    int oldVipLv = user.VipLv;
-                    if (!new PayMoneyCommand().PayMoney(user.UserID, paycfg.PaySum))
+                    if (!UserHelper.OnPay(user.UserID, jsoninfo.PayId))
                     {
-                        receipt.ResultString = "发货Money失败";
-                        break;
-                    }
-
-                    if (!new DiamondCommand().AddUserDiamond(deliverNum, user.UserID))
-                    {
-                        receipt.ResultString = "发货Diamond失败";
-                        break;
-                    }
-
-                    if (paycfg.id == 101)
-                    {// 是否周卡
-                        new PayWeekCardCommand().PayWeekCard(user.UserID);
-                    }
-                    else if (paycfg.id == 102)
-                    {// 是否月卡
-                        new PayMonthCardCommand().PayMonthCard(user.UserID);
-                    }
-
-                    PushMessageHelper.UserPaySucceedNotification(GameSession.Get(user.UserID));
-
-                    if (oldVipLv != user.VipLv)
-                    {
-                        UserHelper.VipLvChangeNotification(user.UserID);
+                        receipt.ResultString = "发货失败";
+                        return receipt;
                     }
 
                     receipt.ResultCode = 1;

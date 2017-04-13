@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,21 @@ namespace gm_tool
             InitializeComponent();
             Log._listBox = listBoxLog;
 
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            HttpRequest request = new HttpRequest();
+            if (request.HttpGetRequest("http://168.254.0.150:8181/GmToolUpdateVersion.txt"))
+            {
+                string currVersion = ConfigurationManager.AppSettings["Version"];
+                string newVersion = request.GetReceiveValue();
+                if (currVersion.CompareTo(newVersion) != 0)
+                {
+                    Process.Start("AutoUpdate.exe");
+                    System.Environment.Exit(0);
+                }
+            }
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -126,6 +143,7 @@ namespace gm_tool
             request.AddPostParam("DiamondNum", SetDiamondNum.Text);
             request.AddPostParam("AddItemID", SetAddItemID.Text);
             request.AddPostParam("AddItemNum", SetAddItemNum.Text);
+            request.AddPostParam("PayID", PayID.Text);
             if (request.HttpPostRequest())
             {
                 QueryRoleInfo(false);
@@ -174,6 +192,12 @@ namespace gm_tool
 
         }
 
+        private void ResetNoticeText()
+        {
+            textBoxNotice.Text = string.Empty;
+
+        }
+
         private void SendMailButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (QueryUserID.Text.Length == 0 || MailTitle.Text.Length == 0 || MailContent.Text.Length == 0)
@@ -198,5 +222,32 @@ namespace gm_tool
             }
         }
 
+        private void SendNoticeButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (textBoxNotice.Text.Length == 0)
+                return;
+            HttpRequest request = new HttpRequest();
+            request.AddPostParam("ID", "NewNotice");
+            int mode = checkBoxAllService.IsChecked == true ? 1 : 2;
+            request.AddPostParam("Mode", mode.ToString());
+            request.AddPostParam("Content", textBoxNotice.Text);
+            if (request.HttpPostRequest())
+            {
+                ResetNoticeText();
+            }
+        }
+
+        private void OnSelectNoticeTypeCheck(object sender, RoutedEventArgs e)
+        {
+            CheckBox checkbox = sender as CheckBox;
+            if (checkbox.Name.CompareTo("checkBoxCurrService") == 0)
+            {
+                checkBoxAllService.IsChecked = !checkbox.IsChecked;
+            }
+            else
+            {
+                checkBoxCurrService.IsChecked = !checkbox.IsChecked;
+            }
+        }
     }
 }

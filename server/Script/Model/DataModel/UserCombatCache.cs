@@ -81,18 +81,18 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 购买竞技场挑战次数
         /// </summary>
-        private int _ButTimes;
+        private int _BuyTimes;
         [ProtoMember(4)]
-        [EntityField("ButTimes")]
-        public int ButTimes
+        [EntityField("BuyTimes")]
+        public int BuyTimes
         {
             get
             {
-                return _ButTimes;
+                return _BuyTimes;
             }
             set
             {
-                SetChange("ButTimes", value);
+                SetChange("BuyTimes", value);
             }
         }
 
@@ -129,7 +129,7 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "CombatTimes": return CombatTimes;
                     case "LastFailedDate": return LastFailedDate;
-                    case "ButTimes": return ButTimes;
+                    case "BuyTimes": return BuyTimes;
                     case "LogList": return LogList;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
@@ -149,8 +149,8 @@ namespace GameServer.Script.Model.DataModel
                     case "LastFailedDate":
                         _LastFailedDate = value.ToDateTime();
                         break;
-                    case "ButTimes":
-                        _ButTimes = value.ToInt();
+                    case "BuyTimes":
+                        _BuyTimes = value.ToInt();
                         break;
                     case "LogList":
                         _LogList = ConvertCustomField<CacheList<CombatLogData>>(value, index);
@@ -165,7 +165,7 @@ namespace GameServer.Script.Model.DataModel
         {
             LastFailedDate = DateTime.MinValue;
             CombatTimes = 0;
-            ButTimes = 0;
+            BuyTimes = 0;
             LogList.Clear();
             
 

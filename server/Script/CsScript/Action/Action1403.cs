@@ -21,12 +21,27 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+    public class CombatFightEndData
+    {
+        public EventStatus Result { get; set; }
+
+        public int CurrRankId { get; set; }
+
+        public int RankRise { get; set; }
+
+        public long LastFailedTime { get; set; }
+
+        public int AwardDiamond { get; set; }
+
+        public int CurrDiamond { get; set; }
+    }
+
     /// <summary>
     /// 1403_竞技场挑战结果
     /// </summary>
     public class Action1403 : BaseAction
     {
-        private JPCombatFightEndData receipt;
+        private CombatFightEndData receipt;
         private EventStatus result;
         
 
@@ -163,7 +178,7 @@ namespace GameServer.CsScript.Action
             rankinfo.FightDestUid = 0;
             rivalrankinfo.IsFighting = false;
 
-            receipt = new JPCombatFightEndData();
+            receipt = new CombatFightEndData();
             receipt.Result = result;
             receipt.CurrRankId = GetBasis.CombatRankID;
             receipt.RankRise = rankrise;

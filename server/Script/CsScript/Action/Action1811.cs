@@ -9,12 +9,25 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+    public class RequestLotteryData
+    {
+        public bool IsTodayLottery { get; set; }
+
+        public LotteryAwardType LotteryAwardType { get; set; }
+
+        public int LotteryId { get; set; }
+
+        public LotteryAwardType LastLotteryAwardType { get; set; }
+
+        public int LastLotteryId { get; set; }
+    }
+
     /// <summary>
     /// 请求抽奖数据
     /// </summary>
     public class Action1811 : BaseAction
     {
-        private JPRequestLotteryData receipt;
+        private RequestLotteryData receipt;
         
         public Action1811(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1811, actionGetter)
@@ -35,7 +48,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPRequestLotteryData();
+            receipt = new RequestLotteryData();
 
             receipt.IsTodayLottery = GetBasis.IsTodayLottery;
 

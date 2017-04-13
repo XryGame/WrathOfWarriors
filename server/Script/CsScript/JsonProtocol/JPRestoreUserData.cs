@@ -7,8 +7,7 @@ namespace GameServer.CsScript.JsonProtocol
     {
         public JPRestoreUserData()
         {
-            //DailyQuestData = new JPDailyQuestData();
-            EventAwardData = new JPEventAwardData();
+
         }
 
         public int Vit { get; set; }
@@ -20,16 +19,14 @@ namespace GameServer.CsScript.JsonProtocol
         //public JPDailyQuestData DailyQuestData { get; set; }
         public UserTaskCache Task { get; set; }
 
-        public JPEventAwardData EventAwardData { get; set; }
+        public UserEventAwardCache EventAward { get; set; }
 
         public bool IsTodayLottery { get; set; }
 
         public LotteryAwardType LotteryAwardType { get; set; }
 
         public int LotteryId { get; set; }
-
-        public int InviteFightDiamondNum { get; set; }
-
+        
         public int WeekCardDays { get; set; }
 
         public int MonthCardDays { get; set; }

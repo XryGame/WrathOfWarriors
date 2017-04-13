@@ -7,12 +7,23 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+    public class InviterData
+    {
+        public int UserId { get; set; }
+
+        public string NickName { get; set; }
+
+        public int FightValue { get; set; }
+
+        public int VipLv { get; set; }
+    }
+
     /// <summary>
     /// 1062_切磋请求通知
     /// </summary>
     public class Action1062 : BaseAction
     {
-        private JPInviterData receipt;
+        private InviterData receipt;
 
         /// <summary>
         /// 邀请人UID
@@ -53,7 +64,7 @@ namespace GameServer.CsScript.Action
             if (inviter == null)
                 return false;
 
-            receipt = new JPInviterData()
+            receipt = new InviterData()
             {
                 UserId = inviter.UserID,
                 NickName = inviter.NickName,

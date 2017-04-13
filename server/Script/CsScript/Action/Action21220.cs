@@ -1,4 +1,5 @@
 ﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
@@ -13,12 +14,19 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
+    public class Competition64BetData
+    {
+        public Competition64BetReset result;
+
+        public BetInfo info;
+    }
+
     /// <summary>
     /// 21220_争霸赛下注
     /// </summary>
     public class Action21220 : BaseAction
     {
-        private JPCompetition64BetData receipt;
+        private Competition64BetData receipt;
         private int diamond;
         private int destUserId;
         public Action21220(ActionGetter actionGetter)
@@ -45,7 +53,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new JPCompetition64BetData();
+            receipt = new Competition64BetData();
 
             if (SystemGlobal.competition64.Stage != Com.CompetitionStage.F4)
             {

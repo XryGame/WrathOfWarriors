@@ -14,13 +14,23 @@ namespace gm_tool.Source
 
         }
         
-        public HttpParameters(HttpWebResponse response)
+        public HttpParameters(HttpWebResponse response, bool isGet = false)
         {
             Stream stream = response.GetResponseStream();   //获取响应的字符串流  
             StreamReader sr = new StreamReader(stream); //创建一个stream读取流  
             string data = sr.ReadToEnd();   //从头读到尾，放到字符串html  
             data = HttpUtility.UrlDecode(data);
-            parameters = GetData(data);
+            if (isGet)
+            {
+                parameters["GetValue"] = data;
+            }
+            else
+            {
+                parameters = GetData(data);
+            }
+            sr.Close();
+
+
         }
 
         /// <summary>
@@ -46,6 +56,7 @@ namespace gm_tool.Source
             }
             return rets;
         }
+
 
         public void AddParam(string key, string value)
         {

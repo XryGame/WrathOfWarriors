@@ -114,8 +114,6 @@ namespace GameServer.CsScript.Action
             basis.CreateDate = DateTime.Now;
             basis.OfflineDate = DateTime.Now;
             basis.IsOnline = true;
-            basis.InviteFightDiamondNum = 0;
-            basis.ResetInviteFightDiamondDate = DateTime.Now;
             basis.Gold = "10000";
             basis.OfflineEarnings = "0";
 

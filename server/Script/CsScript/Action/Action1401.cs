@@ -12,13 +12,49 @@ using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
+    public class CombatMatchUserData
+    {
+        public int UserId { get; set; }
+
+        public string NickName { get; set; }
+
+        public int Profession { get; set; }
+
+        public int RankId { get; set; }
+
+        public int UserLv { get; set; }
+
+        public int VipLv { get; set; }
+
+        public int FightingValue { get; set; }
+
+    }
+    public class CombatMatchData
+    {
+        public CombatMatchData()
+        {
+            RivalList = new CacheList<CombatMatchUserData>();
+            //LogList = new CacheList<JPCombatLogData>();
+        }
+        public int RankId { get; set; }
+
+        public int CombatTimes { get; set; }
+
+        public long LastFailedTime { get; set; }
+
+        public CacheList<CombatMatchUserData> RivalList { get; set; }
+
+        // public CacheList<JPCombatLogData> LogList { get; set; }
+
+
+    }
 
     /// <summary>
     /// 1401_竞技场入口
     /// </summary>
     public class Action1401 : BaseAction
     {
-        private JPCombatMatchData receipt;
+        private CombatMatchData receipt;
         private Random random = new Random();
         private const int MaxCount = 5;
 
@@ -67,7 +103,7 @@ namespace GameServer.CsScript.Action
                 rankInfo = ranking.Find(s => (s.UserID == Current.UserId));
             }
 
-            receipt = new JPCombatMatchData();
+            receipt = new CombatMatchData();
             receipt.RankId = GetBasis.CombatRankID;
             receipt.CombatTimes = GetCombat.CombatTimes;
             if (GetCombat.LastFailedDate != DateTime.MinValue)
@@ -225,10 +261,8 @@ namespace GameServer.CsScript.Action
 
                 if (machinfo != null)
                 {
-                    UserBasisCache user = UserHelper.FindUserBasis(machinfo.UserID);
-                    if (user == null)
-                        continue;
-                    JPCombatMatchUserData data = new JPCombatMatchUserData()
+                    UserAttributeCache attribute = UserHelper.FindUserAttribute(machinfo.UserID);
+                    CombatMatchUserData data = new CombatMatchUserData()
                     {
                         UserId = machinfo.UserID,
                         NickName = machinfo.NickName,
@@ -236,7 +270,7 @@ namespace GameServer.CsScript.Action
                         RankId = machinfo.RankId,
                         UserLv = machinfo.UserLv,
                         VipLv = machinfo.VipLv,
-                        //FightingValue = machinfo.FightingValue,
+                        FightingValue = attribute.FightValue,
                        // SkillCarryList = user.SkillCarryList
                     };
 
