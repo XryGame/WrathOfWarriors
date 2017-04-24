@@ -46,8 +46,6 @@ namespace GameServer.CsScript.Action
             }
 
             int canBuyTimes = vip.BuyAthletics;
-            if (GetBasis.VipLv == 0)
-                canBuyTimes -= 1;
             
             if (GetCombat.BuyTimes >= canBuyTimes)
             {

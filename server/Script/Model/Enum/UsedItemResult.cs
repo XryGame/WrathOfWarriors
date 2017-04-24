@@ -5,9 +5,13 @@ namespace GameServer.Script.Model.Enum
     public enum UsedItemResult
     {
         /// <summary>
+        /// 成功
+        /// </summary>
+        Successfully,
+        /// <summary>
         /// 无法使用的物品
         /// </summary>
-        Cannot = 1,
+        Cannot,
         /// <summary>
         /// 无此物品
         /// </summary>
@@ -17,8 +21,8 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         ItemNumError,
         /// <summary>
-        /// 成功
+        /// 不可出售的物品
         /// </summary>
-        Successfully,
+        Unavailable,
     }
 }

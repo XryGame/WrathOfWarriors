@@ -49,26 +49,26 @@ namespace GameServer.CsScript.Action
             {
                 case ChatType.AllService:
                     {
-                        ChatRemoteService.SendAllServerChat(Current.UserId, _content);
+                        GlobalRemoteService.SendAllServerChat(Current.UserId, _content);
                     }
                     break;
                 case ChatType.World:
                     {
-                        ChatRemoteService.SendWorldChat(Current.UserId, _content);
+                        GlobalRemoteService.SendWorldChat(Current.UserId, _content);
                         // 每日
                         UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.WorldChat, 1);
                     }
                     break;
                 case ChatType.Whisper:
                     {
-                        ChatRemoteService.SendWhisperChat(Current.UserId, _whisperUserID, _content);
+                        GlobalRemoteService.SendWhisperChat(Current.UserId, _whisperUserID, _content);
                     }
                     break;
                 case ChatType.Guild:
                     {
                         if (!GetGuild.GuildID.IsEmpty())
                         {
-                            ChatRemoteService.SendGuildChat(Current.UserId, _content);
+                            GlobalRemoteService.SendGuildChat(Current.UserId, _content);
                         }
                     }
                     break;

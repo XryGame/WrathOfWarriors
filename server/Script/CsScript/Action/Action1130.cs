@@ -103,11 +103,11 @@ namespace GameServer.CsScript.Action
 
             receipt = GetSoul.SoulID;
 
-            // 每日
-            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.OpenSoul, 1);
+            //// 每日
+            //UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.OpenSoul, 1);
 
-            // 成就
-            UserHelper.AchievementProcess(Current.UserId, AchievementType.OpenSoul);
+            //// 成就
+            //UserHelper.AchievementProcess(Current.UserId, AchievementType.OpenSoul);
 
             return true;
         }

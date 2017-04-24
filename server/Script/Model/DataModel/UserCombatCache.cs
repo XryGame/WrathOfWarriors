@@ -96,9 +96,45 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 竞技场匹配剩余次数
+        /// </summary>
+        private int _MatchTimes;
+        [ProtoMember(5)]
+        [EntityField("MatchTimes")]
+        public int MatchTimes
+        {
+            get
+            {
+                return _MatchTimes;
+            }
+            set
+            {
+                SetChange("MatchTimes", value);
+            }
+        }
+
+        /// <summary>
+        /// 购买竞技场匹配次数
+        /// </summary>
+        private int _BuyMatchTimes;
+        [ProtoMember(6)]
+        [EntityField("BuyMatchTimes")]
+        public int BuyMatchTimes
+        {
+            get
+            {
+                return _BuyMatchTimes;
+            }
+            set
+            {
+                SetChange("BuyMatchTimes", value);
+            }
+        }
+
 
         private CacheList<CombatLogData> _LogList;
-        [ProtoMember(5)]
+        [ProtoMember(7)]
         [EntityField(true, ColumnDbType.LongBlob)]
         public CacheList<CombatLogData> LogList
         {
@@ -109,6 +145,24 @@ namespace GameServer.Script.Model.DataModel
             set
             {
                 SetChange("LogList", value);
+            }
+        }
+
+        /// <summary>
+        /// 竞技币
+        /// </summary>
+        private int _CombatCoin;
+        [ProtoMember(8)]
+        [EntityField("CombatCoin")]
+        public int CombatCoin
+        {
+            get
+            {
+                return _CombatCoin;
+            }
+            set
+            {
+                SetChange("CombatCoin", value);
             }
         }
 
@@ -130,7 +184,10 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatTimes": return CombatTimes;
                     case "LastFailedDate": return LastFailedDate;
                     case "BuyTimes": return BuyTimes;
+                    case "MatchTimes": return MatchTimes;
+                    case "BuyMatchTimes": return BuyMatchTimes;
                     case "LogList": return LogList;
+                    case "CombatCoin": return CombatCoin;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -152,8 +209,17 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyTimes":
                         _BuyTimes = value.ToInt();
                         break;
+                    case "MatchTimes":
+                        _MatchTimes = value.ToInt();
+                        break;
+                    case "BuyMatchTimes":
+                        _BuyMatchTimes = value.ToInt();
+                        break;
                     case "LogList":
                         _LogList = ConvertCustomField<CacheList<CombatLogData>>(value, index);
+                        break;
+                    case "CombatCoin":
+                        _CombatCoin = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
@@ -164,10 +230,12 @@ namespace GameServer.Script.Model.DataModel
         public void ResetCache()
         {
             LastFailedDate = DateTime.MinValue;
-            CombatTimes = 0;
+            CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes"); ;
             BuyTimes = 0;
+            MatchTimes = ConfigEnvSet.GetInt("Combat.MatchTimes");
+            BuyMatchTimes = 0;
             LogList.Clear();
-            
+            CombatCoin = 0;
 
         }
 

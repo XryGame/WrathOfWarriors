@@ -46,7 +46,7 @@ namespace GameServer.CsScript.Action
             usepay.IsReceiveFirstPay = true;
             
 
-            UserHelper.RewardsDiamond(Current.UserId, AwardDiamondNum);
+            UserHelper.RewardsDiamond(Current.UserId, AwardDiamondNum, UpdateDiamondType.Other);
             Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(AwardItemId);
             if (item != null)
             {

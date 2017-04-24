@@ -69,7 +69,7 @@ namespace GameServer.CsScript.Action
                     BigInteger bi = Util.ConvertGameCoin(monster.DropoutGold) * 30;
                     transscriptEarnings += bi;
 
-                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 600.0);
+                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 1800.0);
                     int tmp = Convert.ToInt32(rate * 100);
 
                     var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);

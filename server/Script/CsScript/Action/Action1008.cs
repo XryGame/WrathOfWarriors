@@ -66,6 +66,7 @@ namespace GameServer.CsScript.Action
                 BuyDiamond = GetBasis.BuyDiamond,
                 VipLv = GetBasis.VipLv,
                 Gold = GetBasis.Gold,
+                CombatRankID = GetBasis.CombatRankID,
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -79,6 +80,7 @@ namespace GameServer.CsScript.Action
             receipt.EventAward = GetEventAward;
             receipt.Pay = GetPay;
             receipt.Combat = GetCombat;
+            receipt.Elf = GetElf;
             /// 好友
             {
                 receipt.Friends.GiveAwayCount = GetFriends.GiveAwayCount;
@@ -169,7 +171,7 @@ namespace GameServer.CsScript.Action
 
                 if (GetBasis.UserLv >= DataHelper.OpenRankSystemUserLevel)
                 {
-                    ChatRemoteService.SendNotice(NoticeMode.World, context);
+                    GlobalRemoteService.SendNotice(NoticeMode.World, context);
                 }
 
             }

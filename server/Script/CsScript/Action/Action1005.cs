@@ -245,6 +245,14 @@ namespace GameServer.CsScript.Action
             guildSet.Add(guildcache);
             guildSet.Update();
 
+            // 精灵初始化
+            UserElfCache elfcache = new UserElfCache();
+            elfcache.UserID = basis.UserID;
+            elfcache.ResetCache();
+            var elfSet = new PersonalCacheStruct<UserElfCache>();
+            elfSet.Add(elfcache);
+            elfSet.Update();
+
             // 排行榜初始化
             UserRank combatRank = new UserRank()
             {
@@ -267,11 +275,11 @@ namespace GameServer.CsScript.Action
             level.TryAppend(levelRank);
             level.rankList.Add(levelRank);
 
-            UserRank fightRank = new UserRank(combatRank);
-            Ranking<UserRank> fightranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
-            var fight = fightranking as FightValueRanking;
-            fight.TryAppend(fightRank);
-            fight.rankList.Add(fightRank);
+            //UserRank fightRank = new UserRank(combatRank);
+            //Ranking<UserRank> fightranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            //var fight = fightranking as FightValueRanking;
+            //fight.TryAppend(fightRank);
+            //fight.rankList.Add(fightRank);
 
 
             UserHelper.RestoreUserData(basis.UserID);

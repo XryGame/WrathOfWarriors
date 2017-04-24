@@ -1,0 +1,164 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+10:53:54 Server is starting...
+10:53:54 Redis server connect successfully.
+10:53:55 DB server connect successfully.
+10:53:57 Start checking table schema, please wait.
+10:53:57 Check table schema successfully.
+10:53:57 script compiled successfully.
+10:53:57 CacheFactory listen has started...
+10:53:57 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-19 10:53:58:215-The ranking refresh is start...
+
+
+Time:2017-04-19 10:53:58:315-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-19 10:53:58:316-The ranking refresh is end.
+
+
+10:53:58 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-19 10:54:10:035-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:54:20:046-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:54:30:062-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:54:40:080-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:54:50:006-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:00:031-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:00:041-The ranking refresh is start...
+
+
+Time:2017-04-19 10:55:00:048-The ranking refresh is end.
+
+
+Time:2017-04-19 10:55:10:044-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:20:064-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:30:088-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:40:011-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:55:50:029-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:00:052-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:00:067-The ranking refresh is start...
+
+
+Time:2017-04-19 10:56:00:070-The ranking refresh is end.
+
+
+Time:2017-04-19 10:56:10:072-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:20:091-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:30:010-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:40:039-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:56:50:060-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:00:081-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:10:001-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:20:017-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:20:072-The ranking refresh is start...
+
+
+Time:2017-04-19 10:57:20:072-The ranking refresh is end.
+
+
+Time:2017-04-19 10:57:30:036-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:40:053-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:57:50:068-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:00:089-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:10:002-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:20:019-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:20:086-The ranking refresh is start...
+
+
+Time:2017-04-19 10:58:20:086-The ranking refresh is end.
+
+
+Time:2017-04-19 10:58:30:034-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:40:055-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:58:50:083-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:00:100-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:10:014-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:20:031-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:20:088-The ranking refresh is start...
+
+
+Time:2017-04-19 10:59:20:088-The ranking refresh is end.
+
+
+Time:2017-04-19 10:59:30:048-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:40:062-Trace>>The LevelRanking has be loaded, count:50
+
+
+Time:2017-04-19 10:59:50:075-Trace>>The LevelRanking has be loaded, count:50
+
+

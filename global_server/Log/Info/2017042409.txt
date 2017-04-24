@@ -1,0 +1,272 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+09:24:28 Server is starting...
+09:24:31 Redis server connect successfully.
+09:24:35 DB server connect successfully.
+09:24:44 Start checking table schema, please wait.
+09:24:46 Check table schema successfully.
+09:24:46 script compiled successfully.
+09:24:47 CacheFactory listen has started...
+09:24:47 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-24 09:24:48:382-The ranking refresh is start...
+
+
+Time:2017-04-24 09:24:48:507-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-24 09:24:48:508-The ranking refresh is end.
+
+
+Time:2017-04-24 09:24:48:513-消息：全服排名开始...
+
+
+Time:2017-04-24 09:24:49:023-Trace>>The LevelRanking has be loaded, count:176
+
+
+Time:2017-04-24 09:24:49:024-消息：全服排名消耗时间:510.3365ms
+
+
+09:24:49 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-24 09:26:00:086-The ranking refresh is start...
+
+
+Time:2017-04-24 09:26:00:086-The ranking refresh is end.
+
+
+Time:2017-04-24 09:27:20:098-The ranking refresh is start...
+
+
+Time:2017-04-24 09:27:20:098-The ranking refresh is end.
+
+
+Time:2017-04-24 09:28:20:131-The ranking refresh is start...
+
+
+Time:2017-04-24 09:28:20:131-The ranking refresh is end.
+
+
+Time:2017-04-24 09:29:20:147-The ranking refresh is start...
+
+
+Time:2017-04-24 09:29:20:148-The ranking refresh is end.
+
+
+Time:2017-04-24 09:30:00:016-消息：全服排名开始...
+
+
+Time:2017-04-24 09:30:00:020-Trace>>The LevelRanking has be loaded, count:176
+
+
+Time:2017-04-24 09:30:00:021-消息：全服排名消耗时间:4.3223ms
+
+
+Time:2017-04-24 09:30:40:148-The ranking refresh is start...
+
+
+Time:2017-04-24 09:30:40:148-The ranking refresh is end.
+
+
+Time:2017-04-24 09:31:40:179-The ranking refresh is start...
+
+
+Time:2017-04-24 09:31:40:179-The ranking refresh is end.
+
+
+Time:2017-04-24 09:32:40:193-The ranking refresh is start...
+
+
+Time:2017-04-24 09:32:40:193-The ranking refresh is end.
+
+
+Time:2017-04-24 09:33:40:209-The ranking refresh is start...
+
+
+Time:2017-04-24 09:33:40:209-The ranking refresh is end.
+
+
+Time:2017-04-24 09:34:40:226-The ranking refresh is start...
+
+
+Time:2017-04-24 09:34:40:227-The ranking refresh is end.
+
+
+09:35:00 Clear expired cache end.
+Time:2017-04-24 09:35:40:256-The ranking refresh is start...
+
+
+Time:2017-04-24 09:35:40:256-The ranking refresh is end.
+
+
+Time:2017-04-24 09:36:40:275-The ranking refresh is start...
+
+
+Time:2017-04-24 09:36:40:276-The ranking refresh is end.
+
+
+Time:2017-04-24 09:37:40:288-The ranking refresh is start...
+
+
+Time:2017-04-24 09:37:40:289-The ranking refresh is end.
+
+
+Time:2017-04-24 09:38:40:306-The ranking refresh is start...
+
+
+Time:2017-04-24 09:38:40:306-The ranking refresh is end.
+
+
+Time:2017-04-24 09:39:40:333-The ranking refresh is start...
+
+
+Time:2017-04-24 09:39:40:334-The ranking refresh is end.
+
+
+Time:2017-04-24 09:40:00:018-消息：全服排名开始...
+
+
+Time:2017-04-24 09:40:00:028-Trace>>The LevelRanking has be loaded, count:176
+
+
+Time:2017-04-24 09:40:00:029-消息：全服排名消耗时间:10.6793ms
+
+
+Time:2017-04-24 09:40:40:336-The ranking refresh is start...
+
+
+Time:2017-04-24 09:40:40:336-The ranking refresh is end.
+
+
+Time:2017-04-24 09:41:40:354-The ranking refresh is start...
+
+
+Time:2017-04-24 09:41:40:355-The ranking refresh is end.
+
+
+Time:2017-04-24 09:42:40:383-The ranking refresh is start...
+
+
+Time:2017-04-24 09:42:40:384-The ranking refresh is end.
+
+
+Time:2017-04-24 09:43:40:397-The ranking refresh is start...
+
+
+Time:2017-04-24 09:43:40:398-The ranking refresh is end.
+
+
+Time:2017-04-24 09:44:40:418-The ranking refresh is start...
+
+
+Time:2017-04-24 09:44:40:419-The ranking refresh is end.
+
+
+09:45:00 Clear expired cache end.
+Time:2017-04-24 09:45:40:444-The ranking refresh is start...
+
+
+Time:2017-04-24 09:45:40:444-The ranking refresh is end.
+
+
+Time:2017-04-24 09:46:40:463-The ranking refresh is start...
+
+
+Time:2017-04-24 09:46:40:464-The ranking refresh is end.
+
+
+Time:2017-04-24 09:47:40:506-The ranking refresh is start...
+
+
+Time:2017-04-24 09:47:40:507-The ranking refresh is end.
+
+
+Time:2017-04-24 09:48:40:524-The ranking refresh is start...
+
+
+Time:2017-04-24 09:48:40:525-The ranking refresh is end.
+
+
+Time:2017-04-24 09:49:40:539-The ranking refresh is start...
+
+
+Time:2017-04-24 09:49:40:539-The ranking refresh is end.
+
+
+Time:2017-04-24 09:50:00:071-消息：全服排名开始...
+
+
+Time:2017-04-24 09:50:00:080-Trace>>The LevelRanking has be loaded, count:176
+
+
+Time:2017-04-24 09:50:00:081-消息：全服排名消耗时间:9.6903ms
+
+
+Time:2017-04-24 09:50:40:569-The ranking refresh is start...
+
+
+Time:2017-04-24 09:50:40:570-The ranking refresh is end.
+
+
+Time:2017-04-24 09:51:40:586-The ranking refresh is start...
+
+
+Time:2017-04-24 09:51:40:587-The ranking refresh is end.
+
+
+Time:2017-04-24 09:52:40:602-The ranking refresh is start...
+
+
+Time:2017-04-24 09:52:40:603-The ranking refresh is end.
+
+
+Time:2017-04-24 09:53:40:618-The ranking refresh is start...
+
+
+Time:2017-04-24 09:53:40:619-The ranking refresh is end.
+
+
+Time:2017-04-24 09:54:40:631-The ranking refresh is start...
+
+
+Time:2017-04-24 09:54:40:632-The ranking refresh is end.
+
+
+09:55:00 Clear expired cache end.
+Time:2017-04-24 09:55:40:647-The ranking refresh is start...
+
+
+Time:2017-04-24 09:55:40:648-The ranking refresh is end.
+
+
+Time:2017-04-24 09:56:40:665-The ranking refresh is start...
+
+
+Time:2017-04-24 09:56:40:666-The ranking refresh is end.
+
+
+Time:2017-04-24 09:57:40:679-The ranking refresh is start...
+
+
+Time:2017-04-24 09:57:40:680-The ranking refresh is end.
+
+
+Time:2017-04-24 09:58:40:695-The ranking refresh is start...
+
+
+Time:2017-04-24 09:58:40:696-The ranking refresh is end.
+
+
+Time:2017-04-24 09:59:40:709-The ranking refresh is start...
+
+
+Time:2017-04-24 09:59:40:710-The ranking refresh is end.
+
+

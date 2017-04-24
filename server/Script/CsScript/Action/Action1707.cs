@@ -120,7 +120,7 @@ namespace GameServer.CsScript.Action
                     // 通知新成员公会信息
                     PushMessageHelper.JoinGuildNotification(GameSession.Get(_DestUid));
 
-                    ChatRemoteService.SendUserData(basis, guild.GuildID);
+                    GlobalRemoteService.SendUserData(basis, guild.GuildID);
 
                     receipt = RequestGuildResult.Successfully;
                 }

@@ -125,6 +125,8 @@
     <Compile Include="Script\CsScript\Action\Action1080.cs" />
     <Compile Include="Script\CsScript\Action\Action1081.cs" />
     <Compile Include="Script\CsScript\Action\Action1082.cs" />
+    <Compile Include="Script\CsScript\Action\Action1100.cs" />
+    <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
     <Compile Include="Script\CsScript\Action\Action1113.cs" />
     <Compile Include="Script\CsScript\Action\Action1114.cs" />
@@ -134,6 +136,12 @@
     <Compile Include="Script\CsScript\Action\Action1141.cs" />
     <Compile Include="Script\CsScript\Action\Action1142.cs" />
     <Compile Include="Script\CsScript\Action\Action1151.cs" />
+    <Compile Include="Script\CsScript\Action\Action1170.cs" />
+    <Compile Include="Script\CsScript\Action\Action1171.cs" />
+    <Compile Include="Script\CsScript\Action\Action1172.cs" />
+    <Compile Include="Script\CsScript\Action\Action1406.cs" />
+    <Compile Include="Script\CsScript\Action\Action1407.cs" />
+    <Compile Include="Script\CsScript\Action\Action1408.cs" />
     <Compile Include="Script\CsScript\Action\Action1700.cs" />
     <Compile Include="Script\CsScript\Action\Action1701.cs" />
     <Compile Include="Script\CsScript\Action\Action1702.cs" />
@@ -178,7 +186,6 @@
     <Compile Include="Script\CsScript\Action\Action1910.cs" />
     <Compile Include="Script\CsScript\Action\Action1920.cs" />
     <Compile Include="Script\CsScript\Action\Action1099.cs" />
-    <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1930.cs" />
     <Compile Include="Script\CsScript\Action\Action1110.cs" />
     <Compile Include="Script\CsScript\Action\Action1111.cs" />
@@ -241,6 +248,7 @@
     <Compile Include="Script\CsScript\Com\UserHelper.cs" />
     <Compile Include="Script\CsScript\GM\DiamondCommand.cs" />
     <Compile Include="Script\CsScript\GM\VitCommand.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPCombatData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPCompetition64Data.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPFriendsData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPGuildData.cs" />
@@ -256,10 +264,11 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPUserDetailsData.cs" />
     <Compile Include="Script\CsScript\Locale\SimplifiedLanguage.cs" />
     <Compile Include="Script\CsScript\MainClass.cs" />
-    <Compile Include="Script\CsScript\Remote\ChatRemoteService.cs" />
+    <Compile Include="Script\CsScript\Remote\GlobalRemoteService.cs" />
+    <Compile Include="Script\CsScript\Remote\OnGlobalCommon.cs" />
     <Compile Include="Script\CsScript\Remote\OnGMCommon.cs" />
-    <Compile Include="Script\CsScript\Remote\OnGMDeliverGoods.cs" />
-    <Compile Include="Script\CsScript\Remote\OnPay.cs" />
+    <Compile Include="Script\CsScript\Remote\OnWebGMDeliverGoods.cs" />
+    <Compile Include="Script\CsScript\Remote\OnWebPay.cs" />
     <Compile Include="Script\CsScript\WebSocketActionDispatcher.cs" />
     <Compile Include="Script\Model\ConfigModel\ConfigEnvSet.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_AccumulatePay.cs" />
@@ -269,6 +278,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_CdKey.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_CelebrityRanking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_ChatKeyWord.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Elves.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Equip.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
@@ -291,6 +301,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_TeneralTranscript.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Vip.cs" />
     <Compile Include="Script\Model\Config\AchievementData.cs" />
+    <Compile Include="Script\Model\Config\ElfData.cs" />
     <Compile Include="Script\Model\Config\GuildCharacterData.cs" />
     <Compile Include="Script\Model\Config\GuildLogData.cs" />
     <Compile Include="Script\Model\Config\GuildRank.cs" />
@@ -304,7 +315,7 @@
     <Compile Include="Script\Model\Config\SkillData.cs" />
     <Compile Include="Script\Model\Config\UserRank.cs" />
     <Compile Include="Script\Model\DataModel\CDKeyCache.cs" />
-    <Compile Include="Script\Model\DataModel\Competition64Cache.cs" />
+    <Compile Include="Script\Model\DataModel\GameCache.cs" />
     <Compile Include="Script\Model\DataModel\CompetitionApply.cs" />
     <Compile Include="Script\Model\DataModel\GuildsCache.cs" />
     <Compile Include="Script\Model\DataModel\UserAchievementCache.cs" />
@@ -314,6 +325,7 @@
     <Compile Include="Script\Model\DataModel\UserCenterUser.cs" />
     <Compile Include="Script\Model\DataModel\DataHelper.cs" />
     <Compile Include="Script\Model\DataModel\UserCombatCache.cs" />
+    <Compile Include="Script\Model\DataModel\UserElfCache.cs" />
     <Compile Include="Script\Model\DataModel\UserEquipsCache.cs" />
     <Compile Include="Script\Model\DataModel\UserEventAwardCache.cs" />
     <Compile Include="Script\Model\DataModel\UserFriendsCache.cs" />
@@ -326,6 +338,8 @@
     <Compile Include="Script\Model\DataModel\UserTaskCache.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
     <Compile Include="Script\Model\Enum\BuyItemResult.cs" />
+    <Compile Include="Script\Model\Enum\ElfSkillType.cs" />
+    <Compile Include="Script\Model\Enum\MatchRivalResult.cs" />
     <Compile Include="Script\Model\Enum\RequestGuildResult.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />
@@ -355,6 +369,8 @@
     <Compile Include="Script\Model\Enum\RequestLotteryResult.cs" />
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\ResourceType.cs" />
+    <Compile Include="Script\Model\Enum\UpdateDiamondType.cs" />
+    <Compile Include="Script\Model\Enum\UpdateGoldType.cs" />
     <Compile Include="Script\Model\Enum\ServerStatus.cs" />
     <Compile Include="Script\Model\Enum\ShopType.cs" />
     <Compile Include="Script\Model\Enum\SoulAddType.cs" />

@@ -1080,7 +1080,7 @@ namespace GameServer.CsScript.Com
                 return;
             string context = string.Format("恭喜 {0} 获得本次校园争霸赛冠军，奖励iPhone 7 Plus一部！", championUser.NickName);
             // PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
-            ChatRemoteService.SendNotice(NoticeMode.World, context);
+            GlobalRemoteService.SendNotice(NoticeMode.World, context);
 
             //var chatService = new TryXChatService();
             //chatService.SystemSend(context);

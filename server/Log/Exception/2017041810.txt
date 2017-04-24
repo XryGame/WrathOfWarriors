@@ -1,0 +1,263 @@
+Time:2017-04-18 10:00:01:217-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_921d51bc054c466c907aa59cf8cf0e3d%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D7df8bc2aab401006782b8e0008505f65, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:10988
+
+
+Time:2017-04-18 10:07:11:665-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_338e485d928d466387c2b2a68400546e%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Df414945e4f7d114ae041384f31dca2d0, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11122
+
+
+Time:2017-04-18 10:08:51:005-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_f3a1f9547c8d45a1adf97bb0d40bbd0a%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D685762c5bfc75ced26f62f26f86a0d9d, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11156
+
+
+Time:2017-04-18 10:09:06:087-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_c4e3cfef91fb4764bded78b875cfaefa%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Dae19b53e260b841e79aa667b2db7c551, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11165
+
+
+Time:2017-04-18 10:12:17:234-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_c10df0064b4f491385853bd8550ee7b1%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Da61820fa209ef28fe2e549537b50b876, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11441
+
+
+Time:2017-04-18 10:15:56:073-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_dbfef7aef5cb4c5781e4bc78948d90c1%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D7f719a4d9e5493efcea0e98840b29d7a, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11606
+
+
+Time:2017-04-18 10:18:17:944-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_ba654da6f1064cbfafb8757e50811538%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D3071b4eb1aea9dcacdd4a3484b3165ec, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11679
+
+
+Time:2017-04-18 10:19:25:517-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_b34d87d91f3b45bea1ff246af9c7da28%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Dc1914d755a4d36d22e311e36b048d601, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11703
+
+
+Time:2017-04-18 10:21:52:744-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_10ec4f12d7e44cbea2c1c6d2cf7b7f9d%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D9a67bf99a1f549962fd8fd92987ed001, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:11758
+
+
+Time:2017-04-18 10:25:41:726-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D6%26Sid%3Ds_f20e50dc6fa04e5dadae5572a4d77013%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D64674bef20209a264e360334e1bc3606, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:12578
+
+
+Time:2017-04-18 10:29:20:344-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_56994539045a4729bfedf7b26bec2ed3%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Dbed4fce29ac4c29605464613b656b612, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:13084
+
+
+Time:2017-04-18 10:30:28:425-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_b13779eb3e2741f3ab78fc9c0e1d3d01%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3De5efbd62452b4361773ec2661b116e75, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:13237
+
+
+Time:2017-04-18 10:33:22:226-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_c386ae0da996417a9ec186d093a5e764%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D053360dd60c058ce71c0ed6315a1dcc5, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:13451
+
+
+Time:2017-04-18 10:34:27:541-Trace>>Action1005 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.CsScript.Action.Action1005.CreateRole() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 163
+   在 GameServer.CsScript.Action.Action1005.CreateUserRole(IUser& user) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 65
+   在 ZyGames.Framework.Game.Contract.Action.RegisterAction.TakeAction()
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_b1e4f9f3783c4dd0bebfe85d52f4ce53%7C2%7C1%26Uid%3D1000152%26St%3Dst%26ActionId%3D1005%26UserName%3D%E8%91%AB%E8%8A%A6%26Sex%3D0%26HeadID%3D%26ServerID%3D1%26RetailID%3D0000%26Pid%3Duser1492482852000%26MobileType%3D1%26Profession%3D1%26sign%3Dd06e64809201aa79e0d95b223152764b, Uid:1000152, Pid:user1492482852000
+Host:168.254.0.112:54580
+
+
+Time:2017-04-18 10:43:37:001-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_05f524a45d634b898de79e800eba878b%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D0f20e0bdf84dc3cd270b1c31028c5753, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:13808
+
+
+Time:2017-04-18 10:51:41:870-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D34%26Sid%3Ds_03f7d4e92db74d26b0199dcdee880bff%7C2%7C1%26Uid%3D1000151%26St%3Dst%26ActionId%3D1111%26ID%3D1%26sign%3D53063af2df9bbe30f51dc3f69b2a39e3, Uid:1000151, Pid:user1492416612000
+Host:168.254.0.101:50701
+
+
+Time:2017-04-18 10:52:15:765-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_c794df4b13c14ebd9d6cdacabde1de3d%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D03fdb8e3d6993f8b703b7c95c15e6a8a, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:14766
+
+
+Time:2017-04-18 10:53:13:165-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_eb9bed263a484485ad4db816537342bc%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D73ae3e270c5ebee79ff4a46eedfc7a6e, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:14859
+
+
+Time:2017-04-18 10:53:16:011-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D51%26Sid%3Ds_6b4c4de5a8924cd9a8bce35191055fda%7C2%7C1%26Uid%3D1000151%26St%3Dst%26ActionId%3D1111%26ID%3D2%26sign%3D558dff8e89a9b81327196812f8fc2d9c, Uid:1000151, Pid:user1492416612000
+Host:168.254.0.101:50752
+
+
+Time:2017-04-18 10:54:27:428-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D51%26Sid%3Ds_a137768f3c5a479d9434e76cffc708cb%7C2%7C1%26Uid%3D1000151%26St%3Dst%26ActionId%3D1111%26ID%3D3%26sign%3D169e758df31153da2e7c0af80c17b737, Uid:1000151, Pid:user1492416612000
+Host:168.254.0.101:50776
+
+
+Time:2017-04-18 10:54:53:151-Trace>>Action1005 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.CsScript.Action.Action1005.CreateRole() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 163
+   在 GameServer.CsScript.Action.Action1005.CreateUserRole(IUser& user) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 65
+   在 ZyGames.Framework.Game.Contract.Action.RegisterAction.TakeAction()
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_2325a30beff6430b8c54b5157c114505%7C2%7C1%26Uid%3D1000153%26St%3Dst%26ActionId%3D1005%26UserName%3D%E5%88%86%E8%A7%84%E5%88%92%E6%B3%95%E8%A7%84%E5%92%8C%26Sex%3D0%26HeadID%3D%26ServerID%3D1%26RetailID%3D0000%26Pid%3Duser1492484092000%26MobileType%3D1%26Profession%3D2%26sign%3D1a90c753ebeb73af8067533e1afb47fa, Uid:1000153, Pid:user1492484092000
+Host:168.254.0.101:50820
+
+
+Time:2017-04-18 10:56:00:134-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D38%26Sid%3Ds_2325a30beff6430b8c54b5157c114505%7C2%7C1%26Uid%3D1000153%26St%3Dst%26ActionId%3D1111%26ID%3D1%26sign%3D9b2ca4fecfc9cc7e20d6de5910075349, Uid:1000153, Pid:user1492484092000
+Host:168.254.0.101:50820
+
+
+Time:2017-04-18 10:56:48:729-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_a2c137db216f4248becf643f7f5bf43a%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3Da1c6af2320e2c7c05052d7e60240f59f, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:15462
+
+
+Time:2017-04-18 10:57:11:698-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D52%26Sid%3Ds_61d4f79f7c104364b9204f9b20a50e0b%7C2%7C1%26Uid%3D1000153%26St%3Dst%26ActionId%3D1111%26ID%3D2%26sign%3De0910c2836797b126ac4ac00c8a628b4, Uid:1000153, Pid:user1492484092000
+Host:168.254.0.101:50850
+
+
+Time:2017-04-18 10:57:46:449-Trace>>Action1005 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.CsScript.Action.Action1005.CreateRole() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 163
+   在 GameServer.CsScript.Action.Action1005.CreateUserRole(IUser& user) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1005.cs:行号 65
+   在 ZyGames.Framework.Game.Contract.Action.RegisterAction.TakeAction()
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D3%26Sid%3Ds_7ff239e690ce4c0b8738be003e1e0e41%7C2%7C1%26Uid%3D1000154%26St%3Dst%26ActionId%3D1005%26UserName%3D%E5%9B%9E%E5%AE%B6%E7%9C%8B%E8%A7%81%E5%A5%BD%E7%9C%8B%26Sex%3D0%26HeadID%3D%26ServerID%3D1%26RetailID%3D0000%26Pid%3Duser1492484265000%26MobileType%3D1%26Profession%3D1%26sign%3Dc9c8f68529050d6eb5a23a05920674e0, Uid:1000154, Pid:user1492484265000
+Host:168.254.0.101:50898
+
+
+Time:2017-04-18 10:57:56:288-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_ae6a78ec63054e528a39a16ede15b3f9%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D4930f52ae989c21ec048f25dbcb3ef36, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:15501
+
+
+Time:2017-04-18 10:58:44:560-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D38%26Sid%3Ds_7ff239e690ce4c0b8738be003e1e0e41%7C2%7C1%26Uid%3D1000154%26St%3Dst%26ActionId%3D1111%26ID%3D1%26sign%3D2f43c5554c1d970164e5e21474340f12, Uid:1000154, Pid:user1492484265000
+Host:168.254.0.101:50898
+
+
+Time:2017-04-18 10:58:59:000-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_9efcb0b5e1484c7d81a871d848e3e7b7%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D057e69d314b16aa4344a6c2f1ae287f5, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:15660
+
+
+Time:2017-04-18 10:59:51:385-Trace>>Action2002 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.CsScript.Action.Action2002.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action2002.cs:行号 45
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D5%26Sid%3Ds_b253227943634c7b863c82c33e5ad26e%7C2%7C1%26Uid%3D1000136%26St%3Dst%26ActionId%3D2002%26sign%3D321f47ece0edba1d948416a0c529b585, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:15791
+
+
+Time:2017-04-18 10:59:54:244-Trace>>Action1111 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.Script.Model.DataModel.UserHelper.FindRankUser(Int32 userid, RankType type) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 789
+   在 GameServer.Script.Model.DataModel.UserHelper.RefreshUserFightValue(Int32 uid, Boolean isNotification) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1198
+   在 GameServer.Script.Model.DataModel.UserHelper.UserLevelUp(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 1213
+   在 GameServer.CsScript.Action.Action1111.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1111.cs:行号 63
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D51%26Sid%3Ds_8d00794d53a942beac488154940b2381%7C2%7C1%26Uid%3D1000154%26St%3Dst%26ActionId%3D1111%26ID%3D2%26sign%3D2d1fda6c0b85ffac7bb0dce1f540b98c, Uid:1000154, Pid:user1492484265000
+Host:168.254.0.101:50935
+
+

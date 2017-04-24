@@ -1,0 +1,396 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:07:07 Server is starting...
+17:07:08 Redis server connect successfully.
+17:07:09 DB server connect successfully.
+17:07:11 Start checking table schema, please wait.
+17:07:11 Check table schema successfully.
+17:07:11 script compiled successfully.
+17:07:11 CacheFactory listen has started...
+17:07:11 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-18 17:07:11:990-The ranking refresh is start...
+
+
+Time:2017-04-18 17:07:12:171-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:07:12:171-The ranking refresh is end.
+
+
+17:07:12 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-18 17:08:20:043-The ranking refresh is start...
+
+
+Time:2017-04-18 17:08:20:046-The ranking refresh is end.
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:12:12 Server is starting...
+17:12:13 Redis server connect successfully.
+17:12:14 DB server connect successfully.
+17:12:16 Start checking table schema, please wait.
+17:12:16 Check table schema successfully.
+17:12:16 script compiled successfully.
+17:12:16 CacheFactory listen has started...
+17:12:16 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-18 17:12:17:071-The ranking refresh is start...
+
+
+Time:2017-04-18 17:12:17:170-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:12:17:170-The ranking refresh is end.
+
+
+17:12:17 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-18 17:12:36:151-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:12:41:408-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:05:413-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:05:413-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:11:013-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:20:026-The ranking refresh is start...
+
+
+Time:2017-04-18 17:13:20:031-The ranking refresh is end.
+
+
+Time:2017-04-18 17:13:21:036-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:31:038-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:13:41:131-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:01:125-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:20:039-The ranking refresh is start...
+
+
+Time:2017-04-18 17:14:20:040-The ranking refresh is end.
+
+
+Time:2017-04-18 17:14:31:150-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:31:152-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:31:161-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:32:052-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:41:062-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:14:51:078-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:01:090-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:11:005-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:20:068-The ranking refresh is start...
+
+
+Time:2017-04-18 17:15:20:068-The ranking refresh is end.
+
+
+Time:2017-04-18 17:15:21:021-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:31:031-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:41:046-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:15:51:061-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:01:077-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:11:095-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:21:009-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:31:029-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:40:070-The ranking refresh is start...
+
+
+Time:2017-04-18 17:16:40:071-The ranking refresh is end.
+
+
+Time:2017-04-18 17:16:41:044-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:16:51:069-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:01:076-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:11:091-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:21:009-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:31:028-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:40:100-The ranking refresh is start...
+
+
+Time:2017-04-18 17:17:40:102-The ranking refresh is end.
+
+
+Time:2017-04-18 17:17:41:040-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:17:51:057-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:01:073-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:11:099-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:21:007-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:31:022-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:40:116-The ranking refresh is start...
+
+
+Time:2017-04-18 17:18:40:117-The ranking refresh is end.
+
+
+Time:2017-04-18 17:18:41:035-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:18:51:055-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:19:00:078-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:19:10:103-Trace>>The LevelRanking has be loaded, count:0
+
+
+Update script file count:0.
+Time:2017-04-18 17:19:20:003-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:19:30:020-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:19:40:133-The ranking refresh is start...
+
+
+Time:2017-04-18 17:19:40:134-The ranking refresh is end.
+
+
+Time:2017-04-18 17:19:42:038-Trace>>The LevelRanking has be loaded, count:0
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:19:46 Server is starting...
+17:19:46 Redis server connect successfully.
+17:19:48 DB server connect successfully.
+17:19:50 Start checking table schema, please wait.
+17:19:50 Check table schema successfully.
+17:19:50 script compiled successfully.
+17:19:50 CacheFactory listen has started...
+17:19:50 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-18 17:19:51:310-The ranking refresh is start...
+
+
+Time:2017-04-18 17:19:51:439-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:19:51:440-The ranking refresh is end.
+
+
+17:19:51 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-18 17:20:13:628-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:20:16:562-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:20:21:482-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:20:31:072-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:20:40:067-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:20:50:084-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:00:024-The ranking refresh is start...
+
+
+Time:2017-04-18 17:21:00:025-The ranking refresh is end.
+
+
+Time:2017-04-18 17:21:06:405-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:10:018-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:20:033-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:30:048-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:40:067-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:21:50:083-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:00:037-The ranking refresh is start...
+
+
+Time:2017-04-18 17:22:00:038-The ranking refresh is end.
+
+
+Time:2017-04-18 17:22:01:102-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:11:015-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:21:025-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:31:036-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:41:053-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:22:51:071-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:23:01:082-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:23:11:094-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:23:20:039-The ranking refresh is start...
+
+
+Time:2017-04-18 17:23:20:041-The ranking refresh is end.
+
+
+Time:2017-04-18 17:23:21:012-Trace>>The LevelRanking has be loaded, count:0
+
+
+Update script file count:1.
+17:23:21 csharp script compile start...
+17:23:22 csharp script compiled successfully.
+Time:2017-04-18 17:23:31:026-Trace>>The LevelRanking has be loaded, count:0
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:52:47 Server is starting...
+17:52:47 Redis server connect successfully.
+17:52:49 DB server connect successfully.
+17:52:51 Start checking table schema, please wait.
+17:52:51 Check table schema successfully.
+17:52:51 script compiled successfully.
+17:52:51 CacheFactory listen has started...
+17:52:51 WebSocket service 168.254.0.254:9002 is started.
+Request server list successful!
+Time:2017-04-18 17:52:51:891-The ranking refresh is start...
+
+
+Time:2017-04-18 17:52:51:953-Trace>>The LevelRanking has be loaded, count:0
+
+
+Time:2017-04-18 17:52:51:954-The ranking refresh is end.
+
+
+17:52:51 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Time:2017-04-18 17:54:00:026-The ranking refresh is start...
+
+
+Time:2017-04-18 17:54:00:026-The ranking refresh is end.
+
+
+Time:2017-04-18 17:55:00:037-The ranking refresh is start...
+
+
+Time:2017-04-18 17:55:00:037-The ranking refresh is end.
+
+

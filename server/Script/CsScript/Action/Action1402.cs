@@ -18,33 +18,6 @@ namespace GameServer.CsScript.Action
 {
 
 
-    public class CombatRivalData
-    {
-        public CombatRivalData()
-        {
-
-        }
-        public CombatReqRivalResult Result { get; set; }
-
-        public int UserId { get; set; }
-
-        public string NickName { get; set; }
-
-        public int Profession { get; set; }
-
-        public int RankId { get; set; }
-
-        public int UserLv { get; set; }
-
-        public UserAttributeCache Attribute { get; set; }
-
-        public UserEquipsCache Equips { get; set; }
-
-        public UserSkillCache Skill { get; set; }
-
-
-
-    }
 
     /// <summary>
     /// 1402_竞技场请求挑战

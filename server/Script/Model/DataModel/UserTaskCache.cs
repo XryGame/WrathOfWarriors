@@ -171,7 +171,7 @@ namespace GameServer.Script.Model.DataModel
             DailyQuestList.Clear();
             ReceiveBoxList.Clear();
             var taskSet = new ShareCacheStruct<Config_Task>();
-            for (TaskType type = TaskType.Login; type <= TaskType.WorldChat; ++type)
+            for (TaskType type = TaskType.Login; type <= TaskType.BuyGold; ++type)
             {
                 var taskcfg = taskSet.Find(t => (t.id == type));
                 if (taskcfg == null)
@@ -184,6 +184,7 @@ namespace GameServer.Script.Model.DataModel
                 DailyQuestList.Add(dailyQuest);
             }
         }
+
 
         public UserDailyQuestData FindTask(TaskType id)
         {

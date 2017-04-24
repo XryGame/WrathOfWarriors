@@ -1,0 +1,52 @@
+Time:2017-04-21 18:00:00:080-消息：全服排名开始...
+
+
+Time:2017-04-21 18:00:00:088-Trace>>The LevelRanking has be loaded, count:175
+
+
+Time:2017-04-21 18:00:00:088-消息：全服排名消耗时间:8.0837ms
+
+
+Time:2017-04-21 18:00:28:508-The ranking refresh is start...
+
+
+Time:2017-04-21 18:00:28:509-The ranking refresh is end.
+
+
+Time:2017-04-21 18:01:28:525-The ranking refresh is start...
+
+
+Time:2017-04-21 18:01:28:525-The ranking refresh is end.
+
+
+Time:2017-04-21 18:02:28:538-The ranking refresh is start...
+
+
+Time:2017-04-21 18:02:28:538-The ranking refresh is end.
+
+
+Time:2017-04-21 18:03:28:539-The ranking refresh is start...
+
+
+Time:2017-04-21 18:03:28:541-The ranking refresh is end.
+
+
+Time:2017-04-21 18:04:28:554-The ranking refresh is start...
+
+
+Time:2017-04-21 18:04:28:555-The ranking refresh is end.
+
+
+Time:2017-04-21 18:05:28:569-The ranking refresh is start...
+
+
+Time:2017-04-21 18:05:28:569-The ranking refresh is end.
+
+
+18:06:08 Clear expired cache end.
+Time:2017-04-21 18:06:28:571-The ranking refresh is start...
+
+
+Time:2017-04-21 18:06:28:598-The ranking refresh is end.
+
+

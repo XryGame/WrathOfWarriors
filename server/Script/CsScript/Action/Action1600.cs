@@ -83,7 +83,10 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             UserBasisCache basis = UserHelper.FindUserBasis(_queryuserid);
-            
+            if (basis == null)
+            {
+                return false;
+            }
 
             receipt = new QueryUserData()
             {

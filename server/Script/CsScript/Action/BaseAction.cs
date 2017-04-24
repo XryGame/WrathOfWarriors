@@ -135,6 +135,14 @@ namespace GameServer.Script.CsScript.Action
             }
         }
 
+        public UserElfCache GetElf
+        {
+            get
+            {
+                return UserHelper.FindUserElf(Current.UserId);
+            }
+        }
+
         public void setErrorCode(int errorcode)
         {
             _resultData.ErrorCode = errorcode;

@@ -68,7 +68,7 @@ namespace GameServer.CsScript.Action
 
                 if (mail.ApppendDiamond > 0)
                 {
-                    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond);
+                    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
                     
                     mail.ApppendDiamond = 0;
                 }

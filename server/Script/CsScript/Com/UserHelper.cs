@@ -275,6 +275,22 @@ namespace GameServer.Script.Model.DataModel
             return ret;
         }
 
+
+        public static UserElfCache FindUserElf(int userid)
+        {
+            var cacheset = new PersonalCacheStruct<UserElfCache>();
+            var ret = cacheset.FindKey(userid.ToString());
+            if (ret == null)
+            {
+                ret = new UserElfCache();
+                ret.UserID = userid;
+                ret.ResetCache();
+                cacheset.Add(ret);
+                cacheset.Update();
+            }
+            return ret;
+        }
+
         public static List<GameSession> GetOnlinesList()
         {
             var sessionlist = GameSession.GetAll();
@@ -282,7 +298,7 @@ namespace GameServer.Script.Model.DataModel
             List<GameSession> onlinelist = new List<GameSession>();
             foreach (var on in sessionlist)
             {
-                if (on.Connected)
+                if (on.Connected && !on.IsRemote)
                     onlinelist.Add(on);
             }
             return onlinelist;
@@ -304,6 +320,9 @@ namespace GameServer.Script.Model.DataModel
             // 竞技场挑战次数
             combat.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             combat.BuyTimes = 0;
+            combat.MatchTimes = ConfigEnvSet.GetInt("Combat.MatchTimes");
+            combat.BuyMatchTimes = 0;
+
             // 好友
             friends.GiveAwayCount = 0;
             foreach (var fl in friends.FriendsList)
@@ -813,7 +832,7 @@ namespace GameServer.Script.Model.DataModel
                             }
                         }
                         break;
-                    case AchievementType.FriendCompare:
+                    case AchievementType.CombatMatch:
                     case AchievementType.Diamond:
                         {
                             int count = achdata.Count.ToInt() + addcount.ToInt();
@@ -832,6 +851,18 @@ namespace GameServer.Script.Model.DataModel
                             count = old + add;
                             achdata.Count = count == 0 ? "0" : count.ToString();
                             if (count >= Util.ConvertGameCoin(achconfig.ObjectiveNum))
+                            {
+                                achdata.Status = TaskStatus.Finished;
+                            }
+                        }
+                        break;
+                    case AchievementType.UpgradeElf:
+                        {
+                            UserElfCache elf = FindUserElf(uid);
+                            var findlist = elf.ElfList.FindAll(t => (t.Lv >= achconfig.ObjectiveGrade));
+                            int count = achdata.Count.ToInt() + findlist.Count;
+                            achdata.Count = count == 0 ? "0" : count.ToString();
+                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }
@@ -886,24 +917,24 @@ namespace GameServer.Script.Model.DataModel
                             }
                         }
                         break;
-                    case AchievementType.OpenSoul:
-                        {
-                            UserSoulCache userSoul = FindUserSoul(uid);
-                            int soullv = addId != 0 ? addId % 10000 : 0;
-                            if (soullv == achconfig.ObjectiveGrade)
-                            {
-                                achdata.Count = userSoul.OpenList.Count.ToString();
-                            }
-                            else if (soullv > achconfig.ObjectiveGrade)
-                            {
-                                achdata.Count = achconfig.ObjectiveNum;
-                            }
-                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
-                            {
-                                achdata.Status = TaskStatus.Finished;
-                            }
-                        }
-                        break;
+                    //case AchievementType.OpenSoul:
+                    //    {
+                    //        UserSoulCache userSoul = FindUserSoul(uid);
+                    //        int soullv = addId != 0 ? addId % 10000 : 0;
+                    //        if (soullv == achconfig.ObjectiveGrade)
+                    //        {
+                    //            achdata.Count = userSoul.OpenList.Count.ToString();
+                    //        }
+                    //        else if (soullv > achconfig.ObjectiveGrade)
+                    //        {
+                    //            achdata.Count = achconfig.ObjectiveNum;
+                    //        }
+                    //        if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
+                    //        {
+                    //            achdata.Status = TaskStatus.Finished;
+                    //        }
+                    //    }
+                    //    break;
                     case AchievementType.CombatRandID:
                         {
                             UserBasisCache basis = FindUserBasis(uid);
@@ -927,14 +958,14 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-        public static void RewardsDiamond(int uid, int count)
+        public static void RewardsDiamond(int uid, int count, UpdateDiamondType updateType)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
             basis.RewardsDiamond = MathUtils.Addition(basis.RewardsDiamond, count, int.MaxValue);
 
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), updateType);
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
         }
@@ -946,18 +977,18 @@ namespace GameServer.Script.Model.DataModel
                 return;
             basis.UsedDiamond = MathUtils.Addition(basis.UsedDiamond, count, int.MaxValue);
 
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), UpdateDiamondType.Consume);
         }
 
 
         public static bool PayDiamond(int uid, int count)
         {
-            UserBasisCache user = FindUserBasis(uid);
-            if (user == null)
+            UserBasisCache basis = FindUserBasis(uid);
+            if (basis == null)
                 return false;
-            user.BuyDiamond = MathUtils.Addition(user.BuyDiamond, count, int.MaxValue / 2);
+            basis.BuyDiamond = MathUtils.Addition(basis.BuyDiamond, count, int.MaxValue / 2);
 
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), UpdateDiamondType.PayReward);
 
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
@@ -965,7 +996,7 @@ namespace GameServer.Script.Model.DataModel
             return true;
         }
 
-        public static bool OnPay(int uid, int payId)
+        public static bool OnWebPay(int uid, int payId)
         {
             var basis = UserHelper.FindUserBasis(uid);
             var paycfg = new ShareCacheStruct<Config_Pay>().FindKey(payId);
@@ -987,8 +1018,8 @@ namespace GameServer.Script.Model.DataModel
             combat.VipLv = basis.VipLv;
             var level = FindRankUser(uid, RankType.Level);
             level.VipLv = basis.VipLv;
-            var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            fightvaluer.VipLv = basis.VipLv;
+            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            //fightvaluer.VipLv = basis.VipLv;
 
 
             if (!PayDiamond(uid, deliverNum))
@@ -1114,7 +1145,7 @@ namespace GameServer.Script.Model.DataModel
             return true;
         }
 
-        public static void RewardsGold(int uid, BigInteger count)
+        public static void RewardsGold(int uid, BigInteger count, UpdateGoldType updateType = UpdateGoldType.NormalReward)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
@@ -1122,13 +1153,13 @@ namespace GameServer.Script.Model.DataModel
             basis.AddGold(count);
             //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), updateType);
 
             // 成就
             AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
-        public static void RewardsGold(int uid, string unitsValue)
+        public static void RewardsGold(int uid, string unitsValue, UpdateGoldType updateType = UpdateGoldType.NormalReward)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
@@ -1137,7 +1168,7 @@ namespace GameServer.Script.Model.DataModel
             basis.AddGold(count);
             //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), updateType);
 
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
@@ -1150,7 +1181,7 @@ namespace GameServer.Script.Model.DataModel
                 return;
             basis.SubGold(count);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), UpdateGoldType.Consume);
         }
 
         public static void ConsumeGold(int uid, string unitsValue)
@@ -1161,7 +1192,7 @@ namespace GameServer.Script.Model.DataModel
             BigInteger bi = Util.ConvertGameCoin(unitsValue);
             basis.SubGold(bi);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid));
+            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), UpdateGoldType.Consume);
         }
 
         public static void RefreshUserFightValue(int uid, bool isNotification = true)
@@ -1192,8 +1223,8 @@ namespace GameServer.Script.Model.DataModel
             if (combat != null) combat.FightValue = attribute.FightValue;
             var level = FindRankUser(uid, RankType.Level);
             if (level != null) level.FightValue = attribute.FightValue;
-            var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            if (fightvaluer != null) fightvaluer.FightValue = attribute.FightValue;
+            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            //if (fightvaluer != null) fightvaluer.FightValue = attribute.FightValue;
 
 
         }
@@ -1220,8 +1251,8 @@ namespace GameServer.Script.Model.DataModel
             combat.UserLv = basis.UserLv;
             var level = FindRankUser(uid, RankType.Level);
             level.UserLv = basis.UserLv;
-            var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            fightvaluer.UserLv = basis.UserLv;
+            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
+            //fightvaluer.UserLv = basis.UserLv;
         }
 
 
@@ -1448,7 +1479,7 @@ namespace GameServer.Script.Model.DataModel
             if (user != null)
             {
                 string context = string.Format("恭喜 {0} 成为VIP{1}，引来众人羡煞的目光！", user.NickName, user.VipLv);
-                ChatRemoteService.SendNotice(NoticeMode.World, context);
+                GlobalRemoteService.SendNotice(NoticeMode.World, context);
 
                 //var chatService = new TryXChatService();
                 //chatService.SystemSend(context);

@@ -149,7 +149,6 @@ namespace GameServer.Script.Model.DataModel
         public void ResetCache(int profession)
         {
             SkillList.Clear();
-            UserBasisCache basis = new PersonalCacheStruct<UserBasisCache>().FindKey(UserID.ToString());
 
             var skillConfig = new ShareCacheStruct<Config_Skill>();
             var list = skillConfig.FindAll(t => (t.SkillGroup == profession));

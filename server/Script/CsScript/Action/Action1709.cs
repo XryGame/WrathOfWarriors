@@ -95,7 +95,7 @@ namespace GameServer.CsScript.Action
             }
 
 
-            ChatRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
+            GlobalRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
 
             receipt = true;
             return true;

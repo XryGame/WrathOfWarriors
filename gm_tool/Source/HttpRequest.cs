@@ -90,7 +90,7 @@ namespace gm_tool.Source
             {
                 Encoding charset = Encoding.GetEncoding("utf-8");
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.Timeout = 2000;
+                request.Timeout = 5000;
                 request.Method = "GET";
                 WebResponse webresponse = request.GetResponse();
                 HttpWebResponse httpResponse = (HttpWebResponse)webresponse;

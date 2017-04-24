@@ -42,29 +42,29 @@ namespace GameServer.CsScript.Action
             receipt = new JPRequestRankData();
             
             
-            UserRank rankInfo = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
-            if (rankInfo != null)
-            {
-                receipt.SelfRank = rankInfo.RankId;
-            }
+            //UserRank rankInfo = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
+            //if (rankInfo != null)
+            //{
+            //    receipt.SelfRank = rankInfo.RankId;
+            //}
 
-            int pagecout;
-            var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-            var list = ranking.GetRange(0, 50, out pagecout);
-            foreach (var data in list)
-            {
-                JPRankUserData jpdata = new JPRankUserData()
-                {
-                    UserId = data.UserID,
-                    NickName = data.NickName,
-                    Profession = data.Profession,
-                    RankId = data.RankId,
-                    UserLv = data.UserLv,
-                    FightValue = data.FightValue,
-                    VipLv = data.VipLv
-                };
-                receipt.List.Add(jpdata);
-            }
+            //int pagecout;
+            //var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            //var list = ranking.GetRange(0, 50, out pagecout);
+            //foreach (var data in list)
+            //{
+            //    JPRankUserData jpdata = new JPRankUserData()
+            //    {
+            //        UserId = data.UserID,
+            //        NickName = data.NickName,
+            //        Profession = data.Profession,
+            //        RankId = data.RankId,
+            //        UserLv = data.UserLv,
+            //        FightValue = data.FightValue,
+            //        VipLv = data.VipLv
+            //    };
+            //    receipt.List.Add(jpdata);
+            //}
             return true;
         }
 

@@ -100,7 +100,7 @@ namespace GameServer.CsScript.Action
             GetGuild.GuildID = guild.GuildID;
             PushMessageHelper.JoinGuildNotification(GameSession.Get(Current.UserId));
 
-            ChatRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
+            GlobalRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
 
             receipt = RequestGuildResult.Successfully;
             return true;

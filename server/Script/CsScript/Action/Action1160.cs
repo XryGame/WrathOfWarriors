@@ -74,7 +74,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(config.RewardsItemNum));
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(config.RewardsItemNum), UpdateDiamondType.Other);
                     }
                     break;
                 case TaskAwardType.Item:
@@ -102,9 +102,9 @@ namespace GameServer.CsScript.Action
             //achievement.Count = 0;
             if (type == AchievementType.InlayGem)
                 achievement.Count = "0";
-            else if (type == AchievementType.OpenSoul)
-                achievement.Count = "0";
-           
+            //else if (type == AchievementType.OpenSoul)
+            //    achievement.Count = "0";
+
             receipt = achievement;
             return true;
         }

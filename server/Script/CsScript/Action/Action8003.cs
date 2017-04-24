@@ -43,10 +43,10 @@ namespace GameServer.CsScript.Action
             }
 
             // 每日
-            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.FriendCompare, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Compare, 1);
 
-            // 成就
-            UserHelper.AchievementProcess(Current.UserId, AchievementType.FriendCompare, "1");
+            //// 成就
+            //UserHelper.AchievementProcess(Current.UserId, AchievementType.FriendCompare, "1");
             return true;
         }
     }

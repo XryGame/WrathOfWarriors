@@ -12,42 +12,6 @@ using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
-    public class CombatMatchUserData
-    {
-        public int UserId { get; set; }
-
-        public string NickName { get; set; }
-
-        public int Profession { get; set; }
-
-        public int RankId { get; set; }
-
-        public int UserLv { get; set; }
-
-        public int VipLv { get; set; }
-
-        public int FightingValue { get; set; }
-
-    }
-    public class CombatMatchData
-    {
-        public CombatMatchData()
-        {
-            RivalList = new CacheList<CombatMatchUserData>();
-            //LogList = new CacheList<JPCombatLogData>();
-        }
-        public int RankId { get; set; }
-
-        public int CombatTimes { get; set; }
-
-        public long LastFailedTime { get; set; }
-
-        public CacheList<CombatMatchUserData> RivalList { get; set; }
-
-        // public CacheList<JPCombatLogData> LogList { get; set; }
-
-
-    }
 
     /// <summary>
     /// 1401_竞技场入口

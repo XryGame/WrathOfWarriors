@@ -86,7 +86,7 @@ namespace GameServer.CsScript.Action
 
             guildData.RemoveMember(member);
             guild.GuildID = string.Empty;
-            ChatRemoteService.SendUserData(basis, guild.GuildID);
+            GlobalRemoteService.SendUserData(basis, guild.GuildID);
 
             receipt = RequestGuildResult.Successfully;
             return true;

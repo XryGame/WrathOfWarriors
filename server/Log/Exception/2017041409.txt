@@ -1,0 +1,323 @@
+Time:2017-04-14 09:43:02:938-Trace>>CheckTableSchema UserTaskCache error:System.Exception: Execute sql error:ALTER TABLE `UserTaskCache` CHANGE `DailyQuestList` `DailyQuestList` longblob ;
+ALTER TABLE `UserTaskCache` CHANGE `ReceiveBoxList` `ReceiveBoxList` longblob ; ---> MySql.Data.MySqlClient.MySqlException: Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Timeout in IO operation
+   在 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   在 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   在 MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   在 ZyGames.Framework.Data.MySql.MySqlDataProvider.<>c__DisplayClass19_0.<CreateColumn>b__0(MySqlConnection conn)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Data.MySql.MySqlDataProvider.<>c__DisplayClass19_0.<CreateColumn>b__0(MySqlConnection conn)
+   在 ZyGames.Framework.Data.MySql.MySqlDataProvider.OpenConnection(Action`1 action)
+   在 ZyGames.Framework.Model.EntitySchemaSet.ModifyTableSchema(SchemaTable schema, DbBaseProvider dbprovider, String tableName, DbColumn[] columns)
+   在 ZyGames.Framework.Model.EntitySchemaSet.CheckTableSchema(SchemaTable schema)
+
+
+Time:2017-04-14 09:45:31:761-Trace>>Get redis "GameServer.Script.Model.DataModel.UserCombatCache" key:"GameServer.Script.Model.DataModel.UserCombatCache_1000136" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.UserCombatCache error ---> System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetValue[T](String redisKey, SchemaTable table, List`1& list, Boolean hasMutilKeyIndexs)
+
+
+Time:2017-04-14 09:45:31:865-Trace>>The data:GameServer.Script.Model.DataModel.UserCombatCache_1000136 loaded  from redis fail.
+   at ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.Boolean TryReceiveData[T](ZyGames.Framework.Net.TransReceiveParam, System.Collections.Generic.List`1[T] ByRef)
+   at ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Boolean TryLoadCache(System.String, ZyGames.Framework.Net.TransReceiveParam, Int32, Boolean)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Boolean ProcessLoadParam(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean LoadItem(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetCacheItem[TValue](System.String, Boolean, TValue ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetGroup(System.String, ZyGames.Framework.Cache.Generic.BaseCollection ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.ZyGames.Framework.Model.LoadingStatus TryFindKey(System.String, T ByRef, System.Object[])
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.T FindKey(System.String, System.Object[])
+   at GameServer.Script.Model.DataModel.UserHelper.GameServer.Script.Model.DataModel.UserCombatCache FindUserCombat(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 236
+   at GameServer.Script.Model.DataModel.UserHelper.Void RestoreUserData(Int32, Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 296
+   at GameServer.Script.Model.DataModel.UserHelper.Void UserOnline(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 475
+   at GameServer.CsScript.Action.Action1004.Boolean TakeAction() file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:line 109
+   at ZyGames.Framework.Game.Service.BaseStruct.Boolean DoAction()
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Process(ZyGames.Framework.Game.Service.BaseStruct, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Request(System.String, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost+<ProcessPackage>d__26.Void MoveNext()
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Void Start[TStateMachine](TStateMachine ByRef)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.System.Threading.Tasks.Task ProcessPackage(ZyGames.Framework.Game.Contract.RequestPackage, ZyGames.Framework.Game.Contract.GameSession)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ISocket, ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void IO_Completed(System.Object, System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Threading.ExecutionContext.Void RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void FinishOperationSuccess(System.Net.Sockets.SocketError, Int32, System.Net.Sockets.SocketFlags)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void CompletionPortCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+   at System.Threading._IOCompletionCallback.Void PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+
+
+
+Time:2017-04-14 09:45:31:872-Trace>>Try load cache data:GameServer.Script.Model.DataModel.UserCombatCache error.
+
+
+Time:2017-04-14 09:45:31:906-Trace>>Action1004 error:System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   在 ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Serialize(Object obj)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.SendSync(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Update(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Add(T t, Int32 period)
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUserCombat(Int32 userid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 242
+   在 GameServer.Script.Model.DataModel.UserHelper.RestoreUserData(Int32 uid, Int32 restoreCount) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 296
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOnline(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 475
+   在 GameServer.CsScript.Action.Action1004.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:行号 109.
+Url:?d=MsgId%3D3%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26OpenId%3Duser1492070649000%26RetailID%3D0000%26ServerID%3D1%26sign%3Dd8b1869ddfe30ccdf769a1b589af68d8, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:6254
+
+
+Time:2017-04-14 09:45:38:192-Trace>>Get redis "GameServer.Script.Model.DataModel.UserCombatCache" key:"GameServer.Script.Model.DataModel.UserCombatCache_1000057" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.UserCombatCache error ---> System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetValue[T](String redisKey, SchemaTable table, List`1& list, Boolean hasMutilKeyIndexs)
+
+
+Time:2017-04-14 09:45:38:202-Trace>>The data:GameServer.Script.Model.DataModel.UserCombatCache_1000057 loaded  from redis fail.
+   at ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.Boolean TryReceiveData[T](ZyGames.Framework.Net.TransReceiveParam, System.Collections.Generic.List`1[T] ByRef)
+   at ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Boolean TryLoadCache(System.String, ZyGames.Framework.Net.TransReceiveParam, Int32, Boolean)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Boolean ProcessLoadParam(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean LoadItem(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetCacheItem[TValue](System.String, Boolean, TValue ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetGroup(System.String, ZyGames.Framework.Cache.Generic.BaseCollection ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.ZyGames.Framework.Model.LoadingStatus TryFindKey(System.String, T ByRef, System.Object[])
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.T FindKey(System.String, System.Object[])
+   at GameServer.Script.Model.DataModel.UserHelper.GameServer.Script.Model.DataModel.UserCombatCache FindUserCombat(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 236
+   at GameServer.Script.Model.DataModel.UserHelper.Void RestoreUserData(Int32, Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 296
+   at GameServer.Script.Model.DataModel.UserHelper.Void UserOnline(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 475
+   at GameServer.CsScript.Action.Action1004.Boolean TakeAction() file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:line 109
+   at ZyGames.Framework.Game.Service.BaseStruct.Boolean DoAction()
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Process(ZyGames.Framework.Game.Service.BaseStruct, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Request(System.String, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost+<ProcessPackage>d__26.Void MoveNext()
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Void Start[TStateMachine](TStateMachine ByRef)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.System.Threading.Tasks.Task ProcessPackage(ZyGames.Framework.Game.Contract.RequestPackage, ZyGames.Framework.Game.Contract.GameSession)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ISocket, ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void IO_Completed(System.Object, System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Threading.ExecutionContext.Void RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void FinishOperationSuccess(System.Net.Sockets.SocketError, Int32, System.Net.Sockets.SocketFlags)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void CompletionPortCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+   at System.Threading._IOCompletionCallback.Void PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+
+
+
+Time:2017-04-14 09:45:38:223-Trace>>Try load cache data:GameServer.Script.Model.DataModel.UserCombatCache error.
+
+
+Time:2017-04-14 09:45:38:225-Trace>>Action1004 error:System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   在 ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Serialize(Object obj)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.SendSync(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Update(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Add(T t, Int32 period)
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUserCombat(Int32 userid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 242
+   在 GameServer.Script.Model.DataModel.UserHelper.RestoreUserData(Int32 uid, Int32 restoreCount) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 296
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOnline(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 475
+   在 GameServer.CsScript.Action.Action1004.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:行号 109.
+Url:?d=MsgId%3D2%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26OpenId%3Duser1491035210000%26RetailID%3D0000%26ServerID%3D1%26sign%3D5bafe46f458d5c9c355cd04e394c57bd, Uid:1000057, Pid:user1491035210000
+Host:168.254.0.101:50374
+
+
+Time:2017-04-14 09:46:13:623-Trace>>Get redis "GameServer.Script.Model.DataModel.UserCombatCache" key:"GameServer.Script.Model.DataModel.UserCombatCache_1000136" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.UserCombatCache error ---> System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetValue[T](String redisKey, SchemaTable table, List`1& list, Boolean hasMutilKeyIndexs)
+
+
+Time:2017-04-14 09:46:13:640-Trace>>The data:GameServer.Script.Model.DataModel.UserCombatCache_1000136 loaded  from redis fail.
+   at ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.Boolean TryReceiveData[T](ZyGames.Framework.Net.TransReceiveParam, System.Collections.Generic.List`1[T] ByRef)
+   at ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Boolean TryLoadCache(System.String, ZyGames.Framework.Net.TransReceiveParam, Int32, Boolean)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Boolean ProcessLoadParam(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean LoadItem(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetCacheItem[TValue](System.String, Boolean, TValue ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetGroup(System.String, ZyGames.Framework.Cache.Generic.BaseCollection ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.ZyGames.Framework.Model.LoadingStatus TryFindKey(System.String, T ByRef, System.Object[])
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.T FindKey(System.String, System.Object[])
+   at GameServer.Script.Model.DataModel.UserHelper.GameServer.Script.Model.DataModel.UserCombatCache FindUserCombat(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 236
+   at GameServer.Script.Model.DataModel.UserHelper.Void RestoreUserData(Int32, Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 296
+   at GameServer.Script.Model.DataModel.UserHelper.Void UserOnline(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 475
+   at GameServer.CsScript.Action.Action1004.Boolean TakeAction() file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:line 109
+   at ZyGames.Framework.Game.Service.BaseStruct.Boolean DoAction()
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Process(ZyGames.Framework.Game.Service.BaseStruct, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Request(System.String, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost+<ProcessPackage>d__26.Void MoveNext()
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Void Start[TStateMachine](TStateMachine ByRef)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.System.Threading.Tasks.Task ProcessPackage(ZyGames.Framework.Game.Contract.RequestPackage, ZyGames.Framework.Game.Contract.GameSession)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ISocket, ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void IO_Completed(System.Object, System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Threading.ExecutionContext.Void RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void FinishOperationSuccess(System.Net.Sockets.SocketError, Int32, System.Net.Sockets.SocketFlags)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void CompletionPortCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+   at System.Threading._IOCompletionCallback.Void PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+
+
+
+Time:2017-04-14 09:46:13:663-Trace>>Try load cache data:GameServer.Script.Model.DataModel.UserCombatCache error.
+
+
+Time:2017-04-14 09:46:13:679-Trace>>Action1004 error:System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   在 ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Serialize(Object obj)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.SendSync(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Update(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Add(T t, Int32 period)
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUserCombat(Int32 userid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 242
+   在 GameServer.Script.Model.DataModel.UserHelper.RestoreUserData(Int32 uid, Int32 restoreCount) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 296
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOnline(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 475
+   在 GameServer.CsScript.Action.Action1004.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:行号 109.
+Url:?d=MsgId%3D5%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26OpenId%3Duser1492070649000%26RetailID%3D0000%26ServerID%3D1%26sign%3Dac6cab25c3c26a030c9c345f1c14999d, Uid:1000136, Pid:user1492070649000
+Host:168.254.0.234:6272
+
+
+Time:2017-04-14 09:46:21:397-Trace>>Get redis "GameServer.Script.Model.DataModel.UserCombatCache" key:"GameServer.Script.Model.DataModel.UserCombatCache_1000057" cache error:System.Exception: ProtoBuf deserialize type:GameServer.Script.Model.DataModel.UserCombatCache error ---> System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Deserialize(Int32 key, Object value, ProtoReader source)
+   在 ProtoBuf.Meta.TypeModel.DeserializeCore(ProtoReader reader, Type type, Object value, Boolean noAutoCreate)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Deserialize(Stream source, Object value, Type type)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.DeserializeAutoGZip(Byte[] data, Type type, Boolean isGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Deserialize(Byte[] data, Type type)
+   在 ZyGames.Framework.Redis.RedisConnectionPool.TryGetValue[T](String redisKey, SchemaTable table, List`1& list, Boolean hasMutilKeyIndexs)
+
+
+Time:2017-04-14 09:46:21:408-Trace>>The data:GameServer.Script.Model.DataModel.UserCombatCache_1000057 loaded  from redis fail.
+   at ZyGames.Framework.Cache.Generic.Pool.BaseCachePool.Boolean TryReceiveData[T](ZyGames.Framework.Net.TransReceiveParam, System.Collections.Generic.List`1[T] ByRef)
+   at ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Boolean TryLoadCache(System.String, ZyGames.Framework.Net.TransReceiveParam, Int32, Boolean)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Boolean ProcessLoadParam(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean LoadItem(System.String, Boolean)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetCacheItem[TValue](System.String, Boolean, TValue ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.EntityContainer`1.Boolean TryGetGroup(System.String, ZyGames.Framework.Cache.Generic.BaseCollection ByRef, ZyGames.Framework.Model.LoadingStatus ByRef)
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.ZyGames.Framework.Model.LoadingStatus TryFindKey(System.String, T ByRef, System.Object[])
+   at ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.T FindKey(System.String, System.Object[])
+   at GameServer.Script.Model.DataModel.UserHelper.GameServer.Script.Model.DataModel.UserCombatCache FindUserCombat(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 236
+   at GameServer.Script.Model.DataModel.UserHelper.Void RestoreUserData(Int32, Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 296
+   at GameServer.Script.Model.DataModel.UserHelper.Void UserOnline(Int32) file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:line 475
+   at GameServer.CsScript.Action.Action1004.Boolean TakeAction() file e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:line 109
+   at ZyGames.Framework.Game.Service.BaseStruct.Boolean DoAction()
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Process(ZyGames.Framework.Game.Service.BaseStruct, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.ActionFactory.Void Request(System.String, ZyGames.Framework.Game.Service.ActionGetter, ZyGames.Framework.Game.Service.BaseGameResponse)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost+<ProcessPackage>d__26.Void MoveNext()
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Void Start[TStateMachine](TStateMachine ByRef)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.System.Threading.Tasks.Task ProcessPackage(ZyGames.Framework.Game.Contract.RequestPackage, ZyGames.Framework.Game.Contract.GameSession)
+   at ZyGames.Framework.Game.Contract.GameWebSocketHost.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ISocket, ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void OnDataReceived(ZyGames.Framework.RPC.Sockets.ConnectionEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void ProcessReceive(System.Net.Sockets.SocketAsyncEventArgs)
+   at ZyGames.Framework.RPC.Sockets.SocketListener.Void IO_Completed(System.Object, System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)
+   at System.Threading.ExecutionContext.Void RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void FinishOperationSuccess(System.Net.Sockets.SocketError, Int32, System.Net.Sockets.SocketFlags)
+   at System.Net.Sockets.SocketAsyncEventArgs.Void CompletionPortCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+   at System.Threading._IOCompletionCallback.Void PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)
+
+
+
+Time:2017-04-14 09:46:21:437-Trace>>Try load cache data:GameServer.Script.Model.DataModel.UserCombatCache error.
+
+
+Time:2017-04-14 09:46:21:439-Trace>>Action1004 error:System.InvalidOperationException: Duplicate field-number detected; 5 on: GameServer.Script.Model.DataModel.UserCombatCache
+   在 ProtoBuf.Serializers.TypeSerializer..ctor(TypeModel model, Type forType, Int32[] fieldNumbers, IProtoSerializer[] serializers, MethodInfo[] baseCtorCallbacks, Boolean isRootType, Boolean useConstructor, CallbackSet callbacks, Type constructType, MethodInfo factory)
+   在 ProtoBuf.Meta.MetaType.BuildSerializer()
+   在 ProtoBuf.Meta.MetaType.get_Serializer()
+   在 ProtoBuf.Meta.RuntimeTypeModel.Serialize(Int32 key, Object value, ProtoWriter dest)
+   在 ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   在 ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value)
+   在 ZyGames.Framework.Common.Serialization.ProtoBufUtils.SerializeAutoGZip(Object obj, Boolean autoUseGzip)
+   在 ZyGames.Framework.Common.Serialization.ProtobufCacheSerializer.Serialize(Object obj)
+   在 ZyGames.Framework.Cache.Generic.DataSyncQueueManager.SendSync(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.BaseCacheStruct`1.Update(IEnumerable`1 entityList)
+   在 ZyGames.Framework.Cache.Generic.PersonalCacheStruct`1.Add(T t, Int32 period)
+   在 GameServer.Script.Model.DataModel.UserHelper.FindUserCombat(Int32 userid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 242
+   在 GameServer.Script.Model.DataModel.UserHelper.RestoreUserData(Int32 uid, Int32 restoreCount) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 296
+   在 GameServer.Script.Model.DataModel.UserHelper.UserOnline(Int32 uid) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Com\UserHelper.cs:行号 475
+   在 GameServer.CsScript.Action.Action1004.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1004.cs:行号 109.
+Url:?d=MsgId%3D2%26Sid%3D%26Uid%3D0%26St%3Dst%26ActionId%3D1004%26OpenId%3Duser1491035210000%26RetailID%3D0000%26ServerID%3D1%26sign%3D5bafe46f458d5c9c355cd04e394c57bd, Uid:1000057, Pid:user1491035210000
+Host:168.254.0.101:50390
+
+
+Time:2017-04-14 09:52:00:202-Trace>>Action1403 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendChat(RequestParam param, String content) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 128
+   在 GameServer.CsScript.Remote.ChatRemoteService.SendSystemChat(Int32 receiver, String content) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 44
+   在 GameServer.CsScript.Action.Action1403.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1403.cs:行号 146
+   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
+Url:?d=MsgId%3D9%26Sid%3Ds_855f318fd36c407c88b5ad3c974403d2%7C2%7C1%26Uid%3D1000141%26St%3Dst%26ActionId%3D1403%26Result%3D0%26sign%3D126f6639cf0090236de4e9a77205edd8, Uid:1000141, Pid:user1492134571000
+Host:168.254.0.101:50611
+
+

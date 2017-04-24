@@ -1,0 +1,435 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:10:17 Server is starting...
+17:10:18 Redis server connect successfully.
+17:10:21 DB server connect successfully.
+17:10:24 Start checking table schema, please wait.
+17:10:28 Check table schema successfully.
+17:10:28 script compiled successfully.
+17:10:28 CacheFactory listen has started...
+17:10:28 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:10:28:159-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:10:28:160-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:10:28:160-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:10:28:168-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:10:29:042-消息：系统加载单服配置所需时间:872.9064ms
+
+
+Time:2017-04-18 17:10:29:095-The ranking refresh is start...
+
+
+Time:2017-04-18 17:10:29:107-Trace>>The CombatRanking has be loaded, count:154
+
+
+Time:2017-04-18 17:10:29:114-Trace>>The LevelRanking has be loaded, count:154
+
+
+Time:2017-04-18 17:10:29:119-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:10:29:119-The ranking refresh is end.
+
+
+Time:2017-04-18 17:10:29:129-消息：系统全局运行环境加载所需时间:971.6945ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:10:29 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:18:44 Server is starting...
+17:18:45 Redis server connect successfully.
+17:18:48 DB server connect successfully.
+17:18:51 Start checking table schema, please wait.
+17:18:55 Check table schema successfully.
+17:18:55 script compiled successfully.
+17:18:55 CacheFactory listen has started...
+17:18:55 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:18:55:485-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:18:55:486-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:18:55:487-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:18:55:496-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:18:56:378-消息：系统加载单服配置所需时间:881.4955ms
+
+
+Time:2017-04-18 17:18:56:421-The ranking refresh is start...
+
+
+Time:2017-04-18 17:18:56:432-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:18:56:438-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:18:56:441-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:18:56:442-The ranking refresh is end.
+
+
+Time:2017-04-18 17:18:56:453-消息：系统全局运行环境加载所需时间:969.5355ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:18:56 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:23:36 Server is starting...
+17:23:37 Redis server connect successfully.
+17:23:40 DB server connect successfully.
+17:23:43 Start checking table schema, please wait.
+17:23:47 Check table schema successfully.
+17:23:47 script compiled successfully.
+17:23:47 CacheFactory listen has started...
+17:23:47 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:23:47:762-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:23:47:763-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:23:47:763-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:23:47:779-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:23:48:705-消息：系统加载单服配置所需时间:924.2338ms
+
+
+Time:2017-04-18 17:23:48:757-The ranking refresh is start...
+
+
+Time:2017-04-18 17:23:48:768-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:23:48:778-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:23:48:792-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:23:48:793-The ranking refresh is end.
+
+
+Time:2017-04-18 17:23:48:805-消息：系统全局运行环境加载所需时间:1044.1086ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:23:49 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:31:52 Server is starting...
+17:31:53 Redis server connect successfully.
+17:31:56 DB server connect successfully.
+17:31:59 Start checking table schema, please wait.
+17:32:03 Check table schema successfully.
+17:32:03 script compiled successfully.
+17:32:03 CacheFactory listen has started...
+17:32:03 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:32:03:546-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:32:03:547-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:32:03:547-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:32:03:559-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:32:04:772-消息：系统加载单服配置所需时间:1209.1604ms
+
+
+Time:2017-04-18 17:32:04:859-The ranking refresh is start...
+
+
+Time:2017-04-18 17:32:04:881-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:32:04:921-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:32:04:928-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:32:04:934-The ranking refresh is end.
+
+
+Time:2017-04-18 17:32:04:955-消息：系统全局运行环境加载所需时间:1410.4206ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:32:05 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:36:22 Server is starting...
+17:36:23 Redis server connect successfully.
+17:36:26 DB server connect successfully.
+17:36:29 Start checking table schema, please wait.
+17:36:33 Check table schema successfully.
+17:36:33 script compiled successfully.
+17:36:33 CacheFactory listen has started...
+17:36:33 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:36:33:789-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:36:33:791-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:36:33:793-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:36:33:802-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:36:34:649-消息：系统加载单服配置所需时间:846.6091ms
+
+
+Time:2017-04-18 17:36:34:704-The ranking refresh is start...
+
+
+Time:2017-04-18 17:36:34:720-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:36:34:732-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:36:34:736-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:36:34:747-The ranking refresh is end.
+
+
+Time:2017-04-18 17:36:34:761-消息：系统全局运行环境加载所需时间:976.1696ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:36:35 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,2
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Update script file count:1.
+17:40:06 csharp script compile start...
+Update script file count:1.
+17:40:17 csharp script compile start...
+17:40:18 csharp script compiled successfully.
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Update script file count:1.
+17:40:44 csharp script compile start...
+17:40:45 csharp script compiled successfully.
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:41:03 Server is starting...
+17:41:03 Redis server connect successfully.
+17:41:06 DB server connect successfully.
+17:41:10 Start checking table schema, please wait.
+17:41:13 Check table schema successfully.
+17:41:13 script compiled successfully.
+17:41:13 CacheFactory listen has started...
+17:41:13 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:41:13:984-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:41:13:984-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:41:13:985-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:41:13:993-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:41:14:751-消息：系统加载单服配置所需时间:756.4396ms
+
+
+Time:2017-04-18 17:41:14:791-The ranking refresh is start...
+
+
+Time:2017-04-18 17:41:14:802-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:41:14:810-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:41:14:813-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:41:14:814-The ranking refresh is end.
+
+
+Time:2017-04-18 17:41:14:823-消息：系统全局运行环境加载所需时间:839.9389ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:41:15 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 1
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+17:55:24 Server is starting...
+17:55:25 Redis server connect successfully.
+17:55:28 DB server connect successfully.
+17:55:31 Start checking table schema, please wait.
+17:55:35 Check table schema successfully.
+17:55:35 script compiled successfully.
+17:55:35 CacheFactory listen has started...
+17:55:35 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-04-18 17:55:35:323-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-04-18 17:55:35:324-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-04-18 17:55:35:325-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-04-18 17:55:35:332-消息：系统加载单服配置开始...
+
+
+Time:2017-04-18 17:55:36:244-消息：系统加载单服配置所需时间:911.2343ms
+
+
+Time:2017-04-18 17:55:36:297-The ranking refresh is start...
+
+
+Time:2017-04-18 17:55:36:309-Trace>>The CombatRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:55:36:317-Trace>>The LevelRanking has be loaded, count:155
+
+
+Time:2017-04-18 17:55:36:323-Trace>>The GuildRanking has be loaded, count:14
+
+
+Time:2017-04-18 17:55:36:323-The ranking refresh is end.
+
+
+Time:2017-04-18 17:55:36:336-消息：系统全局运行环境加载所需时间:1013.9378ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+17:55:36 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1
+Submit server status successful:http://www.imsgame.com:81,Unhindered,1

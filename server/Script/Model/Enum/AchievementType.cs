@@ -20,18 +20,22 @@ namespace GameServer.Script.Model.Enum
         /// 镶嵌宝石
         /// </summary>
         InlayGem,
+        ///// <summary>
+        ///// 开启战魂
+        ///// </summary>
+        //OpenSoul,
         /// <summary>
-        /// 开启战魂
+        /// 升级精灵
         /// </summary>
-        OpenSoul,
+        UpgradeElf,
         /// <summary>
         /// 竞技名次
         /// </summary>
         CombatRandID,
         /// <summary>
-        /// 好友切磋
+        /// 竞技场匹配
         /// </summary>
-        FriendCompare,
+        CombatMatch,
         /// <summary>
         /// 获取金币
         /// </summary>
@@ -40,6 +44,7 @@ namespace GameServer.Script.Model.Enum
         /// 钻石
         /// </summary>
         Diamond,
+
 
     }
 }

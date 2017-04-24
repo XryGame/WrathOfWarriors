@@ -68,7 +68,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum);
+                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum, UpdateDiamondType.Other);
                     }
                     break;
                 case TaskAwardType.Item:

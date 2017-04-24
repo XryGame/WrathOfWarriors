@@ -124,7 +124,7 @@ namespace GameServer.CsScript.Base
             //    competition64.Initialize();
             //}
 
-            ChatRemoteService.Reuest();
+            GlobalRemoteService.Reuest();
 
             stopwatch.Stop();
             new BaseLog().SaveLog("系统全局运行环境加载所需时间:" + stopwatch.Elapsed.TotalMilliseconds + "ms");
@@ -144,7 +144,7 @@ namespace GameServer.CsScript.Base
 
             RankingFactory.Add(new CombatRanking());
             RankingFactory.Add(new LevelRanking());
-            RankingFactory.Add(new FightValueRanking());
+            //RankingFactory.Add(new FightValueRanking());
             RankingFactory.Add(new GuildRanking());
             RankingFactory.Start(timeOut);
 

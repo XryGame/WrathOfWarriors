@@ -71,7 +71,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(taskcfg.RewardsNum));
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(taskcfg.RewardsNum), UpdateDiamondType.Other);
                     }
                     break;
                 case TaskAwardType.Item:

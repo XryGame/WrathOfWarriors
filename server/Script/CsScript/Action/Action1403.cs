@@ -21,21 +21,6 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
-    public class CombatFightEndData
-    {
-        public EventStatus Result { get; set; }
-
-        public int CurrRankId { get; set; }
-
-        public int RankRise { get; set; }
-
-        public long LastFailedTime { get; set; }
-
-        public int AwardDiamond { get; set; }
-
-        public int CurrDiamond { get; set; }
-    }
-
     /// <summary>
     /// 1403_竞技场挑战结果
     /// </summary>
@@ -128,7 +113,7 @@ namespace GameServer.CsScript.Action
                 if (GetBasis.CombatRankID <= 10)
                 {
                     string context = string.Format("恭喜 {0} 成为竞技场排名第{1}名，引来众人羡煞的目光！", GetBasis.NickName, rankinfo.RankId);
-                    ChatRemoteService.SendNotice(NoticeMode.World, context);
+                    GlobalRemoteService.SendNotice(NoticeMode.World, context);
                     //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
                     //var chatService = new TryXChatService();
@@ -158,7 +143,7 @@ namespace GameServer.CsScript.Action
             GetCombat.PushCombatLog(log);
 
             string content = UserHelper.FormatCombatLog(log);
-            ChatRemoteService.SendSystemChat(Current.UserId, content);
+            GlobalRemoteService.SendSystemChat(Current.UserId, content);
 
 
             CombatLogData rivallog = new CombatLogData();
@@ -172,7 +157,7 @@ namespace GameServer.CsScript.Action
             UserHelper.FindUserCombat(rival.UserID).PushCombatLog(rivallog);
 
             content = UserHelper.FormatCombatLog(rivallog);
-            ChatRemoteService.SendSystemChat(rival.UserID, content);
+            GlobalRemoteService.SendSystemChat(rival.UserID, content);
 
             rankinfo.IsFighting = false;
             rankinfo.FightDestUid = 0;
@@ -186,7 +171,7 @@ namespace GameServer.CsScript.Action
             if (result == EventStatus.Good)
             {
                 receipt.AwardDiamond = ConfigEnvSet.GetInt("User.CombatWinAward");
-                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond);
+                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond, UpdateDiamondType.Other);
             }
             receipt.CurrDiamond = GetBasis.DiamondNum;
 

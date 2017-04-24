@@ -30,6 +30,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int VipLv { get; set; }
         
+        public int CombatRankID { get; set; }
 
 
         public UserAttributeCache Attribute { get; set; }
@@ -59,6 +60,8 @@ namespace GameServer.CsScript.JsonProtocol
         public UserPayCache Pay { get; set; }
 
         public UserCombatCache Combat { get; set; }
+
+        public UserElfCache Elf { get; set; }
 
         //public JPStudyData StudyData { get; set; }
 

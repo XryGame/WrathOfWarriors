@@ -56,7 +56,8 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
-            if (GetSkill.CarryList.Count >= 2 || GetSkill.CarryList.Find(t => t == skillId) != 0)
+            int carryMaxCount = ConfigEnvSet.GetInt("User.CarrySkillNum");
+            if (GetSkill.CarryList.Count >= carryMaxCount || GetSkill.CarryList.Find(t => t == skillId) != 0)
             {
                 return false;
             }

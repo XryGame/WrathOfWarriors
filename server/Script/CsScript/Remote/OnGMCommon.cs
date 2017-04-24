@@ -100,6 +100,51 @@ namespace GameServer.CsScript.Remote
                 {
                     parms.TryGetValue("ID", out _OperateName);
 
+                    if (_OperateName == "LevelRankingData")
+                    {
+                        parms.TryGetValue("UserID", out _value);
+                        int UserId = _value.ToInt();
+                        parms.TryGetValue("UserName", out _value);
+                        string UserName = _value;
+
+
+                        var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
+                        if (user == null)
+                        {
+                            user = new ShareCacheStruct<UserCenterUser>().Find(t => t.NickName == UserName);
+                            if (user == null)
+                            {
+                                bone.AddStrBone("没有找到该用户");
+                                break;
+                            }
+                            UserId = user.UserID;
+                        }
+
+                        var basis = UserHelper.FindUserBasis(UserId);
+                        if (basis == null)
+                        {
+                            bone.AddStrBone("没有找到该用户");
+                            break;
+                        }
+
+                        var pay = UserHelper.FindUserPay(UserId);
+                        var attribute = UserHelper.FindUserAttribute(UserId);
+                        var friend = UserHelper.FindUserFriends(UserId);
+
+                        param.AddParam("UserID", basis.UserID.ToString());
+                        param.AddParam("UserName", basis.NickName);
+                        param.AddParam("UserLv", basis.UserLv.ToString());
+                        param.AddParam("VipLv", basis.VipLv.ToString());
+                        param.AddParam("PayAmount", pay.PayMoney.ToString());
+                        param.AddParam("RetailID", user.RetailID);
+                        param.AddParam("CreateDate", Util.FormatDate(basis.CreateDate));
+                        param.AddParam("LastLoginDate", Util.FormatDate(basis.LoginDate));
+                        param.AddParam("LoginNum", user.LoginNum.ToString());
+                        param.AddParam("FightValue", attribute.FightValue.ToString());
+                        param.AddParam("CombatRankID", basis.CombatRankID.ToString());
+                        param.AddParam("GuildName", "暂无公会");
+                        param.AddParam("FriendNum", friend.FriendsList.Count.ToString());
+                    }
                     if (_OperateName == "Query")
                     {
                         parms.TryGetValue("UserID", out _value);
@@ -294,7 +339,7 @@ namespace GameServer.CsScript.Remote
                         if (DiamondNum > 0)
                         {
                             DiamondNum = Math.Min(DiamondNum, 1000000);
-                            UserHelper.RewardsDiamond(UserId, DiamondNum);
+                            UserHelper.RewardsDiamond(UserId, DiamondNum, UpdateDiamondType.Other);
                         }
                         if (AddItemID > 0 && AddItemNum > 0)
                         {
@@ -313,7 +358,7 @@ namespace GameServer.CsScript.Remote
                             var paycfg = new ShareCacheStruct<Config_Pay>().FindKey(PayID);
                             if (paycfg != null)
                             {
-                                if (!UserHelper.OnPay(UserId, PayID))
+                                if (!UserHelper.OnWebPay(UserId, PayID))
                                 {
                                     bone.AddStrBone("发货失败");
                                 }
@@ -429,7 +474,7 @@ namespace GameServer.CsScript.Remote
                         parms.TryGetValue("Content", out Content);
                         if (!string.IsNullOrEmpty(Content))
                         {
-                            ChatRemoteService.SendNotice(Mode, Content);
+                            GlobalRemoteService.SendNotice(Mode, Content);
                         }
                     }
                     else

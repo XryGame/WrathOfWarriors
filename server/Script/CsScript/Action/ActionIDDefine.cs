@@ -261,6 +261,11 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1100 = 1100;
 
+        ///<summary>
+        ///出售背包物品
+        ///</summary>
+        public const short Cst_Action1101 = 1101;
+
 
         ///<summary>
         ///掉落金币
@@ -352,6 +357,21 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1160 = 1160;
 
+        ///<summary>
+        ///精灵升级
+        ///</summary>
+        public const short Cst_Action1170 = 1170;
+
+        ///<summary>
+        ///精灵出战
+        ///</summary>
+        public const short Cst_Action1171 = 1171;
+
+        ///<summary>
+        ///精灵卸载
+        ///</summary>
+        public const short Cst_Action1172 = 1172;
+
 
         ///<summary>
         ///竞技场入口
@@ -377,7 +397,21 @@ namespace GameServer.CsScript.Action
         ///竞技场购买挑战次数
         ///</summary>
         public const short Cst_Action1405 = 1405;
-       
+
+        ///<summary>
+        ///竞技场匹配
+        ///</summary>
+        public const short Cst_Action1406 = 1406;
+
+        ///<summary>
+        ///竞技场匹配战斗完毕
+        ///</summary>
+        public const short Cst_Action1407 = 1407;
+
+        ///<summary>
+        ///竞技场购买匹配次数
+        ///</summary>
+        public const short Cst_Action1408 = 1408;
 
         ///<summary>
         ///请求好友在线状态

@@ -80,11 +80,13 @@ namespace GameServer.Script.CsScript.Com
         /// 钻石改变通知
         /// </summary>
         /// <param name="session"></param>
-        public static void UserDiamondChangedNotification(GameSession session)
+        public static void UserDiamondChangedNotification(GameSession session, UpdateDiamondType updateType)
         {
             if (session == null || !session.Connected)
                 return;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, null, OpCode.Text, null);
+            var parameters = new Parameters();
+            parameters["UpdateType"] = updateType;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
         }
 
@@ -92,11 +94,13 @@ namespace GameServer.Script.CsScript.Com
         /// 金币改变通知
         /// </summary>
         /// <param name="session"></param>
-        public static void UserGoldChangedNotification(GameSession session)
+        public static void UserGoldChangedNotification(GameSession session, UpdateGoldType updateType)
         {
             if (session == null || !session.Connected)
                 return;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1049, session, null, OpCode.Text, null);
+            var parameters = new Parameters();
+            parameters["UpdateType"] = updateType;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1049, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1049, packet, (rsession, asyncResult) => { }, 0);
         }
 

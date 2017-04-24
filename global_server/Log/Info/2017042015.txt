@@ -1,0 +1,897 @@
+Time:2017-04-20 15:00:00:067-消息：全服排名开始...
+
+
+Time:2017-04-20 15:00:00:079-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:00:00:081-消息：全服排名消耗时间:12.4462ms
+
+
+Time:2017-04-20 15:00:06:289-The ranking refresh is start...
+
+
+Time:2017-04-20 15:00:06:290-The ranking refresh is end.
+
+
+Time:2017-04-20 15:01:00:031-消息：全服排名开始...
+
+
+Time:2017-04-20 15:01:00:037-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:01:00:038-消息：全服排名消耗时间:6.394ms
+
+
+Time:2017-04-20 15:01:06:305-The ranking refresh is start...
+
+
+Time:2017-04-20 15:01:06:306-The ranking refresh is end.
+
+
+Time:2017-04-20 15:02:00:089-消息：全服排名开始...
+
+
+Time:2017-04-20 15:02:00:093-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:02:00:093-消息：全服排名消耗时间:3.6938ms
+
+
+Time:2017-04-20 15:02:06:321-The ranking refresh is start...
+
+
+Time:2017-04-20 15:02:06:321-The ranking refresh is end.
+
+
+Time:2017-04-20 15:03:00:047-消息：全服排名开始...
+
+
+Time:2017-04-20 15:03:00:057-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:03:00:058-消息：全服排名消耗时间:10.4455ms
+
+
+Time:2017-04-20 15:03:06:336-The ranking refresh is start...
+
+
+Time:2017-04-20 15:03:06:336-The ranking refresh is end.
+
+
+15:03:26 Clear expired cache end.
+Time:2017-04-20 15:04:00:020-消息：全服排名开始...
+
+
+Time:2017-04-20 15:04:00:028-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:04:00:029-消息：全服排名消耗时间:8.6808ms
+
+
+Time:2017-04-20 15:04:06:352-The ranking refresh is start...
+
+
+Time:2017-04-20 15:04:06:353-The ranking refresh is end.
+
+
+Time:2017-04-20 15:05:00:088-消息：全服排名开始...
+
+
+Time:2017-04-20 15:05:00:093-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:05:00:094-消息：全服排名消耗时间:4.8616ms
+
+
+Time:2017-04-20 15:05:06:368-The ranking refresh is start...
+
+
+Time:2017-04-20 15:05:06:369-The ranking refresh is end.
+
+
+Time:2017-04-20 15:06:00:050-消息：全服排名开始...
+
+
+Time:2017-04-20 15:06:00:053-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:06:00:054-消息：全服排名消耗时间:3.6369ms
+
+
+Time:2017-04-20 15:06:06:396-The ranking refresh is start...
+
+
+Time:2017-04-20 15:06:06:396-The ranking refresh is end.
+
+
+Time:2017-04-20 15:07:00:002-消息：全服排名开始...
+
+
+Time:2017-04-20 15:07:00:006-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:07:00:007-消息：全服排名消耗时间:4.42ms
+
+
+Time:2017-04-20 15:07:06:413-The ranking refresh is start...
+
+
+Time:2017-04-20 15:07:06:414-The ranking refresh is end.
+
+
+Time:2017-04-20 15:08:00:081-消息：全服排名开始...
+
+
+Time:2017-04-20 15:08:00:090-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:08:00:090-消息：全服排名消耗时间:8.3937ms
+
+
+Time:2017-04-20 15:08:06:429-The ranking refresh is start...
+
+
+Time:2017-04-20 15:08:06:429-The ranking refresh is end.
+
+
+Time:2017-04-20 15:09:00:012-消息：全服排名开始...
+
+
+Time:2017-04-20 15:09:00:016-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:09:00:016-消息：全服排名消耗时间:4.1979ms
+
+
+Time:2017-04-20 15:09:06:432-The ranking refresh is start...
+
+
+Time:2017-04-20 15:09:06:432-The ranking refresh is end.
+
+
+Time:2017-04-20 15:10:00:084-消息：全服排名开始...
+
+
+Time:2017-04-20 15:10:00:092-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:10:00:093-消息：全服排名消耗时间:8.2314ms
+
+
+Time:2017-04-20 15:10:06:474-The ranking refresh is start...
+
+
+Time:2017-04-20 15:10:06:474-The ranking refresh is end.
+
+
+Time:2017-04-20 15:11:00:043-消息：全服排名开始...
+
+
+Time:2017-04-20 15:11:00:050-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:11:00:051-消息：全服排名消耗时间:6.5146ms
+
+
+Time:2017-04-20 15:11:06:477-The ranking refresh is start...
+
+
+Time:2017-04-20 15:11:06:477-The ranking refresh is end.
+
+
+Time:2017-04-20 15:12:06:505-The ranking refresh is start...
+
+
+Time:2017-04-20 15:12:06:506-The ranking refresh is end.
+
+
+Time:2017-04-20 15:13:00:044-消息：全服排名开始...
+
+
+Time:2017-04-20 15:13:00:048-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:13:00:049-消息：全服排名消耗时间:4.4859ms
+
+
+Time:2017-04-20 15:13:06:537-The ranking refresh is start...
+
+
+Time:2017-04-20 15:13:06:537-The ranking refresh is end.
+
+
+15:13:26 Clear expired cache end.
+Time:2017-04-20 15:14:00:085-消息：全服排名开始...
+
+
+Time:2017-04-20 15:14:00:089-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:14:00:090-消息：全服排名消耗时间:4.3904ms
+
+
+Time:2017-04-20 15:14:06:554-The ranking refresh is start...
+
+
+Time:2017-04-20 15:14:06:555-The ranking refresh is end.
+
+
+Time:2017-04-20 15:15:00:048-消息：全服排名开始...
+
+
+Time:2017-04-20 15:15:00:051-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:15:00:052-消息：全服排名消耗时间:3.7513ms
+
+
+Time:2017-04-20 15:15:06:570-The ranking refresh is start...
+
+
+Time:2017-04-20 15:15:06:571-The ranking refresh is end.
+
+
+Time:2017-04-20 15:16:00:002-消息：全服排名开始...
+
+
+Time:2017-04-20 15:16:00:007-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:16:00:008-消息：全服排名消耗时间:5.6307ms
+
+
+Time:2017-04-20 15:16:06:585-The ranking refresh is start...
+
+
+Time:2017-04-20 15:16:06:585-The ranking refresh is end.
+
+
+Time:2017-04-20 15:17:00:047-消息：全服排名开始...
+
+
+Time:2017-04-20 15:17:00:051-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:17:00:052-消息：全服排名消耗时间:4.6287ms
+
+
+Time:2017-04-20 15:17:06:603-The ranking refresh is start...
+
+
+Time:2017-04-20 15:17:06:603-The ranking refresh is end.
+
+
+Time:2017-04-20 15:18:00:009-消息：全服排名开始...
+
+
+Time:2017-04-20 15:18:00:019-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:18:00:020-消息：全服排名消耗时间:10.4284ms
+
+
+Time:2017-04-20 15:18:06:616-The ranking refresh is start...
+
+
+Time:2017-04-20 15:18:06:616-The ranking refresh is end.
+
+
+Time:2017-04-20 15:19:00:049-消息：全服排名开始...
+
+
+Time:2017-04-20 15:19:00:053-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:19:00:053-消息：全服排名消耗时间:4.2281ms
+
+
+Time:2017-04-20 15:19:06:637-The ranking refresh is start...
+
+
+Time:2017-04-20 15:19:06:637-The ranking refresh is end.
+
+
+Time:2017-04-20 15:20:00:000-消息：全服排名开始...
+
+
+Time:2017-04-20 15:20:00:004-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:20:00:005-消息：全服排名消耗时间:4.8125ms
+
+
+Time:2017-04-20 15:20:06:648-The ranking refresh is start...
+
+
+Time:2017-04-20 15:20:06:648-The ranking refresh is end.
+
+
+Time:2017-04-20 15:21:00:058-消息：全服排名开始...
+
+
+Time:2017-04-20 15:21:00:069-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:21:00:070-消息：全服排名消耗时间:11.4715ms
+
+
+Time:2017-04-20 15:21:06:678-The ranking refresh is start...
+
+
+Time:2017-04-20 15:21:06:678-The ranking refresh is end.
+
+
+Time:2017-04-20 15:22:00:098-消息：全服排名开始...
+
+
+Time:2017-04-20 15:22:00:102-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:22:00:102-消息：全服排名消耗时间:4.2091ms
+
+
+Time:2017-04-20 15:22:06:683-The ranking refresh is start...
+
+
+Time:2017-04-20 15:22:06:683-The ranking refresh is end.
+
+
+Time:2017-04-20 15:23:00:071-消息：全服排名开始...
+
+
+Time:2017-04-20 15:23:00:077-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:23:00:078-消息：全服排名消耗时间:5.8391ms
+
+
+Time:2017-04-20 15:23:06:695-The ranking refresh is start...
+
+
+Time:2017-04-20 15:23:06:695-The ranking refresh is end.
+
+
+15:23:26 Clear expired cache end.
+Time:2017-04-20 15:24:00:028-消息：全服排名开始...
+
+
+Time:2017-04-20 15:24:00:033-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:24:00:034-消息：全服排名消耗时间:5.4644ms
+
+
+Time:2017-04-20 15:24:06:726-The ranking refresh is start...
+
+
+Time:2017-04-20 15:24:06:726-The ranking refresh is end.
+
+
+Time:2017-04-20 15:25:00:059-消息：全服排名开始...
+
+
+Time:2017-04-20 15:25:00:065-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:25:00:066-消息：全服排名消耗时间:6.6564ms
+
+
+Time:2017-04-20 15:25:06:741-The ranking refresh is start...
+
+
+Time:2017-04-20 15:25:06:741-The ranking refresh is end.
+
+
+Time:2017-04-20 15:26:00:008-消息：全服排名开始...
+
+
+Time:2017-04-20 15:26:00:011-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:26:00:012-消息：全服排名消耗时间:3.4643ms
+
+
+Time:2017-04-20 15:26:06:743-The ranking refresh is start...
+
+
+Time:2017-04-20 15:26:06:743-The ranking refresh is end.
+
+
+Time:2017-04-20 15:27:00:069-消息：全服排名开始...
+
+
+Time:2017-04-20 15:27:00:074-Trace>>The LevelRanking has be loaded, count:167
+
+
+Time:2017-04-20 15:27:00:075-消息：全服排名消耗时间:5.7082ms
+
+
+Time:2017-04-20 15:27:06:758-The ranking refresh is start...
+
+
+Time:2017-04-20 15:27:06:758-The ranking refresh is end.
+
+
+Time:2017-04-20 15:28:00:047-消息：全服排名开始...
+
+
+Time:2017-04-20 15:28:00:058-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:28:00:062-消息：全服排名消耗时间:12.356ms
+
+
+Time:2017-04-20 15:28:06:771-The ranking refresh is start...
+
+
+Time:2017-04-20 15:28:06:771-The ranking refresh is end.
+
+
+Time:2017-04-20 15:29:00:093-消息：全服排名开始...
+
+
+Time:2017-04-20 15:29:00:097-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:29:00:098-消息：全服排名消耗时间:4.1954ms
+
+
+Time:2017-04-20 15:29:06:777-The ranking refresh is start...
+
+
+Time:2017-04-20 15:29:06:778-The ranking refresh is end.
+
+
+Time:2017-04-20 15:30:00:056-消息：全服排名开始...
+
+
+Time:2017-04-20 15:30:00:060-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:30:00:061-消息：全服排名消耗时间:4.2524ms
+
+
+Time:2017-04-20 15:30:06:788-The ranking refresh is start...
+
+
+Time:2017-04-20 15:30:06:788-The ranking refresh is end.
+
+
+Time:2017-04-20 15:31:00:008-消息：全服排名开始...
+
+
+Time:2017-04-20 15:31:00:016-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:31:00:017-消息：全服排名消耗时间:7.7263ms
+
+
+Time:2017-04-20 15:31:06:805-The ranking refresh is start...
+
+
+Time:2017-04-20 15:31:06:805-The ranking refresh is end.
+
+
+Time:2017-04-20 15:32:00:070-消息：全服排名开始...
+
+
+Time:2017-04-20 15:32:00:076-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:32:00:076-消息：全服排名消耗时间:5.8124ms
+
+
+Time:2017-04-20 15:32:06:819-The ranking refresh is start...
+
+
+Time:2017-04-20 15:32:06:819-The ranking refresh is end.
+
+
+Time:2017-04-20 15:33:00:020-消息：全服排名开始...
+
+
+Time:2017-04-20 15:33:00:027-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:33:00:028-消息：全服排名消耗时间:7.3223ms
+
+
+Time:2017-04-20 15:33:06:835-The ranking refresh is start...
+
+
+Time:2017-04-20 15:33:06:836-The ranking refresh is end.
+
+
+15:33:26 Clear expired cache end.
+Time:2017-04-20 15:34:00:063-消息：全服排名开始...
+
+
+Time:2017-04-20 15:34:00:080-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:34:00:087-消息：全服排名消耗时间:11.4214ms
+
+
+Time:2017-04-20 15:34:06:850-The ranking refresh is start...
+
+
+Time:2017-04-20 15:34:06:850-The ranking refresh is end.
+
+
+Time:2017-04-20 15:35:00:021-消息：全服排名开始...
+
+
+Time:2017-04-20 15:35:00:026-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:35:00:027-消息：全服排名消耗时间:5.8901ms
+
+
+Time:2017-04-20 15:35:06:865-The ranking refresh is start...
+
+
+Time:2017-04-20 15:35:06:866-The ranking refresh is end.
+
+
+Time:2017-04-20 15:36:00:069-消息：全服排名开始...
+
+
+Time:2017-04-20 15:36:00:076-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:36:00:077-消息：全服排名消耗时间:6.3706ms
+
+
+Time:2017-04-20 15:36:06:869-The ranking refresh is start...
+
+
+Time:2017-04-20 15:36:06:869-The ranking refresh is end.
+
+
+Time:2017-04-20 15:37:00:022-消息：全服排名开始...
+
+
+Time:2017-04-20 15:37:00:031-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:37:00:034-消息：全服排名消耗时间:10.9879ms
+
+
+Time:2017-04-20 15:37:06:883-The ranking refresh is start...
+
+
+Time:2017-04-20 15:37:06:883-The ranking refresh is end.
+
+
+Time:2017-04-20 15:38:00:089-消息：全服排名开始...
+
+
+Time:2017-04-20 15:38:00:099-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:38:00:103-消息：全服排名消耗时间:12.6157ms
+
+
+Time:2017-04-20 15:38:06:896-The ranking refresh is start...
+
+
+Time:2017-04-20 15:38:06:896-The ranking refresh is end.
+
+
+Time:2017-04-20 15:39:00:015-消息：全服排名开始...
+
+
+Time:2017-04-20 15:39:00:021-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:39:00:022-消息：全服排名消耗时间:6.3709ms
+
+
+Time:2017-04-20 15:39:06:900-The ranking refresh is start...
+
+
+Time:2017-04-20 15:39:06:900-The ranking refresh is end.
+
+
+Time:2017-04-20 15:40:00:072-消息：全服排名开始...
+
+
+Time:2017-04-20 15:40:00:079-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:40:00:080-消息：全服排名消耗时间:6.4807ms
+
+
+Time:2017-04-20 15:40:06:914-The ranking refresh is start...
+
+
+Time:2017-04-20 15:40:06:914-The ranking refresh is end.
+
+
+Time:2017-04-20 15:41:00:035-消息：全服排名开始...
+
+
+Time:2017-04-20 15:41:00:040-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:41:00:040-消息：全服排名消耗时间:5.0768ms
+
+
+Time:2017-04-20 15:41:06:928-The ranking refresh is start...
+
+
+Time:2017-04-20 15:41:06:928-The ranking refresh is end.
+
+
+Time:2017-04-20 15:42:00:092-消息：全服排名开始...
+
+
+Time:2017-04-20 15:42:00:098-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:42:00:099-消息：全服排名消耗时间:6.1707ms
+
+
+Time:2017-04-20 15:42:06:946-The ranking refresh is start...
+
+
+Time:2017-04-20 15:42:06:946-The ranking refresh is end.
+
+
+Time:2017-04-20 15:43:00:035-消息：全服排名开始...
+
+
+Time:2017-04-20 15:43:00:043-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:43:00:044-消息：全服排名消耗时间:8.3857ms
+
+
+Time:2017-04-20 15:43:06:960-The ranking refresh is start...
+
+
+Time:2017-04-20 15:43:06:960-The ranking refresh is end.
+
+
+15:43:26 Clear expired cache end.
+Time:2017-04-20 15:44:00:083-消息：全服排名开始...
+
+
+Time:2017-04-20 15:44:00:087-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:44:00:087-消息：全服排名消耗时间:4.0757ms
+
+
+Time:2017-04-20 15:44:06:976-The ranking refresh is start...
+
+
+Time:2017-04-20 15:44:06:976-The ranking refresh is end.
+
+
+Time:2017-04-20 15:45:00:087-消息：全服排名开始...
+
+
+Time:2017-04-20 15:45:00:093-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:45:00:094-消息：全服排名消耗时间:5.1773ms
+
+
+Time:2017-04-20 15:45:06:990-The ranking refresh is start...
+
+
+Time:2017-04-20 15:45:06:991-The ranking refresh is end.
+
+
+Time:2017-04-20 15:46:00:024-消息：全服排名开始...
+
+
+Time:2017-04-20 15:46:00:032-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:46:00:033-消息：全服排名消耗时间:6.4611ms
+
+
+Time:2017-04-20 15:46:07:019-The ranking refresh is start...
+
+
+Time:2017-04-20 15:46:07:020-The ranking refresh is end.
+
+
+Time:2017-04-20 15:47:00:081-消息：全服排名开始...
+
+
+Time:2017-04-20 15:47:00:092-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:47:00:094-消息：全服排名消耗时间:9.2002ms
+
+
+Time:2017-04-20 15:47:07:061-The ranking refresh is start...
+
+
+Time:2017-04-20 15:47:07:061-The ranking refresh is end.
+
+
+Time:2017-04-20 15:48:00:071-消息：全服排名开始...
+
+
+Time:2017-04-20 15:48:00:083-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:48:00:084-消息：全服排名消耗时间:9.5466ms
+
+
+Time:2017-04-20 15:48:07:080-The ranking refresh is start...
+
+
+Time:2017-04-20 15:48:07:081-The ranking refresh is end.
+
+
+Time:2017-04-20 15:49:00:089-消息：全服排名开始...
+
+
+Time:2017-04-20 15:49:00:096-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:49:00:096-消息：全服排名消耗时间:5.8783ms
+
+
+Time:2017-04-20 15:49:07:100-The ranking refresh is start...
+
+
+Time:2017-04-20 15:49:07:101-The ranking refresh is end.
+
+
+Time:2017-04-20 15:50:00:005-消息：全服排名开始...
+
+
+Time:2017-04-20 15:50:00:019-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:50:00:020-消息：全服排名消耗时间:10.2896ms
+
+
+Time:2017-04-20 15:50:07:119-The ranking refresh is start...
+
+
+Time:2017-04-20 15:50:07:120-The ranking refresh is end.
+
+
+Time:2017-04-20 15:51:00:090-消息：全服排名开始...
+
+
+Time:2017-04-20 15:51:00:095-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:51:00:095-消息：全服排名消耗时间:3.9588ms
+
+
+Time:2017-04-20 15:51:07:148-The ranking refresh is start...
+
+
+Time:2017-04-20 15:51:07:149-The ranking refresh is end.
+
+
+Time:2017-04-20 15:52:00:040-消息：全服排名开始...
+
+
+Time:2017-04-20 15:52:00:052-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:52:00:053-消息：全服排名消耗时间:11.4121ms
+
+
+Time:2017-04-20 15:52:07:172-The ranking refresh is start...
+
+
+Time:2017-04-20 15:52:07:172-The ranking refresh is end.
+
+
+Time:2017-04-20 15:53:00:059-消息：全服排名开始...
+
+
+Time:2017-04-20 15:53:00:072-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:53:00:072-消息：全服排名消耗时间:8.4423ms
+
+
+Time:2017-04-20 15:53:07:194-The ranking refresh is start...
+
+
+Time:2017-04-20 15:53:07:195-The ranking refresh is end.
+
+
+15:53:27 Clear expired cache end.
+Time:2017-04-20 15:54:00:006-消息：全服排名开始...
+
+
+Time:2017-04-20 15:54:00:012-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:54:00:012-消息：全服排名消耗时间:5.2889ms
+
+
+Time:2017-04-20 15:54:07:226-The ranking refresh is start...
+
+
+Time:2017-04-20 15:54:07:226-The ranking refresh is end.
+
+
+Time:2017-04-20 15:55:00:095-消息：全服排名开始...
+
+
+Time:2017-04-20 15:55:00:101-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:55:00:102-消息：全服排名消耗时间:5.6046ms
+
+
+Time:2017-04-20 15:55:07:262-The ranking refresh is start...
+
+
+Time:2017-04-20 15:55:07:263-The ranking refresh is end.
+
+
+Time:2017-04-20 15:56:00:076-消息：全服排名开始...
+
+
+Time:2017-04-20 15:56:00:086-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:56:00:091-消息：全服排名消耗时间:14.0497ms
+
+
+Time:2017-04-20 15:56:07:272-The ranking refresh is start...
+
+
+Time:2017-04-20 15:56:07:272-The ranking refresh is end.
+
+
+Time:2017-04-20 15:57:00:071-消息：全服排名开始...
+
+
+Time:2017-04-20 15:57:00:075-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:57:00:075-消息：全服排名消耗时间:3.6686ms
+
+
+Time:2017-04-20 15:57:07:299-The ranking refresh is start...
+
+
+Time:2017-04-20 15:57:07:301-The ranking refresh is end.
+
+
+Time:2017-04-20 15:58:00:086-消息：全服排名开始...
+
+
+Time:2017-04-20 15:58:00:095-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:58:00:096-消息：全服排名消耗时间:8.3067ms
+
+
+Time:2017-04-20 15:58:07:329-The ranking refresh is start...
+
+
+Time:2017-04-20 15:58:07:330-The ranking refresh is end.
+
+
+Time:2017-04-20 15:59:00:089-消息：全服排名开始...
+
+
+Time:2017-04-20 15:59:00:098-Trace>>The LevelRanking has be loaded, count:168
+
+
+Time:2017-04-20 15:59:00:100-消息：全服排名消耗时间:8.39ms
+
+
+Time:2017-04-20 15:59:07:363-The ranking refresh is start...
+
+
+Time:2017-04-20 15:59:07:364-The ranking refresh is end.
+
+

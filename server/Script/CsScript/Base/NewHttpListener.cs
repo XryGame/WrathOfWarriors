@@ -72,7 +72,11 @@ namespace GameServer.CsScript.Base
                             {
                                 if (item.Equals("GamePay.aspx"))
                                 {
-                                    new OnPay().ActiveHttp(response, response.GetRequestExec());
+                                    new OnWebPay().ActiveHttp(response, response.GetRequestExec());
+                                }
+                                else if (item.Equals("GlobalCommon.aspx"))
+                                {
+                                    new OnGlobalCommon().ActiveHttp(response, response.GetRequestExec());
                                 }
                             }
                             else if (response.isPost())
@@ -81,6 +85,7 @@ namespace GameServer.CsScript.Base
                                 {
                                     new OnGMCommon().ActiveHttp(response, response.PostRequestExec());
                                 }
+
                             }
                         }
                         catch { break; }

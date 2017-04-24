@@ -1,0 +1,235 @@
+Time:2017-04-19 09:47:21:185-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:47:31:019-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:47:45:042-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:47:55:046-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:05:057-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:15:077-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:25:097-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:35:020-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:45:060-发生异常：操作超时
+Exception:System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:48:51:060-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:01:084-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:11:011-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:21:028-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:31:052-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:41:061-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:49:51:081-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:01:093-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:11:008-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:21:027-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:31:051-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:41:069-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:50:55:086-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:05:004-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:15:026-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:25:052-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:35:072-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:45:091-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:51:55:018-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:52:00:641-发生异常：指定的参数已超出有效值的范围。
+参数名: Read 1000045 byte len overflow max 1866 len.
+Exception:System.ArgumentOutOfRangeException: 指定的参数已超出有效值的范围。
+参数名: Read 1000045 byte len overflow max 1866 len.
+   在 ZyGames.Framework.RPC.IO.MessageStructure.VerifyBufferLength(Int32 count)
+   在 ZyGames.Framework.RPC.IO.MessageStructure.ReadByte(Int32 count)
+   在 ZyGames.Framework.RPC.IO.MessageStructure.ReadString()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 75
+
+
+Time:2017-04-19 09:52:15:064-发生异常：请求被中止: 操作超时。
+Exception:System.Net.WebException: 请求被中止: 操作超时。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+
+Time:2017-04-19 09:52:22:084-发生异常：无法连接到远程服务器
+Exception:System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 168.254.0.254:8091
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 GameServer.CsScript.Base.RankingSet.LoadServerRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\global_server\Script\CsScript\Base\RankingSet.cs:行号 60
+
+

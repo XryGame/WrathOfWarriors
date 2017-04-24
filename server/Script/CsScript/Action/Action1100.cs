@@ -79,13 +79,13 @@ namespace GameServer.CsScript.Action
                 case ResourceType.Gold:
                     {
                         BigInteger resourceNum = Util.ConvertGameCoin(itemconfig.ResourceNum);
-                        UserHelper.RewardsGold(Current.UserId, resourceNum * useNum);
+                        UserHelper.RewardsGold(Current.UserId, resourceNum * useNum, UpdateGoldType.UserItemReward);
                         //receipt.GainGold = resourceNum;
                     }
                     break;
                 case ResourceType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, itemconfig.ResourceNum.ToInt() * useNum);
+                        UserHelper.RewardsDiamond(Current.UserId, itemconfig.ResourceNum.ToInt() * useNum, UpdateDiamondType.UseItem);
                         //receipt.GainDiamond = resourceNum * useNum;
                     }
                     break;
