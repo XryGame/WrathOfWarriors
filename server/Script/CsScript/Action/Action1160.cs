@@ -68,13 +68,13 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Gold:
                     {
-                        BigInteger bi = Util.ConvertGameCoin(config.RewardsItemNum);
+                        BigInteger bi = BigInteger.Parse(config.RewardsItemNum);
                         UserHelper.RewardsGold(Current.UserId, bi);
                     }
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(config.RewardsItemNum), UpdateDiamondType.Other);
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(config.RewardsItemNum));
                     }
                     break;
                 case TaskAwardType.Item:
@@ -100,7 +100,7 @@ namespace GameServer.CsScript.Action
             }
 
             //achievement.Count = 0;
-            if (type == AchievementType.InlayGem)
+            if (type == AchievementType.Gem)
                 achievement.Count = "0";
             //else if (type == AchievementType.OpenSoul)
             //    achievement.Count = "0";

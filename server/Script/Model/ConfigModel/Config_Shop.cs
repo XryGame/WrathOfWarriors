@@ -95,9 +95,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 出售货币类型
         /// </summary>
-        private ConsumeType _CurrencyType;
+        private CoinType _CurrencyType;
         [EntityField("CurrencyType")]
-        public ConsumeType CurrencyType
+        public CoinType CurrencyType
         {
             get
             {
@@ -161,7 +161,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _Discount = value.ToInt();
                         break;
                     case "CurrencyType":
-                        _CurrencyType = value.ToEnum<ConsumeType>();
+                        _CurrencyType = value.ToEnum<CoinType>();
                         break;
                     case "Price":
                         _Price = value.ToInt();

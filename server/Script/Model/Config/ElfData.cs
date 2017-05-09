@@ -29,6 +29,12 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(2)]
         public int Lv { get; set; }
+        /// <summary>
+        /// 是否新的
+        /// </summary>
+        [ProtoMember(3)]
+        public bool IsNew { get; set; }
+
 
     }
 }

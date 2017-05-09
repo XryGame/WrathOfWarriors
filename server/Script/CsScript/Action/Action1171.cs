@@ -43,12 +43,20 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == elfId);
+            if (elfcfg == null)
+            {
+                return false;
+            }
+
             if (GetElf.FindElf(elfId) == null)
             {
                 return false;
             }
 
             GetElf.SelectID = elfId;
+            GetElf.SelectElfType = elfcfg.ElvesType;
+            GetElf.SelectElfValue = elfcfg.ElvesNum;
             receipt = true;
             return true;
         }

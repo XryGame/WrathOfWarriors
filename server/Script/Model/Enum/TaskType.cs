@@ -21,14 +21,22 @@ namespace GameServer.Script.Model.Enum
         /// 闯关1关（BOSS关）
         /// </summary>
         PassStageBoss,
-        ///// <summary>
-        ///// 战魂1次
-        ///// </summary>
-        //OpenSoul,
+        /// <summary>
+        /// 竞技场匹配1次
+        /// </summary>
+        CombatMatch,
+        /// <summary>
+        /// 竞技场1次
+        /// </summary>
+        Combat,
         /// <summary>
         /// 世界发言1次
         /// </summary>
         WorldChat,
+        /// <summary>
+        /// 抽奖
+        /// </summary>
+        Lottery,
         /// <summary>
         /// 升级精灵
         /// </summary>
@@ -41,27 +49,22 @@ namespace GameServer.Script.Model.Enum
         /// 技能升级1次
         /// </summary>
         UpgradeSkill,
-        ///// <summary>
-        ///// 公会签到1次
-        ///// </summary>
-        //GuildSignIn,
-        /// <summary>
-        /// 竞技场匹配1次
-        /// </summary>
-        CombatMatch,
-        /// <summary>
-        /// 竞技场1次
-        /// </summary>
-        Combat,
-        /// <summary>
-        /// 切磋
-        /// </summary>
-        Compare,
         /// <summary>
         /// 购买金币1次
         /// </summary>
         BuyGold,
 
-
+        ///// <summary>
+        ///// 公会签到1次
+        ///// </summary>
+        //GuildSignIn,
+        ///// <summary>
+        ///// 切磋
+        ///// </summary>
+        //Compare,
+        ///// <summary>
+        ///// 战魂1次
+        ///// </summary>
+        //OpenSoul,
     }
 }

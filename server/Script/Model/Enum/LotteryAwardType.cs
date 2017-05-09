@@ -5,13 +5,21 @@ namespace GameServer.Script.Model.Enum
     public enum LotteryAwardType
     {
         /// <summary>
-        /// 道具
+        /// 金币
         /// </summary>
-        Item = 1,
+        Gold = 1,
         /// <summary>
         /// 钻石
         /// </summary>
         Diamond,
+        /// <summary>
+        /// 宝石
+        /// </summary>
+        Gem,
+        /// <summary>
+        /// 碎片
+        /// </summary>
+        Debris,
 
     }
 }

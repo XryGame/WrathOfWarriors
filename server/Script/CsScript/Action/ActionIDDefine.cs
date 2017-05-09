@@ -95,7 +95,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1009 = 1009;
 
         ///<summary>
-        ///金币改变通知接口
+        ///货币改变通知接口
         ///</summary>
         public const short Cst_Action1049 = 1049;
 
@@ -109,10 +109,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1051 = 1051;
 
-        ///<summary>
-        ///等级改变通知接口
-        ///</summary>
-        public const short Cst_Action1052 = 1052;
+        /////<summary>
+        /////等级改变通知接口
+        /////</summary>
+        //public const short Cst_Action1052 = 1052;
 
         ///<summary>
         ///整点刷新通知接口
@@ -252,6 +252,16 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1082 = 1082;
 
         ///<summary>
+        ///获得新宠物通知
+        ///</summary>
+        public const short Cst_Action1083 = 1083;
+
+        ///<summary>
+        ///获得新技能通知
+        ///</summary>
+        public const short Cst_Action1084 = 1084;
+
+        ///<summary>
         ///充值成功通知
         ///</summary>
         public const short Cst_Action1099 = 1099;
@@ -372,6 +382,15 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1172 = 1172;
 
+        ///<summary>
+        ///精灵卡片合成
+        ///</summary>
+        public const short Cst_Action1173 = 1173;
+
+        ///<summary>
+        ///精灵查看标记
+        ///</summary>
+        public const short Cst_Action1174 = 1174;
 
         ///<summary>
         ///竞技场入口
@@ -585,6 +604,11 @@ namespace GameServer.CsScript.Action
         ///请求抽奖数据
         ///</summary>
         public const short Cst_Action1811 = 1811;
+
+        ///<summary>
+        ///购买抽奖次数
+        ///</summary>
+        public const short Cst_Action1812 = 1812;
 
         ///<summary>
         ///领取首充奖励

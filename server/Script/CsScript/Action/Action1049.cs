@@ -7,19 +7,23 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
-    public class GoldNotificationData
+    public class CoinNotificationData
     {
-        public UpdateGoldType UpdateGoldType { get; set; }
+        public CoinType UpdateCoinType { get; set; }
 
-        public string GoldString { get; set; }
+        public UpdateCoinOperate UpdateCoinOperate { get; set; }
+
+        public string NumString { get; set; }
     }
     /// <summary>
-    /// 1049_金币数量改变通知接口
+    /// 1049_货币数量改变通知接口
     /// </summary>
     public class Action1049 : BaseAction
     {
-        private GoldNotificationData receipt;
-        private UpdateGoldType _updateGoldType;
+        private CoinNotificationData receipt;
+
+        private CoinType _coinType;
+        private UpdateCoinOperate _updateGoldType;
         public Action1049(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1049, actionGetter)
         {
@@ -34,7 +38,8 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetEnum("UpdateType", ref _updateGoldType))
+            if (httpGet.GetEnum("CoinType", ref _coinType)
+                && httpGet.GetEnum("UpdateType", ref _updateGoldType))
             {
                 return true;
             }
@@ -43,9 +48,26 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new GoldNotificationData();
-            receipt.UpdateGoldType = _updateGoldType;
-            receipt.GoldString = GetBasis.Gold;
+            receipt = new CoinNotificationData();
+
+            switch (_coinType)
+            {
+                case CoinType.Gold:
+                    receipt.NumString = GetBasis.Gold;
+                    break;
+                case CoinType.Diamond:
+                    receipt.NumString = GetBasis.DiamondNum.ToString();
+                    break;
+                case CoinType.CombatCoin:
+                    receipt.NumString = GetCombat.CombatCoin.ToString();
+                    break;
+                case CoinType.GuildCoin:
+                    receipt.NumString = GetGuild.GuildCoin.ToString();
+                    break;
+            }
+            receipt.UpdateCoinType = _coinType;
+            receipt.UpdateCoinOperate = _updateGoldType;
+            
 
             return true;
         }

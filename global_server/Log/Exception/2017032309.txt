@@ -1,8 +1,0 @@
-Time:2017-03-23 09:57:44:066-Trace>>Disconnected error:System.NullReferenceException: 未将对象引用设置到对象的实例。
-   在 Game.Script.MainClass.<>c__DisplayClass1.<OnDisconnected>b__0(ChatUser t) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\MainClass.cs:行号 85
-   在 ZyGames.Framework.Cache.Generic.BaseCollection.Find[T](Predicate`1 match)
-   在 ZyGames.Framework.Cache.Generic.MemoryCacheStruct`1.Find(Predicate`1 match)
-   在 Game.Script.MainClass.OnDisconnected(GameSession session) 位置 e:\ServerTools\code\Wrath of warriors\server\chat_server\Script\CsScript\MainClass.cs:行号 85
-   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.OnDisconnected(ISocket sender, ConnectionEventArgs e)
-
-

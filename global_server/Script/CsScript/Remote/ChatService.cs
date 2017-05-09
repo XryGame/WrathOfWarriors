@@ -78,6 +78,8 @@ namespace GameServer.CsScript.Remote
                                     parameters["Type"] = ChatType.AllService;
                                     parameters["Sender"] = _sender;
                                     parameters["SenderName"] = Sender.UserName;
+                                    parameters["SenderVipLv"] = Sender.VipLv;
+                                    parameters["SenderProfession"] = Sender.Profession;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -108,6 +110,8 @@ namespace GameServer.CsScript.Remote
                                     parameters["Type"] = ChatType.World;
                                     parameters["Sender"] = _sender;
                                     parameters["SenderName"] = Sender.UserName;
+                                    parameters["SenderVipLv"] = Sender.VipLv;
+                                    parameters["SenderProfession"] = Sender.Profession;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -136,6 +140,8 @@ namespace GameServer.CsScript.Remote
                                 parameters["Type"] = ChatType.Whisper;
                                 parameters["Sender"] = _sender;
                                 parameters["SenderName"] = Sender.UserName;
+                                parameters["SenderVipLv"] = Sender.VipLv;
+                                parameters["SenderProfession"] = Sender.Profession;
                                 parameters["ServerID"] = _serverID;
                                 parameters["SendDate"] = _sendDate;
                                 parameters["Content"] = _content;
@@ -169,6 +175,8 @@ namespace GameServer.CsScript.Remote
                                     parameters["Type"] = ChatType.Guild;
                                     parameters["Sender"] = _sender;
                                     parameters["SenderName"] = Sender.UserName;
+                                    parameters["SenderVipLv"] = Sender.VipLv;
+                                    parameters["SenderProfession"] = Sender.Profession;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -196,6 +204,8 @@ namespace GameServer.CsScript.Remote
                                 parameters["Type"] = ChatType.System;
                                 parameters["Sender"] = 0;
                                 parameters["SenderName"] = "系统";
+                                parameters["SenderVipLv"] = 0;
+                                parameters["SenderProfession"] = 0;
                                 parameters["ServerID"] = _serverID;
                                 parameters["SendDate"] = _sendDate;
                                 parameters["Content"] = _content;

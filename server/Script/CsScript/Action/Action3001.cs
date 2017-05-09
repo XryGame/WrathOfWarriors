@@ -45,6 +45,11 @@ namespace GameServer.CsScript.Action
         /// <returns>false:中断后面的方式执行并返回Error</returns>
         public override bool TakeAction()
         {
+            return true;
+        }
+
+        public override void TakeActionAffter(bool state)
+        {
             switch (_chatType)
             {
                 case ChatType.AllService:
@@ -73,9 +78,7 @@ namespace GameServer.CsScript.Action
                     }
                     break;
             }
-            return true;
         }
-
     }
 }
 

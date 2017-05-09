@@ -38,19 +38,19 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
 
-            var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
-            if (vip == null)
-            {
-                ErrorInfo = string.Format(Language.Instance.DBTableError, "Config_Vip");
-                return true;
-            }
+            //var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
+            //if (vip == null)
+            //{
+            //    ErrorInfo = string.Format(Language.Instance.DBTableError, "Config_Vip");
+            //    return true;
+            //}
 
-            int canBuyTimes = vip.BuyAthletics;
+            //int canBuyTimes = vip.BuyAthletics;
             
-            if (GetCombat.BuyTimes >= canBuyTimes)
-            {
-                return true;
-            }
+            //if (GetCombat.BuyTimes >= canBuyTimes)
+            //{
+            //    return true;
+            //}
             int needDiamond = ConfigEnvSet.GetInt("User.BuyCombatTimesNeedDiamond");
             
             if (GetBasis.DiamondNum < needDiamond)

@@ -64,41 +64,42 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1050, packet, (rsession, asyncResult) => { }, 0);
         }
 
-        /// <summary>
-        /// 升级通知
-        /// </summary>
-        public static void UserLevelUpNotification(GameSession session)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var parameters = new Parameters();
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, null, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
-        }
+        ///// <summary>
+        ///// 升级通知
+        ///// </summary>
+        //public static void UserLevelUpNotification(GameSession session)
+        //{
+        //    if (session == null || !session.Connected)
+        //        return;
+        //    var parameters = new Parameters();
+        //    var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, null, OpCode.Text, null);
+        //    ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
+        //}
+
+        ///// <summary>
+        ///// 钻石改变通知
+        ///// </summary>
+        ///// <param name="session"></param>
+        //public static void UserDiamondChangedNotification(GameSession session, UpdateDiamondType updateType)
+        //{
+        //    if (session == null || !session.Connected)
+        //        return;
+        //    var parameters = new Parameters();
+        //    parameters["UpdateType"] = updateType;
+        //    var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, parameters, OpCode.Text, null);
+        //    ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
+        //}
 
         /// <summary>
-        /// 钻石改变通知
+        /// 货币改变通知
         /// </summary>
         /// <param name="session"></param>
-        public static void UserDiamondChangedNotification(GameSession session, UpdateDiamondType updateType)
+        public static void UserCoinChangedNotification(GameSession session, CoinType coinType, UpdateCoinOperate updateType)
         {
             if (session == null || !session.Connected)
                 return;
             var parameters = new Parameters();
-            parameters["UpdateType"] = updateType;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, parameters, OpCode.Text, null);
-            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
-        }
-
-        /// <summary>
-        /// 金币改变通知
-        /// </summary>
-        /// <param name="session"></param>
-        public static void UserGoldChangedNotification(GameSession session, UpdateGoldType updateType)
-        {
-            if (session == null || !session.Connected)
-                return;
-            var parameters = new Parameters();
+            parameters["CoinType"] = coinType;
             parameters["UpdateType"] = updateType;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1049, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1049, packet, (rsession, asyncResult) => { }, 0);
@@ -402,6 +403,32 @@ namespace GameServer.Script.CsScript.Com
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1082, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1082, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 获得新宠物通知
+        /// </summary>
+        public static void NewElfNotification(GameSession session, int elfId)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["ElfID"] = elfId;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1083, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1083, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 获得新技能通知
+        /// </summary>
+        public static void NewSkillNotification(GameSession session, int skillId)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["SkillID"] = skillId;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1084, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1084, packet, (rsession, asyncResult) => { }, 0);
         }
 
         /// <summary>

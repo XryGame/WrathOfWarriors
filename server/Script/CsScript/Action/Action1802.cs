@@ -6,6 +6,7 @@ using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
@@ -65,7 +66,8 @@ namespace GameServer.CsScript.Action
             {
                 foreach (var m in GetMailBox.MailList)
                 {
-                    if (m.ApppendDiamond != 0 || m.AppendItem.Count > 0)
+                    BigInteger bigint = BigInteger.Parse(m.ApppendCoinNum);
+                    if (bigint != 0 || m.AppendItem.Count > 0)
                     {
                         MailData tm = new MailData()
                         {
@@ -76,7 +78,8 @@ namespace GameServer.CsScript.Action
                             Context = m.Context,
                             IsRead = m.IsRead,
                             AppendItem = m.AppendItem,
-                            ApppendDiamond = m.ApppendDiamond,
+                            ApppendCoinType = m.ApppendCoinType,
+                            ApppendCoinNum = m.ApppendCoinNum,
                         };
                         receipt.MailList.Add(tm);
                     }
@@ -92,8 +95,8 @@ namespace GameServer.CsScript.Action
                 MailData mail = GetMailBox.findMail(mailid);
                 if (mail == null)
                     return false;
-
-                if (mail.ApppendDiamond != 0 || mail.AppendItem.Count > 0)
+                BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
+                if (bigint != 0 || mail.AppendItem.Count > 0)
                 {
                     receipt.Result = EventStatus.Bad;
                 }

@@ -142,12 +142,14 @@ namespace GameServer.CsScript.Action
             packagecache.ResetCache();
             var packageSet = new PersonalCacheStruct<UserPackageCache>();
 
-            packagecache.AddItem(10001, 99, false);
-            packagecache.AddItem(10006, 99, false);
-            for (int i = 10011; i < 10017; ++i)
-                packagecache.AddItem(i, 999, false);
-            for (int i = 10053; i < 10097; ++i)
-                packagecache.AddItem(i, 10, false);
+            //packagecache.AddItem(10001, 99, false);
+            //packagecache.AddItem(10006, 99, false);
+            //for (int i = 20001; i < 20077; ++i)
+            //    packagecache.AddItem(i, 10, false);
+            //for (int i = 30001; i < 30005; ++i)
+            //    packagecache.AddItem(i, 9999, false);
+            //for (int i = 40001; i < 40009; ++i)
+            //    packagecache.AddItem(i, 1, false);
 
             packageSet.Add(packagecache);
             packageSet.Update();
@@ -160,7 +162,7 @@ namespace GameServer.CsScript.Action
             soulSet.Add(soulcache);
             soulSet.Update();
 
-            UserHelper.RefreshUserFightValue(basis.UserID, false);
+            
 
             // 技能初始化
             UserSkillCache skillcache = new UserSkillCache();
@@ -206,7 +208,6 @@ namespace GameServer.CsScript.Action
                 Sender = "系统",
                 Date = DateTime.Now,
                 Context = "恭喜您已获得月卡免费体验资格，月卡有效期为3天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
-                ApppendDiamond = 0
             };
             UserHelper.AddNewMail(basis.UserID, mail);
             mailSet.Add(mailcache);
@@ -219,7 +220,7 @@ namespace GameServer.CsScript.Action
             var taskSet = new PersonalCacheStruct<UserTaskCache>();
             taskSet.Add(taskcache);
             taskSet.Update();
-            UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
+            
 
             // 竞技场初始化
             UserCombatCache combatcache = new UserCombatCache();
@@ -253,6 +254,8 @@ namespace GameServer.CsScript.Action
             elfSet.Add(elfcache);
             elfSet.Update();
 
+            UserHelper.RefreshUserFightValue(basis.UserID, false);
+
             // 排行榜初始化
             UserRank combatRank = new UserRank()
             {
@@ -280,9 +283,10 @@ namespace GameServer.CsScript.Action
             //var fight = fightranking as FightValueRanking;
             //fight.TryAppend(fightRank);
             //fight.rankList.Add(fightRank);
-
+            
 
             UserHelper.RestoreUserData(basis.UserID);
+            UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
             //UserHelper.AddMouthCardMail(basis.UserID);
             return basis;
         }

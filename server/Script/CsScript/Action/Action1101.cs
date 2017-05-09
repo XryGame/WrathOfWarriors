@@ -81,8 +81,8 @@ namespace GameServer.CsScript.Action
             }
             
 
-            BigInteger resourceNum = Util.ConvertGameCoin(itemconfig.SellGold);
-            UserHelper.RewardsGold(Current.UserId, resourceNum * useNum, UpdateGoldType.UserItemReward);
+            BigInteger resourceNum = BigInteger.Parse(itemconfig.SellGold);
+            UserHelper.RewardsGold(Current.UserId, resourceNum * useNum, UpdateCoinOperate.UserItemReward);
             //receipt.GainGold = resourceNum;
 
             GetPackage.RemoveItem(itemId, useNum);

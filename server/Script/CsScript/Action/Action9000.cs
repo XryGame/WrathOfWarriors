@@ -97,15 +97,17 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, signsurface.AwardNum, UpdateDiamondType.Other);
+                        UserHelper.RewardsDiamond(Current.UserId, signsurface.AwardNum.ToInt());
                     }
                     break;
                 case TaskAwardType.Item:
                     {
-                        UserHelper.RewardsItem(Current.UserId, signsurface.AwardID, signsurface.AwardNum);
+                        UserHelper.RewardsItem(Current.UserId, signsurface.AwardID, signsurface.AwardNum.ToInt());
                     }
                     break;
             }
+
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.SignIn, 1);
 
             receipt = true;
             return true;

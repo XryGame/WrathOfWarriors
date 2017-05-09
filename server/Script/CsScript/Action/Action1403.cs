@@ -112,7 +112,7 @@ namespace GameServer.CsScript.Action
 
                 if (GetBasis.CombatRankID <= 10)
                 {
-                    string context = string.Format("恭喜 {0} 成为竞技场排名第{1}名，引来众人羡煞的目光！", GetBasis.NickName, rankinfo.RankId);
+                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为竞技场第{1}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
                     GlobalRemoteService.SendNotice(NoticeMode.World, context);
                     //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
@@ -171,7 +171,7 @@ namespace GameServer.CsScript.Action
             if (result == EventStatus.Good)
             {
                 receipt.AwardDiamond = ConfigEnvSet.GetInt("User.CombatWinAward");
-                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond, UpdateDiamondType.Other);
+                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond);
             }
             receipt.CurrDiamond = GetBasis.DiamondNum;
 

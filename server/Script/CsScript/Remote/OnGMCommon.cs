@@ -339,7 +339,7 @@ namespace GameServer.CsScript.Remote
                         if (DiamondNum > 0)
                         {
                             DiamondNum = Math.Min(DiamondNum, 1000000);
-                            UserHelper.RewardsDiamond(UserId, DiamondNum, UpdateDiamondType.Other);
+                            UserHelper.RewardsDiamond(UserId, DiamondNum, UpdateCoinOperate.NormalReward);
                         }
                         if (AddItemID > 0 && AddItemNum > 0)
                         {
@@ -410,7 +410,7 @@ namespace GameServer.CsScript.Remote
                             Sender = "系统",
                             Date = DateTime.Now,
                             Context = MailContent,
-                            ApppendDiamond = MailDiamond
+                            //ApppendDiamond = MailDiamond
                         };
                         if (AddItem1ID > 0 && AddItem1Num > 0)
                         {

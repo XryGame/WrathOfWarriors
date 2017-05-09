@@ -20,6 +20,7 @@ namespace GameServer.CsScript.Base
             Profession = ur.Profession;
             RankId = ur.RankId;
             UserLv = ur.UserLv;
+            FightValue = ur.FightValue;
             //RankDate = ur.RankDate;
             //HaveRankNum = ur.HaveRankNum;
             //IsFighting = ur.IsFighting;

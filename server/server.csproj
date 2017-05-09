@@ -125,6 +125,8 @@
     <Compile Include="Script\CsScript\Action\Action1080.cs" />
     <Compile Include="Script\CsScript\Action\Action1081.cs" />
     <Compile Include="Script\CsScript\Action\Action1082.cs" />
+    <Compile Include="Script\CsScript\Action\Action1083.cs" />
+    <Compile Include="Script\CsScript\Action\Action1084.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
@@ -139,6 +141,8 @@
     <Compile Include="Script\CsScript\Action\Action1170.cs" />
     <Compile Include="Script\CsScript\Action\Action1171.cs" />
     <Compile Include="Script\CsScript\Action\Action1172.cs" />
+    <Compile Include="Script\CsScript\Action\Action1173.cs" />
+    <Compile Include="Script\CsScript\Action\Action1174.cs" />
     <Compile Include="Script\CsScript\Action\Action1406.cs" />
     <Compile Include="Script\CsScript\Action\Action1407.cs" />
     <Compile Include="Script\CsScript\Action\Action1408.cs" />
@@ -160,6 +164,7 @@
     <Compile Include="Script\CsScript\Action\Action1009.cs" />
     <Compile Include="Script\CsScript\Action\Action1810.cs" />
     <Compile Include="Script\CsScript\Action\Action1811.cs" />
+    <Compile Include="Script\CsScript\Action\Action1812.cs" />
     <Compile Include="Script\CsScript\Action\Action1820.cs" />
     <Compile Include="Script\CsScript\Action\Action1830.cs" />
     <Compile Include="Script\CsScript\Action\Action1049.cs" />
@@ -284,6 +289,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Liveness.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_LotteryGem.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Monster.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Online.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Pay.cs" />
@@ -347,7 +353,7 @@
     <Compile Include="Script\Model\Enum\ColorType.cs" />
     <Compile Include="Script\Model\Enum\CombatReqRivalResult.cs" />
     <Compile Include="Script\Model\Enum\Competition64BetReset.cs" />
-    <Compile Include="Script\Model\Enum\ConsumeType.cs" />
+    <Compile Include="Script\Model\Enum\CoinType.cs" />
     <Compile Include="Script\Model\Enum\EquipID.cs" />
     <Compile Include="Script\Model\Enum\EquipType.cs" />
     <Compile Include="Script\Model\Enum\EventStatus.cs" />
@@ -369,8 +375,7 @@
     <Compile Include="Script\Model\Enum\RequestLotteryResult.cs" />
     <Compile Include="Script\Model\Enum\RequestRefreshDailyQuestResult.cs" />
     <Compile Include="Script\Model\Enum\ResourceType.cs" />
-    <Compile Include="Script\Model\Enum\UpdateDiamondType.cs" />
-    <Compile Include="Script\Model\Enum\UpdateGoldType.cs" />
+    <Compile Include="Script\Model\Enum\UpdateCoinOperate.cs" />
     <Compile Include="Script\Model\Enum\ServerStatus.cs" />
     <Compile Include="Script\Model\Enum\ShopType.cs" />
     <Compile Include="Script\Model\Enum\SoulAddType.cs" />

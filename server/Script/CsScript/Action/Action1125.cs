@@ -6,6 +6,7 @@ using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -58,15 +59,15 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
-            float fprob = gemNum / gemcfg.Number;
+            float fprob = gemNum.ToFloat() / gemcfg.Number;
             if (random.Next(1000) <= fprob * 1000)
             {
-                GetPackage.RemoveItem(gemID, gemNum);
                 //GetPackage.AddItem(gemcfg.GemID, 1);
                 UserHelper.RewardsItem(Current.UserId, gemcfg.GemID, 1);
+                receipt = true;
             }
-
-            receipt = true;
+            GetPackage.RemoveItem(gemID, gemNum);
+            
             return true;
         }
     }

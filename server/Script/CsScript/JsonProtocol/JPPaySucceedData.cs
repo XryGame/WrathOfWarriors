@@ -11,5 +11,9 @@ namespace GameServer.CsScript.JsonProtocol
         public int BuyDiamond { get; set; }
 
         public int PayMoney { get; set; }
+
+        public int WeekCardDays { get; set; }
+
+        public int MonthCardDays { get; set; }
     }
 }

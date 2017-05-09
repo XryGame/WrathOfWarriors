@@ -98,7 +98,7 @@ namespace GameServer.CsScript.Action
             guildsSet.Add(guild);
             guildsSet.Update();
             GetGuild.GuildID = guild.GuildID;
-            PushMessageHelper.JoinGuildNotification(GameSession.Get(Current.UserId));
+            PushMessageHelper.JoinGuildNotification(Current);
 
             GlobalRemoteService.SendUserData(GetBasis, GetGuild.GuildID);
 

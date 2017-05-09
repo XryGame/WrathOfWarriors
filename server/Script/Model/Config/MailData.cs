@@ -4,6 +4,7 @@ using ProtoBuf;
 using ZyGames.Framework.Model;
 using ZyGames.Framework.Event;
 using ZyGames.Framework.Cache.Generic;
+using GameServer.Script.Model.Enum;
 
 namespace GameServer.Script.Model.Config
 {
@@ -19,6 +20,8 @@ namespace GameServer.Script.Model.Config
             : base(false)
         {
             AppendItem = new CacheList<ItemData>();
+            ApppendCoinType = CoinType.Gold;
+            ApppendCoinNum = "0";
         }
         
         /// <summary>
@@ -75,10 +78,16 @@ namespace GameServer.Script.Model.Config
         }
 
         /// <summary>
-        /// 附加钻石
+        /// 附加货币类型
         /// </summary>
         [ProtoMember(8)]
-        public int ApppendDiamond { get; set; }
+        public CoinType ApppendCoinType { get; set; }
+
+        /// <summary>
+        /// 附加货币数量
+        /// </summary>
+        [ProtoMember(9)]
+        public string ApppendCoinNum { get; set; }
 
     }
 }

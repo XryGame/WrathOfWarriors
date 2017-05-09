@@ -9,9 +9,9 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Normal = 1,
         /// <summary>
-        /// 公会商城
+        /// 竞技商城
         /// </summary>
-        Guild,
+        Combat,
 
     }
 }

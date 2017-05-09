@@ -67,6 +67,8 @@ namespace GameServer.CsScript.Action
                 VipLv = GetBasis.VipLv,
                 Gold = GetBasis.Gold,
                 CombatRankID = GetBasis.CombatRankID,
+                LotteryTimes = GetBasis.LotteryTimes,
+                SignStartID = DataHelper.SignStartID,
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -134,6 +136,9 @@ namespace GameServer.CsScript.Action
             //receipt.Gold = Util.ConvertGameCoinUnits(GetBasis.Gold);
 
             //string ddd = Util.ConvertGameCoinString("102K");
+
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID);
+
             return true;
         }
 
@@ -154,21 +159,21 @@ namespace GameServer.CsScript.Action
             RankType ranktype = RankType.No;
             int rankid = 0;
 
-            if (GetBasis.CombatRankID != 0 && GetBasis.CombatRankID < 10)
+            if (GetBasis.LevelRankID != 0 && GetBasis.LevelRankID < 10)
+            {
+                ranktype = RankType.Level;
+                rankid = GetBasis.LevelRankID;
+                context = string.Format("排行榜排名第{0}名的 {1} 上线了！", rankid, GetBasis.NickName);
+            }
+            if (GetBasis.CombatRankID != 0 && GetBasis.CombatRankID <= rankid)
             {
                 ranktype = RankType.Combat;
                 rankid = GetBasis.CombatRankID;
+                context = string.Format("竞技场排名第{0}名的 {1} 上线了！", rankid, GetBasis.NickName);
             }
 
             if (ranktype != RankType.No)
             {
-                switch (ranktype)
-                {
-                    case RankType.Level:
-                        context = string.Format("排行榜排名第{0}名的 {1} 上线了！", rankid, GetBasis.NickName);
-                        break;
-                }
-
                 if (GetBasis.UserLv >= DataHelper.OpenRankSystemUserLevel)
                 {
                     GlobalRemoteService.SendNotice(NoticeMode.World, context);

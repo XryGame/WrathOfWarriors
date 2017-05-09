@@ -48,7 +48,7 @@ namespace GameServer.CsScript.Action
             }
 
             BigInteger bi = BigInteger.Parse(GetBasis.OfflineEarnings);
-            UserHelper.RewardsGold(Current.UserId, bi, UpdateGoldType.OffineReward);
+            UserHelper.RewardsGold(Current.UserId, bi, UpdateCoinOperate.OffineReward);
             GetBasis.OfflineEarnings = "0";
             GetBasis.IsReceiveOfflineEarnings = true;
             GetBasis.OfflineTimeSec = 0;

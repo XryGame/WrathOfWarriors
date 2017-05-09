@@ -90,7 +90,9 @@ namespace GameServer.CsScript.Base
                 new NewHttpListener(httpHost, httpPort, new HashSet<string>(names));
             }
 
-            
+            //ActionFactory.SetActionIgnoreAuthorize(3001);
+
+
             LoadGlobalData();
             //LoadUser();
 
@@ -98,7 +100,7 @@ namespace GameServer.CsScript.Base
 
             // 上传该服务器的状态
             TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "submitServerStatus", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
-            // 自动机器人，64校园争霸赛
+            // 自动机器人，64争霸赛
             TimeListener.Append(PlanConfig.EveryMinutePlan(LoopAction, "LoopAction", "00:00", "23:59", 3));
             // new GameActiveCenter(null);
             // new GuildGameActiveCenter(null);
@@ -225,6 +227,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_FirstWeek>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Online>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Lottery>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_LotteryGem>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Purchase>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Vip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Pay>().AutoLoad(dbFilter);

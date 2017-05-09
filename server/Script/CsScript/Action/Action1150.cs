@@ -6,14 +6,16 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
-
+  
     /// <summary>
     /// 1150_领取每日任务奖励
     /// </summary>
@@ -65,22 +67,23 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Gold:
                     {
-                        BigInteger bi = Util.ConvertGameCoin(taskcfg.RewardsNum);
-                        UserHelper.RewardsGold(Current.UserId, bi);
+                        BigInteger bi = BigInteger.Parse(taskcfg.RewardsNum);
+                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * bi;
+                        UserHelper.RewardsGold(Current.UserId, value);
                     }
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(taskcfg.RewardsNum), UpdateDiamondType.Other);
+                        UserHelper.RewardsDiamond(Current.UserId, Convert.ToInt32(taskcfg.RewardsNum));
                     }
                     break;
                 case TaskAwardType.Item:
                     {
-
+                        var lotteryGem = UserHelper.RandomLotteryGem();
+                        UserHelper.RewardsItem(Current.UserId, lotteryGem.ID, 1);
                     }
                     break;
             }
-
             receipt = true;
             return true;
             

@@ -42,7 +42,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 技能列表
+        /// 列表
         /// </summary>
         private CacheList<ElfData> _ElfList;
         [ProtoMember(2)]
@@ -74,6 +74,37 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        private ElfSkillType _SelectElfType;
+        [ProtoMember(4)]
+        [EntityField("SelectElfType")]
+        public ElfSkillType SelectElfType
+        {
+            get
+            {
+                return _SelectElfType;
+            }
+            set
+            {
+                SetChange("SelectElfType", value);
+            }
+        }
+
+        private int _SelectElfValue;
+        [ProtoMember(5)]
+        [EntityField("SelectElfValue")]
+        public int SelectElfValue
+        {
+            get
+            {
+                return _SelectElfValue;
+            }
+            set
+            {
+                SetChange("SelectElfValue", value);
+            }
+        }
+
+
 
         protected override int GetIdentityId()
         {
@@ -91,6 +122,8 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "ElfList": return ElfList;
                     case "SelectID": return SelectID;
+                    case "SelectElfType": return SelectElfType;
+                    case "SelectElfValue": return SelectElfValue;
                     default: throw new ArgumentException(string.Format("UserElfCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -108,6 +141,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "SelectID":
                         _SelectID = value.ToInt();
+                        break;
+                    case "SelectElfType":
+                        _SelectElfType = value.ToEnum<ElfSkillType>();
+                        break;
+                    case "SelectElfValue":
+                        _SelectElfValue = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("UserElfCache index[{0}] isn't exist.", index));
                 }
@@ -138,6 +177,7 @@ namespace GameServer.Script.Model.DataModel
             elf = new ElfData();
             elf.ID = elfid;
             elf.Lv = 1;
+            elf.IsNew = true;
             ElfList.Add(elf);
             return true;
         }
@@ -145,13 +185,12 @@ namespace GameServer.Script.Model.DataModel
         public void ResetCache()
         {
             ElfList.Clear();
-
+            SelectElfType = ElfSkillType.None;
+            SelectElfValue = 0;
             var elvesSet = new ShareCacheStruct<Config_Elves>();
-            var list = elvesSet.FindAll(t => (t.ElvesGrade == 1));
-            foreach (var v in list)
-            {
-                AddElf(v.ElvesID);
-            }
+            var first = elvesSet.Find(t => (t.ElvesGrade == 1));
+
+            AddElf(first.ElvesID);
         }
     }
 }

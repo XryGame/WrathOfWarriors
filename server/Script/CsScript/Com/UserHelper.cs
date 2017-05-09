@@ -337,13 +337,11 @@ namespace GameServer.Script.Model.DataModel
             task.ResetCache();
 
             // 签到，首周，在线
-            if (basis.RestoreDate != DateTime.MinValue && basis.RestoreDate.DayOfWeek == DayOfWeek.Monday)
-            {// 签到次数要清零
+            //if (basis.RestoreDate != DateTime.MinValue && basis.RestoreDate.DayOfWeek == DayOfWeek.Monday)
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+            {
                 eventaward.SignCount = 0;
             }
-
-            // 公会
-            guild.IsSignIn = false;
 
             eventaward.IsTodaySign = false;
             //eventaward.IsTodayReceiveFirstWeek = false;
@@ -351,10 +349,15 @@ namespace GameServer.Script.Model.DataModel
             //eventaward.TodayOnlineTime = 0;
             eventaward.OnlineAwardId = 1;
             eventaward.OnlineStartTime = DateTime.Now;
-            
+
+
+            // 公会
+            guild.IsSignIn = false;
+
 
             // 周卡月卡处理
             UserPayCache paycache = FindUserPay(uid);
+            paycache.BuyGoldTimes = 0;
             if (paycache != null)
             {
                 UserMailBoxCache mailbox = FindUserMailBox(uid);
@@ -410,7 +413,7 @@ namespace GameServer.Script.Model.DataModel
             }
 
             
-            basis.IsTodayLottery = false;
+            basis.LotteryTimes = ConfigEnvSet.GetInt("User.LotteryTimes");
             //basis.RandomLotteryId = 0;
             //var lottery = RandomLottery(basis.UserID, basis.UserLv);
             //if (lottery != null)
@@ -715,6 +718,18 @@ namespace GameServer.Script.Model.DataModel
                 return;
             }
             //do something
+
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+            {
+                if (new ShareCacheStruct<Config_Signin>().FindKey(DataHelper.SignStartID + 14) != null)
+                {
+                    DataHelper.SignStartID += 7;
+                    GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
+                    signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString("1");
+                }
+                   
+            }
+
             var sessionlist = GameSession.GetAll();
             foreach (var session in sessionlist)
             {
@@ -850,7 +865,7 @@ namespace GameServer.Script.Model.DataModel
                             add = BigInteger.Parse(addcount);
                             count = old + add;
                             achdata.Count = count == 0 ? "0" : count.ToString();
-                            if (count >= Util.ConvertGameCoin(achconfig.ObjectiveNum))
+                            if (count >= BigInteger.Parse(achconfig.ObjectiveNum))
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }
@@ -858,10 +873,11 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case AchievementType.UpgradeElf:
                         {
+                            achdata.Count = "0";
                             UserElfCache elf = FindUserElf(uid);
                             var findlist = elf.ElfList.FindAll(t => (t.Lv >= achconfig.ObjectiveGrade));
-                            int count = achdata.Count.ToInt() + findlist.Count;
-                            achdata.Count = count == 0 ? "0" : count.ToString();
+
+                            achdata.Count = findlist.Count.ToString();
                             if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
@@ -870,10 +886,11 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case AchievementType.UpgradeSkill:
                         {
+                            achdata.Count = "0";
                             UserSkillCache userSkill = FindUserSkill(uid);
                             var findlist = userSkill.SkillList.FindAll(t => (t.Lv >= achconfig.ObjectiveGrade));
-                            int count = achdata.Count.ToInt() + findlist.Count;
-                            achdata.Count = count == 0 ? "0" : count.ToString();
+
+                            achdata.Count = findlist.Count.ToString();
                             if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
@@ -882,16 +899,18 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case AchievementType.UpgradeEquip:
                         {
+                            achdata.Count = "0";
+                            int finishcount = 0;
                             UserEquipsCache userEquip = FindUserEquips(uid);
                             for (EquipID id = EquipID.Coat; id <= EquipID.Accessory; ++id)
                             {
                                 var equip = userEquip.FindEquipData(id);
                                 if (equip.Lv >= achconfig.ObjectiveGrade)
                                 {
-                                    int count = achdata.Count.ToInt() + 1;
-                                    achdata.Count = count == 0 ? "0" : count.ToString();
+                                    finishcount++;
                                 }
                             }
+                            achdata.Count = finishcount.ToString();
                             
                             if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
@@ -899,16 +918,16 @@ namespace GameServer.Script.Model.DataModel
                             }
                         }
                         break;
-                    case AchievementType.InlayGem:
+                    case AchievementType.Gem:
                         {
                             UserPackageCache userPackage = FindUserPackage(uid);
                             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(addId);
-                            if (itemcfg != null)
+                            if (itemcfg != null && itemcfg.ItemType == ItemType.Gem)
                             {
                                 if ((int)itemcfg.Quality >= achconfig.ObjectiveGrade)
                                 {
                                     int count = achdata.Count.ToInt() + addcount.ToInt();
-                                    achdata.Count = count == 0 ? "0" : count.ToString();
+                                    achdata.Count = count.ToString();
                                 }
                             }
                             if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
@@ -939,7 +958,7 @@ namespace GameServer.Script.Model.DataModel
                         {
                             UserBasisCache basis = FindUserBasis(uid);
                             achdata.Count = basis.CombatRankID.ToString();
-                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
+                            if (achdata.Count.ToInt() <= achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }
@@ -958,14 +977,14 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-        public static void RewardsDiamond(int uid, int count, UpdateDiamondType updateType)
+        public static void RewardsDiamond(int uid, int count, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
             basis.RewardsDiamond = MathUtils.Addition(basis.RewardsDiamond, count, int.MaxValue);
-
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), updateType);
+            
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Diamond, updateType);
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
         }
@@ -976,8 +995,44 @@ namespace GameServer.Script.Model.DataModel
             if (basis == null)
                 return;
             basis.UsedDiamond = MathUtils.Addition(basis.UsedDiamond, count, int.MaxValue);
+            
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Diamond, UpdateCoinOperate.Consume);
+        }
 
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), UpdateDiamondType.Consume);
+        public static void RewardsCombatCoin(int uid, int count)
+        {
+            UserCombatCache combat = FindUserCombat(uid);
+
+            combat.CombatCoin = MathUtils.Addition(combat.CombatCoin, count, int.MaxValue);
+
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.CombatCoin, UpdateCoinOperate.NormalReward);
+
+        }
+
+        public static void ConsumeCombatCoin(int uid, int count)
+        {
+            UserCombatCache combat = FindUserCombat(uid);
+            combat.CombatCoin = MathUtils.Subtraction(combat.CombatCoin, count, 0);
+
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.CombatCoin, UpdateCoinOperate.Consume);
+        }
+
+        public static void RewardsGuildCoin(int uid, int count)
+        {
+            UserGuildCache guild = FindUserGuild(uid);
+
+            guild.GuildCoin = MathUtils.Addition(guild.GuildCoin, count, int.MaxValue);
+
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.GuildCoin, UpdateCoinOperate.NormalReward);
+
+        }
+
+        public static void ConsumeGuildCoin(int uid, int count)
+        {
+            UserGuildCache guild = FindUserGuild(uid);
+            guild.GuildCoin = MathUtils.Subtraction(guild.GuildCoin, count, 0);
+
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.GuildCoin, UpdateCoinOperate.Consume);
         }
 
 
@@ -987,8 +1042,8 @@ namespace GameServer.Script.Model.DataModel
             if (basis == null)
                 return false;
             basis.BuyDiamond = MathUtils.Addition(basis.BuyDiamond, count, int.MaxValue / 2);
-
-            PushMessageHelper.UserDiamondChangedNotification(GameSession.Get(uid), UpdateDiamondType.PayReward);
+            
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Diamond, UpdateCoinOperate.PayReward);
 
             // 成就
             AchievementProcess(uid, AchievementType.Diamond, count.ToString());
@@ -1087,7 +1142,8 @@ namespace GameServer.Script.Model.DataModel
                     Sender = "系统",
                     Date = DateTime.Now,
                     Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", userpay.WeekCardDays),
-                    ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
+                    ApppendCoinType = CoinType.Diamond,
+                    ApppendCoinNum = ConfigEnvSet.GetInt("System.WeekCardDiamond").ToNotNullString("0")
                 };
                 AddNewMail(userId, mail);
             }
@@ -1137,7 +1193,8 @@ namespace GameServer.Script.Model.DataModel
                     Sender = "系统",
                     Date = DateTime.Now,
                     Context = string.Format("这是今天您的月卡奖励，您的月卡剩余时间还有 {0} 天！", userpay.MonthCardDays),
-                    ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
+                    ApppendCoinType = CoinType.Diamond,
+                    ApppendCoinNum = ConfigEnvSet.GetInt("System.MonthCardDiamond").ToNotNullString("0")
                 };
 
                 AddNewMail(userId, mail);
@@ -1145,33 +1202,50 @@ namespace GameServer.Script.Model.DataModel
             return true;
         }
 
-        public static void RewardsGold(int uid, BigInteger count, UpdateGoldType updateType = UpdateGoldType.NormalReward)
+        public static void RewardsGold(int uid, BigInteger count, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
-            basis.AddGold(count);
-            //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
+            UserElfCache elf = FindUserElf(uid);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), updateType);
+            if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
+            {
+                basis.AddGold(count + count / 100 * elf.SelectElfValue);
+            }
+            else
+            {
+                basis.AddGold(count);
+            }
+            
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Gold, updateType);
 
             // 成就
             AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
-        public static void RewardsGold(int uid, string unitsValue, UpdateGoldType updateType = UpdateGoldType.NormalReward)
+        public static void RewardsGold(int uid, string strCount, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
-            BigInteger count = Util.ConvertGameCoin(unitsValue);
-            basis.AddGold(count);
-            //basis.Gold = MathUtils.Addition(basis.Gold, count, int.MaxValue);
+            BigInteger count = BigInteger.Parse(strCount);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), updateType);
+            UserElfCache elf = FindUserElf(uid);
+
+            if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
+            {
+                basis.AddGold(count + count / 100 * elf.SelectElfValue);
+            }
+            else
+            {
+                basis.AddGold(count);
+            }
+            
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Gold, updateType);
 
             // 成就
-            AchievementProcess(uid, AchievementType.Diamond, count.ToString());
+            AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
         public static void ConsumeGold(int uid, BigInteger count)
@@ -1181,7 +1255,7 @@ namespace GameServer.Script.Model.DataModel
                 return;
             basis.SubGold(count);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), UpdateGoldType.Consume);
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Gold, UpdateCoinOperate.Consume);
         }
 
         public static void ConsumeGold(int uid, string unitsValue)
@@ -1189,19 +1263,20 @@ namespace GameServer.Script.Model.DataModel
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
-            BigInteger bi = Util.ConvertGameCoin(unitsValue);
+            BigInteger bi = BigInteger.Parse(unitsValue);
             basis.SubGold(bi);
 
-            PushMessageHelper.UserGoldChangedNotification(GameSession.Get(uid), UpdateGoldType.Consume);
+            PushMessageHelper.UserCoinChangedNotification(GameSession.Get(uid), CoinType.Gold, UpdateCoinOperate.Consume);
         }
 
         public static void RefreshUserFightValue(int uid, bool isNotification = true)
         {
             UserBasisCache basis = FindUserBasis(uid);
-            UserAttributeCache attribute = FindUserAttribute(uid);
-            UserEquipsCache equips = FindUserEquips(uid);
             if (basis == null)
                 return;
+            UserAttributeCache attribute = FindUserAttribute(uid);
+            UserEquipsCache equips = FindUserEquips(uid);
+
 
             attribute.ResetAtt();
             attribute.AppandBaseAttribute(basis.UserLv);
@@ -1210,6 +1285,9 @@ namespace GameServer.Script.Model.DataModel
             attribute.AppandEquipAttribute(equips.Ring);
             attribute.AppandEquipAttribute(equips.Shoe);
             attribute.AppandEquipAttribute(equips.Accessory);
+
+            attribute.AppandSoulAttribute(FindUserSoul(uid));
+            attribute.AppandElfAttribute(FindUserElf(uid));
 
             attribute.ConvertFightValue();
 
@@ -1238,9 +1316,11 @@ namespace GameServer.Script.Model.DataModel
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
-            RefreshUserFightValue(uid, false);
+
             
-            UserAchievementCache achieve = FindUserAchievement(uid);
+            RefreshUserFightValue(uid);
+
+            //UserAchievementCache achieve = FindUserAchievement(uid);
 
 
             //PushMessageHelper.UserLevelUpNotification(GameSession.Get(uid));
@@ -1259,27 +1339,46 @@ namespace GameServer.Script.Model.DataModel
         public static void RewardsItems(int uid, List<ItemData> list)
         {
             UserPackageCache package = FindUserPackage(uid);
-            if (package == null)
-                return;
-
+            
             foreach (var v in list)
             {
-                package.AddItem(v.ID, v.Num);
+                if (package.AddItem(v.ID, v.Num))
+                {
+                    var item = new ShareCacheStruct<Config_Item>().FindKey(v.ID);
+                    if (item.ItemType == ItemType.Gem)
+                    {
+                        // 成就
+                        UserHelper.AchievementProcess(uid, AchievementType.Gem, v.ToNotNullString("0"), v.ID);
+                    }
+                }
             }
-
-            PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
             
+            PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
         }
         public static void RewardsItem(int uid, int itemId, int itemNum)
         {
             UserPackageCache package = FindUserPackage(uid);
             if (package.AddItem(itemId, itemNum))
             {
+                var item = new ShareCacheStruct<Config_Item>().FindKey(itemId);
+                if (item.ItemType == ItemType.Gem)
+                {
+                    // 成就
+                    UserHelper.AchievementProcess(uid, AchievementType.Gem, itemNum.ToNotNullString("0"), itemId);
+                }
+
                 PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
             }
            
         }
 
+        public static void RewardsElf(int uid, int elfId)
+        {
+            UserElfCache elf = FindUserElf(uid);
+            elf.AddElf(elfId);
+
+            PushMessageHelper.NewElfNotification(GameSession.Get(uid), elfId);
+        }
 
         public static void AddNewMail(int uid, MailData mail)
         {
@@ -1306,7 +1405,8 @@ namespace GameServer.Script.Model.DataModel
                 Sender = "系统",
                 Date = DateTime.Now,
                 Context = string.Format("这是今天您的周卡奖励，您的周卡 {0} 天后到期！", pay.WeekCardDays + 1),
-                ApppendDiamond = ConfigEnvSet.GetInt("System.WeekCardDiamond")
+                ApppendCoinType = CoinType.Diamond,
+                ApppendCoinNum = ConfigEnvSet.GetInt("System.WeekCardDiamond").ToNotNullString("0")
             };
 
             AddNewMail(uid, mail);
@@ -1321,7 +1421,8 @@ namespace GameServer.Script.Model.DataModel
                 Sender = "系统",
                 Date = DateTime.Now,
                 Context = string.Format("这是今天您的月卡奖励，您的月卡 {0} 天后到期！", pay.MonthCardDays + 1),
-                ApppendDiamond = ConfigEnvSet.GetInt("System.MonthCardDiamond")
+                ApppendCoinType = CoinType.Diamond,
+                ApppendCoinNum = ConfigEnvSet.GetInt("System.MonthCardDiamond").ToNotNullString("0")
             };
 
             AddNewMail(uid, mail);
@@ -1414,34 +1515,9 @@ namespace GameServer.Script.Model.DataModel
 
 
         }
-        public static Config_Lottery RandomLottery(int userId, int userlv)
+        public static Config_Lottery RandomLottery(int userlv)
         {
-            UserPackageCache package = FindUserPackage(userId);
             var list = new ShareCacheStruct<Config_Lottery>().FindAll(t => (t.Level <= userlv));
-            List<int> removelist = new List<int>();
-            foreach (var v in list)
-            {
-                if (v.Type == LotteryAwardType.Item)
-                {
-                    Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(v.Content);
-                    if (item != null)
-                    {
-                        if (item.ItemType == ItemType.Gem)
-                        {
-                            ItemData itemdata = package.FindItem(v.Content);
-                            if (itemdata != null)
-                            {
-                                removelist.Add(v.ID);
-                            }
-                        }
-                    }
-                }
-                
-            }
-            for (int i = 0; i < removelist.Count; ++i)
-            {
-                list.RemoveAll(t => (t.ID == removelist[i]));
-            }
 
             if (list.Count > 0)
             {
@@ -1468,7 +1544,35 @@ namespace GameServer.Script.Model.DataModel
             return diam;
         }
 
-        
+        public static Config_LotteryGem RandomLotteryGem()
+        {
+            var list = new ShareCacheStruct<Config_LotteryGem>().FindAll();
+
+            if (list.Count > 0)
+            {
+                int weight = 0;
+                foreach (var cl in list)
+                {
+                    weight += cl.Weight;
+                }
+                Config_LotteryGem lott = null;
+                int randv = random.Next(weight);
+                int tmpw = 0;
+                for (int i = 0; i < list.Count; ++i)
+                {
+                    tmpw += list[i].Weight;
+                    if (randv <= tmpw)
+                    {
+                        lott = list[i];
+                        break;
+                    }
+                }
+                return lott;
+            }
+            return null;
+        }
+
+
         /// <summary>
         /// 充值成功vip等级改变通知
         /// </summary>

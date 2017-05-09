@@ -48,6 +48,8 @@ namespace GameServer.CsScript.Action
             receipt.Diamond = GetBasis.DiamondNum;
             receipt.BuyDiamond = GetBasis.BuyDiamond;
             receipt.PayMoney = GetPay.PayMoney;
+            receipt.WeekCardDays = GetPay.WeekCardDays;
+            receipt.MonthCardDays = GetPay.MonthCardDays;
             return true;
         }
     }

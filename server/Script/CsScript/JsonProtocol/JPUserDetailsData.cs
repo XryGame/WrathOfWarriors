@@ -32,6 +32,10 @@ namespace GameServer.CsScript.JsonProtocol
         
         public int CombatRankID { get; set; }
 
+        public int LotteryTimes { get; set; }
+
+        public int SignStartID { get; set; }
+
 
         public UserAttributeCache Attribute { get; set; }
 

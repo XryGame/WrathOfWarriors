@@ -2,6 +2,7 @@
 using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -61,6 +62,18 @@ namespace GameServer.CsScript.Action
                 {
                     GetBasis.UserLv = _ID + 1;
                     UserHelper.UserLevelUp(Current.UserId);
+
+                    // 技能
+                    if (GetBasis.UserLv % 10 == 0 && (GetBasis.UserLv / 10) % 2 == 0)
+                    {
+                        var skillcfg = new ShareCacheStruct<Config_Skill>().Find(t => (
+                            t.SkillGroup == GetBasis.Profession && t.SkillID % 10000 == GetBasis.UserLv / 10)
+                        );
+                        if (GetSkill.AddSkill(skillcfg.SkillID))
+                        {
+                            PushMessageHelper.NewSkillNotification(Current, skillcfg.SkillID);
+                        }
+                    }
                 }
 
                 // 每日

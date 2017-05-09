@@ -147,7 +147,7 @@ namespace GameServer.CsScript.Action
                 diamondNum = 666;
             }
             //GetBasis.IsReceivedRedPacket = true;
-            UserHelper.RewardsDiamond(Current.UserId, diamondNum, UpdateDiamondType.Other);
+            UserHelper.RewardsDiamond(Current.UserId, diamondNum);
 
             receipt = diamondNum;
             return true;

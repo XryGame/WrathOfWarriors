@@ -76,9 +76,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 升级消耗货币类型
         /// </summary>
-        private ConsumeType _ConsumeType;
+        private CoinType _ConsumeType;
         [EntityField("ConsumeType")]
-        public ConsumeType ConsumeType
+        public CoinType ConsumeType
         {
             get
             {
@@ -138,7 +138,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _SkillGrade = value.ToInt();
                         break;
                     case "ConsumeType":
-                        _ConsumeType = value.ToEnum<ConsumeType>();
+                        _ConsumeType = value.ToEnum<CoinType>();
                         break;
                     case "ConsumeNumber":
                         _ConsumeNumber = value.ToNotNullString();

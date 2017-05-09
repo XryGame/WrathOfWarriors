@@ -5,7 +5,9 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System.Collections.Generic;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -66,11 +68,26 @@ namespace GameServer.CsScript.Action
                 UserHelper.RewardsItems(Current.UserId, mail.AppendItem.ToList());
                 mail.AppendItem.Clear();
 
-                if (mail.ApppendDiamond > 0)
+                BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
+                if (bigint > 0)
                 {
-                    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
+                    switch (mail.ApppendCoinType)
+                    {
+                        case CoinType.Gold:
+                            UserHelper.RewardsGold(Current.UserId, bigint);
+                            break;
+                        case CoinType.Diamond:
+                            UserHelper.RewardsDiamond(Current.UserId, mail.ApppendCoinNum.ToInt());
+                            break;
+                        //case CoinType.CombatCoin:
+                        //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
+                        //    break;
+                        //case CoinType.GuildCoin:
+                        //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
+                        //    break;
+                    }
                     
-                    mail.ApppendDiamond = 0;
+                    mail.ApppendCoinNum = "0";
                 }
             }
 

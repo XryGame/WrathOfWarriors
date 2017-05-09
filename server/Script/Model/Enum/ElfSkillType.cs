@@ -5,9 +5,13 @@ namespace GameServer.Script.Model.Enum
     public enum ElfSkillType
     {
         /// <summary>
+        /// 无
+        /// </summary>
+        None = 0,
+        /// <summary>
         /// 在线金币收益增加（包括各种渠道获得的金币）
         /// </summary>
-        OnlineGold = 1,
+        OnlineGold,
         /// <summary>
         /// 离线挂机收益增加
         /// </summary>

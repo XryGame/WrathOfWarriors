@@ -1,5 +1,0 @@
-10:05:00 Clear expired cache end.
-10:15:00 Clear expired cache end.
-10:25:00 Clear expired cache end.
-10:35:01 Clear expired cache end.
-10:45:01 Clear expired cache end.

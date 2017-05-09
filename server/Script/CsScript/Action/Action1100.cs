@@ -78,14 +78,15 @@ namespace GameServer.CsScript.Action
             {
                 case ResourceType.Gold:
                     {
-                        BigInteger resourceNum = Util.ConvertGameCoin(itemconfig.ResourceNum);
-                        UserHelper.RewardsGold(Current.UserId, resourceNum * useNum, UpdateGoldType.UserItemReward);
+                        BigInteger resourceNum = BigInteger.Parse(itemconfig.ResourceNum);
+                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
+                        UserHelper.RewardsGold(Current.UserId, value * useNum, UpdateCoinOperate.UserItemReward);
                         //receipt.GainGold = resourceNum;
                     }
                     break;
                 case ResourceType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, itemconfig.ResourceNum.ToInt() * useNum, UpdateDiamondType.UseItem);
+                        UserHelper.RewardsDiamond(Current.UserId, itemconfig.ResourceNum.ToInt() * useNum, UpdateCoinOperate.UseItem);
                         //receipt.GainDiamond = resourceNum * useNum;
                     }
                     break;
@@ -94,12 +95,25 @@ namespace GameServer.CsScript.Action
                         var giftconfig = new ShareCacheStruct<Config_Giftbag>().Find(t => t.ItemID == itemconfig.ItemID);
                         if (giftconfig == null)
                         {
-                            new BaseLog().SaveLog(string.Format("No found gift config. ID={0}", itemconfig.ResourceNum));
+                            new BaseLog().SaveLog(string.Format("No found gift config. ID={0}", itemconfig.ItemID));
                             return false;
                         }
 
                         //receipt.GainItem = giftconfig.GetRewardsItem();
                         UserHelper.RewardsItems(Current.UserId, giftconfig.GetRewardsItem());
+                    }
+                    break;
+                case ResourceType.Elf:
+                    {
+                        var elfconfig = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == itemconfig.ResourceNum.ToInt());
+                        if (elfconfig == null)
+                        {
+                            new BaseLog().SaveLog(string.Format("No found elf config. ID={0}", itemconfig.ResourceNum));
+                            return false;
+                        }
+
+                        //receipt.GainItem = giftconfig.GetRewardsItem();
+                        UserHelper.RewardsElf(Current.UserId, elfconfig.ElvesID);
                     }
                     break;
                 default:

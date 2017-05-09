@@ -31,6 +31,8 @@ namespace gm_tool
 
         }
 
+        public string SelectServerUrl = "";
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             HttpRequest request = new HttpRequest();
@@ -48,7 +50,11 @@ namespace gm_tool
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var select = sender as ComboBox;
+            if (select.SelectedIndex == 0)
+                SelectServerUrl = "http://168.254.0.254:8091/GMCommon.aspx?"; 
+            else if (select.SelectedIndex == 1)
+                SelectServerUrl = "http://118.89.234.233:8091/GMCommon.aspx?";
         }
 
         private void textBox_PreviewTextInputLimitNumber(object sender, TextCompositionEventArgs e)
@@ -79,7 +85,7 @@ namespace gm_tool
             request.AddPostParam("UserID", textBoxInputUserID.Text);
             request.AddPostParam("UserName", textBoxInputUserName.Text);
             request.IsWriteLog = islog;
-            if (request.HttpPostRequest())
+            if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryUserID.Text = request.GetReceiveValue("UserID");
                 QueryUserName.Text = request.GetReceiveValue("UserName");
@@ -122,7 +128,7 @@ namespace gm_tool
             request.AddPostParam("IsResetAchievement", checkAchievement.IsChecked.ToString());
             request.AddPostParam("IsResetTask", checkBoxTask.IsChecked.ToString());
             request.AddPostParam("IsResetCombat", checkBoxCombat.IsChecked.ToString());
-            if (request.HttpPostRequest())
+            if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
             }
@@ -144,7 +150,7 @@ namespace gm_tool
             request.AddPostParam("AddItemID", SetAddItemID.Text);
             request.AddPostParam("AddItemNum", SetAddItemNum.Text);
             request.AddPostParam("PayID", PayID.Text);
-            if (request.HttpPostRequest())
+            if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
             }
@@ -216,7 +222,7 @@ namespace gm_tool
             request.AddPostParam("AddItem3Num", MailItem3Num.Text);
             request.AddPostParam("AddItem4ID", MailItem4ID.Text);
             request.AddPostParam("AddItem4Num", MailItem4Num.Text);
-            if (request.HttpPostRequest())
+            if (request.HttpPostRequest(SelectServerUrl))
             {
                 ResetMailText();
             }
@@ -231,7 +237,7 @@ namespace gm_tool
             int mode = checkBoxAllService.IsChecked == true ? 1 : 2;
             request.AddPostParam("Mode", mode.ToString());
             request.AddPostParam("Content", textBoxNotice.Text);
-            if (request.HttpPostRequest())
+            if (request.HttpPostRequest(SelectServerUrl))
             {
                 ResetNoticeText();
             }

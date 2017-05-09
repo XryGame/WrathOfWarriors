@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Serialization;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Lang;
@@ -968,12 +969,13 @@ namespace GameServer.CsScript.Com
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "校园争霸赛奖励发放",
+                Title = "争霸赛奖励发放",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("感谢您参加本次校园争霸赛，您本次争霸赛止步64强，获得{0}钻石奖励，请查收！", 
+                Context = string.Format("感谢您参加本次争霸赛，您本次争霸赛止步64强，获得{0}钻石奖励，请查收！", 
                                         F64LoserAwardDiamond),
-                ApppendDiamond = F64LoserAwardDiamond
+                ApppendCoinType = CoinType.Diamond,
+                ApppendCoinNum = F64LoserAwardDiamond.ToNotNullString("0")
             };
 
             UserHelper.AddNewMail(UserId, mail);
@@ -991,12 +993,13 @@ namespace GameServer.CsScript.Com
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "校园争霸赛奖励发放",
+                Title = "争霸赛奖励发放",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("感谢您参加本次校园争霸赛，您本次争霸赛止步32强，获得{0}钻石奖励，请查收！",
+                Context = string.Format("感谢您参加本次争霸赛，您本次争霸赛止步32强，获得{0}钻石奖励，请查收！",
                                         F32LoserAwardDiamond),
-                ApppendDiamond = F32LoserAwardDiamond
+                ApppendCoinType = CoinType.Diamond,
+                ApppendCoinNum = F32LoserAwardDiamond.ToNotNullString("0")
             };
 
             UserHelper.AddNewMail(UserId, mail);
@@ -1019,12 +1022,15 @@ namespace GameServer.CsScript.Com
                     MailData mail = new MailData()
                     {
                         ID = Guid.NewGuid().ToString(),
-                        Title = "校园争霸赛投注结果",
+                        Title = "争霸赛投注结果",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = string.Format("恭喜您本次校园争霸赛竞猜的玩家{0}获得冠军，竞猜成功，获得{1}钻石奖励，请查收！",
+                        Context = string.Format("恭喜您本次争霸赛竞猜的玩家{0}获得冠军，竞猜成功，获得{1}钻石奖励，请查收！",
                                                 championUser.NickName, betinfo.Diamond * 2),
-                        ApppendDiamond = betinfo.Diamond * 2
+
+                        ApppendCoinType = CoinType.Diamond,
+                        ApppendCoinNum = (betinfo.Diamond * 2).ToNotNullString("0")
+
                     };
 
                     UserHelper.AddNewMail(betinfo.UserId, mail);
@@ -1034,12 +1040,13 @@ namespace GameServer.CsScript.Com
                     MailData mail = new MailData()
                     {
                         ID = Guid.NewGuid().ToString(),
-                        Title = "校园争霸赛投注结果",
+                        Title = "争霸赛投注结果",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = string.Format("您本次校园争霸赛竞猜失败，系统返还{0}竞猜钻石，请查收！",
+                        Context = string.Format("您本次争霸赛竞猜失败，系统返还{0}竞猜钻石，请查收！",
                                                 betinfo.Diamond / 2),
-                        ApppendDiamond = betinfo.Diamond / 2
+                        ApppendCoinType = CoinType.Diamond,
+                        ApppendCoinNum = (betinfo.Diamond * 2).ToNotNullString("0")
                     };
 
                     UserHelper.AddNewMail(betinfo.UserId, mail);
@@ -1078,7 +1085,7 @@ namespace GameServer.CsScript.Com
             UserBasisCache championUser = UserHelper.FindUserBasis(_Group1.group.member[0].id);
             if (championUser == null)
                 return;
-            string context = string.Format("恭喜 {0} 获得本次校园争霸赛冠军，奖励iPhone 7 Plus一部！", championUser.NickName);
+            string context = string.Format("恭喜 {0} 获得本次争霸赛冠军，奖励iPhone 7 Plus一部！", championUser.NickName);
             // PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
             GlobalRemoteService.SendNotice(NoticeMode.World, context);
 

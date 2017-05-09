@@ -5,6 +5,7 @@ using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -68,12 +69,12 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Diamond:
                     {
-                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum, UpdateDiamondType.Other);
+                        UserHelper.RewardsDiamond(Current.UserId, surface.AwardNum.ToInt());
                     }
                     break;
                 case TaskAwardType.Item:
                     {
-                        UserHelper.RewardsItem(Current.UserId, surface.AwardID, surface.AwardNum);
+                        UserHelper.RewardsItem(Current.UserId, surface.AwardID, surface.AwardNum.ToInt());
                     }
                     break;
             }

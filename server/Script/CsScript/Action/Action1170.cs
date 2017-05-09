@@ -64,7 +64,7 @@ namespace GameServer.CsScript.Action
                 return false;
             }
             
-            BigInteger consumeNumber = Util.ConvertGameCoin(elfNextCfg.GradeConsume);
+            BigInteger consumeNumber = BigInteger.Parse(elfNextCfg.GradeConsume);
             if (GetBasis.GoldNum < consumeNumber)
             {
                 return false;

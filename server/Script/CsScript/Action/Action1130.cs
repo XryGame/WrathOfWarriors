@@ -58,9 +58,9 @@ namespace GameServer.CsScript.Action
             
             switch (soulcfg.ConsumeType)
             {
-                case ConsumeType.Gold:
+                case CoinType.Gold:
                     {
-                        BigInteger consumeNum = Util.ConvertGameCoin(soulcfg.ConsumeNum);
+                        BigInteger consumeNum = BigInteger.Parse(soulcfg.ConsumeNum);
                         if (GetBasis.GoldNum < consumeNum)
                         {
                             return false;
@@ -71,7 +71,7 @@ namespace GameServer.CsScript.Action
                         }
                     }
                     break;
-                case ConsumeType.Diamond:
+                case CoinType.Diamond:
                     {
                         if (GetBasis.DiamondNum < Convert.ToInt32(soulcfg.ConsumeNum))
                         {

@@ -12,11 +12,11 @@ namespace GameServer.CsScript.Action
     {
         public LevelRankingTop50Data()
         {
-            RankList = new List<UserRank>();
+            List = new List<UserRank>();
         }
         public int SelfRank { get; set; }
 
-        public List<UserRank> RankList { get; set; }
+        public List<UserRank> List { get; set; }
     }
     /// <summary>
     /// 全服等级排行榜
@@ -64,7 +64,7 @@ namespace GameServer.CsScript.Action
             foreach (var data in list)
             {
                 UserRank rank = new UserRank(data);
-                receipt.RankList.Add(rank);
+                receipt.List.Add(rank);
             }
             return true;
         }

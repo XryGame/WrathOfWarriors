@@ -76,9 +76,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 奖励数量
         /// </summary>
-        private int _AwardNum;
+        private string _AwardNum;
         [EntityField("AwardNum")]
-        public int AwardNum
+        public string AwardNum
         {
             get
             {
@@ -121,7 +121,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _AwardID = value.ToInt();
                         break;
                     case "AwardNum":
-                        _AwardNum = value.ToInt();
+                        _AwardNum = value.ToNotNullString("0");
                         break;
                     default: throw new ArgumentException(string.Format("Config_Signin index[{0}] isn't exist.", index));
 				}

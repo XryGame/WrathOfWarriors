@@ -17,9 +17,9 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         UpgradeEquip,
         /// <summary>
-        /// 镶嵌宝石
+        /// 获得宝石
         /// </summary>
-        InlayGem,
+        Gem,
         ///// <summary>
         ///// 开启战魂
         ///// </summary>

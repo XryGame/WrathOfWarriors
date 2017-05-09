@@ -1,9 +1,0 @@
-Time:2016-12-27 11:17:52:031-Trace>>RunMain error:System.Net.HttpListenerException (0x80004005): 拒绝访问。
-   在 System.Net.HttpListener.AddAllPrefixes()
-   在 System.Net.HttpListener.Start()
-   在 ZyGames.Framework.Game.Contract.GameWebSocketHost.Start(String[] args)
-   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
-   在 ZyGames.Framework.Script.ScriptEngines.RunMainProgram(String[] args)
-   在 ZyGames.Framework.Game.Runtime.RuntimeHost.<RunAsync>d__12.MoveNext()
-
-

@@ -66,7 +66,7 @@ namespace GameServer.CsScript.Action
                     BigInteger transscriptEarnings = 0;
                     var monster = new ShareCacheStruct<Config_Monster>().Find(t => t.Grade == transscriptCfg.ID);
 
-                    BigInteger bi = Util.ConvertGameCoin(monster.DropoutGold) * 30;
+                    BigInteger bi = BigInteger.Parse(monster.DropoutGold) * 30;
                     transscriptEarnings += bi;
 
                     double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 1800.0);
@@ -75,7 +75,15 @@ namespace GameServer.CsScript.Action
                     var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
                     if (vipcfg != null)
                     {
-                        GetBasis.OfflineEarnings = (transscriptEarnings * tmp / 100 * vipcfg.Multiple).ToNotNullString();
+                        int skillAddition = 0;
+                        var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == GetElf.SelectID);
+                        if (elfcfg != null && elfcfg.ElvesType == ElfSkillType.OffineGold)
+                        {
+                            skillAddition = elfcfg.ElvesNum;
+                        }
+                        BigInteger sum = transscriptEarnings * tmp;
+                        BigInteger earning = sum + sum / 100 * (vipcfg.Multiple + skillAddition);
+                        GetBasis.OfflineEarnings = earning.ToNotNullString("0");
                     }
                     
                 }

@@ -34,6 +34,8 @@ namespace GameServer.CsScript.Action
 
         public UserSoulCache Soul { get; set; }
 
+        public int ElfSelectID { get; set; }
+
     }
 
     /// <summary>
@@ -100,7 +102,7 @@ namespace GameServer.CsScript.Action
             receipt.Attribute = UserHelper.FindUserAttribute(_queryuserid);
             receipt.Equips = UserHelper.FindUserEquips(_queryuserid);
             receipt.Soul = UserHelper.FindUserSoul(_queryuserid);
-
+            receipt.ElfSelectID = UserHelper.FindUserElf(_queryuserid).SelectID;
             return true;
         }
         

@@ -1,8 +1,0 @@
-Time:2017-04-13 10:12:54:128-Trace>>Action1009 error:System.NullReferenceException: 未将对象引用设置到对象的实例。
-   在 GameServer.CsScript.Remote.ChatRemoteService.SendUserData(UserBasisCache basis, String guildId) 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Remote\ChatRemoteService.cs:行号 120
-   在 GameServer.CsScript.Action.Action1009.TakeAction() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1009.cs:行号 42
-   在 ZyGames.Framework.Game.Service.BaseStruct.DoAction().
-Url:?d=MsgId%3D4%26Sid%3Ds_498ac7b320d5475897ddf98e9cb498ef%7C2%7C1%26Uid%3D1000125%26St%3Dst%26ActionId%3D1009%26sign%3D8f97348c27ce64f8bcc5245a6da04669, Uid:1000125, Pid:user1491985750000
-Host:168.254.0.101:51349
-
-

@@ -3,11 +3,20 @@ using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 
 namespace GameServer.Script.Model.DataModel
 {
     public static class DataHelper
     {
+        /// <summary>
+        /// 开服日期
+        /// </summary>
+        static public DateTime OpenServiceDate;
+        static public string OpenServiceDataCacheKey = "OpenServicesDate";
+
+        static public int SignStartID;
+        static public string SignStartIDCacheKey = "SignStartID";
         /// <summary>
         /// 用户初始体力
         /// </summary>
@@ -90,7 +99,28 @@ namespace GameServer.Script.Model.DataModel
             {
                 v.Lv = v.ConvertLevel();
             }
-           
+            var gameCache = new ShareCacheStruct<GameCache>();
+            GameCache openServiceCache = gameCache.FindKey(OpenServiceDataCacheKey);
+            if (openServiceCache == null)
+            {
+                openServiceCache = new GameCache();
+                openServiceCache.Key = OpenServiceDataCacheKey;
+                openServiceCache.Value = DateTime.Now.ToString();
+                gameCache.Add(openServiceCache);
+                gameCache.Update();
+            }
+            OpenServiceDate = openServiceCache.Value.ToDateTime();
+
+            GameCache signStartIDCache = gameCache.FindKey(SignStartIDCacheKey);
+            if (signStartIDCache == null)
+            {
+                signStartIDCache = new GameCache();
+                signStartIDCache.Key = SignStartIDCacheKey;
+                signStartIDCache.Value = "1";
+                gameCache.Add(signStartIDCache);
+                gameCache.Update();
+            }
+            SignStartID = signStartIDCache.Value.ToInt();
         }
         
 

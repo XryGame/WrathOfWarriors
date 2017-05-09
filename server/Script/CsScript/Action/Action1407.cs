@@ -52,6 +52,8 @@ namespace GameServer.CsScript.Action
             }
             GetCombat.CombatCoin = MathUtils.Addition(GetCombat.CombatCoin, addv, int.MaxValue);
 
+            UserHelper.RewardsCombatCoin(Current.UserId, addv);
+
             // 每日
             UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.CombatMatch, 1);
 

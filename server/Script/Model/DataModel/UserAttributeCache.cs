@@ -385,6 +385,20 @@ namespace GameServer.Script.Model.DataModel
             }
 
         }
+
+        public void AppandElfAttribute(UserElfCache elf)
+        {
+            foreach (var v in elf.ElfList)
+            {
+                var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => (t.ElvesID == v.ID && t.ElvesGrade == v.Lv));
+                if (elf == null)
+                    continue;
+                Hp += elfcfg.hp;
+                Atk += elfcfg.attack;
+                Def += elfcfg.defense;
+            }
+        }
+
         /// <summary>  
         /// 刷新计算战斗力
         /// </summary>  

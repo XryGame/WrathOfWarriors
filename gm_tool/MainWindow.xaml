@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gm_tool"
         mc:Ignorable="d"
-        Title="GM工具1.0.0.2" Height="768" Width="1024" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="icon.ico" Loaded="OnLoaded">
+        Title="GM工具" Height="768" Width="1024" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="icon.ico" Loaded="OnLoaded">
     <Grid RenderTransformOrigin="0.5,0.5" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
         <Grid.ContextMenu>
             <ContextMenu Cursor="Arrow"/>
@@ -131,7 +131,8 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="739" VerticalAlignment="Top" Width="1018" Source="9.jpg" IsEnabled="False" Panel.ZIndex="-1"/>
         <ListBox x:Name="listBoxLog" HorizontalAlignment="Left" Height="602" Margin="10,127,0,0" VerticalAlignment="Top" Width="253" Opacity="0.9" VerticalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="11,92,0,0" VerticalAlignment="Top" Width="210" ToolTip="选择区服" SelectionChanged="comboBox_SelectionChanged" AutomationProperties.HelpText="111111" Height="28" RenderTransformOrigin="0.502,0.536" FontSize="16">
-            <ComboBoxItem Content="勇者之地" HorizontalAlignment="Left" Width="200" IsSelected="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+            <ComboBoxItem Content="勇者之地（内网）" HorizontalAlignment="Left" Width="200" IsSelected="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+            <ComboBoxItem Content="勇者之地" HorizontalAlignment="Left" Width="200" IsSelected="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         </ComboBox>
     </Grid>
 </Window>

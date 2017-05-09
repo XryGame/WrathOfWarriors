@@ -50,7 +50,7 @@ namespace GameServer.CsScript.Action
             //}
             
             var equipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == equip.Lv));
-            BigInteger gradeConsumeGold = Util.ConvertGameCoin(equipcfg.GradeConsumeGold);
+            BigInteger gradeConsumeGold = BigInteger.Parse(equipcfg.GradeConsumeGold);
             if (GetBasis.GoldNum < gradeConsumeGold || GetBasis.DiamondNum < equipcfg.GradeConsumediamond)
             {
                 return false;

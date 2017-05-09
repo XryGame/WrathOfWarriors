@@ -144,9 +144,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 点亮此格子需要消耗的货币类型
         /// </summary>
-        private ConsumeType _ConsumeType;
+        private CoinType _ConsumeType;
         [EntityField("ConsumeType")]
-        public ConsumeType ConsumeType
+        public CoinType ConsumeType
         {
             get
             {
@@ -222,7 +222,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _GridState = value.ToInt();
                         break;
                     case "ConsumeType":
-                        _ConsumeType = value.ToEnum<ConsumeType>();
+                        _ConsumeType = value.ToEnum<CoinType>();
                         break;
                     case "ConsumeNum":
                         _ConsumeNum = value.ToNotNullString();

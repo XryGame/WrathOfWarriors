@@ -14,6 +14,8 @@ namespace GameServer.CsScript.Action
         private ChatType _type;
         private int _sender;
         private string _senderName;
+        private int _senderVipLv;
+        private int _senderProfession;
         private int _serverID;
         private long _sendDate;
         private string _content;
@@ -42,6 +44,8 @@ namespace GameServer.CsScript.Action
             if (httpGet.GetEnum("Type", ref _type)
                 && httpGet.GetInt("Sender", ref _sender)
                 && httpGet.GetString("SenderName", ref _senderName)
+                && httpGet.GetInt("SenderVipLv", ref _senderVipLv)
+                && httpGet.GetInt("SenderProfession", ref _senderProfession)
                 && httpGet.GetInt("ServerID", ref _serverID)
                 && httpGet.GetLong("SendDate", ref _sendDate)
                 && httpGet.GetString("Content", ref _content))
@@ -60,14 +64,13 @@ namespace GameServer.CsScript.Action
                 Type = _type,
                 Sender = _sender,
                 SenderName = _senderName,
-                VipLv = ContextUser.VipLv,
-                Profession = ContextUser.Profession,
+                VipLv = _senderVipLv,
+                Profession = _senderProfession,
                 ServerID = _serverID,
                 SendDate = _sendDate,
                 Content = _content,
             };
-
-    
+            
 
             return true;
         }

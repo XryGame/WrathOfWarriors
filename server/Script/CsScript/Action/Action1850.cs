@@ -39,19 +39,22 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
-            var pur = new ShareCacheStruct<Config_Purchase>().FindKey(GetPay.BuyGoldTimes + 1);
-            if (vip == null || pur == null)
+            //var vip = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
+            var purlist = new ShareCacheStruct<Config_Purchase>().FindAll();
+            var pur = purlist.Find(t => t.id == GetPay.BuyGoldTimes + 1);
+            if (pur == null)
+                pur = purlist[purlist.Count - 1];
+            if (/*vip == null || */pur == null)
             {
                 return false;
             }
 
-            int canBuyTimes = vip.BuyStamina;
+            //int canBuyTimes = vip.BuyStamina;
 
-            if (GetPay.BuyGoldTimes >= canBuyTimes)
-            {
-                return true;
-            }
+            //if (GetPay.BuyGoldTimes >= canBuyTimes)
+            //{
+            //    return true;
+            //}
             int needDiamond = pur.SpendDiamond;
 
             if (GetBasis.DiamondNum < needDiamond)
@@ -59,12 +62,15 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            BigInteger gold = Util.ConvertGameCoin(pur.Gold);
+            BigInteger gold = BigInteger.Parse(pur.Gold);
+            BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * gold;
 
             UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
-            UserHelper.RewardsGold(Current.UserId, gold);
+            UserHelper.RewardsGold(Current.UserId, value);
             GetPay.BuyGoldTimes++;
 
+            // 每日
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.BuyGold, 1);
             receipt = true;
             return true;
         }

@@ -65,9 +65,9 @@ namespace GameServer.CsScript.Action
 
             switch (skillGradeCfg.ConsumeType)
             {
-                case ConsumeType.Gold:
+                case CoinType.Gold:
                     {
-                        BigInteger consumeNumber = Util.ConvertGameCoin(skillGradeCfg.ConsumeNumber);
+                        BigInteger consumeNumber = BigInteger.Parse(skillGradeCfg.ConsumeNumber);
                         if (GetBasis.GoldNum < consumeNumber)
                         {
                             return false;
@@ -78,7 +78,7 @@ namespace GameServer.CsScript.Action
                         }
                     }
                     break;
-                case ConsumeType.Diamond:
+                case CoinType.Diamond:
                     {
                         if (GetBasis.DiamondNum < Convert.ToInt32(skillGradeCfg.ConsumeNumber))
                         {

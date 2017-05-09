@@ -376,20 +376,20 @@ namespace GameServer.Script.Model.DataModel
         
 
         /// <summary>
-        /// 当天是否抽奖
+        /// 当天抽奖剩余次数
         /// </summary>
-        private bool _IsTodayLottery;
+        private int _LotteryTimes;
         [ProtoMember(32)]
-        [EntityField("IsTodayLottery")]
-        public bool IsTodayLottery
+        [EntityField("LotteryTimes")]
+        public int LotteryTimes
         {
             get
             {
-                return _IsTodayLottery;
+                return _LotteryTimes;
             }
             set
             {
-                SetChange("IsTodayLottery", value);
+                SetChange("LotteryTimes", value);
             }
         }
         
@@ -633,7 +633,7 @@ namespace GameServer.Script.Model.DataModel
                     case "FightValueRankID": return FightValueRankID;
                     case "LevelRankID": return LevelRankID;
                     case "CombatRankID": return CombatRankID;
-                    case "IsTodayLottery": return IsTodayLottery;
+                    case "LotteryTimes": return LotteryTimes;
                     case "VipGiftProgress": return VipGiftProgress;
                     case "LastLotteryId": return LastLotteryId;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
@@ -711,8 +711,8 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatRankID":
                         _CombatRankID = value.ToInt();
                         break;
-                    case "IsTodayLottery":
-                        _IsTodayLottery = value.ToBool();
+                    case "LotteryTimes":
+                        _LotteryTimes = value.ToInt();
                         break;
                     case "VipGiftProgress":
                         _VipGiftProgress = value.ToInt();

@@ -1,9 +1,13 @@
 ﻿using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -15,8 +19,7 @@ namespace GameServer.CsScript.Action
     public class Action1820 : BaseAction
     {
         private bool receipt;
-        private int AwardDiamondNum = ConfigEnvSet.GetInt("System.FirstPayAwardDiamondNum");
-        private int AwardItemId = ConfigEnvSet.GetInt("System.FirstPayAwardItemID");
+
         public Action1820(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1820, actionGetter)
         {
@@ -44,19 +47,14 @@ namespace GameServer.CsScript.Action
             if (usepay.IsReceiveFirstPay)
                 return true;
             usepay.IsReceiveFirstPay = true;
-            
 
-            UserHelper.RewardsDiamond(Current.UserId, AwardDiamondNum, UpdateDiamondType.Other);
-            Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(AwardItemId);
-            if (item != null)
-            {
-                UserHelper.RewardsItem(Current.UserId, AwardItemId, 1);
-                //GetPackage.AddItem(AwardItemId, 1);
-            }
 
-            //receipt.AwardDiamondNum = AwardDiamondNum;
-            //receipt.CurrDiamond = GetBasis.DiamondNum;
-            //receipt.AwardItemList.Add(AwardItemId);
+            UserHelper.RewardsGold(Current.UserId, 300000);
+            UserHelper.RewardsDiamond(Current.UserId, 20);
+            UserHelper.RewardsItem(Current.UserId, 20024, 1);
+            usepay.WeekCardDays += 7;
+
+            PushMessageHelper.UserPaySucceedNotification(Current);
             receipt = true;
             return true;
         }

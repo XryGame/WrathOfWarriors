@@ -77,9 +77,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 数量或id
         /// </summary>
-        private int _Content;
+        private string _Content;
         [EntityField("Content")]
-        public int Content
+        public string Content
         {
             get
             {
@@ -139,7 +139,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _Type = value.ToEnum<LotteryAwardType>();
                         break;
                     case "Content":
-                        _Content = value.ToInt();
+                        _Content = value.ToNotNullString("0");
                         break;
                     case "Weight":
                         _Weight = value.ToInt();
@@ -152,10 +152,5 @@ namespace GameServer.Script.Model.ConfigModel
         
         #endregion
                 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
 	}
 }
