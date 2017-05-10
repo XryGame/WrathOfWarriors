@@ -33,6 +33,9 @@ namespace gm_tool
 
         public string SelectServerUrl = "";
 
+        private int SelectMailAppendCoinType = 0;
+        private int SelectSetEquipID = 0;
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             HttpRequest request = new HttpRequest();
@@ -48,13 +51,41 @@ namespace gm_tool
             }
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void comboBox_ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var select = sender as ComboBox;
             if (select.SelectedIndex == 0)
                 SelectServerUrl = "http://168.254.0.254:8091/GMCommon.aspx?"; 
             else if (select.SelectedIndex == 1)
                 SelectServerUrl = "http://118.89.234.233:8091/GMCommon.aspx?";
+        }
+
+        private void comboBox_MailAppendCoinTypeSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var select = sender as ComboBox;
+            if (select.SelectedIndex == 0) // 金币
+                SelectMailAppendCoinType = 1;
+            else if (select.SelectedIndex == 1)  // 钻石
+                SelectMailAppendCoinType = 2;
+            else if (select.SelectedIndex == 2)  // 竞技币
+                SelectMailAppendCoinType = 3;
+            else if (select.SelectedIndex == 3)  // 公会币
+                SelectMailAppendCoinType = 4;
+        }
+
+        private void comboBox_SetEquipLevelEquipIDSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var select = sender as ComboBox;
+            if (select.SelectedIndex == 0) // 衣服
+                SelectSetEquipID = 10001;
+            else if (select.SelectedIndex == 1)  // 武器
+                SelectSetEquipID = 10002;
+            else if (select.SelectedIndex == 2)  // 鞋子
+                SelectSetEquipID = 10003;
+            else if (select.SelectedIndex == 3)  // 饰品
+                SelectSetEquipID = 10004;
+            else if (select.SelectedIndex == 4)  // 戒指
+                SelectSetEquipID = 10005;
         }
 
         private void textBox_PreviewTextInputLimitNumber(object sender, TextCompositionEventArgs e)
@@ -100,6 +131,7 @@ namespace gm_tool
                 QueryCombatRankID.Text = request.GetReceiveValue("CombatRankID");
                 QueryGuildName.Text = request.GetReceiveValue("GuildName");
                 QueryFriendNum.Text = request.GetReceiveValue("FriendNum");
+                QueryOpenID.Text = request.GetReceiveValue("OpenID");
             }
         }
 
@@ -150,6 +182,13 @@ namespace gm_tool
             request.AddPostParam("AddItemID", SetAddItemID.Text);
             request.AddPostParam("AddItemNum", SetAddItemNum.Text);
             request.AddPostParam("PayID", PayID.Text);
+            request.AddPostParam("CombatCoinNum", SetCombatCoinNum.Text);
+            request.AddPostParam("ElfID", SetElfID.Text);
+            request.AddPostParam("ElfLevel", SetElfLevel.Text);
+            request.AddPostParam("SkillID", SetSkillID.Text);
+            request.AddPostParam("SkillLevel", SetSkillLevel.Text);
+            request.AddPostParam("EquipID", SelectSetEquipID.ToString());
+            request.AddPostParam("EquipLevel", SetEquipLevel.Text);
             if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
@@ -194,7 +233,7 @@ namespace gm_tool
             MailItem3Num.Text = string.Empty;
             MailItem4ID.Text = string.Empty;
             MailItem4Num.Text = string.Empty;
-            MailDiamond.Text = string.Empty;
+            AppendCoinNum.Text = string.Empty;
 
         }
 
@@ -213,7 +252,8 @@ namespace gm_tool
             request.AddPostParam("UserID", QueryUserID.Text);
             request.AddPostParam("MailTitle", MailTitle.Text);
             request.AddPostParam("MailContent", MailContent.Text);
-            request.AddPostParam("MailDiamond", MailDiamond.Text);
+            request.AddPostParam("AppendCoinType", SelectMailAppendCoinType.ToString());
+            request.AddPostParam("AppendCoinNum", AppendCoinNum.Text);
             request.AddPostParam("AddItem1ID", MailItem1ID.Text);
             request.AddPostParam("AddItem1Num", MailItem1Num.Text);
             request.AddPostParam("AddItem2ID", MailItem2ID.Text);

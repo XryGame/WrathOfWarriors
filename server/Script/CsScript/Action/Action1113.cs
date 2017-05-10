@@ -83,6 +83,11 @@ namespace GameServer.CsScript.Action
                         }
                         BigInteger sum = transscriptEarnings * tmp;
                         BigInteger earning = sum + sum / 100 * (vipcfg.Multiple + skillAddition);
+                        if (GetPay.MonthCardDays >= 0)
+                        {
+                            earning = earning * 2;
+                        }
+                        
                         GetBasis.OfflineEarnings = earning.ToNotNullString("0");
                     }
                     

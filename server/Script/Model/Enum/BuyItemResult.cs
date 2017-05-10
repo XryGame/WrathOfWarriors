@@ -17,6 +17,10 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         NoDiamond,
         /// <summary>
+        /// 竞技币不足
+        /// </summary>
+        NoCombatGold,
+        /// <summary>
         /// 公会币不足
         /// </summary>
         NoGuildGold,

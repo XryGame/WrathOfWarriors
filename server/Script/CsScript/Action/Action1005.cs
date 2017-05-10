@@ -142,8 +142,14 @@ namespace GameServer.CsScript.Action
             packagecache.ResetCache();
             var packageSet = new PersonalCacheStruct<UserPackageCache>();
 
-            //packagecache.AddItem(10001, 99, false);
-            //packagecache.AddItem(10006, 99, false);
+
+            packagecache.AddItem(20001, 1, false);
+            packagecache.AddItem(20012, 1, false);
+            packagecache.AddItem(20023, 1, false);
+            packagecache.AddItem(20034, 1, false);
+            packagecache.AddItem(20045, 1, false);
+            packagecache.AddItem(20056, 1, false);
+            packagecache.AddItem(20067, 1, false);
             //for (int i = 20001; i < 20077; ++i)
             //    packagecache.AddItem(i, 10, false);
             //for (int i = 30001; i < 30005; ++i)

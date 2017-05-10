@@ -49,6 +49,8 @@ namespace GameServer.CsScript.Action
 
             float discount = shopcfg.Discount / 10.0f;
             int needCoin = Convert.ToInt32(shopcfg.Price * discount) * _num;
+
+
             if (shopcfg.CurrencyType == CoinType.Diamond)
             {
                 if (GetBasis.DiamondNum < needCoin)
@@ -62,17 +64,16 @@ namespace GameServer.CsScript.Action
                 }
                 
             }
-            else if (shopcfg.CurrencyType == CoinType.GuildCoin)
+            else if (shopcfg.CurrencyType == CoinType.CombatCoin)
             {
-                if (GetGuild.GuildCoin < needCoin)
+                if (GetCombat.CombatCoin < needCoin)
                 {
-                    receipt = BuyItemResult.NoGuildGold;
+                    receipt = BuyItemResult.NoCombatGold;
                     return true;
                 }
                 else
                 {
-                    GetGuild.GuildCoin = MathUtils.Subtraction(GetGuild.GuildCoin, needCoin, 0);
-                    UserHelper.ConsumeGuildCoin(Current.UserId, needCoin);
+                    UserHelper.ConsumeCombatCoin(Current.UserId, needCoin);
                 }
             }
 

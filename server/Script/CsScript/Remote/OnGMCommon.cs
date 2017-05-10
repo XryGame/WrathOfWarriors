@@ -1,5 +1,6 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.Com;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -35,7 +36,7 @@ namespace GameServer.CsScript.Remote
         {
             if (!bonestr.IsEmpty())
             {
-                bonestr += "&";
+                bonestr += "/";
             }
             bonestr = bonestr + str;
         }
@@ -189,6 +190,7 @@ namespace GameServer.CsScript.Remote
                         param.AddParam("CombatRankID", basis.CombatRankID.ToString());
                         param.AddParam("GuildName", "暂无公会");
                         param.AddParam("FriendNum", friend.FriendsList.Count.ToString());
+                        param.AddParam("OpenID", user.OpenID);
                     }
                     else if (_OperateName == "Reset")
                     {
@@ -273,7 +275,10 @@ namespace GameServer.CsScript.Remote
                     else if (_OperateName == "Set")
                     {
                         string UserName;
-                        int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum, PayID;
+                        int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum, PayID, CombatCoinNum;
+                        int ElfID, ElfLevel, SkillID, SkillLevel;
+                        EquipID SetEquipID;
+                        int EquipLevel;
                         parms.TryGetValue("UserID", out _value);
                         int UserId = _value.ToInt();
                         parms.TryGetValue("UserName", out UserName);
@@ -289,6 +294,21 @@ namespace GameServer.CsScript.Remote
                         AddItemNum = _value.ToInt();
                         parms.TryGetValue("PayID", out _value);
                         PayID = _value.ToInt();
+                        parms.TryGetValue("CombatCoinNum", out _value);
+                        CombatCoinNum = _value.ToInt();
+                        parms.TryGetValue("ElfID", out _value);
+                        ElfID = _value.ToInt();
+                        parms.TryGetValue("ElfLevel", out _value);
+                        ElfLevel = _value.ToInt();
+                        parms.TryGetValue("SkillID", out _value);
+                        SkillID = _value.ToInt();
+                        parms.TryGetValue("SkillLevel", out _value);
+                        SkillLevel = _value.ToInt();
+                        parms.TryGetValue("EquipID", out _value);
+                        SetEquipID = _value.ToEnum<EquipID>();
+                        parms.TryGetValue("EquipLevel", out _value);
+                        EquipLevel = _value.ToInt();
+
 
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
                         if (user == null)
@@ -368,17 +388,84 @@ namespace GameServer.CsScript.Remote
                                 bone.AddStrBone("充值ID错误");
                             }
                         }
+                        if (CombatCoinNum > 0)
+                        {
+                            CombatCoinNum = Math.Min(CombatCoinNum, 1000000);
+                            UserHelper.RewardsCombatCoin(UserId, CombatCoinNum);
+                        }
+                        if (ElfID > 0 && ElfLevel >= 0)
+                        {
+                            
+                            var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => (t.ElvesID == ElfID && t.ElvesGrade == ElfLevel));
+                            if (elfcfg == null)
+                            {
+                                bone.AddStrBone("精灵ID或等级错误");
+                            }
+                            else
+                            {
+                                var elf = UserHelper.FindUserElf(UserId);
+                                var elfdata = elf.FindElf(ElfID);
+                                if (elfdata != null)
+                                {
+                                    elfdata.Lv = ElfLevel;
+                                }
+                                else
+                                {
+                                    UserHelper.RewardsElf(UserId, ElfID);
+                                    elfdata = elf.FindElf(ElfID);
+                                    elfdata.Lv = ElfLevel;
+                                }
+                            }
+                        }
+                        if (SkillID > 0 && SkillLevel >= 0)
+                        {
+                            var skilllevelcfg = new ShareCacheStruct<Config_SkillGrade>().Find( t => (t.SkillId == SkillID && t.SkillGrade == SkillLevel));
+                            if (skilllevelcfg == null)
+                            {
+                                bone.AddStrBone("技能ID或等级错误");
+                            }
+                            else
+                            {
+                                
+                                var skill = UserHelper.FindUserSkill(UserId);
+                                var skilldata = skill.FindSkill(SkillID);
+                                if (skilldata != null)
+                                {
+                                    skilldata.Lv = SkillLevel;
+                                }
+                                else
+                                {
+                                    if (skill.AddSkill(SkillID))
+                                    {
+                                        skilldata = skill.FindSkill(SkillID);
+                                        skilldata.Lv = SkillLevel;
+                                    }
+                                }
+                            }
+                        }
+                        if (EquipLevel > 0)
+                        {
+                            var equip = UserHelper.FindUserEquips(UserId);
+                            var equipData = equip.FindEquipData(SetEquipID);
+                            if (equipData != null)
+                            {
+                                equipData.Lv = EquipLevel;
+                            }
+                        }
                     }
                     else if (_OperateName == "NewMail")
                     {
                         string MailTitle, MailContent;
-                        int MailDiamond, AddItem1ID, AddItem1Num, AddItem2ID, AddItem2Num, AddItem3ID, AddItem3Num, AddItem4ID, AddItem4Num;
+                        int AddItem1ID, AddItem1Num, AddItem2ID, AddItem2Num, AddItem3ID, AddItem3Num, AddItem4ID, AddItem4Num;
+                        CoinType AppendCoinType;
+                        string AppendCoinNum = "0";
                         parms.TryGetValue("UserID", out _value);
                         int UserId = _value.ToInt();
                         parms.TryGetValue("MailTitle", out MailTitle);
                         parms.TryGetValue("MailContent", out MailContent);
-                        parms.TryGetValue("MailDiamond", out _value);
-                        MailDiamond = _value.ToInt();
+                        parms.TryGetValue("AppendCoinType", out _value);
+                        AppendCoinType = _value.ToEnum<CoinType>();
+                        parms.TryGetValue("AppendCoinNum", out AppendCoinNum);
                         parms.TryGetValue("AddItem1ID", out _value);
                         AddItem1ID = _value.ToInt();
                         parms.TryGetValue("AddItem1Num", out _value);
@@ -410,7 +497,9 @@ namespace GameServer.CsScript.Remote
                             Sender = "系统",
                             Date = DateTime.Now,
                             Context = MailContent,
-                            //ApppendDiamond = MailDiamond
+                            ApppendCoinType = (CoinType)AppendCoinType,
+                            ApppendCoinNum = AppendCoinNum
+
                         };
                         if (AddItem1ID > 0 && AddItem1Num > 0)
                         {
