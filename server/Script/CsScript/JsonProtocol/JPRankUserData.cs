@@ -4,7 +4,7 @@ namespace GameServer.CsScript.JsonProtocol
 {
     public class JPRankUserData
     {
-        public int UserId { get; set; }
+        public int UserID { get; set; }
 
         public string NickName { get; set; }
 

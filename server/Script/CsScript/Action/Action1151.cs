@@ -58,7 +58,7 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
-            UserHelper.RewardsItem(Current.UserId, livenesscfg.ItemID, 10);
+            UserHelper.RewardsItem(Current.UserId, livenesscfg.ItemID, 1);
             GetTask.ReceiveBoxList.Add(id);
 
             receipt = true;

@@ -67,28 +67,31 @@ namespace GameServer.CsScript.Action
 
                 UserHelper.RewardsItems(Current.UserId, mail.AppendItem.ToList());
                 mail.AppendItem.Clear();
-
-                BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
-                if (bigint > 0)
+                if (!mail.ApppendCoinNum.IsEmpty())
                 {
-                    switch (mail.ApppendCoinType)
+                    BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
+                    if (bigint > 0)
                     {
-                        case CoinType.Gold:
-                            UserHelper.RewardsGold(Current.UserId, bigint);
-                            break;
-                        case CoinType.Diamond:
-                            UserHelper.RewardsDiamond(Current.UserId, mail.ApppendCoinNum.ToInt());
-                            break;
-                        //case CoinType.CombatCoin:
-                        //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
-                        //    break;
-                        //case CoinType.GuildCoin:
-                        //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
-                        //    break;
+                        switch (mail.ApppendCoinType)
+                        {
+                            case CoinType.Gold:
+                                UserHelper.RewardsGold(Current.UserId, bigint);
+                                break;
+                            case CoinType.Diamond:
+                                UserHelper.RewardsDiamond(Current.UserId, mail.ApppendCoinNum.ToInt());
+                                break;
+                                //case CoinType.CombatCoin:
+                                //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
+                                //    break;
+                                //case CoinType.GuildCoin:
+                                //    UserHelper.RewardsDiamond(Current.UserId, mail.ApppendDiamond, UpdateDiamondType.Other);
+                                //    break;
+                        }
+
+                        mail.ApppendCoinNum = "0";
                     }
-                    
-                    mail.ApppendCoinNum = "0";
                 }
+  
             }
 
             receipt = true;

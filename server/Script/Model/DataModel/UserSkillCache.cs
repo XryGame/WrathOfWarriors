@@ -152,7 +152,7 @@ namespace GameServer.Script.Model.DataModel
 
             var skillConfig = new ShareCacheStruct<Config_Skill>();
             var list = skillConfig.FindAll(t => (
-                t.SkillGroup == profession && (t.SkillID % 10000 == 0 || t.SkillID % 10000 == 1))
+                t.SkillGroup == profession/* && (t.SkillID % 10000 == 0 || t.SkillID % 10000 == 1)*/)
                 );
  
             foreach (var v in list)

@@ -43,11 +43,11 @@ namespace GameServer.CsScript.Action
             int addv = 0;
             if (result == EventStatus.Good)
             {
-                addv = ConfigEnvSet.GetInt("Combat.MatchWinAwardDiamond");
+                addv = ConfigEnvSet.GetInt("Combat.MatchWinAwardCombatCoin");
             }
             else
             {
-                addv = ConfigEnvSet.GetInt("Combat.MatchFailedAwardDiamond");
+                addv = ConfigEnvSet.GetInt("Combat.MatchFailedAwardCombatCoin");
                 
             }
             GetCombat.CombatCoin = MathUtils.Addition(GetCombat.CombatCoin, addv, int.MaxValue);

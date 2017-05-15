@@ -14,5 +14,7 @@ namespace GameServer.CsScript.JsonProtocol
         public string SessionId { get; set; }
 
         public bool isCreated { get; set; }
+
+        public string GlobalServerUrl { get; set; }
     }
 }

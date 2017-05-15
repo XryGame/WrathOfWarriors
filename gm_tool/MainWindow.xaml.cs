@@ -160,6 +160,7 @@ namespace gm_tool
             request.AddPostParam("IsResetAchievement", checkAchievement.IsChecked.ToString());
             request.AddPostParam("IsResetTask", checkBoxTask.IsChecked.ToString());
             request.AddPostParam("IsResetCombat", checkBoxCombat.IsChecked.ToString());
+            request.AddPostParam("IsResetAttribute", checkBoxAttribute.IsChecked.ToString());
             if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
@@ -189,6 +190,7 @@ namespace gm_tool
             request.AddPostParam("SkillLevel", SetSkillLevel.Text);
             request.AddPostParam("EquipID", SelectSetEquipID.ToString());
             request.AddPostParam("EquipLevel", SetEquipLevel.Text);
+            request.AddPostParam("LevelUp", SetLevelUp.Text);
             if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
@@ -207,6 +209,7 @@ namespace gm_tool
             checkAchievement.IsChecked = false;
             checkBoxTask.IsChecked = false;
             checkBoxCombat.IsChecked = false;
+            checkBoxAttribute.IsChecked = false;
         }
 
         private void ResetSetText()
@@ -217,6 +220,13 @@ namespace gm_tool
             SetDiamondNum.Text = string.Empty;
             SetAddItemID.Text = string.Empty;
             SetAddItemNum.Text = string.Empty;
+            SetCombatCoinNum.Text = string.Empty;
+            SetElfID.Text = string.Empty;
+            SetElfLevel.Text = string.Empty;
+            SetSkillID.Text = string.Empty;
+            SetSkillLevel.Text = string.Empty;
+            SetEquipLevel.Text = string.Empty;
+            SetLevelUp.Text = string.Empty;
         }
 
         private void ResetMailText()

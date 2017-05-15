@@ -49,7 +49,11 @@ namespace GameServer.CsScript.Action
             //    return false;
             //}
             
-            var equipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == equip.Lv));
+            var equipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == (equip.Lv + 1)));
+            if (equipcfg == null)
+            {
+                return false;
+            }
             BigInteger gradeConsumeGold = BigInteger.Parse(equipcfg.GradeConsumeGold);
             if (GetBasis.GoldNum < gradeConsumeGold || GetBasis.DiamondNum < equipcfg.GradeConsumediamond)
             {

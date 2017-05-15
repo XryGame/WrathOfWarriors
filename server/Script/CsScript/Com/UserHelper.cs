@@ -1335,6 +1335,59 @@ namespace GameServer.Script.Model.DataModel
             //fightvaluer.UserLv = basis.UserLv;
         }
 
+        public static bool UserLevelUpCheck(int uid, int levelId)
+        {
+            var basis = FindUserBasis(uid);
+            var skill = FindUserSkill(uid);
+            var roleInitialSet = new ShareCacheStruct<Config_RoleInitial>();
+            if (roleInitialSet.FindKey(levelId) == null)
+                return false;
+            var transcriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
+            var transcriptCfg = transcriptSet.FindKey(levelId);
+            if (transcriptCfg == null)
+                return false;
+
+            if (levelId == basis.UserLv)
+            {
+                if (roleInitialSet.FindKey(levelId + 1) != null
+                    && transcriptSet.FindKey(levelId + 1) != null)
+                {
+                    basis.UserLv = levelId + 1;
+                    UserLevelUp(uid);
+
+                    // 技能
+                    if (basis.UserLv % 10 == 0 && (basis.UserLv / 10) % 2 == 0)
+                    {
+                        var skillcfg = new ShareCacheStruct<Config_Skill>().Find(t => (
+                            t.SkillGroup == basis.Profession && t.SkillID % 10000 == basis.UserLv / 10)
+                        );
+                        if (skillcfg != null)
+                        {
+                            if (skill.AddSkill(skillcfg.SkillID))
+                            {
+                                PushMessageHelper.NewSkillNotification(GameSession.Get(uid), skillcfg.SkillID);
+                            }
+                        }
+
+                    }
+                }
+
+                // 每日
+                if (transcriptCfg.limitTime > 0)
+                {
+                    EveryDayTaskProcess(uid, TaskType.PassStageBoss, 1);
+                }
+                else
+                {
+                    EveryDayTaskProcess(uid, TaskType.PassStage, 1);
+                }
+
+                // 成就
+                AchievementProcess(uid, AchievementType.LevelCount);
+            }
+            return true;
+        }
+
 
         public static void RewardsItems(int uid, List<ItemData> list)
         {
@@ -1348,7 +1401,7 @@ namespace GameServer.Script.Model.DataModel
                     if (item.ItemType == ItemType.Gem)
                     {
                         // 成就
-                        UserHelper.AchievementProcess(uid, AchievementType.Gem, v.ToNotNullString("0"), v.ID);
+                        AchievementProcess(uid, AchievementType.Gem, v.Num.ToString(), v.ID);
                     }
                 }
             }
@@ -1364,7 +1417,7 @@ namespace GameServer.Script.Model.DataModel
                 if (item.ItemType == ItemType.Gem)
                 {
                     // 成就
-                    UserHelper.AchievementProcess(uid, AchievementType.Gem, itemNum.ToNotNullString("0"), itemId);
+                    AchievementProcess(uid, AchievementType.Gem, itemNum.ToNotNullString("0"), itemId);
                 }
 
                 PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
@@ -1376,6 +1429,8 @@ namespace GameServer.Script.Model.DataModel
         {
             UserElfCache elf = FindUserElf(uid);
             elf.AddElf(elfId);
+
+            RefreshUserFightValue(uid);
 
             PushMessageHelper.NewElfNotification(GameSession.Get(uid), elfId);
         }

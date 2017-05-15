@@ -33,11 +33,17 @@ namespace GameServer.CsScript.Base
                 levelranking.rankingData.RankTime = DateTime.Now;
                 levelranking.rankingData.RankList.Clear();
 
-                
+
+                int count = 0;
                 for (int i = 0; i < ServerSet.Set.Count; ++i)
                 {
+                    if (ServerSet.Set[i].ServerUrl.Contains("168.254")
+                        || ServerSet.Set[i].ServerUrl.Contains("192.168"))
+                    {
+                        continue;
+                    }
                     string serverName = ServerSet.Set[i].ServerName;
-                    string connectKey = "ServerDB_" + (i + 1).ToString();
+                    string connectKey = "ServerDB_" + (count++ + 1).ToString();
                     var dbProvider = DbConnectionProvider.CreateDbProvider(connectKey);
                     string sql = "SELECT UserID,NickName,ServerID,Profession,UserLv,VipLv,LevelRankID FROM UserBasisCache";
                     using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))

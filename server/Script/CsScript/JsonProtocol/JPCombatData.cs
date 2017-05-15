@@ -81,9 +81,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public long LastFailedTime { get; set; }
 
-        public int AwardDiamond { get; set; }
-
-        public int CurrDiamond { get; set; }
+        public string AwardGold { get; set; }
+        
     }
 
     public class MatchRivalData

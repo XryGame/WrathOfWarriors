@@ -11,6 +11,7 @@ using ZyGames.Framework.RPC.Sockets;
 using GameServer.CsScript.JsonProtocol;
 using ZyGames.Framework.Game.Contract;
 using GameServer.CsScript.Base;
+using System.Configuration;
 
 namespace GameServer.CsScript.Action
 {
@@ -61,7 +62,8 @@ namespace GameServer.CsScript.Action
                 {
                     UserId = Current.UserId,
                     SessionId = Current.SessionId,
-                    isCreated = isCreated
+                    isCreated = isCreated,
+                    GlobalServerUrl = ConfigurationManager.AppSettings["GlobalServiceAddr"]
                 }
             };
             return MathUtils.ToJson(resultData);

@@ -195,7 +195,7 @@ namespace GameServer.CsScript.Remote
                     else if (_OperateName == "Reset")
                     {
                         bool isResetEquip, isResetPackage, isResetSoul, isResetPay, isResetEventAward,
-                            isResetSkill, isResetAchievement, isResetTask, isResetCombat;
+                            isResetSkill, isResetAchievement, isResetTask, isResetCombat, isResetAttribute;
                         parms.TryGetValue("UserID", out _value);
                         int UserId = _value.ToInt();
                         parms.TryGetValue("IsResetEquip", out _value);
@@ -216,6 +216,8 @@ namespace GameServer.CsScript.Remote
                         isResetTask = _value.ToBool();
                         parms.TryGetValue("isResetCombat", out _value);
                         isResetCombat = _value.ToBool();
+                        parms.TryGetValue("isResetAttribute", out _value);
+                        isResetAttribute = _value.ToBool();
 
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
                         if (user == null)
@@ -271,6 +273,10 @@ namespace GameServer.CsScript.Remote
                             var combat = UserHelper.FindUserCombat(UserId);
                             combat.ResetCache();
                         }
+                        if (isResetAttribute)
+                        {
+                            UserHelper.RefreshUserFightValue(UserId);
+                        }
                     }
                     else if (_OperateName == "Set")
                     {
@@ -279,6 +285,7 @@ namespace GameServer.CsScript.Remote
                         int ElfID, ElfLevel, SkillID, SkillLevel;
                         EquipID SetEquipID;
                         int EquipLevel;
+                        int LevelUpLevel;
                         parms.TryGetValue("UserID", out _value);
                         int UserId = _value.ToInt();
                         parms.TryGetValue("UserName", out UserName);
@@ -308,6 +315,8 @@ namespace GameServer.CsScript.Remote
                         SetEquipID = _value.ToEnum<EquipID>();
                         parms.TryGetValue("EquipLevel", out _value);
                         EquipLevel = _value.ToInt();
+                        parms.TryGetValue("LevelUp", out _value);
+                        LevelUpLevel = _value.ToInt();
 
 
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
@@ -451,6 +460,18 @@ namespace GameServer.CsScript.Remote
                             {
                                 equipData.Lv = EquipLevel;
                             }
+                        }
+                        if (LevelUpLevel > 0)
+                        {
+                            var basis = UserHelper.FindUserBasis(UserId);
+                            int startLevel = basis.UserLv;
+                            for (int i = 0; i < LevelUpLevel; ++i)
+                            {
+                                UserHelper.UserLevelUpCheck(UserId, startLevel + i);
+                            }
+
+
+                            
                         }
                     }
                     else if (_OperateName == "NewMail")

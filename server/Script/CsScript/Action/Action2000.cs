@@ -52,7 +52,7 @@ namespace GameServer.CsScript.Action
             {
                 JPRankUserData jpdata = new JPRankUserData()
                 {
-                    UserId = data.UserID,
+                    UserID = data.UserID,
                     NickName = data.NickName,
                     Profession = data.Profession,
                     RankId = data.RankId,

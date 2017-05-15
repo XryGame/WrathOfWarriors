@@ -47,51 +47,12 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            var roleInitialSet = new ShareCacheStruct<Config_RoleInitial>();
-            if (roleInitialSet.FindKey(_ID) == null)
-                return false;
-            var transcriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
-            var transcriptCfg = transcriptSet.FindKey(_ID);
-            if (transcriptCfg == null)
-                return false;
-
-            if (_ID == GetBasis.UserLv)
+            if (UserHelper.UserLevelUpCheck(Current.UserId, _ID))
             {
-                if (roleInitialSet.FindKey(_ID + 1) != null
-                    && transcriptSet.FindKey(_ID + 1) != null)
-                {
-                    GetBasis.UserLv = _ID + 1;
-                    UserHelper.UserLevelUp(Current.UserId);
-
-                    // 技能
-                    if (GetBasis.UserLv % 10 == 0 && (GetBasis.UserLv / 10) % 2 == 0)
-                    {
-                        var skillcfg = new ShareCacheStruct<Config_Skill>().Find(t => (
-                            t.SkillGroup == GetBasis.Profession && t.SkillID % 10000 == GetBasis.UserLv / 10)
-                        );
-                        if (GetSkill.AddSkill(skillcfg.SkillID))
-                        {
-                            PushMessageHelper.NewSkillNotification(Current, skillcfg.SkillID);
-                        }
-                    }
-                }
-
-                // 每日
-                if (transcriptCfg.limitTime > 0)
-                {
-                    UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.PassStageBoss, 1);
-                }
-                else
-                {
-                    UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.PassStage, 1);
-                }
-
-                // 成就
-                UserHelper.AchievementProcess(Current.UserId, AchievementType.LevelCount);
+                receipt = GetAttribute;
+                return true;
             }
-
-            receipt = GetAttribute;
-            return true;
+            return false;
         }
     }
 }

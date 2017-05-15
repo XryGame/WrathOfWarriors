@@ -10,6 +10,7 @@ using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using GameServer.Script.Model.Enum.Enum;
 using System;
+using System.Numerics;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
@@ -168,12 +169,14 @@ namespace GameServer.CsScript.Action
             receipt.CurrRankId = GetBasis.CombatRankID;
             receipt.RankRise = rankrise;
             receipt.LastFailedTime = Util.ConvertDateTimeStamp(GetCombat.LastFailedDate);
+            receipt.AwardGold = "0";
             if (result == EventStatus.Good)
             {
-                receipt.AwardDiamond = ConfigEnvSet.GetInt("User.CombatWinAward");
-                UserHelper.RewardsDiamond(Current.UserId, receipt.AwardDiamond);
+                BigInteger gold = ConfigEnvSet.GetInt("User.CombatWinAwardGold");
+                BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * gold;
+                receipt.AwardGold = value.ToString();
+                UserHelper.RewardsGold(Current.UserId, value);
             }
-            receipt.CurrDiamond = GetBasis.DiamondNum;
 
 
             // 每日

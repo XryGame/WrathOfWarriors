@@ -100,7 +100,12 @@ namespace GameServer.CsScript.Action
                         }
 
                         //receipt.GainItem = giftconfig.GetRewardsItem();
-                        UserHelper.RewardsItems(Current.UserId, giftconfig.GetRewardsItem());
+                        var list = giftconfig.GetRewardsItem();
+                        for (int i = 0; i < useNum; ++i)
+                        {
+                            UserHelper.RewardsItems(Current.UserId, list);
+                        }
+                            
                     }
                     break;
                 case ResourceType.Elf:

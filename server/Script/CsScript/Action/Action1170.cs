@@ -77,6 +77,8 @@ namespace GameServer.CsScript.Action
 
             elf.Lv = elfNextCfg.ElvesGrade;
 
+            UserHelper.RefreshUserFightValue(Current.UserId);
+
             // 每日
             UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.UpgradeElf, 1);
 
