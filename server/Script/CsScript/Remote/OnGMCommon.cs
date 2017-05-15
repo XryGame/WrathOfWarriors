@@ -282,7 +282,7 @@ namespace GameServer.CsScript.Remote
                     {
                         string UserName;
                         int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum, PayID, CombatCoinNum;
-                        int ElfID, ElfLevel, SkillID, SkillLevel;
+                        int ElfID, ElfLevel, SkillID, SkillLevel, NoviceGuide;
                         EquipID SetEquipID;
                         int EquipLevel;
                         int LevelUpLevel;
@@ -317,7 +317,8 @@ namespace GameServer.CsScript.Remote
                         EquipLevel = _value.ToInt();
                         parms.TryGetValue("LevelUp", out _value);
                         LevelUpLevel = _value.ToInt();
-
+                        parms.TryGetValue("NoviceGuide", out _value);
+                        NoviceGuide = _value.ToInt();
 
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
                         if (user == null)
@@ -469,9 +470,12 @@ namespace GameServer.CsScript.Remote
                             {
                                 UserHelper.UserLevelUpCheck(UserId, startLevel + i);
                             }
-
-
                             
+                        }
+                        if (NoviceGuide > 0)
+                        {
+                            var task = UserHelper.FindUserTask(UserId);
+                            task.PlotId = NoviceGuide;
                         }
                     }
                     else if (_OperateName == "NewMail")

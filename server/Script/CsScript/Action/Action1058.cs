@@ -1,6 +1,7 @@
 ﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using System.Collections.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -12,6 +13,7 @@ namespace GameServer.CsScript.Action
     public class Action1058 : BaseAction
     {
         private List<ItemData> receipt;
+        private string _data;
         public Action1058(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1058, actionGetter)
         {
@@ -33,14 +35,24 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            return true;
+            if (httpGet.GetString("Items", ref _data))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override bool TakeAction()
         {
-            receipt = GetPackage.NewItemCache.ToList();
-            GetPackage.NewItemCache.Clear();
-
+            try
+            {
+                receipt = MathUtils.ParseJson<List<ItemData>>(_data);
+            }
+            catch
+            {
+                return false;
+            }
+            
             return true;
         }
     }

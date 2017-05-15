@@ -50,7 +50,7 @@ namespace GameServer.CsScript.Action
                 addv = ConfigEnvSet.GetInt("Combat.MatchFailedAwardCombatCoin");
                 
             }
-            GetCombat.CombatCoin = MathUtils.Addition(GetCombat.CombatCoin, addv, int.MaxValue);
+            //GetCombat.CombatCoin = MathUtils.Addition(GetCombat.CombatCoin, addv, int.MaxValue);
 
             UserHelper.RewardsCombatCoin(Current.UserId, addv);
 

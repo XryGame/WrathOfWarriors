@@ -841,7 +841,7 @@ namespace GameServer.Script.Model.DataModel
                         {
                             UserBasisCache basis = FindUserBasis(uid);
                             achdata.Count = basis.UserLv.ToString();
-                            if (achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
+                            if (achdata.Count.ToInt() > achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }
@@ -1406,7 +1406,8 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
             
-            PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
+            PushMessageHelper.UserNewItemNotification(GameSession.Get(uid), package.NewItemCache.ToList());
+            package.NewItemCache.Clear();
         }
         public static void RewardsItem(int uid, int itemId, int itemNum)
         {
@@ -1420,7 +1421,8 @@ namespace GameServer.Script.Model.DataModel
                     AchievementProcess(uid, AchievementType.Gem, itemNum.ToNotNullString("0"), itemId);
                 }
 
-                PushMessageHelper.UserNewItemNotification(GameSession.Get(uid));
+                PushMessageHelper.UserNewItemNotification(GameSession.Get(uid), package.NewItemCache.ToList());
+                package.NewItemCache.Clear();
             }
            
         }

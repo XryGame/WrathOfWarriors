@@ -114,7 +114,7 @@ namespace GameServer.CsScript.Action
             basis.CreateDate = DateTime.Now;
             basis.OfflineDate = DateTime.Now;
             basis.IsOnline = true;
-            basis.Gold = "10000";
+            basis.Gold = ConfigEnvSet.GetString("User.InitGold");
             basis.OfflineEarnings = "0";
 
             var cacheSet = new PersonalCacheStruct<UserBasisCache>();

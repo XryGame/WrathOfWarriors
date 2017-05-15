@@ -139,6 +139,8 @@
                     <Button x:Name="buttonPay_Copy4" Content="角色升级数量--&gt;" HorizontalAlignment="Left" Margin="287,338,0,0" VerticalAlignment="Top" Width="111" Grid.Column="4" FontSize="14" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="SetLevelUp" HorizontalAlignment="Left" Height="22" Margin="56,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.017,-0.13" Grid.Column="5" PreviewTextInput="textBox_PreviewTextInputLimitNumber" FontSize="14" ToolTip="等级"/>
                     <CheckBox x:Name="checkBoxAttribute" Content="属性" Grid.Column="5" HorizontalAlignment="Left" Margin="11,442,0,0" VerticalAlignment="Top" Padding="4,-1,0,0" FontSize="14" Background="#FFE0E0E0" BorderBrush="#FFAE6868" Foreground="Black" BorderThickness="2"/>
+                    <Button x:Name="buttonPay_Copy5" Content="新手引导阶段--&gt;" HorizontalAlignment="Left" Margin="287,360,0,0" VerticalAlignment="Top" Width="111" Grid.Column="4" FontSize="14" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="SetNoviceGuide" HorizontalAlignment="Left" Height="22" Margin="56,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.017,-0.13" Grid.Column="5" PreviewTextInput="textBox_PreviewTextInputLimitNumber" FontSize="14" ToolTip="等级"/>
                 </Grid>
             </TabItem>
             <TabItem Header="服务器" FontSize="18" Margin="92,0,-92,0" Width="90" Height="30">
@@ -158,7 +160,7 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="739" VerticalAlignment="Top" Width="1018" Source="9.jpg" IsEnabled="False" Panel.ZIndex="-1"/>
         <ListBox x:Name="listBoxLog" HorizontalAlignment="Left" Height="602" Margin="10,127,0,0" VerticalAlignment="Top" Width="253" Opacity="0.9" VerticalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="11,92,0,0" VerticalAlignment="Top" Width="210" ToolTip="选择区服" SelectionChanged="comboBox_ServerSelectionChanged" AutomationProperties.HelpText="111111" Height="28" RenderTransformOrigin="0.502,0.536" FontSize="16">
-            <ComboBoxItem Content="勇者之地（内网）" HorizontalAlignment="Left" Width="200" IsSelected="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+            <ComboBoxItem Content="局域网" HorizontalAlignment="Left" Width="200" IsSelected="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
             <ComboBoxItem Content="勇者之地" HorizontalAlignment="Left" Width="200" IsSelected="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         </ComboBox>
     </Grid>

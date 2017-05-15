@@ -170,12 +170,19 @@ namespace GameServer.CsScript.Action
             receipt.RankRise = rankrise;
             receipt.LastFailedTime = Util.ConvertDateTimeStamp(GetCombat.LastFailedDate);
             receipt.AwardGold = "0";
+
+            BigInteger gold = ConfigEnvSet.GetInt("User.CombatWinAwardGold");
+            BigInteger awardValue = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * gold;
             if (result == EventStatus.Good)
             {
-                BigInteger gold = ConfigEnvSet.GetInt("User.CombatWinAwardGold");
-                BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * gold;
-                receipt.AwardGold = value.ToString();
-                UserHelper.RewardsGold(Current.UserId, value);
+                receipt.AwardGold = awardValue.ToString();
+                UserHelper.RewardsGold(Current.UserId, awardValue);
+            }
+            else
+            {
+                awardValue /= 10;
+                receipt.AwardGold = awardValue.ToString();
+                UserHelper.RewardsGold(Current.UserId, awardValue);
             }
 
 

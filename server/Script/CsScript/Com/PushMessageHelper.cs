@@ -1,8 +1,10 @@
 ﻿using GameServer.CsScript.Action;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Context;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Model;
@@ -109,11 +111,13 @@ namespace GameServer.Script.CsScript.Com
         /// 新物品通知
         /// </summary>
         /// <param name="session"></param>
-        public static void UserNewItemNotification(GameSession session)
+        public static void UserNewItemNotification(GameSession session, List<ItemData> items)
         {
             if (session == null || !session.Connected)
                 return;
-            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1058, session, null, OpCode.Text, null);
+            var parameters = new Parameters();
+            parameters["Items"] = MathUtils.ToJson(items);
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1058, session, parameters, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1058, packet, (rsession, asyncResult) => { }, 0);
         }
 
