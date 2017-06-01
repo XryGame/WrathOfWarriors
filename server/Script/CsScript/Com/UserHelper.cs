@@ -1217,7 +1217,7 @@ namespace GameServer.Script.Model.DataModel
 
             if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
-                basis.AddGold(count + count / 100 * elf.SelectElfValue);
+                basis.AddGold(count + count / 1000 * elf.SelectElfValue);
             }
             else
             {
@@ -1241,7 +1241,7 @@ namespace GameServer.Script.Model.DataModel
 
             if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
-                basis.AddGold(count + count / 100 * elf.SelectElfValue);
+                basis.AddGold(count + count / 1000 * elf.SelectElfValue);
             }
             else
             {

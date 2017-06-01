@@ -171,13 +171,14 @@ namespace GameServer.CsScript.Action
                             skillAddition = elfcfg.ElvesNum;
                         }
                         BigInteger sum = transscriptEarnings * tmp;
-                        BigInteger earning = sum + sum / 100 * (vipcfg.Multiple + skillAddition);
+                        BigInteger earning = sum + sum / 100 * (vipcfg.Multiple);
+                        BigInteger earning2 = earning + earning / 1000 * skillAddition;
                         if (GetPay.MonthCardDays >= 0)
                         {
-                            earning = earning * 2;
+                            earning2 = earning2 * 2;
                         }
 
-                        GetBasis.OfflineEarnings = earning.ToNotNullString("0");
+                        GetBasis.OfflineEarnings = earning2.ToNotNullString("0");
                     }
 
                 }
