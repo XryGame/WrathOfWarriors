@@ -67,7 +67,7 @@ namespace GameServer.CsScript.Action
 
                 UserHelper.RewardsItems(Current.UserId, mail.AppendItem.ToList());
                 mail.AppendItem.Clear();
-                if (!mail.ApppendCoinNum.IsEmpty())
+                if (!string.IsNullOrEmpty(mail.ApppendCoinNum))
                 {
                     BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
                     if (bigint > 0)

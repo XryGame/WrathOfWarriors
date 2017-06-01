@@ -45,7 +45,7 @@ namespace GameServer.CsScript.Com
 
             MakeClassData();
             MakeGameUser();
-            MakeJobTitleData();
+            //MakeJobTitleData();
             MakeOrderInfo();
             MakeOccupyData();
             MakeUserCenterPassport();
@@ -80,17 +80,17 @@ namespace GameServer.CsScript.Com
             dbProvider.ExecuteReader(CommandType.Text, sql);
         }
 
-        public static void MakeJobTitleData()
-        {
-            var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
-            string sql = string.Format(
-                "UPDATE JobTitleDataCache SET UserId=0, NickName='{0}', ClassId=0, CampaignUserList='[]', Profession=0",
-                string.Empty
-                );
+        //public static void MakeJobTitleData()
+        //{
+        //    var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
+        //    string sql = string.Format(
+        //        "UPDATE JobTitleDataCache SET UserId=0, NickName='{0}', ClassId=0, CampaignUserList='[]', Profession=0",
+        //        string.Empty
+        //        );
 
-            dbProvider.ExecuteReader(CommandType.Text, sql);
+        //    dbProvider.ExecuteReader(CommandType.Text, sql);
 
-        }
+        //}
 
         public static void MakeOrderInfo()
         {

@@ -11,7 +11,7 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
     /// <summary>
-    /// 竞技场新日志通知
+    ///通天塔新日志通知
     /// </summary>
     public class Action1082 : BaseAction
     {

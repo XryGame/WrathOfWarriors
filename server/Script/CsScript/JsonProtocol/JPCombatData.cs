@@ -15,6 +15,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Profession { get; set; }
 
+        public string AvatarUrl { get; set; }
+
         public int RankId { get; set; }
 
         public int UserLv { get; set; }
@@ -62,6 +64,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int UserLv { get; set; }
 
+        public string AvatarUrl { get; set; }
+
         public UserAttributeCache Attribute { get; set; }
 
         public UserEquipsCache Equips { get; set; }
@@ -99,9 +103,13 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Profession { get; set; }
 
-        public int RankId { get; set; }
+        public int CombatRankID { get; set; }
+
+        public int LevelRankID { get; set; }
 
         public int UserLv { get; set; }
+
+        public string AvatarUrl { get; set; }
 
         public UserAttributeCache Attribute { get; set; }
 

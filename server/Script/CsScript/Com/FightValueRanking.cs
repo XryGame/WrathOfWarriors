@@ -65,7 +65,7 @@ namespace GameServer.CsScript.Com
                 return rankList;
             }
             var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
-            string sql = "SELECT UserID,NickName,Profession,UserLv,VipLv,FightValueRankID FROM UserBasisCache";
+            string sql = "SELECT UserID,NickName,Profession,UserLv,VipLv,AvatarUrl,FightValueRankID FROM UserBasisCache";
             using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
             {
                 while (reader.Read())
@@ -76,7 +76,7 @@ namespace GameServer.CsScript.Com
                     rankInfo.Profession = reader["Profession"].ToInt();
                     rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
                     rankInfo.VipLv = reader["VipLv"].ToInt();
-                    //rankInfo.FightValue = reader["FightValue"].ToInt();
+                    rankInfo.AvatarUrl = reader["AvatarUrl"].ToString();
                     rankInfo.RankId = reader["FightValueRankID"].ToInt();
                     rankList.Add(rankInfo);
                 }

@@ -12,6 +12,7 @@ using GameServer.CsScript.JsonProtocol;
 using ZyGames.Framework.Game.Contract;
 using GameServer.CsScript.Base;
 using System.Configuration;
+using GameServer.Script.Model.Enum.Enum;
 
 namespace GameServer.CsScript.Action
 {
@@ -29,6 +30,7 @@ namespace GameServer.CsScript.Action
         private string OpenID = string.Empty;
         private string RetailID = string.Empty;
         public int ServerID = 0;
+        private string AvatarUrl = string.Empty;
 
         public Action1004(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1004, actionGetter)
@@ -45,6 +47,7 @@ namespace GameServer.CsScript.Action
                 && !string.IsNullOrEmpty(RetailID)
                 && actionGetter.GetInt("ServerID", ref ServerID))
             {
+                actionGetter.GetString("HeadID", ref AvatarUrl);
                 return true;
             }
             return false;
@@ -107,6 +110,15 @@ namespace GameServer.CsScript.Action
                 }
                 basis.SessionID = Sid;
                 //basis.ServerID = this.ServerID;
+                if (!string.IsNullOrEmpty(AvatarUrl))
+                {
+                    basis.AvatarUrl = AvatarUrl;
+                    // 这里刷新排行榜数据
+                    var combat = UserHelper.FindRankUser(basis.UserID, RankType.Combat);
+                    combat.AvatarUrl = basis.AvatarUrl;
+                    var level = UserHelper.FindRankUser(basis.UserID, RankType.Level);
+                    level.AvatarUrl = basis.AvatarUrl;
+                }
 
                 UserHelper.UserOnline(basis.UserID);
 

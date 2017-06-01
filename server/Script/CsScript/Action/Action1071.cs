@@ -52,6 +52,7 @@ namespace GameServer.CsScript.Action
                 UserID = basis.UserID,
                 NickName = basis.NickName,
                 Profession = basis.Profession,
+                AvatarUrl = basis.AvatarUrl,
                 UserLv = basis.UserLv,
                 CombatRankID = basis.CombatRankID,
                 ApplyTime = request.Date

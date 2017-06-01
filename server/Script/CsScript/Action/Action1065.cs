@@ -26,6 +26,8 @@ namespace GameServer.CsScript.Action
 
         public int Profession { get; set; }
 
+        public string AvatarUrl { get; set; }
+
         public int RankId { get; set; }
 
         public int UserLv { get; set; }
@@ -97,6 +99,7 @@ namespace GameServer.CsScript.Action
             receipt.UserId = dest.UserID;
             receipt.NickName = dest.NickName;
             receipt.Profession = dest.Profession;
+            receipt.AvatarUrl = dest.AvatarUrl;
             receipt.UserLv = dest.UserLv;
             //receipt.VipLv = dest.VipLv;
             receipt.Equips = UserHelper.FindUserEquips(destuid);

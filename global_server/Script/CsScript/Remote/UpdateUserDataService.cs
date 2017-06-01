@@ -13,6 +13,7 @@ namespace GameServer.CsScript.Remote
         private string _userName;
         private int _vipLv;
         private int _profession;
+        private string _avatarUrl;
         private int _serverID;
         private string _guildID;
 
@@ -29,6 +30,7 @@ namespace GameServer.CsScript.Remote
                 && paramGetter.GetString("UserName", ref _userName)
                 && paramGetter.GetInt("VipLv", ref _vipLv)
                 && paramGetter.GetInt("Profession", ref _profession)
+                && paramGetter.GetString("AvatarUrl", ref _avatarUrl)
                 && paramGetter.GetInt("ServerID", ref _serverID)
                 && paramGetter.GetString("GuildID", ref _guildID))
             {
@@ -55,6 +57,7 @@ namespace GameServer.CsScript.Remote
                 chatUser.UserName = _userName;
                 chatUser.VipLv = _vipLv;
                 chatUser.Profession = _profession;
+                chatUser.AvatarUrl = _avatarUrl;
                 chatUser.ServerID = _serverID;
                 chatUser.GuildID = _guildID;
             }

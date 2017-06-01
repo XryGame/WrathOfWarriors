@@ -23,7 +23,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1403_竞技场挑战结果
+    /// 1403_通天塔挑战结果
     /// </summary>
     public class Action1403 : BaseAction
     {
@@ -113,7 +113,7 @@ namespace GameServer.CsScript.Action
 
                 if (GetBasis.CombatRankID <= 10)
                 {
-                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为竞技场第{1}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
+                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{1}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
                     GlobalRemoteService.SendNotice(NoticeMode.World, context);
                     //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 

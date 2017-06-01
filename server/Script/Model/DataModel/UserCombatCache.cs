@@ -79,7 +79,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 购买竞技场挑战次数
+        /// 购买通天塔挑战次数
         /// </summary>
         private int _BuyTimes;
         [ProtoMember(4)]

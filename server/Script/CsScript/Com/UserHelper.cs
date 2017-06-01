@@ -317,7 +317,7 @@ namespace GameServer.Script.Model.DataModel
                 return;
             }
 
-            // 竞技场挑战次数
+            // 通天塔挑战次数
             combat.CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             combat.BuyTimes = 0;
             combat.MatchTimes = ConfigEnvSet.GetInt("Combat.MatchTimes");
@@ -494,7 +494,7 @@ namespace GameServer.Script.Model.DataModel
                 RestoreUserData(uid, restoreCount);
             }
 
-            // 竞技场处理
+            // 通天塔处理
             CombatProcess(uid);
 
             //if (!eventaward.IsStartedOnlineTime)
@@ -533,7 +533,7 @@ namespace GameServer.Script.Model.DataModel
             basis.OfflineDate = DateTime.Now;
             basis.UserStatus = UserStatus.MainUi;
 
-            // 竞技场处理
+            // 通天塔处理
             CombatProcess(uid);
 
 
@@ -582,6 +582,7 @@ namespace GameServer.Script.Model.DataModel
                         UserID = v.UserID,
                         NickName = basis.NickName,
                         Profession = basis.Profession,
+                        AvatarUrl = basis.AvatarUrl,
                         UserLv = basis.UserLv,
                         CombatRankID = basis.CombatRankID,
                         JobTitle = v.JobTitle,
@@ -599,6 +600,7 @@ namespace GameServer.Script.Model.DataModel
                         UserID = v.UserID,
                         NickName = basis.NickName,
                         Profession = basis.Profession,
+                        AvatarUrl = basis.AvatarUrl,
                         UserLv = basis.UserLv,
                         CombatRankID = basis.CombatRankID,
                         ApplyTime = v.Date
@@ -624,7 +626,7 @@ namespace GameServer.Script.Model.DataModel
    
         public static void CombatProcess(int uid)
         {
-            // 竞技场处理
+            // 通天塔处理
             var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
 
             UserRank rankinfo = FindRankUser(uid, RankType.Combat);
@@ -642,9 +644,9 @@ namespace GameServer.Script.Model.DataModel
                 rankinfo.FightDestUid = 0;
             }
         }
-        
+
         /// <summary>
-        /// 格式化输出竞技场日志
+        /// 格式化输出通天塔日志
         /// </summary>
         /// <param name="logdata"></param>
         /// <returns></returns>
@@ -721,13 +723,17 @@ namespace GameServer.Script.Model.DataModel
 
             if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
             {
-                if (new ShareCacheStruct<Config_Signin>().FindKey(DataHelper.SignStartID + 14) != null)
+                if (new ShareCacheStruct<Config_Signin>().FindKey(DataHelper.SignStartID + 13) != null)
                 {
                     DataHelper.SignStartID += 7;
-                    GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
-                    signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString("1");
                 }
-                   
+                else
+                {
+                    DataHelper.SignStartID = 1;
+                }
+                GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
+                signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString();
+
             }
 
             var sessionlist = GameSession.GetAll();
@@ -769,7 +775,7 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 进行发放竞技场奖励
+        /// 进行发放通天塔奖励
         /// </summary>
         private static void ProgressCombatAward()
         {
@@ -788,10 +794,10 @@ namespace GameServer.Script.Model.DataModel
                     MailData mail = new MailData()
                     {
                         ID = Guid.NewGuid().ToString(),
-                        Title = "竞技场奖励",
+                        Title = "通天塔奖励",
                         Sender = "系统",
                         Date = DateTime.Now,
-                        Context = string.Format("截止当前时间，您获得竞技场第{0}名，奖励如下，请查收！", ur.RankId),
+                        Context = string.Format("截止当前时间，您获得通天塔第{0}名，奖励如下，请查收！", ur.RankId),
                     };
                     mail.AppendItem.Add(new ItemData() { ID = cr.AwardItemID, Num = cr.AwardNum });
                     AddNewMail(ur.UserID, mail);
@@ -1437,7 +1443,7 @@ namespace GameServer.Script.Model.DataModel
             PushMessageHelper.NewElfNotification(GameSession.Get(uid), elfId);
         }
 
-        public static void AddNewMail(int uid, MailData mail)
+        public static void AddNewMail(int uid, MailData mail, bool isNotification = true)
         {
             if (mail == null)
                 return;
@@ -1449,7 +1455,11 @@ namespace GameServer.Script.Model.DataModel
                 MailData removemail = mailbox.MailList[0];
                 mailbox.MailList.Remove(removemail);
             }
-            PushMessageHelper.NewMailNotification(GameSession.Get(uid), mail.ID);
+            if (isNotification)
+            {
+                PushMessageHelper.NewMailNotification(GameSession.Get(uid), mail.ID);
+            }
+            
         }
 
         public static void AddWeekCardMail(int uid)

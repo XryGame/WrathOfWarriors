@@ -66,6 +66,11 @@ namespace GameServer.CsScript.Action
             {
                 foreach (var m in GetMailBox.MailList)
                 {
+
+                    if (string.IsNullOrEmpty(m.ApppendCoinNum))
+                    {
+                        m.ApppendCoinNum = "0";
+                    }
                     BigInteger bigint = BigInteger.Parse(m.ApppendCoinNum);
                     if (bigint != 0 || m.AppendItem.Count > 0)
                     {
@@ -95,6 +100,10 @@ namespace GameServer.CsScript.Action
                 MailData mail = GetMailBox.findMail(mailid);
                 if (mail == null)
                     return false;
+                if (string.IsNullOrEmpty(mail.ApppendCoinNum))
+                {
+                    mail.ApppendCoinNum = "0";
+                }
                 BigInteger bigint = BigInteger.Parse(mail.ApppendCoinNum);
                 if (bigint != 0 || mail.AppendItem.Count > 0)
                 {

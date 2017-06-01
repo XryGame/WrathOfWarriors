@@ -20,7 +20,7 @@ namespace GameServer.CsScript.Action
 
 
     /// <summary>
-    /// 1402_竞技场请求挑战
+    /// 1402_通天塔请求挑战
     /// </summary>
     public class Action1402 : BaseAction
     {
@@ -115,6 +115,7 @@ namespace GameServer.CsScript.Action
             receipt.UserId = rivaluid;
             receipt.NickName = rivalrankinfo.NickName;
             receipt.Profession = rivalrankinfo.Profession;
+            receipt.AvatarUrl = rivalrankinfo.AvatarUrl;
             receipt.RankId = rivalrankinfo.RankId;
             receipt.UserLv = rivalrankinfo.UserLv;
             receipt.Equips = UserHelper.FindUserEquips(rivaluid);

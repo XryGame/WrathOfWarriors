@@ -10,7 +10,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1404_竞技场CD
+    /// 1404_通天塔CD
     /// </summary>
     public class Action1404 : BaseAction
     {

@@ -109,6 +109,7 @@ namespace GameServer.CsScript.Action
             //bisis.Vit = DataHelper.InitVit;
             basis.VipLv = ConfigEnvSet.GetInt("User.VipLv");
             basis.Profession = profession;
+            basis.AvatarUrl = HeadID;
             basis.UserStatus = UserStatus.MainUi;
             basis.LoginDate = DateTime.Now;
             basis.CreateDate = DateTime.Now;
@@ -215,7 +216,7 @@ namespace GameServer.CsScript.Action
                 Date = DateTime.Now,
                 Context = "恭喜您已获得月卡免费体验资格，月卡有效期为3天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
             };
-            UserHelper.AddNewMail(basis.UserID, mail);
+            UserHelper.AddNewMail(basis.UserID, mail, false);
             mailSet.Add(mailcache);
             mailSet.Update();
 
@@ -270,6 +271,7 @@ namespace GameServer.CsScript.Action
                 Profession = basis.Profession,
                 UserLv = basis.UserLv,
                 VipLv = basis.VipLv,
+                FightValue = attcache.FightValue,
                 RankId = int.MaxValue,
                 RankDate = DateTime.Now,
             };

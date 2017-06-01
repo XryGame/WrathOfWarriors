@@ -54,6 +54,7 @@ namespace GameServer.CsScript.Action
                 NickName = basis.NickName,
                 Profession = basis.Profession,
                 UserLv = basis.UserLv,
+                AvatarUrl = basis.AvatarUrl,
                 CombatRankID = basis.CombatRankID,
                 JobTitle = member.JobTitle,
                 Liveness = member.Liveness,

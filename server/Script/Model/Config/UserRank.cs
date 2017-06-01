@@ -20,6 +20,7 @@ namespace GameServer.Script.Model.Config
             Profession = ur.Profession;
             RankId = ur.RankId;
             UserLv = ur.UserLv;
+            AvatarUrl = ur.AvatarUrl;
             RankDate = ur.RankDate;
             HaveRankNum = ur.HaveRankNum;
             IsFighting = ur.IsFighting;
@@ -45,7 +46,7 @@ namespace GameServer.Script.Model.Config
         }
 
         /// <summary>
-        /// 形象ID
+        /// 职业ID
         /// </summary>
         [ProtoMember(3)]
         public int Profession
@@ -84,13 +85,21 @@ namespace GameServer.Script.Model.Config
         /// <summary>
         /// 战斗力
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(6)]
         public int FightValue
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 头像链接
+        /// </summary>
+        [ProtoMember(7)]
+        public string AvatarUrl
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// 排名时间
         /// </summary>

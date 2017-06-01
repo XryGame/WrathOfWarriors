@@ -26,7 +26,7 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         CombatMatch,
         /// <summary>
-        /// 竞技场1次
+        /// 通天塔1次
         /// </summary>
         Combat,
         /// <summary>

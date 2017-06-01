@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace GameServer.CsScript.Com
 {
     /// <summary>
-    /// 竞技场排行
+    /// 通天塔排行
     /// </summary>
     public class CombatRanking : Ranking<UserRank>
     {
@@ -87,7 +87,7 @@ namespace GameServer.CsScript.Com
             if (rankList.Count == 0)
             {
                 var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Data);
-                string sql = "SELECT UserID,NickName,Profession,UserLv,VipLv,CombatRankID FROM UserBasisCache";
+                string sql = "SELECT UserID,NickName,Profession,UserLv,VipLv,AvatarUrl,CombatRankID FROM UserBasisCache";
                 using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
                 {
                     while (reader.Read())
@@ -98,8 +98,23 @@ namespace GameServer.CsScript.Com
                         rankInfo.Profession = reader["Profession"].ToInt();
                         rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
                         rankInfo.VipLv = reader["VipLv"].ToInt();
+                        rankInfo.AvatarUrl = reader["AvatarUrl"].ToString();
                         rankInfo.RankId = reader["CombatRankID"].ToInt();
                         rankList.Add(rankInfo);
+                    }
+                }
+
+                sql = "SELECT UserID, FightValue FROM UserAttributeCache";
+                using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
+                {
+                    while (reader.Read())
+                    {
+                        int userId = reader["UserID"].ToInt();
+                        var rank = rankList.Find(t => t.UserID == userId);
+                        if (rank != null)
+                        {
+                            rank.FightValue = reader["FightValue"].ToInt();
+                        }
                     }
                 }
             }

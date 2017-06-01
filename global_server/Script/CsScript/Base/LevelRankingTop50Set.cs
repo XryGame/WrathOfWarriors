@@ -56,6 +56,7 @@ namespace GameServer.CsScript.Base
                             rank.Profession = ms.ReadInt();
                             rank.RankId = ms.ReadInt();
                             rank.UserLv = ms.ReadInt();
+                            rank.AvatarUrl = ms.ReadString();
                             rank.FightValue = ms.ReadInt();
                             rank.VipLv = ms.ReadInt();
                             levelranking.rankingData.RankList.Add(rank);

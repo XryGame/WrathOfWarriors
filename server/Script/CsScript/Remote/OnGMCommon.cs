@@ -523,7 +523,7 @@ namespace GameServer.CsScript.Remote
                             Date = DateTime.Now,
                             Context = MailContent,
                             ApppendCoinType = (CoinType)AppendCoinType,
-                            ApppendCoinNum = AppendCoinNum
+                            ApppendCoinNum = string.IsNullOrEmpty(AppendCoinNum) ? "0" : AppendCoinNum,
 
                         };
                         if (AddItem1ID > 0 && AddItem1Num > 0)

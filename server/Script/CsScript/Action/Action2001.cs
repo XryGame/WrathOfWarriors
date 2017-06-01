@@ -58,6 +58,7 @@ namespace GameServer.CsScript.Action
                     UserID = data.UserID,
                     NickName = data.NickName,
                     Profession = data.Profession,
+                    AvatarUrl = data.AvatarUrl,
                     RankId = data.RankId,
                     UserLv = data.UserLv,
                     FightValue = data.FightValue,

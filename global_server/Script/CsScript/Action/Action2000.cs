@@ -16,6 +16,7 @@ namespace GameServer.CsScript.Action
         private string _senderName;
         private int _senderVipLv;
         private int _senderProfession;
+        private string _senderAvatarUrl;
         private int _serverID;
         private long _sendDate;
         private string _content;
@@ -46,6 +47,7 @@ namespace GameServer.CsScript.Action
                 && httpGet.GetString("SenderName", ref _senderName)
                 && httpGet.GetInt("SenderVipLv", ref _senderVipLv)
                 && httpGet.GetInt("SenderProfession", ref _senderProfession)
+                && httpGet.GetString("SenderAvatarUrl", ref _senderAvatarUrl)
                 && httpGet.GetInt("ServerID", ref _serverID)
                 && httpGet.GetLong("SendDate", ref _sendDate)
                 && httpGet.GetString("Content", ref _content))
@@ -66,6 +68,7 @@ namespace GameServer.CsScript.Action
                 SenderName = _senderName,
                 VipLv = _senderVipLv,
                 Profession = _senderProfession,
+                AvatarUrl = _senderAvatarUrl,
                 ServerID = _serverID,
                 SendDate = _sendDate,
                 Content = _content,

@@ -15,7 +15,9 @@ namespace GameServer.CsScript.JsonProtocol
         public string NickName { get; set; }
         
         public int UserLv { get; set; }
-        
+
+        public string AvatarUrl { get; set; }
+
         public int CombatRankID { get; set; }
         
         public GuildJobTitle JobTitle { get; set; }
@@ -35,6 +37,8 @@ namespace GameServer.CsScript.JsonProtocol
         public string NickName { get; set; }
 
         public int UserLv { get; set; }
+
+        public string AvatarUrl { get; set; }
 
         public int CombatRankID { get; set; }
         

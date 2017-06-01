@@ -80,6 +80,7 @@ namespace GameServer.CsScript.Remote
                                     parameters["SenderName"] = Sender.UserName;
                                     parameters["SenderVipLv"] = Sender.VipLv;
                                     parameters["SenderProfession"] = Sender.Profession;
+                                    parameters["SenderAvatarUrl"] = Sender.AvatarUrl;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -112,6 +113,7 @@ namespace GameServer.CsScript.Remote
                                     parameters["SenderName"] = Sender.UserName;
                                     parameters["SenderVipLv"] = Sender.VipLv;
                                     parameters["SenderProfession"] = Sender.Profession;
+                                    parameters["SenderAvatarUrl"] = Sender.AvatarUrl;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -142,6 +144,7 @@ namespace GameServer.CsScript.Remote
                                 parameters["SenderName"] = Sender.UserName;
                                 parameters["SenderVipLv"] = Sender.VipLv;
                                 parameters["SenderProfession"] = Sender.Profession;
+                                parameters["SenderAvatarUrl"] = Sender.AvatarUrl;
                                 parameters["ServerID"] = _serverID;
                                 parameters["SendDate"] = _sendDate;
                                 parameters["Content"] = _content;
@@ -177,6 +180,7 @@ namespace GameServer.CsScript.Remote
                                     parameters["SenderName"] = Sender.UserName;
                                     parameters["SenderVipLv"] = Sender.VipLv;
                                     parameters["SenderProfession"] = Sender.Profession;
+                                    parameters["SenderAvatarUrl"] = Sender.AvatarUrl;
                                     parameters["ServerID"] = _serverID;
                                     parameters["SendDate"] = _sendDate;
                                     parameters["Content"] = _content;
@@ -206,6 +210,7 @@ namespace GameServer.CsScript.Remote
                                 parameters["SenderName"] = "系统";
                                 parameters["SenderVipLv"] = 0;
                                 parameters["SenderProfession"] = 0;
+                                parameters["SenderAvatarUrl"] = string.Empty;
                                 parameters["ServerID"] = _serverID;
                                 parameters["SendDate"] = _sendDate;
                                 parameters["Content"] = _content;

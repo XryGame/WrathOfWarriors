@@ -45,7 +45,7 @@ namespace GameServer.CsScript.Base
                     string serverName = ServerSet.Set[i].ServerName;
                     string connectKey = "ServerDB_" + (count++ + 1).ToString();
                     var dbProvider = DbConnectionProvider.CreateDbProvider(connectKey);
-                    string sql = "SELECT UserID,NickName,ServerID,Profession,UserLv,VipLv,LevelRankID FROM UserBasisCache";
+                    string sql = "SELECT UserID,NickName,ServerID,Profession,UserLv,AvatarUrl,VipLv,LevelRankID FROM UserBasisCache";
                     using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
                     {
                         while (reader.Read())
@@ -56,7 +56,8 @@ namespace GameServer.CsScript.Base
                             rankInfo.Profession = reader["Profession"].ToInt();
                             rankInfo.UserLv = Convert.ToInt16(reader["UserLv"]);
                             rankInfo.VipLv = reader["VipLv"].ToInt();
-                            rankInfo.RankId = reader["LevelRankId"].ToInt();
+                            rankInfo.AvatarUrl = reader["AvatarUrl"].ToString();
+                            rankInfo.RankId = reader["LevelRankID"].ToInt();
                             rankInfo.ServerID = reader["ServerID"].ToInt();
                             rankInfo.ServerName = serverName;
                             levelranking.rankingData.RankList.Add(rankInfo);

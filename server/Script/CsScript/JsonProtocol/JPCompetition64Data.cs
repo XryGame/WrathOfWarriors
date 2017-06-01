@@ -11,6 +11,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Profession { get; set; }
 
+        public string AvatarUrl { get; set; }
+
         public int VipLv { get; set; }
         
     }

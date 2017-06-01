@@ -52,6 +52,7 @@ namespace GameServer.CsScript.Action
             receipt.UserId = Uid;
             receipt.NickName = dest.NickName;
             receipt.Profession = dest.Profession;
+            receipt.AvatarUrl = dest.AvatarUrl;
             receipt.UserLv = dest.UserLv;
             //receipt.FightValue = dest.FightingValue;
             receipt.VipLv = dest.VipLv;

@@ -249,6 +249,21 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        private string _AvatarUrl;
+        [ProtoMember(14)]
+        [EntityField("AvatarUrl")]
+        public string AvatarUrl
+        {
+            get
+            {
+                return _AvatarUrl;
+            }
+            set
+            {
+                SetChange("AvatarUrl", value);
+            }
+        }
+
 
 
         private UserStatus _UserStatus;
@@ -624,6 +639,7 @@ namespace GameServer.Script.Model.DataModel
                     case "Gold": return Gold;
                     //case "Exp": return Exp;
                     case "VipLv": return VipLv;
+                    case "AvatarUrl": return AvatarUrl;
                     case "UserStatus": return UserStatus;
                     case "CreateDate": return CreateDate;
                     case "LoginDate": return LoginDate;
@@ -686,6 +702,9 @@ namespace GameServer.Script.Model.DataModel
                     //    break;
                     case "VipLv":
                         _VipLv = value.ToInt();
+                        break;
+                    case "AvatarUrl":
+                        _AvatarUrl = value.ToNotNullString();
                         break;
                     case "UserStatus":
                         _UserStatus = value.ToEnum<UserStatus>();

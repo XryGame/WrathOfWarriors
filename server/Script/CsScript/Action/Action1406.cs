@@ -101,7 +101,9 @@ namespace GameServer.CsScript.Action
             receipt.UserId = rivalUid;
             receipt.NickName = rival.NickName;
             receipt.Profession = rival.Profession;
-            receipt.RankId = rival.CombatRankID;
+            receipt.AvatarUrl = rival.AvatarUrl;
+            receipt.CombatRankID = rival.CombatRankID;
+            receipt.LevelRankID = rival.LevelRankID;
             receipt.UserLv = rival.UserLv;
             receipt.Equips = UserHelper.FindUserEquips(rivalUid);
             receipt.Attribute = UserHelper.FindUserAttribute(rivalUid);

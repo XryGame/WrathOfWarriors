@@ -398,7 +398,7 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
-        /// 竞技场新日志通知
+        /// 通天塔新日志通知
         /// </summary>
         /// <param name="session"></param>
         public static void NewCombatLogNotification(GameSession session)

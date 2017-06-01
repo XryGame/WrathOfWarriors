@@ -12,7 +12,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1405_购买竞技场挑战次数
+    /// 1405_购买通天塔挑战次数
     /// </summary>
     public class Action1405 : BaseAction
     {

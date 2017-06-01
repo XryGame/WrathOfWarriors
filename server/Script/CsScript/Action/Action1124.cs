@@ -44,11 +44,11 @@ namespace GameServer.CsScript.Action
         {
             EquipData equip = GetEquips.FindEquipData(equipID);
 
-            //if (GetBasis.UserLv <= equip.Lv)
-            //{
-            //    return false;
-            //}
-            
+            if (GetBasis.UserLv <= equip.Lv)
+            {
+                return false;
+            }
+
             var equipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == (equip.Lv + 1)));
             if (equipcfg == null)
             {
@@ -59,11 +59,11 @@ namespace GameServer.CsScript.Action
             {
                 return false;
             }
-            var nextEquipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == equip.Lv+1));
-            if (nextEquipcfg == null)
-            {
-                return false;
-            }
+            //var nextEquipcfg = new ShareCacheStruct<Config_Equip>().Find(t => (t.EquipID == equip.ID && t.Grade == equip.Lv+1));
+            //if (nextEquipcfg == null)
+            //{
+            //    return false;
+            //}
 
             if (gradeConsumeGold > 0)
             {

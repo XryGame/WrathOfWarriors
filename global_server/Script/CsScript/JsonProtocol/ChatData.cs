@@ -17,6 +17,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int Profession { get; set; }
 
+        public string AvatarUrl { get; set; }
+
         public int ServerID { get; set; }
 
         public long SendDate { get; set; }

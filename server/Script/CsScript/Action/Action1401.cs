@@ -14,7 +14,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 1401_竞技场入口
+    /// 1401_通天塔入口
     /// </summary>
     public class Action1401 : BaseAction
     {
@@ -231,6 +231,7 @@ namespace GameServer.CsScript.Action
                         UserId = machinfo.UserID,
                         NickName = machinfo.NickName,
                         Profession = machinfo.Profession,
+                        AvatarUrl = machinfo.AvatarUrl,
                         RankId = machinfo.RankId,
                         UserLv = machinfo.UserLv,
                         VipLv = machinfo.VipLv,

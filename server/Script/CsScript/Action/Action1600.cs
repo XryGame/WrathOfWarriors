@@ -23,10 +23,14 @@ namespace GameServer.CsScript.Action
         public int Profession { get; set; }
 
         public int UserLv { get; set; }
-        
+
+        public string AvatarUrl { get; set; }
+
         public int VipLv { get; set; }
 
-        public int CombatRankId { get; set; }
+        public int CombatRankID { get; set; }
+
+        public int LevelRankID { get; set; }
 
         public UserAttributeCache Attribute { get; set; }
 
@@ -95,7 +99,9 @@ namespace GameServer.CsScript.Action
                 UserId = basis.UserID,
                 NickName = basis.NickName,
                 Profession = basis.Profession,
-                CombatRankId = basis.CombatRankID,
+                AvatarUrl = basis.AvatarUrl,
+                CombatRankID = basis.CombatRankID,
+                LevelRankID = basis.LevelRankID,
                 VipLv = basis.VipLv,
                 UserLv = basis.UserLv
             };

@@ -20,6 +20,7 @@ namespace GameServer.CsScript.Base
             Profession = ur.Profession;
             RankId = ur.RankId;
             UserLv = ur.UserLv;
+            AvatarUrl = ur.AvatarUrl;
             FightValue = ur.FightValue;
             //RankDate = ur.RankDate;
             //HaveRankNum = ur.HaveRankNum;
@@ -85,8 +86,18 @@ namespace GameServer.CsScript.Base
         /// <summary>
         /// 战斗力
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(6)]
         public int FightValue
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 头像链接
+        /// </summary>
+        [ProtoMember(7)]
+        public string AvatarUrl
         {
             get;
             set;

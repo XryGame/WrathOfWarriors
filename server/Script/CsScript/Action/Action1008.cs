@@ -65,8 +65,10 @@ namespace GameServer.CsScript.Action
                 Diamond = GetBasis.DiamondNum,
                 BuyDiamond = GetBasis.BuyDiamond,
                 VipLv = GetBasis.VipLv,
+                AvatarUrl = GetBasis.AvatarUrl,
                 Gold = GetBasis.Gold,
                 CombatRankID = GetBasis.CombatRankID,
+                LevelRankID = GetBasis.LevelRankID,
                 LotteryTimes = GetBasis.LotteryTimes,
                 SignStartID = DataHelper.SignStartID,
             };
@@ -94,6 +96,7 @@ namespace GameServer.CsScript.Action
                         UserId = v.UserId,
                         NickName = basis.NickName,
                         Profession = basis.Profession,
+                        AvatarUrl = basis.AvatarUrl,
                         UserLv = basis.UserLv,
                         VipLv = basis.VipLv,
                         IsGiveAway = v.IsGiveAway,
@@ -112,6 +115,7 @@ namespace GameServer.CsScript.Action
                         UserId = v.UserId,
                         NickName = basis.NickName,
                         Profession = basis.Profession,
+                        AvatarUrl = basis.AvatarUrl,
                         UserLv = basis.UserLv,
                         VipLv = basis.VipLv,
                         ApplyTime = v.ApplyDate
@@ -133,11 +137,55 @@ namespace GameServer.CsScript.Action
    
             }
 
-            //receipt.Gold = Util.ConvertGameCoinUnits(GetBasis.Gold);
 
-            //string ddd = Util.ConvertGameCoinString("102K");
+            if (GetBasis.IsReceiveOfflineEarnings)
+            {
+                receipt.OfflineEarnings = "0";
+                receipt.OfflineTimeSec = 0;
+            }
+            else
+            {
+                // 离线收益
+                var transscriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
+                var transscriptCfg = transscriptSet.FindKey(GetBasis.UserLv);
+                if (transscriptCfg.limitTime > 0)
+                    transscriptCfg = transscriptSet.FindKey(GetBasis.UserLv - 1);
+                if (transscriptCfg != null)
+                {
+                    BigInteger transscriptEarnings = 0;
+                    var monster = new ShareCacheStruct<Config_Monster>().Find(t => t.Grade == transscriptCfg.ID);
 
-            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID);
+                    BigInteger bi = BigInteger.Parse(monster.DropoutGold) * 30;
+                    transscriptEarnings += bi;
+
+                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 7200.0);
+                    int tmp = Convert.ToInt32(rate * 100);
+
+                    var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
+                    if (vipcfg != null)
+                    {
+                        int skillAddition = 0;
+                        var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == GetElf.SelectID);
+                        if (elfcfg != null && elfcfg.ElvesType == ElfSkillType.OffineGold)
+                        {
+                            skillAddition = elfcfg.ElvesNum;
+                        }
+                        BigInteger sum = transscriptEarnings * tmp;
+                        BigInteger earning = sum + sum / 100 * (vipcfg.Multiple + skillAddition);
+                        if (GetPay.MonthCardDays >= 0)
+                        {
+                            earning = earning * 2;
+                        }
+
+                        GetBasis.OfflineEarnings = earning.ToNotNullString("0");
+                    }
+
+                }
+                receipt.OfflineTimeSec = GetBasis.OfflineTimeSec;
+                receipt.OfflineEarnings = GetBasis.OfflineEarnings;
+            }
+
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID, "0", 0, false);
 
             return true;
         }
@@ -169,7 +217,7 @@ namespace GameServer.CsScript.Action
             {
                 ranktype = RankType.Combat;
                 rankid = GetBasis.CombatRankID;
-                context = string.Format("竞技场排名第{0}名的 {1} 上线了！", rankid, GetBasis.NickName);
+                context = string.Format("通天塔排名第{0}名的 {1} 上线了！", rankid, GetBasis.NickName);
             }
 
             if (ranktype != RankType.No)

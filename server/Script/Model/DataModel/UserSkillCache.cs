@@ -149,6 +149,7 @@ namespace GameServer.Script.Model.DataModel
         public void ResetCache(int profession)
         {
             SkillList.Clear();
+            CarryList.Clear();
 
             var skillConfig = new ShareCacheStruct<Config_Skill>();
             var list = skillConfig.FindAll(t => (
@@ -159,6 +160,13 @@ namespace GameServer.Script.Model.DataModel
             {
                 AddSkill(v.SkillID);
             }
+
+            if (list.Count >= 2)
+            {
+                CarryList.Add(list[list.Count - 1].SkillID);
+                CarryList.Add(list[list.Count - 2].SkillID);
+            }
+            
         }
     }
 }

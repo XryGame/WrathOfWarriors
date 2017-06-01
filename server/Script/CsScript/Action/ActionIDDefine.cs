@@ -247,7 +247,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1081 = 1081;
 
         ///<summary>
-        ///竞技场新日志通知
+        ///通天塔新日志通知
         ///</summary>
         public const short Cst_Action1082 = 1082;
 
@@ -292,10 +292,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1112 = 1112;
 
-        ///<summary>
-        ///进入关卡
-        ///</summary>
-        public const short Cst_Action1113 = 1113;
+        /////<summary>
+        /////进入关卡
+        /////</summary>
+        //public const short Cst_Action1113 = 1113;
 
         ///<summary>
         ///领取离线收益
@@ -393,27 +393,27 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1174 = 1174;
 
         ///<summary>
-        ///竞技场入口
+        ///通天塔入口
         ///</summary>
         public const short Cst_Action1401 = 1401;
 
         ///<summary>
-        ///竞技场请求挑战
+        ///通天塔请求挑战
         ///</summary>
         public const short Cst_Action1402 = 1402;
 
         ///<summary>
-        ///竞技场挑战结果
+        ///通天塔挑战结果
         ///</summary>
         public const short Cst_Action1403 = 1403;
 
         ///<summary>
-        ///竞技场减CD
+        ///通天塔减CD
         ///</summary>
         public const short Cst_Action1404 = 1404;
 
         ///<summary>
-        ///竞技场购买挑战次数
+        ///通天塔购买挑战次数
         ///</summary>
         public const short Cst_Action1405 = 1405;
 
@@ -518,7 +518,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1709 = 1709;
 
         ///<summary>
-        ///请求竞技场排行数据
+        ///请求通天塔排行数据
         ///</summary>
         public const short Cst_Action2000 = 2000;
 

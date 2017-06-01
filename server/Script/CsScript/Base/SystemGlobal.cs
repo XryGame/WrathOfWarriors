@@ -109,7 +109,7 @@ namespace GameServer.CsScript.Base
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 60));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
-            // 每周二，周五竞技场奖励
+            // 每周二，周五通天塔奖励
             TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoTuesdayRefreshTask, "TuesdayRefreshTask", DayOfWeek.Tuesday, "04:00"));
             TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoFridayRefreshTask, "FridayRefreshTask", DayOfWeek.Friday, "04:00"));
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
@@ -150,7 +150,7 @@ namespace GameServer.CsScript.Base
             RankingFactory.Add(new GuildRanking());
             RankingFactory.Start(timeOut);
 
-            // 设置竞技场排行不刷新
+            // 设置通天塔排行不刷新
             Ranking<UserRank> combatRanking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
             combatRanking.SetIntervalTimes(int.MaxValue);
 
