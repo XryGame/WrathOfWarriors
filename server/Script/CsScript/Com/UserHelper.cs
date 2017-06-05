@@ -291,6 +291,21 @@ namespace GameServer.Script.Model.DataModel
             return ret;
         }
 
+        public static UserTransferItemCache FindUserTransfer(int userid)
+        {
+            var cacheset = new PersonalCacheStruct<UserTransferItemCache>();
+            var ret = cacheset.FindKey(userid.ToString());
+            if (ret == null)
+            {
+                ret = new UserTransferItemCache();
+                ret.UserID = userid;
+                ret.ResetCache();
+                cacheset.Add(ret);
+                cacheset.Update();
+            }
+            return ret;
+        }
+
         public static List<GameSession> GetOnlinesList()
         {
             var sessionlist = GameSession.GetAll();
@@ -930,7 +945,7 @@ namespace GameServer.Script.Model.DataModel
                             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(addId);
                             if (itemcfg != null && itemcfg.ItemType == ItemType.Gem)
                             {
-                                if ((int)itemcfg.Quality >= achconfig.ObjectiveGrade)
+                                if (itemcfg.ItemGrade == achconfig.ObjectiveGrade)
                                 {
                                     int count = achdata.Count.ToInt() + addcount.ToInt();
                                     achdata.Count = count.ToString();
@@ -1655,6 +1670,27 @@ namespace GameServer.Script.Model.DataModel
                 //var chatService = new TryXChatService();
                 //chatService.SystemSend(context);
                 //PushMessageHelper.SendSystemChatToOnlineUser();
+            }
+        }
+
+
+        public static void TransferExpireCheck(int userId)
+        {
+            var transfer = FindUserTransfer(userId);
+            if (transfer != null)
+            {
+                List<ReceiveTransferItemData> removeList = new List<ReceiveTransferItemData>();
+                if (transfer.ReceiveList.RemoveAll(t => (
+                            DateTime.Now.Subtract(t.Date).TotalMinutes >= 1.0
+                        ), out removeList))
+                {
+                    foreach (var v in removeList)
+                    {
+                        var senderTransfer = FindUserTransfer(v.Sender);
+                        var sendTransfer = senderTransfer.FindSend(v.ID);
+                        senderTransfer.SendList.Remove(sendTransfer);
+                    }
+                }
             }
         }
     }

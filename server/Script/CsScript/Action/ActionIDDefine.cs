@@ -262,6 +262,16 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1084 = 1084;
 
         ///<summary>
+        ///新的赠送通知
+        ///</summary>
+        public const short Cst_Action1085 = 1085;
+
+        ///<summary>
+        ///赠送物品被领取
+        ///</summary>
+        public const short Cst_Action1086 = 1086;
+
+        ///<summary>
         ///充值成功通知
         ///</summary>
         public const short Cst_Action1099 = 1099;
@@ -516,6 +526,16 @@ namespace GameServer.CsScript.Action
         // 请求退出公会
         ///</summary>
         public const short Cst_Action1709 = 1709;
+
+        ///<summary>
+        // 请求赠送物品
+        ///</summary>
+        public const short Cst_Action1750 = 1750;
+
+        ///<summary>
+        // 请求接收物品
+        ///</summary>
+        public const short Cst_Action1751 = 1751;
 
         ///<summary>
         ///请求通天塔排行数据

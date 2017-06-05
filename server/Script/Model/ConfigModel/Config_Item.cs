@@ -142,19 +142,19 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 是否可出售
+        /// 道具等级
         /// </summary>
-        private bool _IfSell;
-        [EntityField("IfSell")]
-        public bool IfSell
+        private int _ItemGrade;
+        [EntityField("ItemGrade")]
+        public int ItemGrade
         {
             get
             {
-                return _IfSell;
+                return _ItemGrade;
             }
             private set
             {
-                SetChange("IfSell", value);
+                SetChange("ItemGrade", value);
             }
         }
 
@@ -307,7 +307,7 @@ namespace GameServer.Script.Model.ConfigModel
                     case "Quality": return Quality;
                     case "ResourceType": return ResourceType;
                     case "ResourceNum": return ResourceNum;
-                    case "IfSell": return IfSell;
+                    case "ItemGrade": return ItemGrade;
                     case "SellGold": return SellGold;
                     case "hp": return hp;
                     case "attack": return attack;
@@ -344,13 +344,13 @@ namespace GameServer.Script.Model.ConfigModel
                         _ResourceType = value.ToEnum<ResourceType>();
                         break;
                     case "ResourceNum":
-                        _ResourceNum = value.ToNotNullString();
+                        _ResourceNum = value.ToNotNullString("0");
                         break;
-                    case "IfSell":
-                        _IfSell = value.ToBool();
+                    case "ItemGrade":
+                        _ItemGrade = value.ToInt();
                         break;
                     case "SellGold":
-                        _SellGold = value.ToNotNullString();
+                        _SellGold = value.ToNotNullString("0");
                         break;
                     case "hp":
                         _hp = value.ToInt();

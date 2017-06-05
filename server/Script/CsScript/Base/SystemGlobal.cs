@@ -44,7 +44,8 @@ namespace GameServer.CsScript.Base
         public static int UserCenterUserCount = 0;
 
         public static Competition64 competition64;
-        
+
+        public static int TransferExpireCheckinterval = 0;
         public static bool IsRunning
         {
             get { return _isRunning; }
@@ -359,6 +360,19 @@ namespace GameServer.CsScript.Base
                 return;
             }
             //do something
+
+            TransferExpireCheckinterval++;
+            if (TransferExpireCheckinterval > 10)
+            {
+                var onlinelist = UserHelper.GetOnlinesList();
+                foreach (var usersession in onlinelist)
+                {
+                    UserHelper.TransferExpireCheck(usersession.UserId);
+                }
+            }
+
+           
+
             if (Bots.IsInitEnd)
             {
                 /// 这里处理Bot的聊天

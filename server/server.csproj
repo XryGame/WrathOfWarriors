@@ -127,6 +127,8 @@
     <Compile Include="Script\CsScript\Action\Action1082.cs" />
     <Compile Include="Script\CsScript\Action\Action1083.cs" />
     <Compile Include="Script\CsScript\Action\Action1084.cs" />
+    <Compile Include="Script\CsScript\Action\Action1085.cs" />
+    <Compile Include="Script\CsScript\Action\Action1086.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
@@ -155,6 +157,8 @@
     <Compile Include="Script\CsScript\Action\Action1707.cs" />
     <Compile Include="Script\CsScript\Action\Action1708.cs" />
     <Compile Include="Script\CsScript\Action\Action1709.cs" />
+    <Compile Include="Script\CsScript\Action\Action1750.cs" />
+    <Compile Include="Script\CsScript\Action\Action1751.cs" />
     <Compile Include="Script\CsScript\Action\Action1800.cs" />
     <Compile Include="Script\CsScript\Action\Action1801.cs" />
     <Compile Include="Script\CsScript\Action\Action1802.cs" />
@@ -315,6 +319,8 @@
     <Compile Include="Script\Model\Config\CombatLogData.cs" />
     <Compile Include="Script\Model\Config\EquipData.cs" />
     <Compile Include="Script\Model\Config\MailData.cs" />
+    <Compile Include="Script\Model\Config\ReceiveTransferItemData.cs" />
+    <Compile Include="Script\Model\Config\SendTransferItemData.cs" />
     <Compile Include="Script\Model\Config\UserDailyQuestData.cs" />
     <Compile Include="Script\Model\Config\FriendApplyData.cs" />
     <Compile Include="Script\Model\Config\FriendData.cs" />
@@ -342,10 +348,12 @@
     <Compile Include="Script\Model\DataModel\UserSkillCache.cs" />
     <Compile Include="Script\Model\DataModel\UserSoulCache.cs" />
     <Compile Include="Script\Model\DataModel\UserTaskCache.cs" />
+    <Compile Include="Script\Model\DataModel\UserTransferItemCache.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
     <Compile Include="Script\Model\Enum\BuyItemResult.cs" />
     <Compile Include="Script\Model\Enum\ElfSkillType.cs" />
     <Compile Include="Script\Model\Enum\MatchRivalResult.cs" />
+    <Compile Include="Script\Model\Enum\ReceiveTransferItemResult.cs" />
     <Compile Include="Script\Model\Enum\RequestGuildResult.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />

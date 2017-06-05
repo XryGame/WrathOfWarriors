@@ -67,7 +67,7 @@ namespace GameServer.CsScript.Action
                 receipt = true;
             }
             GetPackage.RemoveItem(gemID, gemNum);
-            
+
             return true;
         }
     }

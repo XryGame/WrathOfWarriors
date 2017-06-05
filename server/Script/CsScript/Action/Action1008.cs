@@ -85,6 +85,9 @@ namespace GameServer.CsScript.Action
             receipt.Pay = GetPay;
             receipt.Combat = GetCombat;
             receipt.Elf = GetElf;
+            UserHelper.TransferExpireCheck(Current.UserId);
+            receipt.Transfer = GetTransfer;
+
             /// 好友
             {
                 receipt.Friends.GiveAwayCount = GetFriends.GiveAwayCount;

@@ -436,6 +436,32 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
+        /// 新赠送物品
+        /// </summary>
+        public static void NewReceiveTransferItemNotification(GameSession session, string id)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["ID"] = id;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1085, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1085, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 对方已领取赠送物品通知
+        /// </summary>
+        public static void ReceivedTransferItemNotification(GameSession session, string id)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var parameters = new Parameters();
+            parameters["ID"] = id;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1086, session, parameters, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1086, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
         /// 充值成功通知
         /// </summary>
         /// <param name="session"></param>

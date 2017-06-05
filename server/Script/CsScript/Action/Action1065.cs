@@ -28,7 +28,7 @@ namespace GameServer.CsScript.Action
 
         public string AvatarUrl { get; set; }
 
-        public int RankId { get; set; }
+        public int LevelRankID { get; set; }
 
         public int UserLv { get; set; }
 
@@ -105,7 +105,7 @@ namespace GameServer.CsScript.Action
             receipt.Equips = UserHelper.FindUserEquips(destuid);
             receipt.Attribute = UserHelper.FindUserAttribute(destuid);
             receipt.Skill = UserHelper.FindUserSkill(destuid);
-            //receipt.RivalData.RankId = dest.CombatRankID;
+            receipt.LevelRankID = dest.LevelRankID;
 
             //receipt.RivalData.FightValue = dest.FightingValue;
             //GameSession fsession = GameSession.Get(dest.UserID);

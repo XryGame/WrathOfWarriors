@@ -117,11 +117,22 @@ namespace GameServer.CsScript.Base
         /// 获取6位随机密码
         /// </summary>
         /// <returns></returns>
-        static public string GetRandomPwd()
+        static public string GetRandom6Pwd()
         {
             Random random = new Random();
             int rid = random.Next(0, 999999);
             return rid.ToString().PadLeft(6, '0');
+        }
+
+        /// <summary>
+        /// 获取4位随机密码
+        /// </summary>
+        /// <returns></returns>
+        static public string GetRandom4Pwd()
+        {
+            Random random = new Random();
+            int rid = random.Next(0, 9999);
+            return rid.ToString().PadLeft(4, '0');
         }
         /// <summary>
         /// 获取随机GUID密码

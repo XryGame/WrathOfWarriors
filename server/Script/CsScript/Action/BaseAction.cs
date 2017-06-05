@@ -143,6 +143,14 @@ namespace GameServer.Script.CsScript.Action
             }
         }
 
+        public UserTransferItemCache GetTransfer
+        {
+            get
+            {
+                return UserHelper.FindUserTransfer(Current.UserId);
+            }
+        }
+
         public void setErrorCode(int errorcode)
         {
             _resultData.ErrorCode = errorcode;

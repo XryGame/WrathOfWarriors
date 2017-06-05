@@ -102,7 +102,7 @@ namespace GameServer.CsScript.Action
                         BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
                         
                         UserHelper.RewardsGold(Current.UserId, value);
-                        receipt.AwardNum = lott.Content;
+                        receipt.AwardNum = value.ToString();
                     }
                     break;
                 case LotteryAwardType.Diamond:

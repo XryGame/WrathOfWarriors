@@ -261,6 +261,14 @@ namespace GameServer.CsScript.Action
             elfSet.Add(elfcache);
             elfSet.Update();
 
+            // 赠送物品初始化
+            UserTransferItemCache transfercache = new UserTransferItemCache();
+            transfercache.UserID = basis.UserID;
+            transfercache.ResetCache();
+            var transferSet = new PersonalCacheStruct<UserTransferItemCache>();
+            transferSet.Add(transfercache);
+            transferSet.Update();
+
             UserHelper.RefreshUserFightValue(basis.UserID, false);
 
             // 排行榜初始化

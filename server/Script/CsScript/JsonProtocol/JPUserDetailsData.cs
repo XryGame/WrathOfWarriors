@@ -71,6 +71,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public UserElfCache Elf { get; set; }
 
+        public UserTransferItemCache Transfer { get; set; }
+
         public long OfflineTimeSec { get; set; }
 
         public string OfflineEarnings { get; set; }

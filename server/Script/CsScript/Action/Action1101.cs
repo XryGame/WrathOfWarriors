@@ -74,7 +74,8 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            if (!itemconfig.IfSell)
+            BigInteger sellgold = BigInteger.Parse(itemconfig.SellGold);
+            if (sellgold == 0)
             {
                 receipt = UsedItemResult.Unavailable;
                 return true;
