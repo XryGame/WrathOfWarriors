@@ -110,9 +110,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 加成值
         /// </summary>
-        private int _AddValue;
+        private long _AddValue;
         [EntityField("AddValue")]
-        public int AddValue
+        public long AddValue
         {
             get
             {
@@ -216,7 +216,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _Attdef = value.ToEnum<SoulAddType>();
                         break; 
                     case "AddValue":
-                        _AddValue = value.ToInt();
+                        _AddValue = value.ToLong();
                         break;
                     case "GridState":
                         _GridState = value.ToInt();

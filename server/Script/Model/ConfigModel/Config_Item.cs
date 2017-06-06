@@ -178,9 +178,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始生命
         /// </summary>
-        private int _hp;
+        private long _hp;
         [EntityField("hp")]
-        public int hp
+        public long hp
         {
             get
             {
@@ -195,9 +195,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始攻击
         /// </summary>
-        private int _attack;
+        private long _attack;
         [EntityField("attack")]
-        public int attack
+        public long attack
         {
             get
             {
@@ -212,9 +212,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始防御
         /// </summary>
-        private int _defense;
+        private long _defense;
         [EntityField("defense")]
-        public int defense
+        public long defense
         {
             get
             {
@@ -229,9 +229,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始闪避
         /// </summary>
-        private int _dodge;
+        private long _dodge;
         [EntityField("dodge")]
-        public int dodge
+        public long dodge
         {
             get
             {
@@ -246,9 +246,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始暴击
         /// </summary>
-        private int _crit;
+        private long _crit;
         [EntityField("crit")]
-        public int crit
+        public long crit
         {
             get
             {
@@ -263,9 +263,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始命中
         /// </summary>
-        private int _hit;
+        private long _hit;
         [EntityField("hit")]
-        public int hit
+        public long hit
         {
             get
             {
@@ -280,9 +280,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 初始韧性
         /// </summary>
-        private int _tenacity;
+        private long _tenacity;
         [EntityField("tenacity")]
-        public int tenacity
+        public long tenacity
         {
             get
             {
@@ -353,25 +353,25 @@ namespace GameServer.Script.Model.ConfigModel
                         _SellGold = value.ToNotNullString("0");
                         break;
                     case "hp":
-                        _hp = value.ToInt();
+                        _hp = value.ToLong();
                         break;
                     case "attack":
-                        _attack = value.ToInt();
+                        _attack = value.ToLong();
                         break;
                     case "defense":
-                        _defense = value.ToInt();
+                        _defense = value.ToLong();
                         break;
                     case "dodge":
-                        _dodge = value.ToInt();
+                        _dodge = value.ToLong();
                         break;
                     case "crit":
-                        _crit = value.ToInt();
+                        _crit = value.ToLong();
                         break;
                     case "hit":
-                        _hit = value.ToInt();
+                        _hit = value.ToLong();
                         break;
                     case "tenacity":
-                        _tenacity = value.ToInt();
+                        _tenacity = value.ToLong();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Item index[{0}] isn't exist.", index));
 				}

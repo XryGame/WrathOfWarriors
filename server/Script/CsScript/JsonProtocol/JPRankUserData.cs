@@ -16,7 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public string AvatarUrl { get; set; }
 
-        public int FightValue { get; set; }
+        public long FightValue { get; set; }
 
         public int VipLv { get; set; }
     }

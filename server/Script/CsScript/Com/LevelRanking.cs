@@ -91,7 +91,7 @@ namespace GameServer.CsScript.Com
                     var rank = rankList.Find(t => t.UserID == userId);
                     if (rank != null)
                     {
-                        rank.FightValue = reader["FightValue"].ToInt();
+                        rank.FightValue = reader["FightValue"].ToLong();
                     }
                 }
             }

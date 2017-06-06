@@ -86,7 +86,7 @@ namespace GameServer.Script.Model.Config
         /// 战斗力
         /// </summary>
         [ProtoMember(6)]
-        public int FightValue
+        public long FightValue
         {
             get;
             set;

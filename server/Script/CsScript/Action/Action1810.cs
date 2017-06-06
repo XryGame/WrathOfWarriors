@@ -146,6 +146,11 @@ namespace GameServer.CsScript.Action
 
                             debris.RemoveAll(t => (t.ResourceNum.ToInt() == elfCard.ItemID));
                         }
+                        if (debris.Count == 0)
+                        {
+                            debris = itemSet.FindAll(t => (t.ItemType == ItemType.Debris));
+                        }
+
                         int maxCount = lott.Content.ToInt();
                         for (int i = 0; i < maxCount; ++i)
                         {

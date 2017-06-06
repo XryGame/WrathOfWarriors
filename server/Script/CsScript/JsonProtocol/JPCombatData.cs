@@ -23,7 +23,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int VipLv { get; set; }
 
-        public int FightingValue { get; set; }
+        public long FightingValue { get; set; }
 
     }
     public class CombatMatchData

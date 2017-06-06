@@ -145,9 +145,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 生命加成
         /// </summary>
-        private int _hp;
+        private long _hp;
         [EntityField("hp")]
-        public int hp
+        public long hp
         {
             get
             {
@@ -162,9 +162,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 攻击加成
         /// </summary>
-        private int _attack;
+        private long _attack;
         [EntityField("attack")]
-        public int attack
+        public long attack
         {
             get
             {
@@ -178,9 +178,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 防御加成
         /// </summary>
-        private int _defense;
+        private long _defense;
         [EntityField("defense")]
-        public int defense
+        public long defense
         {
             get
             {
@@ -240,13 +240,13 @@ namespace GameServer.Script.Model.ConfigModel
                         _GradeConsume = value.ToNotNullString("0");
                         break;
                     case "hp":
-                        _hp = value.ToInt();
+                        _hp = value.ToLong();
                         break;
                     case "attack":
-                        _attack = value.ToInt();
+                        _attack = value.ToLong();
                         break;
                     case "defense":
-                        _defense = value.ToInt();
+                        _defense = value.ToLong();
                         break;
                     default: throw new ArgumentException(string.Format("Config_Elves index[{0}] isn't exist.", index));
 				}

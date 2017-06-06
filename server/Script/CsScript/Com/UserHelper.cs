@@ -1681,7 +1681,7 @@ namespace GameServer.Script.Model.DataModel
             {
                 List<ReceiveTransferItemData> removeList = new List<ReceiveTransferItemData>();
                 if (transfer.ReceiveList.RemoveAll(t => (
-                            DateTime.Now.Subtract(t.Date).TotalMinutes >= 1.0
+                            DateTime.Now.Subtract(t.Date).TotalDays >= 1.0
                         ), out removeList))
                 {
                     foreach (var v in removeList)

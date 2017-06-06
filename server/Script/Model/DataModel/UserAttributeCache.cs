@@ -44,10 +44,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 战斗力
         /// </summary>
-        private int _FightValue;
+        private long _FightValue;
         [ProtoMember(2)]
         [EntityField("FightValue")]
-        public int FightValue
+        public long FightValue
         {
             get
             {
@@ -62,10 +62,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 生命
         /// </summary>
-        private int _Hp;
+        private long _Hp;
         [ProtoMember(3)]
         [EntityField("Hp")]
-        public int Hp
+        public long Hp
         {
             get
             {
@@ -80,10 +80,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 攻击
         /// </summary>
-        private int _Atk;
+        private long _Atk;
         [ProtoMember(4)]
         [EntityField("Atk")]
-        public int Atk
+        public long Atk
         {
             get
             {
@@ -98,10 +98,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 防御
         /// </summary>
-        private int _Def;
+        private long _Def;
         [ProtoMember(5)]
         [EntityField("Def")]
-        public int Def
+        public long Def
         {
             get
             {
@@ -116,10 +116,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 暴击
         /// </summary>
-        private int _Crit;
+        private long _Crit;
         [ProtoMember(6)]
         [EntityField("Crit")]
-        public int Crit
+        public long Crit
         {
             get
             {
@@ -134,10 +134,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 命中
         /// </summary>
-        private int _Hit;
+        private long _Hit;
         [ProtoMember(7)]
         [EntityField("Hit")]
-        public int Hit
+        public long Hit
         {
             get
             {
@@ -152,10 +152,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 闪避
         /// </summary>
-        private int _Dodge;
+        private long _Dodge;
         [ProtoMember(8)]
         [EntityField("Dodge")]
-        public int Dodge
+        public long Dodge
         {
             get
             {
@@ -170,10 +170,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 韧性
         /// </summary>
-        private int _Tenacity;
+        private long _Tenacity;
         [ProtoMember(9)]
         [EntityField("Tenacity")]
-        public int Tenacity
+        public long Tenacity
         {
             get
             {
@@ -220,28 +220,28 @@ namespace GameServer.Script.Model.DataModel
                         _UserID = value.ToInt();
                         break;
                     case "FightValue":
-                        _FightValue = value.ToInt();
+                        _FightValue = value.ToLong();
                         break;
                     case "Hp":
-                        _Hp = value.ToInt();
+                        _Hp = value.ToLong();
                         break;
                     case "Atk":
-                        _Atk = value.ToInt();
+                        _Atk = value.ToLong();
                         break;
                     case "Def":
-                        _Def = value.ToInt();
+                        _Def = value.ToLong();
                         break;
                     case "Crit":
-                        _Crit = value.ToInt();
+                        _Crit = value.ToLong();
                         break;
                     case "Hit":
-                        _Hit = value.ToInt();
+                        _Hit = value.ToLong();
                         break;
                     case "Dodge":
-                        _Dodge = value.ToInt();
+                        _Dodge = value.ToLong();
                         break;
                     case "Tenacity":
-                        _Tenacity = value.ToInt();
+                        _Tenacity = value.ToLong();
                         break;
                     default: throw new ArgumentException(string.Format("UserAttributeCache index[{0}] isn't exist.", index));
                 }
