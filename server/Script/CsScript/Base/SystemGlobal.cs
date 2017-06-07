@@ -364,6 +364,7 @@ namespace GameServer.CsScript.Base
             TransferExpireCheckinterval++;
             if (TransferExpireCheckinterval > 10)
             {
+                TransferExpireCheckinterval = 0;
                 var onlinelist = UserHelper.GetOnlinesList();
                 foreach (var usersession in onlinelist)
                 {

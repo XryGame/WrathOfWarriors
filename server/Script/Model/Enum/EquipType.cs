@@ -5,13 +5,13 @@ namespace GameServer.Script.Model.Enum
     public enum EquipType
     {
         /// <summary>
-        /// 衣服
-        /// </summary>
-        Coat = 1,
-        /// <summary>
         /// 武器
         /// </summary>
-        Weapon,
+        Weapon = 1,
+        /// <summary>
+        /// 衣服
+        /// </summary>
+        Coat,
         /// <summary>
         /// 鞋子
         /// </summary>

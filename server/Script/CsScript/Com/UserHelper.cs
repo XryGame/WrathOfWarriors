@@ -923,7 +923,7 @@ namespace GameServer.Script.Model.DataModel
                             achdata.Count = "0";
                             int finishcount = 0;
                             UserEquipsCache userEquip = FindUserEquips(uid);
-                            for (EquipID id = EquipID.Coat; id <= EquipID.Accessory; ++id)
+                            for (EquipID id = EquipID.Weapon; id <= EquipID.Accessory; ++id)
                             {
                                 var equip = userEquip.FindEquipData(id);
                                 if (equip.Lv >= achconfig.ObjectiveGrade)
