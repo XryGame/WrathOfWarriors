@@ -33,33 +33,39 @@ namespace GameServer.Script.Model.Config
         public string RivalName { get; set; }
 
         /// <summary>
-        /// 时间
+        /// 对方头像
         /// </summary>
         [ProtoMember(3)]
+        public string RivalAvatarUrl { get; set; }
+
+        /// <summary>
+        /// 时间
+        /// </summary>
+        [ProtoMember(4)]
         public DateTime LogTime { get; set; }
 
         /// <summary>
         /// 类型
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(5)]
         public EventType Type { get; set; }
 
         /// <summary>
         /// 胜利还是失败
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(6)]
         public EventStatus Status { get; set; }
 
         /// <summary>
         /// 排名上升/下降
         /// </summary>
-        [ProtoMember(6)]
+        [ProtoMember(7)]
         public int RankIdDiff { get; set; }
 
         /// <summary>
         /// 排名
         /// </summary>
-        [ProtoMember(7)]
+        [ProtoMember(8)]
         public int RankId { get; set; }
     }
 }

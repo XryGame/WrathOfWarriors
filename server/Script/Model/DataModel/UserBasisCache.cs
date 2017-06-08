@@ -428,6 +428,42 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 分享计数
+        /// </summary>
+        private int _ShareCount;
+        [ProtoMember(34)]
+        [EntityField("ShareCount")]
+        public int ShareCount
+        {
+            get
+            {
+                return _ShareCount;
+            }
+            set
+            {
+                SetChange("ShareCount", value);
+            }
+        }
+
+        /// <summary>
+        /// 分享时间
+        /// </summary>
+        private DateTime _ShareDate;
+        [ProtoMember(35)]
+        [EntityField("ShareDate")]
+        public DateTime ShareDate
+        {
+            get
+            {
+                return _ShareDate;
+            }
+            set
+            {
+                SetChange("ShareDate", value);
+            }
+        }
+
 
         /// <summary>
         /// 随机的抽奖id
@@ -651,6 +687,8 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatRankID": return CombatRankID;
                     case "LotteryTimes": return LotteryTimes;
                     case "VipGiftProgress": return VipGiftProgress;
+                    case "ShareCount": return ShareCount;
+                    case "ShareDate": return ShareDate;
                     case "LastLotteryId": return LastLotteryId;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     case "OfflineEarnings": return OfflineEarnings;
@@ -735,6 +773,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "VipGiftProgress":
                         _VipGiftProgress = value.ToInt();
+                        break;
+                    case "ShareCount":
+                        _ShareCount = value.ToInt();
+                        break;
+                    case "ShareDate":
+                        _ShareDate = value.ToDateTime();
                         break;
                     case "LastLotteryId":
                         _LastLotteryId = value.ToInt();

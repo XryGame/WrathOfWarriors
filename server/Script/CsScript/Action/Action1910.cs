@@ -74,9 +74,9 @@ namespace GameServer.CsScript.Action
                 return false;
             }
            
-            if (GetBasis.BuyDiamond < acc.Time)
+            if (GetPay.PayMoney < acc.Time)
             {
-                receipt.Result = ReceiveAccumulatePayResult.NoDiamond;
+                receipt.Result = ReceiveAccumulatePayResult.NoPay;
                 return true;
             }
 

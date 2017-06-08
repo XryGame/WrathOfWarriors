@@ -55,13 +55,14 @@ namespace GameServer.CsScript.Action
                 case ChatType.AllService:
                     {
                         GlobalRemoteService.SendAllServerChat(Current.UserId, _content);
+                        // 每日
+                        UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.WorldChat, 1);
                     }
                     break;
                 case ChatType.World:
                     {
                         GlobalRemoteService.SendWorldChat(Current.UserId, _content);
-                        // 每日
-                        UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.WorldChat, 1);
+
                     }
                     break;
                 case ChatType.Whisper:

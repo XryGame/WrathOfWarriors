@@ -71,6 +71,8 @@ namespace GameServer.CsScript.Action
                 LevelRankID = GetBasis.LevelRankID,
                 LotteryTimes = GetBasis.LotteryTimes,
                 SignStartID = DataHelper.SignStartID,
+                ShareCount = GetBasis.ShareCount,
+                ShareDate = GetBasis.ShareDate,
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -161,7 +163,7 @@ namespace GameServer.CsScript.Action
                     BigInteger bi = BigInteger.Parse(monster.DropoutGold) * 30;
                     transscriptEarnings += bi;
 
-                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 7200.0);
+                    double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 1800.0);
                     int tmp = Convert.ToInt32(rate * 100);
 
                     var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
@@ -173,7 +175,7 @@ namespace GameServer.CsScript.Action
                         {
                             skillAddition = elfcfg.ElvesNum;
                         }
-                        BigInteger sum = transscriptEarnings * tmp;
+                        BigInteger sum = transscriptEarnings * tmp / 100;
                         BigInteger earning = sum + sum / 100 * (vipcfg.Multiple);
                         BigInteger earning2 = earning + earning / 1000 * skillAddition;
                         if (GetPay.MonthCardDays >= 0)

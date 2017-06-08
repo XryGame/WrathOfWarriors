@@ -694,5 +694,11 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action21300 = 21300;
 
+        ///<summary>
+        ///分享成功
+        ///</summary>
+        public const short Cst_Action21400 = 21400;
+
+
     }
 }

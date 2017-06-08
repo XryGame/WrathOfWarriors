@@ -221,6 +221,7 @@
     <Compile Include="Script\CsScript\Action\Action1504.cs" />
     <Compile Include="Script\CsScript\Action\Action1505.cs" />
     <Compile Include="Script\CsScript\Action\Action1600.cs" />
+    <Compile Include="Script\CsScript\Action\Action21400.cs" />
     <Compile Include="Script\CsScript\Action\Action3001.cs" />
     <Compile Include="Script\CsScript\Action\Action2001.cs" />
     <Compile Include="Script\CsScript\Action\Action1150.cs" />
@@ -301,6 +302,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_Giftbag.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_RoleInitial.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Gem.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Share.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Shop.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Signin.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Skill.cs" />

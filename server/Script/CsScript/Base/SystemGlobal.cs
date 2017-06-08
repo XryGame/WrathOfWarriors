@@ -241,6 +241,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Liveness>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Shop>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Share>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
@@ -251,11 +252,10 @@ namespace GameServer.CsScript.Base
 
         }
 
-        
+
         public static void Stop()
         {
             SendServerStatus(ServerStatus.Close, 0);
-
             var onlines = GameSession.GetAll();
             foreach (var sess in onlines)
             {
@@ -269,7 +269,6 @@ namespace GameServer.CsScript.Base
 
             }
 
-            Thread.Sleep(50000);
         }
 
 
@@ -312,7 +311,7 @@ namespace GameServer.CsScript.Base
                 SendServerStatus(ServerStatus.Full, count);
         }
 
-        public static void SendServerStatus(ServerStatus status, int activeNum)
+        public static bool SendServerStatus(ServerStatus status, int activeNum)
         {
 
             string Sign = "3f261d4f2f8941ea90552cf7507f021b";
@@ -339,7 +338,7 @@ namespace GameServer.CsScript.Base
                 if (string.IsNullOrEmpty(result))
                 {
                     TraceLog.ReleaseWrite("Submit server status fail result:{0}, request url:{1}", result, getUrlData);
-                    return;
+                    return true;
                 }
                 else
                 {
@@ -349,8 +348,9 @@ namespace GameServer.CsScript.Base
             catch (Exception ex)
             {
                 new BaseLog().SaveLog(ex);
-                return;
+                return false;
             }
+            return false;
         }
 
         public static void LoopAction(PlanConfig planconfig)

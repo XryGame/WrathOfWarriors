@@ -2,6 +2,7 @@
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
 using System.Collections.Generic;
 using ZyGames.Framework.Cache.Generic;
 
@@ -40,6 +41,9 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int SignStartID { get; set; }
 
+        public int ShareCount { get; set; }
+
+        public DateTime ShareDate { get; set; }
 
         public UserAttributeCache Attribute { get; set; }
 

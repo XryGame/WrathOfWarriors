@@ -450,6 +450,8 @@ namespace GameServer.Script.Model.DataModel
             // 红包重置
             basis.IsReceivedRedPacket = false;
 
+            basis.ShareCount = 0;
+
             // 设置新的恢复时间
             basis.RestoreDate = DateTime.Now;
         }

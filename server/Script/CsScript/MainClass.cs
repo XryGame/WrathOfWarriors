@@ -47,16 +47,11 @@ namespace Game.Script
             //ActionFactory.SetActionIgnoreAuthorize(100, 1004);
             SystemGlobal.Run();
         }
-        protected override void OnServiceStop()
-        {
-            GameEnvironment.Stop();
-        }
-        public override void Stop()
+
+        public override void StopBefore()
         {
             SystemGlobal.Stop();
-            base.Stop();
         }
-
 
         protected override void OnHandshaked(ISocket sender, ConnectionEventArgs e)
         {

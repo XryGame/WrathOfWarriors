@@ -65,15 +65,7 @@ namespace Game.Script
 
             LevelRankingAllServerSet.LoadServerRanking();
         }
-        protected override void OnServiceStop()
-        {
-            GameEnvironment.Stop();
-        }
-        public override void Stop()
-        {
-
-        }
-
+        
 
         protected override void OnHandshaked(ISocket sender, ConnectionEventArgs e)
         {

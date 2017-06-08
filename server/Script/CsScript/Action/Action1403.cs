@@ -136,6 +136,7 @@ namespace GameServer.CsScript.Action
             CombatLogData log = new CombatLogData();
             log.RivalUid = rankinfo.FightDestUid;
             log.RivalName = rival.NickName;
+            log.RivalAvatarUrl = rival.AvatarUrl;
             log.LogTime = DateTime.Now;
             log.Type = EventType.Challenge;
             log.Status = result;
@@ -150,6 +151,7 @@ namespace GameServer.CsScript.Action
             CombatLogData rivallog = new CombatLogData();
             rivallog.RivalUid = Current.UserId;
             rivallog.RivalName = GetBasis.NickName;
+            rivallog.RivalAvatarUrl = GetBasis.AvatarUrl;
             rivallog.LogTime = DateTime.Now;
             rivallog.Type = EventType.PassiveChallenge;
             rivallog.Status = result;

@@ -17,12 +17,12 @@ namespace GameServer.Script.Model.Enum
         /// </summary>
         Shoe,
         /// <summary>
-        /// 饰品
-        /// </summary>
-        Accessory,
-        /// <summary>
         /// 戒指
         /// </summary>
         Ring,
+        /// <summary>
+        /// 饰品
+        /// </summary>
+        Accessory,
     }
 }
