@@ -95,9 +95,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 奖励1数量
         /// </summary>
-        private int _RewardNum;
+        private string _RewardNum;
         [EntityField("RewardNum")]
-        public int RewardNum
+        public string RewardNum
         {
             get
             {
@@ -129,9 +129,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 奖励2数量
         /// </summary>
-        private int _AddRewardNum;
+        private string _AddRewardNum;
         [EntityField("AddRewardNum")]
-        public int AddRewardNum
+        public string AddRewardNum
         {
             get
             {
@@ -179,13 +179,13 @@ namespace GameServer.Script.Model.ConfigModel
                         _RewardType = value.ToEnum<TaskAwardType>();
                         break;
                     case "RewardNum":
-                        _RewardNum = value.ToInt();
+                        _RewardNum = value.ToNotNullString("0");
                         break;
                     case "AddRewardType":
                         _AddRewardType = value.ToEnum<TaskAwardType>();
                         break;
                     case "AddRewardNum":
-                        _AddRewardNum = value.ToInt();
+                        _AddRewardNum = value.ToNotNullString("0");
                         break;
                     default: throw new ArgumentException(string.Format("Config_Share index[{0}] isn't exist.", index));
 				}

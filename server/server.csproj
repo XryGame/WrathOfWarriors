@@ -312,6 +312,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_Task.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_TeneralTranscript.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Vip.cs" />
+    <Compile Include="Script\Model\ConfigModel\OldUserRecord.cs" />
     <Compile Include="Script\Model\Config\AchievementData.cs" />
     <Compile Include="Script\Model\Config\ElfData.cs" />
     <Compile Include="Script\Model\Config\GuildCharacterData.cs" />
@@ -354,6 +355,7 @@
     <Compile Include="Script\Model\DbConfig.cs" />
     <Compile Include="Script\Model\Enum\BuyItemResult.cs" />
     <Compile Include="Script\Model\Enum\ElfSkillType.cs" />
+    <Compile Include="Script\Model\Enum\GameRunStatus.cs" />
     <Compile Include="Script\Model\Enum\MatchRivalResult.cs" />
     <Compile Include="Script\Model\Enum\ReceiveTransferItemResult.cs" />
     <Compile Include="Script\Model\Enum\RequestGuildResult.cs" />

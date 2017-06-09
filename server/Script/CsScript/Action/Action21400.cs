@@ -4,6 +4,7 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
@@ -47,7 +48,9 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Gold:
                     {
-                        UserHelper.RewardsGold(Current.UserId, share.RewardNum);
+                        BigInteger resourceNum = BigInteger.Parse(share.RewardNum);
+                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
+                        UserHelper.RewardsGold(Current.UserId, value);
                     }
                     break;
                 case TaskAwardType.Diamond:
@@ -57,7 +60,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Item:
                     {
-                        UserHelper.RewardsItem(Current.UserId, share.RewardNum, 1);
+                        UserHelper.RewardsItem(Current.UserId, share.RewardNum.ToInt(), 1);
                     }
                     break;
             }
@@ -65,7 +68,9 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Gold:
                     {
-                        UserHelper.RewardsGold(Current.UserId, share.AddRewardNum);
+                        BigInteger resourceNum = BigInteger.Parse(share.RewardNum);
+                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
+                        UserHelper.RewardsGold(Current.UserId, value);
                     }
                     break;
                 case TaskAwardType.Diamond:
@@ -75,7 +80,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case TaskAwardType.Item:
                     {
-                        UserHelper.RewardsItem(Current.UserId, share.AddRewardNum, 1);
+                        UserHelper.RewardsItem(Current.UserId, share.AddRewardNum.ToInt(), 1);
                     }
                     break;
             }

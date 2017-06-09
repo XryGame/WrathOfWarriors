@@ -166,8 +166,8 @@ namespace GameServer.CsScript.Action
                     double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 1800.0);
                     int tmp = Convert.ToInt32(rate * 100);
 
-                    var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
-                    if (vipcfg != null)
+                    //var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
+                    //if (vipcfg != null)
                     {
                         int skillAddition = 0;
                         var elfcfg = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == GetElf.SelectID);
@@ -176,8 +176,9 @@ namespace GameServer.CsScript.Action
                             skillAddition = elfcfg.ElvesNum;
                         }
                         BigInteger sum = transscriptEarnings * tmp / 100;
-                        BigInteger earning = sum + sum / 100 * (vipcfg.Multiple);
-                        BigInteger earning2 = earning + earning / 1000 * skillAddition;
+                        //BigInteger earning = sum + sum / 100 * (vipcfg.Multiple);
+                        //BigInteger earning2 = earning + earning / 1000 * skillAddition;
+                        BigInteger earning2 = sum + sum / 1000 * skillAddition;
                         if (GetPay.MonthCardDays >= 0)
                         {
                             earning2 = earning2 * 2;

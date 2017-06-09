@@ -9,6 +9,7 @@ using GameServer.Script.Model.LogModel;
 using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Configuration;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Context;
@@ -51,17 +52,17 @@ namespace GameServer.CsScript.Action
             if (basis == null)
             {
                 var nickNameCheck = new NickNameCheck();
-                var KeyWordCheck = new KeyWordCheck();
-                string msg;
+                //var KeyWordCheck = new KeyWordCheck();
+                //string msg;
 
-                if (nickNameCheck.VerifyRange(UserName, out msg) ||
-                    KeyWordCheck.VerifyKeyword(UserName, out msg) ||
-                    nickNameCheck.IsExistNickName(UserName, out msg))
-                {
-                    ErrorCode = Language.Instance.ErrorCode;
-                    ErrorInfo = msg;
-                    return false;
-                }
+                //if (nickNameCheck.VerifyRange(UserName, out msg) ||
+                //    KeyWordCheck.VerifyKeyword(UserName, out msg) ||
+                //    nickNameCheck.IsExistNickName(UserName, out msg))
+                //{
+                //    ErrorCode = Language.Instance.ErrorCode;
+                //    ErrorInfo = msg;
+                //    return false;
+                //}
                 basis = CreateRole();
                 if (basis == null)
                     return false;
@@ -89,7 +90,38 @@ namespace GameServer.CsScript.Action
             sender.Send(new[] { userLoginLog });
 
             user = new SessionUser(basis);
-            //Current.Bind(user);
+
+
+
+            // 记录删档测试登录老用户
+            GameRunStatus gameRunStatus = ConfigUtils.GetSetting("Game.RunStatus").ToEnum<GameRunStatus>();
+            if (gameRunStatus == GameRunStatus.DeleteFileTest)
+            {
+                OldUserRecord record = new OldUserRecord()
+                {
+                    OpenID = basis.Pid,
+                    NickName = basis.NickName,
+                    AvatarUrl = basis.AvatarUrl,
+                    CreateDate = DateTime.Now,
+                };
+                var oldUserSet = new ShareCacheStruct<OldUserRecord>();
+                oldUserSet.AddOrUpdate(record);
+            }
+            else if (gameRunStatus == GameRunStatus.OfficialOperation)
+            {
+                if (new ShareCacheStruct<OldUserRecord>().FindKey(basis.Pid) != null)
+                {// 是删档测试老用户发放奖励
+                    MailData mail = new MailData()
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        Title = "老用户回归奖励",
+                        Sender = "系统",
+                        Date = DateTime.Now,
+                        Context = "感谢您再次登录勇者之怒，这是您的回归奖励！",
+                    };
+                    UserHelper.AddNewMail(basis.UserID, mail, false);
+                }
+            }
 
             return true;
         }

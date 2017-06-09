@@ -242,6 +242,7 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Shop>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Share>().AutoLoad(dbFilter);
+            new ShareCacheStruct<OldUserRecord>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
