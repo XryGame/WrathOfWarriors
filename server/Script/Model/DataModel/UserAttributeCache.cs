@@ -279,7 +279,7 @@ namespace GameServer.Script.Model.DataModel
             Tenacity += roleconfig.tenacity;
         }
 
-        public void AppandEquipAttribute(EquipData equip)
+        public void AppandEquipAttribute(int userLv, EquipData equip)
         {
             var equipSet = new ShareCacheStruct<Config_Equip>();
             var weaponcfg = equipSet.Find(t => (t.EquipID == equip.ID && t.Grade == equip.Lv));
@@ -303,43 +303,43 @@ namespace GameServer.Script.Model.DataModel
             {
                 var gem = itemSet.FindKey(equip.AtkGem);
                 if (gem != null)
-                    Atk += gem.attack;
+                    Atk += (Math.Ceiling(userLv / 50.0).ToInt() * gem.attack);
             }
             if (equip.DefGem != 0)
             {
                 var gem = itemSet.FindKey(equip.DefGem);
                 if (gem != null)
-                    Def += gem.defense;
+                    Def += (Math.Ceiling(userLv / 50.0).ToInt() * gem.defense);
             }
             if (equip.HpGem != 0)
             {
                 var gem = itemSet.FindKey(equip.HpGem);
                 if (gem != null)
-                    Hp += gem.hp;
+                    Hp += (Math.Ceiling(userLv / 50.0).ToInt() * gem.hp);
             }
             if (equip.CritGem != 0)
             {
                 var gem = itemSet.FindKey(equip.CritGem);
                 if (gem != null)
-                    Crit += gem.crit;
+                    Crit += (Math.Ceiling(userLv / 50.0).ToInt() * gem.crit);
             }
             if (equip.HitGem != 0)
             {
                 var gem = itemSet.FindKey(equip.HitGem);
                 if (gem != null)
-                    Hit += gem.hit;
+                    Hit += (Math.Ceiling(userLv / 50.0).ToInt() * gem.hit);
             }
             if (equip.DodgeGem != 0)
             {
                 var gem = itemSet.FindKey(equip.DodgeGem);
                 if (gem != null)
-                    Dodge += gem.dodge;
+                    Dodge += (Math.Ceiling(userLv / 50.0).ToInt() * gem.dodge);
             }
             if (equip.TenacityGem != 0)
             {
                 var gem = itemSet.FindKey(equip.TenacityGem);
                 if (gem != null)
-                    Tenacity += gem.tenacity;
+                    Tenacity += (Math.Ceiling(userLv / 50.0).ToInt() * gem.tenacity);
             }
         }
 

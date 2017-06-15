@@ -113,7 +113,7 @@ namespace GameServer.CsScript.Action
 
                 if (GetBasis.CombatRankID <= 10)
                 {
-                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{1}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
+                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{2}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
                     GlobalRemoteService.SendNotice(NoticeMode.World, context);
                     //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
@@ -178,13 +178,13 @@ namespace GameServer.CsScript.Action
             if (result == EventStatus.Good)
             {
                 receipt.AwardGold = awardValue.ToString();
-                UserHelper.RewardsGold(Current.UserId, awardValue);
+                UserHelper.RewardsGold(Current.UserId, awardValue, UpdateCoinOperate.NormalReward, true);
             }
             else
             {
                 awardValue /= 10;
                 receipt.AwardGold = awardValue.ToString();
-                UserHelper.RewardsGold(Current.UserId, awardValue);
+                UserHelper.RewardsGold(Current.UserId, awardValue, UpdateCoinOperate.NormalReward, true);
             }
 
 

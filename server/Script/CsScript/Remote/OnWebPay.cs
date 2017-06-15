@@ -164,6 +164,7 @@ namespace GameServer.CsScript.Remote
                 {
                     OrderId = jsonorder.OrderId,
                     UserId = user.UserID,
+                    NickName = user.NickName,
                     MerchandiseName = paycfg.Identifying,
                     PayId = jsoncustom.PayId,
                     Amount = jsonorder.Amount,

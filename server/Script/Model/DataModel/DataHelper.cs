@@ -2,8 +2,11 @@
 using GameServer.Script.Model.Enum;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Common.Configuration;
+using ZyGames.Framework.Data;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -121,6 +124,25 @@ namespace GameServer.Script.Model.DataModel
                 gameCache.Update();
             }
             SignStartID = signStartIDCache.Value.ToInt();
+
+
+            // 加载老用户记录
+            var cacheSet = new MemoryCacheStruct<OldUserCache>();
+
+            var dbProvider = DbConnectionProvider.CreateDbProvider(DbConfig.Log);
+            string sql = "SELECT OpenID,NickName,AvatarUrl,CreateDate FROM OldUserLog";
+            using (IDataReader reader = dbProvider.ExecuteReader(CommandType.Text, sql))
+            {
+                while (reader.Read())
+                {
+                    OldUserCache olduser = new OldUserCache();
+                    olduser.OpenID = reader["OpenID"].ToString();
+                    olduser.NickName = reader["NickName"].ToString();
+                    olduser.AvatarUrl = reader["AvatarUrl"].ToString();
+                    olduser.CreateDate = reader["CreateDate"].ToDateTime();
+                    cacheSet.TryAdd(olduser.OpenID, olduser);
+                }
+            }
         }
         
 

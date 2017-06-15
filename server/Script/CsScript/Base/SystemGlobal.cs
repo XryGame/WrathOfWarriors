@@ -110,10 +110,9 @@ namespace GameServer.CsScript.Base
             //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoZeroRefreshDataTask, "DoZeroRefreshDataTask", "08:00", "22:00", 60));
             //每天5点执行用于整点刷新
             TimeListener.Append(PlanConfig.EveryDayPlan(UserHelper.DoEveryDayRefreshDataTask, "EveryDayRefreshDataTask", "05:00"));
-            // 每周二，周五通天塔奖励
+            // 每周二，周五
             TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoTuesdayRefreshTask, "TuesdayRefreshTask", DayOfWeek.Tuesday, "04:00"));
-            TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoFridayRefreshTask, "FridayRefreshTask", DayOfWeek.Friday, "04:00"));
-            //TimeListener.Append(PlanConfig.EveryMinutePlan(UserHelper.DoCombatAwardTask, "CombatAwardTask", "08:00", "22:00", 600));
+            //TimeListener.Append(PlanConfig.EveryWeekPlan(UserHelper.DoFridayRefreshTask, "FridayRefreshTask", DayOfWeek.Friday, "04:00"));
 
             DataHelper.InitData();
             
@@ -220,7 +219,6 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Equip>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Skill>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_SkillGrade>().AutoLoad(dbFilter);
-            new ShareCacheStruct<Config_TeneralTranscript>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Monster>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Task>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Achievement>().AutoLoad(dbFilter);
@@ -242,7 +240,6 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Shop>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Share>().AutoLoad(dbFilter);
-            new ShareCacheStruct<OldUserRecord>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);

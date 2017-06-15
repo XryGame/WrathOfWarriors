@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.Model;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -97,19 +98,21 @@ namespace GameServer.CsScript.Action
             GameRunStatus gameRunStatus = ConfigUtils.GetSetting("Game.RunStatus").ToEnum<GameRunStatus>();
             if (gameRunStatus == GameRunStatus.DeleteFileTest)
             {
-                OldUserRecord record = new OldUserRecord()
+                OldUserLog record = new OldUserLog()
                 {
+                    UserID = basis.UserID,
                     OpenID = basis.Pid,
                     NickName = basis.NickName,
                     AvatarUrl = basis.AvatarUrl,
                     CreateDate = DateTime.Now,
                 };
-                var oldUserSet = new ShareCacheStruct<OldUserRecord>();
-                oldUserSet.AddOrUpdate(record);
+                //var oldUserSet = new ShareCacheStruct<OldUserRecord>();
+                //oldUserSet.AddOrUpdate(record);
+                sender.Send(new[] { record });
             }
             else if (gameRunStatus == GameRunStatus.OfficialOperation)
             {
-                if (new ShareCacheStruct<OldUserRecord>().FindKey(basis.Pid) != null)
+                if (new MemoryCacheStruct<OldUserCache>().Find(t => (t.OpenID == basis.Pid)) != null)
                 {// 是删档测试老用户发放奖励
                     MailData mail = new MailData()
                     {
@@ -246,7 +249,7 @@ namespace GameServer.CsScript.Action
                 Title = "恭喜您已获得月卡免费体验资格",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = "恭喜您已获得月卡免费体验资格，月卡有效期为3天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
+                Context = "恭喜您已获得月卡免费体验资格，月卡有效期为1天，为了您能获得更好的游戏体验，您可以在充值页面续费成为我们正式的月卡用户！",
             };
             UserHelper.AddNewMail(basis.UserID, mail, false);
             mailSet.Add(mailcache);
@@ -310,6 +313,7 @@ namespace GameServer.CsScript.Action
                 NickName = basis.NickName,
                 Profession = basis.Profession,
                 UserLv = basis.UserLv,
+                AvatarUrl = basis.AvatarUrl,
                 VipLv = basis.VipLv,
                 FightValue = attcache.FightValue,
                 RankId = int.MaxValue,

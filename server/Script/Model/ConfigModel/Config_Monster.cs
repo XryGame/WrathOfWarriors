@@ -23,62 +23,12 @@ namespace GameServer.Script.Model.ConfigModel
 
         #region auto-generated Property
 
-        /// <summary>
-        /// ID
-        /// </summary>
-        private int _ID;
-        [EntityField("ID", IsKey = true)]
-        public int ID
-        {
-            get
-            {
-                return _ID;
-            }
-            set
-            {
-                SetChange("ID", value);
-            }
-        }
-
-        /// <summary>
-        /// 怪物类型
-        /// </summary>
-        private MonsterType _Type;
-        [EntityField("Type")]
-        public MonsterType Type
-        {
-            get
-            {
-                return _Type;
-            }
-            set
-            {
-                SetChange("Type", value);
-            }
-        }
-
-        /// <summary>
-        /// 名称
-        /// </summary>
-        private string _Name;
-        [EntityField("Name")]
-        public string Name
-        {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                SetChange("Name", value);
-            }
-        }
 
         /// <summary>
         /// 等级
         /// </summary>
         private int _Grade;
-        [EntityField("Grade")]
+        [EntityField("Grade", IsKey = true)]
         public int Grade
         {
             get
@@ -116,9 +66,6 @@ namespace GameServer.Script.Model.ConfigModel
                 #region
 				switch (index)
 				{
-                    case "ID": return ID;
-                    case "Type": return Type;
-                    case "Name": return Name;
                     case "Grade": return Grade;
                     case "DropoutGold": return DropoutGold;
                     default: throw new ArgumentException(string.Format("Config_Monster index[{0}] isn't exist.", index));
@@ -130,15 +77,6 @@ namespace GameServer.Script.Model.ConfigModel
                 #region
 				switch (index)
 				{
-                    case "ID":
-                        _ID = value.ToInt(); 
-                        break;
-                    case "Type":
-                        _Type = value.ToEnum<MonsterType>();
-                        break;
-                    case "Name":
-                        _Name = value.ToNotNullString(); 
-                        break;
                     case "Grade":
                         _Grade = value.ToInt(); 
                         break;
@@ -153,10 +91,5 @@ namespace GameServer.Script.Model.ConfigModel
         
         #endregion
                 
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
-        }
 	}
 }

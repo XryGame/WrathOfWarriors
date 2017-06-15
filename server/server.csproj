@@ -310,9 +310,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_Society.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Soulstrong.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Task.cs" />
-    <Compile Include="Script\Model\ConfigModel\Config_TeneralTranscript.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Vip.cs" />
-    <Compile Include="Script\Model\ConfigModel\OldUserRecord.cs" />
     <Compile Include="Script\Model\Config\AchievementData.cs" />
     <Compile Include="Script\Model\Config\ElfData.cs" />
     <Compile Include="Script\Model\Config\GuildCharacterData.cs" />
@@ -333,6 +331,7 @@
     <Compile Include="Script\Model\DataModel\GameCache.cs" />
     <Compile Include="Script\Model\DataModel\CompetitionApply.cs" />
     <Compile Include="Script\Model\DataModel\GuildsCache.cs" />
+    <Compile Include="Script\Model\DataModel\OldUserCache.cs" />
     <Compile Include="Script\Model\DataModel\UserAchievementCache.cs" />
     <Compile Include="Script\Model\DataModel\UserBasisCache.cs" />
     <Compile Include="Script\Model\DataModel\OrderInfoCache.cs" />
@@ -397,6 +396,7 @@
     <Compile Include="Script\Model\Enum\UsedItemResult.cs" />
     <Compile Include="Script\Model\Enum\UserStatus.cs" />
     <Compile Include="Script\Model\Enum\VipObtainType.cs" />
+    <Compile Include="Script\Model\LogModel\OldUserLog.cs" />
     <Compile Include="Script\Model\LogModel\UserChatLog.cs" />
     <Compile Include="Script\Model\LogModel\UserLoginLog.cs" />
     <Compile Include="Script\Model\UserCacheGlobal.cs" />

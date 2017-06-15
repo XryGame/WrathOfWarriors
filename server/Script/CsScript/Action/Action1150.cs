@@ -69,7 +69,7 @@ namespace GameServer.CsScript.Action
                     {
                         BigInteger bi = BigInteger.Parse(taskcfg.RewardsNum);
                         BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * bi;
-                        UserHelper.RewardsGold(Current.UserId, value);
+                        UserHelper.RewardsGold(Current.UserId, value, UpdateCoinOperate.NormalReward, true);
                     }
                     break;
                 case TaskAwardType.Diamond:

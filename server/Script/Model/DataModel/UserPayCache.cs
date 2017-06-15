@@ -267,7 +267,7 @@ namespace GameServer.Script.Model.DataModel
             PayMoney = 0;
             IsReceiveFirstPay = false;
             WeekCardDays = -1;
-            MonthCardDays = 3;
+            MonthCardDays = 1;
             BuyGoldTimes = 0;
             WeekCardAwardDate = DateTime.Now;
             MonthCardAwardDate = DateTime.Now;

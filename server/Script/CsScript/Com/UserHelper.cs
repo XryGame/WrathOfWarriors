@@ -71,7 +71,7 @@ namespace GameServer.Script.Model.DataModel
         {
             var userCenterUserCache = new ShareCacheStruct<UserCenterUser>();
             var list = userCenterUserCache.FindAll(t => (
-                    t.OpenID == openId && t.RetailID == openId && t.ServerID == EnterServerId)
+                    t.OpenID == openId && t.RetailID == retailId && t.ServerID == EnterServerId)
                     );
             if (list.Count > 0)
             {
@@ -761,6 +761,8 @@ namespace GameServer.Script.Model.DataModel
             }
             PushMessageHelper.RestoreUserNotification();
 
+            ProgressCombatAward();
+
         }
         /// <summary>
         /// 每周二刷新任务
@@ -775,21 +777,21 @@ namespace GameServer.Script.Model.DataModel
             //do something
             Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
             guildRanking.ForceRefresh();
-            ProgressCombatAward();
+            //ProgressCombatAward();
         }
-        /// <summary>
-        /// 每周五刷新任务
-        /// </summary>
-        /// <param name="planconfig"></param>
-        public static void DoFridayRefreshTask(PlanConfig planconfig)
-        {
-            if (ScriptEngines.IsCompiling)
-            {
-                return;
-            }
-            //do something
-            ProgressCombatAward();
-        }
+        ///// <summary>
+        ///// 每周五刷新任务
+        ///// </summary>
+        ///// <param name="planconfig"></param>
+        //public static void DoFridayRefreshTask(PlanConfig planconfig)
+        //{
+        //    if (ScriptEngines.IsCompiling)
+        //    {
+        //        return;
+        //    }
+        //    //do something
+        //    ProgressCombatAward();
+        //}
 
         /// <summary>
         /// 进行发放通天塔奖励
@@ -1225,14 +1227,14 @@ namespace GameServer.Script.Model.DataModel
             return true;
         }
 
-        public static void RewardsGold(int uid, BigInteger count, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward)
+        public static void RewardsGold(int uid, BigInteger count, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward, bool isElfSkillAdd = false)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
                 return;
             UserElfCache elf = FindUserElf(uid);
 
-            if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
+            if (isElfSkillAdd && updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
                 basis.AddGold(count + count / 1000 * elf.SelectElfValue);
             }
@@ -1247,7 +1249,7 @@ namespace GameServer.Script.Model.DataModel
             AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
-        public static void RewardsGold(int uid, string strCount, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward)
+        public static void RewardsGold(int uid, string strCount, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward, bool isElfSkillAdd = false)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
@@ -1256,7 +1258,7 @@ namespace GameServer.Script.Model.DataModel
 
             UserElfCache elf = FindUserElf(uid);
 
-            if (updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
+            if (isElfSkillAdd && updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
                 basis.AddGold(count + count / 1000 * elf.SelectElfValue);
             }
@@ -1303,11 +1305,11 @@ namespace GameServer.Script.Model.DataModel
 
             attribute.ResetAtt();
             attribute.AppandBaseAttribute(basis.UserLv);
-            attribute.AppandEquipAttribute(equips.Weapon);
-            attribute.AppandEquipAttribute(equips.Coat);
-            attribute.AppandEquipAttribute(equips.Ring);
-            attribute.AppandEquipAttribute(equips.Shoe);
-            attribute.AppandEquipAttribute(equips.Accessory);
+            attribute.AppandEquipAttribute(basis.UserLv, equips.Weapon);
+            attribute.AppandEquipAttribute(basis.UserLv, equips.Coat);
+            attribute.AppandEquipAttribute(basis.UserLv, equips.Ring);
+            attribute.AppandEquipAttribute(basis.UserLv, equips.Shoe);
+            attribute.AppandEquipAttribute(basis.UserLv, equips.Accessory);
 
             attribute.AppandSoulAttribute(FindUserSoul(uid));
             attribute.AppandElfAttribute(FindUserElf(uid));
@@ -1365,15 +1367,10 @@ namespace GameServer.Script.Model.DataModel
             var roleInitialSet = new ShareCacheStruct<Config_RoleInitial>();
             if (roleInitialSet.FindKey(levelId) == null)
                 return false;
-            var transcriptSet = new ShareCacheStruct<Config_TeneralTranscript>();
-            var transcriptCfg = transcriptSet.FindKey(levelId);
-            if (transcriptCfg == null)
-                return false;
 
             if (levelId == basis.UserLv)
             {
-                if (roleInitialSet.FindKey(levelId + 1) != null
-                    && transcriptSet.FindKey(levelId + 1) != null)
+                if (roleInitialSet.FindKey(levelId + 1) != null)
                 {
                     basis.UserLv = levelId + 1;
                     UserLevelUp(uid);
@@ -1396,7 +1393,7 @@ namespace GameServer.Script.Model.DataModel
                 }
 
                 // 每日
-                if (transcriptCfg.limitTime > 0)
+                if (levelId % 5 == 0)
                 {
                     EveryDayTaskProcess(uid, TaskType.PassStageBoss, 1);
                 }
@@ -1663,21 +1660,23 @@ namespace GameServer.Script.Model.DataModel
         /// <param name="classId"></param>
         public static void VipLvChangeNotification(int userId)
         {
-            UserBasisCache user = FindUserBasis(userId);
-            if (user != null)
-            {
-                string context = string.Format("恭喜 {0} 成为VIP{1}，引来众人羡煞的目光！", user.NickName, user.VipLv);
-                GlobalRemoteService.SendNotice(NoticeMode.World, context);
+            //UserBasisCache user = FindUserBasis(userId);
+            //if (user != null)
+            //{
+            //    string context = string.Format("恭喜 {0} 成为VIP{1}，引来众人羡煞的目光！", user.NickName, user.VipLv);
+            //    GlobalRemoteService.SendNotice(NoticeMode.World, context);
 
-                //var chatService = new TryXChatService();
-                //chatService.SystemSend(context);
-                //PushMessageHelper.SendSystemChatToOnlineUser();
-            }
+            //    //var chatService = new TryXChatService();
+            //    //chatService.SystemSend(context);
+            //    //PushMessageHelper.SendSystemChatToOnlineUser();
+            //}
         }
 
 
         public static void TransferExpireCheck(int userId)
         {
+            if (userId == 0)
+                return;
             var transfer = FindUserTransfer(userId);
             if (transfer != null)
             {

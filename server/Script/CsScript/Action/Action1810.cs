@@ -101,7 +101,7 @@ namespace GameServer.CsScript.Action
                         BigInteger resourceNum = BigInteger.Parse(lott.Content);
                         BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
                         
-                        UserHelper.RewardsGold(Current.UserId, value);
+                        UserHelper.RewardsGold(Current.UserId, value, UpdateCoinOperate.NormalReward, true);
                         receipt.AwardNum = value.ToString();
                     }
                     break;

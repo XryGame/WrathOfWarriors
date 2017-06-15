@@ -47,7 +47,7 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            UserHelper.RewardsGold(Current.UserId, goldNum, UpdateCoinOperate.KillMonsterReward);
+            UserHelper.RewardsGold(Current.UserId, goldNum, UpdateCoinOperate.KillMonsterReward, true);
             receipt = true;
             return true;
         }

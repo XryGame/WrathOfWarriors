@@ -61,10 +61,28 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
+        /// 用户昵称
+        /// </summary>
+        private string _NickName;
+        [ProtoMember(3)]
+        [EntityField("NickName")]
+        public string NickName
+        {
+            get
+            {
+                return _NickName;
+            }
+            set
+            {
+                SetChange("NickName", value);
+            }
+        }
+
+        /// <summary>
         /// 商品名称
         /// </summary>
         private string _MerchandiseName;
-        [ProtoMember(3)]
+        [ProtoMember(4)]
         [EntityField("MerchandiseName")]
         public string MerchandiseName
         {
@@ -82,7 +100,7 @@ namespace GameServer.Script.Model.DataModel
         ///  支付Id
         /// </summary>
         private int _PayId;
-        [ProtoMember(4)]
+        [ProtoMember(5)]
         [EntityField("PayId")]
         public int PayId
         {
@@ -100,7 +118,7 @@ namespace GameServer.Script.Model.DataModel
         /// 支付金额
         /// </summary>
         private float _Amount;
-        [ProtoMember(5)]
+        [ProtoMember(6)]
         [EntityField("Amount")]
         public float Amount
         {
@@ -118,7 +136,7 @@ namespace GameServer.Script.Model.DataModel
         /// 账号
         /// </summary>
         private string _PassportID;
-        [ProtoMember(6)]
+        [ProtoMember(7)]
         [EntityField("PassportID")]
         public string PassportID
         {
@@ -136,7 +154,7 @@ namespace GameServer.Script.Model.DataModel
         /// 分服ID
         /// </summary>
         private int _ServerID;
-        [ProtoMember(7)]
+        [ProtoMember(8)]
         [EntityField("ServerID")]
         public int ServerID
         {
@@ -154,7 +172,7 @@ namespace GameServer.Script.Model.DataModel
         /// 游戏币
         /// </summary>
         private int _GameCoins;
-        [ProtoMember(8)]
+        [ProtoMember(9)]
         [EntityField("GameCoins")]
         public int GameCoins
         {
@@ -172,7 +190,7 @@ namespace GameServer.Script.Model.DataModel
         /// 创建时间
         /// </summary>
         private DateTime _CreateDate;
-        [ProtoMember(9)]
+        [ProtoMember(10)]
         [EntityField("CreateDate")]
         public DateTime CreateDate
         {
@@ -190,7 +208,7 @@ namespace GameServer.Script.Model.DataModel
         /// 渠道商ID
         /// </summary>
         private string _RetailID;
-        [ProtoMember(10)]
+        [ProtoMember(11)]
         [EntityField("RetailID")]
         public string RetailID
         {
@@ -208,7 +226,7 @@ namespace GameServer.Script.Model.DataModel
         ///  平台支付Id
         /// </summary>
         private int _RcId;
-        [ProtoMember(11)]
+        [ProtoMember(12)]
         [EntityField("RcId")]
         public int RcId
         {
@@ -231,6 +249,7 @@ namespace GameServer.Script.Model.DataModel
                 {
                     case "OrderId": return OrderId;
                     case "UserId": return UserId;
+                    case "NickName": return NickName;
                     case "MerchandiseName": return MerchandiseName;
                     case "PayId": return PayId;
                     case "Amount": return Amount;
@@ -254,6 +273,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "UserId":
                         _UserId = value.ToInt();
+                        break;
+                    case "NickName":
+                        _NickName = value.ToNotNullString();
                         break;
                     case "MerchandiseName":
                         _MerchandiseName = value.ToNotNullString();

@@ -49,7 +49,7 @@ namespace GameServer.CsScript.Action
             usepay.IsReceiveFirstPay = true;
 
 
-            UserHelper.RewardsGold(Current.UserId, 300000);
+            UserHelper.RewardsGold(Current.UserId, 100000);
             UserHelper.RewardsDiamond(Current.UserId, 20);
             UserHelper.RewardsItem(Current.UserId, 20024, 1);
             usepay.WeekCardDays += 7;
