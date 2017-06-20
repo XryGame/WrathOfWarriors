@@ -17,6 +17,7 @@ namespace GameServer.Script.Model.Config
         public ElfData()
             : base(false)
         {
+            Date = DateTime.Now;
         }
         
         /// <summary>
@@ -29,12 +30,29 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(2)]
         public int Lv { get; set; }
+
         /// <summary>
         /// 是否新的
         /// </summary>
         [ProtoMember(3)]
         public bool IsNew { get; set; }
 
+        /// <summary>
+        /// 是否体验的
+        /// </summary>
+        [ProtoMember(4)]
+        public bool IsExperience { get; set; }
 
+        /// <summary>
+        /// 体验期限(分)
+        /// </summary>
+        [ProtoMember(5)]
+        public long ExperienceTimeMin { get; set; }
+
+        /// <summary>
+        /// 时间
+        /// </summary>
+        [ProtoMember(6)]
+        public DateTime Date { get; set; }
     }
 }

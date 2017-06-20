@@ -363,7 +363,7 @@ namespace GameServer.CsScript.Remote
                         }
                         if (GoldNum > 0)
                         {
-                            GoldNum = Math.Min(GoldNum, 1000000);
+                            GoldNum = Math.Min(GoldNum, 100000000);
                             UserHelper.RewardsGold(UserId, GoldNum);
                         }
                         if (DiamondNum > 0)

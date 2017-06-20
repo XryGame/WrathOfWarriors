@@ -155,7 +155,8 @@ namespace GameServer.CsScript.Base
                 ServerID = serverId,
                 AccessTime = DateTime.Now,
                 LoginNum = 0,
-                RetailID = retailId
+                RetailID = retailId,
+                Unid = string.Empty
             };
             cache.Add(ucu);
             cache.Update();

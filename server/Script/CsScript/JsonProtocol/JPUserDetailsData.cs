@@ -43,7 +43,11 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int ShareCount { get; set; }
 
-        public DateTime ShareDate { get; set; }
+        public long ShareDate { get; set; }
+
+        public int InviteCount { get; set; }
+
+        public List<int> ReceiveInviteList { get; set; }
 
         public UserAttributeCache Attribute { get; set; }
 

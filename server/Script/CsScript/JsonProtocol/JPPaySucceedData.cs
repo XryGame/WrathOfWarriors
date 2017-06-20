@@ -12,7 +12,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int PayMoney { get; set; }
 
-        public int WeekCardDays { get; set; }
+        public int QuarterCardDays { get; set; }
 
         public int MonthCardDays { get; set; }
     }

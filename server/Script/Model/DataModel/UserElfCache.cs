@@ -155,16 +155,16 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
-        public ElfData FindElf(int id)
+        public ElfData FindElf(int elfid)
         {
-            return ElfList.Find(t => (t.ID == id));
+            return ElfList.Find(t => (t.ID == elfid));
         }
 
         /// <summary>  
         /// 用户获得精灵
         /// </summary>  
         /// <returns></returns>  
-        public bool AddElf(int elfid)
+        public bool AddElf(int elfid, bool isExperience, long experienceTimeMin)
         {
             if (elfid == 0)
                 return false;
@@ -172,12 +172,26 @@ namespace GameServer.Script.Model.DataModel
             var elf = ElfList.Find(t => (t.ID == elfid));
             if (elf != null)
             {
-                return false;
+                if (!elf.IsExperience)
+                    return false;
+                
+                if (isExperience)
+                {
+                    elf.ExperienceTimeMin += experienceTimeMin;
+                }
+                else
+                {
+                    elf.IsExperience = false;
+                }
+                elf.IsNew = true;
+                return true;
             }
             elf = new ElfData();
             elf.ID = elfid;
             elf.Lv = 1;
             elf.IsNew = true;
+            elf.IsExperience = isExperience;
+            elf.ExperienceTimeMin = experienceTimeMin;
             ElfList.Add(elf);
             return true;
         }
@@ -190,7 +204,7 @@ namespace GameServer.Script.Model.DataModel
             var elvesSet = new ShareCacheStruct<Config_Elves>();
             var first = elvesSet.Find(t => (t.ElvesGrade == 1));
 
-            AddElf(first.ElvesID);
+            AddElf(first.ElvesID, false, 0);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace GameServer.CsScript.Action
             //{
             //    return true;
             //}
-            int needDiamond = ConfigEnvSet.GetInt("User.BuyCombatTimesNeedDiamond");
+            int needDiamond = ConfigEnvSet.GetInt("User.BuyLotteryTimesNeedDiamond");
             
             if (GetBasis.DiamondNum < needDiamond)
             {

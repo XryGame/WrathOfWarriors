@@ -24,5 +24,13 @@ namespace GameServer.Script.Model.Enum
         /// 不可出售的物品
         /// </summary>
         Unavailable,
+        /// <summary>
+        /// 合成宝石失败
+        /// </summary>
+        GemFailed,
+        /// <summary>
+        /// 赠送次数超出
+        /// </summary>
+        SendItemCountOut,
     }
 }

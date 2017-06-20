@@ -78,6 +78,42 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 赠送次数
+        /// </summary>
+        private int _SendCount;
+        [ProtoMember(4)]
+        [EntityField("SendCount")]
+        public int SendCount
+        {
+            get
+            {
+                return _SendCount;
+            }
+            set
+            {
+                SetChange("SendCount", value);
+            }
+        }
+
+        /// <summary>
+        /// 领取次数
+        /// </summary>
+        private int _ReceiveCount;
+        [ProtoMember(5)]
+        [EntityField("ReceiveCount")]
+        public int ReceiveCount
+        {
+            get
+            {
+                return _ReceiveCount;
+            }
+            set
+            {
+                SetChange("ReceiveCount", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -94,6 +130,8 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "ReceiveList": return ReceiveList;
                     case "SendList": return SendList;
+                    case "SendCount": return SendCount;
+                    case "ReceiveCount": return ReceiveCount;
                     default: throw new ArgumentException(string.Format("UserTransferItemCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -111,6 +149,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "SendList":
                         _SendList = ConvertCustomField<CacheList<SendTransferItemData>>(value, index);
+                        break;
+                    case "SendCount":
+                        _SendCount = value.ToInt();
+                        break;
+                    case "ReceiveCount":
+                        _ReceiveCount = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("UserTransferItemCache index[{0}] isn't exist.", index));
                 }
@@ -140,6 +184,8 @@ namespace GameServer.Script.Model.DataModel
         {
             ReceiveList.Clear();
             SendList.Clear();
+            SendCount = 0;
+            ReceiveCount = 0;
         }
     }
 }

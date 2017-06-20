@@ -110,6 +110,7 @@ namespace GameServer.CsScript.Action
                     break;
                 case ResourceType.Elf:
                     {
+
                         var elfconfig = new ShareCacheStruct<Config_Elves>().Find(t => t.ElvesID == itemconfig.ResourceNum.ToInt());
                         if (elfconfig == null)
                         {
@@ -117,8 +118,16 @@ namespace GameServer.CsScript.Action
                             return false;
                         }
 
-                        //receipt.GainItem = giftconfig.GetRewardsItem();
-                        UserHelper.RewardsElf(Current.UserId, elfconfig.ElvesID);
+                        if (itemconfig.ItemType == ItemType.Elf)
+                        {
+                            UserHelper.RewardsElf(Current.UserId, elfconfig.ElvesID);
+                        }
+                        else if (itemconfig.ItemType == ItemType.ElfExperienceCard)
+                        {
+                            long experienceTimeMin = itemconfig.ItemGrade * 60 * 24;
+
+                            UserHelper.RewardsElf(Current.UserId, elfconfig.ElvesID, true, experienceTimeMin);
+                        }
                     }
                     break;
                 default:

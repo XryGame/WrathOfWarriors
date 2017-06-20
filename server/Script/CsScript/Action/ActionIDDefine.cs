@@ -272,6 +272,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1086 = 1086;
 
         ///<summary>
+        ///刷新邀请数据
+        ///</summary>
+        public const short Cst_Action1087 = 1087;
+
+        ///<summary>
         ///充值成功通知
         ///</summary>
         public const short Cst_Action1099 = 1099;
@@ -286,6 +291,11 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1101 = 1101;
 
+
+        ///<summary>
+        ///请求背包数据
+        ///</summary>
+        public const short Cst_Action1102 = 1102;
 
         ///<summary>
         ///掉落金币
@@ -698,6 +708,11 @@ namespace GameServer.CsScript.Action
         ///分享成功
         ///</summary>
         public const short Cst_Action21400 = 21400;
+
+        ///<summary>
+        ///领取邀请奖励
+        ///</summary>
+        public const short Cst_Action21500 = 21500;
 
 
     }

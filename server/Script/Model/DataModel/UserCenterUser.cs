@@ -35,7 +35,9 @@ namespace GameServer.Script.Model.DataModel
         [EntityField]
         public string RetailID { get; set; }
 
-
-
+        [ProtoMember(8)]
+        [EntityField]
+        public string Unid { get; set; }
+        
     }
 }

@@ -52,9 +52,10 @@ namespace GameServer.CsScript.Action
             UserHelper.RewardsGold(Current.UserId, 100000);
             UserHelper.RewardsDiamond(Current.UserId, 20);
             UserHelper.RewardsItem(Current.UserId, 20024, 1);
-            usepay.WeekCardDays += 7;
+            UserHelper.RewardsItem(Current.UserId, 32005, 1);
+            //usepay.WeekCardDays += 7;
 
-            PushMessageHelper.UserPaySucceedNotification(Current);
+            //PushMessageHelper.UserPaySucceedNotification(Current);
             receipt = true;
             return true;
         }

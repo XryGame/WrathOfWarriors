@@ -1,6 +1,8 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.CsScript.Remote;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
@@ -14,23 +16,27 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
-    public class LotteryData
+    public class LottItem
     {
-        public LotteryData()
-        {
-            AwardItemList = new List<int>();
-        }
-        public RequestLotteryResult Result { get; set; }
-
         public int ID { get; set; }
 
         public LotteryAwardType Type { get; set; }
 
-        public List<int> AwardItemList { get; set; }
+        public int ItemID { get; set; }
 
-        public string AwardNum { get; set; }
+        public string Num { get; set; }
+
+    }
+    public class LotteryData
+    {
+        public LotteryData()
+        {
+            AwardList = new List<LottItem>();
+        }
+        public RequestLotteryResult Result { get; set; }
 
 
+        public List<LottItem> AwardList { get; set; }
 
     }
     /// <summary>
@@ -40,7 +46,7 @@ namespace GameServer.CsScript.Action
     {
         private LotteryData receipt;
         private Random random = new Random();
-        
+        private bool isTenTimes = false;
         public Action1810(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1810, actionGetter)
         {
@@ -49,7 +55,11 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            return true;
+            if (httpGet.GetBool("IsTenTimes", ref isTenTimes))
+            {
+                return true;
+            }
+            return false;
         }
 
         protected override string BuildJsonPack()
@@ -64,119 +74,143 @@ namespace GameServer.CsScript.Action
 
             var itemSet = new ShareCacheStruct<Config_Item>();
 
-            if (GetBasis.RandomLotteryId == 0)
+            int times = isTenTimes ? 10 : 1;
+            
+            if (GetBasis.LotteryTimes <= times)
             {
-                var randlottery = UserHelper.RandomLottery(GetBasis.UserLv);
-                if (randlottery != null)
+                int needDiamond = ConfigEnvSet.GetInt("User.BuyLotteryTimesNeedDiamond") * (times - GetBasis.LotteryTimes);
+                if (GetBasis.DiamondNum < needDiamond)
                 {
-                    GetBasis.RandomLotteryId = randlottery.ID;
+                    receipt.Result = RequestLotteryResult.NoDiamond;
+                    return true;
                 }
+                UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
+                //receipt.Result = RequestLotteryResult.NoTimes;
+                //return true;
             }
 
-            Config_Lottery lott = new ShareCacheStruct<Config_Lottery>().FindKey(GetBasis.RandomLotteryId);
-            if (lott == null)
+            BigInteger awardGold = 0;
+            int awardDiamond = 0;
+            List<ItemData> awardItem = new List<ItemData>();
+
+            int lotteryId = 0;
+            LotteryAwardType awardType = LotteryAwardType.Gold;
+            for (int i = 0; i < times; ++i)
             {
-                return false;
+                if (lotteryId == 0)
+                {
+                    var randlottery = UserHelper.RandomLottery(GetBasis.UserLv);
+                    if (randlottery != null)
+                    {
+                        lotteryId = randlottery.ID;
+                        awardType = randlottery.Type;
+                    }
+                }
+
+                Config_Lottery lott = new ShareCacheStruct<Config_Lottery>().FindKey(lotteryId);
+                if (lott == null)
+                {
+                    return false;
+                }
+
+                LottItem item = new LottItem();
+                item.ID = lotteryId;
+                item.Type = awardType;
+                switch (lott.Type)
+                {
+                    case LotteryAwardType.Gold:
+                        {
+                            BigInteger resourceNum = BigInteger.Parse(lott.Content);
+                            BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
+                            awardGold += value;
+                            
+                            item.ItemID = 0;
+                            item.Num = value.ToString();
+                        }
+                        break;
+                    case LotteryAwardType.Diamond:
+                        {
+                            awardDiamond += lott.Content.ToInt();
+                            item.ItemID = 0;
+                            item.Num = lott.Content;
+                        }
+                        break;
+                    case LotteryAwardType.Gem:
+                        {
+                            int maxCount = lott.Content.ToInt();
+                            if (maxCount > 0)
+                            {
+                                var lotteryGem = UserHelper.RandomLotteryGem();
+
+                                item.ItemID = lotteryGem.ID;
+                                item.Num = maxCount.ToString();
+
+                                awardItem.Add(new ItemData() { ID = lotteryGem.ID, Num = maxCount });
+                            }
+                            
+                        }
+                        break;
+                    case LotteryAwardType.Debris:
+                        {
+                            var debris = itemSet.FindAll(t => (t.ItemType == ItemType.Debris));
+                            foreach (var v in GetElf.ElfList)
+                            {
+                                var elfCard = itemSet.Find(t => t.ResourceNum.ToInt() == v.ID);
+                                if (elfCard == null)
+                                    continue;
+
+                                debris.RemoveAll(t => (t.ResourceNum.ToInt() == elfCard.ItemID));
+                            }
+                            if (debris.Count == 0)
+                            {
+                                debris = itemSet.FindAll(t => (t.ItemType == ItemType.Debris));
+                            }
+
+                            int maxCount = lott.Content.ToInt();
+                            if (maxCount > 0)
+                            {
+                                int index = random.Next(debris.Count);
+                                int awardId = debris[index].ItemID;
+
+                                item.ItemID = awardId;
+                                item.Num = maxCount.ToString();
+
+                                awardItem.Add(new ItemData() { ID = awardId, Num = maxCount });
+                            }
+                        }
+                        break;
+                    case LotteryAwardType.Elf:
+                        {
+                            item.ItemID = lott.Content.ToInt();
+                            item.Num = "1";
+
+                            awardItem.Add(new ItemData() { ID = lott.Content.ToInt(), Num = 1 });
+
+                            var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(item.ItemID);
+                            if (itemcfg != null)
+                            {
+                                string context = string.Format("恭喜 {0} 在幸运大夺宝中获得精灵 {1}", 
+                                    GetBasis.NickName, itemcfg.ItemName);
+                                GlobalRemoteService.SendNotice(NoticeMode.World, context);
+                            }
+
+
+                        }
+                        break;
+                }
+                lotteryId = 0;
+                receipt.AwardList.Add(item);
             }
 
-            if (GetBasis.LotteryTimes <= 0)
-            {
-                //int needDiamond = ConfigEnvSet.GetInt("User.LotteryNeedDiamondNum");
-                //if (GetBasis.DiamondNum < needDiamond)
-                //{
-                //    receipt.Result = RequestLotteryResult.NoDiamond;
-                //    return true;
-                //}
-                //UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
-                receipt.Result = RequestLotteryResult.NoTimes;
-                return true;
-            }
-
-            receipt.ID = GetBasis.RandomLotteryId;
-            receipt.Type = lott.Type;
-            switch (lott.Type)
-            {
-                case LotteryAwardType.Gold:
-                    {
-                        BigInteger resourceNum = BigInteger.Parse(lott.Content);
-                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
-                        
-                        UserHelper.RewardsGold(Current.UserId, value, UpdateCoinOperate.NormalReward, true);
-                        receipt.AwardNum = value.ToString();
-                    }
-                    break;
-                case LotteryAwardType.Diamond:
-                    {
-                        UserHelper.RewardsDiamond(Current.UserId, lott.Content.ToInt());
-                        receipt.AwardNum = lott.Content;
-                    }
-                    break;
-                case LotteryAwardType.Gem:
-                    {
-                        //var items = itemSet.FindAll(t => (t.ItemType == ItemType.Gem
-                        //                            && t.Quality == ItemQuality.Normal));
-                        //int maxCount = lott.Content.ToInt();
-                        //for (int i = 0; i < maxCount; ++i)
-                        //{
-                        //    int index = random.Next(items.Count);
-                        //    int awardId = items[index].ItemID;
-                        //    UserHelper.RewardsItem(Current.UserId, awardId, 1);
-                        //    receipt.AwardItemList.Add(awardId);
-
-                        //}
-                        //receipt.AwardNum = receipt.AwardItemList.Count.ToString();
-                        int maxCount = lott.Content.ToInt();
-                        for (int i = 0; i < maxCount; ++i)
-                        {
-                            var lotteryGem = UserHelper.RandomLotteryGem();
-                            UserHelper.RewardsItem(Current.UserId, lotteryGem.ID, 1);
-                            receipt.AwardItemList.Add(lotteryGem.ID);
-
-                        }
-                    }
-                    break;
-                case LotteryAwardType.Debris:
-                    {
-                        var debris = itemSet.FindAll(t => (t.ItemType == ItemType.Debris));
-                        foreach (var v in GetElf.ElfList)
-                        {
-                            var elfCard = itemSet.Find(t => t.ResourceNum.ToInt() == v.ID);
-                            if (elfCard == null)
-                                continue;
-
-                            debris.RemoveAll(t => (t.ResourceNum.ToInt() == elfCard.ItemID));
-                        }
-                        if (debris.Count == 0)
-                        {
-                            debris = itemSet.FindAll(t => (t.ItemType == ItemType.Debris));
-                        }
-
-                        int maxCount = lott.Content.ToInt();
-                        for (int i = 0; i < maxCount; ++i)
-                        {
-                            int index = random.Next(debris.Count);
-                            int awardId = debris[index].ItemID;
-                            UserHelper.RewardsItem(Current.UserId, awardId, 1);
-                            receipt.AwardItemList.Add(awardId);
-
-                        }
-                        receipt.AwardNum = receipt.AwardItemList.Count.ToString();
-                    }
-                    break;
-            }
+            UserHelper.RewardsGold(Current.UserId, awardGold, UpdateCoinOperate.NormalReward, true);
+            UserHelper.RewardsDiamond(Current.UserId, awardDiamond);
+            UserHelper.RewardsItems(Current.UserId, awardItem);
 
             if (GetBasis.LotteryTimes > 0)
-                GetBasis.LotteryTimes --;
-            //GetBasis.RandomLotteryId = 0;
-            GetBasis.LastLotteryId = GetBasis.RandomLotteryId;
+                GetBasis.LotteryTimes = MathUtils.Subtraction(GetBasis.LotteryTimes, times, 0);
 
-            var lottery = UserHelper.RandomLottery(GetBasis.UserLv);
-            if (lottery != null)
-            {
-                GetBasis.RandomLotteryId = lottery.ID;
-            }
 
-            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Lottery, 1);
+            UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Lottery, times);
 
             receipt.Result = RequestLotteryResult.OK;
 

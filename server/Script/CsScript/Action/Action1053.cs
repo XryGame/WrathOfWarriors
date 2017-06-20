@@ -25,7 +25,7 @@ namespace GameServer.CsScript.Action
 
         public int SignStartID { get; set; }
 
-        public int WeekCardDays { get; set; }
+        public int QuarterCardDays { get; set; }
 
         public int MonthCardDays { get; set; }
     }
@@ -90,7 +90,7 @@ namespace GameServer.CsScript.Action
             UserPayCache userpay = UserHelper.FindUserPay(Current.UserId);
             if (userpay != null)
             {
-                receipt.WeekCardDays = userpay.WeekCardDays;
+                receipt.QuarterCardDays = userpay.QuarterCardDays;
                 receipt.MonthCardDays = userpay.MonthCardDays;
             }
             

@@ -20,5 +20,9 @@ namespace GameServer.Script.Model.Enum
         /// 宠物
         /// </summary>
         Elf,
+        /// <summary>
+        /// 宠物体验卡
+        /// </summary>
+        ElfExperienceCard,
     }
 }

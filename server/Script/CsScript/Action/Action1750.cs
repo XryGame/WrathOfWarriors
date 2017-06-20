@@ -3,12 +3,20 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
+using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
 {
+
+    public class SendTransferItemReceipt
+    {
+        public TransferItemResult Result { get; set; }
+
+        public SendTransferItemData Data { get; set; }
+    }
 
     /// <summary>
     /// 请求赠送物品
@@ -18,7 +26,7 @@ namespace GameServer.CsScript.Action
         private int destId;
         private int itemId;
         private int itemNum;
-        private SendTransferItemData receipt;
+        private SendTransferItemReceipt receipt;
 
         public Action1750(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1750, actionGetter)
@@ -45,7 +53,13 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-
+            receipt = new SendTransferItemReceipt();
+            if (GetTransfer.SendCount >= 3)
+            {
+                receipt.Result = TransferItemResult.SendCountOut;
+                return true;
+            }
+            
             var itemdata = GetPackage.FindItem(itemId);
             if (itemdata == null || itemdata.Num < itemNum)
             {
@@ -70,7 +84,7 @@ namespace GameServer.CsScript.Action
             receiveData.AppendItem.ID = itemId;
             receiveData.AppendItem.Num = itemNum;
 
-            receipt = new SendTransferItemData()
+            receipt.Data = new SendTransferItemData()
             {
                 ID = newId,
                 Receiver = dest.UserID,
@@ -80,17 +94,19 @@ namespace GameServer.CsScript.Action
                 Date = DateTime.Now,
                 IsReceived = false,
             };
-            receipt.Password = Util.GetRandom4Pwd();
-            receipt.AppendItem.ID = itemId;
-            receipt.AppendItem.Num = itemNum;
+            receipt.Data.Password = Util.GetRandom4Pwd();
+            receipt.Data.AppendItem.ID = itemId;
+            receipt.Data.AppendItem.Num = itemNum;
 
             GetPackage.RemoveItem(itemId, itemNum);
 
             destTransfer.ReceiveList.Add(receiveData);
             PushMessageHelper.NewReceiveTransferItemNotification(GameSession.Get(destId), newId);
 
-            GetTransfer.SendList.Add(receipt);
-            
+            GetTransfer.SendList.Add(receipt.Data);
+
+            GetTransfer.SendCount++;
+            receipt.Result = TransferItemResult.Successfully;
             return true;
         }
     }

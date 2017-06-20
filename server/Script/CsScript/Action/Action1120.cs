@@ -20,7 +20,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1120 : BaseAction
     {
-        private bool receipt;
+        private UsedItemResult receipt;
         private EquipID equipID;
         private int gemID;
 
@@ -48,6 +48,11 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            if (GetPackage.FindItem(gemID) == null)
+            {
+                receipt = UsedItemResult.NoItem;
+                return true;
+            }
             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(gemID);
             if (itemcfg.ItemType != ItemType.Gem)
                 return false;
@@ -125,7 +130,7 @@ namespace GameServer.CsScript.Action
             UserHelper.RefreshUserFightValue(Current.UserId);
 
 
-            receipt = true;
+            receipt = UsedItemResult.Successfully;
             return true;
         }
     }

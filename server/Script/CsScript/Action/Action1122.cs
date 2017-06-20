@@ -15,7 +15,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1122 : BaseAction
     {
-        private bool receipt;
+        private UsedItemResult receipt;
         private EquipID equipID;
         private int atkGem, defGem, hpGem, critGem, hitGem, dodgeGem, tenacityGem;
 
@@ -60,14 +60,21 @@ namespace GameServer.CsScript.Action
             if (hitGem != 0) gemList.Add(hitGem);
             if (dodgeGem != 0) gemList.Add(dodgeGem);
             if (tenacityGem != 0) gemList.Add(tenacityGem);
-            
+            foreach (var v in gemList)
+            {
+                if (GetPackage.FindItem(v) == null)
+                {
+                    receipt = UsedItemResult.NoItem;
+                    return true;
+                }
+                    
+            }
             foreach (var v in gemList)
             {
                 var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(v);
                 if (itemcfg.ItemType != ItemType.Gem)
                     return false;
-                if (GetPackage.FindItem(v) == null)
-                    return false;
+
 
                 switch ((GemType)itemcfg.Species)
                 {
@@ -143,7 +150,7 @@ namespace GameServer.CsScript.Action
             UserHelper.RefreshUserFightValue(Current.UserId);
 
 
-            receipt = true;
+            receipt = UsedItemResult.Successfully;
             return true;
         }
     }

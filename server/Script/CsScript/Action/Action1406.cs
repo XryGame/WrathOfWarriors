@@ -54,8 +54,8 @@ namespace GameServer.CsScript.Action
             }
             
             int minv, maxv;
-            minv = (GetBasis.UserLv - 1) / 5 * 5;
-            maxv = minv + 5;
+            minv = Math.Max(GetBasis.UserLv - 25, 0);
+            maxv = minv + 25;
 
             var onlinelist = UserHelper.GetOnlinesList();
             List<int> matchlist = new List<int>();

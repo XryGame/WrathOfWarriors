@@ -129,8 +129,10 @@
     <Compile Include="Script\CsScript\Action\Action1084.cs" />
     <Compile Include="Script\CsScript\Action\Action1085.cs" />
     <Compile Include="Script\CsScript\Action\Action1086.cs" />
+    <Compile Include="Script\CsScript\Action\Action1087.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
+    <Compile Include="Script\CsScript\Action\Action1102.cs" />
     <Compile Include="Script\CsScript\Action\Action1112.cs" />
     <Compile Include="Script\CsScript\Action\Action1113.cs" />
     <Compile Include="Script\CsScript\Action\Action1114.cs" />
@@ -222,6 +224,7 @@
     <Compile Include="Script\CsScript\Action\Action1505.cs" />
     <Compile Include="Script\CsScript\Action\Action1600.cs" />
     <Compile Include="Script\CsScript\Action\Action21400.cs" />
+    <Compile Include="Script\CsScript\Action\Action21500.cs" />
     <Compile Include="Script\CsScript\Action\Action3001.cs" />
     <Compile Include="Script\CsScript\Action\Action2001.cs" />
     <Compile Include="Script\CsScript\Action\Action1150.cs" />
@@ -356,7 +359,8 @@
     <Compile Include="Script\Model\Enum\ElfSkillType.cs" />
     <Compile Include="Script\Model\Enum\GameRunStatus.cs" />
     <Compile Include="Script\Model\Enum\MatchRivalResult.cs" />
-    <Compile Include="Script\Model\Enum\ReceiveTransferItemResult.cs" />
+    <Compile Include="Script\Model\Enum\ShareType.cs" />
+    <Compile Include="Script\Model\Enum\TransferItemResult.cs" />
     <Compile Include="Script\Model\Enum\RequestGuildResult.cs" />
     <Compile Include="Script\Model\Enum\AchievementType.cs" />
     <Compile Include="Script\Model\Enum\CampaignStatus.cs" />

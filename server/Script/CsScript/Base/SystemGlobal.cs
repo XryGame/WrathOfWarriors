@@ -367,6 +367,7 @@ namespace GameServer.CsScript.Base
                 foreach (var usersession in onlinelist)
                 {
                     UserHelper.TransferExpireCheck(usersession.UserId);
+                    UserHelper.ElfExperienceExpireCheck(usersession.UserId);
                 }
             }
 

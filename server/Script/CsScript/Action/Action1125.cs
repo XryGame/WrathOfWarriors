@@ -17,7 +17,7 @@ namespace GameServer.CsScript.Action
     /// </summary>
     public class Action1125 : BaseAction
     {
-        private bool receipt;
+        private UsedItemResult receipt;
         private int gemID, gemNum;
 
         private Random random = new Random();
@@ -47,9 +47,15 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             ItemData gemData = GetPackage.FindItem(gemID);
-            if (gemData == null || gemData.Num < gemNum)
+            if (gemData == null)
             {
-                return false;
+                receipt = UsedItemResult.NoItem;
+                return true;
+            }
+            if (gemData.Num < gemNum)
+            {
+                receipt = UsedItemResult.ItemNumError;
+                return true;
             }
 
             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(gemID);
@@ -64,7 +70,11 @@ namespace GameServer.CsScript.Action
             {
                 //GetPackage.AddItem(gemcfg.GemID, 1);
                 UserHelper.RewardsItem(Current.UserId, gemcfg.GemID, 1);
-                receipt = true;
+                receipt =  UsedItemResult.Successfully;
+            }
+            else
+            {
+                receipt = UsedItemResult.GemFailed;
             }
             GetPackage.RemoveItem(gemID, gemNum);
 

@@ -73,20 +73,20 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 周卡剩余天数
+        /// 季卡剩余天数
         /// </summary>
-        private int _WeekCardDays;
+        private int _QuarterCardDays;
         [ProtoMember(4)]
-        [EntityField("WeekCardDays")]
-        public int WeekCardDays
+        [EntityField("QuarterCardDays")]
+        public int QuarterCardDays
         {
             get
             {
-                return _WeekCardDays;
+                return _QuarterCardDays;
             }
             set
             {
-                SetChange("WeekCardDays", value);
+                SetChange("QuarterCardDays", value);
             }
         }
 
@@ -109,20 +109,20 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 周卡奖励日期
+        /// 季卡奖励日期
         /// </summary>
-        private DateTime _WeekCardAwardDate;
+        private DateTime _QuarterCardAwardDate;
         [ProtoMember(6)]
-        [EntityField("WeekCardAwardDate")]
-        public DateTime WeekCardAwardDate
+        [EntityField("QuarterCardAwardDate")]
+        public DateTime QuarterCardAwardDate
         {
             get
             {
-                return _WeekCardAwardDate;
+                return _QuarterCardAwardDate;
             }
             set
             {
-                SetChange("WeekCardAwardDate", value);
+                SetChange("QuarterCardAwardDate", value);
             }
         }
 
@@ -196,9 +196,9 @@ namespace GameServer.Script.Model.DataModel
                     case "UserID": return UserID;
                     case "PayMoney": return PayMoney;
                     case "IsReceiveFirstPay": return IsReceiveFirstPay;
-                    case "WeekCardDays": return WeekCardDays;
+                    case "QuarterCardDays": return QuarterCardDays;
                     case "MonthCardDays": return MonthCardDays;
-                    case "WeekCardAwardDate": return WeekCardAwardDate;
+                    case "QuarterCardAwardDate": return QuarterCardAwardDate;
                     case "MonthCardAwardDate": return MonthCardAwardDate;
                     case "AccumulatePayList": return AccumulatePayList;
                     case "BuyGoldTimes": return BuyGoldTimes;
@@ -220,14 +220,14 @@ namespace GameServer.Script.Model.DataModel
                     case "IsReceiveFirstPay":
                         _IsReceiveFirstPay = value.ToBool();
                         break;
-                    case "WeekCardDays":
-                        _WeekCardDays = value.ToInt();
+                    case "QuarterCardDays":
+                        _QuarterCardDays = value.ToInt();
                         break;
                     case "MonthCardDays":
                         _MonthCardDays = value.ToInt();
                         break;
-                    case "WeekCardAwardDate":
-                        _WeekCardAwardDate = value.ToDateTime();
+                    case "QuarterCardAwardDate":
+                        _QuarterCardAwardDate = value.ToDateTime();
                         break;
                     case "MonthCardAwardDate":
                         _MonthCardAwardDate = value.ToDateTime();
@@ -266,10 +266,10 @@ namespace GameServer.Script.Model.DataModel
         {
             PayMoney = 0;
             IsReceiveFirstPay = false;
-            WeekCardDays = -1;
+            QuarterCardDays = -1;
             MonthCardDays = 1;
             BuyGoldTimes = 0;
-            WeekCardAwardDate = DateTime.Now;
+            QuarterCardAwardDate = DateTime.Now;
             MonthCardAwardDate = DateTime.Now;
             AccumulatePayList.Clear();
         }

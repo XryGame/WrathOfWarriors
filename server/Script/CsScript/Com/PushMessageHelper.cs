@@ -462,6 +462,17 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
+        /// 新增邀请通知
+        /// </summary>
+        public static void NewInviteSucceedNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1087, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1087, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
         /// 充值成功通知
         /// </summary>
         /// <param name="session"></param>

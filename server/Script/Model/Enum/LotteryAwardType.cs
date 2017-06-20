@@ -20,6 +20,10 @@ namespace GameServer.Script.Model.Enum
         /// 碎片
         /// </summary>
         Debris,
+        /// <summary>
+        /// 宠物
+        /// </summary>
+        Elf,
 
     }
 }

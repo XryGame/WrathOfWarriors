@@ -73,6 +73,8 @@ namespace GameServer.CsScript.Action
                 SignStartID = DataHelper.SignStartID,
                 ShareCount = GetBasis.ShareCount,
                 ShareDate = GetBasis.ShareDate,
+                InviteCount = GetBasis.InviteCount,
+                ReceiveInviteList = GetBasis.ReceiveInviteList.ToList(),
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -86,7 +88,10 @@ namespace GameServer.CsScript.Action
             receipt.EventAward = GetEventAward;
             receipt.Pay = GetPay;
             receipt.Combat = GetCombat;
+
+            UserHelper.ElfExperienceExpireCheck(Current.UserId);
             receipt.Elf = GetElf;
+
             UserHelper.TransferExpireCheck(Current.UserId);
             receipt.Transfer = GetTransfer;
 
@@ -174,7 +179,7 @@ namespace GameServer.CsScript.Action
                     //BigInteger earning = sum + sum / 100 * (vipcfg.Multiple);
                     //BigInteger earning2 = earning + earning / 1000 * skillAddition;
                     BigInteger earning2 = sum + sum / 1000 * skillAddition;
-                    if (GetPay.MonthCardDays >= 0)
+                    if (GetPay.QuarterCardDays >= 0)
                     {
                         earning2 = earning2 * 2;
                     }

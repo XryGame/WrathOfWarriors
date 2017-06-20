@@ -43,9 +43,9 @@ namespace GameServer.Script.Model.ConfigModel
         /// <summary>
         /// 类型
         /// </summary>
-        private int _Type;
+        private ShareType _Type;
         [EntityField("Type")]
-        public int Type
+        public ShareType Type
         {
             get
             {
@@ -110,19 +110,19 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 奖励2类型
+        /// 奖励2道具ID
         /// </summary>
-        private TaskAwardType _AddRewardType;
-        [EntityField("AddRewardType")]
-        public TaskAwardType AddRewardType
+        private int _AddRewardItem;
+        [EntityField("AddRewardItem")]
+        public int AddRewardItem
         {
             get
             {
-                return _AddRewardType;
+                return _AddRewardItem;
             }
             set
             {
-                SetChange("AddRewardType", value);
+                SetChange("AddRewardItem", value);
             }
         }
 
@@ -155,7 +155,7 @@ namespace GameServer.Script.Model.ConfigModel
                     case "Number": return Number;
                     case "RewardType": return RewardType;
                     case "RewardNum": return RewardNum;
-                    case "AddRewardType": return AddRewardType;
+                    case "AddRewardItem": return AddRewardItem;
                     case "AddRewardNum": return AddRewardNum;
                     default: throw new ArgumentException(string.Format("Config_Share index[{0}] isn't exist.", index));
 				}
@@ -170,7 +170,7 @@ namespace GameServer.Script.Model.ConfigModel
                         _ID = value.ToInt(); 
                         break; 
                     case "Type":
-                        _Type = value.ToInt(); 
+                        _Type = value.ToEnum<ShareType>();
                         break;
                     case "Number":
                         _Number = value.ToInt();
@@ -181,8 +181,8 @@ namespace GameServer.Script.Model.ConfigModel
                     case "RewardNum":
                         _RewardNum = value.ToNotNullString("0");
                         break;
-                    case "AddRewardType":
-                        _AddRewardType = value.ToEnum<TaskAwardType>();
+                    case "AddRewardItem":
+                        _AddRewardItem = value.ToInt();
                         break;
                     case "AddRewardNum":
                         _AddRewardNum = value.ToNotNullString("0");

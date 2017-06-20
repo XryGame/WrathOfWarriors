@@ -1,5 +1,6 @@
 ﻿using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using ZyGames.Framework.Game.Contract;
@@ -15,7 +16,7 @@ namespace GameServer.CsScript.Action
     {
         private string id;
         private string passward;
-        private ReceiveTransferItemResult receipt;
+        private TransferItemResult receipt;
 
         public Action1751(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1750, actionGetter)
@@ -41,25 +42,29 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            
+            if (GetTransfer.ReceiveCount >= 3)
+            {
+                receipt = TransferItemResult.ReceiveCountOut;
+                return true;
+            }
 
             var receiveTransfer = GetTransfer.FindReceive(id);
             if (receiveTransfer == null)
             {
-                receipt = ReceiveTransferItemResult.Expire;
+                receipt = TransferItemResult.Expire;
                 return true;
             }
 
             if (receiveTransfer.IsReceived)
             {
-                receipt = ReceiveTransferItemResult.Received;
+                receipt = TransferItemResult.Received;
                 return true;
             }
 
             var sendTransfer = UserHelper.FindUserTransfer(receiveTransfer.Sender).FindSend(id);
             if (sendTransfer.Password.CompareTo(passward) != 0)
             {
-                receipt = ReceiveTransferItemResult.ErrorPassword;
+                receipt = TransferItemResult.ErrorPassword;
                 return true;
             }
 
@@ -69,7 +74,10 @@ namespace GameServer.CsScript.Action
             UserHelper.RewardsItem(Current.UserId, sendTransfer.AppendItem.ID, sendTransfer.AppendItem.Num);
 
             PushMessageHelper.ReceivedTransferItemNotification(GameSession.Get(receiveTransfer.Sender), id);
-            receipt = ReceiveTransferItemResult.Successfully;
+
+            GetTransfer.ReceiveCount++;
+            receipt = TransferItemResult.Successfully;
+
             return true;
         }
     }

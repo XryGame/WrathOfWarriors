@@ -192,7 +192,7 @@ namespace GameServer.CsScript.Action
             UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Combat, 1);
 
             // 成就
-            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID);
+            UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID, "1");
 
             PushMessageHelper.NewCombatLogNotification(Current);
             PushMessageHelper.NewCombatLogNotification(GameSession.Get(rival.UserID));

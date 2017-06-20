@@ -111,7 +111,7 @@ namespace GameServer.Script.Model.DataModel
         /// 用户获得道具
         /// </summary>  
         /// <returns></returns>  
-        public bool AddItem(int id, int num, bool isNew = true)
+        public bool AddItem(int id, int num, bool isNew = false)
         {
             if (id == 0)
                 return false;

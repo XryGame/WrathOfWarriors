@@ -327,6 +327,7 @@ namespace GameServer.Script.Model.DataModel
             UserCombatCache combat = FindUserCombat(uid);
             UserEventAwardCache eventaward = FindUserEventAward(uid);
             UserGuildCache guild = FindUserGuild(uid);
+            UserTransferItemCache transfer = FindUserTransfer(uid);
             if (basis == null)
             {
                 return;
@@ -370,35 +371,35 @@ namespace GameServer.Script.Model.DataModel
             guild.IsSignIn = false;
 
 
-            // 周卡月卡处理
+            // 月卡季卡处理
             UserPayCache paycache = FindUserPay(uid);
             paycache.BuyGoldTimes = 0;
             if (paycache != null)
             {
                 UserMailBoxCache mailbox = FindUserMailBox(uid);
-                if (paycache.WeekCardDays > 0)
+                if (paycache.QuarterCardDays > 0)
                 {
-                    int realDays = paycache.WeekCardDays;
+                    int realDays = paycache.QuarterCardDays;
                     if (restoreCount > 0)
                     {
                         int count = Math.Min(realDays, restoreCount);
                         while (count > 0)
                         {
                             count--;
-                            paycache.WeekCardDays--;
-                            paycache.WeekCardAwardDate = DateTime.Now;
+                            paycache.QuarterCardDays--;
+                            paycache.QuarterCardAwardDate = DateTime.Now;
 
-                            AddWeekCardMail(uid);
+                            AddQuarterCardMail(uid);
                         }
                         if (restoreCount > realDays)
                         {
-                            paycache.WeekCardDays = -1;
+                            paycache.QuarterCardDays = -1;
                         }
                     }
                 }
-                else if (paycache.WeekCardDays == 0)
+                else if (paycache.QuarterCardDays == 0)
                 {
-                    paycache.WeekCardDays = -1;
+                    paycache.QuarterCardDays = -1;
                 }
 
                 if (paycache.MonthCardDays > 0)
@@ -451,6 +452,9 @@ namespace GameServer.Script.Model.DataModel
             basis.IsReceivedRedPacket = false;
 
             basis.ShareCount = 0;
+
+            transfer.SendCount = 0;
+            transfer.ReceiveCount = 0;
 
             // 设置新的恢复时间
             basis.RestoreDate = DateTime.Now;
@@ -981,9 +985,13 @@ namespace GameServer.Script.Model.DataModel
                     //    break;
                     case AchievementType.CombatRandID:
                         {
+                            int count = achdata.Count.ToInt() + addcount.ToInt();
+                            achdata.Count = count == 0 ? "0" : count.ToString();
+
                             UserBasisCache basis = FindUserBasis(uid);
-                            achdata.Count = basis.CombatRankID.ToString();
-                            if (achdata.Count.ToInt() <= achconfig.ObjectiveNum.ToInt())
+
+                            if (basis.CombatRankID <= achconfig.ObjectiveNum.ToInt()
+                                && achdata.Count.ToInt() >= achconfig.ObjectiveGrade)
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }
@@ -1107,11 +1115,11 @@ namespace GameServer.Script.Model.DataModel
                 return false;
             }
 
-            if (paycfg.id == 101)
-            {// 是否周卡
-                PayWeekCard(uid);
+            if (paycfg.id == 102)
+            {// 是否季卡
+                PayQuarterCard(uid);
             }
-            else if (paycfg.id == 102)
+            else if (paycfg.id == 101)
             {// 是否月卡
                 PayMonthCard(uid);
             }
@@ -1127,33 +1135,33 @@ namespace GameServer.Script.Model.DataModel
         }
 
         /// <summary>
-        /// 添加周卡
+        /// 添加季卡
         /// </summary>
         /// <param name="userId"></param>
-        public static bool PayWeekCard(int userId)
+        public static bool PayQuarterCard(int userId)
         {
             UserPayCache userpay = UserHelper.FindUserPay(userId);
 
 
             bool isAward = false;
-            if (userpay.WeekCardDays < 0)
+            if (userpay.QuarterCardDays < 0)
             {
                 isAward = true;
-                userpay.WeekCardDays = 6;
+                userpay.QuarterCardDays = 89;
             }
             else
             {
-                userpay.WeekCardDays += 7;
+                userpay.QuarterCardDays += 90;
             }
-            userpay.WeekCardAwardDate = DateTime.Now;
+            userpay.QuarterCardAwardDate = DateTime.Now;
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "恭喜您成功充值周卡",
+                Title = "恭喜您成功充值季卡",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("周卡有效期间，每天都会发送给您 {0} 钻石奖励哦！ ",
-                            ConfigEnvSet.GetInt("System.WeekCardDiamond")),
+                Context = string.Format("季卡有效期间，每天都会发送给您 {0} 钻石奖励哦！ ",
+                            ConfigEnvSet.GetInt("System.QuarterCardDiamond")),
             };
 
             AddNewMail(userId, mail);
@@ -1163,12 +1171,12 @@ namespace GameServer.Script.Model.DataModel
                 mail = new MailData()
                 {
                     ID = Guid.NewGuid().ToString(),
-                    Title = "周卡奖励",
+                    Title = "季卡奖励",
                     Sender = "系统",
                     Date = DateTime.Now,
-                    Context = string.Format("这是今天您的周卡奖励，您的周卡剩余时间还有 {0} 天！", userpay.WeekCardDays),
+                    Context = string.Format("这是今天您的季卡奖励，您的季卡剩余时间还有 {0} 天！", userpay.QuarterCardDays),
                     ApppendCoinType = CoinType.Diamond,
-                    ApppendCoinNum = ConfigEnvSet.GetInt("System.WeekCardDiamond").ToNotNullString("0")
+                    ApppendCoinNum = ConfigEnvSet.GetInt("System.QuarterCardDiamond").ToNotNullString("0")
                 };
                 AddNewMail(userId, mail);
             }
@@ -1390,6 +1398,25 @@ namespace GameServer.Script.Model.DataModel
                         }
 
                     }
+
+                    // 邀请处理
+                    if (basis.UserLv == 6)
+                    {
+                        var selflist = Util.FindUserCenterUser(basis.Pid, basis.RetailID, basis.ServerID);
+                        if (selflist.Count > 0 && !string.IsNullOrEmpty(selflist[0].Unid))
+                        {
+                            var inviterlist = Util.FindUserCenterUser(selflist[0].Unid, basis.RetailID, basis.ServerID);
+                            if (inviterlist.Count > 0 && inviterlist[0].UserID != 0)
+                            {
+                                UserBasisCache inviter = FindUserBasis(inviterlist[0].UserID);
+                                inviter.InviteCount++;
+                                PushMessageHelper.NewInviteSucceedNotification(GameSession.Get(inviterlist[0].UserID));
+                            }
+
+                        }
+                    }
+
+                        
                 }
 
                 // 每日
@@ -1415,7 +1442,7 @@ namespace GameServer.Script.Model.DataModel
             
             foreach (var v in list)
             {
-                if (package.AddItem(v.ID, v.Num))
+                if (package.AddItem(v.ID, v.Num, true))
                 {
                     var item = new ShareCacheStruct<Config_Item>().FindKey(v.ID);
                     if (item.ItemType == ItemType.Gem)
@@ -1432,7 +1459,7 @@ namespace GameServer.Script.Model.DataModel
         public static void RewardsItem(int uid, int itemId, int itemNum)
         {
             UserPackageCache package = FindUserPackage(uid);
-            if (package.AddItem(itemId, itemNum))
+            if (package.AddItem(itemId, itemNum, true))
             {
                 var item = new ShareCacheStruct<Config_Item>().FindKey(itemId);
                 if (item.ItemType == ItemType.Gem)
@@ -1447,14 +1474,17 @@ namespace GameServer.Script.Model.DataModel
            
         }
 
-        public static void RewardsElf(int uid, int elfId)
+        public static void RewardsElf(int uid, int elfId, bool isExperience = false, long experienceTimeMin = 0)
         {
             UserElfCache elf = FindUserElf(uid);
-            elf.AddElf(elfId);
 
-            RefreshUserFightValue(uid);
+            if (elf.AddElf(elfId, isExperience, experienceTimeMin))
+            {
+                RefreshUserFightValue(uid);
 
-            PushMessageHelper.NewElfNotification(GameSession.Get(uid), elfId);
+                PushMessageHelper.NewElfNotification(GameSession.Get(uid), elfId);
+            }
+            
         }
 
         public static void AddNewMail(int uid, MailData mail, bool isNotification = true)
@@ -1476,18 +1506,18 @@ namespace GameServer.Script.Model.DataModel
             
         }
 
-        public static void AddWeekCardMail(int uid)
+        public static void AddQuarterCardMail(int uid)
         {
             UserPayCache pay = FindUserPay(uid);
             MailData mail = new MailData()
             {
                 ID = Guid.NewGuid().ToString(),
-                Title = "周卡奖励",
+                Title = "季卡奖励",
                 Sender = "系统",
                 Date = DateTime.Now,
-                Context = string.Format("这是今天您的周卡奖励，您的周卡 {0} 天后到期！", pay.WeekCardDays + 1),
+                Context = string.Format("这是今天您的季卡奖励，您的季卡 {0} 天后到期！", pay.QuarterCardDays + 1),
                 ApppendCoinType = CoinType.Diamond,
-                ApppendCoinNum = ConfigEnvSet.GetInt("System.WeekCardDiamond").ToNotNullString("0")
+                ApppendCoinNum = ConfigEnvSet.GetInt("System.QuarterCardDiamond").ToNotNullString("0")
             };
 
             AddNewMail(uid, mail);
@@ -1691,6 +1721,24 @@ namespace GameServer.Script.Model.DataModel
                         var sendTransfer = senderTransfer.FindSend(v.ID);
                         senderTransfer.SendList.Remove(sendTransfer);
                     }
+                }
+            }
+        }
+
+        public static void ElfExperienceExpireCheck(int userId)
+        {
+            if (userId == 0)
+                return;
+            var elf = FindUserElf(userId);
+            if (elf != null)
+            {
+                elf.ElfList.RemoveAll(t => (
+                            t.IsExperience && DateTime.Now.Subtract(t.Date).TotalMinutes >= t.ExperienceTimeMin
+                        ));
+                if (elf.FindElf(elf.SelectID) == null)
+                {
+                    elf.SelectElfType = ElfSkillType.None;
+                    elf.SelectElfValue = 0;
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 namespace GameServer.Script.Model.Enum
 {
-    public enum ReceiveTransferItemResult
+    public enum TransferItemResult
     {
         /// <summary>
         /// 成功
@@ -20,5 +20,13 @@ namespace GameServer.Script.Model.Enum
         /// 提取码错误
         /// </summary>
         ErrorPassword,
+        /// <summary>
+        /// 发送次数超出
+        /// </summary>
+        SendCountOut,
+        /// <summary>
+        /// 领取次数超出
+        /// </summary>
+        ReceiveCountOut,
     }
 }

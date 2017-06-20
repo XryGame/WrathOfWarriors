@@ -30,6 +30,8 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             IsRefreshing = true;
+            ShareDate = 0;
+            ReceiveInviteList = new CacheList<int>();
         }
         public UserBasisCache(int userid)
         : this()
@@ -449,10 +451,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 分享时间
         /// </summary>
-        private DateTime _ShareDate;
+        private long _ShareDate;
         [ProtoMember(35)]
         [EntityField("ShareDate")]
-        public DateTime ShareDate
+        public long ShareDate
         {
             get
             {
@@ -464,24 +466,6 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
-
-        /// <summary>
-        /// 随机的抽奖id
-        /// </summary>
-        private int _LastLotteryId;
-        [ProtoMember(36)]
-        [EntityField("LastLotteryId")]
-        public int LastLotteryId
-        {
-            get
-            {
-                return _LastLotteryId;
-            }
-            set
-            {
-                SetChange("LastLotteryId", value);
-            }
-        }
 
         /// <summary>
         /// 春节红包
@@ -537,6 +521,42 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 邀请数量
+        /// </summary>
+        private int _InviteCount;
+        [ProtoMember(40)]
+        [EntityField("InviteCount")]
+        public int InviteCount
+        {
+            get
+            {
+                return _InviteCount;
+            }
+            set
+            {
+                SetChange("InviteCount", value);
+            }
+        }
+
+        /// <summary>
+        /// 邀请领取记录
+        /// </summary>
+        private CacheList<int> _ReceiveInviteList;
+        [ProtoMember(41)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> ReceiveInviteList
+        {
+            get
+            {
+                return _ReceiveInviteList;
+            }
+            set
+            {
+                SetChange("ReceiveInviteList", value);
+            }
+        }
+
         #endregion
 
         protected override int GetIdentityId()
@@ -567,16 +587,6 @@ namespace GameServer.Script.Model.DataModel
 
         [ProtoMember(103)]
         public bool IsOnline
-        {
-            get;
-            set;
-        }
-        
-        /// <summary>
-        /// 随机的抽奖id
-        /// </summary>
-        [ProtoMember(104)]
-        public int RandomLotteryId
         {
             get;
             set;
@@ -689,10 +699,11 @@ namespace GameServer.Script.Model.DataModel
                     case "VipGiftProgress": return VipGiftProgress;
                     case "ShareCount": return ShareCount;
                     case "ShareDate": return ShareDate;
-                    case "LastLotteryId": return LastLotteryId;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     case "OfflineEarnings": return OfflineEarnings;
                     case "OfflineTimeSec": return OfflineTimeSec;
+                    case "InviteCount": return InviteCount;
+                    case "ReceiveInviteList": return ReceiveInviteList;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -778,10 +789,7 @@ namespace GameServer.Script.Model.DataModel
                         _ShareCount = value.ToInt();
                         break;
                     case "ShareDate":
-                        _ShareDate = value.ToDateTime();
-                        break;
-                    case "LastLotteryId":
-                        _LastLotteryId = value.ToInt();
+                        _ShareDate = value.ToLong();
                         break;
                     case "IsReceivedRedPacket":
                         _IsReceivedRedPacket = value.ToBool();
@@ -791,6 +799,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "OfflineTimeSec":
                         _OfflineTimeSec = value.ToLong();
+                        break;
+                    case "InviteCount":
+                        _InviteCount = value.ToInt();
+                        break;
+                    case "ReceiveInviteList":
+                        _ReceiveInviteList = ConvertCustomField<CacheList<int>>(value, index);
                         break;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }

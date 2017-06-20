@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
@@ -30,6 +31,9 @@ namespace GameServer.CsScript.Action
     public class Action1005 : RegisterAction
     {
         private int profession;
+        private string unid = string.Empty;
+
+        private int inviterUserId = 0;
         public Action1005(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1005, actionGetter)
         {
@@ -41,6 +45,7 @@ namespace GameServer.CsScript.Action
         {
             if (httpGet.GetInt("Profession", ref profession))
             {
+                httpGet.GetString("Unid", ref unid);
                 return true;
             }
             return false;
@@ -53,17 +58,19 @@ namespace GameServer.CsScript.Action
             if (basis == null)
             {
                 var nickNameCheck = new NickNameCheck();
-                //var KeyWordCheck = new KeyWordCheck();
-                //string msg;
+                var KeyWordCheck = new KeyWordCheck();
+                string msg;
 
-                //if (nickNameCheck.VerifyRange(UserName, out msg) ||
-                //    KeyWordCheck.VerifyKeyword(UserName, out msg) ||
-                //    nickNameCheck.IsExistNickName(UserName, out msg))
-                //{
-                //    ErrorCode = Language.Instance.ErrorCode;
-                //    ErrorInfo = msg;
-                //    return false;
-                //}
+                if (nickNameCheck.VerifyRange(UserName, out msg) ||
+                    KeyWordCheck.VerifyKeyword(UserName, out msg) ||
+                    nickNameCheck.IsExistNickName(UserName, out msg))
+                {
+                    ErrorCode = Language.Instance.ErrorCode;
+                    ErrorInfo = msg;
+                    return false;
+                }
+
+                
                 basis = CreateRole();
                 if (basis == null)
                     return false;
@@ -179,19 +186,19 @@ namespace GameServer.CsScript.Action
             var packageSet = new PersonalCacheStruct<UserPackageCache>();
 
 
-            packagecache.AddItem(20001, 1, false);
-            packagecache.AddItem(20012, 1, false);
-            packagecache.AddItem(20023, 1, false);
-            packagecache.AddItem(20034, 1, false);
-            packagecache.AddItem(20045, 1, false);
-            packagecache.AddItem(20056, 1, false);
-            packagecache.AddItem(20067, 1, false);
+            packagecache.AddItem(20001, 1);
+            packagecache.AddItem(20012, 1);
+            packagecache.AddItem(20023, 1);
+            packagecache.AddItem(20034, 1);
+            packagecache.AddItem(20045, 1);
+            packagecache.AddItem(20056, 1);
+            packagecache.AddItem(20067, 1);
             //for (int i = 20001; i < 20077; ++i)
-            //    packagecache.AddItem(i, 10, false);
+            //    packagecache.AddItem(i, 10);
             //for (int i = 30001; i < 30005; ++i)
-            //    packagecache.AddItem(i, 9999, false);
+            //    packagecache.AddItem(i, 9999);
             //for (int i = 40001; i < 40009; ++i)
-            //    packagecache.AddItem(i, 1, false);
+            //    packagecache.AddItem(i, 1);
 
             packageSet.Add(packagecache);
             packageSet.Update();
@@ -340,6 +347,24 @@ namespace GameServer.CsScript.Action
             UserHelper.RestoreUserData(basis.UserID);
             UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
             //UserHelper.AddMouthCardMail(basis.UserID);
+
+
+            /// 邀请处理
+            if (!string.IsNullOrEmpty(unid))
+            {
+                var selflist = Util.FindUserCenterUser(Pid, RetailID, ServerID);
+                var inviterlist = Util.FindUserCenterUser(unid, RetailID, ServerID);
+                if (inviterlist.Count > 0 && inviterlist[0].UserID != 0 && Pid != unid)
+                {
+                    if (selflist.Count > 0 && string.IsNullOrEmpty(selflist[0].Unid))
+                    {
+                        inviterUserId = inviterlist[0].UserID;
+                        selflist[0].Unid = unid;
+                    }
+                }
+            }
+
+
             return basis;
         }
 
@@ -354,5 +379,13 @@ namespace GameServer.CsScript.Action
             return MathUtils.ToJson(resultData);
         }
 
+        public override void TakeActionAffter(bool state)
+        {
+            //if (inviterUserId != 0)
+            //{
+            //    PushMessageHelper.NewInviteSucceedNotification(GameSession.Get(inviterUserId));
+            //}
+            
+        }
     }
 }

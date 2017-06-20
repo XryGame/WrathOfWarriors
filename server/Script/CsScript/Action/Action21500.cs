@@ -14,13 +14,14 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 分享成功
+    /// 领取邀请奖励
     /// </summary>
-    public class Action21400 : BaseAction
+    public class Action21500 : BaseAction
     {
         private bool receipt;
-        public Action21400(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action21400, actionGetter)
+        private int id;
+        public Action21500(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action21500, actionGetter)
         {
 
         }
@@ -32,17 +33,20 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            return true;
+            if (httpGet.GetInt("ID", ref id))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override bool TakeAction()
         {
-            GetBasis.ShareCount++;
-            GetBasis.ShareDate = Util.GetTimeStamp();
-            var share = new ShareCacheStruct<Config_Share>().Find(t => (t.Type == ShareType.Share && t.Number == GetBasis.ShareCount));
-            if (share == null)
+
+            var share = new ShareCacheStruct<Config_Share>().FindKey(id);
+            if (share == null || share.Type != ShareType.Invite || GetBasis.ReceiveInviteList.Find(t => t == id) != 0)
             {
-                return true;
+                return false;
             }
 
             switch (share.RewardType)
@@ -68,6 +72,7 @@ namespace GameServer.CsScript.Action
 
             UserHelper.RewardsItem(Current.UserId, share.AddRewardItem, share.AddRewardNum.ToInt());
 
+            GetBasis.ReceiveInviteList.Add(id);
             receipt = true;
             return true;
         }
