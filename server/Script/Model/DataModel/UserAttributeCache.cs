@@ -321,25 +321,25 @@ namespace GameServer.Script.Model.DataModel
             {
                 var gem = itemSet.FindKey(equip.CritGem);
                 if (gem != null)
-                    Crit += (Math.Ceiling(userLv / 50.0).ToInt() * gem.crit);
+                    Crit += gem.crit;
             }
             if (equip.HitGem != 0)
             {
                 var gem = itemSet.FindKey(equip.HitGem);
                 if (gem != null)
-                    Hit += (Math.Ceiling(userLv / 50.0).ToInt() * gem.hit);
+                    Hit += gem.hit;
             }
             if (equip.DodgeGem != 0)
             {
                 var gem = itemSet.FindKey(equip.DodgeGem);
                 if (gem != null)
-                    Dodge += (Math.Ceiling(userLv / 50.0).ToInt() * gem.dodge);
+                    Dodge += gem.dodge;
             }
             if (equip.TenacityGem != 0)
             {
                 var gem = itemSet.FindKey(equip.TenacityGem);
                 if (gem != null)
-                    Tenacity += (Math.Ceiling(userLv / 50.0).ToInt() * gem.tenacity);
+                    Tenacity += gem.tenacity;
             }
         }
 
