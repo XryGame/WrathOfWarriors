@@ -122,7 +122,7 @@ namespace GameServer.CsScript.Action
                     //PushMessageHelper.SendSystemChatToOnlineUser();
                 }
 
-        }
+            }
             else
             {
                 GetCombat.LastFailedDate = DateTime.Now;

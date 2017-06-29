@@ -3,6 +3,7 @@ using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
+using System;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Lang;
@@ -48,7 +49,7 @@ namespace GameServer.CsScript.Action
             else
             {
                 addv = ConfigEnvSet.GetInt("Combat.MatchFailedAwardCombatCoin");
-                
+                GetCombat.LastMatchFightFailedDate = DateTime.Now;
             }
             //GetCombat.CombatCoin = MathUtils.Addition(GetCombat.CombatCoin, addv, int.MaxValue);
 

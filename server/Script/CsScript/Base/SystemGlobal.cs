@@ -43,7 +43,7 @@ namespace GameServer.CsScript.Base
         
         public static int UserCenterUserCount = 0;
 
-        public static Competition64 competition64;
+        //public static Competition64 competition64;
 
         public static int TransferExpireCheckinterval = 0;
         public static bool IsRunning
@@ -372,24 +372,13 @@ namespace GameServer.CsScript.Base
             }
 
            
-
-            if (Bots.IsInitEnd)
-            {
-                /// 这里处理Bot的聊天
-                Bots.Chat();
-                /// 处理Bot切磋响应
-                Bots.FightResponse();
-                /// 处理Bot上线公告
-                Bots.OnlineNotification();
-                /// 处理Bot充值公告
-                Bots.PayVipNotification();
-            }
+            AutoFight.FightResponse();
 
             //Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
             //guildRanking.ForceRefresh();
 
-            if (competition64 != null)
-                competition64.Run();
+            //if (competition64 != null)
+            //    competition64.Run();
 
             //CombineZone.Run();
         }

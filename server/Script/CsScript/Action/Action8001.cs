@@ -1,4 +1,5 @@
-﻿using GameServer.Script.CsScript.Action;
+﻿using GameServer.CsScript.Base;
+using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
@@ -45,6 +46,9 @@ namespace GameServer.CsScript.Action
             {
                 return true;
             }
+
+            AutoFight.RemoveFightBot(destuid);
+
             if (result == EventStatus.Bad)
             {
                 destBasis.UserStatus = UserStatus.MainUi;

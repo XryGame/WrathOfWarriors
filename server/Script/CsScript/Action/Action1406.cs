@@ -108,7 +108,9 @@ namespace GameServer.CsScript.Action
             receipt.Equips = UserHelper.FindUserEquips(rivalUid);
             receipt.Attribute = UserHelper.FindUserAttribute(rivalUid);
             receipt.Skill = UserHelper.FindUserSkill(rivalUid);
-
+            receipt.ElfID = UserHelper.FindUserElf(rivalUid).SelectID;
+            var pay = UserHelper.FindUserPay(rivalUid);
+            receipt.IsAutoFight = pay.MonthCardDays >= 0 || pay.QuarterCardDays >= 0;
             return true;
         }
     }

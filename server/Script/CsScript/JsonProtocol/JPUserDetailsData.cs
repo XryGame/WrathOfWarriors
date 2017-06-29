@@ -84,5 +84,7 @@ namespace GameServer.CsScript.JsonProtocol
         public long OfflineTimeSec { get; set; }
 
         public string OfflineEarnings { get; set; }
+
+        public long LastMatchFightFailedDate { get; set; }
     }
 }

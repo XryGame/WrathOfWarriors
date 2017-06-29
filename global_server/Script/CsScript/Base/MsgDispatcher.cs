@@ -55,7 +55,7 @@ namespace GameServer.CsScript.Base
             {
                 v.IsRemove = true;
                 GameSession session = GameSession.Get(v.UserId);
-                if (session != null && session.Connected)
+                if (session != null && session.Connected && v.Param != null)
                 {
                     switch (v.Type)
                     {

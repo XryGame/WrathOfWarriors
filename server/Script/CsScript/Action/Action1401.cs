@@ -70,8 +70,7 @@ namespace GameServer.CsScript.Action
             receipt = new CombatMatchData();
             receipt.RankId = GetBasis.CombatRankID;
             receipt.CombatTimes = GetCombat.CombatTimes;
-            if (GetCombat.LastFailedDate != DateTime.MinValue)
-                receipt.LastFailedTime = Util.ConvertDateTimeStamp(GetCombat.LastFailedDate);
+            receipt.LastFailedDate = Util.ConvertDateTimeStamp(GetCombat.LastFailedDate);
             //UserRank info = null;
             CacheList <int> MachList = new CacheList<int>();
 
@@ -226,6 +225,7 @@ namespace GameServer.CsScript.Action
                 if (machinfo != null)
                 {
                     UserAttributeCache attribute = UserHelper.FindUserAttribute(machinfo.UserID);
+                    UserEquipsCache equips = UserHelper.FindUserEquips(machinfo.UserID);
                     CombatMatchUserData data = new CombatMatchUserData()
                     {
                         UserId = machinfo.UserID,
@@ -236,7 +236,8 @@ namespace GameServer.CsScript.Action
                         UserLv = machinfo.UserLv,
                         VipLv = machinfo.VipLv,
                         FightingValue = attribute.FightValue,
-                       // SkillCarryList = user.SkillCarryList
+                        Equips = equips,
+                        // SkillCarryList = user.SkillCarryList
                     };
 
                     receipt.RivalList.Add(data);

@@ -24,6 +24,7 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             LogList = new CacheList<CombatLogData>();
+
             //ResetCache();
         }
         
@@ -166,6 +167,23 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 匹配挑战失败时间
+        /// </summary>
+        private DateTime _LastMatchFightFailedDate;
+        [ProtoMember(9)]
+        [EntityField("LastMatchFightFailedDate")]
+        public DateTime LastMatchFightFailedDate
+        {
+            get
+            {
+                return _LastMatchFightFailedDate;
+            }
+            set
+            {
+                SetChange("LastMatchFightFailedDate", value);
+            }
+        }
 
         protected override int GetIdentityId()
         {
@@ -188,6 +206,7 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyMatchTimes": return BuyMatchTimes;
                     case "LogList": return LogList;
                     case "CombatCoin": return CombatCoin;
+                    case "LastMatchFightFailedDate": return LastMatchFightFailedDate;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -221,6 +240,9 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatCoin":
                         _CombatCoin = value.ToInt();
                         break;
+                    case "LastMatchFightFailedDate":
+                        _LastMatchFightFailedDate = value.ToDateTime();
+                        break;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -229,8 +251,10 @@ namespace GameServer.Script.Model.DataModel
 
         public void ResetCache()
         {
-            LastFailedDate = DateTime.MinValue;
-            CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes"); ;
+            TimeSpan timespan = TimeSpan.FromMinutes(10);
+            LastFailedDate = DateTime.Now.Subtract(timespan);
+            LastMatchFightFailedDate = DateTime.Now.Subtract(timespan);
+            CombatTimes = ConfigEnvSet.GetInt("User.CombatInitTimes");
             BuyTimes = 0;
             MatchTimes = ConfigEnvSet.GetInt("Combat.MatchTimes");
             BuyMatchTimes = 0;

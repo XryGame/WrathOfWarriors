@@ -2,6 +2,7 @@
 using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -47,6 +48,26 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            var timespan = DateTime.Now.Subtract(GetBasis.LastDropGoldTime);
+            double sec = timespan.TotalSeconds;
+
+            if (sec >= 3)
+            {
+                GetBasis.LastDropGoldTime = DateTime.Now;
+                GetBasis.DropGoldIntervalCount = 1;
+            }
+            else
+            {
+                GetBasis.DropGoldIntervalCount++;
+                if (GetBasis.DropGoldIntervalCount > 6)
+                {
+                    GetBasis.LastDropGoldTime = DateTime.Now;
+                    GetBasis.DropGoldIntervalCount = 0;
+
+                    PushMessageHelper.UserGameDataExceptionNotification(Current);
+                    return false;
+                }
+            }
             UserHelper.RewardsGold(Current.UserId, goldNum, UpdateCoinOperate.KillMonsterReward, true);
             receipt = true;
             return true;

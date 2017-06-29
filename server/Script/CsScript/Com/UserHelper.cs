@@ -354,8 +354,9 @@ namespace GameServer.Script.Model.DataModel
 
             // 签到，首周，在线
             //if (basis.RestoreDate != DateTime.MinValue && basis.RestoreDate.DayOfWeek == DayOfWeek.Monday)
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+            if (eventaward.SignStartID != DataHelper.SignStartID)
             {
+                eventaward.SignStartID = DataHelper.SignStartID;
                 eventaward.SignCount = 0;
             }
 
@@ -476,7 +477,6 @@ namespace GameServer.Script.Model.DataModel
 
 
             basis.LoginDate = DateTime.Now;
-            basis.IsOnline = true;
             basis.IsRefreshing = true;
             basis.UserStatus = UserStatus.MainUi;
             basis.InviteFightDestUid = 0;
@@ -949,7 +949,7 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case AchievementType.Gem:
                         {
-                            UserPackageCache userPackage = FindUserPackage(uid);
+                            //UserPackageCache userPackage = FindUserPackage(uid);
                             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(addId);
                             if (itemcfg != null && itemcfg.ItemType == ItemType.Gem)
                             {
@@ -990,8 +990,8 @@ namespace GameServer.Script.Model.DataModel
 
                             UserBasisCache basis = FindUserBasis(uid);
 
-                            if (basis.CombatRankID <= achconfig.ObjectiveNum.ToInt()
-                                && achdata.Count.ToInt() >= achconfig.ObjectiveGrade)
+                            if (basis.CombatRankID <= achconfig.ObjectiveGrade.ToInt()
+                                && achdata.Count.ToInt() >= achconfig.ObjectiveNum.ToInt())
                             {
                                 achdata.Status = TaskStatus.Finished;
                             }

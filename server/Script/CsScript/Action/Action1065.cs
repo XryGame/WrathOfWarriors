@@ -38,7 +38,9 @@ namespace GameServer.CsScript.Action
 
         public UserSkillCache Skill { get; set; }
 
+        public int ElfID { get; set; }
 
+        public bool IsAutoFight { get; set; }
     }
 
 
@@ -106,7 +108,9 @@ namespace GameServer.CsScript.Action
             receipt.Attribute = UserHelper.FindUserAttribute(destuid);
             receipt.Skill = UserHelper.FindUserSkill(destuid);
             receipt.LevelRankID = dest.LevelRankID;
-
+            receipt.ElfID = UserHelper.FindUserElf(destuid).SelectID;
+            var pay = UserHelper.FindUserPay(destuid);
+            receipt.IsAutoFight = pay.MonthCardDays >= 0 || pay.QuarterCardDays >= 0;
             //receipt.RivalData.FightValue = dest.FightingValue;
             //GameSession fsession = GameSession.Get(dest.UserID);
             //if (fsession != null && fsession.Connected)

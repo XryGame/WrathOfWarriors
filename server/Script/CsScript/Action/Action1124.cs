@@ -1,4 +1,4 @@
-﻿using GameServer.CsScript.Base;
+﻿
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
@@ -44,7 +44,18 @@ namespace GameServer.CsScript.Action
         {
             EquipData equip = GetEquips.FindEquipData(equipID);
 
+            
+
             if (GetBasis.UserLv <= equip.Lv)
+            {
+                return false;
+            }
+
+            if (equip.Lv - GetEquips.Weapon.Lv >= 4
+                || equip.Lv - GetEquips.Coat.Lv >= 4
+                || equip.Lv - GetEquips.Ring.Lv >= 4
+                || equip.Lv - GetEquips.Shoe.Lv >= 4
+                || equip.Lv - GetEquips.Accessory.Lv >= 4)
             {
                 return false;
             }

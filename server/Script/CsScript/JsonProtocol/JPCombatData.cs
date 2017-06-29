@@ -25,6 +25,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public long FightingValue { get; set; }
 
+        public UserEquipsCache Equips { get; set; }
+
     }
     public class CombatMatchData
     {
@@ -37,7 +39,7 @@ namespace GameServer.CsScript.JsonProtocol
 
         public int CombatTimes { get; set; }
 
-        public long LastFailedTime { get; set; }
+        public long LastFailedDate { get; set; }
 
         public CacheList<CombatMatchUserData> RivalList { get; set; }
 
@@ -72,6 +74,9 @@ namespace GameServer.CsScript.JsonProtocol
 
         public UserSkillCache Skill { get; set; }
 
+        public int ElfID { get; set; }
+
+        public bool IsAutoFight { get; set; }
     }
 
 
@@ -116,6 +121,10 @@ namespace GameServer.CsScript.JsonProtocol
         public UserEquipsCache Equips { get; set; }
 
         public UserSkillCache Skill { get; set; }
+
+        public int ElfID { get; set; }
+
+        public bool IsAutoFight { get; set; }
 
     }
 

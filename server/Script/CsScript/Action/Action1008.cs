@@ -75,6 +75,7 @@ namespace GameServer.CsScript.Action
                 ShareDate = GetBasis.ShareDate,
                 InviteCount = GetBasis.InviteCount,
                 ReceiveInviteList = GetBasis.ReceiveInviteList.ToList(),
+                LastMatchFightFailedDate = Util.ConvertDateTimeStamp(GetCombat.LastMatchFightFailedDate)
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;

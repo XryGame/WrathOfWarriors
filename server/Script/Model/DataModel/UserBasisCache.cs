@@ -32,6 +32,7 @@ namespace GameServer.Script.Model.DataModel
             IsRefreshing = true;
             ShareDate = 0;
             ReceiveInviteList = new CacheList<int>();
+            LastDropGoldTime = DateTime.Now;
         }
         public UserBasisCache(int userid)
         : this()
@@ -591,7 +592,7 @@ namespace GameServer.Script.Model.DataModel
             get;
             set;
         }
-
+        
         /// <summary>
         /// 切磋目标
         /// </summary>
@@ -608,6 +609,20 @@ namespace GameServer.Script.Model.DataModel
         /// </summary>
         [ProtoMember(106)]
         public bool IsReceiveOfflineEarnings
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(107)]
+        public DateTime LastDropGoldTime
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(108)]
+        public int DropGoldIntervalCount
         {
             get;
             set;

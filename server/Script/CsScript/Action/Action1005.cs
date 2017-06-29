@@ -116,6 +116,18 @@ namespace GameServer.CsScript.Action
                 //var oldUserSet = new ShareCacheStruct<OldUserRecord>();
                 //oldUserSet.AddOrUpdate(record);
                 sender.Send(new[] { record });
+
+                MailData mail = new MailData()
+                {
+                    ID = Guid.NewGuid().ToString(),
+                    Title = "《勇者之怒》删档测试通知",
+                    Sender = "系统",
+                    Date = DateTime.Now,
+                    Context = "尊敬的玩家，您好，欢迎您进入我们的游戏，目前游戏正在删档封测阶段，如果您在游戏中遇到任何问题，请及时进入qq群2915725 联系平台客服或者联系qq 2602611792处理。\n" +
+                                "  本次测试时间为6月21日~6月30日，测试结束后，我们将清空所有玩家数据，请玩家牢记游戏ID以及昵称，及时联系平台客服兑换奖励，没有获奖的玩家也可以在游戏正式上线时"+
+                                "使用测试时的账号登录游戏可以享受充值3倍钻石优惠以及领取老玩家大礼包一份，千万不要错过哟！",
+                };
+                UserHelper.AddNewMail(basis.UserID, mail, false);
             }
             else if (gameRunStatus == GameRunStatus.OfficialOperation)
             {
@@ -156,7 +168,6 @@ namespace GameServer.CsScript.Action
             basis.LoginDate = DateTime.Now;
             basis.CreateDate = DateTime.Now;
             basis.OfflineDate = DateTime.Now;
-            basis.IsOnline = true;
             basis.Gold = ConfigEnvSet.GetString("User.InitGold");
             basis.OfflineEarnings = "0";
 

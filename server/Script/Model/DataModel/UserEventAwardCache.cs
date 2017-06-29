@@ -149,6 +149,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 是否已经领取或CDK
+        /// </summary>
+        private bool _IsReceivedCDK;
+        [ProtoMember(8)]
+        [EntityField("IsReceivedCDK")]
+        public bool IsReceivedCDK
+        {
+            get
+            {
+                return _IsReceivedCDK;
+            }
+            set
+            {
+                SetChange("IsReceivedCDK", value);
+            }
+        }
+
         ///// <summary>
         ///// 上次领取在线奖时间
         ///// </summary>
@@ -185,6 +203,24 @@ namespace GameServer.Script.Model.DataModel
         //    }
         //}
 
+        /// <summary>
+        /// 签到周ID
+        /// </summary>
+        private int _SignStartID;
+        [ProtoMember(10)]
+        [EntityField("SignStartID")]
+        public int SignStartID
+        {
+            get
+            {
+                return _SignStartID;
+            }
+            set
+            {
+                SetChange("SignStartID", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -205,8 +241,10 @@ namespace GameServer.Script.Model.DataModel
                     //case "IsTodayReceiveFirstWeek": return IsTodayReceiveFirstWeek;
                     case "OnlineAwardId": return OnlineAwardId;
                     case "OnlineStartTime": return OnlineStartTime;
+                    case "IsReceivedCDK": return IsReceivedCDK;
                     //case "LastOnlineAwayReceiveTime": return LastOnlineAwayReceiveTime;
                     //case "IsStartedOnlineTime": return IsStartedOnlineTime;
+                    case "SignStartID": return SignStartID;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -237,12 +275,18 @@ namespace GameServer.Script.Model.DataModel
                     case "OnlineStartTime":
                         _OnlineStartTime = value.ToDateTime();
                         break;
+                    case "IsReceivedCDK":
+                        _IsReceivedCDK = value.ToBool();
+                        break;
                     //case "LastOnlineAwayReceiveTime":
                     //    _LastOnlineAwayReceiveTime = value.ToDateTime();
                     //    break;
                     //case "IsStartedOnlineTime":
                     //    _IsStartedOnlineTime = value.ToBool();
-                    //    break;
+                    //    break; 
+                    case "SignStartID":
+                        _SignStartID = value.ToInt();
+                        break;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -259,6 +303,10 @@ namespace GameServer.Script.Model.DataModel
             //LastOnlineAwayReceiveTime = DateTime.Now;
             //IsStartedOnlineTime = true;
             OnlineStartTime = DateTime.Now;
+
+            IsReceivedCDK = false;
+
+            SignStartID = DataHelper.SignStartID;
         }
 
     }

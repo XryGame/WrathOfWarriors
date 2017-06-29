@@ -15,7 +15,20 @@ namespace GameServer.Script.CsScript.Com
 {
     class PushMessageHelper
     {
-  
+
+
+        /// <summary>
+        /// 数据异常断开连接
+        /// </summary>
+        public static void UserGameDataExceptionNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1010, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1010, packet, (rsession, asyncResult) => { }, 0);
+        }
+
         /// <summary>
         /// 第二天在
         /// </summary>

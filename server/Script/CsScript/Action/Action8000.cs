@@ -48,14 +48,14 @@ namespace GameServer.CsScript.Action
                 receipt = RequestInviteFightResult.Offine;
                 return true;
             }
-            if (dest.ServerID != 0)
-            {
-                if (session == null || !session.Connected)
-                {
-                    receipt = RequestInviteFightResult.Offine;
-                    return true;
-                }
-            }
+            //if (dest.ServerID != 0)
+            //{
+            //    if (session == null || !session.Connected)
+            //    {
+            //        receipt = RequestInviteFightResult.Offine;
+            //        return true;
+            //    }
+            //}
 
             else if (dest.UserStatus == UserStatus.Inviteing)
             {
@@ -73,23 +73,20 @@ namespace GameServer.CsScript.Action
 
 
 
-            //  如果目标是机器人
-            if (dest.ServerID == 0)
+
+            AutoFight.FightBot fbot = new AutoFight.FightBot()
             {
-                Bots.FightBot fbot = new Bots.FightBot()
-                {
-                    UserId = dest.UserID,
-                    InviteTime = DateTime.Now,
-                    PlayerUserId = Current.UserId
-                };
-                Bots.AddFightBot(fbot);
-            }
-            else
-            {
-                // 发送切磋邀请
-                dest.UserStatus = UserStatus.Inviteing;
-                PushMessageHelper.InviteFightNotification(session, Current.UserId);
-            }
+                UserId = dest.UserID,
+                InviteTime = DateTime.Now,
+                PlayerUserId = Current.UserId,
+                DestUserId = destuid
+            };
+            AutoFight.AddFightBot(fbot);
+
+
+            dest.UserStatus = UserStatus.Inviteing;
+            PushMessageHelper.InviteFightNotification(session, Current.UserId);
+
             return true;
         }
     }

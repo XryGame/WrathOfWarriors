@@ -95,6 +95,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1009 = 1009;
 
         ///<summary>
+        ///数据异常断开连接
+        ///</summary>
+        public const short Cst_Action1010 = 1010;
+
+        ///<summary>
         ///货币改变通知接口
         ///</summary>
         public const short Cst_Action1049 = 1049;
@@ -275,6 +280,9 @@ namespace GameServer.CsScript.Action
         ///刷新邀请数据
         ///</summary>
         public const short Cst_Action1087 = 1087;
+
+
+
 
         ///<summary>
         ///充值成功通知

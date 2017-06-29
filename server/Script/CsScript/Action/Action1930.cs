@@ -44,7 +44,11 @@ namespace GameServer.CsScript.Action
         {
             receipt = ReceiveCdKeyResult.OK;
 
-
+            if (GetEventAward.IsReceivedCDK)
+            {
+                receipt = ReceiveCdKeyResult.Had;
+                return true;
+            }
             var acc = new ShareCacheStruct<Config_CdKey>().Find(t => t.Key == _CDKey);
             if (acc == null)
             {
@@ -63,6 +67,8 @@ namespace GameServer.CsScript.Action
                 CDKey = _CDKey,
                 UsedTime = DateTime.Now
             };
+
+            GetEventAward.IsReceivedCDK = true;
 
             cdkscache.Add(cdk);
             cdkscache.Update();
