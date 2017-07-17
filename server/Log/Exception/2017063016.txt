@@ -1,0 +1,174 @@
+Time:2017-06-30 16:39:46:294-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:56
+Message:“RandomLottery”方法没有任何重载采用 2 个参数
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:59
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“RandomLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“RandomLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:60
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LotteryAwardType”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LotteryAwardType”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:61
+Message:无法将类型“string”隐式转换为“int”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:64
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“LastLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“LastLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:68
+Message:无法将类型“string”隐式转换为“int”
+
+
+Time:2017-06-30 16:39:46:356-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:39:49:321-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:56
+Message:“RandomLottery”方法没有任何重载采用 2 个参数
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:59
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“RandomLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“RandomLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:60
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LotteryAwardType”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LotteryAwardType”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:61
+Message:无法将类型“string”隐式转换为“int”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:64
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“LastLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“LastLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:68
+Message:无法将类型“string”隐式转换为“int”
+
+
+Time:2017-06-30 16:39:49:324-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:40:13:615-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:53
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:56
+Message:“RandomLottery”方法没有任何重载采用 2 个参数
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:59
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“RandomLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“RandomLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:60
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LotteryAwardType”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LotteryAwardType”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:61
+Message:无法将类型“string”隐式转换为“int”
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:64
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“LastLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“LastLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:68
+Message:无法将类型“string”隐式转换为“int”
+
+
+Time:2017-06-30 16:40:13:618-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:40:21:013-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:48
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:48
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“IsTodayLottery”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“IsTodayLottery”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:51
+Message:“RandomLottery”方法没有任何重载采用 2 个参数
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:54
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“RandomLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“RandomLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:55
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LotteryAwardType”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LotteryAwardType”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:56
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LotteryId”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:59
+Message:“GameServer.Script.Model.DataModel.UserBasisCache”不包含“LastLotteryId”的定义，并且找不到可接受类型为“GameServer.Script.Model.DataModel.UserBasisCache”的第一个参数的扩展方法“LastLotteryId”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:62
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LastLotteryAwardType”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LastLotteryAwardType”(是否缺少 using 指令或程序集引用?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:63
+Message:“GameServer.CsScript.Action.RequestLotteryData”不包含“LastLotteryId”的定义，并且找不到可接受类型为“GameServer.CsScript.Action.RequestLotteryData”的第一个参数的扩展方法“LastLotteryId”(是否缺少 using 指令或程序集引用?)
+
+
+Time:2017-06-30 16:40:21:018-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:54:27:694-Trace>>Not found DB connection key "PayCenter" of the SensitiveWord entity.
+
+
+Time:2017-06-30 16:54:29:563-Trace>>DoWatcherChanged error:System.ArgumentException: 已添加了具有相同键的项。
+   在 System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 ZyGames.Framework.Game.Com.Rank.RankingFactory.Add(IRanking ranking)
+   在 GameServer.CsScript.Base.SystemGlobal.InitRanking() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 149
+   在 GameServer.CsScript.Base.SystemGlobal.Run() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Base\SystemGlobal.cs:行号 121
+   在 Game.Script.MainClass.OnStartAffer() 位置 e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\MainClass.cs:行号 48
+   在 ZyGames.Framework.Game.Contract.GameBaseHost.ReStart()
+   在 ZyGames.Framework.Script.ScriptEngines.InitScriptRuntimeScope()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:57:21:378-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:51
+Message:无法将类型“double”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)
+
+
+Time:2017-06-30 16:57:21:379-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:57:26:127-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:50
+Message:无法将类型“double”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)
+
+
+Time:2017-06-30 16:57:26:128-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:57:29:852-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:50
+Message:无法将类型“double”隐式转换为“long”。存在一个显式转换(是否缺少强制转换?)
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:51
+Message:无法将类型“long”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)
+
+
+Time:2017-06-30 16:57:29:853-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:57:46:801-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:51
+Message:无法将类型“long”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)
+
+
+Time:2017-06-30 16:57:46:802-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+
+Time:2017-06-30 16:58:28:167-Compile assembly:DynamicScripts.CsScript error:
+[Error] File:e:\ServerTools\code\Wrath of warriors\server\server\Script\CsScript\Action\Action1811.cs, Line:50
+Message:无法将类型“long”隐式转换为“int”。存在一个显式转换(是否缺少强制转换?)
+
+
+Time:2017-06-30 16:58:28:169-Trace>>DoWatcherChanged error:System.Exception: The csharp script compile error
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.CompileCsharp()
+   在 ZyGames.Framework.Script.CSharpRuntimeScope.InitCsharp()
+   在 ZyGames.Framework.Script.ScriptEngines.DoWatcherChanged(Object state)
+
+

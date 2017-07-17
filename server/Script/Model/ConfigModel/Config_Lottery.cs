@@ -58,7 +58,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// 奖励类型(1物品，2钻石)
+        /// 奖励类型
         /// </summary>
         private LotteryAwardType _Type;
         [EntityField("Type")]

@@ -87,11 +87,11 @@ namespace GameServer.CsScript.Action
                 return true;
             }
 
-            if (GetBasis.CombatRankID <= rival.CombatRankID)
-            {
-                ErrorInfo = Language.Instance.CombatRankDataException;
-                return true;
-            }
+            //if (GetBasis.CombatRankID <= rival.CombatRankID)
+            //{
+            //    ErrorInfo = Language.Instance.CombatRankDataException;
+            //    return true;
+            //}
             if (!rankinfo.IsFighting || !rivalrankinfo.IsFighting)
             {
                 ErrorInfo = Language.Instance.CombatRankDataException;
@@ -104,27 +104,40 @@ namespace GameServer.CsScript.Action
             int toRankId = rival.CombatRankID;
             //TraceLog.WriteLine(string.Format("#BEGIN srcId:[{0}] destId:[{1}]", fromid, toid));
             GetBasis.UserStatus = UserStatus.MainUi;
+
+
+
             if (result == EventStatus.Good)
             {
-                var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
-                ranking.TryMove(fromRankId, toRankId);
-                GetBasis.CombatRankID = toRankId;
-                rival.CombatRankID = fromRankId;
 
-                if (GetBasis.CombatRankID <= 10)
+                if (GetBasis.CombatRankID > rival.CombatRankID)
                 {
-                    string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{2}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
-                    GlobalRemoteService.SendNotice(NoticeMode.World, context);
-                    //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
+                    var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+                    ranking.TryMove(fromRankId, toRankId);
+                    GetBasis.CombatRankID = toRankId;
+                    rival.CombatRankID = fromRankId;
+                    if (GetBasis.CombatRankID <= 10)
+                    {
+                        string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{2}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
+                        GlobalRemoteService.SendNotice(NoticeMode.World, context);
+                        //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
-                    //var chatService = new TryXChatService();
-                    //chatService.SystemSend(context);
-                    //PushMessageHelper.SendSystemChatToOnlineUser();
+                        //var chatService = new TryXChatService();
+                        //chatService.SystemSend(context);
+                        //PushMessageHelper.SendSystemChatToOnlineUser();
+                    }
                 }
 
             }
             else
             {
+                if (GetBasis.CombatRankID <= rival.CombatRankID)
+                {
+                    var ranking = RankingFactory.Get<UserRank>(CombatRanking.RankingKey);
+                    ranking.TryMove(fromRankId, toRankId);
+                    GetBasis.CombatRankID = toRankId;
+                    rival.CombatRankID = fromRankId;
+                }
                 GetCombat.LastFailedDate = DateTime.Now;
             }
 
@@ -182,7 +195,7 @@ namespace GameServer.CsScript.Action
             }
             else
             {
-                awardValue /= 10;
+                awardValue /= 4;
                 receipt.AwardGold = awardValue.ToString();
                 UserHelper.RewardsGold(Current.UserId, awardValue, UpdateCoinOperate.NormalReward, true);
             }

@@ -51,6 +51,13 @@ namespace GameServer.CsScript.Base
             return (long)(time - startTime).TotalSeconds;
         }
 
+        public static DateTime GetTime(string timeStamp)
+        {
+            DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            long lTime = long.Parse(timeStamp + "0000000");
+            TimeSpan toNow = new TimeSpan(lTime); return dtStart.Add(toNow);
+        }
+
         /// <summary>
         /// 格式化日期显示，昨天，前天
         /// </summary>

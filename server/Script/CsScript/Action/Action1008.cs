@@ -4,6 +4,7 @@ using GameServer.CsScript.JsonProtocol;
 using GameServer.CsScript.Remote;
 using GameServer.Script.CsScript.Action;
 using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -55,6 +56,14 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
+            if (GetBasis.BackLevelNum > 0)
+            {
+                int levelDown = GetBasis.BackLevelNum;
+                GetBasis.UserLv = Math.Max(GetBasis.UserLv - levelDown, 10);
+                UserHelper.UserLvChange(Current.UserId);
+                GetBasis.BackLevelNum = 0;
+            }
+
 
             receipt = new JPUserDetailsData()
             {
@@ -69,13 +78,14 @@ namespace GameServer.CsScript.Action
                 Gold = GetBasis.Gold,
                 CombatRankID = GetBasis.CombatRankID,
                 LevelRankID = GetBasis.LevelRankID,
-                LotteryTimes = GetBasis.LotteryTimes,
+                LotteryTimes = GetLottery.LotteryTimes,
                 SignStartID = DataHelper.SignStartID,
                 ShareCount = GetBasis.ShareCount,
                 ShareDate = GetBasis.ShareDate,
                 InviteCount = GetBasis.InviteCount,
                 ReceiveInviteList = GetBasis.ReceiveInviteList.ToList(),
-                LastMatchFightFailedDate = Util.ConvertDateTimeStamp(GetCombat.LastMatchFightFailedDate)
+                LastMatchFightFailedDate = Util.ConvertDateTimeStamp(GetCombat.LastMatchFightFailedDate),
+                ComboNum = GetBasis.ComboNum
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -89,6 +99,9 @@ namespace GameServer.CsScript.Action
             receipt.EventAward = GetEventAward;
             receipt.Pay = GetPay;
             receipt.Combat = GetCombat;
+            receipt.Lottery = GetLottery;
+            receipt.VitData.RemainTimeSec = GetBasis.RestoreVitRemainTimeSec();
+            receipt.VitData.Vit = GetBasis.Vit;
 
             UserHelper.ElfExperienceExpireCheck(Current.UserId);
             receipt.Elf = GetElf;
@@ -96,9 +109,10 @@ namespace GameServer.CsScript.Action
             UserHelper.TransferExpireCheck(Current.UserId);
             receipt.Transfer = GetTransfer;
 
-            /// 好友
+            /// 好友/仇人
             {
                 receipt.Friends.GiveAwayCount = GetFriends.GiveAwayCount;
+                //receipt.Friends.TodayRobList = GetFriends.TodayRobList.ToList();
                 foreach (var v in GetFriends.FriendsList)
                 {
                     var basis = UserHelper.FindUserBasis(v.UserId);
@@ -113,6 +127,7 @@ namespace GameServer.CsScript.Action
                         IsGiveAway = v.IsGiveAway,
                         IsByGiveAway = v.IsByGiveAway,
                         IsReceiveGiveAway = v.IsReceiveGiveAway,
+                        RobGold = v.RobGold,
                     };
                     var gameSession = GameSession.Get(v.UserId);
                     friend.IsOnline = gameSession != null && gameSession.Connected;
@@ -135,6 +150,22 @@ namespace GameServer.CsScript.Action
                     apply.IsOnline = gameSession != null && gameSession.Connected;
                     receipt.Friends.ApplyList.Add(apply);
                 }
+                foreach (var v in GetEnemys.EnemyList)
+                {
+                    var basis = UserHelper.FindUserBasis(v.UserId);
+                    JPEnemyData enemy = new JPEnemyData()
+                    {
+                        UserId = v.UserId,
+                        NickName = basis.NickName,
+                        Profession = basis.Profession,
+                        AvatarUrl = basis.AvatarUrl,
+                        UserLv = basis.UserLv,
+                        RobGold = v.RobGold,
+                    };
+                    receipt.Enemys.EnemysList.Add(enemy);
+                }
+                receipt.Enemys.LogList = GetEnemys.LogList.ToList();
+                receipt.Enemys.IsHaveNewLog = GetEnemys.IsHaveNewLog;
             }
 
             /// 公会
@@ -164,7 +195,7 @@ namespace GameServer.CsScript.Action
                 BigInteger bi = BigInteger.Parse(monster.DropoutGold) * 30;
                 transscriptEarnings += bi;
 
-                double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 1800.0);
+                double rate = Convert.ToDouble(GetBasis.OfflineTimeSec / 300.0);
                 int tmp = Convert.ToInt32(rate * 100);
 
                 //var vipcfg = new ShareCacheStruct<Config_Vip>().FindKey(GetBasis.VipLv);
@@ -192,7 +223,11 @@ namespace GameServer.CsScript.Action
             receipt.OfflineTimeSec = GetBasis.OfflineTimeSec;
             receipt.OfflineEarnings = GetBasis.OfflineEarnings;
 
+            
+
             UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID, "0", 0, false);
+
+
 
             return true;
         }

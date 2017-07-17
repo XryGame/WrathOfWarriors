@@ -72,8 +72,10 @@ namespace GameServer.CsScript.Action
             combat.NickName = newName;
             var level = UserHelper.FindRankUser(Current.UserId, RankType.Level);
             level.NickName = newName;
-            //var fightvaluer = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
-            //fightvaluer.NickName = newName;
+            var fightvalue = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
+            fightvalue.NickName = newName;
+            var combo = UserHelper.FindRankUser(Current.UserId, RankType.Combo);
+            combo.NickName = newName;
 
             receipt = true;
             return true;

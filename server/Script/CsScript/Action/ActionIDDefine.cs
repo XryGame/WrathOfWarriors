@@ -110,14 +110,14 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1050 = 1050;
 
         ///<summary>
-        ///钻石数量改变通知接口
+        ///体力改变通知接口
         ///</summary>
         public const short Cst_Action1051 = 1051;
 
-        /////<summary>
-        /////等级改变通知接口
-        /////</summary>
-        //public const short Cst_Action1052 = 1052;
+        ///<summary>
+        ///等级改变通知接口
+        ///</summary>
+        public const short Cst_Action1052 = 1052;
 
         ///<summary>
         ///整点刷新通知接口
@@ -281,6 +281,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1087 = 1087;
 
+        ///<summary>
+        ///新的被偷/抢消息
+        ///</summary>
+        public const short Cst_Action1088 = 1088;
 
 
 
@@ -311,7 +315,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1110 = 1110;
 
         ///<summary>
-        ///通关关卡
+        ///通关关卡结算
         ///</summary>
         public const short Cst_Action1111 = 1111;
 
@@ -320,15 +324,20 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1112 = 1112;
 
-        /////<summary>
-        /////进入关卡
-        /////</summary>
-        //public const short Cst_Action1113 = 1113;
+        ///<summary>
+        ///连击结束
+        ///</summary>
+        public const short Cst_Action1113 = 1113;
 
         ///<summary>
         ///领取离线收益
         ///</summary>
         public const short Cst_Action1114 = 1114;
+
+        ///<summary>
+        ///请求通关关卡
+        ///</summary>
+        public const short Cst_Action1115 = 1115;
 
         ///<summary>
         ///宝石镶嵌
@@ -570,10 +579,22 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action2002 = 2002;
 
+
+
         ///<summary>
         ///请求公会排行榜排行数据
         ///</summary>
         public const short Cst_Action2003 = 2003;
+
+        ///<summary>
+        ///请求连击排行榜排行数据
+        ///</summary>
+        public const short Cst_Action2004 = 2004;
+
+        ///<summary>
+        ///请求体力数据
+        ///</summary>
+        public const short Cst_Action2100 = 2100;
 
         ///<summary>
         ///发送聊天
@@ -639,7 +660,7 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1810 = 1810;
 
         ///<summary>
-        ///请求抽奖数据
+        ///抽奖入口
         ///</summary>
         public const short Cst_Action1811 = 1811;
 
@@ -647,6 +668,31 @@ namespace GameServer.CsScript.Action
         ///购买抽奖次数
         ///</summary>
         public const short Cst_Action1812 = 1812;
+
+        ///<summary>
+        ///请求偷取
+        ///</summary>
+        public const short Cst_Action1813 = 1813;
+
+        ///<summary>
+        ///请求抢夺
+        ///</summary>
+        public const short Cst_Action1814 = 1814;
+
+        ///<summary>
+        ///请求抢夺目标数据
+        ///</summary>
+        public const short Cst_Action1815 = 1815;
+
+        ///<summary>
+        ///打开抢夺界面
+        ///</summary>
+        public const short Cst_Action1816 = 1816;
+
+        ///<summary>
+        ///打开偷取抢夺日志界面
+        ///</summary>
+        public const short Cst_Action1817 = 1817;
 
         ///<summary>
         ///领取首充奖励

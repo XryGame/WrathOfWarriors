@@ -306,6 +306,35 @@ namespace GameServer.Script.Model.DataModel
             return ret;
         }
 
+        public static UserEnemysCache FindUserEnemy(int userid)
+        {
+            var cacheset = new PersonalCacheStruct<UserEnemysCache>();
+            var ret = cacheset.FindKey(userid.ToString());
+            if (ret == null)
+            {
+                ret = new UserEnemysCache();
+                ret.UserID = userid;
+                ret.ResetCache();
+                cacheset.Add(ret);
+                cacheset.Update();
+            }
+            return ret;
+        }
+        public static UserLotteryCache FindUserLottery(int userid)
+        {
+            var cacheset = new PersonalCacheStruct<UserLotteryCache>();
+            var ret = cacheset.FindKey(userid.ToString());
+            if (ret == null)
+            {
+                ret = new UserLotteryCache();
+                ret.UserID = userid;
+                ret.ResetCache();
+                cacheset.Add(ret);
+                cacheset.Update();
+            }
+            return ret;
+        }
+
         public static List<GameSession> GetOnlinesList()
         {
             var sessionlist = GameSession.GetAll();
@@ -328,6 +357,7 @@ namespace GameServer.Script.Model.DataModel
             UserEventAwardCache eventaward = FindUserEventAward(uid);
             UserGuildCache guild = FindUserGuild(uid);
             UserTransferItemCache transfer = FindUserTransfer(uid);
+            UserLotteryCache lottery = FindUserLottery(uid);
             if (basis == null)
             {
                 return;
@@ -347,6 +377,7 @@ namespace GameServer.Script.Model.DataModel
                 fl.IsByGiveAway = false;
                 fl.IsReceiveGiveAway = false;
             }
+            friends.TodayRobList.Clear();
 
 
             // 每日任务
@@ -430,14 +461,15 @@ namespace GameServer.Script.Model.DataModel
             }
 
             
-            basis.LotteryTimes = ConfigEnvSet.GetInt("User.LotteryTimes");
+            //lottery.StartRestoreLotteryTimesDate = DateTime.Now;
+
             //basis.RandomLotteryId = 0;
             //var lottery = RandomLottery(basis.UserID, basis.UserLv);
             //if (lottery != null)
             //{
             //    basis.RandomLotteryId = lottery.ID;
             //}
-            
+
 
             //// 切磋钻石处理
             //System.Globalization.GregorianCalendar gc = new System.Globalization.GregorianCalendar();
@@ -842,6 +874,9 @@ namespace GameServer.Script.Model.DataModel
                 case RankType.FightValue:
                     ranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
                     break;
+                case RankType.Combo:
+                    ranking = RankingFactory.Get<UserRank>(ComboRanking.RankingKey);
+                    break;
 
             }
             UserRank rankInfo = null;
@@ -1106,9 +1141,10 @@ namespace GameServer.Script.Model.DataModel
             combat.VipLv = basis.VipLv;
             var level = FindRankUser(uid, RankType.Level);
             level.VipLv = basis.VipLv;
-            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            //fightvaluer.VipLv = basis.VipLv;
-
+            var fightvalue = FindRankUser(uid, RankType.FightValue);
+            fightvalue.VipLv = basis.VipLv;
+            var combo = FindRankUser(uid, RankType.Combo);
+            combo.VipLv = basis.VipLv;
 
             if (!PayDiamond(uid, deliverNum))
             {
@@ -1334,17 +1370,18 @@ namespace GameServer.Script.Model.DataModel
             if (combat != null) combat.FightValue = attribute.FightValue;
             var level = FindRankUser(uid, RankType.Level);
             if (level != null) level.FightValue = attribute.FightValue;
-            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            //if (fightvaluer != null) fightvaluer.FightValue = attribute.FightValue;
-
+            var fightvalue = FindRankUser(uid, RankType.FightValue);
+            if (fightvalue != null) fightvalue.FightValue = attribute.FightValue;
+            var combo = FindRankUser(uid, RankType.Combo);
+            if (combo != null) combo.FightValue = attribute.FightValue;
 
         }
 
         /// <summary>  
-        /// 用户升级处理
+        /// 用户等级改变处理
         /// </summary>  
         /// <returns></returns>  
-        public static void UserLevelUp(int uid)
+        public static void UserLvChange(int uid)
         {
             UserBasisCache basis = FindUserBasis(uid);
             if (basis == null)
@@ -1364,24 +1401,28 @@ namespace GameServer.Script.Model.DataModel
             combat.UserLv = basis.UserLv;
             var level = FindRankUser(uid, RankType.Level);
             level.UserLv = basis.UserLv;
-            //var fightvaluer = FindRankUser(uid, RankType.FightValue);
-            //fightvaluer.UserLv = basis.UserLv;
+            var fightvalue = FindRankUser(uid, RankType.FightValue);
+            fightvalue.UserLv = basis.UserLv;
+            var combo = FindRankUser(uid, RankType.Combo);
+            combo.UserLv = basis.UserLv;
         }
 
         public static bool UserLevelUpCheck(int uid, int levelId)
         {
+            bool isUp = false;
             var basis = FindUserBasis(uid);
             var skill = FindUserSkill(uid);
             var roleInitialSet = new ShareCacheStruct<Config_RoleInitial>();
             if (roleInitialSet.FindKey(levelId) == null)
-                return false;
+                return isUp;
 
             if (levelId == basis.UserLv)
             {
                 if (roleInitialSet.FindKey(levelId + 1) != null)
                 {
+                    isUp = true;
                     basis.UserLv = levelId + 1;
-                    UserLevelUp(uid);
+                    UserLvChange(uid);
 
                     // 技能
                     if (basis.UserLv % 10 == 0 && (basis.UserLv / 10) % 2 == 0)
@@ -1400,7 +1441,7 @@ namespace GameServer.Script.Model.DataModel
                     }
 
                     // 邀请处理
-                    if (basis.UserLv == 6)
+                    if (basis.UserLv == 21)
                     {
                         var selflist = Util.FindUserCenterUser(basis.Pid, basis.RetailID, basis.ServerID);
                         if (selflist.Count > 0 && !string.IsNullOrEmpty(selflist[0].Unid))
@@ -1412,7 +1453,6 @@ namespace GameServer.Script.Model.DataModel
                                 inviter.InviteCount++;
                                 PushMessageHelper.NewInviteSucceedNotification(GameSession.Get(inviterlist[0].UserID));
                             }
-
                         }
                     }
 
@@ -1432,7 +1472,7 @@ namespace GameServer.Script.Model.DataModel
                 // 成就
                 AchievementProcess(uid, AchievementType.LevelCount);
             }
-            return true;
+            return isUp;
         }
 
 
@@ -1684,6 +1724,236 @@ namespace GameServer.Script.Model.DataModel
         }
 
 
+        public static void RandomStealTarget(int userId)
+        {
+            var lotterycfg = new ShareCacheStruct<Config_Lottery>().Find(t => (t.Type == LotteryAwardType.Steal));
+            if (lotterycfg == null)
+                return;
+            var lottery = FindUserLottery(userId);
+            if (lottery.StealList.Count > 0)
+            {
+                return;
+            }
+
+            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var level = levelranking as LevelRanking;
+
+            int baseValue = lotterycfg.Content.ToInt();
+            int minValue = baseValue / 4;
+            int goldmax = 0;
+            int primaryLv = 0;
+
+
+            goldmax = random.Next(baseValue - minValue) + minValue;
+            goldmax = Math.Max(goldmax, minValue + 10000);
+
+            
+            while (level.rankList.Count > 5)
+            {
+                int randv = random.Next(level.rankList.Count);
+                var userrank = level.rankList[randv];
+                if (userrank.UserID == userId)
+                {
+                    continue;
+                }
+                if (lottery.StealList.Find(t => t.RivalUid == userrank.UserID) != null)
+                {
+                    continue;
+                }
+                else if (lottery.StealList.Count == 0)
+                {
+                    var rival = FindUserBasis(userrank.UserID);
+                    StealRobTarget target = new StealRobTarget()
+                    {
+                        RivalUid = userrank.UserID,
+                        RivalName = rival.NickName,
+                        RivalAvatarUrl = rival.AvatarUrl,
+                        RivalLevel = rival.UserLv,
+                        IsPrimary = true,
+                        RandGold = goldmax,
+                        RivalProfession = rival.Profession
+                    };
+                    BigInteger targetGold = Math.Ceiling(rival.UserLv / 50.0).ToInt() * goldmax;
+                    if (targetGold == 0)
+                    {
+                        return;
+                    }
+                    target.Gold = targetGold.ToString();
+                    lottery.StealList.Add(target);
+
+                    primaryLv = rival.UserLv;
+                }
+                else if (lottery.StealList.Count == 1)
+                {
+                    var rival = FindUserBasis(userrank.UserID);
+                    StealRobTarget target = new StealRobTarget()
+                    {
+                        RivalUid = userrank.UserID,
+                        RivalName = rival.NickName,
+                        RivalAvatarUrl = rival.AvatarUrl,
+                        RivalLevel = rival.UserLv,
+                        IsPrimary = false,
+                        RandGold = goldmax,
+                        RivalProfession = rival.Profession
+                    };
+                    int randMin = random.Next(goldmax / 2 - goldmax / 3) + goldmax / 3;
+                    BigInteger targetGold = Math.Ceiling(primaryLv / 50.0).ToInt() * randMin;
+                    target.Gold = targetGold.ToString();
+                    lottery.StealList.Add(target);
+                }
+                else if (lottery.StealList.Count == 2)
+                {
+                    var rival = FindUserBasis(userrank.UserID);
+                    StealRobTarget target = new StealRobTarget()
+                    {
+                        RivalUid = userrank.UserID,
+                        RivalName = rival.NickName,
+                        RivalAvatarUrl = rival.AvatarUrl,
+                        RivalLevel = rival.UserLv,
+                        IsPrimary = false,
+                        RandGold = goldmax,
+                        RivalProfession = rival.Profession
+                    };
+                    int randMin = random.Next(goldmax / 3 - goldmax / 4) + goldmax / 4;
+                    BigInteger targetGold = Math.Ceiling(primaryLv / 50.0).ToInt() * randMin;
+                    target.Gold = targetGold.ToString();
+                    lottery.StealList.Add(target);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+
+        public static void RandomStealTarget2(int userId)
+        {
+            var lotterycfg = new ShareCacheStruct<Config_Lottery>().Find(t => (t.Type == LotteryAwardType.Steal));
+            if (lotterycfg == null)
+                return;
+
+            var lottery = FindUserLottery(userId);
+            if (lottery.StealList.Count <= 0)
+            {
+                return;
+            }
+
+            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var level = levelranking as LevelRanking;
+
+            int baseValue = lotterycfg.Content.ToInt();
+            int minValue = baseValue / 4;
+            int goldmax = 0;
+            int primaryLv = 0;
+
+            var primartStealData = lottery.StealList.Find(t => t.IsPrimary == true);
+            lottery.StealList.RemoveAll(t => t.IsPrimary == false);
+            
+            goldmax = primartStealData.RandGold;
+            primaryLv = primartStealData.RivalLevel;
+            
+            while (level.rankList.Count > 5)
+            {
+                int randv = random.Next(level.rankList.Count);
+                var userrank = level.rankList[randv];
+                if (userrank.UserID == userId)
+                {
+                    continue;
+                }
+                if (lottery.StealList.Find(t => t.RivalUid == userrank.UserID) != null)
+                {
+                    continue;
+                }
+                if (lottery.StealList.Count == 1)
+                {
+                    var rival = FindUserBasis(userrank.UserID);
+                    StealRobTarget target = new StealRobTarget()
+                    {
+                        RivalUid = userrank.UserID,
+                        RivalName = rival.NickName,
+                        RivalAvatarUrl = rival.AvatarUrl,
+                        RivalLevel = rival.UserLv,
+                        IsPrimary = false,
+                        RandGold = goldmax,
+                        RivalProfession = rival.Profession
+                    };
+                    int randMin = random.Next(goldmax / 2 - goldmax / 3) + goldmax / 3;
+                    BigInteger targetGold = Math.Ceiling(primaryLv / 50.0).ToInt() * randMin;
+                    target.Gold = targetGold.ToString();
+                    lottery.StealList.Add(target);
+                }
+                else if (lottery.StealList.Count == 2)
+                {
+                    var rival = FindUserBasis(userrank.UserID);
+                    StealRobTarget target = new StealRobTarget()
+                    {
+                        RivalUid = userrank.UserID,
+                        RivalName = rival.NickName,
+                        RivalAvatarUrl = rival.AvatarUrl,
+                        RivalLevel = rival.UserLv,
+                        IsPrimary = false,
+                        RandGold = goldmax,
+                        RivalProfession = rival.Profession
+                    };
+                    int randMin = random.Next(goldmax / 3 - goldmax / 4) + goldmax / 4;
+                    BigInteger targetGold = Math.Ceiling(primaryLv / 50.0).ToInt() * randMin;
+                    target.Gold = targetGold.ToString();
+                    lottery.StealList.Add(target);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+
+        public static void RandomRobTarget(int userId)
+        {
+            var lottery = FindUserLottery(userId);
+            if (lottery.Rob.RivalUid != 0)
+            {
+                return;
+            }
+
+
+            var lotterycfg = new ShareCacheStruct<Config_Lottery>().Find(t => (t.Type == LotteryAwardType.Rob));
+            if (lotterycfg == null)
+                return;
+            int baseValue = lotterycfg.Content.ToInt();
+            int goldMin = baseValue / 4;
+            int goldmax = random.Next(baseValue - goldMin) + goldMin;
+
+            Ranking<UserRank> levelranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            var level = levelranking as LevelRanking;
+
+            while (level.rankList.Count > 1)
+            {
+                int randv = random.Next(level.rankList.Count);
+                var userrank = level.rankList[randv];
+                if (userrank.UserID == userId 
+                    || FindUserFriends(userId).IsHaveFriend(userrank.UserID)
+                    || FindUserEnemy(userId).IsHaveEnemy(userrank.UserID))
+                {
+                    continue;
+                }
+
+                var rival = FindUserBasis(userrank.UserID);
+
+                lottery.Rob.RivalUid = userrank.UserID;
+                lottery.Rob.RivalName = rival.NickName;
+                lottery.Rob.RivalAvatarUrl = rival.AvatarUrl;
+                BigInteger targetGold = Math.Ceiling(rival.UserLv / 50.0).ToInt() * goldmax;
+                lottery.Rob.Gold = targetGold.ToString();
+                lottery.Rob.IsPrimary = true;
+                lottery.Rob.RivalProfession = rival.Profession;
+                break;
+            }
+
+           
+          
+        }
         /// <summary>
         /// 充值成功vip等级改变通知
         /// </summary>
@@ -1735,8 +2005,9 @@ namespace GameServer.Script.Model.DataModel
                 elf.ElfList.RemoveAll(t => (
                             t.IsExperience && DateTime.Now.Subtract(t.Date).TotalMinutes >= t.ExperienceTimeMin
                         ));
-                if (elf.FindElf(elf.SelectID) == null)
+                if (elf.SelectID != 0 && elf.FindElf(elf.SelectID) == null)
                 {
+                    elf.SelectID = 0;
                     elf.SelectElfType = ElfSkillType.None;
                     elf.SelectElfValue = 0;
                 }

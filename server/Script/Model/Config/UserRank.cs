@@ -130,5 +130,11 @@ namespace GameServer.Script.Model.Config
         [ProtoMember(13)]
         public int VipLv { get; set; }
 
+        /// <summary>
+        /// 连击数
+        /// </summary>
+        [ProtoMember(14)]
+        public int ComboNum { get; set; }
+
     }
 }

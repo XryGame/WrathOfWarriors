@@ -59,7 +59,7 @@ namespace GameServer.CsScript.Action
             }
             
             UserHelper.ConsumeDiamond(Current.UserId, needDiamond);
-            GetBasis.LotteryTimes = MathUtils.Addition(GetBasis.LotteryTimes, 1);
+            GetLottery.LotteryTimes = MathUtils.Addition(GetLottery.LotteryTimes, 1);
 
             receipt = true;
             return true;

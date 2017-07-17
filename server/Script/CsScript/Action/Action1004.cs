@@ -13,6 +13,7 @@ using ZyGames.Framework.Game.Contract;
 using GameServer.CsScript.Base;
 using System.Configuration;
 using GameServer.Script.Model.Enum.Enum;
+using GameServer.Script.Model;
 
 namespace GameServer.CsScript.Action
 {
@@ -118,6 +119,10 @@ namespace GameServer.CsScript.Action
                     combat.AvatarUrl = basis.AvatarUrl;
                     var level = UserHelper.FindRankUser(basis.UserID, RankType.Level);
                     level.AvatarUrl = basis.AvatarUrl;
+                    var fight = UserHelper.FindRankUser(basis.UserID, RankType.FightValue);
+                    fight.AvatarUrl = basis.AvatarUrl;
+                    var combo = UserHelper.FindRankUser(basis.UserID, RankType.Combo);
+                    combo.AvatarUrl = basis.AvatarUrl;
                 }
 
                 UserHelper.UserOnline(basis.UserID);

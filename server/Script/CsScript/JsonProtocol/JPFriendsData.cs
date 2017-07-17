@@ -26,8 +26,16 @@ namespace GameServer.CsScript.JsonProtocol
 
         public bool IsReceiveGiveAway { get; set; }
 
+        public string RobGold { get; set; }
+
     }
 
+    public class JPFriendRobData
+    {
+        public int UserId { get; set; }
+
+        public string Gold { get; set; }
+    }
     public class JPFriendApplyData
     {
 
@@ -56,12 +64,15 @@ namespace GameServer.CsScript.JsonProtocol
         {
             FriendsList = new List<JPFriendData>();
             ApplyList = new List<JPFriendApplyData>();
+            //TodayRobList = new List<int>();
         }
         public int GiveAwayCount { get; set; }
 
         public List<JPFriendData> FriendsList;
 
         public List<JPFriendApplyData> ApplyList;
+
+        //public List<int> TodayRobList;
 
     }
 }

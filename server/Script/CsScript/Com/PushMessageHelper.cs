@@ -79,6 +79,18 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1050, packet, (rsession, asyncResult) => { }, 0);
         }
 
+        /// <summary>
+        /// 体力改变通知
+        /// </summary>
+        /// <param name="session"></param>
+        public static void UserVitChangedNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1051, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1051, packet, (rsession, asyncResult) => { }, 0);
+        }
+
         ///// <summary>
         ///// 升级通知
         ///// </summary>
@@ -483,6 +495,28 @@ namespace GameServer.Script.CsScript.Com
                 return;
             var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1087, session, null, OpCode.Text, null);
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1087, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 新的被偷/抢消息
+        /// </summary>
+        public static void NewStealRobNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1088, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1088, packet, (rsession, asyncResult) => { }, 0);
+        }
+
+        /// <summary>
+        /// 等级改变通知
+        /// </summary>
+        public static void UserLvChangeNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1052, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
         }
 
         /// <summary>

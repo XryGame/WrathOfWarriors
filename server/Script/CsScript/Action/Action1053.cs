@@ -74,7 +74,7 @@ namespace GameServer.CsScript.Action
 
             receipt.Task = GetTask;
 
-            receipt.LotteryTimes = GetBasis.LotteryTimes;
+            receipt.LotteryTimes = GetLottery.LotteryTimes;
 
             receipt.SignStartID = DataHelper.SignStartID;
 

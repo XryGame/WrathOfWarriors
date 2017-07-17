@@ -1,6 +1,7 @@
 ﻿using GameServer.CsScript.Base;
 using GameServer.CsScript.Com;
 using GameServer.Script.CsScript.Com;
+using GameServer.Script.Model;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;

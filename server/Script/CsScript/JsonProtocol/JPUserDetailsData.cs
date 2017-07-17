@@ -14,6 +14,8 @@ namespace GameServer.CsScript.JsonProtocol
         {
             Friends = new JPFriendsData();
             GuildData = new JPGuildData();
+            Enemys = new JPEnemysData();
+            VitData = new JPVitData();
         }
         public int UserId { get; set; }
 
@@ -81,10 +83,18 @@ namespace GameServer.CsScript.JsonProtocol
 
         public UserTransferItemCache Transfer { get; set; }
 
+        public JPEnemysData Enemys { get; set; }
+
+        public UserLotteryCache Lottery { get; set; }
+
+        public JPVitData VitData { get; set; }
+
         public long OfflineTimeSec { get; set; }
 
         public string OfflineEarnings { get; set; }
 
         public long LastMatchFightFailedDate { get; set; }
+
+        public int ComboNum { get; set; }
     }
 }

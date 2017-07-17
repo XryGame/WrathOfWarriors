@@ -40,31 +40,32 @@ namespace GameServer.CsScript.Action
         public override bool TakeAction()
         {
             receipt = new JPRequestRankData();
-            
-            
-            //UserRank rankInfo = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
-            //if (rankInfo != null)
-            //{
-            //    receipt.SelfRank = rankInfo.RankId;
-            //}
 
-            //int pagecout;
-            //var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-            //var list = ranking.GetRange(0, 50, out pagecout);
-            //foreach (var data in list)
-            //{
-            //    JPRankUserData jpdata = new JPRankUserData()
-            //    {
-            //        UserId = data.UserID,
-            //        NickName = data.NickName,
-            //        Profession = data.Profession,
-            //        RankId = data.RankId,
-            //        UserLv = data.UserLv,
-            //        FightValue = data.FightValue,
-            //        VipLv = data.VipLv
-            //    };
-            //    receipt.List.Add(jpdata);
-            //}
+
+            UserRank rankInfo = UserHelper.FindRankUser(Current.UserId, RankType.FightValue);
+            if (rankInfo != null)
+            {
+                receipt.SelfRank = rankInfo.RankId;
+            }
+
+            int pagecout;
+            var ranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            var list = ranking.GetRange(0, 50, out pagecout);
+            foreach (var data in list)
+            {
+                JPRankUserData jpdata = new JPRankUserData()
+                {
+                    UserID = data.UserID,
+                    NickName = data.NickName,
+                    Profession = data.Profession,
+                    AvatarUrl = data.AvatarUrl,
+                    RankId = data.RankId,
+                    UserLv = data.UserLv,
+                    FightValue = data.FightValue,
+                    VipLv = data.VipLv
+                };
+                receipt.List.Add(jpdata);
+            }
             return true;
         }
 

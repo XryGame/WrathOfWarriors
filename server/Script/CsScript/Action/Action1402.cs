@@ -76,11 +76,11 @@ namespace GameServer.CsScript.Action
 
             receipt = new CombatRivalData();
             receipt.Result = CombatReqRivalResult.OK;
-            if (rankinfo.RankId <= rivalrankinfo.RankId)
-            {
-                receipt.Result = CombatReqRivalResult.RankOverdue;
-                return true;
-            }
+            //if (rankinfo.RankId <= rivalrankinfo.RankId)
+            //{
+            //    receipt.Result = CombatReqRivalResult.RankOverdue;
+            //    return true;
+            //}
             if (rivalrankinfo.IsFighting)
             {
                 receipt.Result = CombatReqRivalResult.RivalIsFinging;

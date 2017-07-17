@@ -8,6 +8,7 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
@@ -25,6 +26,8 @@ namespace GameServer.CsScript.Action
 
         private string goldNum;
 
+        private string dropTime;
+
         public Action1110(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1110, actionGetter)
         {
@@ -39,7 +42,8 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetString("GoldNum", ref goldNum))
+            if (httpGet.GetString("GoldNum", ref goldNum)
+                && httpGet.GetString("Time", ref dropTime))
             {
                 return true;
             }
@@ -48,27 +52,74 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            var timespan = DateTime.Now.Subtract(GetBasis.LastDropGoldTime);
-            double sec = timespan.TotalSeconds;
+            
+     
+            var monster = new ShareCacheStruct<Config_Monster>().Find(t => t.Grade == GetBasis.UserLv);
+            if (monster == null)
+                return false;
+            
 
-            if (sec >= 3)
+            BigInteger dropGold = BigInteger.Parse(monster.DropoutGold);
+            BigInteger uploadingGold = BigInteger.Parse(goldNum);
+
+
+            bool isDataError = false;
+            if (dropGold != uploadingGold)
             {
-                GetBasis.LastDropGoldTime = DateTime.Now;
-                GetBasis.DropGoldIntervalCount = 1;
-            }
-            else
-            {
-                GetBasis.DropGoldIntervalCount++;
-                if (GetBasis.DropGoldIntervalCount > 6)
+                if (GetBasis.UserLv % 5 == 0)
                 {
-                    GetBasis.LastDropGoldTime = DateTime.Now;
-                    GetBasis.DropGoldIntervalCount = 0;
-
-                    PushMessageHelper.UserGameDataExceptionNotification(Current);
-                    return false;
+                    var lastmonster = new ShareCacheStruct<Config_Monster>().Find(t => t.Grade == GetBasis.UserLv - 1);
+                    if (lastmonster != null)
+                    {
+                        dropGold = BigInteger.Parse(lastmonster.DropoutGold);
+                        if (dropGold != uploadingGold)
+                        {
+                            isDataError = true;
+                        }
+                    }
+                }
+                else
+                {
+                    isDataError = true;
                 }
             }
-            UserHelper.RewardsGold(Current.UserId, goldNum, UpdateCoinOperate.KillMonsterReward, true);
+
+            if (!isDataError)
+            {
+                DateTime dropDate = Util.GetTime(dropTime);
+                if (GetBasis.LastDropGoldTime == DateTime.MinValue)
+                {
+                    GetBasis.LastDropGoldTime = dropDate;
+                }
+                else
+                {
+                    var timespan = dropDate.Subtract(GetBasis.LastDropGoldTime);
+                    double sec = timespan.TotalSeconds;
+                    if (sec >= 3)
+                    {
+                        GetBasis.LastDropGoldTime = dropDate;
+                        GetBasis.DropGoldIntervalCount = 1;
+                    }
+                    else
+                    {
+                        GetBasis.DropGoldIntervalCount++;
+                        if (GetBasis.DropGoldIntervalCount > 6)
+                        {
+                            isDataError = true;
+                        }
+                    }
+                }
+            }
+
+            if (isDataError)
+            {
+                
+                GetBasis.DropGoldIntervalCount = 0;
+                PushMessageHelper.UserGameDataExceptionNotification(Current);
+                return false;
+            }
+            
+            UserHelper.RewardsGold(Current.UserId, monster.DropoutGold, UpdateCoinOperate.KillMonsterReward, true);
             receipt = true;
             return true;
         }

@@ -32,7 +32,9 @@ namespace GameServer.Script.Model.DataModel
             IsRefreshing = true;
             ShareDate = 0;
             ReceiveInviteList = new CacheList<int>();
-            LastDropGoldTime = DateTime.Now;
+            LastDropGoldTime = DateTime.MinValue;
+            LastPassLevelTime = DateTime.Now;
+            StartRestoreVitDate = DateTime.MinValue;
         }
         public UserBasisCache(int userid)
         : this()
@@ -267,6 +269,20 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        private int _Vit;
+        [ProtoMember(15)]
+        [EntityField("Vit")]
+        public int Vit
+        {
+            get
+            {
+                return _Vit;
+            }
+            set
+            {
+                SetChange("Vit", value);
+            }
+        }
 
 
         private UserStatus _UserStatus;
@@ -391,27 +407,24 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("CombatRankID", value);
             }
         }
-        
 
-        /// <summary>
-        /// 当天抽奖剩余次数
-        /// </summary>
-        private int _LotteryTimes;
+        private int _ComboRankID;
         [ProtoMember(32)]
-        [EntityField("LotteryTimes")]
-        public int LotteryTimes
+        [EntityField("ComboRankID")]
+        public int ComboRankID
         {
             get
             {
-                return _LotteryTimes;
+                return _ComboRankID;
             }
             set
             {
-                SetChange("LotteryTimes", value);
+                SetChange("ComboRankID", value);
             }
         }
-        
-        
+
+
+
 
         /// <summary>
         /// vip礼包领取进度
@@ -467,6 +480,23 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 上次体力回复时间
+        /// </summary>
+        private DateTime _StartRestoreVitDate;
+        [ProtoMember(36)]
+        [EntityField("StartRestoreVitDate")]
+        public DateTime StartRestoreVitDate
+        {
+            get
+            {
+                return _StartRestoreVitDate;
+            }
+            set
+            {
+                SetChange("StartRestoreVitDate", value);
+            }
+        }
 
         /// <summary>
         /// 春节红包
@@ -557,6 +587,40 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("ReceiveInviteList", value);
             }
         }
+        /// <summary>
+        /// 连击数
+        /// </summary>
+        private int _ComboNum;
+        [ProtoMember(42)]
+        [EntityField("ComboNum")]
+        public int ComboNum
+        {
+            get
+            {
+                return _ComboNum;
+            }
+            set
+            {
+                SetChange("ComboNum", value);
+            }
+        }
+        /// <summary>
+        /// 回退的关卡数
+        /// </summary>
+        private int _BackLevelNum;
+        [ProtoMember(43)]
+        [EntityField("BackLevelNum")]
+        public int BackLevelNum
+        {
+            get
+            {
+                return _BackLevelNum;
+            }
+            set
+            {
+                SetChange("BackLevelNum", value);
+            }
+        }
 
         #endregion
 
@@ -627,6 +691,21 @@ namespace GameServer.Script.Model.DataModel
             get;
             set;
         }
+
+        [ProtoMember(109)]
+        public DateTime LastPassLevelTime
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(110)]
+        public int LastPassLevelID
+        {
+            get;
+            set;
+        }
+
 
         public override string GetNickName()
         {
@@ -701,6 +780,7 @@ namespace GameServer.Script.Model.DataModel
                     //case "Exp": return Exp;
                     case "VipLv": return VipLv;
                     case "AvatarUrl": return AvatarUrl;
+                    case "Vit": return Vit;
                     case "UserStatus": return UserStatus;
                     case "CreateDate": return CreateDate;
                     case "LoginDate": return LoginDate;
@@ -710,15 +790,18 @@ namespace GameServer.Script.Model.DataModel
                     case "FightValueRankID": return FightValueRankID;
                     case "LevelRankID": return LevelRankID;
                     case "CombatRankID": return CombatRankID;
-                    case "LotteryTimes": return LotteryTimes;
+                    case "ComboRankID": return ComboRankID;
                     case "VipGiftProgress": return VipGiftProgress;
                     case "ShareCount": return ShareCount;
                     case "ShareDate": return ShareDate;
+                    case "StartRestoreVitDate": return StartRestoreVitDate;
                     case "IsReceivedRedPacket": return IsReceivedRedPacket;
                     case "OfflineEarnings": return OfflineEarnings;
                     case "OfflineTimeSec": return OfflineTimeSec;
                     case "InviteCount": return InviteCount;
                     case "ReceiveInviteList": return ReceiveInviteList;
+                    case "ComboNum": return ComboNum;
+                    case "BackLevelNum": return BackLevelNum;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -770,6 +853,9 @@ namespace GameServer.Script.Model.DataModel
                     case "AvatarUrl":
                         _AvatarUrl = value.ToNotNullString();
                         break;
+                    case "Vit":
+                        _Vit = value.ToInt();
+                        break;
                     case "UserStatus":
                         _UserStatus = value.ToEnum<UserStatus>();
                         break;
@@ -794,8 +880,8 @@ namespace GameServer.Script.Model.DataModel
                     case "CombatRankID":
                         _CombatRankID = value.ToInt();
                         break;
-                    case "LotteryTimes":
-                        _LotteryTimes = value.ToInt();
+                    case "ComboRankID":
+                        _ComboRankID = value.ToInt();
                         break;
                     case "VipGiftProgress":
                         _VipGiftProgress = value.ToInt();
@@ -805,6 +891,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "ShareDate":
                         _ShareDate = value.ToLong();
+                        break;
+                    case "StartRestoreVitDate":
+                        _StartRestoreVitDate = value.ToDateTime();
                         break;
                     case "IsReceivedRedPacket":
                         _IsReceivedRedPacket = value.ToBool();
@@ -820,6 +909,12 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "ReceiveInviteList":
                         _ReceiveInviteList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "ComboNum":
+                        _ComboNum = value.ToInt();
+                        break;
+                    case "BackLevelNum":
+                        _BackLevelNum = value.ToInt();
                         break;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
@@ -855,12 +950,41 @@ namespace GameServer.Script.Model.DataModel
 
         public void SubGold(BigInteger num)
         {
-            if (GoldNum > num)
+            if (GoldNum >= num)
             {
                 Gold = (GoldNum - num).ToNotNullString();
             }
         }
 
+        public long RestoreVitRemainTimeSec()
+        {
+            long ret = 0;
 
+            int restoreTimesSec = DataHelper.VitRestoreTimesSec;
+
+
+            if (StartRestoreVitDate != DateTime.MinValue)
+            {
+                var timespan = DateTime.Now.Subtract(StartRestoreVitDate);
+                int canAddTimes = DataHelper.VitMax - Vit;
+
+                int sec = (int)Math.Floor(timespan.TotalSeconds);
+
+                int addtimes = Math.Min(sec / restoreTimesSec * DataHelper.VitRestore, canAddTimes);// 一次恢复4次
+                Vit += addtimes;
+                ret = restoreTimesSec - sec % restoreTimesSec;
+
+                StartRestoreVitDate = StartRestoreVitDate.AddSeconds(
+                        Math.Min(sec / restoreTimesSec, canAddTimes) * restoreTimesSec
+                    );
+            }
+            else
+            {
+                Vit = DataHelper.VitMax;
+                StartRestoreVitDate = DateTime.Now;
+            }
+
+            return ret;
+        }
     }
 }

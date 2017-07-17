@@ -54,35 +54,37 @@ namespace GameServer.CsScript.Action
             }
             
             int minv, maxv;
-            minv = Math.Max(GetBasis.UserLv - 25, 0);
-            maxv = minv + 25;
 
-            var onlinelist = UserHelper.GetOnlinesList();
+            //minv = Math.Max(GetBasis.UserLv - 25, 0);
+            //maxv = GetBasis.UserLv + 25;
+
+            //var onlinelist = UserHelper.GetOnlinesList();
             List<int> matchlist = new List<int>();
-            foreach (var v in onlinelist)
-            {
-                if (v.UserId == Current.UserId)
-                    continue;
-                var basis = UserHelper.FindUserBasis(v.UserId);
-                if (basis != null && basis.UserLv >= minv && basis.UserLv <= maxv)
-                    matchlist.Add(v.UserId);
-            }
+            //foreach (var v in onlinelist)
+            //{
+            //    if (v.UserId == Current.UserId)
+            //        continue;
+            //    var basis = UserHelper.FindUserBasis(v.UserId);
+            //    if (basis != null && basis.UserLv >= minv && basis.UserLv <= maxv)
+            //        matchlist.Add(v.UserId);
+            //}
 
-            if (matchlist.Count == 0)
+            var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+
+            int temp = 25;
+            int count = 0;
+            while (matchlist.Count == 0)
             {
-                var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
-                for (int i = minv; i <= maxv; ++i)
+                count++;
+                minv = Math.Max(GetBasis.UserLv - temp * count, 0);
+                maxv = GetBasis.UserLv + temp * count;
+                var findlist = ranking.FindAll(s => (s.UserLv > minv && s.UserLv <= maxv));
+                foreach (var rank in findlist)
                 {
-
-                    var findlist = ranking.FindAll(s => (s.UserLv == i));
-                    foreach (var rank in findlist)
+                    if (rank.UserID != Current.UserId)
                     {
-                        if (rank.UserID != Current.UserId)
-                        {
-                            matchlist.Add(rank.UserID);
-                        }
+                        matchlist.Add(rank.UserID);
                     }
-
                 }
             }
 

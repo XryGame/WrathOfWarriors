@@ -23,6 +23,7 @@ namespace GameServer.Script.Model.DataModel
         {
             FriendsList = new CacheList<FriendData>();
             ApplyList = new CacheList<FriendApplyData>();
+            TodayRobList = new CacheList<int>();
             //ResetCache();
         }
         
@@ -97,7 +98,25 @@ namespace GameServer.Script.Model.DataModel
                 SetChange("GiveAwayCount", value);
             }
         }
-        
+
+        /// <summary>
+        /// 今天挑战记录
+        /// </summary>
+        private CacheList<int> _TodayRobList;
+        [ProtoMember(5)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> TodayRobList
+        {
+            get
+            {
+                return _TodayRobList;
+            }
+            set
+            {
+                SetChange("TodayRobList", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -115,6 +134,7 @@ namespace GameServer.Script.Model.DataModel
                     case "FriendsList": return FriendsList;
                     case "ApplyList": return ApplyList;
                     case "GiveAwayCount": return GiveAwayCount;
+                    case "TodayRobList": return TodayRobList;
                     default: throw new ArgumentException(string.Format("UserFriendsCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -135,6 +155,9 @@ namespace GameServer.Script.Model.DataModel
                         break;
                     case "GiveAwayCount":
                         _GiveAwayCount = value.ToInt();
+                        break;
+                    case "TodayRobList":
+                        _TodayRobList = ConvertCustomField<CacheList<int>>(value, index);
                         break;
                     default: throw new ArgumentException(string.Format("UserFriendsCache index[{0}] isn't exist.", index));
                 }
@@ -246,11 +269,25 @@ namespace GameServer.Script.Model.DataModel
             return fd != null && fd.IsByGiveAway;
         }
 
+        /// <summary>
+        /// 添加挑战记录
+        /// </summary>
+        /// <returns></returns>
+        public void AddRobRecord(int uid)
+        {
+            if (TodayRobList.Find(t => t == uid) == 0)
+            {
+                TodayRobList.Add(uid);
+            }
+
+        }
+
         public void ResetCache()
         {
             GiveAwayCount = 0;
             FriendsList.Clear();
             ApplyList.Clear();
+            TodayRobList.Clear();
         }
     }
 }

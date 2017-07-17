@@ -19,5 +19,7 @@ namespace GameServer.CsScript.JsonProtocol
         public long FightValue { get; set; }
 
         public int VipLv { get; set; }
+
+        public int ComboNum { get; set; }
     }
 }

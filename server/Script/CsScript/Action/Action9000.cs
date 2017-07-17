@@ -71,7 +71,7 @@ namespace GameServer.CsScript.Action
             }
 
             var signsurface = new ShareCacheStruct<Config_Signin>().Find(t => (
-                    t.ID == GetEventAward.SignCount + 1
+                    t.ID == DataHelper.SignStartID + GetEventAward.SignCount
             ));
             if (signsurface == null)
             {

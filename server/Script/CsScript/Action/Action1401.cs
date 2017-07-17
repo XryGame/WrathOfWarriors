@@ -2,6 +2,7 @@
 using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.Model;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum.Enum;

@@ -26,6 +26,7 @@ using System.Threading;
 using GameServer.Script.Model.Config;
 using ZyGames.Framework.Game.Runtime;
 using GameServer.CsScript.Remote;
+using GameServer.CsScript.Action;
 
 namespace GameServer.CsScript.Base
 {
@@ -34,6 +35,7 @@ namespace GameServer.CsScript.Base
     /// </summary>
     public static class SystemGlobal
     {
+        private static Random random = new Random();
         private static readonly object thisLock = new object();
         private static int maxCount = ConfigUtils.GetSetting("MaxLoadCount", "100").ToInt();
         private const int LoadDay = 1;
@@ -45,7 +47,9 @@ namespace GameServer.CsScript.Base
 
         //public static Competition64 competition64;
 
-        public static int TransferExpireCheckinterval = 0;
+        public static int TransferExpireCheckInterval = 0;
+
+        public static int LoopNoticeInterval = 0;
         public static bool IsRunning
         {
             get { return _isRunning; }
@@ -118,6 +122,21 @@ namespace GameServer.CsScript.Base
             
             InitRanking();
 
+
+            if (DataHelper.IsFirstOpenService)
+            {
+                
+                string ncikName = string.Empty;
+                var botsNameSet = new ShareCacheStruct<Config_BotsName>();
+                for (int i = 0; i < 5; ++i)
+                {
+                    ncikName = botsNameSet.FindKey(random.Next(botsNameSet.Count)).String;
+                    ncikName += botsNameSet.FindKey(random.Next(botsNameSet.Count)).Value;
+                    UserCenterUser ucu = Util.CreateUserCenterUser(Util.GetRandomGUIDPwd(), "0000", GameEnvironment.ProductServerId);
+                    Action1005.CreateRole(ucu.UserID, "", ucu.ServerID, ucu.OpenID, ucu.RetailID, ncikName, random.Next(1) + 1, "");
+                }
+
+            }
             //Bots.InitBots();
 
             //if (competition64 == null)
@@ -146,7 +165,8 @@ namespace GameServer.CsScript.Base
 
             RankingFactory.Add(new CombatRanking());
             RankingFactory.Add(new LevelRanking());
-            //RankingFactory.Add(new FightValueRanking());
+            RankingFactory.Add(new FightValueRanking());
+            RankingFactory.Add(new ComboRanking());
             RankingFactory.Add(new GuildRanking());
             RankingFactory.Start(timeOut);
 
@@ -359,10 +379,10 @@ namespace GameServer.CsScript.Base
             }
             //do something
 
-            TransferExpireCheckinterval++;
-            if (TransferExpireCheckinterval > 10)
+            TransferExpireCheckInterval++;
+            if (TransferExpireCheckInterval > 10)
             {
-                TransferExpireCheckinterval = 0;
+                TransferExpireCheckInterval = 0;
                 var onlinelist = UserHelper.GetOnlinesList();
                 foreach (var usersession in onlinelist)
                 {
@@ -373,6 +393,17 @@ namespace GameServer.CsScript.Base
 
            
             AutoFight.FightResponse();
+
+
+            LoopNoticeInterval++;
+            if (LoopNoticeInterval > 600)
+            {
+                LoopNoticeInterval = 0;
+                //string context = "尊敬的各位玩家，勇者之怒将于今天下午16点整删档测试结束后关闭服务器，"
+                //    + "感谢您对本次测试的支持。请您记好游戏昵称以及ID，联系客服 2602611792 进行奖励兑换，谢谢！";
+                string context = "本次测试充值的玩家，在测试结束后，正式服享受充值3倍钻石返还优惠，机不可失失不再来，快来一起闯关吧！";
+                GlobalRemoteService.SendNotice(NoticeMode.AllService, context);
+            }
 
             //Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);
             //guildRanking.ForceRefresh();

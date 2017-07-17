@@ -1,7 +1,9 @@
 ﻿using GameServer.CsScript.Base;
+using GameServer.CsScript.Com;
 using GameServer.CsScript.JsonProtocol;
 using GameServer.CsScript.Remote;
 using GameServer.Script.CsScript.Action;
+using GameServer.Script.CsScript.Com;
 using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
@@ -11,6 +13,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
+using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
 
 namespace GameServer.CsScript.Action
@@ -46,7 +49,7 @@ namespace GameServer.CsScript.Action
     {
         private LotteryData receipt;
         private Random random = new Random();
-        private bool isTenTimes = false;
+        private bool isFiveTimes = false;
         public Action1810(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1810, actionGetter)
         {
@@ -55,7 +58,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetBool("IsTenTimes", ref isTenTimes))
+            if (httpGet.GetBool("IsTenTimes", ref isFiveTimes))
             {
                 return true;
             }
@@ -74,11 +77,11 @@ namespace GameServer.CsScript.Action
 
             var itemSet = new ShareCacheStruct<Config_Item>();
 
-            int times = isTenTimes ? 10 : 1;
+            int times = isFiveTimes ? 5 : 1;
             
-            if (GetBasis.LotteryTimes <= times)
+            if (GetLottery.LotteryTimes <= times)
             {
-                int needDiamond = ConfigEnvSet.GetInt("User.BuyLotteryTimesNeedDiamond") * (times - GetBasis.LotteryTimes);
+                int needDiamond = ConfigEnvSet.GetInt("User.BuyLotteryTimesNeedDiamond") * (times - GetLottery.LotteryTimes);
                 if (GetBasis.DiamondNum < needDiamond)
                 {
                     receipt.Result = RequestLotteryResult.NoDiamond;
@@ -95,9 +98,21 @@ namespace GameServer.CsScript.Action
 
             int lotteryId = 0;
             LotteryAwardType awardType = LotteryAwardType.Gold;
+            GetLottery.StealTimes = 0;
+            GetLottery.RobTimes = 0;
             for (int i = 0; i < times; ++i)
             {
-                if (lotteryId == 0)
+                if (GetLottery.TotalCount == 0)
+                {
+                    lotteryId = 7;
+                    awardType = LotteryAwardType.Steal;
+                }
+                else if (GetLottery.TotalCount == 1)
+                {
+                    lotteryId = 8;
+                    awardType = LotteryAwardType.Rob;
+                }
+                else
                 {
                     var randlottery = UserHelper.RandomLottery(GetBasis.UserLv);
                     if (randlottery != null)
@@ -123,7 +138,7 @@ namespace GameServer.CsScript.Action
                             BigInteger resourceNum = BigInteger.Parse(lott.Content);
                             BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
                             awardGold += value;
-                            
+
                             item.ItemID = 0;
                             item.Num = value.ToString();
                         }
@@ -147,7 +162,7 @@ namespace GameServer.CsScript.Action
 
                                 awardItem.Add(new ItemData() { ID = lotteryGem.ID, Num = maxCount });
                             }
-                            
+
                         }
                         break;
                     case LotteryAwardType.Debris:
@@ -189,27 +204,47 @@ namespace GameServer.CsScript.Action
                             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(item.ItemID);
                             if (itemcfg != null)
                             {
-                                string context = string.Format("恭喜 {0} 在幸运大夺宝中获得精灵 {1}", 
+                                string context = string.Format("恭喜 {0} 在幸运大夺宝中获得精灵 {1}",
                                     GetBasis.NickName, itemcfg.ItemName);
                                 GlobalRemoteService.SendNotice(NoticeMode.World, context);
                             }
-
-
+                        }
+                        break;
+                    case LotteryAwardType.Steal:
+                        {
+                            GetLottery.StealTimes++;
+                            UserHelper.RandomStealTarget(Current.UserId);
+                        }
+                        break;
+                    case LotteryAwardType.Rob:
+                        {
+                            GetLottery.RobTimes++;
+                            UserHelper.RandomRobTarget(Current.UserId);
+                        }
+                        break;
+                    case LotteryAwardType.Vit:
+                        {
+                            GetBasis.Vit += lott.Content.ToInt();
+                            PushMessageHelper.UserVitChangedNotification(Current);
                         }
                         break;
                 }
-                lotteryId = 0;
                 receipt.AwardList.Add(item);
+
+                GetLottery.TotalCount++;
             }
 
             UserHelper.RewardsGold(Current.UserId, awardGold, UpdateCoinOperate.NormalReward, true);
             UserHelper.RewardsDiamond(Current.UserId, awardDiamond);
             UserHelper.RewardsItems(Current.UserId, awardItem);
 
-            if (GetBasis.LotteryTimes > 0)
-                GetBasis.LotteryTimes = MathUtils.Subtraction(GetBasis.LotteryTimes, times, 0);
-
-
+            if (GetLottery.LotteryTimes == ConfigEnvSet.GetInt("User.LotteryTimesMax"))
+            {
+                GetLottery.StartRestoreLotteryTimesDate = DateTime.Now;
+            }
+            if (GetLottery.LotteryTimes > 0)
+                GetLottery.LotteryTimes = MathUtils.Subtraction(GetLottery.LotteryTimes, times, 0);
+            
             UserHelper.EveryDayTaskProcess(Current.UserId, TaskType.Lottery, times);
 
             receipt.Result = RequestLotteryResult.OK;

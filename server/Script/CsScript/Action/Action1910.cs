@@ -93,14 +93,15 @@ namespace GameServer.CsScript.Action
                 receipt.AwardItemList.Add(new ItemData() { ID = acc.DAwardID, Num = acc.DAwardN });
 
 
-            foreach (var it in receipt.AwardItemList)
-            {
-                Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(it.ID);
-                if (item != null)
-                {
-                    GetPackage.AddItem(it.ID, it.Num);
-                }
-            }
+            UserHelper.RewardsItems(Current.UserId, receipt.AwardItemList);
+            //foreach (var it in receipt.AwardItemList)
+            //{
+            //    Config_Item item = new ShareCacheStruct<Config_Item>().FindKey(it.ID);
+            //    if (item != null)
+            //    {
+            //        GetPackage.AddItem(it.ID, it.Num);
+            //    }
+            //}
 
             return true;
         }

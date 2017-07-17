@@ -71,9 +71,29 @@ namespace GameServer.CsScript.Action
                 }
 
                 
-                basis = CreateRole();
-                if (basis == null)
+                basis = CreateRole(UserId, Sid, ServerID, Pid, RetailID, UserName, profession, HeadID);
+                if (basis != null)
+                {
+                    /// 邀请处理
+                    if (!string.IsNullOrEmpty(unid))
+                    {
+                        var selflist = Util.FindUserCenterUser(Pid, RetailID, ServerID);
+                        var inviterlist = Util.FindUserCenterUser(unid, RetailID, ServerID);
+                        if (inviterlist.Count > 0 && inviterlist[0].UserID != 0 && Pid != unid)
+                        {
+                            if (selflist.Count > 0 && string.IsNullOrEmpty(selflist[0].Unid))
+                            {
+                                inviterUserId = inviterlist[0].UserID;
+                                selflist[0].Unid = unid;
+                            }
+                        }
+                    }
+                }
+                else
+                {
                     return false;
+                }
+
                 nickNameCheck.OnCreateAfter(basis);
             }
             else
@@ -123,8 +143,8 @@ namespace GameServer.CsScript.Action
                     Title = "《勇者之怒》删档测试通知",
                     Sender = "系统",
                     Date = DateTime.Now,
-                    Context = "尊敬的玩家，您好，欢迎您进入我们的游戏，目前游戏正在删档封测阶段，如果您在游戏中遇到任何问题，请及时进入qq群2915725 联系平台客服或者联系qq 2602611792处理。\n" +
-                                "  本次测试时间为6月21日~6月30日，测试结束后，我们将清空所有玩家数据，请玩家牢记游戏ID以及昵称，及时联系平台客服兑换奖励，没有获奖的玩家也可以在游戏正式上线时"+
+                    Context = "尊敬的玩家，您好，欢迎您进入我们的游戏，目前游戏正在删档封测阶段，如果您在游戏中遇到任何问题，请及时联系qq 2602611792处理。\n" +
+                                "  本次测试时间为7月11日~7月18日，测试结束后，我们将清空所有玩家数据，请玩家牢记角色ID以及昵称，及时联系平台客服兑换奖励，没有获奖的玩家也可以在游戏正式上线时"+
                                 "使用测试时的账号登录游戏可以享受充值3倍钻石优惠以及领取老玩家大礼包一份，千万不要错过哟！",
                 };
                 UserHelper.AddNewMail(basis.UserID, mail, false);
@@ -148,22 +168,23 @@ namespace GameServer.CsScript.Action
             return true;
         }
 
-        private UserBasisCache CreateRole()
+        public static  UserBasisCache CreateRole(int _UserId, string _Sid, int _ServerID, string _Pid, string _RetailID, 
+            string _UserName, int _profession, string _HeadID)
         {
             // Basis初始化
-            UserBasisCache basis = new UserBasisCache(UserId);
+            UserBasisCache basis = new UserBasisCache(_UserId);
             basis.IsRefreshing = true;
-            basis.SessionID = Sid;
-            basis.ServerID = ServerID;
-            basis.Pid = Pid;
-            basis.RetailID = RetailID;
-            basis.NickName = UserName;
+            basis.SessionID = _Sid;
+            basis.ServerID = _ServerID;
+            basis.Pid = _Pid;
+            basis.RetailID = _RetailID;
+            basis.NickName = _UserName;
             basis.UserLv = (short)ConfigEnvSet.GetInt("User.Level");
             basis.RewardsDiamond = ConfigEnvSet.GetInt("User.InitDiamond");
             //bisis.Vit = DataHelper.InitVit;
             basis.VipLv = ConfigEnvSet.GetInt("User.VipLv");
-            basis.Profession = profession;
-            basis.AvatarUrl = HeadID;
+            basis.Profession = _profession;
+            basis.AvatarUrl = _HeadID;
             basis.UserStatus = UserStatus.MainUi;
             basis.LoginDate = DateTime.Now;
             basis.CreateDate = DateTime.Now;
@@ -227,7 +248,7 @@ namespace GameServer.CsScript.Action
             // 技能初始化
             UserSkillCache skillcache = new UserSkillCache();
             skillcache.UserID = basis.UserID;
-            skillcache.ResetCache(profession);
+            skillcache.ResetCache(_profession);
             var skillSet = new PersonalCacheStruct<UserSkillCache>();
             skillSet.Add(skillcache);
             skillSet.Update();
@@ -322,6 +343,22 @@ namespace GameServer.CsScript.Action
             transferSet.Add(transfercache);
             transferSet.Update();
 
+            // 仇人数据初始化
+            UserEnemysCache enemy = new UserEnemysCache();
+            enemy.UserID = basis.UserID;
+            enemy.ResetCache();
+            var enemySet = new PersonalCacheStruct<UserEnemysCache>();
+            enemySet.Add(enemy);
+            enemySet.Update();
+
+            // 抽奖数据初始化
+            UserLotteryCache lottery = new UserLotteryCache();
+            lottery.UserID = basis.UserID;
+            lottery.ResetCache();
+            var lotterySet = new PersonalCacheStruct<UserLotteryCache>();
+            lotterySet.Add(lottery);
+            lotterySet.Update();
+
             UserHelper.RefreshUserFightValue(basis.UserID, false);
 
             // 排行榜初始化
@@ -348,32 +385,22 @@ namespace GameServer.CsScript.Action
             level.TryAppend(levelRank);
             level.rankList.Add(levelRank);
 
-            //UserRank fightRank = new UserRank(combatRank);
-            //Ranking<UserRank> fightranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
-            //var fight = fightranking as FightValueRanking;
-            //fight.TryAppend(fightRank);
-            //fight.rankList.Add(fightRank);
-            
+            UserRank fightRank = new UserRank(combatRank);
+            Ranking<UserRank> fightranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            var fight = fightranking as FightValueRanking;
+            fight.TryAppend(fightRank);
+            fight.rankList.Add(fightRank);
+
+            UserRank comboRank = new UserRank(combatRank);
+            Ranking<UserRank> comboranking = RankingFactory.Get<UserRank>(ComboRanking.RankingKey);
+            var combo = comboranking as ComboRanking;
+            combo.TryAppend(comboRank);
+            combo.rankList.Add(comboRank);
+
 
             UserHelper.RestoreUserData(basis.UserID);
             UserHelper.EveryDayTaskProcess(basis.UserID, TaskType.Login, 1, false);
             //UserHelper.AddMouthCardMail(basis.UserID);
-
-
-            /// 邀请处理
-            if (!string.IsNullOrEmpty(unid))
-            {
-                var selflist = Util.FindUserCenterUser(Pid, RetailID, ServerID);
-                var inviterlist = Util.FindUserCenterUser(unid, RetailID, ServerID);
-                if (inviterlist.Count > 0 && inviterlist[0].UserID != 0 && Pid != unid)
-                {
-                    if (selflist.Count > 0 && string.IsNullOrEmpty(selflist[0].Unid))
-                    {
-                        inviterUserId = inviterlist[0].UserID;
-                        selflist[0].Unid = unid;
-                    }
-                }
-            }
 
 
             return basis;

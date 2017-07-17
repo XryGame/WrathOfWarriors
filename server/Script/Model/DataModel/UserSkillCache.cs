@@ -148,6 +148,7 @@ namespace GameServer.Script.Model.DataModel
 
         public void ResetCache(int profession)
         {
+            
             SkillList.Clear();
             CarryList.Clear();
 
@@ -161,10 +162,18 @@ namespace GameServer.Script.Model.DataModel
                 AddSkill(v.SkillID);
             }
 
-            if (list.Count >= 2)
+            if (list.Count > 3)
             {
-                CarryList.Add(list[list.Count - 1].SkillID);
-                CarryList.Add(list[list.Count - 2].SkillID);
+                Random random = new Random();
+                while (CarryList.Count < 3)
+                {
+                    int index = random.Next(list.Count);
+                    int addSkillId = list[index].SkillID;
+                    if (addSkillId == 10000 || addSkillId == 20000)
+                        continue;
+                    if (CarryList.Find(t => t == addSkillId) == 0)
+                        CarryList.Add(addSkillId);
+                }
             }
             
         }

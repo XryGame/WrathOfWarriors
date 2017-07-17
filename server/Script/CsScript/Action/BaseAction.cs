@@ -151,6 +151,22 @@ namespace GameServer.Script.CsScript.Action
             }
         }
 
+        public UserEnemysCache GetEnemys
+        {
+            get
+            {
+                return UserHelper.FindUserEnemy(Current.UserId);
+            }
+        }
+
+        public UserLotteryCache GetLottery
+        {
+            get
+            {
+                return UserHelper.FindUserLottery(Current.UserId);
+            }
+        }
+
         public void setErrorCode(int errorcode)
         {
             _resultData.ErrorCode = errorcode;

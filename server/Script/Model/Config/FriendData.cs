@@ -17,6 +17,7 @@ namespace GameServer.Script.Model.Config
         public FriendData()
             : base(false)
         {
+            RobGold = "0";
         }
         
         /// <summary>
@@ -42,6 +43,12 @@ namespace GameServer.Script.Model.Config
         /// </summary>
         [ProtoMember(4)]
         public bool IsReceiveGiveAway { get; set; }
+
+        /// <summary>
+        /// 抢夺金币
+        /// </summary>
+        [ProtoMember(5)]
+        public string RobGold { get; set; }
 
     }
 }

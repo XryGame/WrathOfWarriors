@@ -76,9 +76,9 @@ namespace gm_tool
         private void comboBox_SetEquipLevelEquipIDSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var select = sender as ComboBox;
-            if (select.SelectedIndex == 0) // 衣服
+            if (select.SelectedIndex == 0) // 武器
                 SelectSetEquipID = 10001;
-            else if (select.SelectedIndex == 1)  // 武器
+            else if (select.SelectedIndex == 1)  // 衣服
                 SelectSetEquipID = 10002;
             else if (select.SelectedIndex == 2)  // 鞋子
                 SelectSetEquipID = 10003;

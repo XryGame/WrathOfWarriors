@@ -48,14 +48,19 @@ namespace GameServer.CsScript.Action
                 return true;
             usepay.IsReceiveFirstPay = true;
 
+            List<ItemData> items = new List<ItemData>();
+            items.Add(new ItemData() { ID = 10002, Num = 2 });
+            items.Add(new ItemData() { ID = 10004, Num = 2 });
+            items.Add(new ItemData() { ID = 20024, Num = 1 });
+            items.Add(new ItemData() { ID = 32005, Num = 1 });
+            UserHelper.RewardsItems(Current.UserId, items);
+            //UserHelper.RewardsGold(Current.UserId, 100000);
+            //UserHelper.RewardsDiamond(Current.UserId, 20);
+            //UserHelper.RewardsItem(Current.UserId, 20024, 1);
+            //UserHelper.RewardsItem(Current.UserId, 32005, 1);
+            ////usepay.WeekCardDays += 7;
 
-            UserHelper.RewardsGold(Current.UserId, 100000);
-            UserHelper.RewardsDiamond(Current.UserId, 20);
-            UserHelper.RewardsItem(Current.UserId, 20024, 1);
-            UserHelper.RewardsItem(Current.UserId, 32005, 1);
-            //usepay.WeekCardDays += 7;
-
-            //PushMessageHelper.UserPaySucceedNotification(Current);
+            ////PushMessageHelper.UserPaySucceedNotification(Current);
             receipt = true;
             return true;
         }

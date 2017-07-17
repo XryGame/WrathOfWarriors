@@ -42,6 +42,9 @@ namespace GameServer.Script.Model.Enum.Enum
         /// 战力
         /// </summary>
         FightValue,
-
+        /// <summary>
+        /// 连击
+        /// </summary>
+        Combo,
     }
 }

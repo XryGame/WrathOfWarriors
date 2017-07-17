@@ -60,24 +60,24 @@ namespace GameServer.CsScript.Action
             {
                 receipt = RequestFriendResult.HadFriend;
             }
-            //else if (destFriends.IsHaveFriendApply(Current.UserId))
-            //{
-            //    receipt = RequestFriendResult.HadApply;
-            //}
+            else if (destFriends.IsHaveFriendApply(Current.UserId))
+            {
+                receipt = RequestFriendResult.HadApply;
+            }
             else
             {
                 receipt = RequestFriendResult.OK;
 
-                //destFriends.AddFriendApply(Current.UserId);
-                //var session = GameSession.Get(destuid);
-                //PushMessageHelper.NewFriendRequestNotification(GameSession.Get(destuid), Current.UserId);
+                destFriends.AddFriendApply(Current.UserId);
+                var session = GameSession.Get(destuid);
+                PushMessageHelper.NewFriendRequestNotification(GameSession.Get(destuid), Current.UserId);
 
-                GetFriends.AddFriend(destuid);
+                //GetFriends.AddFriend(destuid);
 
-                destFriends.AddFriend(Current.UserId);
+                //destFriends.AddFriend(Current.UserId);
 
-                PushMessageHelper.NewFriendNotification(GameSession.Get(destuid), Current.UserId);
-                PushMessageHelper.NewFriendNotification(Current, destuid);
+                //PushMessageHelper.NewFriendNotification(GameSession.Get(destuid), Current.UserId);
+                //PushMessageHelper.NewFriendNotification(Current, destuid);
 
             }
 

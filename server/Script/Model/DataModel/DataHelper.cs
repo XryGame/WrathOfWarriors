@@ -1,11 +1,9 @@
-﻿using GameServer.Script.Model.ConfigModel;
-using GameServer.Script.Model.Enum;
+﻿
+using GameServer.Script.Model.ConfigModel;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
-using ZyGames.Framework.Common.Configuration;
 using ZyGames.Framework.Data;
 
 namespace GameServer.Script.Model.DataModel
@@ -15,6 +13,8 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 开服日期
         /// </summary>
+        static public bool IsFirstOpenService = false;
+
         static public DateTime OpenServiceDate;
         static public string OpenServiceDataCacheKey = "OpenServicesDate";
 
@@ -23,7 +23,10 @@ namespace GameServer.Script.Model.DataModel
         /// <summary>
         /// 用户初始体力
         /// </summary>
-        static public int InitVit;
+        static public int VitInit;
+        static public int VitMax;
+        static public int VitRestore;
+        static public int VitRestoreTimesSec = 60;
         /// <summary>
         /// 通天塔日志最大数量
         /// </summary>
@@ -83,7 +86,9 @@ namespace GameServer.Script.Model.DataModel
 
         static public void InitData()
         {
-            InitVit = ConfigEnvSet.GetInt("User.InitVit");
+            VitInit = ConfigEnvSet.GetInt("User.VitInit");
+            VitMax = ConfigEnvSet.GetInt("User.VitMax");
+            VitRestore = ConfigEnvSet.GetInt("User.VitRestore");
             CombatLogCountMax = ConfigEnvSet.GetInt("User.CombatLogCountMax");
             FriendCountMax = ConfigEnvSet.GetInt("User.FriendCountMax");
             FriendApplyCountMax = ConfigEnvSet.GetInt("User.FriendApplyCountMax");
@@ -97,12 +102,16 @@ namespace GameServer.Script.Model.DataModel
             InviteFightDiamondWeekMax = ConfigEnvSet.GetInt("User.InviteFightDiamondWeekMax");
 
 
+
+
+
             var guildlist = new ShareCacheStruct<GuildsCache>().FindAll();
             foreach (var v in guildlist)
             {
                 v.Lv = v.ConvertLevel();
             }
             var gameCache = new ShareCacheStruct<GameCache>();
+            
             GameCache openServiceCache = gameCache.FindKey(OpenServiceDataCacheKey);
             if (openServiceCache == null)
             {
@@ -111,6 +120,8 @@ namespace GameServer.Script.Model.DataModel
                 openServiceCache.Value = DateTime.Now.ToString();
                 gameCache.Add(openServiceCache);
                 gameCache.Update();
+
+                IsFirstOpenService = true;
             }
             OpenServiceDate = openServiceCache.Value.ToDateTime();
 
