@@ -26,7 +26,7 @@ namespace GameServer.Script.Model.DataModel
         static public int VitInit;
         static public int VitMax;
         static public int VitRestore;
-        static public int VitRestoreTimesSec = 60;
+        static public int VitRestoreTimesSec = 3600;
         /// <summary>
         /// 通天塔日志最大数量
         /// </summary>
@@ -84,7 +84,7 @@ namespace GameServer.Script.Model.DataModel
 
 
 
-        static public void InitData()
+        public static void InitData()
         {
             VitInit = ConfigEnvSet.GetInt("User.VitInit");
             VitMax = ConfigEnvSet.GetInt("User.VitMax");
@@ -125,16 +125,18 @@ namespace GameServer.Script.Model.DataModel
             }
             OpenServiceDate = openServiceCache.Value.ToDateTime();
 
-            GameCache signStartIDCache = gameCache.FindKey(SignStartIDCacheKey);
-            if (signStartIDCache == null)
-            {
-                signStartIDCache = new GameCache();
-                signStartIDCache.Key = SignStartIDCacheKey;
-                signStartIDCache.Value = "1";
-                gameCache.Add(signStartIDCache);
-                gameCache.Update();
-            }
-            SignStartID = signStartIDCache.Value.ToInt();
+            
+            //GameCache signStartIDCache = gameCache.FindKey(SignStartIDCacheKey);
+            //if (signStartIDCache == null)
+            //{
+            //    signStartIDCache = new GameCache();
+            //    signStartIDCache.Key = SignStartIDCacheKey;
+            //    signStartIDCache.Value = "1";
+            //    gameCache.Add(signStartIDCache);
+            //    gameCache.Update();
+            //}
+            //SignStartID = signStartIDCache.Value.ToInt();
+            SignStartID = GetSignStartID();
 
 
             // 加载老用户记录
@@ -155,7 +157,29 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
         }
-        
 
+        public static int GetSignStartID()
+        {
+            int ret = 0;
+            DateTime temp = new DateTime(
+                        OpenServiceDate.Year,
+                        OpenServiceDate.Month,
+                        OpenServiceDate.Day,
+                        5,
+                        0,
+                        0
+                    );
+
+            TimeSpan timespan = DateTime.Now.Subtract(temp);
+
+            var alllist = new ShareCacheStruct<Config_Signin>().FindAll();
+            int remainder = timespan.Days % alllist.Count;
+            ret = remainder / 7 * 7 + 1;
+
+            return ret;
+        }
     }
+
+
+
 }

@@ -397,7 +397,7 @@ namespace GameServer.Script.Model.DataModel
             //eventaward.TodayOnlineTime = 0;
             eventaward.OnlineAwardId = 1;
             eventaward.OnlineStartTime = DateTime.Now;
-
+            eventaward.ReceiveVitStatusFlag = ReceiveVitStatus.No;
 
             // 公会
             guild.IsSignIn = false;
@@ -406,6 +406,7 @@ namespace GameServer.Script.Model.DataModel
             // 月卡季卡处理
             UserPayCache paycache = FindUserPay(uid);
             paycache.BuyGoldTimes = 0;
+            paycache.BuyVitTimes = 0;
             if (paycache != null)
             {
                 UserMailBoxCache mailbox = FindUserMailBox(uid);
@@ -500,8 +501,8 @@ namespace GameServer.Script.Model.DataModel
                 return;
             UserBasisCache basis = FindUserBasis(uid);
             UserPackageCache package = FindUserPackage(uid);
-            UserMailBoxCache mailbox = FindUserMailBox(uid);
-            UserEventAwardCache eventaward = FindUserEventAward(uid);
+            //UserMailBoxCache mailbox = FindUserMailBox(uid);
+            //UserEventAwardCache eventaward = FindUserEventAward(uid);
             if (basis == null)
             {
                 return;
@@ -774,20 +775,27 @@ namespace GameServer.Script.Model.DataModel
             }
             //do something
 
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
-            {
-                if (new ShareCacheStruct<Config_Signin>().FindKey(DataHelper.SignStartID + 13) != null)
-                {
-                    DataHelper.SignStartID += 7;
-                }
-                else
-                {
-                    DataHelper.SignStartID = 1;
-                }
-                GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
-                signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString();
+            //if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+            //{
+            //    if (new ShareCacheStruct<Config_Signin>().FindKey(DataHelper.SignStartID + 13) != null)
+            //    {
+            //        DataHelper.SignStartID += 7;
+            //    }
+            //    else
+            //    {
+            //        DataHelper.SignStartID = 1;
+            //    }
+            //    GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
+            //    signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString();
 
-            }
+            //}
+            //int signIdTemp = DataHelper.SignStartID;
+            DataHelper.SignStartID = DataHelper.GetSignStartID();
+            //if (DataHelper.SignStartID != signIdTemp)
+            //{
+            //    GameCache signStartIDCache = new ShareCacheStruct<GameCache>().FindKey(DataHelper.SignStartIDCacheKey);
+            //    signStartIDCache.Value = DataHelper.SignStartID.ToNotNullString();
+            //}
 
             var sessionlist = GameSession.GetAll();
             foreach (var session in sessionlist)
@@ -1280,7 +1288,7 @@ namespace GameServer.Script.Model.DataModel
 
             if (isElfSkillAdd && updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
-                basis.AddGold(count + count / 1000 * elf.SelectElfValue);
+                basis.AddGold(count + count * 1000 / 1000 * elf.SelectElfValue / 1000);
             }
             else
             {
@@ -1293,6 +1301,7 @@ namespace GameServer.Script.Model.DataModel
             AchievementProcess(uid, AchievementType.Gold, count.ToString());
         }
 
+
         public static void RewardsGold(int uid, string strCount, UpdateCoinOperate updateType = UpdateCoinOperate.NormalReward, bool isElfSkillAdd = false)
         {
             UserBasisCache basis = FindUserBasis(uid);
@@ -1304,7 +1313,7 @@ namespace GameServer.Script.Model.DataModel
 
             if (isElfSkillAdd && updateType != UpdateCoinOperate.OffineReward && elf.SelectElfType == ElfSkillType.OnlineGold)
             {
-                basis.AddGold(count + count / 1000 * elf.SelectElfValue);
+                basis.AddGold(count + count * 1000 / 1000 * elf.SelectElfValue / 1000);
             }
             else
             {
@@ -1315,6 +1324,23 @@ namespace GameServer.Script.Model.DataModel
 
             // 成就
             AchievementProcess(uid, AchievementType.Gold, count.ToString());
+        }
+
+
+        public static void RewardsVit(int uid, int count, bool isNotification = true)
+        {
+            if (count <= 0)
+                return;
+            UserBasisCache basis = FindUserBasis(uid);
+            if (basis == null)
+                return;
+            basis.Vit += count;
+
+            if (isNotification)
+            {
+                PushMessageHelper.UserVitChangedNotification(GameSession.Get(uid));
+            }
+            
         }
 
         public static void ConsumeGold(int uid, BigInteger count)

@@ -39,7 +39,22 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("ID", value);
             }
         }
-
+        /// <summary>
+        /// 类型
+        /// </summary>
+        private int _Type;
+        [EntityField("Type")]
+        public int Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                SetChange("Type", value);
+            }
+        }
         /// <summary>
         /// Key
         /// </summary>
@@ -202,6 +217,7 @@ namespace GameServer.Script.Model.ConfigModel
                 {
                     case "ID": return ID;
                     case "Key": return Key;
+                    case "Type": return Type;
                     case "AAwardID": return AAwardID;
                     case "AAwardN": return AAwardN;
                     case "BAwardID": return BAwardID;
@@ -224,6 +240,9 @@ namespace GameServer.Script.Model.ConfigModel
                         break;
                     case "Key":
                         _Key = value.ToNotNullString();
+                        break;
+                    case "Type":
+                        _Type = value.ToInt();
                         break;
                     case "AAwardID":
                         _AAwardID = value.ToInt();

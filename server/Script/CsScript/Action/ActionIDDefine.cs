@@ -715,6 +715,10 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1850 = 1850;
 
+        ///<summary>
+        ///购买体力
+        ///</summary>
+        public const short Cst_Action1860 = 1860;
 
 
         ///<summary>
@@ -736,6 +740,11 @@ namespace GameServer.CsScript.Action
         ///兑换CDK
         ///</summary>
         public const short Cst_Action1930 = 1930;
+
+        ///<summary>
+        ///领取体力 
+        ///</summary>
+        public const short Cst_Action1940 = 1940;
 
 
         ///<summary>

@@ -72,17 +72,16 @@ namespace GameServer.CsScript.Action
             receipt.TodayRobList = GetFriends.TodayRobList.ToList();
             foreach (var v in GetFriends.FriendsList)
             {
-                var friend = GetFriends.FindFriend(v.UserId);
                 JPFriendRobData friendrob = new JPFriendRobData()
                 {
                     UserId = v.UserId,
                 };
-                if (friend.RobGold.Equals("0"))
+                if (v.RobGold.Equals("0"))
                 {
                     var enemy = GetEnemys.FindEnemy(v.UserId);
                     if (enemy != null && !enemy.RobGold.Equals("0"))
                     {
-                        friend.RobGold = enemy.RobGold;
+                        v.RobGold = enemy.RobGold;
                         continue;
                     }
                     var rival = UserHelper.FindUserBasis(v.UserId);
@@ -90,24 +89,23 @@ namespace GameServer.CsScript.Action
                     int goldMin = baseValue / 4;
                     int goldmax = random.Next(baseValue - goldMin) + goldMin;
                     BigInteger targetGold = Math.Ceiling(rival.UserLv / 50.0).ToInt() * goldmax;
-                    friend.RobGold = targetGold.ToString();
+                    v.RobGold = targetGold.ToString();
                 }
-                friendrob.Gold = friend.RobGold;
+                friendrob.Gold = v.RobGold;
                 receipt.FriendRobList.Add(friendrob);
             }
             foreach (var v in GetEnemys.EnemyList)
             {
-                var enemy = GetEnemys.FindEnemy(v.UserId);
                 JPEnemyRobData enemyrob = new JPEnemyRobData()
                 {
                     UserId = v.UserId,
                 };
-                if (enemy.RobGold.Equals("0"))
+                if (v.RobGold.Equals("0"))
                 {
                     var friend = GetFriends.FindFriend(v.UserId);
                     if (friend != null && !friend.RobGold.Equals("0"))
                     {
-                        enemy.RobGold = friend.RobGold;
+                        v.RobGold = friend.RobGold;
                         continue;
                     }
                     var rival = UserHelper.FindUserBasis(v.UserId);
@@ -115,9 +113,9 @@ namespace GameServer.CsScript.Action
                     int goldMin = baseValue / 4;
                     int goldmax = random.Next(baseValue - goldMin) + goldMin;
                     BigInteger targetGold = Math.Ceiling(rival.UserLv / 50.0).ToInt() * goldmax;
-                    enemy.RobGold = targetGold.ToString();
+                    v.RobGold = targetGold.ToString();
                 }
-                enemyrob.Gold = enemy.RobGold;
+                enemyrob.Gold = v.RobGold;
                 receipt.EnemyRobList.Add(enemyrob);
             }
 

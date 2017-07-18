@@ -180,6 +180,26 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 购买体力次数
+        /// </summary>
+        private int _BuyVitTimes;
+        [ProtoMember(10)]
+        [EntityField("BuyVitTimes")]
+        public int BuyVitTimes
+        {
+            get
+            {
+                return _BuyVitTimes;
+            }
+            set
+            {
+                SetChange("BuyVitTimes", value);
+            }
+        }
+
+
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -202,6 +222,7 @@ namespace GameServer.Script.Model.DataModel
                     case "MonthCardAwardDate": return MonthCardAwardDate;
                     case "AccumulatePayList": return AccumulatePayList;
                     case "BuyGoldTimes": return BuyGoldTimes;
+                    case "BuyVitTimes": return BuyVitTimes;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -238,6 +259,9 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyGoldTimes":
                         _BuyGoldTimes = value.ToInt();
                         break;
+                    case "BuyVitTimes":
+                        _BuyVitTimes = value.ToInt();
+                        break;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -269,6 +293,7 @@ namespace GameServer.Script.Model.DataModel
             QuarterCardDays = -1;
             MonthCardDays = 1;
             BuyGoldTimes = 0;
+            BuyVitTimes = 0;
             QuarterCardAwardDate = DateTime.Now;
             MonthCardAwardDate = DateTime.Now;
             AccumulatePayList.Clear();

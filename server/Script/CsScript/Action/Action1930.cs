@@ -44,11 +44,11 @@ namespace GameServer.CsScript.Action
         {
             receipt = ReceiveCdKeyResult.OK;
 
-            if (GetEventAward.IsReceivedCDK)
-            {
-                receipt = ReceiveCdKeyResult.Had;
-                return true;
-            }
+            //if (GetEventAward.IsReceivedCDK)
+            //{
+            //    receipt = ReceiveCdKeyResult.Had;
+            //    return true;
+            //}
             var acc = new ShareCacheStruct<Config_CdKey>().Find(t => t.Key == _CDKey);
             if (acc == null)
             {
@@ -61,6 +61,11 @@ namespace GameServer.CsScript.Action
                 receipt = ReceiveCdKeyResult.Received;
                 return true;
             }
+            if (GetEventAward.ReceivedCDKTypeList.Find(t => t == acc.Type) != 0)
+            {
+                receipt = ReceiveCdKeyResult.Had;
+                return true;
+            }
 
             CDKeyCache cdk = new CDKeyCache()
             {
@@ -69,6 +74,7 @@ namespace GameServer.CsScript.Action
             };
 
             GetEventAward.IsReceivedCDK = true;
+            GetEventAward.ReceivedCDKTypeList.Add(acc.Type);
 
             cdkscache.Add(cdk);
             cdkscache.Update();

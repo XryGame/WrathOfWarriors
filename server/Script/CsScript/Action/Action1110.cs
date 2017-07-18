@@ -118,7 +118,8 @@ namespace GameServer.CsScript.Action
                 PushMessageHelper.UserGameDataExceptionNotification(Current);
                 return false;
             }
-            
+
+
             UserHelper.RewardsGold(Current.UserId, monster.DropoutGold, UpdateCoinOperate.KillMonsterReward, true);
             receipt = true;
             return true;

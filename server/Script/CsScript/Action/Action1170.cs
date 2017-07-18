@@ -13,7 +13,7 @@ namespace GameServer.CsScript.Action
 {
 
     /// <summary>
-    /// 精灵出战
+    /// 精灵升级
     /// </summary>
     public class Action1170 : BaseAction
     {
@@ -76,6 +76,13 @@ namespace GameServer.CsScript.Action
 
 
             elf.Lv = elfNextCfg.ElvesGrade;
+
+            if (GetElf.SelectID == elfId)
+            {
+                GetElf.SelectElfType = elfNextCfg.ElvesType;
+                GetElf.SelectElfValue = elfNextCfg.ElvesNum;
+            }
+
 
             UserHelper.RefreshUserFightValue(Current.UserId);
 

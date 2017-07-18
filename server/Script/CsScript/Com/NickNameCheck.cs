@@ -46,7 +46,7 @@ namespace GameServer.CsScript.Com
         public bool IsExistNickName(string nickName, out string msg)
         {
             msg = "";
-            var list = new ShareCacheStruct<UserCenterUser>().FindAll(m => Equals(m.NickName, nickName), false);
+            var list = new ShareCacheStruct<UserCenterUser>().FindAll(m => m.NickName == nickName, false);
             if (list.Count > 0)
             {
                 msg = Language.Instance.St1005_NickNameExist;

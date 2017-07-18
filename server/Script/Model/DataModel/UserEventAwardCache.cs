@@ -23,6 +23,7 @@ namespace GameServer.Script.Model.DataModel
         public UserEventAwardCache()
             : base(AccessLevel.ReadWrite)
         {
+            ReceivedCDKTypeList = new CacheList<int>();
             //ResetCache();
         }
         
@@ -167,6 +168,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 领取CDK类型
+        /// </summary>
+        private CacheList<int> _ReceivedCDKTypeList;
+        [ProtoMember(9)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> ReceivedCDKTypeList
+        {
+            get
+            {
+                return _ReceivedCDKTypeList;
+            }
+            set
+            {
+                SetChange("ReceivedCDKTypeList", value);
+            }
+        }
+
         ///// <summary>
         ///// 上次领取在线奖时间
         ///// </summary>
@@ -221,6 +240,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 购领取体力状态
+        /// </summary>
+        private ReceiveVitStatus _ReceiveVitStatusFlag;
+        [ProtoMember(11)]
+        [EntityField("ReceiveVitStatusFlag")]
+        public ReceiveVitStatus ReceiveVitStatusFlag
+        {
+            get
+            {
+                return _ReceiveVitStatusFlag;
+            }
+            set
+            {
+                SetChange("ReceiveVitStatusFlag", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -242,9 +279,11 @@ namespace GameServer.Script.Model.DataModel
                     case "OnlineAwardId": return OnlineAwardId;
                     case "OnlineStartTime": return OnlineStartTime;
                     case "IsReceivedCDK": return IsReceivedCDK;
+                    case "ReceivedCDKTypeList": return ReceivedCDKTypeList;
                     //case "LastOnlineAwayReceiveTime": return LastOnlineAwayReceiveTime;
                     //case "IsStartedOnlineTime": return IsStartedOnlineTime;
                     case "SignStartID": return SignStartID;
+                    case "ReceiveVitStatusFlag": return ReceiveVitStatusFlag;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -278,6 +317,9 @@ namespace GameServer.Script.Model.DataModel
                     case "IsReceivedCDK":
                         _IsReceivedCDK = value.ToBool();
                         break;
+                    case "ReceivedCDKTypeList":
+                        _ReceivedCDKTypeList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
                     //case "LastOnlineAwayReceiveTime":
                     //    _LastOnlineAwayReceiveTime = value.ToDateTime();
                     //    break;
@@ -286,6 +328,9 @@ namespace GameServer.Script.Model.DataModel
                     //    break; 
                     case "SignStartID":
                         _SignStartID = value.ToInt();
+                        break;
+                    case "ReceiveVitStatusFlag":
+                        _ReceiveVitStatusFlag = value.ToEnum<ReceiveVitStatus>();
                         break;
                     default: throw new ArgumentException(string.Format("UserEventAwardCache index[{0}] isn't exist.", index));
                 }
@@ -305,8 +350,11 @@ namespace GameServer.Script.Model.DataModel
             OnlineStartTime = DateTime.Now;
 
             IsReceivedCDK = false;
+            ReceivedCDKTypeList.Clear();
 
             SignStartID = DataHelper.SignStartID;
+            ReceiveVitStatusFlag = ReceiveVitStatus.No;
+
         }
 
     }

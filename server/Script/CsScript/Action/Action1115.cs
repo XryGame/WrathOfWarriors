@@ -45,7 +45,13 @@ namespace GameServer.CsScript.Action
             if (GetBasis.Vit > 0)
             {
                 receipt = true;
+                if (DataHelper.VitMax == GetBasis.Vit)
+                {
+                    GetBasis.StartRestoreVitDate = DateTime.Now;
+                }
+                    
                 GetBasis.Vit--;
+
             }
             else
             {

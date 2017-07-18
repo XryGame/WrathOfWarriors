@@ -192,6 +192,7 @@ namespace gm_tool
             request.AddPostParam("EquipLevel", SetEquipLevel.Text);
             request.AddPostParam("LevelUp", SetLevelUp.Text);
             request.AddPostParam("NoviceGuide", SetNoviceGuide.Text);
+            request.AddPostParam("VitNum", SetAddVit.Text);
             if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
@@ -229,6 +230,8 @@ namespace gm_tool
             SetEquipLevel.Text = string.Empty;
             SetLevelUp.Text = string.Empty;
             SetNoviceGuide.Text = string.Empty;
+            PayID.Text = string.Empty;
+            SetAddVit.Text = string.Empty;
         }
 
         private void ResetMailText()

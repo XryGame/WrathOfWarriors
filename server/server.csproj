@@ -194,6 +194,7 @@
     <Compile Include="Script\CsScript\Action\Action1060.cs" />
     <Compile Include="Script\CsScript\Action\Action1840.cs" />
     <Compile Include="Script\CsScript\Action\Action1850.cs" />
+    <Compile Include="Script\CsScript\Action\Action1860.cs" />
     <Compile Include="Script\CsScript\Action\Action1900.cs" />
     <Compile Include="Script\CsScript\Action\Action1061.cs" />
     <Compile Include="Script\CsScript\Action\Action1062.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Script\CsScript\Action\Action1110.cs" />
     <Compile Include="Script\CsScript\Action\Action1111.cs" />
     <Compile Include="Script\CsScript\Action\Action1120.cs" />
+    <Compile Include="Script\CsScript\Action\Action1940.cs" />
     <Compile Include="Script\CsScript\Action\Action2002.cs" />
     <Compile Include="Script\CsScript\Action\Action2003.cs" />
     <Compile Include="Script\CsScript\Action\Action2004.cs" />

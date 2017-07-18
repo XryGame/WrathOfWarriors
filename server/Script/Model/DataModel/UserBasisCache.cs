@@ -966,17 +966,19 @@ namespace GameServer.Script.Model.DataModel
             if (StartRestoreVitDate != DateTime.MinValue)
             {
                 var timespan = DateTime.Now.Subtract(StartRestoreVitDate);
-                int canAddTimes = DataHelper.VitMax - Vit;
+                int canAddTimes = Math.Max(DataHelper.VitMax - Vit, 0);
 
                 int sec = (int)Math.Floor(timespan.TotalSeconds);
-
-                int addtimes = Math.Min(sec / restoreTimesSec * DataHelper.VitRestore, canAddTimes);// 一次恢复4次
-                Vit += addtimes;
-                ret = restoreTimesSec - sec % restoreTimesSec;
-
-                StartRestoreVitDate = StartRestoreVitDate.AddSeconds(
-                        Math.Min(sec / restoreTimesSec, canAddTimes) * restoreTimesSec
-                    );
+                if (sec > 0)
+                {
+                    int addtimes = Math.Min(sec / restoreTimesSec * DataHelper.VitRestore, canAddTimes);
+                    Vit += addtimes;
+                    ret = restoreTimesSec - sec % restoreTimesSec;
+                    if (addtimes > 0)
+                    {
+                        StartRestoreVitDate = StartRestoreVitDate.AddSeconds(sec - sec % restoreTimesSec);
+                    }
+                }
             }
             else
             {

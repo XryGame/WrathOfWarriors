@@ -98,7 +98,7 @@ namespace GameServer.CsScript.Action
                 GetLottery.Rob.Gold = "0";
                 UserHelper.RandomRobTarget(Current.UserId);
             }
-            else if (GetFriends.IsHaveFriend(selectId))
+            if (GetFriends.IsHaveFriend(selectId))
             {
                 var frienddata = GetFriends.FindFriend(selectId);
                 dummyGold = BigInteger.Parse(frienddata.RobGold);
@@ -107,7 +107,7 @@ namespace GameServer.CsScript.Action
                 GetFriends.AddRobRecord(selectId);
                 
             }
-            else if (GetEnemys.IsHaveEnemy(selectId))
+            if (GetEnemys.IsHaveEnemy(selectId))
             {
                 var enemydata = GetEnemys.FindEnemy(selectId);
                 dummyGold = BigInteger.Parse(enemydata.RobGold);

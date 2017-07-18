@@ -41,7 +41,7 @@ namespace GameServer.CsScript.Remote
             param.Add("Type", (int)ChatType.System);
             param.Add("Sender", 0);
             param.Add("Receiver", receiver);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("SendDate", Util.GetTimeStamp());
             SendChat(param, content);
         }
@@ -55,7 +55,7 @@ namespace GameServer.CsScript.Remote
             param.Add("Type", (int)ChatType.Whisper);
             param.Add("Sender", sender);
             param.Add("Receiver", receiver);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("SendDate", Util.GetTimeStamp());
             SendChat(param, content);
         }
@@ -69,7 +69,7 @@ namespace GameServer.CsScript.Remote
             param.Add("Type", (int)ChatType.AllService);
             param.Add("Sender", sender);
             param.Add("Receiver", 0);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("SendDate", Util.GetTimeStamp());
             SendChat(param, content);
         }
@@ -83,7 +83,7 @@ namespace GameServer.CsScript.Remote
             param.Add("Type", (int)ChatType.World);
             param.Add("Sender", sender);
             param.Add("Receiver", 0);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("SendDate", Util.GetTimeStamp());
             SendChat(param, content);
         }
@@ -97,7 +97,7 @@ namespace GameServer.CsScript.Remote
             param.Add("Type", (int)ChatType.Guild);
             param.Add("Sender", sender);
             param.Add("Receiver", 0);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("SendDate", Util.GetTimeStamp());
             SendChat(param, content);
         }
@@ -119,7 +119,7 @@ namespace GameServer.CsScript.Remote
             param.Add("VipLv", basis.VipLv);
             param.Add("Profession", basis.Profession);
             param.Add("AvatarUrl", basis.AvatarUrl);
-            param.Add("ServerID", GameEnvironment.ProductServerId);
+            param.Add("ServerID", basis.ServerID);
             param.Add("GuildID", guildId);
             remote.Call("UpdateUserDataService", param, successCallback);
         }

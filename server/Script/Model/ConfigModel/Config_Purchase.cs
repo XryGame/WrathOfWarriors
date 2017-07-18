@@ -58,6 +58,22 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
+        /// 体力
+        /// </summary>
+        private int _Stamina;
+        [EntityField("Stamina")]
+        public int Stamina
+        {
+            get
+            {
+                return _Stamina;
+            }
+            set
+            {
+                SetChange("Stamina", value);
+            }
+        }
+        /// <summary>
         /// 消耗钻石
         /// </summary>
         private int _SpendDiamond;
@@ -83,6 +99,7 @@ namespace GameServer.Script.Model.ConfigModel
 				{
                     case "id": return id;
                     case "Gold": return Gold;
+                    case "Stamina": return Stamina;
                     case "SpendDiamond": return SpendDiamond;
                     default: throw new ArgumentException(string.Format("Config_Purchase index[{0}] isn't exist.", index));
 				}
@@ -98,6 +115,9 @@ namespace GameServer.Script.Model.ConfigModel
                         break; 
                     case "Gold":
                         _Gold = value.ToNotNullString("0"); 
+                        break;
+                    case "Stamina":
+                        _Stamina = value.ToInt(); 
                         break;
                     case "SpendDiamond":
                         _SpendDiamond = value.ToInt();
