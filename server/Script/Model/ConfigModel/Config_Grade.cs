@@ -12,11 +12,11 @@ namespace GameServer.Script.Model.ConfigModel
     /// 
     /// </summary>
     [Serializable, ProtoContract, EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
-    public class Config_AccumulatePay : ShareEntity
+    public class Config_Grade : ShareEntity
     {
 
-        
-        public Config_AccumulatePay()
+
+        public Config_Grade()
             : base(AccessLevel.ReadOnly)
         {
         }
@@ -24,7 +24,7 @@ namespace GameServer.Script.Model.ConfigModel
         #region auto-generated Property
 
         /// <summary>
-        /// ID
+        /// id
         /// </summary>
         private int _ID;
         [EntityField("ID", IsKey = true)]
@@ -39,37 +39,20 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("ID", value);
             }
         }
-
         /// <summary>
-        /// 类型
+        /// 关卡
         /// </summary>
-        private AccumulatePayType _Type;
-        [EntityField("Type")]
-        public AccumulatePayType Type
+        private int _Grade;
+        [EntityField("Grade")]
+        public int Grade
         {
             get
             {
-                return _Type;
+                return _Grade;
             }
             set
             {
-                SetChange("Type", value);
-            }
-        }
-        /// <summary>
-        /// 充值钻石
-        /// </summary>
-        private int _Time;
-        [EntityField("Time")]
-        public int Time
-        {
-            get
-            {
-                return _Time;
-            }
-            set
-            {
-                SetChange("Time", value);
+                SetChange("Grade", value);
             }
         }
 
@@ -91,7 +74,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// A数量
+        /// 奖励A
         /// </summary>
         private int _AAwardN;
         [EntityField("AAwardN")]
@@ -125,7 +108,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// B数量
+        /// 奖励B
         /// </summary>
         private int _BAwardN;
         [EntityField("BAwardN")]
@@ -159,7 +142,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// C数量
+        /// 奖励C
         /// </summary>
         private int _CAwardN;
         [EntityField("CAwardN")]
@@ -193,7 +176,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// D数量
+        /// 奖励D
         /// </summary>
         private int _DAwardN;
         [EntityField("DAwardN")]
@@ -210,15 +193,14 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         protected override object this[string index]
-		{
-			get
-			{
+        {
+            get
+            {
                 #region
-				switch (index)
-				{
+                switch (index)
+                {
                     case "ID": return ID;
-                    case "Type": return Type;
-                    case "Time": return Time;
+                    case "Grade": return Grade;
                     case "AAwardID": return AAwardID;
                     case "AAwardN": return AAwardN;
                     case "BAwardID": return BAwardID;
@@ -227,23 +209,20 @@ namespace GameServer.Script.Model.ConfigModel
                     case "CAwardN": return CAwardN;
                     case "DAwardID": return DAwardID;
                     case "DAwardN": return DAwardN;
-                    default: throw new ArgumentException(string.Format("Config_AccumulatePay index[{0}] isn't exist.", index));
-				}
+                    default: throw new ArgumentException(string.Format("Config_Grade index[{0}] isn't exist.", index));
+                }
                 #endregion
-			}
-			set
-			{
+            }
+            set
+            {
                 #region
-				switch (index)
-				{
+                switch (index)
+                {
                     case "ID":
-                        _ID = value.ToInt(); 
+                        _ID = value.ToInt();
                         break;
-                    case "Type":
-                        _Type = value.ToEnum<AccumulatePayType>(); 
-                        break;
-                    case "Time":
-                        _Time = value.ToInt(); 
+                    case "Grade":
+                        _Grade = value.ToInt();
                         break;
                     case "AAwardID":
                         _AAwardID = value.ToInt();
@@ -269,18 +248,13 @@ namespace GameServer.Script.Model.ConfigModel
                     case "DAwardN":
                         _DAwardN = value.ToInt();
                         break;
-                    default: throw new ArgumentException(string.Format("Config_AccumulatePay index[{0}] isn't exist.", index));
-				}
+                    default: throw new ArgumentException(string.Format("Config_Grade index[{0}] isn't exist.", index));
+                }
                 #endregion
-			}
-		}
-        
-        #endregion
-                
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
+            }
         }
-	}
+
+        #endregion
+    }
+
 }

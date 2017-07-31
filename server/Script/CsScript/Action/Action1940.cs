@@ -92,6 +92,7 @@ namespace GameServer.CsScript.Action
             }
 
             int receiveNum = Math.Max(comboNum / 2, DataHelper.VitRestore);
+            receiveNum = Math.Min(receiveNum, 40);
             UserHelper.RewardsVit(Current.UserId, receiveNum);
 
             receipt.ReceiveVitStatusFlag = GetEventAward.ReceiveVitStatusFlag;

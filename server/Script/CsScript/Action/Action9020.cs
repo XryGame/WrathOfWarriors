@@ -4,6 +4,7 @@ using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
+using System.Numerics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Game.Service;
@@ -64,7 +65,9 @@ namespace GameServer.CsScript.Action
             {
                 case TaskAwardType.Gold:
                     {
-                        UserHelper.RewardsGold(Current.UserId, surface.AwardNum);
+                        BigInteger resourceNum = BigInteger.Parse(surface.AwardNum);
+                        BigInteger value = Math.Ceiling(GetBasis.UserLv / 50.0).ToInt() * resourceNum;
+                        UserHelper.RewardsGold(Current.UserId, value);
                     }
                     break;
                 case TaskAwardType.Diamond:

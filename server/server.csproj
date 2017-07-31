@@ -134,6 +134,8 @@
     <Compile Include="Script\CsScript\Action\Action1086.cs" />
     <Compile Include="Script\CsScript\Action\Action1087.cs" />
     <Compile Include="Script\CsScript\Action\Action1088.cs" />
+    <Compile Include="Script\CsScript\Action\Action1089.cs" />
+    <Compile Include="Script\CsScript\Action\Action1090.cs" />
     <Compile Include="Script\CsScript\Action\Action1100.cs" />
     <Compile Include="Script\CsScript\Action\Action1101.cs" />
     <Compile Include="Script\CsScript\Action\Action1102.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="Script\CsScript\Action\Action1069.cs" />
     <Compile Include="Script\CsScript\Action\Action1070.cs" />
     <Compile Include="Script\CsScript\Action\Action1910.cs" />
+    <Compile Include="Script\CsScript\Action\Action1911.cs" />
     <Compile Include="Script\CsScript\Action\Action1920.cs" />
     <Compile Include="Script\CsScript\Action\Action1099.cs" />
     <Compile Include="Script\CsScript\Action\Action1930.cs" />
@@ -212,6 +215,10 @@
     <Compile Include="Script\CsScript\Action\Action1111.cs" />
     <Compile Include="Script\CsScript\Action\Action1120.cs" />
     <Compile Include="Script\CsScript\Action\Action1940.cs" />
+    <Compile Include="Script\CsScript\Action\Action1950.cs" />
+    <Compile Include="Script\CsScript\Action\Action1960.cs" />
+    <Compile Include="Script\CsScript\Action\Action1970.cs" />
+    <Compile Include="Script\CsScript\Action\Action1980.cs" />
     <Compile Include="Script\CsScript\Action\Action2002.cs" />
     <Compile Include="Script\CsScript\Action\Action2003.cs" />
     <Compile Include="Script\CsScript\Action\Action2004.cs" />
@@ -282,6 +289,7 @@
     <Compile Include="Script\CsScript\JsonProtocol\JPGuildData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPLotteryData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPPaySucceedData.cs" />
+    <Compile Include="Script\CsScript\JsonProtocol\JPRankAwardData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRankUserData.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestAccumulatePay.cs" />
     <Compile Include="Script\CsScript\JsonProtocol\JPRequestCdKeyData.cs" />
@@ -310,6 +318,8 @@
     <Compile Include="Script\Model\ConfigModel\Config_Elves.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_FirstWeek.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Equip.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Fund.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Grade.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Item.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Liveness.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Lottery.cs" />
@@ -319,6 +329,7 @@
     <Compile Include="Script\Model\ConfigModel\Config_Pay.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Purchase.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Giftbag.cs" />
+    <Compile Include="Script\Model\ConfigModel\Config_Ranking.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_RoleInitial.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Gem.cs" />
     <Compile Include="Script\Model\ConfigModel\Config_Share.cs" />
@@ -334,6 +345,8 @@
     <Compile Include="Script\Model\Config\ElfData.cs" />
     <Compile Include="Script\Model\Config\EnemyData.cs" />
     <Compile Include="Script\Model\Config\EnemyLogData.cs" />
+    <Compile Include="Script\Model\Config\FundData.cs" />
+    <Compile Include="Script\Model\Config\FundStageData.cs" />
     <Compile Include="Script\Model\Config\GuildCharacterData.cs" />
     <Compile Include="Script\Model\Config\GuildLogData.cs" />
     <Compile Include="Script\Model\Config\GuildRank.cs" />
@@ -349,6 +362,7 @@
     <Compile Include="Script\Model\Config\FriendData.cs" />
     <Compile Include="Script\Model\Config\SkillData.cs" />
     <Compile Include="Script\Model\Config\UserRank.cs" />
+    <Compile Include="Script\Model\Config\UserRankAward.cs" />
     <Compile Include="Script\Model\DataModel\CDKeyCache.cs" />
     <Compile Include="Script\Model\DataModel\GameCache.cs" />
     <Compile Include="Script\Model\DataModel\CompetitionApply.cs" />
@@ -376,8 +390,11 @@
     <Compile Include="Script\Model\DataModel\UserTaskCache.cs" />
     <Compile Include="Script\Model\DataModel\UserTransferItemCache.cs" />
     <Compile Include="Script\Model\DbConfig.cs" />
+    <Compile Include="Script\Model\Enum\AccumulatePayType.cs" />
     <Compile Include="Script\Model\Enum\BuyItemResult.cs" />
     <Compile Include="Script\Model\Enum\ElfSkillType.cs" />
+    <Compile Include="Script\Model\Enum\PayID.cs" />
+    <Compile Include="Script\Model\Enum\FundStatus.cs" />
     <Compile Include="Script\Model\Enum\GameRunStatus.cs" />
     <Compile Include="Script\Model\Enum\MatchRivalResult.cs" />
     <Compile Include="Script\Model\Enum\ShareType.cs" />

@@ -153,15 +153,15 @@ namespace GameServer.CsScript.Action
             {
                 if (new MemoryCacheStruct<OldUserCache>().Find(t => (t.OpenID == basis.Pid)) != null)
                 {// 是删档测试老用户发放奖励
-                    MailData mail = new MailData()
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        Title = "老用户回归奖励",
-                        Sender = "系统",
-                        Date = DateTime.Now,
-                        Context = "感谢您再次登录勇者之怒，这是您的回归奖励！",
-                    };
-                    UserHelper.AddNewMail(basis.UserID, mail, false);
+                    //MailData mail = new MailData()
+                    //{
+                    //    ID = Guid.NewGuid().ToString(),
+                    //    Title = "老用户回归奖励",
+                    //    Sender = "系统",
+                    //    Date = DateTime.Now,
+                    //    Context = "感谢您再次登录勇者之怒，这是您的回归奖励！",
+                    //};
+                    //UserHelper.AddNewMail(basis.UserID, mail, false);
                 }
             }
 

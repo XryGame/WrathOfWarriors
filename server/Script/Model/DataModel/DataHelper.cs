@@ -1,4 +1,5 @@
 ﻿
+using GameServer.Script.Model.Config;
 using GameServer.Script.Model.ConfigModel;
 using System;
 using System.Data;
@@ -20,6 +21,10 @@ namespace GameServer.Script.Model.DataModel
 
         static public int SignStartID;
         static public string SignStartIDCacheKey = "SignStartID";
+
+        static public string LevelRankingAwardCacheKey = "LevelRankingAwardCache";
+        static public string FightValueRankingAwardCacheKey = "FightValueRankingAwardCache";
+        static public string ComboRankingAwardCacheKey = "ComboRankingAwardCache";
         /// <summary>
         /// 用户初始体力
         /// </summary>
@@ -77,6 +82,10 @@ namespace GameServer.Script.Model.DataModel
         static public int InviteFightDiamondWeekMax;
 
 
+        static public CacheList<UserRankAward> LevelRankingAwardCacheList = new CacheList<UserRankAward>();
+        static public CacheList<UserRankAward> FightValueRankingAwardCacheList = new CacheList<UserRankAward>();
+        static public CacheList<UserRankAward> ComboRankingAwardCacheList = new CacheList<UserRankAward>();
+
         static DataHelper()
         {
 
@@ -124,8 +133,8 @@ namespace GameServer.Script.Model.DataModel
                 IsFirstOpenService = true;
             }
             OpenServiceDate = openServiceCache.Value.ToDateTime();
+            //OpenServiceDate = new DateTime(OpenServiceDate.Year, OpenServiceDate.Month, 22, 9, 0, 0);
 
-            
             //GameCache signStartIDCache = gameCache.FindKey(SignStartIDCacheKey);
             //if (signStartIDCache == null)
             //{
@@ -156,6 +165,41 @@ namespace GameServer.Script.Model.DataModel
                     cacheSet.TryAdd(olduser.OpenID, olduser);
                 }
             }
+
+
+            // 排行榜奖励数据
+            GameCache levelCache = gameCache.FindKey(LevelRankingAwardCacheKey);
+            if (levelCache == null)
+            {
+                levelCache = new GameCache();
+                levelCache.Key = LevelRankingAwardCacheKey;
+                levelCache.Value = MathUtils.ToJson(LevelRankingAwardCacheList);
+                gameCache.Add(levelCache);
+                gameCache.Update();
+            }
+            LevelRankingAwardCacheList = MathUtils.ParseJson<CacheList<UserRankAward>>(levelCache.Value);
+
+            GameCache fightValueCache = gameCache.FindKey(FightValueRankingAwardCacheKey);
+            if (fightValueCache == null)
+            {
+                fightValueCache = new GameCache();
+                fightValueCache.Key = FightValueRankingAwardCacheKey;
+                fightValueCache.Value = MathUtils.ToJson(FightValueRankingAwardCacheList);
+                gameCache.Add(fightValueCache);
+                gameCache.Update();
+            }
+            FightValueRankingAwardCacheList = MathUtils.ParseJson<CacheList<UserRankAward>>(fightValueCache.Value);
+
+            GameCache comboCache = gameCache.FindKey(ComboRankingAwardCacheKey);
+            if (comboCache == null)
+            {
+                comboCache = new GameCache();
+                comboCache.Key = ComboRankingAwardCacheKey;
+                comboCache.Value = MathUtils.ToJson(ComboRankingAwardCacheList);
+                gameCache.Add(comboCache);
+                gameCache.Update();
+            }
+            ComboRankingAwardCacheList = MathUtils.ParseJson<CacheList<UserRankAward>>(comboCache.Value);
         }
 
         public static int GetSignStartID()
@@ -177,6 +221,19 @@ namespace GameServer.Script.Model.DataModel
             ret = remainder / 7 * 7 + 1;
 
             return ret;
+        }
+
+        public static void UpdateRankingAwardCache()
+        {
+            var gameCache = new ShareCacheStruct<GameCache>();
+            GameCache levelCache = gameCache.FindKey(LevelRankingAwardCacheKey);
+            levelCache.Value = MathUtils.ToJson(LevelRankingAwardCacheList);
+
+            GameCache fightValueCache = gameCache.FindKey(FightValueRankingAwardCacheKey);
+            fightValueCache.Value = MathUtils.ToJson(FightValueRankingAwardCacheList);
+
+            GameCache comboCache = gameCache.FindKey(ComboRankingAwardCacheKey);
+            comboCache.Value = MathUtils.ToJson(ComboRankingAwardCacheList);
         }
     }
 

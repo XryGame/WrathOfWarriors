@@ -14,6 +14,8 @@ namespace GameServer.CsScript.Action
         public UpdateCoinOperate UpdateCoinOperate { get; set; }
 
         public string NumString { get; set; }
+
+        public int UsedDiamond { get; set; }
     }
     /// <summary>
     /// 1049_货币数量改变通知接口
@@ -67,7 +69,7 @@ namespace GameServer.CsScript.Action
             }
             receipt.UpdateCoinType = _coinType;
             receipt.UpdateCoinOperate = _updateGoldType;
-            
+            receipt.UsedDiamond = GetBasis.UsedDiamond;
 
             return true;
         }

@@ -73,6 +73,7 @@ namespace GameServer.CsScript.Action
                 UserLv = GetBasis.UserLv,
                 Diamond = GetBasis.DiamondNum,
                 BuyDiamond = GetBasis.BuyDiamond,
+                UsedDiamond = GetBasis.UsedDiamond,
                 VipLv = GetBasis.VipLv,
                 AvatarUrl = GetBasis.AvatarUrl,
                 Gold = GetBasis.Gold,
@@ -84,8 +85,11 @@ namespace GameServer.CsScript.Action
                 ShareDate = GetBasis.ShareDate,
                 InviteCount = GetBasis.InviteCount,
                 ReceiveInviteList = GetBasis.ReceiveInviteList.ToList(),
+                ReceiveLevelAwardList = GetBasis.ReceiveLevelAwardList.ToList(),
+                ReceiveRankingAwardList = GetBasis.ReceiveRankingAwardList.ToList(),
                 LastMatchFightFailedDate = Util.ConvertDateTimeStamp(GetCombat.LastMatchFightFailedDate),
-                ComboNum = GetBasis.ComboNum
+                ComboNum = GetBasis.ComboNum,
+                OpenServiceDateSec = Util.ConvertDateTimeStamp(DataHelper.OpenServiceDate)
             };
             receipt.Attribute = GetAttribute;
             receipt.Equips = GetEquips;
@@ -97,6 +101,7 @@ namespace GameServer.CsScript.Action
             receipt.Guild = GetGuild;
             receipt.MailBox = GetMailBox;
             receipt.EventAward = GetEventAward;
+            UserHelper.FundCfgCheck(Current.UserId);
             receipt.Pay = GetPay;
             receipt.Combat = GetCombat;
             receipt.Lottery = GetLottery;
@@ -223,7 +228,26 @@ namespace GameServer.CsScript.Action
             receipt.OfflineTimeSec = GetBasis.OfflineTimeSec;
             receipt.OfflineEarnings = GetBasis.OfflineEarnings;
 
-            
+
+            // 排行榜奖励数据
+            UserRankAward rankAward = DataHelper.LevelRankingAwardCacheList.Find(t => t.UserID == Current.UserId);
+            if (rankAward != null)
+            {
+                receipt.RankAwardData.LevelRankID = rankAward.RankId;
+                receipt.RankAwardData.IsReceivedLevel = rankAward.IsReceived;
+            }
+            rankAward = DataHelper.FightValueRankingAwardCacheList.Find(t => t.UserID == Current.UserId);
+            if (rankAward != null)
+            {
+                receipt.RankAwardData.FightValueRankID = rankAward.RankId;
+                receipt.RankAwardData.IsReceivedFightValue = rankAward.IsReceived;
+            }
+            rankAward = DataHelper.ComboRankingAwardCacheList.Find(t => t.UserID == Current.UserId);
+            if (rankAward != null)
+            {
+                receipt.RankAwardData.ComboRankID = rankAward.RankId;
+                receipt.RankAwardData.IsReceivedCombo = rankAward.IsReceived;
+            }
 
             UserHelper.AchievementProcess(Current.UserId, AchievementType.CombatRandID, "0", 0, false);
 

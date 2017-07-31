@@ -12,9 +12,9 @@ using ZyGames.Framework.Game.Service;
 namespace GameServer.CsScript.Action
 {
 
-    public class RequestAccumulatePay
+    public class RequestAccumulateConsume
     {
-        public RequestAccumulatePay()
+        public RequestAccumulateConsume()
         {
             AwardItemList = new List<ItemData>();
         }
@@ -30,15 +30,15 @@ namespace GameServer.CsScript.Action
     }
 
     /// <summary>
-    /// 领取累充
+    /// 领取累耗
     /// </summary>
-    public class Action1910 : BaseAction
+    public class Action1911 : BaseAction
     {
-        private RequestAccumulatePay receipt;
+        private RequestAccumulateConsume receipt;
         private Random random = new Random();
         private int receiveId;
-        public Action1910(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action1910, actionGetter)
+        public Action1911(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1911, actionGetter)
         {
 
         }
@@ -59,28 +59,28 @@ namespace GameServer.CsScript.Action
 
         public override bool TakeAction()
         {
-            receipt = new RequestAccumulatePay();
+            receipt = new RequestAccumulateConsume();
             receipt.ReceiveId = receiveId;
             receipt.Result = ReceiveAccumulatePayResult.Ok;
 
-            if (GetPay.AccumulatePayList.Find(t => (t == receiveId)) != 0)
+            if (GetPay.AccumulateConsumeList.Find(t => (t == receiveId)) != 0)
             {
                 receipt.Result = ReceiveAccumulatePayResult.Received;
                 return true;
             }
             var acc = new ShareCacheStruct<Config_AccumulatePay>().FindKey(receiveId);
-            if (acc == null || acc.Type != AccumulatePayType.Pay)
+            if (acc == null || acc.Type != AccumulatePayType.Consume)
             {
                 return false;
             }
            
-            if (GetPay.PayMoney < acc.Time)
+            if (GetBasis.UsedDiamond < acc.Time)
             {
                 receipt.Result = ReceiveAccumulatePayResult.NoPay;
                 return true;
             }
 
-            GetPay.AccumulatePayList.Add(receiveId);
+            GetPay.AccumulateConsumeList.Add(receiveId);
 
 
             if (acc.AAwardID > 0 && acc.AAwardN > 0)

@@ -35,6 +35,9 @@ namespace GameServer.Script.Model.DataModel
             LastDropGoldTime = DateTime.MinValue;
             LastPassLevelTime = DateTime.Now;
             StartRestoreVitDate = DateTime.MinValue;
+            ReceiveLevelAwardList = new CacheList<int>();
+            ReceiveRankingAwardList = new CacheList<int>();
+
         }
         public UserBasisCache(int userid)
         : this()
@@ -622,6 +625,43 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 等级奖励领取记录
+        /// </summary>
+        private CacheList<int> _ReceiveLevelAwardList;
+        [ProtoMember(44)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> ReceiveLevelAwardList
+        {
+            get
+            {
+                return _ReceiveLevelAwardList;
+            }
+            set
+            {
+                SetChange("ReceiveLevelAwardList", value);
+            }
+        }
+
+        /// <summary>
+        /// 等级排行榜奖励领取记录
+        /// </summary>
+        private CacheList<int> _ReceiveRankingAwardList;
+        [ProtoMember(45)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> ReceiveRankingAwardList
+        {
+            get
+            {
+                return _ReceiveRankingAwardList;
+            }
+            set
+            {
+                SetChange("ReceiveRankingAwardList", value);
+            }
+        }
+
+   
         #endregion
 
         protected override int GetIdentityId()
@@ -701,6 +741,13 @@ namespace GameServer.Script.Model.DataModel
 
         [ProtoMember(110)]
         public int LastPassLevelID
+        {
+            get;
+            set;
+        }
+
+        [ProtoMember(111)]
+        public int CurrentPassLevelID
         {
             get;
             set;
@@ -802,6 +849,8 @@ namespace GameServer.Script.Model.DataModel
                     case "ReceiveInviteList": return ReceiveInviteList;
                     case "ComboNum": return ComboNum;
                     case "BackLevelNum": return BackLevelNum;
+                    case "ReceiveLevelAwardList": return ReceiveLevelAwardList;
+                    case "ReceiveRankingAwardList": return ReceiveRankingAwardList;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -916,6 +965,12 @@ namespace GameServer.Script.Model.DataModel
                     case "BackLevelNum":
                         _BackLevelNum = value.ToInt();
                         break;
+                    case "ReceiveLevelAwardList":
+                        _ReceiveLevelAwardList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "ReceiveRankingAwardList":
+                        _ReceiveRankingAwardList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
                     default: throw new ArgumentException(string.Format("UserBasisCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -969,11 +1024,15 @@ namespace GameServer.Script.Model.DataModel
                 int canAddTimes = Math.Max(DataHelper.VitMax - Vit, 0);
 
                 int sec = (int)Math.Floor(timespan.TotalSeconds);
-                if (sec > 0)
+                if (sec >= 0)
                 {
                     int addtimes = Math.Min(sec / restoreTimesSec * DataHelper.VitRestore, canAddTimes);
                     Vit += addtimes;
                     ret = restoreTimesSec - sec % restoreTimesSec;
+                    if (Vit >= DataHelper.VitMax)
+                    {
+                        ret = 0;
+                    }
                     if (addtimes > 0)
                     {
                         StartRestoreVitDate = StartRestoreVitDate.AddSeconds(sec - sec % restoreTimesSec);

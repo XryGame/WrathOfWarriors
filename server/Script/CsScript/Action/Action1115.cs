@@ -9,6 +9,7 @@ using GameServer.Script.Model.DataModel;
 using GameServer.Script.Model.Enum;
 using System;
 using ZyGames.Framework.Cache.Generic;
+using ZyGames.Framework.Common;
 using ZyGames.Framework.Common.Log;
 using ZyGames.Framework.Game.Com.Rank;
 using ZyGames.Framework.Game.Service;
@@ -23,6 +24,7 @@ namespace GameServer.CsScript.Action
     public class Action1115 : BaseAction
     {
         private bool receipt;
+        private int _ID;
         public Action1115(ActionGetter actionGetter)
             : base(ActionIDDefine.Cst_Action1115, actionGetter)
         {
@@ -37,12 +39,22 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            return true;
+            if (httpGet.GetInt("ID", ref _ID))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override bool TakeAction()
         {
-            if (GetBasis.Vit > 0)
+            if (_ID > GetBasis.UserLv)
+            {
+                PushMessageHelper.UserGameDataExceptionNotification(Current);
+                return false;
+            }
+            int needVit = _ID % 5 == 0 ? 3 : 1;
+            if (GetBasis.Vit >= needVit)
             {
                 receipt = true;
                 if (DataHelper.VitMax == GetBasis.Vit)
@@ -50,8 +62,9 @@ namespace GameServer.CsScript.Action
                     GetBasis.StartRestoreVitDate = DateTime.Now;
                 }
                     
-                GetBasis.Vit--;
+                GetBasis.Vit = MathUtils.Subtraction(GetBasis.Vit, needVit, 0);
 
+                GetBasis.CurrentPassLevelID = _ID;
             }
             else
             {

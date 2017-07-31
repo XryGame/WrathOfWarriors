@@ -16,6 +16,7 @@ namespace GameServer.CsScript.JsonProtocol
             GuildData = new JPGuildData();
             Enemys = new JPEnemysData();
             VitData = new JPVitData();
+            RankAwardData = new JPRankAwardData();
         }
         public int UserId { get; set; }
 
@@ -28,6 +29,8 @@ namespace GameServer.CsScript.JsonProtocol
         public int Diamond { get; set; }
 
         public int BuyDiamond { get; set; }
+
+        public int UsedDiamond { get; set; }
 
         public string Gold { get; set; }
 
@@ -50,6 +53,10 @@ namespace GameServer.CsScript.JsonProtocol
         public int InviteCount { get; set; }
 
         public List<int> ReceiveInviteList { get; set; }
+
+        public List<int> ReceiveLevelAwardList { get; set; }
+
+        public List<int> ReceiveRankingAwardList { get; set; }
 
         public UserAttributeCache Attribute { get; set; }
 
@@ -89,6 +96,8 @@ namespace GameServer.CsScript.JsonProtocol
 
         public JPVitData VitData { get; set; }
 
+        public JPRankAwardData RankAwardData { get; set; }
+
         public long OfflineTimeSec { get; set; }
 
         public string OfflineEarnings { get; set; }
@@ -96,5 +105,9 @@ namespace GameServer.CsScript.JsonProtocol
         public long LastMatchFightFailedDate { get; set; }
 
         public int ComboNum { get; set; }
+
+        public long OpenServiceDateSec { get; set; }
+
+
     }
 }

@@ -7,13 +7,13 @@ namespace GameServer.Script.Model.Config
 {
 
     [Serializable, ProtoContract]
-    public class UserRank : RankingItem
+    public class UserRankAward : RankingItem
     {
-        public UserRank()
+        public UserRankAward()
         {
         }
 
-        public UserRank(UserRank ur)
+        public UserRankAward(UserRank ur)
         {
             UserID = ur.UserID;
             NickName = ur.NickName;
@@ -21,11 +21,6 @@ namespace GameServer.Script.Model.Config
             RankId = ur.RankId;
             UserLv = ur.UserLv;
             AvatarUrl = ur.AvatarUrl;
-            RankDate = ur.RankDate;
-            HaveRankNum = ur.HaveRankNum;
-            IsFighting = ur.IsFighting;
-            FightDestUid = ur.FightDestUid;
-            VipLv = ur.VipLv;
             ComboNum = ur.ComboNum;
         }
 
@@ -101,41 +96,18 @@ namespace GameServer.Script.Model.Config
             get;
             set;
         }
-        /// <summary>
-        /// 排名时间
-        /// </summary>
-        [ProtoMember(9)]
-        public DateTime RankDate { get; set; }
-
-        /// <summary>
-        /// 连续上榜天数
-        /// </summary>
-        [ProtoMember(10)]
-        public int HaveRankNum { get; set; }
-
-        /// <summary>
-        /// 是否在战斗中
-        /// </summary>
-        [ProtoMember(11)]
-        public bool IsFighting { get; set; }
-
-        /// <summary>
-        /// 战斗目标
-        /// </summary>
-        [ProtoMember(12)]
-        public int FightDestUid { get; set; }
-
-        /// <summary>
-        /// VIP等级
-        /// </summary>
-        [ProtoMember(13)]
-        public int VipLv { get; set; }
-
+        
         /// <summary>
         /// 连击数
         /// </summary>
-        [ProtoMember(14)]
+        [ProtoMember(8)]
         public int ComboNum { get; set; }
+
+        /// <summary>
+        /// 是否已领取
+        /// </summary>
+        [ProtoMember(9)]
+        public bool IsReceived { get; set; }
 
     }
 }

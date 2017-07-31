@@ -286,7 +286,15 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1088 = 1088;
 
+        ///<summary>
+        ///返利变更通知
+        ///</summary>
+        public const short Cst_Action1089 = 1089;
 
+        ///<summary>
+        ///12点整点通知 
+        ///</summary>
+        public const short Cst_Action1090 = 1090;
 
         ///<summary>
         ///充值成功通知
@@ -732,6 +740,11 @@ namespace GameServer.CsScript.Action
         public const short Cst_Action1910 = 1910;
 
         ///<summary>
+        ///领取累耗
+        ///</summary>
+        public const short Cst_Action1911 = 1911;
+
+        ///<summary>
         ///领取VIP礼包
         ///</summary>
         public const short Cst_Action1920 = 1920;
@@ -746,6 +759,25 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1940 = 1940;
 
+        ///<summary>
+        ///领取充值返利
+        ///</summary>
+        public const short Cst_Action1950 = 1950;
+
+        ///<summary>
+        ///领取重复充值奖励
+        ///</summary>
+        public const short Cst_Action1960 = 1960;
+
+        ///<summary>
+        ///领取等级奖励
+        ///</summary>
+        public const short Cst_Action1970 = 1970;
+
+        ///<summary>
+        ///领取排行榜奖励
+        ///</summary>
+        public const short Cst_Action1980 = 1980;
 
         ///<summary>
         ///争霸赛报名

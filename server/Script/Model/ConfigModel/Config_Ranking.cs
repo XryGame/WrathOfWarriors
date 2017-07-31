@@ -5,6 +5,7 @@ using ZyGames.Framework.Common;
 using ZyGames.Framework.Model;
 using GameServer.Script.Model;
 using GameServer.Script.Model.Enum;
+using GameServer.Script.Model.Enum.Enum;
 
 namespace GameServer.Script.Model.ConfigModel
 {
@@ -12,11 +13,11 @@ namespace GameServer.Script.Model.ConfigModel
     /// 
     /// </summary>
     [Serializable, ProtoContract, EntityTable(AccessLevel.ReadOnly, DbConfig.Config)]
-    public class Config_AccumulatePay : ShareEntity
+    public class Config_Ranking : ShareEntity
     {
 
-        
-        public Config_AccumulatePay()
+
+        public Config_Ranking()
             : base(AccessLevel.ReadOnly)
         {
         }
@@ -24,7 +25,7 @@ namespace GameServer.Script.Model.ConfigModel
         #region auto-generated Property
 
         /// <summary>
-        /// ID
+        /// id
         /// </summary>
         private int _ID;
         [EntityField("ID", IsKey = true)]
@@ -39,13 +40,12 @@ namespace GameServer.Script.Model.ConfigModel
                 SetChange("ID", value);
             }
         }
-
         /// <summary>
         /// 类型
         /// </summary>
-        private AccumulatePayType _Type;
+        private RankType _Type;
         [EntityField("Type")]
-        public AccumulatePayType Type
+        public RankType Type
         {
             get
             {
@@ -57,19 +57,19 @@ namespace GameServer.Script.Model.ConfigModel
             }
         }
         /// <summary>
-        /// 充值钻石
+        /// 天数
         /// </summary>
-        private int _Time;
-        [EntityField("Time")]
-        public int Time
+        private int _Days;
+        [EntityField("Days")]
+        public int Days
         {
             get
             {
-                return _Time;
+                return _Days;
             }
             set
             {
-                SetChange("Time", value);
+                SetChange("Days", value);
             }
         }
 
@@ -91,7 +91,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// A数量
+        /// 奖励A
         /// </summary>
         private int _AAwardN;
         [EntityField("AAwardN")]
@@ -125,7 +125,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// B数量
+        /// 奖励B
         /// </summary>
         private int _BAwardN;
         [EntityField("BAwardN")]
@@ -159,7 +159,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// C数量
+        /// 奖励C
         /// </summary>
         private int _CAwardN;
         [EntityField("CAwardN")]
@@ -193,7 +193,7 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         /// <summary>
-        /// D数量
+        /// 奖励D
         /// </summary>
         private int _DAwardN;
         [EntityField("DAwardN")]
@@ -210,15 +210,15 @@ namespace GameServer.Script.Model.ConfigModel
         }
 
         protected override object this[string index]
-		{
-			get
-			{
+        {
+            get
+            {
                 #region
-				switch (index)
-				{
+                switch (index)
+                {
                     case "ID": return ID;
+                    case "Days": return Days;
                     case "Type": return Type;
-                    case "Time": return Time;
                     case "AAwardID": return AAwardID;
                     case "AAwardN": return AAwardN;
                     case "BAwardID": return BAwardID;
@@ -227,23 +227,23 @@ namespace GameServer.Script.Model.ConfigModel
                     case "CAwardN": return CAwardN;
                     case "DAwardID": return DAwardID;
                     case "DAwardN": return DAwardN;
-                    default: throw new ArgumentException(string.Format("Config_AccumulatePay index[{0}] isn't exist.", index));
-				}
+                    default: throw new ArgumentException(string.Format("Config_Ranking index[{0}] isn't exist.", index));
+                }
                 #endregion
-			}
-			set
-			{
+            }
+            set
+            {
                 #region
-				switch (index)
-				{
+                switch (index)
+                {
                     case "ID":
-                        _ID = value.ToInt(); 
+                        _ID = value.ToInt();
+                        break;
+                    case "Days":
+                        _Days = value.ToInt();
                         break;
                     case "Type":
-                        _Type = value.ToEnum<AccumulatePayType>(); 
-                        break;
-                    case "Time":
-                        _Time = value.ToInt(); 
+                        _Type = value.ToEnum<RankType>();
                         break;
                     case "AAwardID":
                         _AAwardID = value.ToInt();
@@ -269,18 +269,13 @@ namespace GameServer.Script.Model.ConfigModel
                     case "DAwardN":
                         _DAwardN = value.ToInt();
                         break;
-                    default: throw new ArgumentException(string.Format("Config_AccumulatePay index[{0}] isn't exist.", index));
-				}
+                    default: throw new ArgumentException(string.Format("Config_Ranking index[{0}] isn't exist.", index));
+                }
                 #endregion
-			}
-		}
-        
-        #endregion
-                
-        protected override int GetIdentityId()
-        {
-            //allow modify return value
-            return DefIdentityId;
+            }
         }
-	}
+
+        #endregion
+    }
+
 }

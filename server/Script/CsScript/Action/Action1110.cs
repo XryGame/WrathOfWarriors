@@ -75,12 +75,17 @@ namespace GameServer.CsScript.Action
                         if (dropGold != uploadingGold)
                         {
                             isDataError = true;
+                            TraceLog.WriteError("1110检测金币异常: Uid:{0}, Name:{1}, " +
+                                "DropGold={2}, UploadingGold={3}", Current.UserId, GetBasis.NickName, dropGold, uploadingGold);
                         }
                     }
                 }
                 else
                 {
                     isDataError = true;
+
+                    TraceLog.WriteError("1110检测金币异常: Uid:{0}, Name:{1}, " +
+                            "DropGold={2}, UploadingGold={3}", Current.UserId, GetBasis.NickName, dropGold, uploadingGold);
                 }
             }
 
@@ -106,6 +111,9 @@ namespace GameServer.CsScript.Action
                         if (GetBasis.DropGoldIntervalCount > 6)
                         {
                             isDataError = true;
+                            TraceLog.WriteError("1110检测时间异常: Uid:{0}, Name:{1}, " +
+                                "Time={2}, DropCount={3}, LastDropGoldTime={4}, DropDate={5}", Current.UserId, GetBasis.NickName,
+                                sec, GetBasis.DropGoldIntervalCount, GetBasis.LastDropGoldTime, dropDate);
                         }
                     }
                 }

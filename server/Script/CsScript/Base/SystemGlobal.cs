@@ -260,6 +260,9 @@ namespace GameServer.CsScript.Base
             new ShareCacheStruct<Config_Society>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Shop>().AutoLoad(dbFilter);
             new ShareCacheStruct<Config_Share>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Fund>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Grade>().AutoLoad(dbFilter);
+            new ShareCacheStruct<Config_Ranking>().AutoLoad(dbFilter);
 
             new ShareCacheStruct<CompetitionApply>().AutoLoad(dbFilter);
             new ShareCacheStruct<GameCache>().AutoLoad(dbFilter);
@@ -401,8 +404,8 @@ namespace GameServer.CsScript.Base
                 LoopNoticeInterval = 0;
                 //string context = "尊敬的各位玩家，勇者之怒将于今天下午16点整删档测试结束后关闭服务器，"
                 //    + "感谢您对本次测试的支持。请您记好游戏昵称以及ID，联系客服 2602611792 进行奖励兑换，谢谢！";
-                string context = "本次测试充值的玩家，在测试结束后，正式服享受充值3倍钻石返还优惠，机不可失失不再来，快来一起闯关吧！";
-                GlobalRemoteService.SendNotice(NoticeMode.AllService, context);
+                //string context = "本次测试充值的玩家，在测试结束后，正式服享受充值3倍钻石返还优惠，机不可失失不再来，快来一起闯关吧！";
+                //GlobalRemoteService.SendNotice(NoticeMode.AllService, context);
             }
 
             //Ranking<GuildRank> guildRanking = RankingFactory.Get<GuildRank>(GuildRanking.RankingKey);

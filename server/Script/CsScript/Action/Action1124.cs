@@ -51,11 +51,11 @@ namespace GameServer.CsScript.Action
                 return false;
             }
 
-            if (equip.Lv - GetEquips.Weapon.Lv >= 4
-                || equip.Lv - GetEquips.Coat.Lv >= 4
-                || equip.Lv - GetEquips.Ring.Lv >= 4
-                || equip.Lv - GetEquips.Shoe.Lv >= 4
-                || equip.Lv - GetEquips.Accessory.Lv >= 4)
+            if (equip.Lv - GetEquips.Weapon.Lv >= 3
+                || equip.Lv - GetEquips.Coat.Lv >= 3
+                || equip.Lv - GetEquips.Ring.Lv >= 3
+                || equip.Lv - GetEquips.Shoe.Lv >= 3
+                || equip.Lv - GetEquips.Accessory.Lv >= 3)
             {
                 return false;
             }

@@ -66,18 +66,26 @@ namespace GameServer.CsScript.Action
             bool isDataError = false;
             if (att > GetAttribute.Atk
                 || crit > GetAttribute.Crit
-                || hit > GetAttribute.Hit)
+                || hit > GetAttribute.Hit
+                || GetBasis.CurrentPassLevelID == 0)
             {
+                TraceLog.WriteError("1111检测属性异常: Uid:{0}, Name:{1}, " +
+                "Atk={2}, Crit={3}, Hit={4}, CurrentPassLevelID={5}", Current.UserId, GetBasis.NickName,
+                att, crit, hit, GetBasis.CurrentPassLevelID);
                 isDataError = true;
             }
 
             if (!isDataError)
             {
-                if (GetBasis.LastPassLevelID != _ID && _ID % 5 != 0 && _ID > 10)
+                if (GetBasis.LastPassLevelID != GetBasis.CurrentPassLevelID 
+                    && GetBasis.CurrentPassLevelID % 5 != 0 
+                    && GetBasis.CurrentPassLevelID > 10)
                 {
                     var timespan = DateTime.Now.Subtract(GetBasis.LastPassLevelTime);
                     if (timespan.TotalSeconds < 30)
                     {
+                        TraceLog.WriteError("1111检测通关时间异常: Uid:{0}, Name:{1}, TotalSeconds={2}",
+                            Current.UserId, GetBasis.NickName, timespan.TotalSeconds);
                         isDataError = true;
                     }
                 }
@@ -90,7 +98,7 @@ namespace GameServer.CsScript.Action
             }
 
             GetBasis.LastPassLevelTime = DateTime.Now;
-            GetBasis.LastPassLevelID = _ID;
+            GetBasis.LastPassLevelID = GetBasis.CurrentPassLevelID;
 
             if (GetBasis.BackLevelNum > 0)
             {
@@ -102,7 +110,7 @@ namespace GameServer.CsScript.Action
                 receipt.NextMap = GetBasis.UserLv;
                 PushMessageHelper.UserLvChangeNotification(Current);
             }
-            else if (UserHelper.UserLevelUpCheck(Current.UserId, _ID))
+            else if (UserHelper.UserLevelUpCheck(Current.UserId, GetBasis.CurrentPassLevelID))
             {
                 receipt.UserLv = GetBasis.UserLv;
                 receipt.NextMap = GetBasis.UserLv;
@@ -110,10 +118,10 @@ namespace GameServer.CsScript.Action
             else
             {
                 receipt.UserLv = GetBasis.UserLv;
-                receipt.NextMap = _ID;
+                receipt.NextMap = GetBasis.CurrentPassLevelID;
             }
-            
 
+            GetBasis.CurrentPassLevelID = 0;
             return true;
         }
     }

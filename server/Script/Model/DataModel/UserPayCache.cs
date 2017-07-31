@@ -5,6 +5,7 @@ using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common;
 using ZyGames.Framework.Model;
 using GameServer.Script.Model.ConfigModel;
+using GameServer.Script.Model.Config;
 
 namespace GameServer.Script.Model.DataModel
 {
@@ -21,6 +22,11 @@ namespace GameServer.Script.Model.DataModel
             : base(AccessLevel.ReadWrite)
         {
             AccumulatePayList = new CacheList<int>();
+            AccumulateConsumeList = new CacheList<int>();
+            PayList = new CacheList<int>();
+            Fund50 = new FundData();
+            Fund98 = new FundData();
+            Fund298 = new FundData();
             //ResetCache();
         }
         
@@ -198,7 +204,113 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 领取累耗记录
+        /// </summary>
+        private CacheList<int> _AccumulateConsumeList;
+        [ProtoMember(11)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> AccumulateConsumeList
+        {
+            get
+            {
+                return _AccumulateConsumeList;
+            }
+            set
+            {
+                SetChange("AccumulateConsumeList", value);
+            }
+        }
 
+        /// <summary>
+        /// 充值记录
+        /// </summary>
+        private CacheList<int> _PayList;
+        [ProtoMember(12)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public CacheList<int> PayList
+        {
+            get
+            {
+                return _PayList;
+            }
+            set
+            {
+                SetChange("PayList", value);
+            }
+        }
+
+        /// <summary>
+        /// 50元返利领取记录
+        /// </summary>
+        private FundData _Fund50;
+        [ProtoMember(13)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public FundData Fund50
+        {
+            get
+            {
+                return _Fund50;
+            }
+            set
+            {
+                SetChange("Fund50", value);
+            }
+        }
+
+        /// <summary>
+        /// 98元返利领取记录
+        /// </summary>
+        private FundData _Fund98;
+        [ProtoMember(14)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public FundData Fund98
+        {
+            get
+            {
+                return _Fund98;
+            }
+            set
+            {
+                SetChange("Fund98", value);
+            }
+        }
+
+        /// <summary>
+        /// 298元返利领取记录
+        /// </summary>
+        private FundData _Fund298;
+        [ProtoMember(15)]
+        [EntityField(true, ColumnDbType.LongBlob)]
+        public FundData Fund298
+        {
+            get
+            {
+                return _Fund298;
+            }
+            set
+            {
+                SetChange("Fund298", value);
+            }
+        }
+
+        /// <summary>
+        /// 领取重复充值计数
+        /// </summary>
+        private int _ReceivedRepeatPayCount;
+        [ProtoMember(16)]
+        [EntityField("ReceivedRepeatPayCount")]
+        public int ReceivedRepeatPayCount
+        {
+            get
+            {
+                return _ReceivedRepeatPayCount;
+            }
+            set
+            {
+                SetChange("ReceivedRepeatPayCount", value);
+            }
+        }
 
         protected override int GetIdentityId()
         {
@@ -223,6 +335,12 @@ namespace GameServer.Script.Model.DataModel
                     case "AccumulatePayList": return AccumulatePayList;
                     case "BuyGoldTimes": return BuyGoldTimes;
                     case "BuyVitTimes": return BuyVitTimes;
+                    case "AccumulateConsumeList": return AccumulateConsumeList;
+                    case "PayList": return PayList;
+                    case "Fund50": return Fund50;
+                    case "Fund98": return Fund98;
+                    case "Fund298": return Fund298;
+                    case "ReceivedRepeatPayCount": return ReceivedRepeatPayCount;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -262,6 +380,24 @@ namespace GameServer.Script.Model.DataModel
                     case "BuyVitTimes":
                         _BuyVitTimes = value.ToInt();
                         break;
+                    case "AccumulateConsumeList":
+                        _AccumulateConsumeList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "PayList":
+                        _PayList = ConvertCustomField<CacheList<int>>(value, index);
+                        break;
+                    case "Fund50":
+                        _Fund50 = ConvertCustomField<FundData>(value, index);
+                        break;
+                    case "Fund98":
+                        _Fund98 = ConvertCustomField<FundData>(value, index);
+                        break;
+                    case "Fund298":
+                        _Fund298 = ConvertCustomField<FundData>(value, index);
+                        break;
+                    case "ReceivedRepeatPayCount":
+                        _ReceivedRepeatPayCount = value.ToInt();
+                        break;
                     default: throw new ArgumentException(string.Format("UserPayCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -297,6 +433,7 @@ namespace GameServer.Script.Model.DataModel
             QuarterCardAwardDate = DateTime.Now;
             MonthCardAwardDate = DateTime.Now;
             AccumulatePayList.Clear();
+            AccumulateConsumeList.Clear();
         }
     }
 }

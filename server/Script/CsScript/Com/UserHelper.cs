@@ -761,7 +761,40 @@ namespace GameServer.Script.Model.DataModel
             }
 
             //do something
-            
+            // 获取当前排行前20名信息
+            int awardNum = 20;
+            new BaseLog().SaveLog(string.Format("Progress Ranking Award..."));
+
+            int pageCount;
+            var ranking = RankingFactory.Get<UserRank>(LevelRanking.RankingKey);
+            IList<UserRank> list = ranking.GetRange(0, awardNum, out pageCount);
+            DataHelper.LevelRankingAwardCacheList.Clear();
+            foreach (var v in list)
+            {
+                UserRankAward ura = new UserRankAward(v);
+                DataHelper.LevelRankingAwardCacheList.Add(ura);
+            }
+
+            ranking = RankingFactory.Get<UserRank>(FightValueRanking.RankingKey);
+            list = ranking.GetRange(0, awardNum, out pageCount);
+            DataHelper.FightValueRankingAwardCacheList.Clear();
+            foreach (var v in list)
+            {
+                UserRankAward ura = new UserRankAward(v);
+                DataHelper.FightValueRankingAwardCacheList.Add(ura);
+            }
+
+            ranking = RankingFactory.Get<UserRank>(ComboRanking.RankingKey);
+            list = ranking.GetRange(0, awardNum, out pageCount);
+            DataHelper.ComboRankingAwardCacheList.Clear();
+            foreach (var v in list)
+            {
+                UserRankAward ura = new UserRankAward(v);
+                DataHelper.ComboRankingAwardCacheList.Add(ura);
+            }
+            DataHelper.UpdateRankingAwardCache();
+
+            PushMessageHelper.Hour12UserNotification();
         }
         /// <summary>
         /// 每天整点刷新（5）
@@ -867,6 +900,8 @@ namespace GameServer.Script.Model.DataModel
                 }
             }
         }
+
+
 
         public static UserRank FindRankUser(int userid, RankType type)
         {
@@ -1159,13 +1194,40 @@ namespace GameServer.Script.Model.DataModel
                 return false;
             }
 
-            if (paycfg.id == 102)
+            if (paycfg.id == PayID.QuarterCard.ToInt())
             {// 是否季卡
                 PayQuarterCard(uid);
             }
-            else if (paycfg.id == 101)
+            else if (paycfg.id == PayID.MonthCard.ToInt())
             {// 是否月卡
                 PayMonthCard(uid);
+            }
+            else if (paycfg.id == PayID.Fund50.ToInt())
+            {
+                if (!userpay.Fund50.IsActivate)
+                {
+                    userpay.Fund50.IsActivate = true;
+                    FundCheck(uid);
+                }
+                
+            }
+            else if (paycfg.id == PayID.Fund98.ToInt())
+            {
+                if (!userpay.Fund98.IsActivate)
+                {
+                    userpay.Fund98.IsActivate = true;
+                    FundCheck(uid);
+                }
+
+            }
+            else if (paycfg.id == PayID.Fund298.ToInt())
+            {
+                if (!userpay.Fund298.IsActivate)
+                {
+                    userpay.Fund298.IsActivate = true;
+                    FundCheck(uid);
+                }
+
             }
 
             if (oldVipLv != basis.VipLv)
@@ -1482,7 +1544,7 @@ namespace GameServer.Script.Model.DataModel
                         }
                     }
 
-                        
+                    FundCheck(uid);
                 }
 
                 // 每日
@@ -2037,6 +2099,114 @@ namespace GameServer.Script.Model.DataModel
                     elf.SelectElfType = ElfSkillType.None;
                     elf.SelectElfValue = 0;
                 }
+            }
+        }
+
+        public static void FundCfgCheck(int userId)
+        {
+            if (userId == 0)
+                return;
+            var fundlist = new ShareCacheStruct<Config_Fund>().FindAll();
+            var pay = FindUserPay(userId);
+            if (pay != null)
+            {
+                foreach (var v in fundlist)
+                {
+                    var fund50data = pay.Fund50.List.Find(t => t.ID == v.ID);
+                    if (fund50data == null && v.fund50 > 0)
+                    {
+                        FundStageData data = new FundStageData()
+                        {
+                            ID = v.ID,
+                            Status = FundStatus.No
+                        };
+                        pay.Fund50.List.Add(data);
+                    }
+                    var fund98data = pay.Fund98.List.Find(t => t.ID == v.ID);
+                    if (fund98data == null && v.fund98 > 0)
+                    {
+                        FundStageData data = new FundStageData()
+                        {
+                            ID = v.ID,
+                            Status = FundStatus.No
+                        };
+                        pay.Fund98.List.Add(data);
+                    }
+                    var fund298data = pay.Fund298.List.Find(t => t.ID == v.ID);
+                    if (fund298data == null && v.fund298 > 0)
+                    {
+                        FundStageData data = new FundStageData()
+                        {
+                            ID = v.ID,
+                            Status = FundStatus.No
+                        };
+                        pay.Fund298.List.Add(data);
+                    }
+                }
+            }
+        }
+
+        public static void FundCheck(int userId)
+        {
+            if (userId == 0)
+                return;
+            var fundlist = new ShareCacheStruct<Config_Fund>().FindAll();
+            var basis = FindUserBasis(userId);
+            var pay = FindUserPay(userId);
+            bool isNotification = false;
+            if (pay != null)
+            {
+                if (pay.Fund50.IsActivate)
+                {
+                    foreach (var v in pay.Fund50.List)
+                    {
+                        if (v.Status == FundStatus.No)
+                        {
+                            var fundcfg = new ShareCacheStruct<Config_Fund>().FindKey(v.ID);
+                            if (basis.UserLv >= fundcfg.grade)
+                            {
+                                v.Status = FundStatus.Permit;
+                                isNotification = true;
+                            }
+                                
+                        }
+
+                    }
+                }
+                if (pay.Fund98.IsActivate)
+                {
+                    foreach (var v in pay.Fund98.List)
+                    {
+                        if (v.Status == FundStatus.No)
+                        {
+                            var fundcfg = new ShareCacheStruct<Config_Fund>().FindKey(v.ID);
+                            if (basis.UserLv >= fundcfg.grade)
+                            {
+                                v.Status = FundStatus.Permit;
+                                isNotification = true;
+                            }
+                        }
+                    }
+                }
+                if (pay.Fund298.IsActivate)
+                {
+                    foreach (var v in pay.Fund298.List)
+                    {
+                        if (v.Status == FundStatus.No)
+                        {
+                            var fundcfg = new ShareCacheStruct<Config_Fund>().FindKey(v.ID);
+                            if (basis.UserLv >= fundcfg.grade)
+                            {
+                                v.Status = FundStatus.Permit;
+                                isNotification = true;
+                            }
+                        }
+                    }
+                }
+            }
+            if (isNotification)
+            {
+                PushMessageHelper.FundChangeNotification(GameSession.Get(userId));
             }
         }
     }

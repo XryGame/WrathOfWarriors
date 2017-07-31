@@ -30,7 +30,7 @@ namespace GameServer.Script.CsScript.Com
         }
 
         /// <summary>
-        /// 第二天在
+        /// 第二天5点
         /// </summary>
         public static void RestoreUserNotification()
         {
@@ -39,6 +39,15 @@ namespace GameServer.Script.CsScript.Com
                 ActionFactory.SendAction(list, ActionIDDefine.Cst_Action1053, null, (s, r) => { }, OpCode.Text, 0);
         }
 
+        /// <summary>
+        /// 第二天5点
+        /// </summary>
+        public static void Hour12UserNotification()
+        {
+            var list = UserHelper.GetOnlinesList();
+            if (list.Count > 0)
+                ActionFactory.SendAction(list, ActionIDDefine.Cst_Action1090, null, (s, r) => { }, OpCode.Text, 0);
+        }
 
         /// <summary>
         /// 每日任务更新通知
@@ -519,6 +528,16 @@ namespace GameServer.Script.CsScript.Com
             ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1052, packet, (rsession, asyncResult) => { }, 0);
         }
 
+        /// <summary>
+        /// 返利变更通知 
+        /// </summary>
+        public static void FundChangeNotification(GameSession session)
+        {
+            if (session == null || !session.Connected)
+                return;
+            var packet = ActionFactory.GetResponsePackage(ActionIDDefine.Cst_Action1089, session, null, OpCode.Text, null);
+            ActionFactory.SendAction(session, ActionIDDefine.Cst_Action1089, packet, (rsession, asyncResult) => { }, 0);
+        }
         /// <summary>
         /// 充值成功通知
         /// </summary>

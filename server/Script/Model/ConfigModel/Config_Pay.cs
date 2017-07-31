@@ -108,22 +108,22 @@ namespace GameServer.Script.Model.ConfigModel
             }
         }
 
-        /// <summary>
-        /// 是否限购
-        /// </summary>
-        private bool _IfQuota;
-        [EntityField("IfQuota")]
-        public bool IfQuota
-        {
-            get
-            {
-                return _IfQuota;
-            }
-            set
-            {
-                SetChange("IfQuota", value);
-            }
-        }
+        ///// <summary>
+        ///// 是否限购
+        ///// </summary>
+        //private bool _IfQuota;
+        //[EntityField("IfQuota")]
+        //public bool IfQuota
+        //{
+        //    get
+        //    {
+        //        return _IfQuota;
+        //    }
+        //    set
+        //    {
+        //        SetChange("IfQuota", value);
+        //    }
+        //}
 
         /// <summary>
         /// 每天返还的钻石
@@ -154,7 +154,7 @@ namespace GameServer.Script.Model.ConfigModel
                     case "PaySum": return PaySum;
                     case "AcquisitionDiamond": return AcquisitionDiamond;
                     case "PresentedDiamond": return PresentedDiamond;
-                    case "IfQuota": return IfQuota;
+                    //case "IfQuota": return IfQuota;
                     case "EverydayReturn": return EverydayReturn;
                     default: throw new ArgumentException(string.Format("Config_Pay index[{0}] isn't exist.", index));
 				}
@@ -180,9 +180,9 @@ namespace GameServer.Script.Model.ConfigModel
                     case "PresentedDiamond":
                         _PresentedDiamond = value.ToInt();
                         break;
-                    case "IfQuota":
-                        _IfQuota = value.ToBool();
-                        break;
+                    //case "IfQuota":
+                    //    _IfQuota = value.ToBool();
+                    //    break;
                     case "EverydayReturn":
                         _EverydayReturn = value.ToInt();
                         break;
