@@ -24,5 +24,9 @@ namespace GameServer.Script.Model.Enum
         /// 宠物
         /// </summary>
         Elf,
+        /// <summary>
+        /// 体力
+        /// </summary>
+        Vit,
     }
 }

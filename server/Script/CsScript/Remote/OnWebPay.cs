@@ -152,12 +152,21 @@ namespace GameServer.CsScript.Remote
 
                 int deliverNum = paycfg.AcquisitionDiamond + paycfg.PresentedDiamond;
 
+                if (jsonorder.Amount != paycfg.PaySum)
+                {
+                    receipt.ResultString = "金额错误";
+                    TraceLog.WriteError("Pay error Uid:{0}, Name:{1}, OrderAmount:{2}, ConfigAmount:{3} .",
+                        user.UserID, user.NickName, jsonorder.Amount, paycfg.PaySum);
+                    return receipt;
+                }
 
                 if (!UserHelper.OnWebPay(user.UserID, jsoncustom.PayId))
                 {
                     receipt.ResultString = "发货失败";
                     return receipt;
                 }
+
+                
 
 
                 OrderInfoCache newOrderInfo = new OrderInfoCache()

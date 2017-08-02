@@ -377,6 +377,11 @@ namespace GameServer.CsScript.Action
         ///</summary>
         public const short Cst_Action1125 = 1125;
 
+        ///<summary>
+        ///一键宝石合成
+        ///</summary>
+        public const short Cst_Action1126 = 1126;
+
         /// <summary>
         /// 开启战魂
         /// </summary>
@@ -476,6 +481,11 @@ namespace GameServer.CsScript.Action
         ///竞技场购买匹配次数
         ///</summary>
         public const short Cst_Action1408 = 1408;
+
+        ///<summary>
+        ///查看通天塔日志
+        ///</summary>
+        public const short Cst_Action1409 = 1409;
 
         ///<summary>
         ///请求好友在线状态

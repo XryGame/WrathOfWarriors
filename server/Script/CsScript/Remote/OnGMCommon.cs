@@ -283,7 +283,7 @@ namespace GameServer.CsScript.Remote
                     {
                         string UserName;
                         int UserLv, GoldNum, DiamondNum, AddItemID, AddItemNum, PayID, CombatCoinNum;
-                        int ElfID, ElfLevel, SkillID, SkillLevel, NoviceGuide, VitNum;
+                        int ElfID, ElfLevel, SkillID, SkillLevel, NoviceGuide, VitNum, SetDiamondNum;
                         EquipID SetEquipID;
                         int EquipLevel;
                         int LevelUpLevel;
@@ -322,6 +322,8 @@ namespace GameServer.CsScript.Remote
                         NoviceGuide = _value.ToInt();
                         parms.TryGetValue("VitNum", out _value);
                         VitNum = _value.ToInt();
+                        parms.TryGetValue("SetDiamondNum", out _value);
+                        SetDiamondNum = _value.ToInt();
 
                         var user = new ShareCacheStruct<UserCenterUser>().FindKey(UserId);
                         if (user == null)
@@ -329,7 +331,7 @@ namespace GameServer.CsScript.Remote
                             bone.AddStrBone("没有找到该用户");
                             break;
                         }
-                        
+                        var basis = UserHelper.FindUserBasis(UserId);
 
                         if (UserName != string.Empty)
                         {
@@ -345,7 +347,6 @@ namespace GameServer.CsScript.Remote
                             }
                             else
                             {
-                                var basis = UserHelper.FindUserBasis(UserId);
                                 basis.NickName = UserName;
                                 user.NickName = UserName;
                             }
@@ -355,7 +356,6 @@ namespace GameServer.CsScript.Remote
                             var list = new ShareCacheStruct<Config_RoleInitial>().FindAll();
                             if (UserLv <= list.Count)
                             {
-                                var basis = UserHelper.FindUserBasis(UserId);
                                 basis.UserLv = UserLv;
                             }
                             else
@@ -467,7 +467,6 @@ namespace GameServer.CsScript.Remote
                         }
                         if (LevelUpLevel > 0)
                         {
-                            var basis = UserHelper.FindUserBasis(UserId);
                             int startLevel = basis.UserLv;
                             for (int i = 0; i < LevelUpLevel; ++i)
                             {
@@ -483,6 +482,20 @@ namespace GameServer.CsScript.Remote
                         if (VitNum > 0)
                         {
                             UserHelper.RewardsVit(UserId, VitNum);
+                        }
+                        if (SetDiamondNum > 0)
+                        {
+                            int temp = basis.DiamondNum - SetDiamondNum;
+                            if (temp > 0)
+                            {
+                                UserHelper.ConsumeDiamond(UserId, temp);
+                            }
+                            else
+                            {
+                                UserHelper.RewardsDiamond(UserId, Math.Abs(temp), UpdateCoinOperate.NormalReward);
+                            }
+                            
+
                         }
                     }
                     else if (_OperateName == "NewMail")

@@ -290,7 +290,7 @@ namespace GameServer.CsScript.Action
             {
                 if (GetBasis.UserLv >= DataHelper.OpenRankSystemUserLevel)
                 {
-                    GlobalRemoteService.SendNotice(NoticeMode.World, context);
+                    //GlobalRemoteService.SendNotice(NoticeMode.World, context);
                 }
 
             }

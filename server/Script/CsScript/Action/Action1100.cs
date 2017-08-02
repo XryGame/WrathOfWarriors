@@ -131,6 +131,12 @@ namespace GameServer.CsScript.Action
                         }
                     }
                     break;
+                case ResourceType.Vit:
+                    {
+                        UserHelper.RewardsVit(Current.UserId, itemconfig.ResourceNum.ToInt() * useNum);
+                        //receipt.GainDiamond = resourceNum * useNum;
+                    }
+                    break;
                 default:
                     {
                         receipt = UsedItemResult.Cannot;

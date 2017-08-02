@@ -10,11 +10,11 @@ namespace GameServer.Script.Model.Enum
         /// <summary>
         /// 月卡
         /// </summary>
-        MonthCard = 101,
+        MonthCard = 201,
         /// <summary>
         /// 季卡
         /// </summary>
-        QuarterCard = 102,
+        QuarterCard = 202,
         /// <summary>
         /// 50元返利
         /// </summary>

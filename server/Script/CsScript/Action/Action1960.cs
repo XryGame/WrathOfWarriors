@@ -55,7 +55,7 @@ namespace GameServer.CsScript.Action
             items.Add(new ItemData() { ID = 10003, Num = 2 });
             items.Add(new ItemData() { ID = 20004, Num = 1 });
             items.Add(new ItemData() { ID = 23004, Num = 1 });
-            items.Add(new ItemData() { ID = 24004, Num = 1 });
+            items.Add(new ItemData() { ID = 10008, Num = 1 });
             UserHelper.RewardsItems(Current.UserId, items);
             receipt = true;
             return true;

@@ -33,6 +33,7 @@ namespace GameServer.Script.Model
         public const string Config = "WOWConfig";
         public const string Data = "WOWData";
         public const string Log = "WOWLog";
+        public const string MERGE = "MERGE_SERVICE";
         public const int GlobalPeriodTime = 0;
 
         public const int PeriodTime = 86400; 

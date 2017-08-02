@@ -15,15 +15,14 @@ namespace GameServer.CsScript.Action
     /// <summary>
     /// 1125_宝石合成
     /// </summary>
-    public class Action1125 : BaseAction
+    public class Action1126 : BaseAction
     {
         private UsedItemResult receipt;
-        private int gemID, gemNum;
+        private int gemID;
+        
 
-        private Random random = new Random();
-
-        public Action1125(ActionGetter actionGetter)
-            : base(ActionIDDefine.Cst_Action1125, actionGetter)
+        public Action1126(ActionGetter actionGetter)
+            : base(ActionIDDefine.Cst_Action1126, actionGetter)
         {
 
         }
@@ -36,8 +35,7 @@ namespace GameServer.CsScript.Action
 
         public override bool GetUrlElement()
         {
-            if (httpGet.GetInt("GemID", ref gemID)
-                && httpGet.GetInt("GemNum", ref gemNum))
+            if (httpGet.GetInt("GemID", ref gemID))
             {
                 return true;
             }
@@ -52,11 +50,6 @@ namespace GameServer.CsScript.Action
                 receipt = UsedItemResult.NoItem;
                 return true;
             }
-            if (gemData.Num < gemNum)
-            {
-                receipt = UsedItemResult.ItemNumError;
-                return true;
-            }
 
             var itemcfg = new ShareCacheStruct<Config_Item>().FindKey(gemID);
             var gemcfg = new ShareCacheStruct<Config_Gem>().Find(t => (t.ItemID == gemID));
@@ -64,19 +57,25 @@ namespace GameServer.CsScript.Action
             {
                 return false;
             }
+            var nextItemcfg = new ShareCacheStruct<Config_Item>().Find(t => (
+                t.ItemType == ItemType.Gem && t.Species == itemcfg.Species && (t.ItemGrade == itemcfg.ItemGrade + 1))
+                );
+            if (nextItemcfg == null)
+            {
+                return false;
+            }
+            int compoundNum = gemData.Num / gemcfg.Number;
+            int needNum = compoundNum * gemcfg.Number;
+            if (gemData.Num < needNum)
+            {
+                receipt = UsedItemResult.ItemNumError;
+                return true;
+            }
 
-            float fprob = gemNum.ToFloat() / gemcfg.Number;
-            if (random.Next(1000) <= fprob * 1000)
-            {
-                //GetPackage.AddItem(gemcfg.GemID, 1);
-                UserHelper.RewardsItem(Current.UserId, gemcfg.GemID, 1);
-                receipt =  UsedItemResult.Successfully;
-            }
-            else
-            {
-                receipt = UsedItemResult.GemFailed;
-            }
-            GetPackage.RemoveItem(gemID, gemNum);
+            UserHelper.RewardsItem(Current.UserId, nextItemcfg.ItemID, compoundNum);
+            receipt = UsedItemResult.Successfully;
+            
+            GetPackage.RemoveItem(gemID, needNum);
 
             return true;
         }

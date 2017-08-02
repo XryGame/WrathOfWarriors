@@ -185,6 +185,24 @@ namespace GameServer.Script.Model.DataModel
             }
         }
 
+        /// <summary>
+        /// 是否有新日志
+        /// </summary>
+        private bool _IsHaveNewLog;
+        [ProtoMember(10)]
+        [EntityField("IsHaveNewLog")]
+        public bool IsHaveNewLog
+        {
+            get
+            {
+                return _IsHaveNewLog;
+            }
+            set
+            {
+                SetChange("IsHaveNewLog", value);
+            }
+        }
+
         protected override int GetIdentityId()
         {
             //allow modify return value
@@ -207,6 +225,7 @@ namespace GameServer.Script.Model.DataModel
                     case "LogList": return LogList;
                     case "CombatCoin": return CombatCoin;
                     case "LastMatchFightFailedDate": return LastMatchFightFailedDate;
+                    case "IsHaveNewLog": return IsHaveNewLog;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -243,6 +262,9 @@ namespace GameServer.Script.Model.DataModel
                     case "LastMatchFightFailedDate":
                         _LastMatchFightFailedDate = value.ToDateTime();
                         break;
+                    case "IsHaveNewLog":
+                        _IsHaveNewLog = value.ToBool();
+                        break;
                     default: throw new ArgumentException(string.Format("UserCombatCache index[{0}] isn't exist.", index));
                 }
                 #endregion
@@ -271,6 +293,11 @@ namespace GameServer.Script.Model.DataModel
             }
 
             LogList.Add(log);
+
+            if (log.Type == EventType.PassiveChallenge)
+            {
+                IsHaveNewLog = true;
+            }
         }
 
 

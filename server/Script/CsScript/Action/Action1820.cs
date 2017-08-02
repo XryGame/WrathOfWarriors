@@ -50,7 +50,7 @@ namespace GameServer.CsScript.Action
 
             List<ItemData> items = new List<ItemData>();
             items.Add(new ItemData() { ID = 10002, Num = 2 });
-            items.Add(new ItemData() { ID = 10004, Num = 2 });
+            items.Add(new ItemData() { ID = 10006, Num = 1 });
             items.Add(new ItemData() { ID = 22002, Num = 1 });
             items.Add(new ItemData() { ID = 32005, Num = 1 });
             UserHelper.RewardsItems(Current.UserId, items);

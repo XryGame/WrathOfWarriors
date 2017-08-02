@@ -144,6 +144,7 @@
     <Compile Include="Script\CsScript\Action\Action1114.cs" />
     <Compile Include="Script\CsScript\Action\Action1115.cs" />
     <Compile Include="Script\CsScript\Action\Action1125.cs" />
+    <Compile Include="Script\CsScript\Action\Action1126.cs" />
     <Compile Include="Script\CsScript\Action\Action1130.cs" />
     <Compile Include="Script\CsScript\Action\Action1140.cs" />
     <Compile Include="Script\CsScript\Action\Action1141.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Script\CsScript\Action\Action1406.cs" />
     <Compile Include="Script\CsScript\Action\Action1407.cs" />
     <Compile Include="Script\CsScript\Action\Action1408.cs" />
+    <Compile Include="Script\CsScript\Action\Action1409.cs" />
     <Compile Include="Script\CsScript\Action\Action1700.cs" />
     <Compile Include="Script\CsScript\Action\Action1701.cs" />
     <Compile Include="Script\CsScript\Action\Action1702.cs" />
@@ -264,7 +266,7 @@
     <Compile Include="Script\CsScript\Base\SystemGlobal.cs" />
     <Compile Include="Script\CsScript\Base\NewHttpListener.cs" />
     <Compile Include="Script\CsScript\Base\Util.cs" />
-    <Compile Include="Script\CsScript\Com\CombineZone.cs" />
+    <Compile Include="Script\CsScript\Com\MERGE_SERVICE.cs" />
     <Compile Include="Script\CsScript\Com\ComboRanking.cs" />
     <Compile Include="Script\CsScript\Com\Competition64.cs" />
     <Compile Include="Script\CsScript\Com\CombatRanking.cs" />

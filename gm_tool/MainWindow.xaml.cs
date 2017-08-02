@@ -179,7 +179,7 @@ namespace gm_tool
             request.AddPostParam("UserName", SetUserName.Text);
             request.AddPostParam("UserLv", SetUserLv.Text);
             request.AddPostParam("GoldNum", SetGoldNum.Text);
-            request.AddPostParam("DiamondNum", SetDiamondNum.Text);
+            request.AddPostParam("DiamondNum", SetAddDiamondNum.Text);
             request.AddPostParam("AddItemID", SetAddItemID.Text);
             request.AddPostParam("AddItemNum", SetAddItemNum.Text);
             request.AddPostParam("PayID", PayID.Text);
@@ -193,6 +193,7 @@ namespace gm_tool
             request.AddPostParam("LevelUp", SetLevelUp.Text);
             request.AddPostParam("NoviceGuide", SetNoviceGuide.Text);
             request.AddPostParam("VitNum", SetAddVit.Text);
+            request.AddPostParam("SetDiamondNum", SetDiamondNum.Text);
             if (request.HttpPostRequest(SelectServerUrl))
             {
                 QueryRoleInfo(false);
@@ -219,7 +220,7 @@ namespace gm_tool
             SetUserName.Text = string.Empty;
             SetUserLv.Text = string.Empty;
             SetGoldNum.Text = string.Empty;
-            SetDiamondNum.Text = string.Empty;
+            SetAddDiamondNum.Text = string.Empty;
             SetAddItemID.Text = string.Empty;
             SetAddItemNum.Text = string.Empty;
             SetCombatCoinNum.Text = string.Empty;
@@ -232,6 +233,7 @@ namespace gm_tool
             SetNoviceGuide.Text = string.Empty;
             PayID.Text = string.Empty;
             SetAddVit.Text = string.Empty;
+            SetDiamondNum.Text = string.Empty;
         }
 
         private void ResetMailText()

@@ -121,6 +121,10 @@ namespace GameServer.CsScript.Action
                 receipt.NextMap = GetBasis.CurrentPassLevelID;
             }
 
+            if (receipt.NextMap % 5 == 0 && GetBasis.Vit > 0 && GetBasis.Vit < 3)
+            {
+                receipt.NextMap = GetBasis.CurrentPassLevelID;
+            }
             GetBasis.CurrentPassLevelID = 0;
             return true;
         }

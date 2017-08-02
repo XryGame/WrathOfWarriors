@@ -1,19 +1,18 @@
-﻿using System;
+﻿#define NO_MERGE_SERVICE_DATA   // 定义不进行合服
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using ZyGames.Framework.Cache.Generic;
 using ZyGames.Framework.Common.Configuration;
 using ZyGames.Framework.Common;
-using ZyGames.Framework.Data;
 using ZyGames.Framework.Game.Com.Rank;
-using GameServer.Script.Model;
 using ZyGames.Framework.Net;
 using GameServer.Script.Model.ConfigModel;
 using GameServer.Script.Model.DataModel;
 using GameServer.CsScript.Com;
 using ZyGames.Framework.Common.Timing;
 using ZyGames.Framework.Common.Log;
+
 using ZyGames.Framework.Game.Contract;
 using ZyGames.Framework.Script;
 using ZyGames.Framework.Game.Config;
@@ -22,11 +21,11 @@ using System.Text;
 using ZyGames.Framework.Game.Sns._91sdk;
 using GameServer.Script.Model.Enum;
 using System.Configuration;
-using System.Threading;
 using GameServer.Script.Model.Config;
 using ZyGames.Framework.Game.Runtime;
 using GameServer.CsScript.Remote;
 using GameServer.CsScript.Action;
+
 
 namespace GameServer.CsScript.Base
 {
@@ -35,6 +34,7 @@ namespace GameServer.CsScript.Base
     /// </summary>
     public static class SystemGlobal
     {
+
         private static Random random = new Random();
         private static readonly object thisLock = new object();
         private static int maxCount = ConfigUtils.GetSetting("MaxLoadCount", "100").ToInt();
@@ -86,6 +86,7 @@ namespace GameServer.CsScript.Base
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
+#if NO_MERGE_SERVICE_DATA
             var httpHost = GetSection().HttpHost;
             var httpPort = GetSection().HttpPort;
             var httpName = GetSection().HttpName;
@@ -95,13 +96,8 @@ namespace GameServer.CsScript.Base
                 new NewHttpListener(httpHost, httpPort, new HashSet<string>(names));
             }
 
-            //ActionFactory.SetActionIgnoreAuthorize(3001);
-
 
             LoadGlobalData();
-            //LoadUser();
-
-            //UserBasisCache.Callback = new AsyncDataChangeCallback(UserHelper.TriggerUserCallback);
 
             // 上传该服务器的状态
             TimeListener.Append(PlanConfig.EveryMinutePlan(submitServerStatus, "submitServerStatus", "00:00", "23:59", ConfigurationManager.AppSettings["ServerStatusSendInterval"].ToInt()));
@@ -152,6 +148,10 @@ namespace GameServer.CsScript.Base
 
             SendServerStatus(ServerStatus.Unhindered, 0);
 
+#else
+            MERGE_SERVICE.Run();
+
+#endif
             lock (thisLock)
             {
                 _isRunning = true;
