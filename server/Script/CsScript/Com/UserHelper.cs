@@ -514,6 +514,7 @@ namespace GameServer.Script.Model.DataModel
             basis.UserStatus = UserStatus.MainUi;
             basis.InviteFightDestUid = 0;
             basis.IsReceiveOfflineEarnings = false;
+            basis.LastDropGoldTime = DateTime.MinValue;
             //basis.RandomLotteryId = 0;
             package.NewItemCache.Clear();
 

@@ -83,6 +83,8 @@ namespace GameServer.CsScript.Action
                 return false;
 
             rankAward.IsReceived = true;
+            DataHelper.UpdateRankingAwardCache();
+
             List<ItemData> itemlist = new List<ItemData>();
             itemlist.Add(new ItemData() { ID = rankingCfg.AAwardID, Num = rankingCfg.AAwardN });
             itemlist.Add(new ItemData() { ID = rankingCfg.BAwardID, Num = rankingCfg.BAwardN });

@@ -119,7 +119,7 @@ namespace GameServer.CsScript.Action
                     if (GetBasis.CombatRankID <= 10)
                     {
                         string context = string.Format("恭喜 {0} 挑战 {1} 成功，成为通天塔第{2}名！", GetBasis.NickName, rival.NickName, rankinfo.RankId);
-                        GlobalRemoteService.SendNotice(NoticeMode.World, context);
+                        //GlobalRemoteService.SendNotice(NoticeMode.World, context);
                         //PushMessageHelper.SendNoticeToOnlineUser(NoticeMode.Game, context);
 
                         //var chatService = new TryXChatService();
