@@ -1,0 +1,63 @@
+///////////////////////////////////////////////////////////////////////////
+
+    //   ) )  //   ) )  //   / / /__  ___/   SCUT 6.7.9.11 (64 bit)
+   ((        //        //   / /    / /       Running in Win32NT platform
+     \\     //        //   / /    / /        Game: 2   Server: 999
+       ) ) //        //   / /    / /         
+((___ / / ((____/ / ((___/ /    / /                http://www.scutgame.com
+
+10:34:46 Server is starting...
+10:34:46 Redis server connect successfully.
+10:34:54 DB server connect successfully.
+10:34:57 Start checking table schema, please wait.
+10:35:03 Check table schema successfully.
+10:35:03 script compiled successfully.
+10:35:04 CacheFactory listen has started...
+10:35:04 WebSocket service 168.254.0.254:9001 is started.
+Time:2017-08-07 10:35:04:365-Trace>>Http service:168.254.0.254:8091/GamePay.aspx is started.
+
+
+Time:2017-08-07 10:35:04:366-Trace>>Http service:168.254.0.254:8091/GMCommon.aspx is started.
+
+
+Time:2017-08-07 10:35:04:367-Trace>>Http service:168.254.0.254:8091/GlobalCommon.aspx is started.
+
+
+Time:2017-08-07 10:35:04:371-消息：系统加载单服配置开始...
+
+
+Time:2017-08-07 10:35:05:924-消息：系统加载单服配置所需时间:1552.3254ms
+
+
+Time:2017-08-07 10:35:06:135-The ranking refresh is start...
+
+
+Time:2017-08-07 10:35:06:150-Trace>>The CombatRanking has be loaded, count:84
+
+
+Time:2017-08-07 10:35:06:202-Trace>>The LevelRanking has be loaded, count:84
+
+
+Time:2017-08-07 10:35:06:209-Trace>>The FightValueRanking has be loaded, count:84
+
+
+Time:2017-08-07 10:35:06:216-Trace>>The ComboRanking has be loaded, count:84
+
+
+Time:2017-08-07 10:35:06:218-Trace>>The GuildRanking has be loaded, count:0
+
+
+Time:2017-08-07 10:35:06:219-The ranking refresh is end.
+
+
+Time:2017-08-07 10:35:06:300-消息：系统全局运行环境加载所需时间:1935.8953ms
+
+
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+10:35:06 Server has started successfully!
+# Server is listening...
+# Server exit command "Ctrl+C" or "Ctrl+Break".
+Submit server status successful:http://www.imsgame.com:81,Unhindered,0
+Submit server status successful:http://www.imsgame.com:81,Close,0
+10:35:46 please presskey it again.
+10:35:49 Server is stopping, please wait.

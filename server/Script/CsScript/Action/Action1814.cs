@@ -24,7 +24,7 @@ namespace GameServer.CsScript.Action
         public UserLotteryCache Lottery { get; set; }
     }
     /// <summary>
-    /// 
+    /// 抢夺
     /// </summary>
     public class Action1814 : BaseAction
     {
@@ -128,12 +128,13 @@ namespace GameServer.CsScript.Action
             int levelDown = 0;
             if (result == EventStatus.Good)
             {
-                levelDown = Math.Max(rival.UserLv - 10, 0);
-                levelDown = Math.Min(levelDown, 10);
+                int downlv = rival.UserLv <= 1000 ? 10 : rival.UserLv / 100;
+                levelDown = Math.Max(rival.UserLv - downlv, 0);
+                levelDown = Math.Min(levelDown, downlv);
                 //rival.UserLv = Math.Max(rival.UserLv - levelDown, 10);
                 //UserHelper.UserLvChange(rival.UserID);
                 //PushMessageHelper.UserLvChangeNotification(GameSession.Get(rival.UserID));
-                rival.BackLevelNum += 10;
+                rival.BackLevelNum += downlv;
             }
 
             rivalEnemy.AddEnemy(new EnemyData() { UserId = Current.UserId });

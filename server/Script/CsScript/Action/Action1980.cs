@@ -75,7 +75,7 @@ namespace GameServer.CsScript.Action
             DateTime openServiceDate = DataHelper.OpenServiceDate;
             DateTime temp = new DateTime(openServiceDate.Year, openServiceDate.Month, openServiceDate.Day);
             TimeSpan ts = DateTime.Now.Subtract(temp);
-            int days = ts.TotalDays.ToInt() + 1;
+            int days = Math.Floor(ts.TotalDays).ToInt() + 1;
 
 
             var rankingCfg = new ShareCacheStruct<Config_Ranking>().Find(t => (t.Type == type && t.Days == days));

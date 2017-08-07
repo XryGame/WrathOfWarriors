@@ -133,7 +133,7 @@ namespace GameServer.Script.Model.DataModel
                 IsFirstOpenService = true;
             }
             OpenServiceDate = openServiceCache.Value.ToDateTime();
-            OpenServiceDate = new DateTime(OpenServiceDate.Year, OpenServiceDate.Month, 31, 9, 0, 0);
+            OpenServiceDate = new DateTime(OpenServiceDate.Year, 8/*OpenServiceDate.Month*/, 1, 9, 0, 0);
 
             //GameCache signStartIDCache = gameCache.FindKey(SignStartIDCacheKey);
             //if (signStartIDCache == null)
